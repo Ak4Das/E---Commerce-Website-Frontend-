@@ -1,0 +1,212 @@
+.logo {
+  width: 25px;
+}
+.festivalBanner {
+  height: 700px;
+}
+
+@media (min-width: 1400px) {
+  .bannerImage {
+    width: 50%;
+  }
+}
+@media (max-width: 1400px) {
+  .festivalBanner {
+    height: 700px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .productDetailsContainer {
+    margin-inline: 70px;
+  }
+}
+@media (min-width: 992px) {
+  .productDetailsImage {
+    min-width: 250px !important;
+  }
+  .productDetailsContainer {
+    margin-inline: 60px;
+  }
+}
+@media (max-width: 800px) {
+  .productCard {
+    flex-direction: column !important;
+  }
+  .imgWidth {
+    width: 100% !important;
+  }
+  .firstUlContainer {
+    display: none;
+  }
+  .festivalBanner {
+    height: 600px !important;
+  }
+}
+@media (min-width: 800px) {
+  .productCard {
+    flex-direction: row !important;
+  }
+  .imgWidth {
+    min-width: 50% !important;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  .imageOnProductCurt {
+    height: 300px !important;
+  }
+  .productCardInCart {
+    width: 300px !important;
+  }
+  .cartContainer {
+    gap: 30px !important;
+  }
+}
+@media (max-width: 767px) {
+  .productDetailsImage {
+    min-width: 150px !important;
+  }
+  .productDescription {
+    font-size: 18px !important;
+  }
+  .productCardInCart {
+    max-width: 250px !important;
+  }
+}
+@media (min-width: 768px) {
+  .productDescription {
+    font-size: 21px !important;
+  }
+}
+@media (max-width: 575px) {
+  .cardContainer {
+    width: 350px !important;
+    margin: auto !important;
+  }
+  .btnContainer1 {
+    display: none;
+  }
+  .productImage {
+    width: 50% !important;
+    display: block;
+    margin-inline: auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  .productCardInCart {
+    max-width: 300px !important;
+  }
+}
+@media (min-width: 576px) {
+  .buyingFeatures {
+    width: 40px !important;
+  }
+  .btnContainer2 {
+    display: none;
+  }
+  .productImage {
+    width: 100% !important;
+  }
+}
+@media (min-width: 500px) {
+  .myntraLogo {
+    display: none;
+  }
+  .image {
+    height: 300px !important;
+  }
+}
+@media (max-width: 499px) {
+  .navbarBrand {
+    display: none;
+  }
+  .image {
+    height: 150px !important;
+  }
+  .festivalBanner {
+    height: 400px !important;
+  }
+}
+@media (max-width: 420px) {
+  .description {
+    min-width: 100px !important;
+  }
+}
+@media (min-width: 351px) {
+  .searchInApp {
+    display: none;
+  }
+}
+@media (max-width: 350px) {
+  .searchInHeader {
+    display: none;
+  }
+  .festivalBanner {
+    height: 300px !important;
+  }
+  .productCardInCart {
+    max-width: 250px !important;
+  }
+}
+@media (max-width: 300px) {
+  .festivalBanner {
+    height: 200px !important;
+  }
+}
+@media (min-width: 576px) {
+  .totalBill {
+    min-width: 300px !important;
+  }
+}
+@media (min-width: 768px) {
+  .totalBill {
+    min-width: 300px !important;
+    position: sticky !important;
+    top:10px;
+  }
+}
+@media (min-width: 992px) {
+  .totalBill {
+    min-width: 400px !important;
+  }
+  .productsInCurt {
+    min-width: 485px !important;
+  }
+  .imageOnProductCurt {
+    min-width: 200px !important;
+  }
+  .cartContainer {
+    gap: 50px;
+  }
+}
+@media (min-width: 1200px) {
+  .totalBill {
+    min-width: 500px !important;
+  }
+  .productsInCurt {
+    min-width: 550px !important;
+  }
+}
+@media (min-width: 1400px) {
+  .productDetailsImage {
+    min-width: 300px !important;
+  }
+  .productDetailsContainer {
+    margin-inline: 100px;
+  }
+  .totalBill {
+    min-width: 600px !important;
+  }
+}
+@media (min-width: 1600px) {
+  .productDetailsContainer {
+    margin-inline: 150px;
+  }
+}
+@media (min-width: 1800px) {
+  .productDetailsContainer {
+    margin-inline: 200px;
+  }
+}

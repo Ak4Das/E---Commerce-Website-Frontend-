@@ -11,7 +11,7 @@ import CartPage from "./pages/CartPage.jsx"
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
-  { path: "/products", element: <ProductListingPage /> },
+  { path: "/products/:category", element: <ProductListingPage /> },
   { path: "/productDetails", element: <ProductDetailsPage /> },
   { path: "/wishlist", element: <WishlistPage /> },
   { path: "/cart", element: <CartPage /> },

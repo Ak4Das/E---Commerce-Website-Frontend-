@@ -13,10 +13,10 @@ export default function Header() {
     <header>
       <nav className="bg-body-tertiary mx-2 p-2">
         <div className="d-flex justify-content-between align-items-center">
-          <a className="navbar-brand" href="/">
+          <NavLink className="navbar-brand" to="/">
           <img src={myntraLogo} alt="" style={{width:"70px"}} className="myntraLogo"/>
             <span className="navbarBrand">MyShoppingSite</span>
-          </a>
+          </NavLink>
           <form role="search" className="searchInHeader">
             <input
               className="border border-0 p-2"
@@ -34,26 +34,26 @@ export default function Header() {
               style={{ width: "300px" }}
             >
               <li className="nav-item">
-                <a
+                <NavLink
                   className="btn btn-secondary text-light"
                   aria-current="page"
-                  href="/"
+                  to="/"
                   style={{ width: "70px" }}
                 >
                   Login
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <NavLink className="nav-link" to="/wishlist">
                   <img src={wishlistLogo} className="logo" />
                   <span>Wishlist</span>
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <NavLink className="nav-link" to="/cart">
                   <img src={shoppingCart} className="logo" />
                   <span>Cart</span>
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -69,26 +69,26 @@ export default function Header() {
               }}
             >
               <li className="nav-item btn btn-secondary">
-                <a
+                <NavLink
                   aria-current="page"
-                  href="/"
+                  to="/"
                   className="text-light"
                   style={{ width: "70px", textDecoration: "none" }}
                 >
                   Login
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item  btn btn-secondary text-light">
-                <a className="nav-link" href="/">
+                <NavLink className="nav-link" to="/wishlist">
                   <img src={wishlistLogo} className="logo" />
                   <span>Wishlist</span>
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item  btn btn-secondary text-light">
-                <a className="nav-link" href="/">
+                <NavLink className="nav-link" to="/cart">
                   <img src={shoppingCart} className="logo" />
                   <span>Cart</span>
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>

@@ -1,3 +1,4 @@
+import { useState } from "react"
 import GetClothsData from "../components/GetClothsData"
 import Header from "../components/Header"
 import Offcanvas from "../components/OffCanvas"
@@ -6,6 +7,9 @@ import { useParams } from "react-router-dom"
 export default function ProductListingPage() {
   const { category } = useParams()
   const { clothsData, setClothsData } = GetClothsData()
+  const [price, setPrice] = useState(0)
+  const [rating, setRating] = useState(0)
+  const [sortBy, setSortBy] = useState("")
   function addToCart(e) {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
@@ -15,7 +19,7 @@ export default function ProductListingPage() {
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
   }
-  
+
   function addToWishlist(e) {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
@@ -26,13 +30,70 @@ export default function ProductListingPage() {
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
   }
 
-  const filteredData = clothsData.filter((data) => data.category === category)
+  const filterByCategory = clothsData.filter(
+    (data) => data.category === category
+  )
+
+  const filterByPrice = filterByCategory.filter(
+    (product) =>
+      (
+        (product.price * Number(product.discount.replace("%", ""))) /
+        100
+      ).toFixed(1) >= price
+  )
+
+  const filterByRating = filterByPrice.filter(
+    (product) => product.rating >= rating
+  )
+
+  function discountedPrice(product) {
+    return (
+      (product.price * Number(product.discount.replace("%", ""))) /
+      100
+    ).toFixed(1)
+  }
+
+  function sortProducts() {
+    if (sortBy !== "") {
+      for (let i = 0; i < filterByRating.length; ) {
+        for (let j = i + 1; j < filterByRating.length; j++) {
+          if (sortBy === "lowToHigh") {
+            if (
+              Number(discountedPrice(filterByRating[i])) >
+              Number(discountedPrice(filterByRating[j]))
+            ) {
+              const a = filterByRating[j]
+              filterByRating[j] = filterByRating[i]
+              filterByRating[i] = a
+            }
+          } else {
+            if (
+              Number(discountedPrice(filterByRating[j])) >
+              Number(discountedPrice(filterByRating[i]))
+            ) {
+              const a = filterByRating[j]
+              filterByRating[j] = filterByRating[i]
+              filterByRating[i] = a
+            }
+          }
+        }
+        i++
+      }
+    }
+    return filterByRating
+  }
+
+  const filterBySort = sortProducts()
 
   return (
     <>
       <Header />
       <main className="d-flex">
-        <Offcanvas />
+        <Offcanvas
+          setPrice={setPrice}
+          setRating={setRating}
+          setSortBy={setSortBy}
+        />
         <div className="mx-5 my-3">
           <form role="search" className="searchInApp">
             <input
@@ -44,7 +105,7 @@ export default function ProductListingPage() {
           </form>
           <h4 className="my-3">Showing All Products</h4>
           <div className="row">
-            {filteredData.map((product) => (
+            {filterBySort.map((product) => (
               <div className="col-sm-6 col-xl-4 col-xxl-3 mb-3">
                 <div className="card productCard">
                   <img

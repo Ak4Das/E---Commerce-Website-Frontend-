@@ -8277,7 +8277,6 @@ export default function ClothsContextProvider({ children }) {
   const [clothsData, setClothsData] = useState(
     JSON.parse(localStorage.getItem("clothsData"))
   )
-  console.log(clothsData)
 
   return (
     <ClothsContext.Provider value={{ clothsData, setClothsData }}>

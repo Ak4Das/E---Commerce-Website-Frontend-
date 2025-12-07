@@ -1,8 +1,9 @@
 import { useState } from "react"
 import GetClothsData from "../components/GetClothsData"
 import Header from "../components/Header"
-import Offcanvas from "../components/OffCanvas"
+import Offcanvas from "../components/Offcanvas"
 import { useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export default function ProductListingPage() {
   const { category } = useParams()
@@ -10,6 +11,8 @@ export default function ProductListingPage() {
   const [price, setPrice] = useState(0)
   const [rating, setRating] = useState(0)
   const [sortBy, setSortBy] = useState("")
+  const [Category,setCategory] = useState("")
+  console.log(Category); //TODO
   function addToCart(e) {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
@@ -93,6 +96,7 @@ export default function ProductListingPage() {
           setPrice={setPrice}
           setRating={setRating}
           setSortBy={setSortBy}
+          setCategory={setCategory}
         />
         <div className="mx-5 my-3">
           <form role="search" className="searchInApp">
@@ -107,6 +111,7 @@ export default function ProductListingPage() {
           <div className="row">
             {filterBySort.map((product) => (
               <div className="col-sm-6 col-xl-4 col-xxl-3 mb-3">
+                <Link className="text-decoration-none" to={`/productDetails/${product.id}`}>
                 <div className="card productCard">
                   <img
                     src={product.url}
@@ -125,7 +130,7 @@ export default function ProductListingPage() {
                       </p>
                       <p id="discount" className="my-2">
                         <b>₹</b>
-                        {(
+                        {product.price - (
                           (product.price *
                             Number(product.discount.replace("%", ""))) /
                           100
@@ -157,6 +162,7 @@ export default function ProductListingPage() {
                     </div>
                   </div>
                 </div>
+                </Link>
               </div>
             ))}
           </div>

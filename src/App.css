@@ -10,12 +10,12 @@
     width: 50%;
   }
   .saveToWishlist {
-    font-size: 12px  !important;
+    font-size: 12px !important;
   }
 }
 @media (min-width: 1550px) {
   .saveToWishlist {
-    font-size: 16px  !important;
+    font-size: 16px !important;
   }
 }
 @media (max-width: 1400px) {
@@ -82,10 +82,16 @@
   .productCardInCart {
     max-width: 250px !important;
   }
+  .productName {
+    height: 50px !important;
+  }
 }
 @media (min-width: 768px) {
   .productDescription {
     font-size: 21px !important;
+  }
+  .productName {
+    height: 70px !important;
   }
 }
 @media (max-width: 575px) {
@@ -172,7 +178,7 @@
   .totalBill {
     min-width: 300px !important;
     position: sticky !important;
-    top:10px;
+    top: 10px;
   }
 }
 @media (min-width: 992px) {
@@ -217,4 +223,28 @@
   .productDetailsContainer {
     margin-inline: 200px;
   }
+}
+
+.star-outer::before {
+  content: "\2605 \2605 \2605 \2605 \2605";
+  font-size: 25px;
+  color: rgb(150, 147, 147);
+}
+
+.star-inner::before {
+  content: "\2605 \2605 \2605 \2605 \2605";
+  font-size: 25px;
+  color: gold;
+}
+
+.star-outer {
+  position: relative;
+  display: inline-block;
+}
+
+.star-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }

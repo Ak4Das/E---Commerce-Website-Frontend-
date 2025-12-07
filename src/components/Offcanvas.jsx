@@ -1,6 +1,11 @@
 import crossBtn from "../assets/close.png"
 
-export default function Offcanvas({ setPrice, setRating, setSortBy }) {
+export default function Offcanvas({
+  setPrice,
+  setRating,
+  setSortBy,
+  setCategory,
+}) {
   function filterWithPrice(e) {
     setPrice(e.target.value)
   }
@@ -9,6 +14,9 @@ export default function Offcanvas({ setPrice, setRating, setSortBy }) {
   }
   function filterBySort(e) {
     setSortBy(e.target.value)
+  }
+  function filterByCategory(e) {
+    setCategory(e.target.value)
   }
   function resetFilters() {
     setPrice(0)
@@ -69,16 +77,20 @@ export default function Offcanvas({ setPrice, setRating, setSortBy }) {
           <input
             type="checkbox"
             id="menClothing"
+            value="male"
             className="form-check-input"
+            onClick={filterByCategory}
           />
-          <label htmlFor="menClothing">Men Clothing</label>
+          <label htmlFor="menClothing">Male Clothing</label>
           <br />
           <input
             type="checkbox"
             id="menClothing"
+            value="female"
             className="form-check-input"
+            onClick={filterByCategory}
           />
-          <label htmlFor="menClothing">Men Clothing</label>
+          <label htmlFor="menClothing">Female Clothing</label>
         </div>
       </section>
       <section className="my-3">

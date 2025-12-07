@@ -1,7 +1,24 @@
 import Header from "../components/Header"
 import cashOnDelivery from "../assets/cash-on-delivery.png"
+import { useParams } from "react-router-dom"
+import GetClothsData from "../components/GetClothsData"
+import { Link } from "react-router-dom"
+import RatingBar from "../components/RatingBar"
 
 export default function ProductDetailsPage() {
+  const id = Number(useParams().id)
+  console.log(id);
+  const { clothsData, setClothsData } = GetClothsData()
+  function addToCart(e) {
+    const product = clothsData.find(
+      (product) => product.id === Number(e.target.value)
+    )
+    product.addToCart = product.addToCart === false ? true : false
+    localStorage.setItem("clothsData", JSON.stringify(clothsData))
+    setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+  }
+  const product = clothsData.find((product) => product.id === id)
+  console.log(product);
   return (
     <>
       <Header />
@@ -10,36 +27,46 @@ export default function ProductDetailsPage() {
           <section className="d-sm-flex gap-sm-4 gap-md-5">
             <div className="productDetailsImage" style={{ minWidth: "200px" }}>
               <img
-                src="https://tse3.mm.bing.net/th/id/OIP.ZyHsubcEdJwl53fF6D8OsgHaJ4?pid=Api&P=0&h=180"
+                src={product.url}
                 alt=""
                 className="img-fluid productImage"
               />
               <div className="btnContainer1">
                 <button className="btn btn-primary w-100 my-2">Buy Now </button>
                 <br />
-                <button className="btn btn-secondary w-100">Add To Cart</button>
+                <button
+                  className="btn btn-secondary w-100"
+                  value={product.id}
+                  onClick={addToCart}
+                >
+                  Add To Cart
+                </button>
               </div>
             </div>
             <div className="me-sm-5">
-              <small className="text-primary">Brand: Jogmaya Fashion</small>
-              <p className="fw-bold lh-sm productDescription">
-                Silk Embroidery Designer Lehenga Choli Set For Women Party|
-                latest Bridal Stylish Design Wedding Lehenga Choli For Women
-                (Free Size)
+              <small className="text-primary">{product.soldBy}</small>
+              <p className="fw-bold lh-sm productDescription mb-1">
+                {product.name}
               </p>
+              <RatingBar rating={product.rating} />
+              <span style={{ fontSize: "20px" }}> {product.rating}</span>
               <div>
-                <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
-                <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
-                <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
-                <i class="bi bi-star-fill text-warning" aria-hidden="true"></i>
-                <i class="bi bi-star-half text-warning" aria-hidden="true"></i>
-                <span class="sr-only"> 4.5</span>
+                <span className="fw-bold fs-5">
+                  ₹
+                  {product.price -
+                    (
+                      (product.price *
+                        Number(product.discount.replace("%", ""))) /
+                      100
+                    ).toFixed(1)}
+                </span>
+                <span className="text-decoration-line-through ms-2">
+                  ₹{product.price}
+                </span>
               </div>
-              <div>
-                <span className="fw-bold fs-5">₹3000</span>
-                <span className="text-decoration-line-through ms-2">₹6000</span>
-              </div>
-              <p className="fw-bold fs-5 text-body-tertiary">50% off</p>
+              <p className="fw-bold fs-5 text-body-tertiary">
+                {product.discount} off
+              </p>
               <div className="mb-3">
                 <span className="fw-bold me-2">Quantity: </span>
                 <button
@@ -144,46 +171,9 @@ export default function ProductDetailsPage() {
               <div>
                 <h5>Description</h5>
                 <ul>
-                  <li>
-                    This embroidered lehenga set for women features high-quality
-                    Silk fabric, delivering elegance and comfort.
-                  </li>
-                  <li>
-                    Our semi-stitched lehenga set offers flexible fitting up to
-                    44 inches, making it the ideal lehenga or festival outfit.
-                  </li>
-                  <li>
-                    A versatile lehenga set for women – suitable for weddings,
-                    receptions, Diwali, Navratri, and other grand celebrations.
-                  </li>
-                  <li>
-                    The timeless Lehenga Choli combined with heavy embroidery
-                    makes this lehenga set for women a must-have ethnic outfit.
-                  </li>
-                  <li>
-                    This Indian Wedding Outfit is a versatile choice for many
-                    occasions. For weddings and receptions, pair it with Kundan
-                    jewelry and heels for a royal finish. During festivals like
-                    Diwali, Navratri, or Eid, style it with jhumkas and flats or
-                    juttis for ease and elegance. For daytime poojas or intimate
-                    family gatherings, keep it light with temple jewelry and
-                    soft makeup. Whether styled minimally or richly layered,
-                    this Festive Wear Lehenga effortlessly adapts to your mood
-                    and event, making it a repeat favorite in your ethnic
-                    collection.
-                  </li>
-                  <li>
-                    Jogmaya Fashion is trusted for its blend of heritage
-                    craftsmanship and contemporary design. Our lehengas are made
-                    in India, supporting over 200 women-led artisan teams. To
-                    offer an adjustable fit, high-quality embroidery, and
-                    affordable luxury, this Lehenga Choli for Women offers
-                    premium value. Whether you're a bride, bridesmaid, or guest,
-                    you’ll feel confident and beautiful. With thousands of happy
-                    customers and top ratings, this lehenga choli guarantees
-                    compliments and comfort—making it the perfect outfit for
-                    weddings, festive events, and everything in between.
-                  </li>
+                  {product.description.map((list) => (
+                    <li>{list}</li>
+                  ))}
                 </ul>
               </div>
               <div className="btnContainer2">
@@ -196,86 +186,54 @@ export default function ProductDetailsPage() {
           <section>
             <h3 className="my-3">More items you may like in apparel</h3>
             <div className="row row-gap-3">
-              <div className="col-md-4 col-sm-6 col-lg-3 col-xxl-2 py-2 bg-body-tertiary cardContainer">
-                <div className="card border border-0">
-                  <img
-                    src="https://tse1.mm.bing.net/th/id/OIP.HLBsZflTTFBIqeJiweukhgHaLG?pid=Api&P=0&h=180"
-                    alt=""
-                    className="img-fluid"
-                    style={{ height: "300px" }}
-                  />
-                  <div className="card-body">
-                    <p className="text-center m-0" style={{ fontSize: "15px" }}>
-                      Teal Colour Silk Fabric Lagenga Choli comes with a 
-                      matching blouse
-                    </p>
-                    <p className="fw-bold text-center mt-2">₹100000</p>
-                    <button className="btn btn-secondary w-100">
-                      Add To Cart
-                    </button>
-                  </div>
+              {product.similarProducts.map((product) => (
+                <div className="col-md-4 col-sm-6 col-lg-3 col-xxl-2 py-2 bg-body-tertiary cardContainer">
+                  <Link
+                    className="text-decoration-none"
+                    to={`/productDetails/${product.id}`}
+                  >
+                    <div className="card border border-0">
+                      <img
+                        src={product.url}
+                        alt=""
+                        className="img-fluid"
+                        style={{ height: "300px" }}
+                      />
+                      <div className="card-body">
+                        <p
+                          className="text-center m-0 productName"
+                          style={{ fontSize: "15px", overflow: "hidden" }}
+                        >
+                          {product.name}
+                        </p>
+                        <p className="fw-bold text-center my-2">
+                          <b>₹</b>
+                          {product.price -
+                            (
+                              (product.price *
+                                Number(product.discount.replace("%", ""))) /
+                              100
+                            ).toFixed(1)}{" "}
+                          (-{product.discount})
+                        </p>
+                        <p
+                          id="M.R.P."
+                          className="text-decoration-line-through text-center mt-0"
+                        >
+                          M.R.P. ₹{product.price}
+                        </p>
+                        <button
+                          className="btn btn-secondary w-100"
+                          value={product.id}
+                          onClick={addToCart}
+                        >
+                          Add To Cart
+                        </button>
+                      </div>
+                    </div>
+                  </Link>
                 </div>
-              </div>
-              <div className="col-md-4 col-sm-6 col-lg-3 col-xxl-2 py-2 bg-body-tertiary cardContainer">
-                <div className="card border border-0">
-                  <img
-                    src="https://tse3.mm.bing.net/th/id/OIP.XbH1iGOIR3UiVE2Jff5KOQHaKU?pid=Api&P=0&h=180"
-                    alt=""
-                    className="img-fluid"
-                    style={{ height: "300px" }}
-                  />
-                  <div className="card-body">
-                    <p className="text-center m-0" style={{ fontSize: "15px" }}>
-                      Banglori Silk Wedding Lehenga Choli comes with a 
-                      matching blouse
-                    </p>
-                    <p className="fw-bold text-center mt-2">₹105000</p>
-                    <button className="btn btn-secondary w-100">
-                      Add To Cart
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 col-sm-6 col-lg-3 col-xxl-2 py-2 bg-body-tertiary cardContainer">
-                <div className="card border border-0">
-                  <img
-                    src="https://tse1.mm.bing.net/th/id/OIP.lbytqlvwLrdhTC7m78KLMQHaHa?pid=Api&P=0&h=180"
-                    alt=""
-                    className="img-fluid"
-                    style={{ height: "300px" }}
-                  />
-                  <div className="card-body">
-                    <p className="text-center m-0" style={{ fontSize: "15px" }}>
-                      Top Silk Fabric Green Lehenaga Choli comes with a 
-                      matching blouse
-                    </p>
-                    <p className="fw-bold text-center mt-2">₹102000</p>
-                    <button className="btn btn-secondary w-100">
-                      Add To Cart
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-4 col-sm-6 col-lg-3 col-xxl-2 py-2 bg-body-tertiary cardContainer">
-                <div className="card border border-0">
-                  <img
-                    src="https://tse4.mm.bing.net/th/id/OIP.f20dI0jBl54s1e93-6ZIAgHaJQ?pid=Api&P=0&h=180"
-                    alt=""
-                    className="img-fluid"
-                    style={{ height: "300px" }}
-                  />
-                  <div className="card-body">
-                    <p className="text-center m-0" style={{ fontSize: "15px" }}>
-                      Velvet Lehenga Perfect for winter Bride comes with a 
-                      matching blouse
-                    </p>
-                    <p className="fw-bold text-center mt-2">₹104000</p>
-                    <button className="btn btn-secondary w-100">
-                      Add To Cart
-                    </button>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </section>
         </div>

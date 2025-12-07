@@ -12,7 +12,7 @@ import CartPage from "./pages/CartPage.jsx"
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/products/:category", element: <ProductListingPage /> },
-  { path: "/productDetails", element: <ProductDetailsPage /> },
+  { path: "/productDetails/:id", element: <ProductDetailsPage /> },
   { path: "/wishlist", element: <WishlistPage /> },
   { path: "/cart", element: <CartPage /> },
 ])

@@ -7,7 +7,7 @@ import RatingBar from "../components/RatingBar"
 
 export default function ProductDetailsPage() {
   const id = Number(useParams().id)
-  console.log(id);
+  console.log(id)
   const { clothsData, setClothsData } = GetClothsData()
   function addToCart(e) {
     const product = clothsData.find(
@@ -18,7 +18,7 @@ export default function ProductDetailsPage() {
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
   }
   const product = clothsData.find((product) => product.id === id)
-  console.log(product);
+  console.log(product)
   return (
     <>
       <Header />
@@ -53,12 +53,12 @@ export default function ProductDetailsPage() {
               <div>
                 <span className="fw-bold fs-5">
                   ₹
-                  {product.price -
-                    (
-                      (product.price *
-                        Number(product.discount.replace("%", ""))) /
+                  {(
+                    product.price -
+                    (product.price *
+                      Number(product.discount.replace("%", ""))) /
                       100
-                    ).toFixed(1)}
+                  ).toFixed(1)}
                 </span>
                 <span className="text-decoration-line-through ms-2">
                   ₹{product.price}
@@ -192,36 +192,37 @@ export default function ProductDetailsPage() {
                     className="text-decoration-none"
                     to={`/productDetails/${product.id}`}
                   >
-                    <div className="card border border-0">
+                    <div className="card border border-0 similarCards">
                       <img
                         src={product.url}
                         alt=""
                         className="img-fluid"
-                        style={{ height: "300px" }}
+                        style={{ minHeight: "250px", maxHeight: "250px" }}
                       />
-                      <div className="card-body">
-                        <p
-                          className="text-center m-0 productName"
-                          style={{ fontSize: "15px", overflow: "hidden" }}
-                        >
-                          {product.name}
+                      <div className="card-body d-flex flex-column justify-content-between">
+                        <p className="text-center m-0 productName lh-sm">
+                          {product.name.length > 61
+                            ? product.name.slice(0, 60).concat("...")
+                            : product.name}
                         </p>
-                        <p className="fw-bold text-center my-2">
-                          <b>₹</b>
-                          {product.price -
-                            (
+                        <div>
+                          <p className="fw-bold text-center my-2">
+                            <b>₹</b>
+                            {(
+                              product.price -
                               (product.price *
                                 Number(product.discount.replace("%", ""))) /
-                              100
+                                100
                             ).toFixed(1)}{" "}
-                          (-{product.discount})
-                        </p>
-                        <p
-                          id="M.R.P."
-                          className="text-decoration-line-through text-center mt-0"
-                        >
-                          M.R.P. ₹{product.price}
-                        </p>
+                            (-{product.discount})
+                          </p>
+                          <p
+                            id="M.R.P."
+                            className="text-decoration-line-through text-center mt-0"
+                          >
+                            M.R.P. ₹{product.price}
+                          </p>
+                        </div>
                         <button
                           className="btn btn-secondary w-100"
                           value={product.id}

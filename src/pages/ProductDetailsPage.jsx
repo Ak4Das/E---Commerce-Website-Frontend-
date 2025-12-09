@@ -9,6 +9,19 @@ export default function ProductDetailsPage() {
   const id = Number(useParams().id)
   console.log(id)
   const { clothsData, setClothsData } = GetClothsData()
+
+  function increaseCount(e) {
+    let inputElementValue = Number(e.target.previousElementSibling.value)
+    e.target.previousElementSibling.value = ++inputElementValue
+  }
+
+  function decreaseCount(e) {
+    let inputElementValue = Number(e.target.nextElementSibling.value)
+    if (inputElementValue > 1) {
+      e.target.nextElementSibling.value = --inputElementValue
+    }
+  }
+
   function addToCart(e) {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
@@ -17,6 +30,16 @@ export default function ProductDetailsPage() {
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
   }
+
+  function addToWishlist(e) {
+    const product = clothsData.find(
+      (product) => product.id === Number(e.target.value)
+    )
+    product.addToWishList = product.addToWishList === false ? true : false
+    localStorage.setItem("clothsData", JSON.stringify(clothsData))
+    setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+  }
+
   const product = clothsData.find((product) => product.id === id)
   console.log(product)
   return (
@@ -24,8 +47,11 @@ export default function ProductDetailsPage() {
       <Header />
       <main className="bg-body-secondary py-3 px-4 py-sm-5 px-sm-5">
         <div className="bg-light-subtle py-3 px-3 productDetailsContainer">
-          <section className="d-sm-flex gap-sm-4 gap-md-5">
-            <div className="productDetailsImage" style={{ minWidth: "200px" }}>
+          <section className="d-sm-flex gap-sm-4 gap-md-5 align-items-start">
+            <div
+              className="productDetailsImage position-sticky top-0 start-0"
+              style={{ minWidth: "200px" }}
+            >
               <img
                 src={product.url}
                 alt=""
@@ -35,11 +61,18 @@ export default function ProductDetailsPage() {
                 <button className="btn btn-primary w-100 my-2">Buy Now </button>
                 <br />
                 <button
-                  className="btn btn-secondary w-100"
+                  className="btn btn-secondary w-100 mb-2"
                   value={product.id}
                   onClick={addToCart}
                 >
                   Add To Cart
+                </button>
+                <button
+                  className="btn btn-outline-secondary w-100 mb-2"
+                  value={product.id}
+                  onClick={addToWishlist}
+                >
+                  Add To Wishlist
                 </button>
               </div>
             </div>
@@ -72,6 +105,7 @@ export default function ProductDetailsPage() {
                 <button
                   className="rounded-circle border border-1"
                   style={{ width: "30px", height: "30px" }}
+                  onClick={decreaseCount}
                 >
                   {" "}
                   -{" "}
@@ -85,6 +119,7 @@ export default function ProductDetailsPage() {
                 <button
                   className="rounded-circle border border-1"
                   style={{ width: "30px", height: "30px" }}
+                  onClick={increaseCount}
                 >
                   {" "}
                   +{" "}
@@ -205,6 +240,9 @@ export default function ProductDetailsPage() {
                             ? product.name.slice(0, 60).concat("...")
                             : product.name}
                         </p>
+                        {/* <p className="my-0 text-center">
+                          <b>Rating:</b> {product.rating}
+                        </p> */}
                         <div>
                           <p className="fw-bold text-center my-2">
                             <b>₹</b>

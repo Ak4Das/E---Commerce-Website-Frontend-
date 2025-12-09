@@ -90,7 +90,7 @@ export default function ProductListingPage() {
 
   return (
     <>
-      <Header />
+      <Header position="sticky" top={0} zIndex={1} />
       <main className="d-flex">
         <Offcanvas
           setPrice={setPrice}

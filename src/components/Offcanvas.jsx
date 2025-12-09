@@ -35,7 +35,8 @@ export default function Offcanvas({
         height: "calc(100vh - 56px)",
         maxWidth: "30vw",
         minWidth: "350px",
-        position: "absolute",
+        position: "fixed",
+        top:"58px",
         left: "-305px",
         zIndex: 1,
       }}

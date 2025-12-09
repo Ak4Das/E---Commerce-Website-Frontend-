@@ -4,13 +4,13 @@ import shoppingCart from "../assets/shoppingCart.png"
 import hamburgerIcon from "../assets/hamburgerIcon.png"
 import myntraLogo from "../assets/myntraLogo.png"
 
-export default function Header() {
+export default function Header({position,top,zIndex}) {
   function handleHamburgerMenu(e) {
     const element = e.target.parentElement.nextElementSibling.nextElementSibling
     element.style.display = element.style.display ? "" : "none"
   }
   return (
-    <header>
+    <header style={{position,top,zIndex}}>
       <nav className="bg-body-tertiary mx-2 p-2">
         <div className="d-flex justify-content-between align-items-center">
           <NavLink className="navbar-brand" to="/">

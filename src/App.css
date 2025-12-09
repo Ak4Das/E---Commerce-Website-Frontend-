@@ -249,15 +249,3 @@
   font-size: 25px;
   color: gold;
 }
-
-.star-outer {
-  position: relative;
-  display: inline-block;
-}
-
-.star-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}

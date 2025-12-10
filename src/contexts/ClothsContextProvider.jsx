@@ -24,6 +24,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "RENVAANI Women's Traditional Kanjivaram Kanchipuram Silk Zari Weaving Unstitched Lehenga Choli with Dupatta",
           url: "https://tse1.mm.bing.net/th/id/OIP.HLBsZflTTFBIqeJiweukhgHaLG?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "61%",
         },
         {
@@ -31,6 +32,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TILKI FASHION Woman's semistiched lengha choli with beautiful design Embordery Work",
           url: "https://tse3.mm.bing.net/th/id/OIP.XbH1iGOIR3UiVE2Jff5KOQHaKU?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "36%",
         },
         {
@@ -38,6 +40,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Aika Creation Women's Chiffon Embroidered Lehenga Choli Panvel LH-New",
           url: "https://tse1.mm.bing.net/th/id/OIP.lbytqlvwLrdhTC7m78KLMQHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.1,
           discount: "48%",
         },
         {
@@ -45,6 +48,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Orange Sequence Embroidery Work Silk Semi-Sttiched Lehenga Choli-JH290ORG",
           url: "https://tse4.mm.bing.net/th/id/OIP.f20dI0jBl54s1e93-6ZIAgHaJQ?pid=Api&P=0&h=180",
           price: 9999,
+          rating: 3.8,
           discount: "75%",
         },
       ],
@@ -74,6 +78,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TILKI FASHION Woman's semistiched lengha choli with beautiful design Embordery Work",
           url: "https://tse3.mm.bing.net/th/id/OIP.XbH1iGOIR3UiVE2Jff5KOQHaKU?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "36%",
         },
         {
@@ -81,6 +86,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Aika Creation Women's Chiffon Embroidered Lehenga Choli Panvel LH-New",
           url: "https://tse1.mm.bing.net/th/id/OIP.lbytqlvwLrdhTC7m78KLMQHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.1,
           discount: "48%",
         },
         {
@@ -88,6 +94,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Orange Sequence Embroidery Work Silk Semi-Sttiched Lehenga Choli-JH290ORG",
           url: "https://tse4.mm.bing.net/th/id/OIP.f20dI0jBl54s1e93-6ZIAgHaJQ?pid=Api&P=0&h=180",
           price: 9999,
+          rating: 3.8,
           discount: "75%",
         },
         {
@@ -95,6 +102,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SHAFNUFAB Womens Net Semi Stitched LEHENGACHOLI for women Ladies use lehenga choli for For ready to wear And lehenga choli for women",
           url: "https://tse2.mm.bing.net/th/id/OIP.iS62fjr0MyN8oEAlmiZH9QHaLG?pid=Api&P=0&h=180",
           price: 5399,
+          rating: 3.9,
           discount: "52%",
         },
       ],
@@ -120,6 +128,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Aika Creation Women's Chiffon Embroidered Lehenga Choli Panvel LH-New",
           url: "https://tse1.mm.bing.net/th/id/OIP.lbytqlvwLrdhTC7m78KLMQHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.1,
           discount: "48%",
         },
         {
@@ -127,6 +136,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Orange Sequence Embroidery Work Silk Semi-Sttiched Lehenga Choli-JH290ORG",
           url: "https://tse4.mm.bing.net/th/id/OIP.f20dI0jBl54s1e93-6ZIAgHaJQ?pid=Api&P=0&h=180",
           price: 9999,
+          rating: 3.8,
           discount: "75%",
         },
         {
@@ -134,6 +144,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SHAFNUFAB Womens Net Semi Stitched LEHENGACHOLI for women Ladies use lehenga choli for For ready to wear And lehenga choli for women",
           url: "https://tse2.mm.bing.net/th/id/OIP.iS62fjr0MyN8oEAlmiZH9QHaLG?pid=Api&P=0&h=180",
           price: 5399,
+          rating: 3.9,
           discount: "52%",
         },
         {
@@ -141,6 +152,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Stylish Chinon Embroidered Work Lehenga Choli semi stiched For Women| Bridal Wear Lehenga Choli",
           url: "https://tse4.mm.bing.net/th/id/OIP.rjdE8F2V48qWLcmLyoTEzgAAAA?pid=Api&P=0&h=180",
           price: 4599,
+          rating: 3.7,
           discount: "67%",
         },
       ],
@@ -167,6 +179,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Orange Sequence Embroidery Work Silk Semi-Sttiched Lehenga Choli-JH290ORG",
           url: "https://tse4.mm.bing.net/th/id/OIP.f20dI0jBl54s1e93-6ZIAgHaJQ?pid=Api&P=0&h=180",
           price: 9999,
+          rating: 3.8,
           discount: "75%",
         },
         {
@@ -174,6 +187,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SHAFNUFAB Womens Net Semi Stitched LEHENGACHOLI for women Ladies use lehenga choli for For ready to wear And lehenga choli for women",
           url: "https://tse2.mm.bing.net/th/id/OIP.iS62fjr0MyN8oEAlmiZH9QHaLG?pid=Api&P=0&h=180",
           price: 5399,
+          rating: 3.9,
           discount: "52%",
         },
         {
@@ -181,6 +195,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Stylish Chinon Embroidered Work Lehenga Choli semi stiched For Women| Bridal Wear Lehenga Choli",
           url: "https://tse4.mm.bing.net/th/id/OIP.rjdE8F2V48qWLcmLyoTEzgAAAA?pid=Api&P=0&h=180",
           price: 4599,
+          rating: 3.7,
           discount: "67%",
         },
         {
@@ -188,6 +203,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Scarlet Red Umbrella Style Silk Bridal Lehenga",
           url: "https://tse1.mm.bing.net/th/id/OIP.pjxXoq8ndCIMPgEGlwb2KQHaJ2?pid=Api&P=0&h=180",
           price: 3899,
+          rating: 4.1,
           discount: "50%",
         },
       ],
@@ -217,6 +233,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SHAFNUFAB Womens Net Semi Stitched LEHENGACHOLI for women Ladies use lehenga choli for For ready to wear And lehenga choli for women",
           url: "https://tse2.mm.bing.net/th/id/OIP.iS62fjr0MyN8oEAlmiZH9QHaLG?pid=Api&P=0&h=180",
           price: 5399,
+          rating: 3.9,
           discount: "52%",
         },
         {
@@ -224,6 +241,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Stylish Chinon Embroidered Work Lehenga Choli semi stiched For Women| Bridal Wear Lehenga Choli",
           url: "https://tse4.mm.bing.net/th/id/OIP.rjdE8F2V48qWLcmLyoTEzgAAAA?pid=Api&P=0&h=180",
           price: 4599,
+          rating: 3.7,
           discount: "67%",
         },
         {
@@ -231,6 +249,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Scarlet Red Umbrella Style Silk Bridal Lehenga",
           url: "https://tse1.mm.bing.net/th/id/OIP.pjxXoq8ndCIMPgEGlwb2KQHaJ2?pid=Api&P=0&h=180",
           price: 3899,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -238,6 +257,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Mehendi Zariwork Net Semi Stitched Lehenga",
           url: "https://tse4.mm.bing.net/th/id/OIP.kIMDU7-8-mVnXyrfbCIWhAHaJQ?pid=Api&P=0&h=180",
           price: 3849,
+          rating: 4.2,
           discount: "49%",
         },
       ],
@@ -267,6 +287,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Stylish Chinon Embroidered Work Lehenga Choli semi stiched For Women| Bridal Wear Lehenga Choli",
           url: "https://tse4.mm.bing.net/th/id/OIP.rjdE8F2V48qWLcmLyoTEzgAAAA?pid=Api&P=0&h=180",
           price: 4599,
+          rating: 3.7,
           discount: "67%",
         },
         {
@@ -274,6 +295,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Scarlet Red Umbrella Style Silk Bridal Lehenga",
           url: "https://tse1.mm.bing.net/th/id/OIP.pjxXoq8ndCIMPgEGlwb2KQHaJ2?pid=Api&P=0&h=180",
           price: 3899,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -281,6 +303,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Mehendi Zariwork Net Semi Stitched Lehenga",
           url: "https://tse4.mm.bing.net/th/id/OIP.kIMDU7-8-mVnXyrfbCIWhAHaJQ?pid=Api&P=0&h=180",
           price: 3849,
+          rating: 4.2,
           discount: "49%",
         },
         {
@@ -288,6 +311,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Off White Zariwork Tissue Semi Stitched Lehenga",
           url: "https://tse2.mm.bing.net/th/id/OIP.Qm6sSsZwknaK92CkqjR0uQHaKb?pid=Api&P=0&h=180",
           price: 3897,
+          rating: 4.0,
           discount: "49%",
         },
       ],
@@ -317,6 +341,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Scarlet Red Umbrella Style Silk Bridal Lehenga",
           url: "https://tse1.mm.bing.net/th/id/OIP.pjxXoq8ndCIMPgEGlwb2KQHaJ2?pid=Api&P=0&h=180",
           price: 3899,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -324,6 +349,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Mehendi Zariwork Net Semi Stitched Lehenga",
           url: "https://tse4.mm.bing.net/th/id/OIP.kIMDU7-8-mVnXyrfbCIWhAHaJQ?pid=Api&P=0&h=180",
           price: 3849,
+          rating: 4.2,
           discount: "49%",
         },
         {
@@ -331,6 +357,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Off White Zariwork Tissue Semi Stitched Lehenga",
           url: "https://tse2.mm.bing.net/th/id/OIP.Qm6sSsZwknaK92CkqjR0uQHaKb?pid=Api&P=0&h=180",
           price: 3897,
+          rating: 4.0,
           discount: "49%",
         },
         {
@@ -338,6 +365,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lehenga Choli Indo-Western Draped Set For Womens And Girls Ready To Weear Hevay Chinon Silk Fabric With Work Multi Thread Embroidery Codin",
           url: "https://tse3.mm.bing.net/th/id/OIP.ZyHsubcEdJwl53fF6D8OsgHaJ4?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.0,
           discount: "10%",
         },
       ],
@@ -365,6 +393,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Mehendi Zariwork Net Semi Stitched Lehenga",
           url: "https://tse4.mm.bing.net/th/id/OIP.kIMDU7-8-mVnXyrfbCIWhAHaJQ?pid=Api&P=0&h=180",
           price: 3849,
+          rating: 4.2,
           discount: "49%",
         },
         {
@@ -372,6 +401,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Off White Zariwork Tissue Semi Stitched Lehenga",
           url: "https://tse2.mm.bing.net/th/id/OIP.Qm6sSsZwknaK92CkqjR0uQHaKb?pid=Api&P=0&h=180",
           price: 3897,
+          rating: 4.0,
           discount: "49%",
         },
         {
@@ -379,6 +409,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lehenga Choli Indo-Western Draped Set For Womens And Girls Ready To Weear Hevay Chinon Silk Fabric With Work Multi Thread Embroidery Codin",
           url: "https://tse3.mm.bing.net/th/id/OIP.ZyHsubcEdJwl53fF6D8OsgHaJ4?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.0,
           discount: "10%",
         },
         {
@@ -386,6 +417,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "RENVAANI Women's Traditional Kanjivaram Kanchipuram Silk Zari Weaving Unstitched Lehenga Choli with Dupatta",
           url: "https://tse1.mm.bing.net/th/id/OIP.HLBsZflTTFBIqeJiweukhgHaLG?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "61%",
         },
       ],
@@ -413,6 +445,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Off White Zariwork Tissue Semi Stitched Lehenga",
           url: "https://tse2.mm.bing.net/th/id/OIP.Qm6sSsZwknaK92CkqjR0uQHaKb?pid=Api&P=0&h=180",
           price: 3897,
+          rating: 4.0,
           discount: "49%",
         },
         {
@@ -420,6 +453,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lehenga Choli Indo-Western Draped Set For Womens And Girls Ready To Weear Hevay Chinon Silk Fabric With Work Multi Thread Embroidery Codin",
           url: "https://tse3.mm.bing.net/th/id/OIP.ZyHsubcEdJwl53fF6D8OsgHaJ4?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.0,
           discount: "10%",
         },
         {
@@ -427,6 +461,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "RENVAANI Women's Traditional Kanjivaram Kanchipuram Silk Zari Weaving Unstitched Lehenga Choli with Dupatta",
           url: "https://tse1.mm.bing.net/th/id/OIP.HLBsZflTTFBIqeJiweukhgHaLG?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "61%",
         },
         {
@@ -434,6 +469,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TILKI FASHION Woman's semistiched lengha choli with beautiful design Embordery Work",
           url: "https://tse3.mm.bing.net/th/id/OIP.XbH1iGOIR3UiVE2Jff5KOQHaKU?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "36%",
         },
       ],
@@ -461,6 +497,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lehenga Choli Indo-Western Draped Set For Womens And Girls Ready To Weear Hevay Chinon Silk Fabric With Work Multi Thread Embroidery Codin",
           url: "https://tse3.mm.bing.net/th/id/OIP.ZyHsubcEdJwl53fF6D8OsgHaJ4?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.0,
           discount: "10%",
         },
         {
@@ -468,6 +505,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "RENVAANI Women's Traditional Kanjivaram Kanchipuram Silk Zari Weaving Unstitched Lehenga Choli with Dupatta",
           url: "https://tse1.mm.bing.net/th/id/OIP.HLBsZflTTFBIqeJiweukhgHaLG?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "61%",
         },
         {
@@ -475,6 +513,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TILKI FASHION Woman's semistiched lengha choli with beautiful design Embordery Work",
           url: "https://tse3.mm.bing.net/th/id/OIP.XbH1iGOIR3UiVE2Jff5KOQHaKU?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "36%",
         },
         {
@@ -482,6 +521,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Aika Creation Women's Chiffon Embroidered Lehenga Choli Panvel LH-New",
           url: "https://tse1.mm.bing.net/th/id/OIP.lbytqlvwLrdhTC7m78KLMQHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.1,
           discount: "48%",
         },
       ],
@@ -511,6 +551,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Royal Rich Men's Polyester Three Piece Suit, Coat Pant Set with Waist Coat (Shirt Not Inculed)",
           url: "https://tse1.mm.bing.net/th/id/OIP.TG9IEryYr99it7mVUknWngHaLH?pid=Api&P=0&h=180",
           price: 12998,
+          rating: 3.8,
           discount: "62%",
         },
         {
@@ -518,6 +559,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "L'MONTE Imported 3 Piece Suit Blazer for Men Formal Slim Fit with One Button Closure Coat Vest & Pant Set for Business and Wedding Party",
           url: "https://tse2.mm.bing.net/th/id/OIP.twkTZVcOJLFsVT445x6kQAHaJo?pid=Api&P=0&h=180",
           price: 23999,
+          rating: 3.4,
           discount: "52%",
         },
         {
@@ -525,6 +567,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "VASTRAMAY Self Woven Floral Silk Blend Blazer for Men – Versatile Ethnic Wear for Weddings & Special Occasions",
           url: "https://tse3.mm.bing.net/th/id/OIP.-VQ20rTVfL37-EsbggQ9uwHaJ4?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.2,
           discount: "50%",
         },
         {
@@ -532,6 +575,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "VASTRAMAY Embroidered Blazer for Men – Versatile Ethnic Wear for Weddings & Special Occasions",
           url: "https://tse1.mm.bing.net/th/id/OIP.BFFqkRYRqbPzJ-RlHD6EDgHaJ8?pid=Api&P=0&h=180",
           price: 7499,
+          rating: 4.2,
           discount: "38%",
         },
       ],
@@ -561,6 +605,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "L'MONTE Imported 3 Piece Suit Blazer for Men Formal Slim Fit with One Button Closure Coat Vest & Pant Set for Business and Wedding Party",
           url: "https://tse2.mm.bing.net/th/id/OIP.twkTZVcOJLFsVT445x6kQAHaJo?pid=Api&P=0&h=180",
           price: 23999,
+          rating: 3.4,
           discount: "52%",
         },
         {
@@ -568,6 +613,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "VASTRAMAY Self Woven Floral Silk Blend Blazer for Men – Versatile Ethnic Wear for Weddings & Special Occasions",
           url: "https://tse3.mm.bing.net/th/id/OIP.-VQ20rTVfL37-EsbggQ9uwHaJ4?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.2,
           discount: "50%",
         },
         {
@@ -575,6 +621,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "VASTRAMAY Embroidered Blazer for Men – Versatile Ethnic Wear for Weddings & Special Occasions",
           url: "https://tse1.mm.bing.net/th/id/OIP.BFFqkRYRqbPzJ-RlHD6EDgHaJ8?pid=Api&P=0&h=180",
           price: 7499,
+          rating: 4.2,
           discount: "38%",
         },
         {
@@ -582,6 +629,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Single Breasted Casual, Formal, Party, Festive & Wedding Blazer",
           url: "https://tse4.mm.bing.net/th/id/OIP.xcpmCEbj3yHDMBiAE1xOLgAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 4.0,
           discount: "67%",
         },
       ],
@@ -611,6 +659,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "VASTRAMAY Self Woven Floral Silk Blend Blazer for Men – Versatile Ethnic Wear for Weddings & Special Occasions",
           url: "https://tse3.mm.bing.net/th/id/OIP.-VQ20rTVfL37-EsbggQ9uwHaJ4?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.2,
           discount: "50%",
         },
         {
@@ -618,6 +667,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "VASTRAMAY Embroidered Blazer for Men – Versatile Ethnic Wear for Weddings & Special Occasions",
           url: "https://tse1.mm.bing.net/th/id/OIP.BFFqkRYRqbPzJ-RlHD6EDgHaJ8?pid=Api&P=0&h=180",
           price: 7499,
+          rating: 4.2,
           discount: "38%",
         },
         {
@@ -625,6 +675,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Single Breasted Casual, Formal, Party, Festive & Wedding Blazer",
           url: "https://tse4.mm.bing.net/th/id/OIP.xcpmCEbj3yHDMBiAE1xOLgAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 4.0,
           discount: "67%",
         },
         {
@@ -632,6 +683,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Neo Slim Knit Textured Blazer",
           url: "https://tse2.mm.bing.net/th/id/OIP.5vdhLB1P8gPw8P7-Xahc5wHaLH?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.1,
           discount: "41%",
         },
       ],
@@ -661,6 +713,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "VASTRAMAY Embroidered Blazer for Men – Versatile Ethnic Wear for Weddings & Special Occasions",
           url: "https://tse1.mm.bing.net/th/id/OIP.BFFqkRYRqbPzJ-RlHD6EDgHaJ8?pid=Api&P=0&h=180",
           price: 7499,
+          rating: 4.2,
           discount: "38%",
         },
         {
@@ -668,6 +721,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Single Breasted Casual, Formal, Party, Festive & Wedding Blazer",
           url: "https://tse4.mm.bing.net/th/id/OIP.xcpmCEbj3yHDMBiAE1xOLgAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 4.0,
           discount: "67%",
         },
         {
@@ -675,6 +729,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Neo Slim Knit Textured Blazer",
           url: "https://tse2.mm.bing.net/th/id/OIP.5vdhLB1P8gPw8P7-Xahc5wHaLH?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.1,
           discount: "41%",
         },
         {
@@ -682,6 +737,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAHVO Mens Slim Fit Two Piece Suit Set",
           url: "https://tse1.mm.bing.net/th/id/OIP._xjMp9-ZczroIUzRV7T1OwHaNS?pid=Api&P=0&h=180",
           price: 7599,
+          rating: 3.5,
           discount: "45%",
         },
       ],
@@ -711,6 +767,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Single Breasted Casual, Formal, Party, Festive & Wedding Blazer",
           url: "https://tse4.mm.bing.net/th/id/OIP.xcpmCEbj3yHDMBiAE1xOLgAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 4.0,
           discount: "67%",
         },
         {
@@ -718,6 +775,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Neo Slim Knit Textured Blazer",
           url: "https://tse2.mm.bing.net/th/id/OIP.5vdhLB1P8gPw8P7-Xahc5wHaLH?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.1,
           discount: "41%",
         },
         {
@@ -725,6 +783,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAHVO Mens Slim Fit Two Piece Suit Set",
           url: "https://tse1.mm.bing.net/th/id/OIP._xjMp9-ZczroIUzRV7T1OwHaNS?pid=Api&P=0&h=180",
           price: 7599,
+          rating: 3.5,
           discount: "45%",
         },
         {
@@ -732,6 +791,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "WINTAGE Men's Polyester Cotton Two Piece Suit",
           url: "https://tse2.mm.bing.net/th/id/OIP.CRgGi7VLS52JsrljXR02uwHaJT?pid=Api&P=0&h=180",
           price: 6309,
+          rating: 4.2,
           discount: "32%",
         },
       ],
@@ -760,6 +820,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Neo Slim Knit Textured Blazer",
           url: "https://tse2.mm.bing.net/th/id/OIP.5vdhLB1P8gPw8P7-Xahc5wHaLH?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.1,
           discount: "41%",
         },
         {
@@ -767,6 +828,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAHVO Mens Slim Fit Two Piece Suit Set",
           url: "https://tse1.mm.bing.net/th/id/OIP._xjMp9-ZczroIUzRV7T1OwHaNS?pid=Api&P=0&h=180",
           price: 7599,
+          rating: 3.5,
           discount: "45%",
         },
         {
@@ -774,6 +836,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "WINTAGE Men's Polyester Cotton Two Piece Suit",
           url: "https://tse2.mm.bing.net/th/id/OIP.CRgGi7VLS52JsrljXR02uwHaJT?pid=Api&P=0&h=180",
           price: 6309,
+          rating: 4.2,
           discount: "32%",
         },
         {
@@ -781,6 +844,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Three-Piece Suit Set for Men - Stylish Coat, Pant&Vest Combo-Perfect for Formal Events, Weddings&Business Meetings -Versatile&Premium Fabric for Comfort and Style_Brown Color",
           url: "https://tse3.mm.bing.net/th/id/OIP.HofCV4fWGlF7zA_kGHR8ZgAAAA?pid=Api&P=0&h=180",
           price: 6999,
+          rating: 4.0,
           discount: "39%",
         },
       ],
@@ -809,6 +873,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAHVO Mens Slim Fit Two Piece Suit Set",
           url: "https://tse1.mm.bing.net/th/id/OIP._xjMp9-ZczroIUzRV7T1OwHaNS?pid=Api&P=0&h=180",
           price: 7599,
+          rating: 3.5,
           discount: "45%",
         },
         {
@@ -816,6 +881,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "WINTAGE Men's Polyester Cotton Two Piece Suit",
           url: "https://tse2.mm.bing.net/th/id/OIP.CRgGi7VLS52JsrljXR02uwHaJT?pid=Api&P=0&h=180",
           price: 6309,
+          rating: 4.2,
           discount: "32%",
         },
         {
@@ -823,6 +889,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Three-Piece Suit Set for Men - Stylish Coat, Pant&Vest Combo-Perfect for Formal Events, Weddings&Business Meetings -Versatile&Premium Fabric for Comfort and Style_Brown Color",
           url: "https://tse3.mm.bing.net/th/id/OIP.HofCV4fWGlF7zA_kGHR8ZgAAAA?pid=Api&P=0&h=180",
           price: 6999,
+          rating: 4.0,
           discount: "39%",
         },
         {
@@ -830,6 +897,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "WINTAGE Men's Polyester Cotton and Evening 3 Pc Suit",
           url: "https://tse2.mm.bing.net/th/id/OIP.2f5TEhMWeQUdZH35WXOLGQHaLG?pid=Api&P=0&h=180",
           price: 7199,
+          rating: 3.6,
           discount: "30%",
         },
       ],
@@ -843,7 +911,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://tse1.mm.bing.net/th/id/OIP._xjMp9-ZczroIUzRV7T1OwHaNS?pid=Api&P=0&h=180",
       name: "TAHVO Mens Slim Fit Two Piece Suit Set",
       price: 7599,
-      rating: 3.1,
+      rating: 3.5,
       discount: "45%",
       gender: "male",
       description: [
@@ -859,6 +927,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "WINTAGE Men's Polyester Cotton Two Piece Suit",
           url: "https://tse2.mm.bing.net/th/id/OIP.CRgGi7VLS52JsrljXR02uwHaJT?pid=Api&P=0&h=180",
           price: 6309,
+          rating: 4.2,
           discount: "32%",
         },
         {
@@ -866,6 +935,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Three-Piece Suit Set for Men - Stylish Coat, Pant&Vest Combo-Perfect for Formal Events, Weddings&Business Meetings -Versatile&Premium Fabric for Comfort and Style_Brown Color",
           url: "https://tse3.mm.bing.net/th/id/OIP.HofCV4fWGlF7zA_kGHR8ZgAAAA?pid=Api&P=0&h=180",
           price: 6999,
+          rating: 4.0,
           discount: "39%",
         },
         {
@@ -873,6 +943,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "WINTAGE Men's Polyester Cotton and Evening 3 Pc Suit",
           url: "https://tse2.mm.bing.net/th/id/OIP.2f5TEhMWeQUdZH35WXOLGQHaLG?pid=Api&P=0&h=180",
           price: 7199,
+          rating: 3.6,
           discount: "30%",
         },
         {
@@ -880,6 +951,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Royal Rich Men's Polyester Three Piece Suit, Coat Pant Set with Waist Coat (Shirt Not Inculed)",
           url: "https://tse1.mm.bing.net/th/id/OIP.TG9IEryYr99it7mVUknWngHaLH?pid=Api&P=0&h=180",
           price: 12998,
+          rating: 3.8,
           discount: "62%",
         },
       ],
@@ -909,6 +981,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Three-Piece Suit Set for Men - Stylish Coat, Pant&Vest Combo-Perfect for Formal Events, Weddings&Business Meetings -Versatile&Premium Fabric for Comfort and Style_Brown Color",
           url: "https://tse3.mm.bing.net/th/id/OIP.HofCV4fWGlF7zA_kGHR8ZgAAAA?pid=Api&P=0&h=180",
           price: 6999,
+          rating: 4.0,
           discount: "39%",
         },
         {
@@ -916,6 +989,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "WINTAGE Men's Polyester Cotton and Evening 3 Pc Suit",
           url: "https://tse2.mm.bing.net/th/id/OIP.2f5TEhMWeQUdZH35WXOLGQHaLG?pid=Api&P=0&h=180",
           price: 7199,
+          rating: 3.6,
           discount: "30%",
         },
         {
@@ -923,6 +997,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Royal Rich Men's Polyester Three Piece Suit, Coat Pant Set with Waist Coat (Shirt Not Inculed)",
           url: "https://tse1.mm.bing.net/th/id/OIP.TG9IEryYr99it7mVUknWngHaLH?pid=Api&P=0&h=180",
           price: 12998,
+          rating: 3.8,
           discount: "62%",
         },
         {
@@ -930,6 +1005,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "L'MONTE Imported 3 Piece Suit Blazer for Men Formal Slim Fit with One Button Closure Coat Vest & Pant Set for Business and Wedding Party",
           url: "https://tse2.mm.bing.net/th/id/OIP.twkTZVcOJLFsVT445x6kQAHaJo?pid=Api&P=0&h=180",
           price: 23999,
+          rating: 3.4,
           discount: "52%",
         },
       ],
@@ -960,6 +1036,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "WINTAGE Men's Polyester Cotton and Evening 3 Pc Suit",
           url: "https://tse2.mm.bing.net/th/id/OIP.2f5TEhMWeQUdZH35WXOLGQHaLG?pid=Api&P=0&h=180",
           price: 7199,
+          rating: 3.6,
           discount: "30%",
         },
         {
@@ -967,6 +1044,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Royal Rich Men's Polyester Three Piece Suit, Coat Pant Set with Waist Coat (Shirt Not Inculed)",
           url: "https://tse1.mm.bing.net/th/id/OIP.TG9IEryYr99it7mVUknWngHaLH?pid=Api&P=0&h=180",
           price: 12998,
+          rating: 3.8,
           discount: "62%",
         },
         {
@@ -974,6 +1052,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "L'MONTE Imported 3 Piece Suit Blazer for Men Formal Slim Fit with One Button Closure Coat Vest & Pant Set for Business and Wedding Party",
           url: "https://tse2.mm.bing.net/th/id/OIP.twkTZVcOJLFsVT445x6kQAHaJo?pid=Api&P=0&h=180",
           price: 23999,
+          rating: 3.4,
           discount: "52%",
         },
         {
@@ -981,6 +1060,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "VASTRAMAY Self Woven Floral Silk Blend Blazer for Men – Versatile Ethnic Wear for Weddings & Special Occasions",
           url: "https://tse3.mm.bing.net/th/id/OIP.-VQ20rTVfL37-EsbggQ9uwHaJ4?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.2,
           discount: "50%",
         },
       ],
@@ -1010,6 +1090,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women,s Tussar Silk With Leheriya Print And Foil Print Lehenga choli Set",
           url: "https://tse1.mm.bing.net/th/id/OIP.R8XSNVP-5_DuIaXXmrL4xgHaLH?pid=Api&P=0&h=180",
           price: 1996,
+          rating: 4.1,
           discount: "76%",
         },
         {
@@ -1017,6 +1098,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LooknBook Art Women's Georgette With Floral Print Lehenga Choli Set",
           url: "https://tse3.mm.bing.net/th/id/OIP.-mq_09B45XD30vSwH8ANAwHaJQ?pid=Api&P=0&h=180",
           price: 4899,
+          rating: 4.2,
           discount: "72%",
         },
         {
@@ -1024,6 +1106,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Wedding Special Foil Work Tussar Silk Lehenga Choli For Any Occasion",
           url: "https://tse1.mm.bing.net/th/id/OIP.icDR5MnR7W7XYy2H51bFXQHaKt?pid=Api&P=0&h=180",
           price: 1369,
+          rating: 4.1,
           discount: "58%",
         },
         {
@@ -1031,6 +1114,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Trending Designeer Tussar Silk Lehenga Choli Print with Foil Work With Unstitched Blouse Patola Print Adorned with Foil Work For Navrati || Wedding",
           url: "https://tse2.mm.bing.net/th/id/OIP.w4FDVXjCvvHhZkvuGhjVqAHaLI?pid=Api&P=0&h=180",
           price: 7999,
+          rating: 4.3,
           discount: "81%",
         },
       ],
@@ -1060,6 +1144,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LooknBook Art Women's Georgette With Floral Print Lehenga Choli Set",
           url: "https://tse3.mm.bing.net/th/id/OIP.-mq_09B45XD30vSwH8ANAwHaJQ?pid=Api&P=0&h=180",
           price: 4899,
+          rating: 4.2,
           discount: "72%",
         },
         {
@@ -1067,6 +1152,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Wedding Special Foil Work Tussar Silk Lehenga Choli For Any Occasion",
           url: "https://tse1.mm.bing.net/th/id/OIP.icDR5MnR7W7XYy2H51bFXQHaKt?pid=Api&P=0&h=180",
           price: 1369,
+          rating: 4.1,
           discount: "58%",
         },
         {
@@ -1074,6 +1160,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Trending Designeer Tussar Silk Lehenga Choli Print with Foil Work With Unstitched Blouse Patola Print Adorned with Foil Work For Navrati || Wedding",
           url: "https://tse2.mm.bing.net/th/id/OIP.w4FDVXjCvvHhZkvuGhjVqAHaLI?pid=Api&P=0&h=180",
           price: 7999,
+          rating: 4.3,
           discount: "81%",
         },
         {
@@ -1081,6 +1168,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.dIdNwozufFVXA3ahL85_FQHaK_?pid=Api&P=0&h=180",
           price: 3519,
+          rating: 3.5,
           discount: "87%",
         },
       ],
@@ -1110,6 +1198,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Wedding Special Foil Work Tussar Silk Lehenga Choli For Any Occasion",
           url: "https://tse1.mm.bing.net/th/id/OIP.icDR5MnR7W7XYy2H51bFXQHaKt?pid=Api&P=0&h=180",
           price: 1369,
+          rating: 4.1,
           discount: "58%",
         },
         {
@@ -1117,6 +1206,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Trending Designeer Tussar Silk Lehenga Choli Print with Foil Work With Unstitched Blouse Patola Print Adorned with Foil Work For Navrati || Wedding",
           url: "https://tse2.mm.bing.net/th/id/OIP.w4FDVXjCvvHhZkvuGhjVqAHaLI?pid=Api&P=0&h=180",
           price: 7999,
+          rating: 4.3,
           discount: "81%",
         },
         {
@@ -1124,6 +1214,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.dIdNwozufFVXA3ahL85_FQHaK_?pid=Api&P=0&h=180",
           price: 3519,
+          rating: 3.5,
           discount: "87%",
         },
         {
@@ -1131,6 +1222,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Gopi Dress Lehenga Choli Set – Blue Printed Crop Top, White Flared Skirt & Matching Dupatta | Traditional Ethnic Wear for Festivals & Dance",
           url: "https://tse1.mm.bing.net/th/id/OIP.gtn169HKXaOu9hoKB17MmQHaJ4?pid=Api&P=0&h=180",
           price: 1819,
+          rating: 4.2,
           discount: "74%",
         },
       ],
@@ -1160,6 +1252,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Trending Designeer Tussar Silk Lehenga Choli Print with Foil Work With Unstitched Blouse Patola Print Adorned with Foil Work For Navrati || Wedding",
           url: "https://tse2.mm.bing.net/th/id/OIP.w4FDVXjCvvHhZkvuGhjVqAHaLI?pid=Api&P=0&h=180",
           price: 7999,
+          rating: 4.3,
           discount: "81%",
         },
         {
@@ -1167,6 +1260,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.dIdNwozufFVXA3ahL85_FQHaK_?pid=Api&P=0&h=180",
           price: 3519,
+          rating: 3.5,
           discount: "87%",
         },
         {
@@ -1174,6 +1268,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Gopi Dress Lehenga Choli Set – Blue Printed Crop Top, White Flared Skirt & Matching Dupatta | Traditional Ethnic Wear for Festivals & Dance",
           url: "https://tse1.mm.bing.net/th/id/OIP.gtn169HKXaOu9hoKB17MmQHaJ4?pid=Api&P=0&h=180",
           price: 1819,
+          rating: 4.2,
           discount: "74%",
         },
         {
@@ -1181,6 +1276,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.8JhmN5FlB__BiCWd2W-m9gHaJ2?pid=Api&P=0&h=180",
           price: 1799,
+          rating: 4.0,
           discount: "77%",
         },
       ],
@@ -1208,6 +1304,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.dIdNwozufFVXA3ahL85_FQHaK_?pid=Api&P=0&h=180",
           price: 3519,
+          rating: 3.5,
           discount: "87%",
         },
         {
@@ -1215,6 +1312,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Gopi Dress Lehenga Choli Set – Blue Printed Crop Top, White Flared Skirt & Matching Dupatta | Traditional Ethnic Wear for Festivals & Dance",
           url: "https://tse1.mm.bing.net/th/id/OIP.gtn169HKXaOu9hoKB17MmQHaJ4?pid=Api&P=0&h=180",
           price: 1819,
+          rating: 4.2,
           discount: "74%",
         },
         {
@@ -1222,6 +1320,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.8JhmN5FlB__BiCWd2W-m9gHaJ2?pid=Api&P=0&h=180",
           price: 1799,
+          rating: 4.0,
           discount: "77%",
         },
         {
@@ -1229,6 +1328,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GEKHA Printed Cotton Ready to Wear Lehenga & Blouse With Dupatta for women",
           url: "https://tse1.mm.bing.net/th/id/OIP.tavATzr8U84oiagUHv0HAQAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.7,
           discount: "92%",
         },
       ],
@@ -1259,6 +1359,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Gopi Dress Lehenga Choli Set – Blue Printed Crop Top, White Flared Skirt & Matching Dupatta | Traditional Ethnic Wear for Festivals & Dance",
           url: "https://tse1.mm.bing.net/th/id/OIP.gtn169HKXaOu9hoKB17MmQHaJ4?pid=Api&P=0&h=180",
           price: 1819,
+          rating: 4.2,
           discount: "74%",
         },
         {
@@ -1266,6 +1367,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.8JhmN5FlB__BiCWd2W-m9gHaJ2?pid=Api&P=0&h=180",
           price: 1799,
+          rating: 4.0,
           discount: "77%",
         },
         {
@@ -1273,6 +1375,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GEKHA Printed Cotton Ready to Wear Lehenga & Blouse With Dupatta for women",
           url: "https://tse1.mm.bing.net/th/id/OIP.tavATzr8U84oiagUHv0HAQAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.7,
           discount: "92%",
         },
         {
@@ -1280,6 +1383,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.ukam-eZ_2o1cGVFU-tX0BgHaLH?pid=Api&P=0&h=180",
           price: 2276,
+          rating: 4.2,
           discount: "79%",
         },
       ],
@@ -1309,6 +1413,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.8JhmN5FlB__BiCWd2W-m9gHaJ2?pid=Api&P=0&h=180",
           price: 1799,
+          rating: 4.0,
           discount: "77%",
         },
         {
@@ -1316,6 +1421,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GEKHA Printed Cotton Ready to Wear Lehenga & Blouse With Dupatta for women",
           url: "https://tse1.mm.bing.net/th/id/OIP.tavATzr8U84oiagUHv0HAQAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.7,
           discount: "92%",
         },
         {
@@ -1323,6 +1429,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.ukam-eZ_2o1cGVFU-tX0BgHaLH?pid=Api&P=0&h=180",
           price: 2276,
+          rating: 4.2,
           discount: "79%",
         },
         {
@@ -1330,6 +1437,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PURVAJA Women's Jacquard Semi-Stitched Lehenga choli",
           url: "https://tse3.mm.bing.net/th/id/OIP.askuvJcq3xczvWTEqAheCAHaJ4?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "50%",
         },
       ],
@@ -1359,6 +1467,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GEKHA Printed Cotton Ready to Wear Lehenga & Blouse With Dupatta for women",
           url: "https://tse1.mm.bing.net/th/id/OIP.tavATzr8U84oiagUHv0HAQAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 3.7,
           discount: "92%",
         },
         {
@@ -1366,6 +1475,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.ukam-eZ_2o1cGVFU-tX0BgHaLH?pid=Api&P=0&h=180",
           price: 2276,
+          rating: 4.2,
           discount: "79%",
         },
         {
@@ -1373,6 +1483,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PURVAJA Women's Jacquard Semi-Stitched Lehenga choli",
           url: "https://tse3.mm.bing.net/th/id/OIP.askuvJcq3xczvWTEqAheCAHaJ4?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "50%",
         },
         {
@@ -1380,6 +1491,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women,s Tussar Silk With Leheriya Print And Foil Print Lehenga choli Set",
           url: "https://tse1.mm.bing.net/th/id/OIP.R8XSNVP-5_DuIaXXmrL4xgHaLH?pid=Api&P=0&h=180",
           price: 1996,
+          rating: 4.1,
           discount: "76%",
         },
       ],
@@ -1409,6 +1521,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.ukam-eZ_2o1cGVFU-tX0BgHaLH?pid=Api&P=0&h=180",
           price: 2276,
+          rating: 4.2,
           discount: "79%",
         },
         {
@@ -1416,6 +1529,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PURVAJA Women's Jacquard Semi-Stitched Lehenga choli",
           url: "https://tse3.mm.bing.net/th/id/OIP.askuvJcq3xczvWTEqAheCAHaJ4?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "50%",
         },
         {
@@ -1423,6 +1537,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women,s Tussar Silk With Leheriya Print And Foil Print Lehenga choli Set",
           url: "https://tse1.mm.bing.net/th/id/OIP.R8XSNVP-5_DuIaXXmrL4xgHaLH?pid=Api&P=0&h=180",
           price: 1996,
+          rating: 4.1,
           discount: "76%",
         },
         {
@@ -1430,6 +1545,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LooknBook Art Women's Georgette With Floral Print Lehenga Choli Set",
           url: "https://tse3.mm.bing.net/th/id/OIP.-mq_09B45XD30vSwH8ANAwHaJQ?pid=Api&P=0&h=180",
           price: 4899,
+          rating: 4.2,
           discount: "72%",
         },
       ],
@@ -1459,6 +1575,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PURVAJA Women's Jacquard Semi-Stitched Lehenga choli",
           url: "https://tse3.mm.bing.net/th/id/OIP.askuvJcq3xczvWTEqAheCAHaJ4?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "50%",
         },
         {
@@ -1466,6 +1583,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women,s Tussar Silk With Leheriya Print And Foil Print Lehenga choli Set",
           url: "https://tse1.mm.bing.net/th/id/OIP.R8XSNVP-5_DuIaXXmrL4xgHaLH?pid=Api&P=0&h=180",
           price: 1996,
+          rating: 4.1,
           discount: "76%",
         },
         {
@@ -1473,6 +1591,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LooknBook Art Women's Georgette With Floral Print Lehenga Choli Set",
           url: "https://tse3.mm.bing.net/th/id/OIP.-mq_09B45XD30vSwH8ANAwHaJQ?pid=Api&P=0&h=180",
           price: 4899,
+          rating: 4.2,
           discount: "72%",
         },
         {
@@ -1480,6 +1599,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Wedding Special Foil Work Tussar Silk Lehenga Choli For Any Occasion",
           url: "https://tse1.mm.bing.net/th/id/OIP.icDR5MnR7W7XYy2H51bFXQHaKt?pid=Api&P=0&h=180",
           price: 1369,
+          rating: 4.1,
           discount: "58%",
         },
       ],
@@ -1508,6 +1628,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women,s Tussar Silk With Leheriya Print And Foil Print Lehenga choli Set",
           url: "https://tse4.mm.bing.net/th/id/OIP.0R9QXcywAh8AWO9UkATdEAHaLM?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 3.7,
           discount: "75%",
         },
         {
@@ -1515,6 +1636,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LooknBook Art Women's Georgette With Floral Print Lehenga Choli Set",
           url: "https://tse4.mm.bing.net/th/id/OIP.Brsh2qKUohHA0jy6Bj3-MwAAAA?pid=Api&P=0&h=180",
           price: 3000,
+          rating: 4.3,
           discount: "40%",
         },
         {
@@ -1522,6 +1644,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Wedding Special Foil Work Tussar Silk Lehenga Choli For Any Occasion",
           url: "https://tse4.mm.bing.net/th/id/OIP._T_kkRU6VgYACiSgy_icKQHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.0,
           discount: "50%",
         },
         {
@@ -1529,6 +1652,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Trending Designeer Tussar Silk Lehenga Choli Print with Foil Work With Unstitched Blouse Patola Print Adorned with Foil Work For Navrati || Wedding",
           url: "https://tse4.mm.bing.net/th/id/OIP.a2oTd0Y0o8N5MRBugYSQzwHaKk?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.3,
           discount: "25%",
         },
       ],
@@ -1558,6 +1682,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LooknBook Art Women's Georgette With Floral Print Lehenga Choli Set",
           url: "https://tse4.mm.bing.net/th/id/OIP.Brsh2qKUohHA0jy6Bj3-MwAAAA?pid=Api&P=0&h=180",
           price: 3000,
+          rating: 4.3,
           discount: "40%",
         },
         {
@@ -1565,6 +1690,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Wedding Special Foil Work Tussar Silk Lehenga Choli For Any Occasion",
           url: "https://tse4.mm.bing.net/th/id/OIP._T_kkRU6VgYACiSgy_icKQHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.0,
           discount: "50%",
         },
         {
@@ -1572,6 +1698,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Trending Designeer Tussar Silk Lehenga Choli Print with Foil Work With Unstitched Blouse Patola Print Adorned with Foil Work For Navrati || Wedding",
           url: "https://tse4.mm.bing.net/th/id/OIP.a2oTd0Y0o8N5MRBugYSQzwHaKk?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.3,
           discount: "25%",
         },
         {
@@ -1579,6 +1706,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.1151_AIgAinGzM-fVlpPpAHaJ4?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.0,
           discount: "47%",
         },
       ],
@@ -1608,6 +1736,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Wedding Special Foil Work Tussar Silk Lehenga Choli For Any Occasion",
           url: "https://tse4.mm.bing.net/th/id/OIP._T_kkRU6VgYACiSgy_icKQHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.0,
           discount: "50%",
         },
         {
@@ -1615,6 +1744,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Trending Designeer Tussar Silk Lehenga Choli Print with Foil Work With Unstitched Blouse Patola Print Adorned with Foil Work For Navrati || Wedding",
           url: "https://tse4.mm.bing.net/th/id/OIP.a2oTd0Y0o8N5MRBugYSQzwHaKk?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.3,
           discount: "25%",
         },
         {
@@ -1622,6 +1752,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.1151_AIgAinGzM-fVlpPpAHaJ4?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.0,
           discount: "47%",
         },
         {
@@ -1629,6 +1760,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Gopi Dress Lehenga Choli Set – Blue Printed Crop Top, White Flared Skirt & Matching Dupatta | Traditional Ethnic Wear for Festivals & Dance",
           url: "https://tse1.mm.bing.net/th/id/OIP.KSs634VH5KM5yoRTFRDzkgHaJQ?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.0,
           discount: "39%",
         },
       ],
@@ -1659,6 +1791,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Trending Designeer Tussar Silk Lehenga Choli Print with Foil Work With Unstitched Blouse Patola Print Adorned with Foil Work For Navrati || Wedding",
           url: "https://tse4.mm.bing.net/th/id/OIP.a2oTd0Y0o8N5MRBugYSQzwHaKk?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.3,
           discount: "25%",
         },
         {
@@ -1666,6 +1799,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.1151_AIgAinGzM-fVlpPpAHaJ4?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.0,
           discount: "47%",
         },
         {
@@ -1673,6 +1807,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Gopi Dress Lehenga Choli Set – Blue Printed Crop Top, White Flared Skirt & Matching Dupatta | Traditional Ethnic Wear for Festivals & Dance",
           url: "https://tse1.mm.bing.net/th/id/OIP.KSs634VH5KM5yoRTFRDzkgHaJQ?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.0,
           discount: "39%",
         },
         {
@@ -1680,6 +1815,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse1.mm.bing.net/th/id/OIP.DSdNi_rGyruDdG7YjNBDJwHaJQ?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "61%",
         },
       ],
@@ -1709,6 +1845,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse4.mm.bing.net/th/id/OIP.1151_AIgAinGzM-fVlpPpAHaJ4?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.0,
           discount: "47%",
         },
         {
@@ -1716,6 +1853,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Gopi Dress Lehenga Choli Set – Blue Printed Crop Top, White Flared Skirt & Matching Dupatta | Traditional Ethnic Wear for Festivals & Dance",
           url: "https://tse1.mm.bing.net/th/id/OIP.KSs634VH5KM5yoRTFRDzkgHaJQ?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.0,
           discount: "39%",
         },
         {
@@ -1723,6 +1861,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse1.mm.bing.net/th/id/OIP.DSdNi_rGyruDdG7YjNBDJwHaJQ?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "61%",
         },
         {
@@ -1730,6 +1869,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GEKHA Printed Cotton Ready to Wear Lehenga & Blouse With Dupatta for women",
           url: "https://tse3.mm.bing.net/th/id/OIP.uv8CL_K9DUb-qOUFO8cvQwHaJQ?pid=Api&P=0&h=180",
           price: 3197,
+          rating: 3.6,
           discount: "73%",
         },
       ],
@@ -1760,6 +1900,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Gopi Dress Lehenga Choli Set – Blue Printed Crop Top, White Flared Skirt & Matching Dupatta | Traditional Ethnic Wear for Festivals & Dance",
           url: "https://tse1.mm.bing.net/th/id/OIP.KSs634VH5KM5yoRTFRDzkgHaJQ?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.0,
           discount: "39%",
         },
         {
@@ -1767,6 +1908,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse1.mm.bing.net/th/id/OIP.DSdNi_rGyruDdG7YjNBDJwHaJQ?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "61%",
         },
         {
@@ -1774,6 +1916,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GEKHA Printed Cotton Ready to Wear Lehenga & Blouse With Dupatta for women",
           url: "https://tse3.mm.bing.net/th/id/OIP.uv8CL_K9DUb-qOUFO8cvQwHaJQ?pid=Api&P=0&h=180",
           price: 3197,
+          rating: 3.6,
           discount: "73%",
         },
         {
@@ -1781,6 +1924,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse1.mm.bing.net/th/id/OIP.b0TBDznSDCuEj-ZEfya18wHaKl?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 0,
           discount: "52%",
         },
       ],
@@ -1810,6 +1954,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse1.mm.bing.net/th/id/OIP.DSdNi_rGyruDdG7YjNBDJwHaJQ?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "61%",
         },
         {
@@ -1817,6 +1962,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GEKHA Printed Cotton Ready to Wear Lehenga & Blouse With Dupatta for women",
           url: "https://tse3.mm.bing.net/th/id/OIP.uv8CL_K9DUb-qOUFO8cvQwHaJQ?pid=Api&P=0&h=180",
           price: 3197,
+          rating: 3.6,
           discount: "73%",
         },
         {
@@ -1824,6 +1970,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse1.mm.bing.net/th/id/OIP.b0TBDznSDCuEj-ZEfya18wHaKl?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 0,
           discount: "52%",
         },
         {
@@ -1831,6 +1978,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PURVAJA Women's Jacquard Semi-Stitched Lehenga choli",
           url: "https://tse3.mm.bing.net/th/id/OIP.JVfM5fKRZixpzdTxIw7VDQAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 4.0,
           discount: "86%",
         },
       ],
@@ -1861,6 +2009,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GEKHA Printed Cotton Ready to Wear Lehenga & Blouse With Dupatta for women",
           url: "https://tse3.mm.bing.net/th/id/OIP.uv8CL_K9DUb-qOUFO8cvQwHaJQ?pid=Api&P=0&h=180",
           price: 3197,
+          rating: 3.6,
           discount: "73%",
         },
         {
@@ -1868,6 +2017,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse1.mm.bing.net/th/id/OIP.b0TBDznSDCuEj-ZEfya18wHaKl?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 0,
           discount: "52%",
         },
         {
@@ -1875,6 +2025,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PURVAJA Women's Jacquard Semi-Stitched Lehenga choli",
           url: "https://tse3.mm.bing.net/th/id/OIP.JVfM5fKRZixpzdTxIw7VDQAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 4.0,
           discount: "86%",
         },
         {
@@ -1882,6 +2033,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women,s Tussar Silk With Leheriya Print And Foil Print Lehenga choli Set",
           url: "https://tse4.mm.bing.net/th/id/OIP.0R9QXcywAh8AWO9UkATdEAHaLM?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 3.7,
           discount: "75%",
         },
       ],
@@ -1909,6 +2061,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women’s Traditional Gopi Dress Set – Elegant Teal Printed Lehenga Choli with Dupatta | Ethnic Indian Festive & Temple Wear Outfit",
           url: "https://tse1.mm.bing.net/th/id/OIP.b0TBDznSDCuEj-ZEfya18wHaKl?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 0,
           discount: "52%",
         },
         {
@@ -1916,6 +2069,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PURVAJA Women's Jacquard Semi-Stitched Lehenga choli",
           url: "https://tse3.mm.bing.net/th/id/OIP.JVfM5fKRZixpzdTxIw7VDQAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 4.0,
           discount: "86%",
         },
         {
@@ -1923,6 +2077,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women,s Tussar Silk With Leheriya Print And Foil Print Lehenga choli Set",
           url: "https://tse4.mm.bing.net/th/id/OIP.0R9QXcywAh8AWO9UkATdEAHaLM?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 3.7,
           discount: "75%",
         },
         {
@@ -1930,6 +2085,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LooknBook Art Women's Georgette With Floral Print Lehenga Choli Set",
           url: "https://tse4.mm.bing.net/th/id/OIP.Brsh2qKUohHA0jy6Bj3-MwAAAA?pid=Api&P=0&h=180",
           price: 3000,
+          rating: 4.3,
           discount: "40%",
         },
       ],
@@ -1959,6 +2115,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PURVAJA Women's Jacquard Semi-Stitched Lehenga choli",
           url: "https://tse3.mm.bing.net/th/id/OIP.JVfM5fKRZixpzdTxIw7VDQAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 4.0,
           discount: "86%",
         },
         {
@@ -1966,6 +2123,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women,s Tussar Silk With Leheriya Print And Foil Print Lehenga choli Set",
           url: "https://tse4.mm.bing.net/th/id/OIP.0R9QXcywAh8AWO9UkATdEAHaLM?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 3.7,
           discount: "75%",
         },
         {
@@ -1973,6 +2131,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LooknBook Art Women's Georgette With Floral Print Lehenga Choli Set",
           url: "https://tse4.mm.bing.net/th/id/OIP.Brsh2qKUohHA0jy6Bj3-MwAAAA?pid=Api&P=0&h=180",
           price: 3000,
+          rating: 4.3,
           discount: "40%",
         },
         {
@@ -1980,6 +2139,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Women's Wedding Special Foil Work Tussar Silk Lehenga Choli For Any Occasion",
           url: "https://tse4.mm.bing.net/th/id/OIP._T_kkRU6VgYACiSgy_icKQHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.0,
           discount: "50%",
         },
       ],
@@ -2009,6 +2169,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Reguler Fit Polycotton Trouser Pant's Formal Trouser Casual Trouser Pant",
           url: "https://m.media-amazon.com/images/I/51VcycPqGeL._SX679_.jpg",
           price: 3999,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -2016,6 +2177,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Raymond Men's Contemporary Mid Rise Poly Viscose Blend Checks Pattern Fit Flat Front Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61zCzMqo1yL._SX679_.jpg",
           price: 3899,
+          rating: 4.3,
           discount: "46%",
         },
         {
@@ -2023,6 +2185,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Louis Philippe Men's Slim Fit Mid Rise Premium Fabric Checks Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61kqr5MqpwL._SX679_.jpg",
           price: 2599,
+          rating: 4.5,
           discount: "42%",
         },
         {
@@ -2030,6 +2193,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAGDO® Men's Cotton Casual Trouser |Trouser for Men |Formal Pant for Man |Pant for Man |Cotton Pant for Men (2042)",
           url: "https://m.media-amazon.com/images/I/51w-lWEO9KL._SY741_.jpg",
           price: 2999,
+          rating: 4.6,
           discount: "77%",
         },
       ],
@@ -2058,6 +2222,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Raymond Men's Contemporary Mid Rise Poly Viscose Blend Checks Pattern Fit Flat Front Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61zCzMqo1yL._SX679_.jpg",
           price: 3899,
+          rating: 4.3,
           discount: "46%",
         },
         {
@@ -2065,6 +2230,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Louis Philippe Men's Slim Fit Mid Rise Premium Fabric Checks Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61kqr5MqpwL._SX679_.jpg",
           price: 2599,
+          rating: 4.5,
           discount: "42%",
         },
         {
@@ -2072,6 +2238,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAGDO® Men's Cotton Casual Trouser |Trouser for Men |Formal Pant for Man |Pant for Man |Cotton Pant for Men (2042)",
           url: "https://m.media-amazon.com/images/I/51w-lWEO9KL._SY741_.jpg",
           price: 2999,
+          rating: 4.6,
           discount: "77%",
         },
         {
@@ -2079,6 +2246,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANOVA Men’s Classic Dress Pants with Side Pockets | Solid Tapered Suit Trousers, Business Formal Office Wear Regular Fit Pants, Stretchable Blend Slim Carrot Fit (Trouser 255)",
           url: "https://m.media-amazon.com/images/I/51lVXXeMCKL._SY741_.jpg",
           price: 2099,
+          rating: 4.1,
           discount: "72%",
         },
       ],
@@ -2106,6 +2274,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Louis Philippe Men's Slim Fit Mid Rise Premium Fabric Checks Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61kqr5MqpwL._SX679_.jpg",
           price: 2599,
+          rating: 4.5,
           discount: "42%",
         },
         {
@@ -2113,6 +2282,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAGDO® Men's Cotton Casual Trouser |Trouser for Men |Formal Pant for Man |Pant for Man |Cotton Pant for Men (2042)",
           url: "https://m.media-amazon.com/images/I/51w-lWEO9KL._SY741_.jpg",
           price: 2999,
+          rating: 4.6,
           discount: "77%",
         },
         {
@@ -2120,6 +2290,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANOVA Men’s Classic Dress Pants with Side Pockets | Solid Tapered Suit Trousers, Business Formal Office Wear Regular Fit Pants, Stretchable Blend Slim Carrot Fit (Trouser 255)",
           url: "https://m.media-amazon.com/images/I/51lVXXeMCKL._SY741_.jpg",
           price: 2099,
+          rating: 4.1,
           discount: "72%",
         },
         {
@@ -2127,6 +2298,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Regular Fit Formal Stretchable Trousers with Expandable Waist | Skin-Friendly Lycra Solid Pant",
           url: "https://m.media-amazon.com/images/I/519WwKkpjlL._SX679_.jpg",
           price: 1999,
+          rating: 3.2,
           discount: "76%",
         },
       ],
@@ -2156,6 +2328,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAGDO® Men's Cotton Casual Trouser |Trouser for Men |Formal Pant for Man |Pant for Man |Cotton Pant for Men (2042)",
           url: "https://m.media-amazon.com/images/I/51w-lWEO9KL._SY741_.jpg",
           price: 2999,
+          rating: 4.6,
           discount: "77%",
         },
         {
@@ -2163,6 +2336,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANOVA Men’s Classic Dress Pants with Side Pockets | Solid Tapered Suit Trousers, Business Formal Office Wear Regular Fit Pants, Stretchable Blend Slim Carrot Fit (Trouser 255)",
           url: "https://m.media-amazon.com/images/I/51lVXXeMCKL._SY741_.jpg",
           price: 2099,
+          rating: 4.1,
           discount: "72%",
         },
         {
@@ -2170,6 +2344,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Regular Fit Formal Stretchable Trousers with Expandable Waist | Skin-Friendly Lycra Solid Pant",
           url: "https://m.media-amazon.com/images/I/519WwKkpjlL._SX679_.jpg",
           price: 1999,
+          rating: 3.2,
           discount: "76%",
         },
         {
@@ -2177,6 +2352,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Men's Slim Fit Formal Pants",
           url: "https://m.media-amazon.com/images/I/712uA9qBPZL._SX569_.jpg",
           price: 3999,
+          rating: 3.5,
           discount: "55%",
         },
       ],
@@ -2206,6 +2382,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANOVA Men’s Classic Dress Pants with Side Pockets | Solid Tapered Suit Trousers, Business Formal Office Wear Regular Fit Pants, Stretchable Blend Slim Carrot Fit (Trouser 255)",
           url: "https://m.media-amazon.com/images/I/51lVXXeMCKL._SY741_.jpg",
           price: 2099,
+          rating: 4.1,
           discount: "72%",
         },
         {
@@ -2213,6 +2390,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Regular Fit Formal Stretchable Trousers with Expandable Waist | Skin-Friendly Lycra Solid Pant",
           url: "https://m.media-amazon.com/images/I/519WwKkpjlL._SX679_.jpg",
           price: 1999,
+          rating: 3.2,
           discount: "76%",
         },
         {
@@ -2220,6 +2398,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Men's Slim Fit Formal Pants",
           url: "https://m.media-amazon.com/images/I/712uA9qBPZL._SX569_.jpg",
           price: 3999,
+          rating: 3.5,
           discount: "55%",
         },
         {
@@ -2227,6 +2406,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "FYLTR Men’s Casual Trousers - Fourway Stretch Pants | Slim Fit | Trousers for Men | Stretchable Formal Pant Trouser | Soft & Comfortable | Casual Pants for Man",
           url: "https://m.media-amazon.com/images/I/51thfFGgLsL._SX569_.jpg",
           price: 2899,
+          rating: 4.3,
           discount: "59%",
         },
       ],
@@ -2256,6 +2436,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Regular Fit Formal Stretchable Trousers with Expandable Waist | Skin-Friendly Lycra Solid Pant",
           url: "https://m.media-amazon.com/images/I/519WwKkpjlL._SX679_.jpg",
           price: 1999,
+          rating: 3.2,
           discount: "76%",
         },
         {
@@ -2263,6 +2444,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Men's Slim Fit Formal Pants",
           url: "https://m.media-amazon.com/images/I/712uA9qBPZL._SX569_.jpg",
           price: 3999,
+          rating: 3.5,
           discount: "55%",
         },
         {
@@ -2270,6 +2452,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "FYLTR Men’s Casual Trousers - Fourway Stretch Pants | Slim Fit | Trousers for Men | Stretchable Formal Pant Trouser | Soft & Comfortable | Casual Pants for Man",
           url: "https://m.media-amazon.com/images/I/51thfFGgLsL._SX569_.jpg",
           price: 2899,
+          rating: 4.3,
           discount: "59%",
         },
         {
@@ -2277,6 +2460,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Arrow Men Pants",
           url: "https://m.media-amazon.com/images/I/51BOnvCmtFL._SX569_.jpg",
           price: 2399,
+          rating: 4.3,
           discount: "51%",
         },
       ],
@@ -2306,6 +2490,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Men's Slim Fit Formal Pants",
           url: "https://m.media-amazon.com/images/I/712uA9qBPZL._SX569_.jpg",
           price: 3999,
+          rating: 3.5,
           discount: "55%",
         },
         {
@@ -2313,6 +2498,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "FYLTR Men’s Casual Trousers - Fourway Stretch Pants | Slim Fit | Trousers for Men | Stretchable Formal Pant Trouser | Soft & Comfortable | Casual Pants for Man",
           url: "https://m.media-amazon.com/images/I/51thfFGgLsL._SX569_.jpg",
           price: 2899,
+          rating: 4.3,
           discount: "59%",
         },
         {
@@ -2320,6 +2506,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Arrow Men Pants",
           url: "https://m.media-amazon.com/images/I/51BOnvCmtFL._SX569_.jpg",
           price: 2399,
+          rating: 4.3,
           discount: "51%",
         },
         {
@@ -2327,6 +2514,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DIVISIVE Men's Regular Fit Poly Blended Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61ojBUms-CL._SY741_.jpg",
           price: 1999,
+          rating: 3.0,
           discount: "66%",
         },
       ],
@@ -2356,6 +2544,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "FYLTR Men’s Casual Trousers - Fourway Stretch Pants | Slim Fit | Trousers for Men | Stretchable Formal Pant Trouser | Soft & Comfortable | Casual Pants for Man",
           url: "https://m.media-amazon.com/images/I/51thfFGgLsL._SX569_.jpg",
           price: 2899,
+          rating: 4.3,
           discount: "59%",
         },
         {
@@ -2363,6 +2552,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Arrow Men Pants",
           url: "https://m.media-amazon.com/images/I/51BOnvCmtFL._SX569_.jpg",
           price: 2399,
+          rating: 4.3,
           discount: "51%",
         },
         {
@@ -2370,6 +2560,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DIVISIVE Men's Regular Fit Poly Blended Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61ojBUms-CL._SY741_.jpg",
           price: 1999,
+          rating: 3.0,
           discount: "66%",
         },
         {
@@ -2377,6 +2568,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Reguler Fit Polycotton Trouser Pant's Formal Trouser Casual Trouser Pant",
           url: "https://m.media-amazon.com/images/I/51VcycPqGeL._SX679_.jpg",
           price: 3999,
+          rating: 4.1,
           discount: "50%",
         },
       ],
@@ -2405,6 +2597,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Arrow Men Pants",
           url: "https://m.media-amazon.com/images/I/51BOnvCmtFL._SX569_.jpg",
           price: 2399,
+          rating: 4.3,
           discount: "51%",
         },
         {
@@ -2412,6 +2605,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DIVISIVE Men's Regular Fit Poly Blended Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61ojBUms-CL._SY741_.jpg",
           price: 1999,
+          rating: 3.0,
           discount: "66%",
         },
         {
@@ -2419,6 +2613,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Reguler Fit Polycotton Trouser Pant's Formal Trouser Casual Trouser Pant",
           url: "https://m.media-amazon.com/images/I/51VcycPqGeL._SX679_.jpg",
           price: 3999,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -2426,6 +2621,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Raymond Men's Contemporary Mid Rise Poly Viscose Blend Checks Pattern Fit Flat Front Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61zCzMqo1yL._SX679_.jpg",
           price: 3899,
+          rating: 4.3,
           discount: "46%",
         },
       ],
@@ -2454,6 +2650,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DIVISIVE Men's Regular Fit Poly Blended Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61ojBUms-CL._SY741_.jpg",
           price: 1999,
+          rating: 3.0,
           discount: "66%",
         },
         {
@@ -2461,6 +2658,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Reguler Fit Polycotton Trouser Pant's Formal Trouser Casual Trouser Pant",
           url: "https://m.media-amazon.com/images/I/51VcycPqGeL._SX679_.jpg",
           price: 3999,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -2468,6 +2666,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Raymond Men's Contemporary Mid Rise Poly Viscose Blend Checks Pattern Fit Flat Front Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61zCzMqo1yL._SX679_.jpg",
           price: 3899,
+          rating: 4.3,
           discount: "46%",
         },
         {
@@ -2475,6 +2674,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Louis Philippe Men's Slim Fit Mid Rise Premium Fabric Checks Formal Trouser",
           url: "https://m.media-amazon.com/images/I/61kqr5MqpwL._SX679_.jpg",
           price: 2599,
+          rating: 4.5,
           discount: "42%",
         },
       ],
@@ -2504,6 +2704,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lux Cozi Men's Half Sleeve Soild Casual Regular Fit T-Shirt with Chest Pocket | Polo Tshirt for Men",
           url: "https://tse3.mm.bing.net/th/id/OIP.MHM8gvJQcuHxuFetcbwMnAHaJ3?pid=Api&P=0&h=180",
           price: 419,
+          rating: 4.0,
           discount: "12%",
         },
         {
@@ -2511,6 +2712,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Regular Fit Insignia Half Sleeve Polo T-Shirt | Cotton Rich | Premium Pique Weave",
           url: "https://tse1.mm.bing.net/th/id/OIP.WOXS05C5OM6jjzsxzPHHBAHaHa?pid=Api&P=0&h=180",
           price: 1099,
+          rating: 3.9,
           discount: "45%",
         },
         {
@@ -2518,6 +2720,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Cotton Rich Solid Polo Tshirt | Collar Tshirts | Half Sleeves | Plain-Regular Fit (Available in Plus Sizes)",
           url: "https://tse4.mm.bing.net/th?id=OIF.ZnkywjxH6f16%2bH52z9ephw&pid=Api&P=0&h=180",
           price: 1099,
+          rating: 3.9,
           discount: "64%",
         },
         {
@@ -2525,6 +2728,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GRECIILOOKS Polo T-Shirt for Men – Cotton Short Sleeve Regular Fit Tee | Perfect for Golf, Travel & Outdoor Casual Look (Available in Plus Size and Combo Pack of 2)",
           url: "https://tse2.mm.bing.net/th?id=OIF.H7V0TW2jW6lNdyO3e1dq%2fw&pid=Api&P=0&h=180",
           price: 2299,
+          rating: 3.5,
           discount: "83%",
         },
       ],
@@ -2554,6 +2758,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Regular Fit Insignia Half Sleeve Polo T-Shirt | Cotton Rich | Premium Pique Weave",
           url: "https://tse1.mm.bing.net/th/id/OIP.WOXS05C5OM6jjzsxzPHHBAHaHa?pid=Api&P=0&h=180",
           price: 1099,
+          rating: 3.9,
           discount: "45%",
         },
         {
@@ -2561,6 +2766,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Cotton Rich Solid Polo Tshirt | Collar Tshirts | Half Sleeves | Plain-Regular Fit (Available in Plus Sizes)",
           url: "https://tse4.mm.bing.net/th?id=OIF.ZnkywjxH6f16%2bH52z9ephw&pid=Api&P=0&h=180",
           price: 1099,
+          rating: 3.9,
           discount: "64%",
         },
         {
@@ -2568,6 +2774,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GRECIILOOKS Polo T-Shirt for Men – Cotton Short Sleeve Regular Fit Tee | Perfect for Golf, Travel & Outdoor Casual Look (Available in Plus Size and Combo Pack of 2)",
           url: "https://tse2.mm.bing.net/th?id=OIF.H7V0TW2jW6lNdyO3e1dq%2fw&pid=Api&P=0&h=180",
           price: 2299,
+          rating: 3.5,
           discount: "83%",
         },
         {
@@ -2575,6 +2782,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lymio Polo T Shirt for Men || Men Casual T-Shirt || Available in Combo Packs (Polo 40 to 43)",
           url: "https://tse2.mm.bing.net/th?id=OIF.jXbHPhvw%2bVrpAJ0Zp0lpaA&pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.7,
           discount: "86%",
         },
       ],
@@ -2604,6 +2812,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Cotton Rich Solid Polo Tshirt | Collar Tshirts | Half Sleeves | Plain-Regular Fit (Available in Plus Sizes)",
           url: "https://tse4.mm.bing.net/th?id=OIF.ZnkywjxH6f16%2bH52z9ephw&pid=Api&P=0&h=180",
           price: 1099,
+          rating: 3.9,
           discount: "64%",
         },
         {
@@ -2611,6 +2820,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GRECIILOOKS Polo T-Shirt for Men – Cotton Short Sleeve Regular Fit Tee | Perfect for Golf, Travel & Outdoor Casual Look (Available in Plus Size and Combo Pack of 2)",
           url: "https://tse2.mm.bing.net/th?id=OIF.H7V0TW2jW6lNdyO3e1dq%2fw&pid=Api&P=0&h=180",
           price: 2299,
+          rating: 3.5,
           discount: "83%",
         },
         {
@@ -2618,6 +2828,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lymio Polo T Shirt for Men || Men Casual T-Shirt || Available in Combo Packs (Polo 40 to 43)",
           url: "https://tse2.mm.bing.net/th?id=OIF.jXbHPhvw%2bVrpAJ0Zp0lpaA&pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.7,
           discount: "86%",
         },
         {
@@ -2625,6 +2836,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Allen Solly Men's Cotton Regular Fit Polo T-Shirt",
           url: "https://tse4.mm.bing.net/th/id/OIP.yVbyNG0Jvrmqt602T3Mx5QHaHa?pid=Api&P=0&h=180",
           price: 899,
+          rating: 4.0,
           discount: "30%",
         },
       ],
@@ -2655,6 +2867,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GRECIILOOKS Polo T-Shirt for Men – Cotton Short Sleeve Regular Fit Tee | Perfect for Golf, Travel & Outdoor Casual Look (Available in Plus Size and Combo Pack of 2)",
           url: "https://tse2.mm.bing.net/th?id=OIF.H7V0TW2jW6lNdyO3e1dq%2fw&pid=Api&P=0&h=180",
           price: 2299,
+          rating: 3.5,
           discount: "83%",
         },
         {
@@ -2662,6 +2875,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lymio Polo T Shirt for Men || Men Casual T-Shirt || Available in Combo Packs (Polo 40 to 43)",
           url: "https://tse2.mm.bing.net/th?id=OIF.jXbHPhvw%2bVrpAJ0Zp0lpaA&pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.7,
           discount: "86%",
         },
         {
@@ -2669,6 +2883,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Allen Solly Men's Cotton Regular Fit Polo T-Shirt",
           url: "https://tse4.mm.bing.net/th/id/OIP.yVbyNG0Jvrmqt602T3Mx5QHaHa?pid=Api&P=0&h=180",
           price: 899,
+          rating: 4.0,
           discount: "30%",
         },
         {
@@ -2676,6 +2891,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "The Happy Orca Men's Plus Size Polo, Cotton, Solid Colors, BellyFit® Design, Read About This Item & Size Chart Before Order, Good for Gentlemen with Big Bellies, 2XL- 6XL.",
           url: "https://tse3.mm.bing.net/th/id/OIP.cqoJnRLNucz7c44GPk2-WQHaHa?pid=Api&P=0&h=180",
           price: 1947,
+          rating: 4.2,
           discount: "74%",
         },
       ],
@@ -2705,6 +2921,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lymio Polo T Shirt for Men || Men Casual T-Shirt || Available in Combo Packs (Polo 40 to 43)",
           url: "https://tse2.mm.bing.net/th?id=OIF.jXbHPhvw%2bVrpAJ0Zp0lpaA&pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.7,
           discount: "86%",
         },
         {
@@ -2712,6 +2929,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Allen Solly Men's Cotton Regular Fit Polo T-Shirt",
           url: "https://tse4.mm.bing.net/th/id/OIP.yVbyNG0Jvrmqt602T3Mx5QHaHa?pid=Api&P=0&h=180",
           price: 899,
+          rating: 4.0,
           discount: "30%",
         },
         {
@@ -2719,6 +2937,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "The Happy Orca Men's Plus Size Polo, Cotton, Solid Colors, BellyFit® Design, Read About This Item & Size Chart Before Order, Good for Gentlemen with Big Bellies, 2XL- 6XL.",
           url: "https://tse3.mm.bing.net/th/id/OIP.cqoJnRLNucz7c44GPk2-WQHaHa?pid=Api&P=0&h=180",
           price: 1947,
+          rating: 4.2,
           discount: "74%",
         },
         {
@@ -2726,6 +2945,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AMERICAN CREW Men's Regular Fit Polos",
           url: "https://tse1.mm.bing.net/th/id/OIF.89YIvLLXE2zf28yS7pTe1g?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.0,
           discount: "55%",
         },
       ],
@@ -2755,6 +2975,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Allen Solly Men's Cotton Regular Fit Polo T-Shirt",
           url: "https://tse4.mm.bing.net/th/id/OIP.yVbyNG0Jvrmqt602T3Mx5QHaHa?pid=Api&P=0&h=180",
           price: 899,
+          rating: 4.0,
           discount: "30%",
         },
         {
@@ -2762,6 +2983,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "The Happy Orca Men's Plus Size Polo, Cotton, Solid Colors, BellyFit® Design, Read About This Item & Size Chart Before Order, Good for Gentlemen with Big Bellies, 2XL- 6XL.",
           url: "https://tse3.mm.bing.net/th/id/OIP.cqoJnRLNucz7c44GPk2-WQHaHa?pid=Api&P=0&h=180",
           price: 1947,
+          rating: 4.2,
           discount: "74%",
         },
         {
@@ -2769,6 +2991,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AMERICAN CREW Men's Regular Fit Polos",
           url: "https://tse1.mm.bing.net/th/id/OIF.89YIvLLXE2zf28yS7pTe1g?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.0,
           discount: "55%",
         },
         {
@@ -2776,6 +2999,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Van Heusen Men's Cotton Regular Fit Polo T-Shirt",
           url: "https://tse3.mm.bing.net/th/id/OIP.UIakYeto8bvfO4rtM-NaNwAAAA?pid=Api&P=0&h=180",
           price: 1199,
+          rating: 4.1,
           discount: "27%",
         },
       ],
@@ -2805,6 +3029,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "The Happy Orca Men's Plus Size Polo, Cotton, Solid Colors, BellyFit® Design, Read About This Item & Size Chart Before Order, Good for Gentlemen with Big Bellies, 2XL- 6XL.",
           url: "https://tse3.mm.bing.net/th/id/OIP.cqoJnRLNucz7c44GPk2-WQHaHa?pid=Api&P=0&h=180",
           price: 1947,
+          rating: 4.2,
           discount: "74%",
         },
         {
@@ -2812,6 +3037,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AMERICAN CREW Men's Regular Fit Polos",
           url: "https://tse1.mm.bing.net/th/id/OIF.89YIvLLXE2zf28yS7pTe1g?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.0,
           discount: "55%",
         },
         {
@@ -2819,6 +3045,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Van Heusen Men's Cotton Regular Fit Polo T-Shirt",
           url: "https://tse3.mm.bing.net/th/id/OIP.UIakYeto8bvfO4rtM-NaNwAAAA?pid=Api&P=0&h=180",
           price: 1199,
+          rating: 4.1,
           discount: "27%",
         },
         {
@@ -2826,6 +3053,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LAZYCHUNKS Men's Regular Fit T-Shirt",
           url: "https://tse2.mm.bing.net/th/id/OIP.uwFLhAj5jzT3MrCVvU0OJgHaJ4?pid=Api&P=0&h=180",
           price: 499,
+          rating: 3.0,
           discount: "20%",
         },
       ],
@@ -2856,6 +3084,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AMERICAN CREW Men's Regular Fit Polos",
           url: "https://tse1.mm.bing.net/th/id/OIF.89YIvLLXE2zf28yS7pTe1g?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.0,
           discount: "55%",
         },
         {
@@ -2863,6 +3092,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Van Heusen Men's Cotton Regular Fit Polo T-Shirt",
           url: "https://tse3.mm.bing.net/th/id/OIP.UIakYeto8bvfO4rtM-NaNwAAAA?pid=Api&P=0&h=180",
           price: 1199,
+          rating: 4.1,
           discount: "27%",
         },
         {
@@ -2870,6 +3100,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LAZYCHUNKS Men's Regular Fit T-Shirt",
           url: "https://tse2.mm.bing.net/th/id/OIP.uwFLhAj5jzT3MrCVvU0OJgHaJ4?pid=Api&P=0&h=180",
           price: 499,
+          rating: 3.0,
           discount: "20%",
         },
         {
@@ -2877,6 +3108,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lux Cozi Men's Half Sleeve Soild Casual Regular Fit T-Shirt with Chest Pocket | Polo Tshirt for Men",
           url: "https://tse3.mm.bing.net/th/id/OIP.MHM8gvJQcuHxuFetcbwMnAHaJ3?pid=Api&P=0&h=180",
           price: 419,
+          rating: 4.0,
           discount: "12%",
         },
       ],
@@ -2906,6 +3138,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Van Heusen Men's Cotton Regular Fit Polo T-Shirt",
           url: "https://tse3.mm.bing.net/th/id/OIP.UIakYeto8bvfO4rtM-NaNwAAAA?pid=Api&P=0&h=180",
           price: 1199,
+          rating: 4.1,
           discount: "27%",
         },
         {
@@ -2913,6 +3146,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LAZYCHUNKS Men's Regular Fit T-Shirt",
           url: "https://tse2.mm.bing.net/th/id/OIP.uwFLhAj5jzT3MrCVvU0OJgHaJ4?pid=Api&P=0&h=180",
           price: 499,
+          rating: 3.0,
           discount: "20%",
         },
         {
@@ -2920,6 +3154,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lux Cozi Men's Half Sleeve Soild Casual Regular Fit T-Shirt with Chest Pocket | Polo Tshirt for Men",
           url: "https://tse3.mm.bing.net/th/id/OIP.MHM8gvJQcuHxuFetcbwMnAHaJ3?pid=Api&P=0&h=180",
           price: 419,
+          rating: 4.0,
           discount: "12%",
         },
         {
@@ -2927,6 +3162,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Regular Fit Insignia Half Sleeve Polo T-Shirt | Cotton Rich | Premium Pique Weave",
           url: "https://tse1.mm.bing.net/th/id/OIP.WOXS05C5OM6jjzsxzPHHBAHaHa?pid=Api&P=0&h=180",
           price: 1099,
+          rating: 3.9,
           discount: "45%",
         },
       ],
@@ -2957,6 +3193,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LAZYCHUNKS Men's Regular Fit T-Shirt",
           url: "https://tse2.mm.bing.net/th/id/OIP.uwFLhAj5jzT3MrCVvU0OJgHaJ4?pid=Api&P=0&h=180",
           price: 499,
+          rating: 3.0,
           discount: "20%",
         },
         {
@@ -2964,6 +3201,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lux Cozi Men's Half Sleeve Soild Casual Regular Fit T-Shirt with Chest Pocket | Polo Tshirt for Men",
           url: "https://tse3.mm.bing.net/th/id/OIP.MHM8gvJQcuHxuFetcbwMnAHaJ3?pid=Api&P=0&h=180",
           price: 419,
+          rating: 4.0,
           discount: "12%",
         },
         {
@@ -2971,6 +3209,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Regular Fit Insignia Half Sleeve Polo T-Shirt | Cotton Rich | Premium Pique Weave",
           url: "https://tse1.mm.bing.net/th/id/OIP.WOXS05C5OM6jjzsxzPHHBAHaHa?pid=Api&P=0&h=180",
           price: 1099,
+          rating: 3.9,
           discount: "45%",
         },
         {
@@ -2978,6 +3217,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Cotton Rich Solid Polo Tshirt | Collar Tshirts | Half Sleeves | Plain-Regular Fit (Available in Plus Sizes)",
           url: "https://tse4.mm.bing.net/th?id=OIF.ZnkywjxH6f16%2bH52z9ephw&pid=Api&P=0&h=180",
           price: 1099,
+          rating: 3.9,
           discount: "64%",
         },
       ],
@@ -3007,6 +3247,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boldfit Shorts Pant for Men, Breathable, Quick Dry, Lightweight Gym Shorts for Men Workout with Pockets Sports Shorts for Man",
           url: "https://tse3.mm.bing.net/th/id/OIP.p3wF-Hqc0xBsYY3O7arvyAHaLW?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.2,
           discount: "38%",
         },
         {
@@ -3014,6 +3255,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DAMENSCH Cotton Lounge Elasticated Waistband, Bermuda Pants, Relaxed Fit, Home Shorts for Men",
           url: "https://tse1.mm.bing.net/th/id/OIP.D_3q1slAE7Wh1htUM5AvoAHaJQ?pid=Api&P=0&h=180",
           price: 899,
+          rating: 3.9,
           discount: "22%",
         },
         {
@@ -3021,6 +3263,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey US88 Men's Super Combed Mercerized Cotton Woven Fabric Regular Fit Printed Bermuda with Side Pockets (Colors & Prints May Vary)",
           url: "https://tse1.mm.bing.net/th/id/OIP.h5BBLckNg2jsBmUyodPxJAHaJC?pid=Api&P=0&h=180",
           price: 1249,
+          rating: 4.2,
           discount: "11%",
         },
         {
@@ -3028,6 +3271,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey MC10 Men's Super Combed Mercerized Cotton Woven Fabric Boxer Shorts",
           url: "https://tse3.mm.bing.net/th/id/OIP.ZIFbHoKLRYbft0YeDBLvAgHaJQ?pid=Api&P=0&h=180",
           price: 849,
+          rating: 4.0,
           discount: "0%",
         },
       ],
@@ -3057,6 +3301,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DAMENSCH Cotton Lounge Elasticated Waistband, Bermuda Pants, Relaxed Fit, Home Shorts for Men",
           url: "https://tse1.mm.bing.net/th/id/OIP.D_3q1slAE7Wh1htUM5AvoAHaJQ?pid=Api&P=0&h=180",
           price: 899,
+          rating: 3.9,
           discount: "22%",
         },
         {
@@ -3064,6 +3309,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey US88 Men's Super Combed Mercerized Cotton Woven Fabric Regular Fit Printed Bermuda with Side Pockets (Colors & Prints May Vary)",
           url: "https://tse1.mm.bing.net/th/id/OIP.h5BBLckNg2jsBmUyodPxJAHaJC?pid=Api&P=0&h=180",
           price: 1249,
+          rating: 4.2,
           discount: "11%",
         },
         {
@@ -3071,6 +3317,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey MC10 Men's Super Combed Mercerized Cotton Woven Fabric Boxer Shorts",
           url: "https://tse3.mm.bing.net/th/id/OIP.ZIFbHoKLRYbft0YeDBLvAgHaJQ?pid=Api&P=0&h=180",
           price: 849,
+          rating: 4.0,
           discount: "0%",
         },
         {
@@ -3078,6 +3325,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "0-DEGREE Men's Regular Fit Shorts with Pocket Multicolor",
           url: "https://tse4.mm.bing.net/th/id/OIP.nuIxsr6UBmEVFa10bqkQ-wHaIh?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "86%",
         },
       ],
@@ -3107,6 +3355,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey US88 Men's Super Combed Mercerized Cotton Woven Fabric Regular Fit Printed Bermuda with Side Pockets (Colors & Prints May Vary)",
           url: "https://tse1.mm.bing.net/th/id/OIP.h5BBLckNg2jsBmUyodPxJAHaJC?pid=Api&P=0&h=180",
           price: 1249,
+          rating: 4.2,
           discount: "11%",
         },
         {
@@ -3114,6 +3363,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey MC10 Men's Super Combed Mercerized Cotton Woven Fabric Boxer Shorts",
           url: "https://tse3.mm.bing.net/th/id/OIP.ZIFbHoKLRYbft0YeDBLvAgHaJQ?pid=Api&P=0&h=180",
           price: 849,
+          rating: 4.0,
           discount: "0%",
         },
         {
@@ -3121,6 +3371,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "0-DEGREE Men's Regular Fit Shorts with Pocket Multicolor",
           url: "https://tse4.mm.bing.net/th/id/OIP.nuIxsr6UBmEVFa10bqkQ-wHaIh?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "86%",
         },
         {
@@ -3128,6 +3379,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SMOWKLY Authentics Classic Men's Ribbed Polycotton Relaxed Fit Cargo Stretch Shorts || Half Pant with Drawstring & 4 Pockets || Lightweight & Quick Dry || Men Shorts Casual ||Shorts Pant for Men",
           url: "https://tse2.mm.bing.net/th/id/OIP.Nd31U8MDfJIPSXCQioUsyQHaH6?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "90%",
         },
       ],
@@ -3156,6 +3408,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey MC10 Men's Super Combed Mercerized Cotton Woven Fabric Boxer Shorts",
           url: "https://tse3.mm.bing.net/th/id/OIP.ZIFbHoKLRYbft0YeDBLvAgHaJQ?pid=Api&P=0&h=180",
           price: 849,
+          rating: 4.0,
           discount: "0%",
         },
         {
@@ -3163,6 +3416,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "0-DEGREE Men's Regular Fit Shorts with Pocket Multicolor",
           url: "https://tse4.mm.bing.net/th/id/OIP.nuIxsr6UBmEVFa10bqkQ-wHaIh?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "86%",
         },
         {
@@ -3170,6 +3424,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SMOWKLY Authentics Classic Men's Ribbed Polycotton Relaxed Fit Cargo Stretch Shorts || Half Pant with Drawstring & 4 Pockets || Lightweight & Quick Dry || Men Shorts Casual ||Shorts Pant for Men",
           url: "https://tse2.mm.bing.net/th/id/OIP.Nd31U8MDfJIPSXCQioUsyQHaH6?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "90%",
         },
         {
@@ -3177,6 +3432,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lymio Men Shorts || Men Shorts Cotton || Men Shorts Casual (Short 09-12)",
           url: "https://tse3.mm.bing.net/th/id/OIP.V-FZ-bsOStDft7a3vYK6GwHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.6,
           discount: "82%",
         },
       ],
@@ -3206,6 +3462,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "0-DEGREE Men's Regular Fit Shorts with Pocket Multicolor",
           url: "https://tse4.mm.bing.net/th/id/OIP.nuIxsr6UBmEVFa10bqkQ-wHaIh?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "86%",
         },
         {
@@ -3213,6 +3470,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SMOWKLY Authentics Classic Men's Ribbed Polycotton Relaxed Fit Cargo Stretch Shorts || Half Pant with Drawstring & 4 Pockets || Lightweight & Quick Dry || Men Shorts Casual ||Shorts Pant for Men",
           url: "https://tse2.mm.bing.net/th/id/OIP.Nd31U8MDfJIPSXCQioUsyQHaH6?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "90%",
         },
         {
@@ -3220,6 +3478,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lymio Men Shorts || Men Shorts Cotton || Men Shorts Casual (Short 09-12)",
           url: "https://tse3.mm.bing.net/th/id/OIP.V-FZ-bsOStDft7a3vYK6GwHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.6,
           discount: "82%",
         },
         {
@@ -3227,6 +3486,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey SP26 Men's Super Combed Cotton Rich Regular Fit Solid Active Wear Shorts with Side Pockets",
           url: "https://tse3.mm.bing.net/th/id/OIP.lbupsZjIicefZsYUEz1HXgHaHa?pid=Api&P=0&h=180",
           price: 1229,
+          rating: 4.3,
           discount: "7%",
         },
       ],
@@ -3256,6 +3516,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SMOWKLY Authentics Classic Men's Ribbed Polycotton Relaxed Fit Cargo Stretch Shorts || Half Pant with Drawstring & 4 Pockets || Lightweight & Quick Dry || Men Shorts Casual ||Shorts Pant for Men",
           url: "https://tse2.mm.bing.net/th/id/OIP.Nd31U8MDfJIPSXCQioUsyQHaH6?pid=Api&P=0&h=180",
           price: 4999,
+          rating: 3.8,
           discount: "90%",
         },
         {
@@ -3263,6 +3524,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lymio Men Shorts || Men Shorts Cotton || Men Shorts Casual (Short 09-12)",
           url: "https://tse3.mm.bing.net/th/id/OIP.V-FZ-bsOStDft7a3vYK6GwHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.6,
           discount: "82%",
         },
         {
@@ -3270,6 +3532,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey SP26 Men's Super Combed Cotton Rich Regular Fit Solid Active Wear Shorts with Side Pockets",
           url: "https://tse3.mm.bing.net/th/id/OIP.lbupsZjIicefZsYUEz1HXgHaHa?pid=Api&P=0&h=180",
           price: 1229,
+          rating: 4.3,
           discount: "7%",
         },
         {
@@ -3277,6 +3540,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey Men Straight fit Shorts",
           url: "https://tse4.mm.bing.net/th/id/OIP.eCekxCrw_PNwkWRKi-zP_QAAAA?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.2,
           discount: "8%",
         },
       ],
@@ -3306,6 +3570,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Lymio Men Shorts || Men Shorts Cotton || Men Shorts Casual (Short 09-12)",
           url: "https://tse3.mm.bing.net/th/id/OIP.V-FZ-bsOStDft7a3vYK6GwHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.6,
           discount: "82%",
         },
         {
@@ -3313,6 +3578,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey SP26 Men's Super Combed Cotton Rich Regular Fit Solid Active Wear Shorts with Side Pockets",
           url: "https://tse3.mm.bing.net/th/id/OIP.lbupsZjIicefZsYUEz1HXgHaHa?pid=Api&P=0&h=180",
           price: 1229,
+          rating: 4.3,
           discount: "7%",
         },
         {
@@ -3320,6 +3586,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey Men Straight fit Shorts",
           url: "https://tse4.mm.bing.net/th/id/OIP.eCekxCrw_PNwkWRKi-zP_QAAAA?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.2,
           discount: "8%",
         },
         {
@@ -3327,6 +3594,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pepe Jeans Men's Cotton Boxer Shorts Regular Fit Solid Shorts (Pack of 1)",
           url: "https://tse3.mm.bing.net/th/id/OIP.H1PnuQHpdk3zRB-W8GvjaAHaIh?pid=Api&P=0&h=180",
           price: 1199,
+          rating: 4.1,
           discount: "54%",
         },
       ],
@@ -3356,6 +3624,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey SP26 Men's Super Combed Cotton Rich Regular Fit Solid Active Wear Shorts with Side Pockets",
           url: "https://tse3.mm.bing.net/th/id/OIP.lbupsZjIicefZsYUEz1HXgHaHa?pid=Api&P=0&h=180",
           price: 1229,
+          rating: 4.3,
           discount: "7%",
         },
         {
@@ -3363,6 +3632,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey Men Straight fit Shorts",
           url: "https://tse4.mm.bing.net/th/id/OIP.eCekxCrw_PNwkWRKi-zP_QAAAA?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.2,
           discount: "8%",
         },
         {
@@ -3370,6 +3640,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pepe Jeans Men's Cotton Boxer Shorts Regular Fit Solid Shorts (Pack of 1)",
           url: "https://tse3.mm.bing.net/th/id/OIP.H1PnuQHpdk3zRB-W8GvjaAHaIh?pid=Api&P=0&h=180",
           price: 1199,
+          rating: 4.1,
           discount: "54%",
         },
         {
@@ -3377,6 +3648,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boldfit Shorts Pant for Men, Breathable, Quick Dry, Lightweight Gym Shorts for Men Workout with Pockets Sports Shorts for Man",
           url: "https://tse3.mm.bing.net/th/id/OIP.p3wF-Hqc0xBsYY3O7arvyAHaLW?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.2,
           discount: "38%",
         },
       ],
@@ -3406,6 +3678,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey Men Straight fit Shorts",
           url: "https://tse4.mm.bing.net/th/id/OIP.eCekxCrw_PNwkWRKi-zP_QAAAA?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.2,
           discount: "8%",
         },
         {
@@ -3413,6 +3686,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pepe Jeans Men's Cotton Boxer Shorts Regular Fit Solid Shorts (Pack of 1)",
           url: "https://tse3.mm.bing.net/th/id/OIP.H1PnuQHpdk3zRB-W8GvjaAHaIh?pid=Api&P=0&h=180",
           price: 1199,
+          rating: 4.1,
           discount: "54%",
         },
         {
@@ -3420,6 +3694,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boldfit Shorts Pant for Men, Breathable, Quick Dry, Lightweight Gym Shorts for Men Workout with Pockets Sports Shorts for Man",
           url: "https://tse3.mm.bing.net/th/id/OIP.p3wF-Hqc0xBsYY3O7arvyAHaLW?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.2,
           discount: "38%",
         },
         {
@@ -3427,6 +3702,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DAMENSCH Cotton Lounge Elasticated Waistband, Bermuda Pants, Relaxed Fit, Home Shorts for Men",
           url: "https://tse1.mm.bing.net/th/id/OIP.D_3q1slAE7Wh1htUM5AvoAHaJQ?pid=Api&P=0&h=180",
           price: 899,
+          rating: 3.9,
           discount: "22%",
         },
       ],
@@ -3456,6 +3732,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pepe Jeans Men's Cotton Boxer Shorts Regular Fit Solid Shorts (Pack of 1)",
           url: "https://tse3.mm.bing.net/th/id/OIP.H1PnuQHpdk3zRB-W8GvjaAHaIh?pid=Api&P=0&h=180",
           price: 1199,
+          rating: 4.1,
           discount: "54%",
         },
         {
@@ -3463,6 +3740,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boldfit Shorts Pant for Men, Breathable, Quick Dry, Lightweight Gym Shorts for Men Workout with Pockets Sports Shorts for Man",
           url: "https://tse3.mm.bing.net/th/id/OIP.p3wF-Hqc0xBsYY3O7arvyAHaLW?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.2,
           discount: "38%",
         },
         {
@@ -3470,6 +3748,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DAMENSCH Cotton Lounge Elasticated Waistband, Bermuda Pants, Relaxed Fit, Home Shorts for Men",
           url: "https://tse1.mm.bing.net/th/id/OIP.D_3q1slAE7Wh1htUM5AvoAHaJQ?pid=Api&P=0&h=180",
           price: 899,
+          rating: 3.9,
           discount: "22%",
         },
         {
@@ -3477,6 +3756,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jockey US88 Men's Super Combed Mercerized Cotton Woven Fabric Regular Fit Printed Bermuda with Side Pockets (Colors & Prints May Vary)",
           url: "https://tse1.mm.bing.net/th/id/OIP.h5BBLckNg2jsBmUyodPxJAHaJC?pid=Api&P=0&h=180",
           price: 1249,
+          rating: 4.2,
           discount: "11%",
         },
       ],
@@ -3506,6 +3786,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SOJANYA Men’s Cotton Linen Long Kurta – Kalamkari Printed Ethnic Wear",
           url: "https://tse3.mm.bing.net/th/id/OIP.5cF95fs4FkzuwW6LiI0ROgHaKe?pid=Api&P=0&h=180",
           price: 2663,
+          rating: 3.6,
           discount: "73%",
         },
         {
@@ -3513,6 +3794,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SOJANYA (Since 1958 Men's Cotton Blend Ethnic Motifs Printed Only Long Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.TuuKZVcC0v2_vszcz7_09gHaLH?pid=Api&P=0&h=180",
           price: 2472,
+          rating: 4.0,
           discount: "64%",
         },
         {
@@ -3520,6 +3802,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DIVISIVE Men's Sequince Embroidered Cotton Blend Only Slim Fit Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.kdUDNta9JlcBn6PIfTz6HAHaHa?pid=Api&P=0&h=180",
           price: 2349,
+          rating: 3.9,
           discount: "66%",
         },
         {
@@ -3527,6 +3810,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PMajestic Man Men's Cotton Regular Fit Casual Mandarin Collar Ethnic Motifs Printed Long Regular Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.xEpA32aNjHeyZVV3VORmDAHaJi?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 4.1,
           discount: "72%",
         },
       ],
@@ -3556,6 +3840,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SOJANYA (Since 1958 Men's Cotton Blend Ethnic Motifs Printed Only Long Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.TuuKZVcC0v2_vszcz7_09gHaLH?pid=Api&P=0&h=180",
           price: 2472,
+          rating: 4.0,
           discount: "64%",
         },
         {
@@ -3563,6 +3848,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DIVISIVE Men's Sequince Embroidered Cotton Blend Only Slim Fit Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.kdUDNta9JlcBn6PIfTz6HAHaHa?pid=Api&P=0&h=180",
           price: 2349,
+          rating: 3.9,
           discount: "66%",
         },
         {
@@ -3570,6 +3856,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PMajestic Man Men's Cotton Regular Fit Casual Mandarin Collar Ethnic Motifs Printed Long Regular Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.xEpA32aNjHeyZVV3VORmDAHaJi?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 4.1,
           discount: "72%",
         },
         {
@@ -3577,6 +3864,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Ethnic Full-Sleeve Traditional Embroidered Panjabi Kurta Indian Wear for Festive and Casual Occasions - Comfortable Cotton",
           url: "https://tse4.mm.bing.net/th/id/OIP.lXl38dq9jVIw9cm2JbrOIgHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.8,
           discount: "78%",
         },
       ],
@@ -3606,6 +3894,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DIVISIVE Men's Sequince Embroidered Cotton Blend Only Slim Fit Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.kdUDNta9JlcBn6PIfTz6HAHaHa?pid=Api&P=0&h=180",
           price: 2349,
+          rating: 3.9,
           discount: "66%",
         },
         {
@@ -3613,6 +3902,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PMajestic Man Men's Cotton Regular Fit Casual Mandarin Collar Ethnic Motifs Printed Long Regular Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.xEpA32aNjHeyZVV3VORmDAHaJi?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 4.1,
           discount: "72%",
         },
         {
@@ -3620,6 +3910,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Ethnic Full-Sleeve Traditional Embroidered Panjabi Kurta Indian Wear for Festive and Casual Occasions - Comfortable Cotton",
           url: "https://tse4.mm.bing.net/th/id/OIP.lXl38dq9jVIw9cm2JbrOIgHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.8,
           discount: "78%",
         },
         {
@@ -3627,6 +3918,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Studio Shringaar Men's Cotton Blend Relaxed Fit Ikat Printed Knee Length Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.0FZ1qHC8dLLytbh233RZPgHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.1,
           discount: "62%",
         },
       ],
@@ -3656,6 +3948,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "PMajestic Man Men's Cotton Regular Fit Casual Mandarin Collar Ethnic Motifs Printed Long Regular Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.xEpA32aNjHeyZVV3VORmDAHaJi?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 4.1,
           discount: "72%",
         },
         {
@@ -3663,6 +3956,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Ethnic Full-Sleeve Traditional Embroidered Panjabi Kurta Indian Wear for Festive and Casual Occasions - Comfortable Cotton",
           url: "https://tse4.mm.bing.net/th/id/OIP.lXl38dq9jVIw9cm2JbrOIgHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.8,
           discount: "78%",
         },
         {
@@ -3670,6 +3964,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Studio Shringaar Men's Cotton Blend Relaxed Fit Ikat Printed Knee Length Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.0FZ1qHC8dLLytbh233RZPgHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.1,
           discount: "62%",
         },
         {
@@ -3677,6 +3972,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Rayon Blend Solid Regular Festive Embellished Long Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.qDfPoXcBch5bYDanTzwoUAHaNB?pid=Api&P=0&h=180",
           price: 2299,
+          rating: 4.0,
           discount: "57%",
         },
       ],
@@ -3706,6 +4002,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Ethnic Full-Sleeve Traditional Embroidered Panjabi Kurta Indian Wear for Festive and Casual Occasions - Comfortable Cotton",
           url: "https://tse4.mm.bing.net/th/id/OIP.lXl38dq9jVIw9cm2JbrOIgHaHa?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.8,
           discount: "78%",
         },
         {
@@ -3713,6 +4010,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Studio Shringaar Men's Cotton Blend Relaxed Fit Ikat Printed Knee Length Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.0FZ1qHC8dLLytbh233RZPgHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.1,
           discount: "62%",
         },
         {
@@ -3720,6 +4018,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Rayon Blend Solid Regular Festive Embellished Long Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.qDfPoXcBch5bYDanTzwoUAHaNB?pid=Api&P=0&h=180",
           price: 2299,
+          rating: 4.0,
           discount: "57%",
         },
         {
@@ -3727,6 +4026,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's 100% Cotton Everyday Mid Length Casual Kurta - Regular Fit (Available in Plus Sizes)",
           url: "https://tse3.mm.bing.net/th/id/OIP.wverUo-3mJWZyr25txOhUgHaKu?pid=Api&P=0&h=180",
           price: 1899,
+          rating: 4.1,
           discount: "68%",
         },
       ],
@@ -3757,6 +4057,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Studio Shringaar Men's Cotton Blend Relaxed Fit Ikat Printed Knee Length Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.0FZ1qHC8dLLytbh233RZPgHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.1,
           discount: "62%",
         },
         {
@@ -3764,6 +4065,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Rayon Blend Solid Regular Festive Embellished Long Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.qDfPoXcBch5bYDanTzwoUAHaNB?pid=Api&P=0&h=180",
           price: 2299,
+          rating: 4.0,
           discount: "57%",
         },
         {
@@ -3771,6 +4073,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's 100% Cotton Everyday Mid Length Casual Kurta - Regular Fit (Available in Plus Sizes)",
           url: "https://tse3.mm.bing.net/th/id/OIP.wverUo-3mJWZyr25txOhUgHaKu?pid=Api&P=0&h=180",
           price: 1899,
+          rating: 4.1,
           discount: "68%",
         },
         {
@@ -3778,6 +4081,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Cotton Regular Fit Casual Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.UMiLYnbyp51OTXyLQW9N-QHaKK?pid=Api&P=0&h=180",
           price: 3499,
+          rating: 4.1,
           discount: "63%",
         },
       ],
@@ -3807,6 +4111,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Rayon Blend Solid Regular Festive Embellished Long Kurta",
           url: "https://tse3.mm.bing.net/th/id/OIP.qDfPoXcBch5bYDanTzwoUAHaNB?pid=Api&P=0&h=180",
           price: 2299,
+          rating: 4.0,
           discount: "57%",
         },
         {
@@ -3814,6 +4119,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's 100% Cotton Everyday Mid Length Casual Kurta - Regular Fit (Available in Plus Sizes)",
           url: "https://tse3.mm.bing.net/th/id/OIP.wverUo-3mJWZyr25txOhUgHaKu?pid=Api&P=0&h=180",
           price: 1899,
+          rating: 4.1,
           discount: "68%",
         },
         {
@@ -3821,6 +4127,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Cotton Regular Fit Casual Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.UMiLYnbyp51OTXyLQW9N-QHaKK?pid=Api&P=0&h=180",
           price: 3499,
+          rating: 4.1,
           discount: "63%",
         },
         {
@@ -3828,6 +4135,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Traditional Embroidered,Panjabi Kurta,Small Size",
           url: "https://tse3.mm.bing.net/th/id/OIP.e3KVs0uQzVkK-hQfdnAYnQHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.6,
           discount: "60%",
         },
       ],
@@ -3857,6 +4165,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's 100% Cotton Everyday Mid Length Casual Kurta - Regular Fit (Available in Plus Sizes)",
           url: "https://tse3.mm.bing.net/th/id/OIP.wverUo-3mJWZyr25txOhUgHaKu?pid=Api&P=0&h=180",
           price: 1899,
+          rating: 4.1,
           discount: "68%",
         },
         {
@@ -3864,6 +4173,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Cotton Regular Fit Casual Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.UMiLYnbyp51OTXyLQW9N-QHaKK?pid=Api&P=0&h=180",
           price: 3499,
+          rating: 4.1,
           discount: "63%",
         },
         {
@@ -3871,6 +4181,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Traditional Embroidered,Panjabi Kurta,Small Size",
           url: "https://tse3.mm.bing.net/th/id/OIP.e3KVs0uQzVkK-hQfdnAYnQHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.6,
           discount: "60%",
         },
         {
@@ -3878,6 +4189,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SOJANYA Men’s Cotton Linen Long Kurta – Kalamkari Printed Ethnic Wear",
           url: "https://tse3.mm.bing.net/th/id/OIP.5cF95fs4FkzuwW6LiI0ROgHaKe?pid=Api&P=0&h=180",
           price: 2663,
+          rating: 3.6,
           discount: "73%",
         },
       ],
@@ -3907,6 +4219,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amazon Brand - Symbol Men's Cotton Regular Fit Casual Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.UMiLYnbyp51OTXyLQW9N-QHaKK?pid=Api&P=0&h=180",
           price: 3499,
+          rating: 4.1,
           discount: "63%",
         },
         {
@@ -3914,6 +4227,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Traditional Embroidered,Panjabi Kurta,Small Size",
           url: "https://tse3.mm.bing.net/th/id/OIP.e3KVs0uQzVkK-hQfdnAYnQHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.6,
           discount: "60%",
         },
         {
@@ -3921,6 +4235,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SOJANYA Men’s Cotton Linen Long Kurta – Kalamkari Printed Ethnic Wear",
           url: "https://tse3.mm.bing.net/th/id/OIP.5cF95fs4FkzuwW6LiI0ROgHaKe?pid=Api&P=0&h=180",
           price: 2663,
+          rating: 3.6,
           discount: "73%",
         },
         {
@@ -3928,6 +4243,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SOJANYA (Since 1958 Men's Cotton Blend Ethnic Motifs Printed Only Long Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.TuuKZVcC0v2_vszcz7_09gHaLH?pid=Api&P=0&h=180",
           price: 2472,
+          rating: 4.0,
           discount: "64%",
         },
       ],
@@ -3957,6 +4273,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men's Traditional Embroidered,Panjabi Kurta,Small Size",
           url: "https://tse3.mm.bing.net/th/id/OIP.e3KVs0uQzVkK-hQfdnAYnQHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.6,
           discount: "60%",
         },
         {
@@ -3964,6 +4281,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SOJANYA Men’s Cotton Linen Long Kurta – Kalamkari Printed Ethnic Wear",
           url: "https://tse3.mm.bing.net/th/id/OIP.5cF95fs4FkzuwW6LiI0ROgHaKe?pid=Api&P=0&h=180",
           price: 2663,
+          rating: 3.6,
           discount: "73%",
         },
         {
@@ -3971,6 +4289,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SOJANYA (Since 1958 Men's Cotton Blend Ethnic Motifs Printed Only Long Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.TuuKZVcC0v2_vszcz7_09gHaLH?pid=Api&P=0&h=180",
           price: 2472,
+          rating: 4.0,
           discount: "64%",
         },
         {
@@ -3978,6 +4297,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "DIVISIVE Men's Sequince Embroidered Cotton Blend Only Slim Fit Kurta",
           url: "https://tse4.mm.bing.net/th/id/OIP.kdUDNta9JlcBn6PIfTz6HAHaHa?pid=Api&P=0&h=180",
           price: 2349,
+          rating: 3.9,
           discount: "66%",
         },
       ],
@@ -4007,6 +4327,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAGAS Men Relaxed FIT Denim Jeans | Loose Jeans for Men | Mens Baggy Fit Denim Jeans Pant | MDJ-22",
           url: "https://tse4.mm.bing.net/th/id/OIP.VM8nuLWpG8gCeU2iTt_ZWwHaJ4?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.6,
           discount: "66%",
         },
         {
@@ -4014,6 +4335,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Louis Philippe Men Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.yFkNXo-AHxjgo52MbB02SQHaJ3?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 5.0,
           discount: "40%",
         },
         {
@@ -4021,6 +4343,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KOTTY Men's Straight Fit Mid Rise Two-Tone Patchwork Jeans | Unique Streetwear | Bold & Trendy Look",
           url: "https://tse2.mm.bing.net/th/id/OIP.zx1F3Pz9WS1iRkhQg2jJDwHaHa?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.6,
           discount: "78%",
         },
         {
@@ -4028,6 +4351,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Tapered Fit Mid Rise Classic Tape Stretchable Twill Jeans",
           url: "https://tse3.mm.bing.net/th/id/OIP.gf-yqIHM5HyIyehDZzCHHQHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "48%",
         },
       ],
@@ -4057,6 +4381,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Louis Philippe Men Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.yFkNXo-AHxjgo52MbB02SQHaJ3?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 5.0,
           discount: "40%",
         },
         {
@@ -4064,6 +4389,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KOTTY Men's Straight Fit Mid Rise Two-Tone Patchwork Jeans | Unique Streetwear | Bold & Trendy Look",
           url: "https://tse2.mm.bing.net/th/id/OIP.zx1F3Pz9WS1iRkhQg2jJDwHaHa?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.6,
           discount: "78%",
         },
         {
@@ -4071,6 +4397,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Tapered Fit Mid Rise Classic Tape Stretchable Twill Jeans",
           url: "https://tse3.mm.bing.net/th/id/OIP.gf-yqIHM5HyIyehDZzCHHQHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "48%",
         },
         {
@@ -4078,6 +4405,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Cantabil Men Blue Cotton Regular Fit Casual Jeans (P_MDNM00376_DARKMERCERISED)",
           url: "https://tse4.mm.bing.net/th/id/OIP.IFlrGIFNUbg-Q37_tccdrgAAAA?pid=Api&P=0&h=180",
           price: 3699,
+          rating: 5.0,
           discount: "67%",
         },
       ],
@@ -4107,6 +4435,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KOTTY Men's Straight Fit Mid Rise Two-Tone Patchwork Jeans | Unique Streetwear | Bold & Trendy Look",
           url: "https://tse2.mm.bing.net/th/id/OIP.zx1F3Pz9WS1iRkhQg2jJDwHaHa?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.6,
           discount: "78%",
         },
         {
@@ -4114,6 +4443,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Tapered Fit Mid Rise Classic Tape Stretchable Twill Jeans",
           url: "https://tse3.mm.bing.net/th/id/OIP.gf-yqIHM5HyIyehDZzCHHQHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "48%",
         },
         {
@@ -4121,6 +4451,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Cantabil Men Blue Cotton Regular Fit Casual Jeans (P_MDNM00376_DARKMERCERISED)",
           url: "https://tse4.mm.bing.net/th/id/OIP.IFlrGIFNUbg-Q37_tccdrgAAAA?pid=Api&P=0&h=180",
           price: 3699,
+          rating: 5.0,
           discount: "67%",
         },
         {
@@ -4128,6 +4459,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "London Hills Tapered Fit Mid Rise Classic Stretchable Jeans | Casual Denim Jean's for Man's | Slim fit Jeans for Men Blue",
           url: "https://tse4.mm.bing.net/th/id/OIP.ROCo9zmFLtb0n2pAWEVojgHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.0,
           discount: "68%",
         },
       ],
@@ -4157,6 +4489,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Peter England Men's Tapered Fit Mid Rise Classic Tape Stretchable Twill Jeans",
           url: "https://tse3.mm.bing.net/th/id/OIP.gf-yqIHM5HyIyehDZzCHHQHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "48%",
         },
         {
@@ -4164,6 +4497,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Cantabil Men Blue Cotton Regular Fit Casual Jeans (P_MDNM00376_DARKMERCERISED)",
           url: "https://tse4.mm.bing.net/th/id/OIP.IFlrGIFNUbg-Q37_tccdrgAAAA?pid=Api&P=0&h=180",
           price: 3699,
+          rating: 5.0,
           discount: "67%",
         },
         {
@@ -4171,6 +4505,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "London Hills Tapered Fit Mid Rise Classic Stretchable Jeans | Casual Denim Jean's for Man's | Slim fit Jeans for Men Blue",
           url: "https://tse4.mm.bing.net/th/id/OIP.ROCo9zmFLtb0n2pAWEVojgHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.0,
           discount: "68%",
         },
         {
@@ -4178,6 +4513,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Ben Martin Men Jeans || Baggy Fit Jean's for Man || Loose Fit High Rise Denim || Stretchable Casual Wear Jean,s || Dance Rap Rapping Style Pant for Men || Denim Cotton Jeans (0)",
           url: "https://tse2.mm.bing.net/th/id/OIP.bQZ4iolymVV6IqgXYAIZ3QHaJQ?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.0,
           discount: "72%",
         },
       ],
@@ -4207,6 +4543,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Cantabil Men Blue Cotton Regular Fit Casual Jeans (P_MDNM00376_DARKMERCERISED)",
           url: "https://tse4.mm.bing.net/th/id/OIP.IFlrGIFNUbg-Q37_tccdrgAAAA?pid=Api&P=0&h=180",
           price: 3699,
+          rating: 5.0,
           discount: "67%",
         },
         {
@@ -4214,6 +4551,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "London Hills Tapered Fit Mid Rise Classic Stretchable Jeans | Casual Denim Jean's for Man's | Slim fit Jeans for Men Blue",
           url: "https://tse4.mm.bing.net/th/id/OIP.ROCo9zmFLtb0n2pAWEVojgHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.0,
           discount: "68%",
         },
         {
@@ -4221,6 +4559,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Ben Martin Men Jeans || Baggy Fit Jean's for Man || Loose Fit High Rise Denim || Stretchable Casual Wear Jean,s || Dance Rap Rapping Style Pant for Men || Denim Cotton Jeans (0)",
           url: "https://tse2.mm.bing.net/th/id/OIP.bQZ4iolymVV6IqgXYAIZ3QHaJQ?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.0,
           discount: "72%",
         },
         {
@@ -4228,6 +4567,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Thomas Scott Men's | Mild Fade | Stright Fit | Denim | Regular Wear | Stretchable | Casual Jeans for Men",
           url: "https://tse3.mm.bing.net/th/id/OIP.8S-ykX-_AWdmxwZuuqfAzgHaJ4?pid=Api&P=0&h=180",
           price: 3799,
+          rating: 4.1,
           discount: "74%",
         },
       ],
@@ -4257,6 +4597,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "London Hills Tapered Fit Mid Rise Classic Stretchable Jeans | Casual Denim Jean's for Man's | Slim fit Jeans for Men Blue",
           url: "https://tse4.mm.bing.net/th/id/OIP.ROCo9zmFLtb0n2pAWEVojgHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 4.0,
           discount: "68%",
         },
         {
@@ -4264,6 +4605,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Ben Martin Men Jeans || Baggy Fit Jean's for Man || Loose Fit High Rise Denim || Stretchable Casual Wear Jean,s || Dance Rap Rapping Style Pant for Men || Denim Cotton Jeans (0)",
           url: "https://tse2.mm.bing.net/th/id/OIP.bQZ4iolymVV6IqgXYAIZ3QHaJQ?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.0,
           discount: "72%",
         },
         {
@@ -4271,6 +4613,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Thomas Scott Men's | Mild Fade | Stright Fit | Denim | Regular Wear | Stretchable | Casual Jeans for Men",
           url: "https://tse3.mm.bing.net/th/id/OIP.8S-ykX-_AWdmxwZuuqfAzgHaJ4?pid=Api&P=0&h=180",
           price: 3799,
+          rating: 4.1,
           discount: "74%",
         },
         {
@@ -4278,6 +4621,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pepe Jeans Men's Cargo Jeans for Men | Mid Rise | Straight Fit | Stretchable Fabric | Utility Pants with 7 Pockets | Cotton Cargo Pants",
           url: "https://tse4.mm.bing.net/th/id/OIP.nPbx5yjQqjcnB9cMmfn9xwHaJ3?pid=Api&P=0&h=180",
           price: 4499,
+          rating: 4.0,
           discount: "72%",
         },
       ],
@@ -4305,6 +4649,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Ben Martin Men Jeans || Baggy Fit Jean's for Man || Loose Fit High Rise Denim || Stretchable Casual Wear Jean,s || Dance Rap Rapping Style Pant for Men || Denim Cotton Jeans (0)",
           url: "https://tse2.mm.bing.net/th/id/OIP.bQZ4iolymVV6IqgXYAIZ3QHaJQ?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.0,
           discount: "72%",
         },
         {
@@ -4312,6 +4657,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Thomas Scott Men's | Mild Fade | Stright Fit | Denim | Regular Wear | Stretchable | Casual Jeans for Men",
           url: "https://tse3.mm.bing.net/th/id/OIP.8S-ykX-_AWdmxwZuuqfAzgHaJ4?pid=Api&P=0&h=180",
           price: 3799,
+          rating: 4.1,
           discount: "74%",
         },
         {
@@ -4319,6 +4665,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pepe Jeans Men's Cargo Jeans for Men | Mid Rise | Straight Fit | Stretchable Fabric | Utility Pants with 7 Pockets | Cotton Cargo Pants",
           url: "https://tse4.mm.bing.net/th/id/OIP.nPbx5yjQqjcnB9cMmfn9xwHaJ3?pid=Api&P=0&h=180",
           price: 4499,
+          rating: 4.0,
           discount: "72%",
         },
         {
@@ -4326,6 +4673,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Jeans || Jeans for Men || Men Jeans Pants || Jeans Pant for Man (Q-18-20)",
           url: "https://tse4.mm.bing.net/th/id/OIP.kUnwpikrMxLC5DygHW_5EgHaJ3?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 3.6,
           discount: "82%",
         },
       ],
@@ -4355,6 +4703,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Thomas Scott Men's | Mild Fade | Stright Fit | Denim | Regular Wear | Stretchable | Casual Jeans for Men",
           url: "https://tse3.mm.bing.net/th/id/OIP.8S-ykX-_AWdmxwZuuqfAzgHaJ4?pid=Api&P=0&h=180",
           price: 3799,
+          rating: 4.1,
           discount: "74%",
         },
         {
@@ -4362,6 +4711,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pepe Jeans Men's Cargo Jeans for Men | Mid Rise | Straight Fit | Stretchable Fabric | Utility Pants with 7 Pockets | Cotton Cargo Pants",
           url: "https://tse4.mm.bing.net/th/id/OIP.nPbx5yjQqjcnB9cMmfn9xwHaJ3?pid=Api&P=0&h=180",
           price: 4499,
+          rating: 4.0,
           discount: "72%",
         },
         {
@@ -4369,6 +4719,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Jeans || Jeans for Men || Men Jeans Pants || Jeans Pant for Man (Q-18-20)",
           url: "https://tse4.mm.bing.net/th/id/OIP.kUnwpikrMxLC5DygHW_5EgHaJ3?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 3.6,
           discount: "82%",
         },
         {
@@ -4376,6 +4727,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAGAS Men Relaxed FIT Denim Jeans | Loose Jeans for Men | Mens Baggy Fit Denim Jeans Pant | MDJ-22",
           url: "https://tse4.mm.bing.net/th/id/OIP.VM8nuLWpG8gCeU2iTt_ZWwHaJ4?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.6,
           discount: "66%",
         },
       ],
@@ -4405,6 +4757,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pepe Jeans Men's Cargo Jeans for Men | Mid Rise | Straight Fit | Stretchable Fabric | Utility Pants with 7 Pockets | Cotton Cargo Pants",
           url: "https://tse4.mm.bing.net/th/id/OIP.nPbx5yjQqjcnB9cMmfn9xwHaJ3?pid=Api&P=0&h=180",
           price: 4499,
+          rating: 4.0,
           discount: "72%",
         },
         {
@@ -4412,6 +4765,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Jeans || Jeans for Men || Men Jeans Pants || Jeans Pant for Man (Q-18-20)",
           url: "https://tse4.mm.bing.net/th/id/OIP.kUnwpikrMxLC5DygHW_5EgHaJ3?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 3.6,
           discount: "82%",
         },
         {
@@ -4419,6 +4773,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAGAS Men Relaxed FIT Denim Jeans | Loose Jeans for Men | Mens Baggy Fit Denim Jeans Pant | MDJ-22",
           url: "https://tse4.mm.bing.net/th/id/OIP.VM8nuLWpG8gCeU2iTt_ZWwHaJ4?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.6,
           discount: "66%",
         },
         {
@@ -4426,6 +4781,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Louis Philippe Men Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.yFkNXo-AHxjgo52MbB02SQHaJ3?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 5.0,
           discount: "40%",
         },
       ],
@@ -4452,6 +4808,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Jeans || Jeans for Men || Men Jeans Pants || Jeans Pant for Man (Q-18-20)",
           url: "https://tse4.mm.bing.net/th/id/OIP.kUnwpikrMxLC5DygHW_5EgHaJ3?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 3.6,
           discount: "82%",
         },
         {
@@ -4459,6 +4816,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TAGAS Men Relaxed FIT Denim Jeans | Loose Jeans for Men | Mens Baggy Fit Denim Jeans Pant | MDJ-22",
           url: "https://tse4.mm.bing.net/th/id/OIP.VM8nuLWpG8gCeU2iTt_ZWwHaJ4?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.6,
           discount: "66%",
         },
         {
@@ -4466,6 +4824,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Louis Philippe Men Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.yFkNXo-AHxjgo52MbB02SQHaJ3?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 5.0,
           discount: "40%",
         },
         {
@@ -4473,6 +4832,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KOTTY Men's Straight Fit Mid Rise Two-Tone Patchwork Jeans | Unique Streetwear | Bold & Trendy Look",
           url: "https://tse2.mm.bing.net/th/id/OIP.zx1F3Pz9WS1iRkhQg2jJDwHaHa?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.6,
           discount: "78%",
         },
       ],
@@ -4502,6 +4862,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Bacca Bucci Zephyr – All-Day Comfort Running & Training Shoes",
           url: "https://m.media-amazon.com/images/I/61GkAeNhpKL._AC_UL320_.jpg",
           price: 3999,
+          rating: 4.3,
           discount: "56%",
         },
         {
@@ -4509,6 +4870,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LANCER Mens Indus-251 Running Shoe",
           url: "https://m.media-amazon.com/images/I/71niZnxVrYL._SY695_.jpg",
           price: 1249,
+          rating: 3.6,
           discount: "60%",
         },
         {
@@ -4516,6 +4878,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's Wonder-13 Sports Running Shoes",
           url: "https://m.media-amazon.com/images/I/71dGLtr+1mL._AC_UL320_.jpg",
           price: 999,
+          rating: 4.0,
           discount: "41%",
         },
         {
@@ -4523,6 +4886,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Campus Men North Plus Running Shoes",
           url: "https://m.media-amazon.com/images/I/61xnkH1-GfL._AC_UL320_.jpg",
           price: 1899,
+          rating: 4.0,
           discount: "47%",
         },
       ],
@@ -4552,6 +4916,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LANCER Mens Indus-251 Running Shoe",
           url: "https://m.media-amazon.com/images/I/71niZnxVrYL._SY695_.jpg",
           price: 1249,
+          rating: 3.6,
           discount: "60%",
         },
         {
@@ -4559,6 +4924,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's Wonder-13 Sports Running Shoes",
           url: "https://m.media-amazon.com/images/I/71dGLtr+1mL._AC_UL320_.jpg",
           price: 999,
+          rating: 4.0,
           discount: "41%",
         },
         {
@@ -4566,6 +4932,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Campus Men North Plus Running Shoes",
           url: "https://m.media-amazon.com/images/I/61xnkH1-GfL._AC_UL320_.jpg",
           price: 1899,
+          rating: 4.0,
           discount: "47%",
         },
         {
@@ -4573,6 +4940,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's MEXICO-11 Casual Sneaker Shoes with Synthetic Upper Lightweight Comfortable Mid Top Sneaker Shoes for Men's & Boy's",
           url: "https://m.media-amazon.com/images/I/71A-T7rYeGL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.6,
           discount: "48%",
         },
       ],
@@ -4602,6 +4970,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's Wonder-13 Sports Running Shoes",
           url: "https://m.media-amazon.com/images/I/71dGLtr+1mL._AC_UL320_.jpg",
           price: 999,
+          rating: 4.0,
           discount: "41%",
         },
         {
@@ -4609,6 +4978,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Campus Men North Plus Running Shoes",
           url: "https://m.media-amazon.com/images/I/61xnkH1-GfL._AC_UL320_.jpg",
           price: 1899,
+          rating: 4.0,
           discount: "47%",
         },
         {
@@ -4616,6 +4986,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's MEXICO-11 Casual Sneaker Shoes with Synthetic Upper Lightweight Comfortable Mid Top Sneaker Shoes for Men's & Boy's",
           url: "https://m.media-amazon.com/images/I/71A-T7rYeGL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.6,
           discount: "48%",
         },
         {
@@ -4623,6 +4994,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "adidas Men Zarorx Speed M Running Shoe",
           url: "https://m.media-amazon.com/images/I/61LJk07g5rL._AC_UL320_.jpg",
           price: 4999,
+          rating: 4.0,
           discount: "63%",
         },
       ],
@@ -4650,6 +5022,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Campus Men North Plus Running Shoes",
           url: "https://m.media-amazon.com/images/I/61xnkH1-GfL._AC_UL320_.jpg",
           price: 1899,
+          rating: 4.0,
           discount: "47%",
         },
         {
@@ -4657,6 +5030,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's MEXICO-11 Casual Sneaker Shoes with Synthetic Upper Lightweight Comfortable Mid Top Sneaker Shoes for Men's & Boy's",
           url: "https://m.media-amazon.com/images/I/71A-T7rYeGL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.6,
           discount: "48%",
         },
         {
@@ -4664,6 +5038,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "adidas Men Zarorx Speed M Running Shoe",
           url: "https://m.media-amazon.com/images/I/61LJk07g5rL._AC_UL320_.jpg",
           price: 4999,
+          rating: 4.0,
           discount: "63%",
         },
         {
@@ -4671,6 +5046,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Mens Smart Casual Leather Sneakers",
           url: "https://m.media-amazon.com/images/I/71n9xHYpaHL._AC_UL320_.jpg",
           price: 5199,
+          rating: 3.0,
           discount: "54%",
         },
       ],
@@ -4700,6 +5076,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's MEXICO-11 Casual Sneaker Shoes with Synthetic Upper Lightweight Comfortable Mid Top Sneaker Shoes for Men's & Boy's",
           url: "https://m.media-amazon.com/images/I/71A-T7rYeGL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.6,
           discount: "48%",
         },
         {
@@ -4707,6 +5084,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "adidas Men Zarorx Speed M Running Shoe",
           url: "https://m.media-amazon.com/images/I/61LJk07g5rL._AC_UL320_.jpg",
           price: 4999,
+          rating: 4.0,
           discount: "63%",
         },
         {
@@ -4714,6 +5092,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Mens Smart Casual Leather Sneakers",
           url: "https://m.media-amazon.com/images/I/71n9xHYpaHL._AC_UL320_.jpg",
           price: 5199,
+          rating: 3.0,
           discount: "54%",
         },
         {
@@ -4721,6 +5100,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "BoldFit Running Shoes for Man Soft Sole Sports Shoes for Men Running Light Weight Shoe for Men Sports Anti Slip Gym Shoe for Man Workout mesh Gym Footwear, Black - 11",
           url: "https://m.media-amazon.com/images/I/61rWcMP4s9L._AC_UL320_.jpg",
           price: 2999,
+          rating: 4.0,
           discount: "63%",
         },
       ],
@@ -4750,6 +5130,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "adidas Men Zarorx Speed M Running Shoe",
           url: "https://m.media-amazon.com/images/I/61LJk07g5rL._AC_UL320_.jpg",
           price: 4999,
+          rating: 4.0,
           discount: "63%",
         },
         {
@@ -4757,6 +5138,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Mens Smart Casual Leather Sneakers",
           url: "https://m.media-amazon.com/images/I/71n9xHYpaHL._AC_UL320_.jpg",
           price: 5199,
+          rating: 3.0,
           discount: "54%",
         },
         {
@@ -4764,6 +5146,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "BoldFit Running Shoes for Man Soft Sole Sports Shoes for Men Running Light Weight Shoe for Men Sports Anti Slip Gym Shoe for Man Workout mesh Gym Footwear, Black - 11",
           url: "https://m.media-amazon.com/images/I/61rWcMP4s9L._AC_UL320_.jpg",
           price: 2999,
+          rating: 4.0,
           discount: "63%",
         },
         {
@@ -4771,6 +5154,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANT Men Delux Running Shoes",
           url: "https://m.media-amazon.com/images/I/61gKatv2y7L._AC_UL320_.jpg",
           price: 1669,
+          rating: 3.9,
           discount: "37%",
         },
       ],
@@ -4800,6 +5184,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Mens Smart Casual Leather Sneakers",
           url: "https://m.media-amazon.com/images/I/71n9xHYpaHL._AC_UL320_.jpg",
           price: 5199,
+          rating: 3.0,
           discount: "54%",
         },
         {
@@ -4807,6 +5192,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "BoldFit Running Shoes for Man Soft Sole Sports Shoes for Men Running Light Weight Shoe for Men Sports Anti Slip Gym Shoe for Man Workout mesh Gym Footwear, Black - 11",
           url: "https://m.media-amazon.com/images/I/61rWcMP4s9L._AC_UL320_.jpg",
           price: 2999,
+          rating: 4.0,
           discount: "63%",
         },
         {
@@ -4814,6 +5200,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANT Men Delux Running Shoes",
           url: "https://m.media-amazon.com/images/I/61gKatv2y7L._AC_UL320_.jpg",
           price: 1669,
+          rating: 3.9,
           discount: "37%",
         },
         {
@@ -4821,6 +5208,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "adidas Unisex Lite Racer 4.0 Casual Shoe",
           url: "https://m.media-amazon.com/images/I/6157WaPyAyL._AC_UL320_.jpg",
           price: 5599,
+          rating: 4.4,
           discount: "60%",
         },
       ],
@@ -4850,6 +5238,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "BoldFit Running Shoes for Man Soft Sole Sports Shoes for Men Running Light Weight Shoe for Men Sports Anti Slip Gym Shoe for Man Workout mesh Gym Footwear, Black - 11",
           url: "https://m.media-amazon.com/images/I/61rWcMP4s9L._AC_UL320_.jpg",
           price: 2999,
+          rating: 4.0,
           discount: "63%",
         },
         {
@@ -4857,6 +5246,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANT Men Delux Running Shoes",
           url: "https://m.media-amazon.com/images/I/61gKatv2y7L._AC_UL320_.jpg",
           price: 1669,
+          rating: 3.9,
           discount: "37%",
         },
         {
@@ -4864,6 +5254,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "adidas Unisex Lite Racer 4.0 Casual Shoe",
           url: "https://m.media-amazon.com/images/I/6157WaPyAyL._AC_UL320_.jpg",
           price: 5599,
+          rating: 4.4,
           discount: "60%",
         },
         {
@@ -4871,6 +5262,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Bacca Bucci Zephyr – All-Day Comfort Running & Training Shoes",
           url: "https://m.media-amazon.com/images/I/61GkAeNhpKL._AC_UL320_.jpg",
           price: 3999,
+          rating: 4.3,
           discount: "56%",
         },
       ],
@@ -4900,6 +5292,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANT Men Delux Running Shoes",
           url: "https://m.media-amazon.com/images/I/61gKatv2y7L._AC_UL320_.jpg",
           price: 1669,
+          rating: 3.9,
           discount: "37%",
         },
         {
@@ -4907,6 +5300,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "adidas Unisex Lite Racer 4.0 Casual Shoe",
           url: "https://m.media-amazon.com/images/I/6157WaPyAyL._AC_UL320_.jpg",
           price: 5599,
+          rating: 4.4,
           discount: "60%",
         },
         {
@@ -4914,6 +5308,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Bacca Bucci Zephyr – All-Day Comfort Running & Training Shoes",
           url: "https://m.media-amazon.com/images/I/61GkAeNhpKL._AC_UL320_.jpg",
           price: 3999,
+          rating: 4.3,
           discount: "56%",
         },
         {
@@ -4921,6 +5316,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LANCER Mens Indus-251 Running Shoe",
           url: "https://m.media-amazon.com/images/I/71niZnxVrYL._SY695_.jpg",
           price: 1249,
+          rating: 3.6,
           discount: "60%",
         },
       ],
@@ -4950,6 +5346,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "adidas Unisex Lite Racer 4.0 Casual Shoe",
           url: "https://m.media-amazon.com/images/I/6157WaPyAyL._AC_UL320_.jpg",
           price: 5599,
+          rating: 4.4,
           discount: "60%",
         },
         {
@@ -4957,6 +5354,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Bacca Bucci Zephyr – All-Day Comfort Running & Training Shoes",
           url: "https://m.media-amazon.com/images/I/61GkAeNhpKL._AC_UL320_.jpg",
           price: 3999,
+          rating: 4.3,
           discount: "56%",
         },
         {
@@ -4964,6 +5362,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "LANCER Mens Indus-251 Running Shoe",
           url: "https://m.media-amazon.com/images/I/71niZnxVrYL._SY695_.jpg",
           price: 1249,
+          rating: 3.6,
           discount: "60%",
         },
         {
@@ -4971,6 +5370,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's Wonder-13 Sports Running Shoes",
           url: "https://m.media-amazon.com/images/I/71dGLtr+1mL._AC_UL320_.jpg",
           price: 999,
+          rating: 4.0,
           discount: "41%",
         },
       ],
@@ -5000,6 +5400,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut High Rise Clean Look Regular Stretchable Denim Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.5qkn_JjkYuFiFiXPJuyAygHaJ4?pid=Api&P=0&h=180",
           price: 2399,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -5007,6 +5408,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut Fit High Rise Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.EzJsQGhIZZ2HaScqX0f_QAHaJ4?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -5014,6 +5416,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "London Hills Women's Relaxed Fit High Rise Jeans || Woman Jean's || Women Baggy Jeans || Jean's for Womens || Loose Jean for Women's || Oversized Woman baggys",
           url: "https://tse2.mm.bing.net/th/id/OIP.Kcle1oGU_Vr5rxQvAYbFrQHaKl?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 4.2,
           discount: "73%",
         },
         {
@@ -5021,6 +5424,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KOTTY Women's High Waist Straight Fit Cotton Blend Denim Jeans|Comfortable Regular Length Casual Jeans for Women",
           url: "https://tse2.mm.bing.net/th/id/OIP.r8yQkD5fqL8UhplpV4aJVwHaJ4?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.8,
           discount: "77%",
         },
       ],
@@ -5050,6 +5454,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut Fit High Rise Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.EzJsQGhIZZ2HaScqX0f_QAHaJ4?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -5057,6 +5462,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "London Hills Women's Relaxed Fit High Rise Jeans || Woman Jean's || Women Baggy Jeans || Jean's for Womens || Loose Jean for Women's || Oversized Woman baggys",
           url: "https://tse2.mm.bing.net/th/id/OIP.Kcle1oGU_Vr5rxQvAYbFrQHaKl?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 4.2,
           discount: "73%",
         },
         {
@@ -5064,6 +5470,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KOTTY Women's High Waist Straight Fit Cotton Blend Denim Jeans|Comfortable Regular Length Casual Jeans for Women",
           url: "https://tse2.mm.bing.net/th/id/OIP.r8yQkD5fqL8UhplpV4aJVwHaJ4?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.8,
           discount: "77%",
         },
         {
@@ -5071,6 +5478,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "INKD Women's Stretchable Flare Jeans",
           url: "https://tse4.mm.bing.net/th/id/OIP.EEbSbvHzA0fAQzcqiI4LWQHaJ4?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 4.1,
           discount: "61%",
         },
       ],
@@ -5100,6 +5508,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "London Hills Women's Relaxed Fit High Rise Jeans || Woman Jean's || Women Baggy Jeans || Jean's for Womens || Loose Jean for Women's || Oversized Woman baggys",
           url: "https://tse2.mm.bing.net/th/id/OIP.Kcle1oGU_Vr5rxQvAYbFrQHaKl?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 4.2,
           discount: "73%",
         },
         {
@@ -5107,6 +5516,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KOTTY Women's High Waist Straight Fit Cotton Blend Denim Jeans|Comfortable Regular Length Casual Jeans for Women",
           url: "https://tse2.mm.bing.net/th/id/OIP.r8yQkD5fqL8UhplpV4aJVwHaJ4?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.8,
           discount: "77%",
         },
         {
@@ -5114,6 +5524,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "INKD Women's Stretchable Flare Jeans",
           url: "https://tse4.mm.bing.net/th/id/OIP.EEbSbvHzA0fAQzcqiI4LWQHaJ4?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 4.1,
           discount: "61%",
         },
         {
@@ -5121,6 +5532,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "FCK-3 Stretchable Material Ankle Length Single Button Closure Ripped Denim High Rise Regular Fit Jeans for Women",
           url: "https://tse1.mm.bing.net/th/id/OIP.TMrgbkdHSn_su8AU6wFwSgHaJ4?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.5,
           discount: "50%",
         },
       ],
@@ -5150,6 +5562,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KOTTY Women's High Waist Straight Fit Cotton Blend Denim Jeans|Comfortable Regular Length Casual Jeans for Women",
           url: "https://tse2.mm.bing.net/th/id/OIP.r8yQkD5fqL8UhplpV4aJVwHaJ4?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 3.8,
           discount: "77%",
         },
         {
@@ -5157,6 +5570,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "INKD Women's Stretchable Flare Jeans",
           url: "https://tse4.mm.bing.net/th/id/OIP.EEbSbvHzA0fAQzcqiI4LWQHaJ4?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 4.1,
           discount: "61%",
         },
         {
@@ -5164,6 +5578,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "FCK-3 Stretchable Material Ankle Length Single Button Closure Ripped Denim High Rise Regular Fit Jeans for Women",
           url: "https://tse1.mm.bing.net/th/id/OIP.TMrgbkdHSn_su8AU6wFwSgHaJ4?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.5,
           discount: "50%",
         },
         {
@@ -5171,6 +5586,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Wide-Leg High-Rise Regular-Length Stretchable Shaping Denim Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.HnLPcN4qaxLnGYnoaR06IQHaKb?pid=Api&P=0&h=180",
           price: 2199,
+          rating: 3.5,
           discount: "64%",
         },
       ],
@@ -5200,6 +5616,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "INKD Women's Stretchable Flare Jeans",
           url: "https://tse4.mm.bing.net/th/id/OIP.EEbSbvHzA0fAQzcqiI4LWQHaJ4?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 4.1,
           discount: "61%",
         },
         {
@@ -5207,6 +5624,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "FCK-3 Stretchable Material Ankle Length Single Button Closure Ripped Denim High Rise Regular Fit Jeans for Women",
           url: "https://tse1.mm.bing.net/th/id/OIP.TMrgbkdHSn_su8AU6wFwSgHaJ4?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.5,
           discount: "50%",
         },
         {
@@ -5214,6 +5632,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Wide-Leg High-Rise Regular-Length Stretchable Shaping Denim Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.HnLPcN4qaxLnGYnoaR06IQHaKb?pid=Api&P=0&h=180",
           price: 2199,
+          rating: 3.5,
           discount: "64%",
         },
         {
@@ -5221,6 +5640,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut Fit High Rise Jeans",
           url: "https://tse3.mm.bing.net/th/id/OIP.3Eso0ulvqIz9OlF4G3YP_gHaJA?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "60%",
         },
       ],
@@ -5250,6 +5670,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "FCK-3 Stretchable Material Ankle Length Single Button Closure Ripped Denim High Rise Regular Fit Jeans for Women",
           url: "https://tse1.mm.bing.net/th/id/OIP.TMrgbkdHSn_su8AU6wFwSgHaJ4?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.5,
           discount: "50%",
         },
         {
@@ -5257,6 +5678,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Wide-Leg High-Rise Regular-Length Stretchable Shaping Denim Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.HnLPcN4qaxLnGYnoaR06IQHaKb?pid=Api&P=0&h=180",
           price: 2199,
+          rating: 3.5,
           discount: "64%",
         },
         {
@@ -5264,6 +5686,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut Fit High Rise Jeans",
           url: "https://tse3.mm.bing.net/th/id/OIP.3Eso0ulvqIz9OlF4G3YP_gHaJA?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -5271,6 +5694,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Women's Skinny 4-Way Stretch Jeans (Mid Rise | Ankle Length | Desk-to-Dinner) (Available in Plus Sizes)",
           url: "https://tse1.mm.bing.net/th/id/OIP.an3ksjJfp8cs9-Lq9dPzTAHaLH?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.8,
           discount: "74%",
         },
       ],
@@ -5284,7 +5708,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://tse1.mm.bing.net/th/id/OIP.TMrgbkdHSn_su8AU6wFwSgHaJ4?pid=Api&P=0&h=180",
       name: "FCK-3 Stretchable Material Ankle Length Single Button Closure Ripped Denim High Rise Regular Fit Jeans for Women",
       price: 2999,
-      rating: 4.1,
+      rating: 4.5,
       discount: "50%",
       gender: "female",
       description: [
@@ -5300,6 +5724,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Wide-Leg High-Rise Regular-Length Stretchable Shaping Denim Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.HnLPcN4qaxLnGYnoaR06IQHaKb?pid=Api&P=0&h=180",
           price: 2199,
+          rating: 3.5,
           discount: "64%",
         },
         {
@@ -5307,6 +5732,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut Fit High Rise Jeans",
           url: "https://tse3.mm.bing.net/th/id/OIP.3Eso0ulvqIz9OlF4G3YP_gHaJA?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -5314,6 +5740,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Women's Skinny 4-Way Stretch Jeans (Mid Rise | Ankle Length | Desk-to-Dinner) (Available in Plus Sizes)",
           url: "https://tse1.mm.bing.net/th/id/OIP.an3ksjJfp8cs9-Lq9dPzTAHaLH?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.8,
           discount: "74%",
         },
         {
@@ -5321,6 +5748,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Wide-Leg High-Rise Regular-Length Stretchable Denim Cargo Jeans",
           url: "https://tse1.mm.bing.net/th/id/OIP.TAtY2RNc15ChmNSgwaTLjgHaK0?pid=Api&P=0&h=180",
           price: 3395,
+          rating: 5.0,
           discount: "59%",
         },
       ],
@@ -5334,7 +5762,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://tse2.mm.bing.net/th/id/OIP.HnLPcN4qaxLnGYnoaR06IQHaKb?pid=Api&P=0&h=180",
       name: "Miss Chase Women's Wide-Leg High-Rise Regular-Length Stretchable Shaping Denim Jeans",
       price: 2199,
-      rating: 4.1,
+      rating: 3.5,
       discount: "64%",
       gender: "female",
       description: [
@@ -5350,6 +5778,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut Fit High Rise Jeans",
           url: "https://tse3.mm.bing.net/th/id/OIP.3Eso0ulvqIz9OlF4G3YP_gHaJA?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -5357,6 +5786,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Women's Skinny 4-Way Stretch Jeans (Mid Rise | Ankle Length | Desk-to-Dinner) (Available in Plus Sizes)",
           url: "https://tse1.mm.bing.net/th/id/OIP.an3ksjJfp8cs9-Lq9dPzTAHaLH?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.8,
           discount: "74%",
         },
         {
@@ -5364,6 +5794,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Wide-Leg High-Rise Regular-Length Stretchable Denim Cargo Jeans",
           url: "https://tse1.mm.bing.net/th/id/OIP.TAtY2RNc15ChmNSgwaTLjgHaK0?pid=Api&P=0&h=180",
           price: 3395,
+          rating: 5.0,
           discount: "59%",
         },
         {
@@ -5371,6 +5802,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut High Rise Clean Look Regular Stretchable Denim Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.5qkn_JjkYuFiFiXPJuyAygHaJ4?pid=Api&P=0&h=180",
           price: 2399,
+          rating: 3.9,
           discount: "60%",
         },
       ],
@@ -5400,6 +5832,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Symbol Premium Women's Skinny 4-Way Stretch Jeans (Mid Rise | Ankle Length | Desk-to-Dinner) (Available in Plus Sizes)",
           url: "https://tse1.mm.bing.net/th/id/OIP.an3ksjJfp8cs9-Lq9dPzTAHaLH?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.8,
           discount: "74%",
         },
         {
@@ -5407,6 +5840,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Wide-Leg High-Rise Regular-Length Stretchable Denim Cargo Jeans",
           url: "https://tse1.mm.bing.net/th/id/OIP.TAtY2RNc15ChmNSgwaTLjgHaK0?pid=Api&P=0&h=180",
           price: 3395,
+          rating: 5.0,
           discount: "59%",
         },
         {
@@ -5414,6 +5848,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut High Rise Clean Look Regular Stretchable Denim Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.5qkn_JjkYuFiFiXPJuyAygHaJ4?pid=Api&P=0&h=180",
           price: 2399,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -5421,6 +5856,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut Fit High Rise Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.EzJsQGhIZZ2HaScqX0f_QAHaJ4?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "60%",
         },
       ],
@@ -5434,7 +5870,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://tse1.mm.bing.net/th/id/OIP.an3ksjJfp8cs9-Lq9dPzTAHaLH?pid=Api&P=0&h=180",
       name: "Symbol Premium Women's Skinny 4-Way Stretch Jeans (Mid Rise | Ankle Length | Desk-to-Dinner) (Available in Plus Sizes)",
       price: 2999,
-      rating: 4.1,
+      rating: 4.8,
       discount: "74%",
       gender: "female",
       description: [
@@ -5451,6 +5887,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Wide-Leg High-Rise Regular-Length Stretchable Denim Cargo Jeans",
           url: "https://tse1.mm.bing.net/th/id/OIP.TAtY2RNc15ChmNSgwaTLjgHaK0?pid=Api&P=0&h=180",
           price: 3395,
+          rating: 5.0,
           discount: "59%",
         },
         {
@@ -5458,6 +5895,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut High Rise Clean Look Regular Stretchable Denim Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.5qkn_JjkYuFiFiXPJuyAygHaJ4?pid=Api&P=0&h=180",
           price: 2399,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -5465,6 +5903,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Miss Chase Women's Bootcut Fit High Rise Jeans",
           url: "https://tse2.mm.bing.net/th/id/OIP.EzJsQGhIZZ2HaScqX0f_QAHaJ4?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -5472,6 +5911,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "London Hills Women's Relaxed Fit High Rise Jeans || Woman Jean's || Women Baggy Jeans || Jean's for Womens || Loose Jean for Women's || Oversized Woman baggys",
           url: "https://tse2.mm.bing.net/th/id/OIP.Kcle1oGU_Vr5rxQvAYbFrQHaKl?pid=Api&P=0&h=180",
           price: 3999,
+          rating: 4.2,
           discount: "73%",
         },
       ],
@@ -5485,7 +5925,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://tse4.mm.bing.net/th/id/OIP.Au_3uTwN1vyD3qsONz290gHaHT?pid=Api&P=0&h=180",
       name: "ATHCO Womens Slick Memory Foam Comfort Casual Sneaker Shoes|Lace-Up|Slip Resistant|Lightweight|Dailyuse|ExtraSoft",
       price: 1999,
-      rating: 4.9,
+      rating: 3.9,
       discount: "62%",
       gender: "female",
       description: [
@@ -5501,6 +5941,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Women's Cute Sports Running Shoes,Walking, Gym Casual Sneaker Lace-Up Shoes for Girl's",
           url: "https://tse1.mm.bing.net/th/id/OIF.Kp0YpQF8HW1RW173t3Cw1w?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.0,
           discount: "24%",
         },
         {
@@ -5508,6 +5949,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Puma Women Supernal v3 Running Shoe",
           url: "https://tse2.mm.bing.net/th/id/OIP.fOr96whbmyavwCTidTf2gAHaET?pid=Api&P=0&h=180",
           price: 3799,
+          rating: 3.5,
           discount: "50%",
         },
         {
@@ -5515,6 +5957,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Campus Women Grit Sneakers",
           url: "https://tse3.mm.bing.net/th/id/OIP.3f8EsS22NG7zDAVssl-sJQHaGZ?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 4.5,
           discount: "56%",
         },
         {
@@ -5522,6 +5965,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Reebok Women's Running Shoes - Flylite Rushrun Running Shoes for Women, Breathable & Light",
           url: "https://tse1.mm.bing.net/th/id/OIP.zKTuKivkcohqQ5EhSjdVCwHaHa?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 4.2,
           discount: "47%",
         },
       ],
@@ -5549,6 +5993,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Puma Women Supernal v3 Running Shoe",
           url: "https://tse2.mm.bing.net/th/id/OIP.fOr96whbmyavwCTidTf2gAHaET?pid=Api&P=0&h=180",
           price: 3799,
+          rating: 3.5,
           discount: "50%",
         },
         {
@@ -5556,6 +6001,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Campus Women Grit Sneakers",
           url: "https://tse3.mm.bing.net/th/id/OIP.3f8EsS22NG7zDAVssl-sJQHaGZ?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 4.5,
           discount: "56%",
         },
         {
@@ -5563,6 +6009,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Reebok Women's Running Shoes - Flylite Rushrun Running Shoes for Women, Breathable & Light",
           url: "https://tse1.mm.bing.net/th/id/OIP.zKTuKivkcohqQ5EhSjdVCwHaHa?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 4.2,
           discount: "47%",
         },
         {
@@ -5570,6 +6017,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Sparx Womens Sx0167l Sneaker",
           url: "https://tse2.mm.bing.net/th/id/OIP.l1NTsU6w5d2zBbfRpua_DgHaHQ?pid=Api&P=0&h=180",
           price: 1049,
+          rating: 4.5,
           discount: "16%",
         },
       ],
@@ -5599,6 +6047,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Campus Women Grit Sneakers",
           url: "https://tse3.mm.bing.net/th/id/OIP.3f8EsS22NG7zDAVssl-sJQHaGZ?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 4.5,
           discount: "56%",
         },
         {
@@ -5606,6 +6055,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Reebok Women's Running Shoes - Flylite Rushrun Running Shoes for Women, Breathable & Light",
           url: "https://tse1.mm.bing.net/th/id/OIP.zKTuKivkcohqQ5EhSjdVCwHaHa?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 4.2,
           discount: "47%",
         },
         {
@@ -5613,6 +6063,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Sparx Womens Sx0167l Sneaker",
           url: "https://tse2.mm.bing.net/th/id/OIP.l1NTsU6w5d2zBbfRpua_DgHaHQ?pid=Api&P=0&h=180",
           price: 1049,
+          rating: 4.5,
           discount: "16%",
         },
         {
@@ -5620,6 +6071,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SPARX Womens Sl 168 Walking Shoe",
           url: "https://tse3.mm.bing.net/th/id/OIF.dATRL0unhxupDQFnqvL3IA?pid=Api&P=0&h=180",
           price: 949,
+          rating: 4.1,
           discount: "30%",
         },
       ],
@@ -5649,6 +6101,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Reebok Women's Running Shoes - Flylite Rushrun Running Shoes for Women, Breathable & Light",
           url: "https://tse1.mm.bing.net/th/id/OIP.zKTuKivkcohqQ5EhSjdVCwHaHa?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 4.2,
           discount: "47%",
         },
         {
@@ -5656,6 +6109,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Sparx Womens Sx0167l Sneaker",
           url: "https://tse2.mm.bing.net/th/id/OIP.l1NTsU6w5d2zBbfRpua_DgHaHQ?pid=Api&P=0&h=180",
           price: 1049,
+          rating: 4.5,
           discount: "16%",
         },
         {
@@ -5663,6 +6117,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SPARX Womens Sl 168 Walking Shoe",
           url: "https://tse3.mm.bing.net/th/id/OIF.dATRL0unhxupDQFnqvL3IA?pid=Api&P=0&h=180",
           price: 949,
+          rating: 4.1,
           discount: "30%",
         },
         {
@@ -5670,6 +6125,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "BoldFit Walking Shoes for Woman Anti Slip Casual Sports Shoes for Woman Soft Sole Cushion Walking Shoe for Ladies Comfort Footwear for Girls NovaWalk",
           url: "https://tse4.mm.bing.net/th/id/OIP.8Ab4Yfjek3h_E1iOO9v6pwHaHa?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 5.0,
           discount: "60%",
         },
       ],
@@ -5698,6 +6154,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Sparx Womens Sx0167l Sneaker",
           url: "https://tse2.mm.bing.net/th/id/OIP.l1NTsU6w5d2zBbfRpua_DgHaHQ?pid=Api&P=0&h=180",
           price: 1049,
+          rating: 4.5,
           discount: "16%",
         },
         {
@@ -5705,6 +6162,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SPARX Womens Sl 168 Walking Shoe",
           url: "https://tse3.mm.bing.net/th/id/OIF.dATRL0unhxupDQFnqvL3IA?pid=Api&P=0&h=180",
           price: 949,
+          rating: 4.1,
           discount: "30%",
         },
         {
@@ -5712,6 +6170,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "BoldFit Walking Shoes for Woman Anti Slip Casual Sports Shoes for Woman Soft Sole Cushion Walking Shoe for Ladies Comfort Footwear for Girls NovaWalk",
           url: "https://tse4.mm.bing.net/th/id/OIP.8Ab4Yfjek3h_E1iOO9v6pwHaHa?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 5.0,
           discount: "60%",
         },
         {
@@ -5719,6 +6178,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANT Women Libra Running Shoes",
           url: "https://tse2.mm.bing.net/th/id/OIF.UvqmJ0az48ahSs8NOI3i3Q?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "41%",
         },
       ],
@@ -5732,7 +6192,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://tse2.mm.bing.net/th/id/OIP.l1NTsU6w5d2zBbfRpua_DgHaHQ?pid=Api&P=0&h=180",
       name: "Sparx Womens Sx0167l Sneaker",
       price: 1049,
-      rating: 4.2,
+      rating: 4.5,
       discount: "16%",
       gender: "female",
       description: [
@@ -5748,6 +6208,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SPARX Womens Sl 168 Walking Shoe",
           url: "https://tse3.mm.bing.net/th/id/OIF.dATRL0unhxupDQFnqvL3IA?pid=Api&P=0&h=180",
           price: 949,
+          rating: 4.1,
           discount: "30%",
         },
         {
@@ -5755,6 +6216,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "BoldFit Walking Shoes for Woman Anti Slip Casual Sports Shoes for Woman Soft Sole Cushion Walking Shoe for Ladies Comfort Footwear for Girls NovaWalk",
           url: "https://tse4.mm.bing.net/th/id/OIP.8Ab4Yfjek3h_E1iOO9v6pwHaHa?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 5.0,
           discount: "60%",
         },
         {
@@ -5762,6 +6224,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANT Women Libra Running Shoes",
           url: "https://tse2.mm.bing.net/th/id/OIF.UvqmJ0az48ahSs8NOI3i3Q?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "41%",
         },
         {
@@ -5769,6 +6232,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Women Walking Shoes | Lightweight Mesh Sneakers with Soft Cushioning | Comfortable Daily Sports Shoes for Running, Gym and Casual Use | Shoes for Woman Stylish | Women Sports Shoes",
           url: "https://tse3.mm.bing.net/th/id/OIP.SfBlsQPZ7QQ8OF2FSoShPgHaGy?pid=Api&P=0&w=300&h=300",
           price: 2999,
+          rating: 3.0,
           discount: "50%",
         },
       ],
@@ -5794,6 +6258,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "BoldFit Walking Shoes for Woman Anti Slip Casual Sports Shoes for Woman Soft Sole Cushion Walking Shoe for Ladies Comfort Footwear for Girls NovaWalk",
           url: "https://tse4.mm.bing.net/th/id/OIP.8Ab4Yfjek3h_E1iOO9v6pwHaHa?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 5.0,
           discount: "60%",
         },
         {
@@ -5801,6 +6266,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANT Women Libra Running Shoes",
           url: "https://tse2.mm.bing.net/th/id/OIF.UvqmJ0az48ahSs8NOI3i3Q?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "41%",
         },
         {
@@ -5808,13 +6274,15 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Women Walking Shoes | Lightweight Mesh Sneakers with Soft Cushioning | Comfortable Daily Sports Shoes for Running, Gym and Casual Use | Shoes for Woman Stylish | Women Sports Shoes",
           url: "https://tse3.mm.bing.net/th/id/OIP.SfBlsQPZ7QQ8OF2FSoShPgHaGy?pid=Api&P=0&w=300&h=300",
           price: 2999,
+          rating: 3.0,
           discount: "50%",
         },
         {
-          id: 121,
+          id: 111,
           name: "ATHCO Womens Slick Memory Foam Comfort Casual Sneaker Shoes|Lace-Up|Slip Resistant|Lightweight|Dailyuse|ExtraSoft",
           url: "https://tse4.mm.bing.net/th/id/OIP.Au_3uTwN1vyD3qsONz290gHaHT?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "62%",
         },
       ],
@@ -5844,6 +6312,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AVANT Women Libra Running Shoes",
           url: "https://tse2.mm.bing.net/th/id/OIF.UvqmJ0az48ahSs8NOI3i3Q?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "41%",
         },
         {
@@ -5851,6 +6320,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Women Walking Shoes | Lightweight Mesh Sneakers with Soft Cushioning | Comfortable Daily Sports Shoes for Running, Gym and Casual Use | Shoes for Woman Stylish | Women Sports Shoes",
           url: "https://tse3.mm.bing.net/th/id/OIP.SfBlsQPZ7QQ8OF2FSoShPgHaGy?pid=Api&P=0&w=300&h=300",
           price: 2999,
+          rating: 3.0,
           discount: "50%",
         },
         {
@@ -5858,6 +6328,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ATHCO Womens Slick Memory Foam Comfort Casual Sneaker Shoes|Lace-Up|Slip Resistant|Lightweight|Dailyuse|ExtraSoft",
           url: "https://tse4.mm.bing.net/th/id/OIP.Au_3uTwN1vyD3qsONz290gHaHT?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "62%",
         },
         {
@@ -5865,6 +6336,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Women's Cute Sports Running Shoes,Walking, Gym Casual Sneaker Lace-Up Shoes for Girl's",
           url: "https://tse1.mm.bing.net/th/id/OIF.Kp0YpQF8HW1RW173t3Cw1w?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.0,
           discount: "24%",
         },
       ],
@@ -5894,6 +6366,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Women Walking Shoes | Lightweight Mesh Sneakers with Soft Cushioning | Comfortable Daily Sports Shoes for Running, Gym and Casual Use | Shoes for Woman Stylish | Women Sports Shoes",
           url: "https://tse3.mm.bing.net/th/id/OIP.SfBlsQPZ7QQ8OF2FSoShPgHaGy?pid=Api&P=0&w=300&h=300",
           price: 2999,
+          rating: 3.0,
           discount: "50%",
         },
         {
@@ -5901,6 +6374,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ATHCO Womens Slick Memory Foam Comfort Casual Sneaker Shoes|Lace-Up|Slip Resistant|Lightweight|Dailyuse|ExtraSoft",
           url: "https://tse4.mm.bing.net/th/id/OIP.Au_3uTwN1vyD3qsONz290gHaHT?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "62%",
         },
         {
@@ -5908,6 +6382,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Women's Cute Sports Running Shoes,Walking, Gym Casual Sneaker Lace-Up Shoes for Girl's",
           url: "https://tse1.mm.bing.net/th/id/OIF.Kp0YpQF8HW1RW173t3Cw1w?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.0,
           discount: "24%",
         },
         {
@@ -5915,6 +6390,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Puma Women Supernal v3 Running Shoe",
           url: "https://tse2.mm.bing.net/th/id/OIP.fOr96whbmyavwCTidTf2gAHaET?pid=Api&P=0&h=180",
           price: 3799,
+          rating: 3.5,
           discount: "50%",
         },
       ],
@@ -5944,6 +6420,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ATHCO Womens Slick Memory Foam Comfort Casual Sneaker Shoes|Lace-Up|Slip Resistant|Lightweight|Dailyuse|ExtraSoft",
           url: "https://tse4.mm.bing.net/th/id/OIP.Au_3uTwN1vyD3qsONz290gHaHT?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "62%",
         },
         {
@@ -5951,6 +6428,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Women's Cute Sports Running Shoes,Walking, Gym Casual Sneaker Lace-Up Shoes for Girl's",
           url: "https://tse1.mm.bing.net/th/id/OIF.Kp0YpQF8HW1RW173t3Cw1w?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.0,
           discount: "24%",
         },
         {
@@ -5958,6 +6436,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Puma Women Supernal v3 Running Shoe",
           url: "https://tse2.mm.bing.net/th/id/OIP.fOr96whbmyavwCTidTf2gAHaET?pid=Api&P=0&h=180",
           price: 3799,
+          rating: 3.5,
           discount: "50%",
         },
         {
@@ -5965,6 +6444,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Campus Women Grit Sneakers",
           url: "https://tse3.mm.bing.net/th/id/OIP.3f8EsS22NG7zDAVssl-sJQHaGZ?pid=Api&P=0&h=180",
           price: 2599,
+          rating: 4.5,
           discount: "56%",
         },
       ],
@@ -5994,6 +6474,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Kitty-Fashion Beautiful Party Princess Gown for Girls",
           url: "https://tse3.mm.bing.net/th/id/OIP.kyrtemKRRWFEg4LUdKloFAHaHa?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 3.5,
           discount: "56%",
         },
         {
@@ -6001,6 +6482,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jwalin Girls Maxi Length Flared Ethnic Dress | Long Fit and Flare Dress for Kids",
           url: "https://tse1.mm.bing.net/th/id/OIP.4YeDA6d9mb9O6YK4KgqU3wHaJT?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.0,
           discount: "67%",
         },
         {
@@ -6008,6 +6490,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (All Things UBER Nice) Girl's Nylon Fit and Flare Knee-Length Dress",
           url: "https://tse2.mm.bing.net/th/id/OIP.85ncE7ky4nsqh86N-OYB4AHaJ2?pid=Api&P=0&h=180",
           price: 1899,
+          rating: 3.3,
           discount: "71%",
         },
         {
@@ -6015,6 +6498,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (All Things UBER Nice) Girl's Synthetic Bubble Hem Standard Length Dress",
           url: "https://tse1.mm.bing.net/th/id/OIP.VtVuzC256D0uVbCQMggCogHaHa?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 4.0,
           discount: "63%",
         },
       ],
@@ -6044,6 +6528,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jwalin Girls Maxi Length Flared Ethnic Dress | Long Fit and Flare Dress for Kids",
           url: "https://tse1.mm.bing.net/th/id/OIP.4YeDA6d9mb9O6YK4KgqU3wHaJT?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.0,
           discount: "67%",
         },
         {
@@ -6051,6 +6536,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (All Things UBER Nice) Girl's Nylon Fit and Flare Knee-Length Dress",
           url: "https://tse2.mm.bing.net/th/id/OIP.85ncE7ky4nsqh86N-OYB4AHaJ2?pid=Api&P=0&h=180",
           price: 1899,
+          rating: 3.3,
           discount: "71%",
         },
         {
@@ -6058,6 +6544,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (All Things UBER Nice) Girl's Synthetic Bubble Hem Standard Length Dress",
           url: "https://tse1.mm.bing.net/th/id/OIP.VtVuzC256D0uVbCQMggCogHaHa?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 4.0,
           discount: "63%",
         },
         {
@@ -6065,6 +6552,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Angel f Studio Girl's Silk Blend Fit and Flare Maxi Dress",
           url: "https://tse1.mm.bing.net/th/id/OIP.dl43hGs4VNiKWeB_0_4j6wAAAA?pid=Api&P=0&h=180",
           price: 2199,
+          rating: 3.0,
           discount: "56%",
         },
       ],
@@ -6094,6 +6582,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (All Things UBER Nice) Girl's Nylon Fit and Flare Knee-Length Dress",
           url: "https://tse2.mm.bing.net/th/id/OIP.85ncE7ky4nsqh86N-OYB4AHaJ2?pid=Api&P=0&h=180",
           price: 1899,
+          rating: 3.3,
           discount: "71%",
         },
         {
@@ -6101,6 +6590,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (All Things UBER Nice) Girl's Synthetic Bubble Hem Standard Length Dress",
           url: "https://tse1.mm.bing.net/th/id/OIP.VtVuzC256D0uVbCQMggCogHaHa?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 4.0,
           discount: "63%",
         },
         {
@@ -6108,6 +6598,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Angel f Studio Girl's Silk Blend Fit and Flare Maxi Dress",
           url: "https://tse1.mm.bing.net/th/id/OIP.dl43hGs4VNiKWeB_0_4j6wAAAA?pid=Api&P=0&h=180",
           price: 2199,
+          rating: 3.0,
           discount: "56%",
         },
         {
@@ -6115,6 +6606,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jwalin Girl’s Knee Length Front Fastening Dress",
           url: "https://tse4.mm.bing.net/th/id/OIP.wAiP2wGqqAEdoKqodZBl6wHaJT?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 5.0,
           discount: "73%",
         },
       ],
@@ -6144,6 +6636,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (All Things UBER Nice) Girl's Synthetic Bubble Hem Standard Length Dress",
           url: "https://tse1.mm.bing.net/th/id/OIP.VtVuzC256D0uVbCQMggCogHaHa?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 4.0,
           discount: "63%",
         },
         {
@@ -6151,6 +6644,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Angel f Studio Girl's Silk Blend Fit and Flare Maxi Dress",
           url: "https://tse1.mm.bing.net/th/id/OIP.dl43hGs4VNiKWeB_0_4j6wAAAA?pid=Api&P=0&h=180",
           price: 2199,
+          rating: 3.0,
           discount: "56%",
         },
         {
@@ -6158,6 +6652,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jwalin Girl’s Knee Length Front Fastening Dress",
           url: "https://tse4.mm.bing.net/th/id/OIP.wAiP2wGqqAEdoKqodZBl6wHaJT?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 5.0,
           discount: "73%",
         },
         {
@@ -6165,6 +6660,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Niren Enterprise Barbet Sequence Embroidered Net Flaired Sleeve Less Baby Knee Length Girl's Frock",
           url: "https://tse1.mm.bing.net/th/id/OIP.PK7V_IjXz-rWRV5A8ktxjAHaJy?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "73%",
         },
       ],
@@ -6198,6 +6694,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Angel f Studio Girl's Silk Blend Fit and Flare Maxi Dress",
           url: "https://tse1.mm.bing.net/th/id/OIP.dl43hGs4VNiKWeB_0_4j6wAAAA?pid=Api&P=0&h=180",
           price: 2199,
+          rating: 3.0,
           discount: "56%",
         },
         {
@@ -6205,6 +6702,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jwalin Girl’s Knee Length Front Fastening Dress",
           url: "https://tse4.mm.bing.net/th/id/OIP.wAiP2wGqqAEdoKqodZBl6wHaJT?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 5.0,
           discount: "73%",
         },
         {
@@ -6212,6 +6710,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Niren Enterprise Barbet Sequence Embroidered Net Flaired Sleeve Less Baby Knee Length Girl's Frock",
           url: "https://tse1.mm.bing.net/th/id/OIP.PK7V_IjXz-rWRV5A8ktxjAHaJy?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "73%",
         },
         {
@@ -6219,6 +6718,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girl's Georgette Fit and Flare Maxi Dress",
           url: "https://m.media-amazon.com/images/I/71AMw3xHsjL._SY741_.jpg",
           price: 2399,
+          rating: 3.7,
           discount: "78%",
         },
       ],
@@ -6232,7 +6732,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://tse1.mm.bing.net/th/id/OIP.dl43hGs4VNiKWeB_0_4j6wAAAA?pid=Api&P=0&h=180",
       name: "Angel f Studio Girl's Silk Blend Fit and Flare Maxi Dress",
       price: 2199,
-      rating: 4.0,
+      rating: 3.0,
       discount: "56%",
       gender: "female",
       description: [
@@ -6252,6 +6752,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jwalin Girl’s Knee Length Front Fastening Dress",
           url: "https://tse4.mm.bing.net/th/id/OIP.wAiP2wGqqAEdoKqodZBl6wHaJT?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 5.0,
           discount: "73%",
         },
         {
@@ -6259,6 +6760,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Niren Enterprise Barbet Sequence Embroidered Net Flaired Sleeve Less Baby Knee Length Girl's Frock",
           url: "https://tse1.mm.bing.net/th/id/OIP.PK7V_IjXz-rWRV5A8ktxjAHaJy?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "73%",
         },
         {
@@ -6266,6 +6768,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girl's Georgette Fit and Flare Maxi Dress",
           url: "https://m.media-amazon.com/images/I/71AMw3xHsjL._SY741_.jpg",
           price: 2399,
+          rating: 3.7,
           discount: "78%",
         },
         {
@@ -6273,6 +6776,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pspeaches Girls Cotton Yellow Turquoise Blue Printed Ready To Wear Readymade Lehenga Set Blouse With Dupatta",
           url: "https://m.media-amazon.com/images/I/4180dtvhqEL.jpg",
           price: 4854,
+          rating: 3.9,
           discount: "80%",
         },
       ],
@@ -6286,7 +6790,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://tse4.mm.bing.net/th/id/OIP.wAiP2wGqqAEdoKqodZBl6wHaJT?pid=Api&P=0&h=180",
       name: "Jwalin Girl’s Knee Length Front Fastening Dress",
       price: 1599,
-      rating: 4.0,
+      rating: 5.0,
       discount: "73%",
       gender: "female",
       description: [
@@ -6303,6 +6807,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Niren Enterprise Barbet Sequence Embroidered Net Flaired Sleeve Less Baby Knee Length Girl's Frock",
           url: "https://tse1.mm.bing.net/th/id/OIP.PK7V_IjXz-rWRV5A8ktxjAHaJy?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "73%",
         },
         {
@@ -6310,6 +6815,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girl's Georgette Fit and Flare Maxi Dress",
           url: "https://m.media-amazon.com/images/I/71AMw3xHsjL._SY741_.jpg",
           price: 2399,
+          rating: 3.7,
           discount: "78%",
         },
         {
@@ -6317,6 +6823,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pspeaches Girls Cotton Yellow Turquoise Blue Printed Ready To Wear Readymade Lehenga Set Blouse With Dupatta",
           url: "https://m.media-amazon.com/images/I/4180dtvhqEL.jpg",
           price: 4854,
+          rating: 3.9,
           discount: "80%",
         },
         {
@@ -6324,6 +6831,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Girls' Red Tulle Dress with Black Floral Embroidery, Knee-Length",
           url: "https://tse4.mm.bing.net/th/id/OIP.xX9zYTqUGbJ3SAoDaN9vZQHaLH?pid=Api&P=0&h=180",
           price: 4900,
+          rating: 4.0,
           discount: "59%",
         },
       ],
@@ -6355,6 +6863,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girl's Georgette Fit and Flare Maxi Dress",
           url: "https://m.media-amazon.com/images/I/71AMw3xHsjL._SY741_.jpg",
           price: 2399,
+          rating: 3.7,
           discount: "78%",
         },
         {
@@ -6362,6 +6871,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pspeaches Girls Cotton Yellow Turquoise Blue Printed Ready To Wear Readymade Lehenga Set Blouse With Dupatta",
           url: "https://m.media-amazon.com/images/I/4180dtvhqEL.jpg",
           price: 4854,
+          rating: 3.9,
           discount: "80%",
         },
         {
@@ -6369,6 +6879,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Girls' Red Tulle Dress with Black Floral Embroidery, Knee-Length",
           url: "https://tse4.mm.bing.net/th/id/OIP.xX9zYTqUGbJ3SAoDaN9vZQHaLH?pid=Api&P=0&h=180",
           price: 4900,
+          rating: 4.0,
           discount: "59%",
         },
         {
@@ -6376,6 +6887,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Kitty-Fashion Beautiful Party Princess Gown for Girls",
           url: "https://tse3.mm.bing.net/th/id/OIP.kyrtemKRRWFEg4LUdKloFAHaHa?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 3.5,
           discount: "56%",
         },
       ],
@@ -6406,6 +6918,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pspeaches Girls Cotton Yellow Turquoise Blue Printed Ready To Wear Readymade Lehenga Set Blouse With Dupatta",
           url: "https://m.media-amazon.com/images/I/4180dtvhqEL.jpg",
           price: 4854,
+          rating: 3.9,
           discount: "80%",
         },
         {
@@ -6413,6 +6926,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Girls' Red Tulle Dress with Black Floral Embroidery, Knee-Length",
           url: "https://tse4.mm.bing.net/th/id/OIP.xX9zYTqUGbJ3SAoDaN9vZQHaLH?pid=Api&P=0&h=180",
           price: 4900,
+          rating: 4.0,
           discount: "59%",
         },
         {
@@ -6420,6 +6934,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Kitty-Fashion Beautiful Party Princess Gown for Girls",
           url: "https://tse3.mm.bing.net/th/id/OIP.kyrtemKRRWFEg4LUdKloFAHaHa?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 3.5,
           discount: "56%",
         },
         {
@@ -6427,6 +6942,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jwalin Girls Maxi Length Flared Ethnic Dress | Long Fit and Flare Dress for Kids",
           url: "https://tse1.mm.bing.net/th/id/OIP.4YeDA6d9mb9O6YK4KgqU3wHaJT?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.0,
           discount: "67%",
         },
       ],
@@ -6457,6 +6973,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Girls' Red Tulle Dress with Black Floral Embroidery, Knee-Length",
           url: "https://tse4.mm.bing.net/th/id/OIP.xX9zYTqUGbJ3SAoDaN9vZQHaLH?pid=Api&P=0&h=180",
           price: 4900,
+          rating: 4.0,
           discount: "59%",
         },
         {
@@ -6464,6 +6981,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Kitty-Fashion Beautiful Party Princess Gown for Girls",
           url: "https://tse3.mm.bing.net/th/id/OIP.kyrtemKRRWFEg4LUdKloFAHaHa?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 3.5,
           discount: "56%",
         },
         {
@@ -6471,6 +6989,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Jwalin Girls Maxi Length Flared Ethnic Dress | Long Fit and Flare Dress for Kids",
           url: "https://tse1.mm.bing.net/th/id/OIP.4YeDA6d9mb9O6YK4KgqU3wHaJT?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.0,
           discount: "67%",
         },
         {
@@ -6478,6 +6997,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (All Things UBER Nice) Girl's Nylon Fit and Flare Knee-Length Dress",
           url: "https://tse2.mm.bing.net/th/id/OIP.85ncE7ky4nsqh86N-OYB4AHaJ2?pid=Api&P=0&h=180",
           price: 1899,
+          rating: 3.3,
           discount: "71%",
         },
       ],
@@ -6508,6 +7028,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "JBN Creation Kids Boys' White And Gold Cotton Blend Sherwani And Casual Style Dhoti Pant Set_Jbnbciw123Ncdgo_22, 3-4 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.R32cCCzgzMe1q0cp6TRnpQHaJR?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.5,
           discount: "62%",
         },
         {
@@ -6515,6 +7036,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pro-Ethic Style Developer 5 Piece Boys Suit Set Pary Wear for Kids Wedding Outfit | Set of Shirt, Pants, Coat, Waistcoat and Tie for Kids",
           url: "https://tse4.mm.bing.net/th/id/OIP.qrqPBteDE-zoGskqZHAHggAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 2.5,
           discount: "58%",
         },
         {
@@ -6522,6 +7044,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Akshita Trading Kids Shirt, Waistcoat and Pant for Boys",
           url: "https://tse2.mm.bing.net/th/id/OIP.bCEwhrdE9NYeGSB-fAa90wHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.4,
           discount: "75%",
         },
         {
@@ -6529,6 +7052,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ZOLARIO 3 Piece Boys Suit for Kids Boys, Waistcoat, Pant, Tie and Shirt Set, Ideal for Wedding, Festivals & Birthday.",
           url: "https://tse4.mm.bing.net/th/id/OIP.5mu9Y5RVgDQ-r8UNcQn5BQHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "60%",
         },
       ],
@@ -6558,6 +7082,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pro-Ethic Style Developer 5 Piece Boys Suit Set Pary Wear for Kids Wedding Outfit | Set of Shirt, Pants, Coat, Waistcoat and Tie for Kids",
           url: "https://tse4.mm.bing.net/th/id/OIP.qrqPBteDE-zoGskqZHAHggAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 2.5,
           discount: "58%",
         },
         {
@@ -6565,6 +7090,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Akshita Trading Kids Shirt, Waistcoat and Pant for Boys",
           url: "https://tse2.mm.bing.net/th/id/OIP.bCEwhrdE9NYeGSB-fAa90wHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.4,
           discount: "75%",
         },
         {
@@ -6572,6 +7098,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ZOLARIO 3 Piece Boys Suit for Kids Boys, Waistcoat, Pant, Tie and Shirt Set, Ideal for Wedding, Festivals & Birthday.",
           url: "https://tse4.mm.bing.net/th/id/OIP.5mu9Y5RVgDQ-r8UNcQn5BQHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -6579,6 +7106,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SAGAR IMPEX Boys Cotton Blend Solid Full Sleeves Shirt and Pant Set with Suspender and Bow Tie | Clothing Set for Boys",
           url: "https://tse4.mm.bing.net/th/id/OIP.DpJxOSRbgnwdfMpznyxqFQHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.3,
           discount: "70%",
         },
       ],
@@ -6608,6 +7136,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Akshita Trading Kids Shirt, Waistcoat and Pant for Boys",
           url: "https://tse2.mm.bing.net/th/id/OIP.bCEwhrdE9NYeGSB-fAa90wHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.4,
           discount: "75%",
         },
         {
@@ -6615,6 +7144,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ZOLARIO 3 Piece Boys Suit for Kids Boys, Waistcoat, Pant, Tie and Shirt Set, Ideal for Wedding, Festivals & Birthday.",
           url: "https://tse4.mm.bing.net/th/id/OIP.5mu9Y5RVgDQ-r8UNcQn5BQHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -6622,6 +7152,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SAGAR IMPEX Boys Cotton Blend Solid Full Sleeves Shirt and Pant Set with Suspender and Bow Tie | Clothing Set for Boys",
           url: "https://tse4.mm.bing.net/th/id/OIP.DpJxOSRbgnwdfMpznyxqFQHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.3,
           discount: "70%",
         },
         {
@@ -6629,6 +7160,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AJ DEZINES Boys Ethnic Kurta Pajama Set | Cotton Full Sleeve Chikankari Kurta with Sequins | Traditional & Festive Outfit | Mandarin Collar, Regular Fit | Special Occasion Outfit for Kids",
           url: "https://tse1.mm.bing.net/th/id/OIP.zXFd61yJDEfhVtQfc9m0RQHaLG?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 4.0,
           discount: "62%",
         },
       ],
@@ -6658,6 +7190,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ZOLARIO 3 Piece Boys Suit for Kids Boys, Waistcoat, Pant, Tie and Shirt Set, Ideal for Wedding, Festivals & Birthday.",
           url: "https://tse4.mm.bing.net/th/id/OIP.5mu9Y5RVgDQ-r8UNcQn5BQHaLH?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.9,
           discount: "60%",
         },
         {
@@ -6665,6 +7198,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SAGAR IMPEX Boys Cotton Blend Solid Full Sleeves Shirt and Pant Set with Suspender and Bow Tie | Clothing Set for Boys",
           url: "https://tse4.mm.bing.net/th/id/OIP.DpJxOSRbgnwdfMpznyxqFQHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.3,
           discount: "70%",
         },
         {
@@ -6672,6 +7206,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AJ DEZINES Boys Ethnic Kurta Pajama Set | Cotton Full Sleeve Chikankari Kurta with Sequins | Traditional & Festive Outfit | Mandarin Collar, Regular Fit | Special Occasion Outfit for Kids",
           url: "https://tse1.mm.bing.net/th/id/OIP.zXFd61yJDEfhVtQfc9m0RQHaLG?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 4.0,
           discount: "62%",
         },
         {
@@ -6679,6 +7214,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Baby Boy Punjabi Kurta Pajama Dhoti Set Cotton | Traditional Dress for Boys 1-5 Years | Kids Kurta Pant Outfit for Wedding, Diwali, Festivals",
           url: "https://tse4.mm.bing.net/th/id/OIP._ZsOqu_JuCSO3kbbknL_MwHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.4,
           discount: "67%",
         },
       ],
@@ -6707,6 +7243,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "SAGAR IMPEX Boys Cotton Blend Solid Full Sleeves Shirt and Pant Set with Suspender and Bow Tie | Clothing Set for Boys",
           url: "https://tse4.mm.bing.net/th/id/OIP.DpJxOSRbgnwdfMpznyxqFQHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.3,
           discount: "70%",
         },
         {
@@ -6714,6 +7251,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AJ DEZINES Boys Ethnic Kurta Pajama Set | Cotton Full Sleeve Chikankari Kurta with Sequins | Traditional & Festive Outfit | Mandarin Collar, Regular Fit | Special Occasion Outfit for Kids",
           url: "https://tse1.mm.bing.net/th/id/OIP.zXFd61yJDEfhVtQfc9m0RQHaLG?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 4.0,
           discount: "62%",
         },
         {
@@ -6721,6 +7259,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Baby Boy Punjabi Kurta Pajama Dhoti Set Cotton | Traditional Dress for Boys 1-5 Years | Kids Kurta Pant Outfit for Wedding, Diwali, Festivals",
           url: "https://tse4.mm.bing.net/th/id/OIP._ZsOqu_JuCSO3kbbknL_MwHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.4,
           discount: "67%",
         },
         {
@@ -6728,6 +7267,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pro-Ethic Style Developer Boy's 5 Piece Suit Set | Coat, Pant, Tie & Shirt | Cotton Checked Pattern",
           url: "https://tse3.mm.bing.net/th/id/OIP.dZ9b6UU1wwC9g0zwIyVUHgHaJO?pid=Api&P=0&h=180",
           price: 4599,
+          rating: 4.4,
           discount: "46%",
         },
       ],
@@ -6757,6 +7297,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "AJ DEZINES Boys Ethnic Kurta Pajama Set | Cotton Full Sleeve Chikankari Kurta with Sequins | Traditional & Festive Outfit | Mandarin Collar, Regular Fit | Special Occasion Outfit for Kids",
           url: "https://tse1.mm.bing.net/th/id/OIP.zXFd61yJDEfhVtQfc9m0RQHaLG?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 4.0,
           discount: "62%",
         },
         {
@@ -6764,6 +7305,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Baby Boy Punjabi Kurta Pajama Dhoti Set Cotton | Traditional Dress for Boys 1-5 Years | Kids Kurta Pant Outfit for Wedding, Diwali, Festivals",
           url: "https://tse4.mm.bing.net/th/id/OIP._ZsOqu_JuCSO3kbbknL_MwHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.4,
           discount: "67%",
         },
         {
@@ -6771,6 +7313,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pro-Ethic Style Developer Boy's 5 Piece Suit Set | Coat, Pant, Tie & Shirt | Cotton Checked Pattern",
           url: "https://tse3.mm.bing.net/th/id/OIP.dZ9b6UU1wwC9g0zwIyVUHgHaJO?pid=Api&P=0&h=180",
           price: 4599,
+          rating: 4.4,
           discount: "46%",
         },
         {
@@ -6778,6 +7321,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boys Cotton Silk Regular Fit Solid Full Sleeve Ethnic Wear Kurta, Pyjama & Dupatta Set with Elegant Design (SCFM_142)",
           url: "https://tse3.mm.bing.net/th/id/OIP.cAfsXw7qbljzCJvFWy_zcQHaLG?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "63%",
         },
       ],
@@ -6807,6 +7351,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Baby Boy Punjabi Kurta Pajama Dhoti Set Cotton | Traditional Dress for Boys 1-5 Years | Kids Kurta Pant Outfit for Wedding, Diwali, Festivals",
           url: "https://tse4.mm.bing.net/th/id/OIP._ZsOqu_JuCSO3kbbknL_MwHaLH?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 3.4,
           discount: "67%",
         },
         {
@@ -6814,6 +7359,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pro-Ethic Style Developer Boy's 5 Piece Suit Set | Coat, Pant, Tie & Shirt | Cotton Checked Pattern",
           url: "https://tse3.mm.bing.net/th/id/OIP.dZ9b6UU1wwC9g0zwIyVUHgHaJO?pid=Api&P=0&h=180",
           price: 4599,
+          rating: 4.4,
           discount: "46%",
         },
         {
@@ -6821,6 +7367,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boys Cotton Silk Regular Fit Solid Full Sleeve Ethnic Wear Kurta, Pyjama & Dupatta Set with Elegant Design (SCFM_142)",
           url: "https://tse3.mm.bing.net/th/id/OIP.cAfsXw7qbljzCJvFWy_zcQHaLG?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "63%",
         },
         {
@@ -6828,6 +7375,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boys Festive & Party Kurta, Waistcoat and Pyjama Set",
           url: "https://tse2.mm.bing.net/th/id/OIP.JD5wAZoyIMRswW1OrIPnRQHaLH?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 3.0,
           discount: "63%",
         },
       ],
@@ -6857,6 +7405,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pro-Ethic Style Developer Boy's 5 Piece Suit Set | Coat, Pant, Tie & Shirt | Cotton Checked Pattern",
           url: "https://tse3.mm.bing.net/th/id/OIP.dZ9b6UU1wwC9g0zwIyVUHgHaJO?pid=Api&P=0&h=180",
           price: 4599,
+          rating: 4.4,
           discount: "46%",
         },
         {
@@ -6864,6 +7413,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boys Cotton Silk Regular Fit Solid Full Sleeve Ethnic Wear Kurta, Pyjama & Dupatta Set with Elegant Design (SCFM_142)",
           url: "https://tse3.mm.bing.net/th/id/OIP.cAfsXw7qbljzCJvFWy_zcQHaLG?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "63%",
         },
         {
@@ -6871,6 +7421,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boys Festive & Party Kurta, Waistcoat and Pyjama Set",
           url: "https://tse2.mm.bing.net/th/id/OIP.JD5wAZoyIMRswW1OrIPnRQHaLH?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 3.0,
           discount: "63%",
         },
         {
@@ -6878,6 +7429,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "JBN Creation Kids Boys' White And Gold Cotton Blend Sherwani And Casual Style Dhoti Pant Set_Jbnbciw123Ncdgo_22, 3-4 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.R32cCCzgzMe1q0cp6TRnpQHaJR?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.5,
           discount: "62%",
         },
       ],
@@ -6891,7 +7443,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://tse3.mm.bing.net/th/id/OIP.dZ9b6UU1wwC9g0zwIyVUHgHaJO?pid=Api&P=0&h=180",
       name: "Pro-Ethic Style Developer Boy's 5 Piece Suit Set | Coat, Pant, Tie & Shirt | Cotton Checked Pattern",
       price: 4599,
-      rating: 3.4,
+      rating: 4.4,
       discount: "46%",
       gender: "male",
       description: [
@@ -6907,6 +7459,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boys Cotton Silk Regular Fit Solid Full Sleeve Ethnic Wear Kurta, Pyjama & Dupatta Set with Elegant Design (SCFM_142)",
           url: "https://tse3.mm.bing.net/th/id/OIP.cAfsXw7qbljzCJvFWy_zcQHaLG?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "63%",
         },
         {
@@ -6914,6 +7467,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boys Festive & Party Kurta, Waistcoat and Pyjama Set",
           url: "https://tse2.mm.bing.net/th/id/OIP.JD5wAZoyIMRswW1OrIPnRQHaLH?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 3.0,
           discount: "63%",
         },
         {
@@ -6921,6 +7475,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "JBN Creation Kids Boys' White And Gold Cotton Blend Sherwani And Casual Style Dhoti Pant Set_Jbnbciw123Ncdgo_22, 3-4 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.R32cCCzgzMe1q0cp6TRnpQHaJR?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.5,
           discount: "62%",
         },
         {
@@ -6928,6 +7483,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pro-Ethic Style Developer 5 Piece Boys Suit Set Pary Wear for Kids Wedding Outfit | Set of Shirt, Pants, Coat, Waistcoat and Tie for Kids",
           url: "https://tse4.mm.bing.net/th/id/OIP.qrqPBteDE-zoGskqZHAHggAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 2.5,
           discount: "58%",
         },
       ],
@@ -6957,6 +7513,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Boys Festive & Party Kurta, Waistcoat and Pyjama Set",
           url: "https://tse2.mm.bing.net/th/id/OIP.JD5wAZoyIMRswW1OrIPnRQHaLH?pid=Api&P=0&h=180",
           price: 1599,
+          rating: 3.0,
           discount: "63%",
         },
         {
@@ -6964,6 +7521,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "JBN Creation Kids Boys' White And Gold Cotton Blend Sherwani And Casual Style Dhoti Pant Set_Jbnbciw123Ncdgo_22, 3-4 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.R32cCCzgzMe1q0cp6TRnpQHaJR?pid=Api&P=0&h=180",
           price: 2499,
+          rating: 3.5,
           discount: "62%",
         },
         {
@@ -6971,6 +7529,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pro-Ethic Style Developer 5 Piece Boys Suit Set Pary Wear for Kids Wedding Outfit | Set of Shirt, Pants, Coat, Waistcoat and Tie for Kids",
           url: "https://tse4.mm.bing.net/th/id/OIP.qrqPBteDE-zoGskqZHAHggAAAA?pid=Api&P=0&h=180",
           price: 5999,
+          rating: 2.5,
           discount: "58%",
         },
         {
@@ -6978,6 +7537,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Akshita Trading Kids Shirt, Waistcoat and Pant for Boys",
           url: "https://tse2.mm.bing.net/th/id/OIP.bCEwhrdE9NYeGSB-fAa90wHaJ4?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.4,
           discount: "75%",
         },
       ],
@@ -7007,6 +7567,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "RGK Fashionable Durable White Leather Long Shoe Mary Jane Shoe for Girls of 3 Years | 4 Years | 5 Years | 6 Years | 7 Years | 8 Years | 9 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.V2xDU1eDiVLMAkp2nmpxUQHaHa?pid=Api&P=0&h=180",
           price: 699,
+          rating: 3.7,
           discount: "46%",
         },
         {
@@ -7014,6 +7575,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "NEOBABY LED Light Shoes for Kids Boys and Girls 9 Months to 6 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP._B8fmn44Nes6em7oW2MvkAHaHa?pid=Api&P=0&h=180",
           price: 999,
+          rating: 3.4,
           discount: "66%",
         },
         {
@@ -7021,6 +7583,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Liberty Leap7x TURBO-1E Non-Lacing Sports Walking Shoes for Kids - Pink, Royal Blue & Sea Green | Comfortable and Durable - Suitable for Slip-On Gym, Jogging and Outdoor - Cushioned Footbed",
           url: "https://tse3.mm.bing.net/th/id/OIP.LeI6JR_k3XqkbLYyAbzApwHaHa?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.3,
           discount: "31%",
         },
         {
@@ -7028,6 +7591,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys' Running Shoe for Active Kids | Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole | All Day Casual Wear",
           url: "https://tse1.mm.bing.net/th/id/OIP.87K0B07cKz1Z50hKEZpjPgHaHa?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "49%",
         },
       ],
@@ -7058,6 +7622,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "NEOBABY LED Light Shoes for Kids Boys and Girls 9 Months to 6 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP._B8fmn44Nes6em7oW2MvkAHaHa?pid=Api&P=0&h=180",
           price: 999,
+          rating: 3.4,
           discount: "66%",
         },
         {
@@ -7065,6 +7630,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Liberty Leap7x TURBO-1E Non-Lacing Sports Walking Shoes for Kids - Pink, Royal Blue & Sea Green | Comfortable and Durable - Suitable for Slip-On Gym, Jogging and Outdoor - Cushioned Footbed",
           url: "https://tse3.mm.bing.net/th/id/OIP.LeI6JR_k3XqkbLYyAbzApwHaHa?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.3,
           discount: "31%",
         },
         {
@@ -7072,6 +7638,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys' Running Shoe for Active Kids | Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole | All Day Casual Wear",
           url: "https://tse1.mm.bing.net/th/id/OIP.87K0B07cKz1Z50hKEZpjPgHaHa?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "49%",
         },
         {
@@ -7079,6 +7646,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Liberty Lucy&Luke BASTIAN-2E Slip-on Casual Shoes for Kids with PVC Sole | Canvas Upper Sneakers | Quick-Wear Velcro Closure | Stylish, Lightweight & Comfortable Footbed",
           url: "https://tse3.mm.bing.net/th/id/OIP.c_MqzLX7eFKL1t-dgaPVVgAAAA?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.1,
           discount: "50%",
         },
       ],
@@ -7108,6 +7676,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Liberty Leap7x TURBO-1E Non-Lacing Sports Walking Shoes for Kids - Pink, Royal Blue & Sea Green | Comfortable and Durable - Suitable for Slip-On Gym, Jogging and Outdoor - Cushioned Footbed",
           url: "https://tse3.mm.bing.net/th/id/OIP.LeI6JR_k3XqkbLYyAbzApwHaHa?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.3,
           discount: "31%",
         },
         {
@@ -7115,6 +7684,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys' Running Shoe for Active Kids | Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole | All Day Casual Wear",
           url: "https://tse1.mm.bing.net/th/id/OIP.87K0B07cKz1Z50hKEZpjPgHaHa?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "49%",
         },
         {
@@ -7122,6 +7692,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Liberty Lucy&Luke BASTIAN-2E Slip-on Casual Shoes for Kids with PVC Sole | Canvas Upper Sneakers | Quick-Wear Velcro Closure | Stylish, Lightweight & Comfortable Footbed",
           url: "https://tse3.mm.bing.net/th/id/OIP.c_MqzLX7eFKL1t-dgaPVVgAAAA?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -7129,6 +7700,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KATS SHOES Casual SHOES For Kids Lace Shoe Sneakers 5 To 6 Years Old Lightweight, Durable, Comfortable Casual SHOES For Boys And Girls Made With Premium Grade Foam Insoles, & Secure Closure Pink",
           url: "https://tse4.mm.bing.net/th/id/OIP.LhPAkBSdvVYUEl9gZrOvYgHaHa?pid=Api&P=0&h=180",
           price: 699,
+          rating: 3.8,
           discount: "14%",
         },
       ],
@@ -7158,6 +7730,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys' Running Shoe for Active Kids | Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole | All Day Casual Wear",
           url: "https://tse1.mm.bing.net/th/id/OIP.87K0B07cKz1Z50hKEZpjPgHaHa?pid=Api&P=0&h=180",
           price: 1499,
+          rating: 4.2,
           discount: "49%",
         },
         {
@@ -7165,6 +7738,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Liberty Lucy&Luke BASTIAN-2E Slip-on Casual Shoes for Kids with PVC Sole | Canvas Upper Sneakers | Quick-Wear Velcro Closure | Stylish, Lightweight & Comfortable Footbed",
           url: "https://tse3.mm.bing.net/th/id/OIP.c_MqzLX7eFKL1t-dgaPVVgAAAA?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -7172,6 +7746,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KATS SHOES Casual SHOES For Kids Lace Shoe Sneakers 5 To 6 Years Old Lightweight, Durable, Comfortable Casual SHOES For Boys And Girls Made With Premium Grade Foam Insoles, & Secure Closure Pink",
           url: "https://tse4.mm.bing.net/th/id/OIP.LhPAkBSdvVYUEl9gZrOvYgHaHa?pid=Api&P=0&h=180",
           price: 699,
+          rating: 3.8,
           discount: "14%",
         },
         {
@@ -7179,6 +7754,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Hopits Kids Boys and Girls Ankle Length | High Top | Slip-on Sneakers Shoes | Lightweight | Outdoor Shoes Collection",
           url: "https://tse1.mm.bing.net/th/id/OIP.ZLvGo4hufVKa-CNY9aSGTQHaFj?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.2,
           discount: "65%",
         },
       ],
@@ -7208,6 +7784,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Liberty Lucy&Luke BASTIAN-2E Slip-on Casual Shoes for Kids with PVC Sole | Canvas Upper Sneakers | Quick-Wear Velcro Closure | Stylish, Lightweight & Comfortable Footbed",
           url: "https://tse3.mm.bing.net/th/id/OIP.c_MqzLX7eFKL1t-dgaPVVgAAAA?pid=Api&P=0&h=180",
           price: 799,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -7215,6 +7792,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KATS SHOES Casual SHOES For Kids Lace Shoe Sneakers 5 To 6 Years Old Lightweight, Durable, Comfortable Casual SHOES For Boys And Girls Made With Premium Grade Foam Insoles, & Secure Closure Pink",
           url: "https://tse4.mm.bing.net/th/id/OIP.LhPAkBSdvVYUEl9gZrOvYgHaHa?pid=Api&P=0&h=180",
           price: 699,
+          rating: 3.8,
           discount: "14%",
         },
         {
@@ -7222,6 +7800,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Hopits Kids Boys and Girls Ankle Length | High Top | Slip-on Sneakers Shoes | Lightweight | Outdoor Shoes Collection",
           url: "https://tse1.mm.bing.net/th/id/OIP.ZLvGo4hufVKa-CNY9aSGTQHaFj?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.2,
           discount: "65%",
         },
         {
@@ -7229,6 +7808,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.BS9LGFaTUl2lIuB2rysnrQHaHa?pid=Api&P=0&h=180",
           price: 2899,
+          rating: 4.1,
           discount: "5%",
         },
       ],
@@ -7258,6 +7838,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KATS SHOES Casual SHOES For Kids Lace Shoe Sneakers 5 To 6 Years Old Lightweight, Durable, Comfortable Casual SHOES For Boys And Girls Made With Premium Grade Foam Insoles, & Secure Closure Pink",
           url: "https://tse4.mm.bing.net/th/id/OIP.LhPAkBSdvVYUEl9gZrOvYgHaHa?pid=Api&P=0&h=180",
           price: 699,
+          rating: 3.8,
           discount: "14%",
         },
         {
@@ -7265,6 +7846,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Hopits Kids Boys and Girls Ankle Length | High Top | Slip-on Sneakers Shoes | Lightweight | Outdoor Shoes Collection",
           url: "https://tse1.mm.bing.net/th/id/OIP.ZLvGo4hufVKa-CNY9aSGTQHaFj?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.2,
           discount: "65%",
         },
         {
@@ -7272,6 +7854,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.BS9LGFaTUl2lIuB2rysnrQHaHa?pid=Api&P=0&h=180",
           price: 2899,
+          rating: 4.1,
           discount: "5%",
         },
         {
@@ -7279,6 +7862,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://tse4.mm.bing.net/th/id/OIP.euEg-O0bAx663F4YAL4dHQHaHa?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.5,
           discount: "56%",
         },
       ],
@@ -7308,6 +7892,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Hopits Kids Boys and Girls Ankle Length | High Top | Slip-on Sneakers Shoes | Lightweight | Outdoor Shoes Collection",
           url: "https://tse1.mm.bing.net/th/id/OIP.ZLvGo4hufVKa-CNY9aSGTQHaFj?pid=Api&P=0&h=180",
           price: 2999,
+          rating: 4.2,
           discount: "65%",
         },
         {
@@ -7315,6 +7900,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.BS9LGFaTUl2lIuB2rysnrQHaHa?pid=Api&P=0&h=180",
           price: 2899,
+          rating: 4.1,
           discount: "5%",
         },
         {
@@ -7322,6 +7908,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://tse4.mm.bing.net/th/id/OIP.euEg-O0bAx663F4YAL4dHQHaHa?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.5,
           discount: "56%",
         },
         {
@@ -7329,6 +7916,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "MOON MAMA Air Text Detailed Light Shoes, Kids Light-Up Sneakers, Holographic & Colorful Design, Shoes for Kids",
           url: "https://tse2.mm.bing.net/th/id/OIP.ootumqy1780BVAaF3TAEogHaHa?pid=Api&P=0&h=180",
           price: 1123,
+          rating: 5.0,
           discount: "20%",
         },
       ],
@@ -7358,6 +7946,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.BS9LGFaTUl2lIuB2rysnrQHaHa?pid=Api&P=0&h=180",
           price: 2899,
+          rating: 4.1,
           discount: "5%",
         },
         {
@@ -7365,6 +7954,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://tse4.mm.bing.net/th/id/OIP.euEg-O0bAx663F4YAL4dHQHaHa?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.5,
           discount: "56%",
         },
         {
@@ -7372,6 +7962,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "MOON MAMA Air Text Detailed Light Shoes, Kids Light-Up Sneakers, Holographic & Colorful Design, Shoes for Kids",
           url: "https://tse2.mm.bing.net/th/id/OIP.ootumqy1780BVAaF3TAEogHaHa?pid=Api&P=0&h=180",
           price: 1123,
+          rating: 5.0,
           discount: "20%",
         },
         {
@@ -7379,6 +7970,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "RGK Fashionable Durable White Leather Long Shoe Mary Jane Shoe for Girls of 3 Years | 4 Years | 5 Years | 6 Years | 7 Years | 8 Years | 9 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.V2xDU1eDiVLMAkp2nmpxUQHaHa?pid=Api&P=0&h=180",
           price: 699,
+          rating: 3.7,
           discount: "46%",
         },
       ],
@@ -7408,6 +8000,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://tse4.mm.bing.net/th/id/OIP.euEg-O0bAx663F4YAL4dHQHaHa?pid=Api&P=0&h=180",
           price: 1999,
+          rating: 3.5,
           discount: "56%",
         },
         {
@@ -7415,6 +8008,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "MOON MAMA Air Text Detailed Light Shoes, Kids Light-Up Sneakers, Holographic & Colorful Design, Shoes for Kids",
           url: "https://tse2.mm.bing.net/th/id/OIP.ootumqy1780BVAaF3TAEogHaHa?pid=Api&P=0&h=180",
           price: 1123,
+          rating: 5.0,
           discount: "20%",
         },
         {
@@ -7422,6 +8016,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "RGK Fashionable Durable White Leather Long Shoe Mary Jane Shoe for Girls of 3 Years | 4 Years | 5 Years | 6 Years | 7 Years | 8 Years | 9 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.V2xDU1eDiVLMAkp2nmpxUQHaHa?pid=Api&P=0&h=180",
           price: 699,
+          rating: 3.7,
           discount: "46%",
         },
         {
@@ -7429,6 +8024,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "NEOBABY LED Light Shoes for Kids Boys and Girls 9 Months to 6 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP._B8fmn44Nes6em7oW2MvkAHaHa?pid=Api&P=0&h=180",
           price: 999,
+          rating: 3.4,
           discount: "66%",
         },
       ],
@@ -7442,7 +8038,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://tse4.mm.bing.net/th/id/OIP.euEg-O0bAx663F4YAL4dHQHaHa?pid=Api&P=0&h=180",
       name: "KazarMax Unisex-Child Sport Shoes",
       price: 1999,
-      rating: 4.2,
+      rating: 3.5,
       discount: "56%",
       gender: "female",
       description: [
@@ -7458,6 +8054,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "MOON MAMA Air Text Detailed Light Shoes, Kids Light-Up Sneakers, Holographic & Colorful Design, Shoes for Kids",
           url: "https://tse2.mm.bing.net/th/id/OIP.ootumqy1780BVAaF3TAEogHaHa?pid=Api&P=0&h=180",
           price: 1123,
+          rating: 5.0,
           discount: "20%",
         },
         {
@@ -7465,6 +8062,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "RGK Fashionable Durable White Leather Long Shoe Mary Jane Shoe for Girls of 3 Years | 4 Years | 5 Years | 6 Years | 7 Years | 8 Years | 9 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP.V2xDU1eDiVLMAkp2nmpxUQHaHa?pid=Api&P=0&h=180",
           price: 699,
+          rating: 3.7,
           discount: "46%",
         },
         {
@@ -7472,6 +8070,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "NEOBABY LED Light Shoes for Kids Boys and Girls 9 Months to 6 Years",
           url: "https://tse3.mm.bing.net/th/id/OIP._B8fmn44Nes6em7oW2MvkAHaHa?pid=Api&P=0&h=180",
           price: 999,
+          rating: 3.4,
           discount: "66%",
         },
         {
@@ -7479,6 +8078,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Liberty Leap7x TURBO-1E Non-Lacing Sports Walking Shoes for Kids - Pink, Royal Blue & Sea Green | Comfortable and Durable - Suitable for Slip-On Gym, Jogging and Outdoor - Cushioned Footbed",
           url: "https://tse3.mm.bing.net/th/id/OIP.LeI6JR_k3XqkbLYyAbzApwHaHa?pid=Api&P=0&h=180",
           price: 1299,
+          rating: 4.3,
           discount: "31%",
         },
       ],
@@ -7492,7 +8092,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://m.media-amazon.com/images/I/61EffPHAmNL._SY625_.jpg",
       name: "ARETTO Expanding Black and Green Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
       price: 3499,
-      rating: 4.2,
+      rating: 3.2,
       discount: "0%",
       gender: "male",
       description: [
@@ -7508,6 +8108,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://m.media-amazon.com/images/I/51JVoi1TzlL._AC_UL320_.jpg",
           price: 1999,
+          rating: 4.2,
           discount: "56%",
         },
         {
@@ -7515,6 +8116,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Boy's VAYU-09 Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole Casual Lace-Up Shoes for Kid's & Boy's",
           url: "https://m.media-amazon.com/images/I/71fAAQe55cL._SY625_.jpg",
           price: 1099,
+          rating: 3.2,
           discount: "38%",
         },
         {
@@ -7522,6 +8124,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's MEXICO-11 Casual Sneaker Shoes with Synthetic Upper Lightweight Comfortable Mid Top Sneaker Shoes for Men's & Boy's",
           url: "https://m.media-amazon.com/images/I/81R6YbNKOzL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.7,
           discount: "48%",
         },
         {
@@ -7529,6 +8132,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amico Men's & Boys Multicolor Running Casual Sports Shoes",
           url: "https://m.media-amazon.com/images/I/61AsA-LoKRL._AC_UL320_.jpg",
           price: 2499,
+          rating: 3.3,
           discount: "80%",
         },
       ],
@@ -7558,6 +8162,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Boy's VAYU-09 Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole Casual Lace-Up Shoes for Kid's & Boy's",
           url: "https://m.media-amazon.com/images/I/71fAAQe55cL._SY625_.jpg",
           price: 1099,
+          rating: 3.2,
           discount: "38%",
         },
         {
@@ -7565,6 +8170,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's MEXICO-11 Casual Sneaker Shoes with Synthetic Upper Lightweight Comfortable Mid Top Sneaker Shoes for Men's & Boy's",
           url: "https://m.media-amazon.com/images/I/81R6YbNKOzL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.7,
           discount: "48%",
         },
         {
@@ -7572,6 +8178,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amico Men's & Boys Multicolor Running Casual Sports Shoes",
           url: "https://m.media-amazon.com/images/I/61AsA-LoKRL._AC_UL320_.jpg",
           price: 2499,
+          rating: 3.3,
           discount: "80%",
         },
         {
@@ -7579,6 +8186,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GIGAHERTZ Kids Sports Sneakers for Boys & Girls | Lightweight Breathable Running Shoes with Easy Velcro Strap | Casual Wear Non-Slip Sole",
           url: "https://m.media-amazon.com/images/I/711cwTIgm3L._AC_UL320_.jpg",
           price: 900,
+          rating: 4.2,
           discount: "58%",
         },
       ],
@@ -7592,7 +8200,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://m.media-amazon.com/images/I/71fAAQe55cL._SY625_.jpg",
       name: "ASIAN Boy's VAYU-09 Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole Casual Lace-Up Shoes for Kid's & Boy's",
       price: 1099,
-      rating: 4.2,
+      rating: 3.2,
       discount: "38%",
       gender: "male",
       description: [
@@ -7606,6 +8214,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's MEXICO-11 Casual Sneaker Shoes with Synthetic Upper Lightweight Comfortable Mid Top Sneaker Shoes for Men's & Boy's",
           url: "https://m.media-amazon.com/images/I/81R6YbNKOzL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.7,
           discount: "48%",
         },
         {
@@ -7613,6 +8222,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amico Men's & Boys Multicolor Running Casual Sports Shoes",
           url: "https://m.media-amazon.com/images/I/61AsA-LoKRL._AC_UL320_.jpg",
           price: 2499,
+          rating: 3.3,
           discount: "80%",
         },
         {
@@ -7620,6 +8230,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GIGAHERTZ Kids Sports Sneakers for Boys & Girls | Lightweight Breathable Running Shoes with Easy Velcro Strap | Casual Wear Non-Slip Sole",
           url: "https://m.media-amazon.com/images/I/711cwTIgm3L._AC_UL320_.jpg",
           price: 900,
+          rating: 4.2,
           discount: "58%",
         },
         {
@@ -7627,6 +8238,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys Sports Running Shoes",
           url: "https://m.media-amazon.com/images/I/71e8Jmje3ZL._AC_UL320_.jpg",
           price: 1499,
+          rating: 4.0,
           discount: "53%",
         },
       ],
@@ -7656,6 +8268,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Amico Men's & Boys Multicolor Running Casual Sports Shoes",
           url: "https://m.media-amazon.com/images/I/61AsA-LoKRL._AC_UL320_.jpg",
           price: 2499,
+          rating: 3.3,
           discount: "80%",
         },
         {
@@ -7663,6 +8276,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GIGAHERTZ Kids Sports Sneakers for Boys & Girls | Lightweight Breathable Running Shoes with Easy Velcro Strap | Casual Wear Non-Slip Sole",
           url: "https://m.media-amazon.com/images/I/711cwTIgm3L._AC_UL320_.jpg",
           price: 900,
+          rating: 4.2,
           discount: "58%",
         },
         {
@@ -7670,6 +8284,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys Sports Running Shoes",
           url: "https://m.media-amazon.com/images/I/71e8Jmje3ZL._AC_UL320_.jpg",
           price: 1499,
+          rating: 4.0,
           discount: "53%",
         },
         {
@@ -7677,6 +8292,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys' Running Shoe for Active Kids | Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole | All Day Casual Wear",
           url: "https://m.media-amazon.com/images/I/61Hs8x7gMSL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.9,
           discount: "49%",
         },
       ],
@@ -7705,6 +8321,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "GIGAHERTZ Kids Sports Sneakers for Boys & Girls | Lightweight Breathable Running Shoes with Easy Velcro Strap | Casual Wear Non-Slip Sole",
           url: "https://m.media-amazon.com/images/I/711cwTIgm3L._AC_UL320_.jpg",
           price: 900,
+          rating: 4.2,
           discount: "58%",
         },
         {
@@ -7712,6 +8329,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys Sports Running Shoes",
           url: "https://m.media-amazon.com/images/I/71e8Jmje3ZL._AC_UL320_.jpg",
           price: 1499,
+          rating: 4.0,
           discount: "53%",
         },
         {
@@ -7719,6 +8337,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys' Running Shoe for Active Kids | Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole | All Day Casual Wear",
           url: "https://m.media-amazon.com/images/I/61Hs8x7gMSL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.9,
           discount: "49%",
         },
         {
@@ -7726,6 +8345,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://m.media-amazon.com/images/I/515xmz1vfHL._AC_UL320_.jpg",
           price: 1999,
+          rating: 4.2,
           discount: "56%",
         },
       ],
@@ -7755,6 +8375,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys Sports Running Shoes",
           url: "https://m.media-amazon.com/images/I/71e8Jmje3ZL._AC_UL320_.jpg",
           price: 1499,
+          rating: 4.0,
           discount: "53%",
         },
         {
@@ -7762,6 +8383,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys' Running Shoe for Active Kids | Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole | All Day Casual Wear",
           url: "https://m.media-amazon.com/images/I/61Hs8x7gMSL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.9,
           discount: "49%",
         },
         {
@@ -7769,6 +8391,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://m.media-amazon.com/images/I/515xmz1vfHL._AC_UL320_.jpg",
           price: 1999,
+          rating: 4.2,
           discount: "56%",
         },
         {
@@ -7776,6 +8399,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://m.media-amazon.com/images/I/51SLoN+nKZL._AC_UL320_.jpg",
           price: 2899,
+          rating: 4.1,
           discount: "10%",
         },
       ],
@@ -7805,6 +8429,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "TRASE Boys' Running Shoe for Active Kids | Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole | All Day Casual Wear",
           url: "https://m.media-amazon.com/images/I/61Hs8x7gMSL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.9,
           discount: "49%",
         },
         {
@@ -7812,6 +8437,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://m.media-amazon.com/images/I/515xmz1vfHL._AC_UL320_.jpg",
           price: 1999,
+          rating: 4.2,
           discount: "56%",
         },
         {
@@ -7819,6 +8445,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://m.media-amazon.com/images/I/51SLoN+nKZL._AC_UL320_.jpg",
           price: 2899,
+          rating: 4.1,
           discount: "10%",
         },
         {
@@ -7826,6 +8453,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Black and Green Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://m.media-amazon.com/images/I/61EffPHAmNL._SY625_.jpg",
           price: 3499,
+          rating: 3.2,
           discount: "0%",
         },
       ],
@@ -7855,6 +8483,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://m.media-amazon.com/images/I/515xmz1vfHL._AC_UL320_.jpg",
           price: 1999,
+          rating: 4.2,
           discount: "56%",
         },
         {
@@ -7862,6 +8491,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://m.media-amazon.com/images/I/51SLoN+nKZL._AC_UL320_.jpg",
           price: 2899,
+          rating: 4.1,
           discount: "10%",
         },
         {
@@ -7869,6 +8499,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Black and Green Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://m.media-amazon.com/images/I/61EffPHAmNL._SY625_.jpg",
           price: 3499,
+          rating: 3.2,
           discount: "0%",
         },
         {
@@ -7876,6 +8507,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://m.media-amazon.com/images/I/51JVoi1TzlL._AC_UL320_.jpg",
           price: 1999,
+          rating: 4.2,
           discount: "56%",
         },
       ],
@@ -7905,6 +8537,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://m.media-amazon.com/images/I/51SLoN+nKZL._AC_UL320_.jpg",
           price: 2899,
+          rating: 4.1,
           discount: "10%",
         },
         {
@@ -7912,6 +8545,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Black and Green Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://m.media-amazon.com/images/I/61EffPHAmNL._SY625_.jpg",
           price: 3499,
+          rating: 3.2,
           discount: "0%",
         },
         {
@@ -7919,6 +8553,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://m.media-amazon.com/images/I/51JVoi1TzlL._AC_UL320_.jpg",
           price: 1999,
+          rating: 4.2,
           discount: "56%",
         },
         {
@@ -7926,6 +8561,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Boy's VAYU-09 Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole Casual Lace-Up Shoes for Kid's & Boy's",
           url: "https://m.media-amazon.com/images/I/71fAAQe55cL._SY625_.jpg",
           price: 1099,
+          rating: 3.2,
           discount: "38%",
         },
       ],
@@ -7955,6 +8591,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ARETTO Expanding Black and Green Kids Shoes for Growing Feet – Boys & Girls Footwear, Baby Girl Shoes, Sneakers for Boys, Baby Shoes & Comfortable Shoes for Kids | Age 1–9 Years",
           url: "https://m.media-amazon.com/images/I/61EffPHAmNL._SY625_.jpg",
           price: 3499,
+          rating: 3.2,
           discount: "0%",
         },
         {
@@ -7962,6 +8599,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "KazarMax Unisex-Child Sport Shoes",
           url: "https://m.media-amazon.com/images/I/51JVoi1TzlL._AC_UL320_.jpg",
           price: 1999,
+          rating: 4.2,
           discount: "56%",
         },
         {
@@ -7969,6 +8607,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Boy's VAYU-09 Sport Running & Walking Shoes with Lightweight mesh Upper Eva Sole Casual Lace-Up Shoes for Kid's & Boy's",
           url: "https://m.media-amazon.com/images/I/71fAAQe55cL._SY625_.jpg",
           price: 1099,
+          rating: 3.2,
           discount: "38%",
         },
         {
@@ -7976,6 +8615,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "ASIAN Men's MEXICO-11 Casual Sneaker Shoes with Synthetic Upper Lightweight Comfortable Mid Top Sneaker Shoes for Men's & Boy's",
           url: "https://m.media-amazon.com/images/I/81R6YbNKOzL._AC_UL320_.jpg",
           price: 1499,
+          rating: 3.7,
           discount: "48%",
         },
       ],
@@ -7989,6 +8629,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://m.media-amazon.com/images/I/71fYNclvi+L._AC_UL320_.jpg",
       name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Poly Silk Floral Printed Sleeveless Sharara Set | Traditional Ethnic Wear Clothing Set for Festival and Special Occasions",
       price: 4999,
+      rating: 3.0,
       discount: "82%",
       gender: "female",
       description: [
@@ -8003,6 +8644,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Solid Kaftan with Flared Pant Set | Stylish Clothing Set",
           url: "https://m.media-amazon.com/images/I/51mSIvLPb0L._AC_UL320_.jpg",
           price: 3499,
+          rating: 4.1,
           discount: "77%",
         },
         {
@@ -8010,6 +8652,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Arshia Fashions Girls Ethnic Wear Kurti and Dhoti Pant Set",
           url: "https://m.media-amazon.com/images/I/81ODFZVxHIL._AC_UL320_.jpg",
           price: 2499,
+          rating: 5.0,
           discount: "77%",
         },
         {
@@ -8017,6 +8660,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "White Button new lemon sequence work with floral print jacket style indowestern palazzo set for girls",
           url: "https://m.media-amazon.com/images/I/61eUatCO4xL._AC_UL320_.jpg",
           price: 1999,
+          rating: 3.9,
           discount: "56%",
         },
         {
@@ -8024,6 +8668,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Girls Clothing Printed Cord set",
           url: "https://m.media-amazon.com/images/I/617E7tFP1oL._AC_UL320_.jpg",
           price: 2599,
+          rating: 4.9,
           discount: "69%",
         },
       ],
@@ -8049,6 +8694,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Arshia Fashions Girls Ethnic Wear Kurti and Dhoti Pant Set",
           url: "https://m.media-amazon.com/images/I/81ODFZVxHIL._AC_UL320_.jpg",
           price: 2499,
+          rating: 5.0,
           discount: "77%",
         },
         {
@@ -8056,6 +8702,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "White Button new lemon sequence work with floral print jacket style indowestern palazzo set for girls",
           url: "https://m.media-amazon.com/images/I/61eUatCO4xL._AC_UL320_.jpg",
           price: 1999,
+          rating: 3.9,
           discount: "56%",
         },
         {
@@ -8063,6 +8710,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Girls Clothing Printed Cord set",
           url: "https://m.media-amazon.com/images/I/617E7tFP1oL._AC_UL320_.jpg",
           price: 2599,
+          rating: 4.9,
           discount: "69%",
         },
         {
@@ -8070,6 +8718,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girls Georgette Salwar Suit Set|Girls Ethnic Salwar Suit Set",
           url: "https://m.media-amazon.com/images/I/71JAMZdXJSL._AC_UL320_.jpg",
           price: 3899,
+          rating: 4.0,
           discount: "75%",
         },
       ],
@@ -8085,7 +8734,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://m.media-amazon.com/images/I/81ODFZVxHIL._AC_UL320_.jpg",
       name: "Arshia Fashions Girls Ethnic Wear Kurti and Dhoti Pant Set",
       price: 2499,
-      rating: 4.0,
+      rating: 5.0,
       discount: "77%",
       gender: "female",
       description: [
@@ -8100,6 +8749,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "White Button new lemon sequence work with floral print jacket style indowestern palazzo set for girls",
           url: "https://m.media-amazon.com/images/I/61eUatCO4xL._AC_UL320_.jpg",
           price: 1999,
+          rating: 3.9,
           discount: "56%",
         },
         {
@@ -8107,6 +8757,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Girls Clothing Printed Cord set",
           url: "https://m.media-amazon.com/images/I/617E7tFP1oL._AC_UL320_.jpg",
           price: 2599,
+          rating: 4.9,
           discount: "69%",
         },
         {
@@ -8114,6 +8765,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girls Georgette Salwar Suit Set|Girls Ethnic Salwar Suit Set",
           url: "https://m.media-amazon.com/images/I/71JAMZdXJSL._AC_UL320_.jpg",
           price: 3899,
+          rating: 4.0,
           discount: "75%",
         },
         {
@@ -8121,6 +8773,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girl's Crepe Silk Maxi Length Printed Dress|Kids Dress|Dress for Girls",
           url: "https://m.media-amazon.com/images/I/81bOdTogCmL._AC_UL320_.jpg",
           price: 3499,
+          rating: 2.9,
           discount: "81%",
         },
       ],
@@ -8150,6 +8803,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Girls Clothing Printed Cord set",
           url: "https://m.media-amazon.com/images/I/617E7tFP1oL._AC_UL320_.jpg",
           price: 2599,
+          rating: 4.9,
           discount: "69%",
         },
         {
@@ -8157,6 +8811,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girls Georgette Salwar Suit Set|Girls Ethnic Salwar Suit Set",
           url: "https://m.media-amazon.com/images/I/71JAMZdXJSL._AC_UL320_.jpg",
           price: 3899,
+          rating: 4.0,
           discount: "75%",
         },
         {
@@ -8164,6 +8819,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girl's Crepe Silk Maxi Length Printed Dress|Kids Dress|Dress for Girls",
           url: "https://m.media-amazon.com/images/I/81bOdTogCmL._AC_UL320_.jpg",
           price: 3499,
+          rating: 2.9,
           discount: "81%",
         },
         {
@@ -8171,6 +8827,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Naixa Girls Rayon Fabric Floral Printed 3/4 Sleeve Sharara Dress Set For All Occasion salwar suit",
           url: "https://m.media-amazon.com/images/I/71-Tkj+7XrL._AC_UL320_.jpg",
           price: 3099,
+          rating: 3.9,
           discount: "68%",
         },
       ],
@@ -8184,7 +8841,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://m.media-amazon.com/images/I/617E7tFP1oL._AC_UL320_.jpg",
       name: "Girls Clothing Printed Cord set",
       price: 2599,
-      rating: 3.9,
+      rating: 4.9,
       discount: "69%",
       gender: "female",
       description: [
@@ -8202,6 +8859,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girls Georgette Salwar Suit Set|Girls Ethnic Salwar Suit Set",
           url: "https://m.media-amazon.com/images/I/71JAMZdXJSL._AC_UL320_.jpg",
           price: 3899,
+          rating: 4.0,
           discount: "75%",
         },
         {
@@ -8209,6 +8867,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girl's Crepe Silk Maxi Length Printed Dress|Kids Dress|Dress for Girls",
           url: "https://m.media-amazon.com/images/I/81bOdTogCmL._AC_UL320_.jpg",
           price: 3499,
+          rating: 2.9,
           discount: "81%",
         },
         {
@@ -8216,6 +8875,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Naixa Girls Rayon Fabric Floral Printed 3/4 Sleeve Sharara Dress Set For All Occasion salwar suit",
           url: "https://m.media-amazon.com/images/I/71-Tkj+7XrL._AC_UL320_.jpg",
           price: 3099,
+          rating: 3.9,
           discount: "68%",
         },
         {
@@ -8223,6 +8883,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Blue Stripe Leslie Co-ord Set | Sleeveless Top and Capri Set",
           url: "https://m.media-amazon.com/images/I/61yTG6mLSVL._AC_UL320_.jpg",
           price: 1699,
+          rating: 4.9,
           discount: "86%",
         },
       ],
@@ -8251,6 +8912,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Fashion Dream Girl's Crepe Silk Maxi Length Printed Dress|Kids Dress|Dress for Girls",
           url: "https://m.media-amazon.com/images/I/81bOdTogCmL._AC_UL320_.jpg",
           price: 3499,
+          rating: 2.9,
           discount: "81%",
         },
         {
@@ -8258,6 +8920,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Naixa Girls Rayon Fabric Floral Printed 3/4 Sleeve Sharara Dress Set For All Occasion salwar suit",
           url: "https://m.media-amazon.com/images/I/71-Tkj+7XrL._AC_UL320_.jpg",
           price: 3099,
+          rating: 3.9,
           discount: "68%",
         },
         {
@@ -8265,6 +8928,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Blue Stripe Leslie Co-ord Set | Sleeveless Top and Capri Set",
           url: "https://m.media-amazon.com/images/I/61yTG6mLSVL._AC_UL320_.jpg",
           price: 1699,
+          rating: 4.9,
           discount: "86%",
         },
         {
@@ -8272,6 +8936,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pspeaches Girl's Cotton Readymade Lehenga Choli",
           url: "https://m.media-amazon.com/images/I/61YuPsZnZ7L._AC_UL320_.jpg",
           price: 6719,
+          rating: 4.1,
           discount: "50%",
         },
       ],
@@ -8286,7 +8951,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://m.media-amazon.com/images/I/81bOdTogCmL._AC_UL320_.jpg",
       name: "Fashion Dream Girl's Crepe Silk Maxi Length Printed Dress|Kids Dress|Dress for Girls",
       price: 3499,
-      rating: 3.9,
+      rating: 2.9,
       discount: "81%",
       gender: "female",
       description: [
@@ -8303,6 +8968,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Naixa Girls Rayon Fabric Floral Printed 3/4 Sleeve Sharara Dress Set For All Occasion salwar suit",
           url: "https://m.media-amazon.com/images/I/71-Tkj+7XrL._AC_UL320_.jpg",
           price: 3099,
+          rating: 3.9,
           discount: "68%",
         },
         {
@@ -8310,6 +8976,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Blue Stripe Leslie Co-ord Set | Sleeveless Top and Capri Set",
           url: "https://m.media-amazon.com/images/I/61yTG6mLSVL._AC_UL320_.jpg",
           price: 1699,
+          rating: 4.9,
           discount: "86%",
         },
         {
@@ -8317,6 +8984,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pspeaches Girl's Cotton Readymade Lehenga Choli",
           url: "https://m.media-amazon.com/images/I/61YuPsZnZ7L._AC_UL320_.jpg",
           price: 6719,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -8324,6 +8992,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Poly Silk Floral Printed Sleeveless Sharara Set | Traditional Ethnic Wear Clothing Set for Festival and Special Occasions",
           url: "https://m.media-amazon.com/images/I/71fYNclvi+L._AC_UL320_.jpg",
           price: 4999,
+          rating: 3.0,
           discount: "82%",
         },
       ],
@@ -8353,6 +9022,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Blue Stripe Leslie Co-ord Set | Sleeveless Top and Capri Set",
           url: "https://m.media-amazon.com/images/I/61yTG6mLSVL._AC_UL320_.jpg",
           price: 1699,
+          rating: 4.9,
           discount: "86%",
         },
         {
@@ -8360,6 +9030,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pspeaches Girl's Cotton Readymade Lehenga Choli",
           url: "https://m.media-amazon.com/images/I/61YuPsZnZ7L._AC_UL320_.jpg",
           price: 6719,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -8367,6 +9038,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Poly Silk Floral Printed Sleeveless Sharara Set | Traditional Ethnic Wear Clothing Set for Festival and Special Occasions",
           url: "https://m.media-amazon.com/images/I/71fYNclvi+L._AC_UL320_.jpg",
           price: 4999,
+          rating: 3.0,
           discount: "82%",
         },
         {
@@ -8374,6 +9046,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Solid Kaftan with Flared Pant Set | Stylish Clothing Set",
           url: "https://m.media-amazon.com/images/I/51mSIvLPb0L._AC_UL320_.jpg",
           price: 3499,
+          rating: 4.1,
           discount: "77%",
         },
       ],
@@ -8387,7 +9060,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://m.media-amazon.com/images/I/61yTG6mLSVL._AC_UL320_.jpg",
       name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Blue Stripe Leslie Co-ord Set | Sleeveless Top and Capri Set",
       price: 1699,
-      rating: 3.9,
+      rating: 4.9,
       discount: "86%",
       gender: "female",
       description: [
@@ -8404,6 +9077,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Pspeaches Girl's Cotton Readymade Lehenga Choli",
           url: "https://m.media-amazon.com/images/I/61YuPsZnZ7L._AC_UL320_.jpg",
           price: 6719,
+          rating: 4.1,
           discount: "50%",
         },
         {
@@ -8411,6 +9085,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Poly Silk Floral Printed Sleeveless Sharara Set | Traditional Ethnic Wear Clothing Set for Festival and Special Occasions",
           url: "https://m.media-amazon.com/images/I/71fYNclvi+L._AC_UL320_.jpg",
           price: 4999,
+          rating: 3.0,
           discount: "82%",
         },
         {
@@ -8418,6 +9093,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Solid Kaftan with Flared Pant Set | Stylish Clothing Set",
           url: "https://m.media-amazon.com/images/I/51mSIvLPb0L._AC_UL320_.jpg",
           price: 3499,
+          rating: 4.1,
           discount: "77%",
         },
         {
@@ -8425,6 +9101,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Arshia Fashions Girls Ethnic Wear Kurti and Dhoti Pant Set",
           url: "https://m.media-amazon.com/images/I/81ODFZVxHIL._AC_UL320_.jpg",
           price: 2499,
+          rating: 5.0,
           discount: "77%",
         },
       ],
@@ -8457,6 +9134,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Poly Silk Floral Printed Sleeveless Sharara Set | Traditional Ethnic Wear Clothing Set for Festival and Special Occasions",
           url: "https://m.media-amazon.com/images/I/71fYNclvi+L._AC_UL320_.jpg",
           price: 4999,
+          rating: 3.0,
           discount: "82%",
         },
         {
@@ -8464,6 +9142,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "A.T.U.N. (ALL THINGS UBER NICE) Girls Solid Kaftan with Flared Pant Set | Stylish Clothing Set",
           url: "https://m.media-amazon.com/images/I/51mSIvLPb0L._AC_UL320_.jpg",
           price: 3499,
+          rating: 4.1,
           discount: "77%",
         },
         {
@@ -8471,6 +9150,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Arshia Fashions Girls Ethnic Wear Kurti and Dhoti Pant Set",
           url: "https://m.media-amazon.com/images/I/81ODFZVxHIL._AC_UL320_.jpg",
           price: 2499,
+          rating: 5.0,
           discount: "77%",
         },
         {
@@ -8478,6 +9158,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "White Button new lemon sequence work with floral print jacket style indowestern palazzo set for girls",
           url: "https://m.media-amazon.com/images/I/61eUatCO4xL._AC_UL320_.jpg",
           price: 1999,
+          rating: 3.9,
           discount: "56%",
         },
       ],
@@ -8508,6 +9189,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/z/5/f/m-sea-green-stoneberg-original-imahexdhrt7rgjek.jpeg?q=70",
           price: 1599,
+          rating: 3.0,
           discount: "75%",
         },
         {
@@ -8515,6 +9197,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Cut Away Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1930/1930/xif0q/shirt/h/a/q/m-r-stbrg-musturd-yellow-stoneberg-original-imahf486hfxndzv3.jpeg?q=70&crop=false",
           price: 1599,
+          rating: 3.8,
           discount: "75%",
         },
         {
@@ -8522,6 +9205,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Regular Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2661/2661/xif0q/shirt/e/h/w/2xl-csrmnkt-rust-voroxy-original-imahf84cktb2babj.jpeg?q=70&crop=false",
           price: 2199,
+          rating: 4.0,
           discount: "83%",
         },
         {
@@ -8529,6 +9213,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1024/1024/xif0q/shirt/1/x/z/m-r-pink-stoneberg-original-imahgb8b5ehfskke.jpeg?q=70&crop=false",
           price: 2000,
+          rating: 2.0,
           discount: "75%",
         },
       ],
@@ -8542,7 +9227,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/z/5/f/m-sea-green-stoneberg-original-imahexdhrt7rgjek.jpeg?q=70",
       name: "Men Slim Fit Solid Spread Collar Formal Shirt",
       price: 1599,
-      rating: 4.0,
+      rating: 3.0,
       discount: "75%",
       gender: "male",
       description: [
@@ -8558,6 +9243,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Cut Away Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1930/1930/xif0q/shirt/h/a/q/m-r-stbrg-musturd-yellow-stoneberg-original-imahf486hfxndzv3.jpeg?q=70&crop=false",
           price: 1599,
+          rating: 3.8,
           discount: "75%",
         },
         {
@@ -8565,6 +9251,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Regular Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2661/2661/xif0q/shirt/e/h/w/2xl-csrmnkt-rust-voroxy-original-imahf84cktb2babj.jpeg?q=70&crop=false",
           price: 2199,
+          rating: 4.0,
           discount: "83%",
         },
         {
@@ -8572,6 +9259,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1024/1024/xif0q/shirt/1/x/z/m-r-pink-stoneberg-original-imahgb8b5ehfskke.jpeg?q=70&crop=false",
           price: 2000,
+          rating: 2.0,
           discount: "75%",
         },
         {
@@ -8579,6 +9267,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2700/2700/xif0q/shirt/g/o/y/m-r-dark-pink-stoneberg-original-imahdvgvd3k35qpv.jpeg?q=70&crop=false",
           price: 1699,
+          rating: 4.0,
           discount: "75%",
         },
       ],
@@ -8608,6 +9297,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Regular Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2661/2661/xif0q/shirt/e/h/w/2xl-csrmnkt-rust-voroxy-original-imahf84cktb2babj.jpeg?q=70&crop=false",
           price: 2199,
+          rating: 4.0,
           discount: "83%",
         },
         {
@@ -8615,6 +9305,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1024/1024/xif0q/shirt/1/x/z/m-r-pink-stoneberg-original-imahgb8b5ehfskke.jpeg?q=70&crop=false",
           price: 2000,
+          rating: 2.0,
           discount: "75%",
         },
         {
@@ -8622,6 +9313,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2700/2700/xif0q/shirt/g/o/y/m-r-dark-pink-stoneberg-original-imahdvgvd3k35qpv.jpeg?q=70&crop=false",
           price: 1699,
+          rating: 4.0,
           discount: "75%",
         },
         {
@@ -8629,6 +9321,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/w/y/n/m-r-stbrg-dove-blue-stoneberg-original-imahe7zcgwtrusxe.jpeg?q=70",
           price: 1799,
+          rating: 3.0,
           discount: "75%",
         },
       ],
@@ -8658,6 +9351,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1024/1024/xif0q/shirt/1/x/z/m-r-pink-stoneberg-original-imahgb8b5ehfskke.jpeg?q=70&crop=false",
           price: 2000,
+          rating: 2.0,
           discount: "75%",
         },
         {
@@ -8665,6 +9359,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2700/2700/xif0q/shirt/g/o/y/m-r-dark-pink-stoneberg-original-imahdvgvd3k35qpv.jpeg?q=70&crop=false",
           price: 1699,
+          rating: 4.0,
           discount: "75%",
         },
         {
@@ -8672,6 +9367,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/w/y/n/m-r-stbrg-dove-blue-stoneberg-original-imahe7zcgwtrusxe.jpeg?q=70",
           price: 1799,
+          rating: 3.0,
           discount: "75%",
         },
         {
@@ -8679,6 +9375,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1024/1024/xif0q/shirt/i/p/c/m-r-navy-blue-stoneberg-original-imahghwfrexxs3ag.jpeg?q=70&crop=false",
           price: 1599,
+          rating: 4.5,
           discount: "75%",
         },
       ],
@@ -8692,7 +9389,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://rukminim2.flixcart.com/image/1024/1024/xif0q/shirt/1/x/z/m-r-pink-stoneberg-original-imahgb8b5ehfskke.jpeg?q=70&crop=false",
       name: "Men Slim Fit Solid Spread Collar Formal Shirt",
       price: 2000,
-      rating: 4.0,
+      rating: 2.0,
       discount: "75%",
       gender: "male",
       description: [
@@ -8708,6 +9405,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2700/2700/xif0q/shirt/g/o/y/m-r-dark-pink-stoneberg-original-imahdvgvd3k35qpv.jpeg?q=70&crop=false",
           price: 1699,
+          rating: 4.0,
           discount: "75%",
         },
         {
@@ -8715,6 +9413,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/w/y/n/m-r-stbrg-dove-blue-stoneberg-original-imahe7zcgwtrusxe.jpeg?q=70",
           price: 1799,
+          rating: 3.0,
           discount: "75%",
         },
         {
@@ -8722,6 +9421,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1024/1024/xif0q/shirt/i/p/c/m-r-navy-blue-stoneberg-original-imahghwfrexxs3ag.jpeg?q=70&crop=false",
           price: 1599,
+          rating: 4.5,
           discount: "75%",
         },
         {
@@ -8729,6 +9429,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2783/2783/xif0q/shirt/j/2/v/s-fbrml-r-fibermill-original-imahfefxxrvtwaff.jpeg?q=70&crop=false",
           price: 1699,
+          rating: 4.8,
           discount: "76%",
         },
       ],
@@ -8758,6 +9459,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/w/y/n/m-r-stbrg-dove-blue-stoneberg-original-imahe7zcgwtrusxe.jpeg?q=70",
           price: 1799,
+          rating: 3.0,
           discount: "75%",
         },
         {
@@ -8765,6 +9467,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1024/1024/xif0q/shirt/i/p/c/m-r-navy-blue-stoneberg-original-imahghwfrexxs3ag.jpeg?q=70&crop=false",
           price: 1599,
+          rating: 4.5,
           discount: "75%",
         },
         {
@@ -8772,6 +9475,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2783/2783/xif0q/shirt/j/2/v/s-fbrml-r-fibermill-original-imahfefxxrvtwaff.jpeg?q=70&crop=false",
           price: 1699,
+          rating: 4.8,
           discount: "76%",
         },
         {
@@ -8779,6 +9483,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2103/2103/xif0q/shirt/j/d/5/m-r-olive-green-stoneberg-original-imahf485dhnayuqn.jpeg?q=70&crop=false",
           price: 999,
+          rating: 4.1,
           discount: "70%",
         },
       ],
@@ -8792,7 +9497,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/w/y/n/m-r-stbrg-dove-blue-stoneberg-original-imahe7zcgwtrusxe.jpeg?q=70",
       name: "Men Slim Fit Solid Spread Collar Formal Shirt",
       price: 1799,
-      rating: 4.0,
+      rating: 3.0,
       discount: "75%",
       gender: "male",
       description: [
@@ -8808,6 +9513,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1024/1024/xif0q/shirt/i/p/c/m-r-navy-blue-stoneberg-original-imahghwfrexxs3ag.jpeg?q=70&crop=false",
           price: 1599,
+          rating: 4.5,
           discount: "75%",
         },
         {
@@ -8815,6 +9521,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2783/2783/xif0q/shirt/j/2/v/s-fbrml-r-fibermill-original-imahfefxxrvtwaff.jpeg?q=70&crop=false",
           price: 1699,
+          rating: 4.8,
           discount: "76%",
         },
         {
@@ -8822,6 +9529,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2103/2103/xif0q/shirt/j/d/5/m-r-olive-green-stoneberg-original-imahf485dhnayuqn.jpeg?q=70&crop=false",
           price: 999,
+          rating: 4.1,
           discount: "70%",
         },
         {
@@ -8829,6 +9537,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Regular Fit Solid Cut Away Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/1/o/h/xl-stylish-new-fashion-cotton-shirts-for-men-solstice-original-imahfw8ztjzsqhry.jpeg?q=70",
           price: 999,
+          rating: 3.8,
           discount: "64%",
         },
       ],
@@ -8842,7 +9551,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://rukminim2.flixcart.com/image/1024/1024/xif0q/shirt/i/p/c/m-r-navy-blue-stoneberg-original-imahghwfrexxs3ag.jpeg?q=70&crop=false",
       name: "Men Slim Fit Solid Spread Collar Formal Shirt",
       price: 1599,
-      rating: 4.0,
+      rating: 4.5,
       discount: "75%",
       gender: "male",
       description: [
@@ -8858,6 +9567,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2783/2783/xif0q/shirt/j/2/v/s-fbrml-r-fibermill-original-imahfefxxrvtwaff.jpeg?q=70&crop=false",
           price: 1699,
+          rating: 4.8,
           discount: "76%",
         },
         {
@@ -8865,6 +9575,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2103/2103/xif0q/shirt/j/d/5/m-r-olive-green-stoneberg-original-imahf485dhnayuqn.jpeg?q=70&crop=false",
           price: 999,
+          rating: 4.1,
           discount: "70%",
         },
         {
@@ -8872,6 +9583,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Regular Fit Solid Cut Away Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/1/o/h/xl-stylish-new-fashion-cotton-shirts-for-men-solstice-original-imahfw8ztjzsqhry.jpeg?q=70",
           price: 999,
+          rating: 3.8,
           discount: "64%",
         },
         {
@@ -8879,6 +9591,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/z/5/f/m-sea-green-stoneberg-original-imahexdhrt7rgjek.jpeg?q=70",
           price: 1599,
+          rating: 3.0,
           discount: "75%",
         },
       ],
@@ -8892,7 +9605,7 @@ if (!localStorage.getItem("clothsData")) {
       url: "https://rukminim2.flixcart.com/image/2783/2783/xif0q/shirt/j/2/v/s-fbrml-r-fibermill-original-imahfefxxrvtwaff.jpeg?q=70&crop=false",
       name: "Men Slim Fit Solid Spread Collar Formal Shirt",
       price: 1699,
-      rating: 4.0,
+      rating: 4.8,
       discount: "76%",
       gender: "male",
       description: [
@@ -8908,6 +9621,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2103/2103/xif0q/shirt/j/d/5/m-r-olive-green-stoneberg-original-imahf485dhnayuqn.jpeg?q=70&crop=false",
           price: 999,
+          rating: 4.1,
           discount: "70%",
         },
         {
@@ -8915,6 +9629,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Regular Fit Solid Cut Away Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/1/o/h/xl-stylish-new-fashion-cotton-shirts-for-men-solstice-original-imahfw8ztjzsqhry.jpeg?q=70",
           price: 999,
+          rating: 3.8,
           discount: "64%",
         },
         {
@@ -8922,6 +9637,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/z/5/f/m-sea-green-stoneberg-original-imahexdhrt7rgjek.jpeg?q=70",
           price: 1599,
+          rating: 3.0,
           discount: "75%",
         },
         {
@@ -8929,6 +9645,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Cut Away Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1930/1930/xif0q/shirt/h/a/q/m-r-stbrg-musturd-yellow-stoneberg-original-imahf486hfxndzv3.jpeg?q=70&crop=false",
           price: 1599,
+          rating: 3.8,
           discount: "75%",
         },
       ],
@@ -8958,6 +9675,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Regular Fit Solid Cut Away Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/1/o/h/xl-stylish-new-fashion-cotton-shirts-for-men-solstice-original-imahfw8ztjzsqhry.jpeg?q=70",
           price: 999,
+          rating: 3.8,
           discount: "64%",
         },
         {
@@ -8965,6 +9683,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/z/5/f/m-sea-green-stoneberg-original-imahexdhrt7rgjek.jpeg?q=70",
           price: 1599,
+          rating: 3.0,
           discount: "75%",
         },
         {
@@ -8972,6 +9691,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Slim Fit Solid Cut Away Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/1930/1930/xif0q/shirt/h/a/q/m-r-stbrg-musturd-yellow-stoneberg-original-imahf486hfxndzv3.jpeg?q=70&crop=false",
           price: 1599,
+          rating: 3.8,
           discount: "75%",
         },
         {
@@ -8979,6 +9699,7 @@ if (!localStorage.getItem("clothsData")) {
           name: "Men Regular Fit Solid Spread Collar Formal Shirt",
           url: "https://rukminim2.flixcart.com/image/2661/2661/xif0q/shirt/e/h/w/2xl-csrmnkt-rust-voroxy-original-imahf84cktb2babj.jpeg?q=70&crop=false",
           price: 2199,
+          rating: 4.0,
           discount: "83%",
         },
       ],

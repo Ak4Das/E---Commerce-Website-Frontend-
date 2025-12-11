@@ -14,7 +14,7 @@
 }
 
 .similarCards {
-  height: 500px !important;
+  height: 520px !important;
 }
 
 @media (min-width: 1400px) {
@@ -186,6 +186,9 @@
   .totalBill {
     min-width: 300px !important;
   }
+  .productDetailsImage {
+    position: sticky !important;
+  }
 }
 @media (min-width: 768px) {
   .totalBill {
@@ -226,6 +229,14 @@
   .totalBill {
     min-width: 600px !important;
   }
+  .rating-listingPage {
+    display: none;
+  }
+}
+@media (min-width: 1500px) {
+  .rating-listingPage {
+    display: initial;
+  }
 }
 @media (min-width: 1600px) {
   .productDetailsContainer {
@@ -238,14 +249,24 @@
   }
 }
 
-.star-outer::before {
+.star-bottom::before {
   content: "\2605 \2605 \2605 \2605 \2605";
   font-size: 25px;
   color: rgb(150, 147, 147);
 }
 
-.star-inner::before {
+.star-top::before {
   content: "\2605 \2605 \2605 \2605 \2605";
   font-size: 25px;
   color: gold;
+}
+
+.star-bottom {
+  width: 104.14px;
+  height: 37.5px;
+}
+
+.star-top {
+  width: 104.14px;
+  height: 37.5px;
 }

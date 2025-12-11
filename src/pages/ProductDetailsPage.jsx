@@ -49,7 +49,7 @@ export default function ProductDetailsPage() {
         <div className="bg-light-subtle py-3 px-3 productDetailsContainer">
           <section className="d-sm-flex gap-sm-4 gap-md-5 align-items-start">
             <div
-              className="productDetailsImage position-sticky top-0 start-0"
+              className="productDetailsImage top-0 start-0"
               style={{ minWidth: "200px" }}
             >
               <img
@@ -82,7 +82,7 @@ export default function ProductDetailsPage() {
                 {product.name}
               </p>
               <RatingBar rating={product.rating} />
-              <span style={{ fontSize: "20px" }}> {product.rating}</span>
+              <span style={{ fontSize: "15px" }}> {product.rating}</span>
               <div>
                 <span className="fw-bold fs-5">
                   ₹
@@ -202,7 +202,6 @@ export default function ProductDetailsPage() {
                 </div>
               </div>
               <hr />
-              {/* COMPLETE */}
               <div>
                 <h5>Description</h5>
                 <ul>
@@ -234,17 +233,21 @@ export default function ProductDetailsPage() {
                         className="img-fluid"
                         style={{ minHeight: "250px", maxHeight: "250px" }}
                       />
-                      <div className="card-body d-flex flex-column justify-content-between">
-                        <p className="text-center m-0 productName lh-sm">
+                      <div className="card-body d-flex flex-column justify-content-between align-items-center">
+                        <p className="text-center m-0 productName lh-sm listProductName">
                           {product.name.length > 61
                             ? product.name.slice(0, 60).concat("...")
                             : product.name}
                         </p>
-                        {/* <p className="my-0 text-center">
-                          <b>Rating:</b> {product.rating}
-                        </p> */}
                         <div>
-                          <p className="fw-bold text-center my-2">
+                          <RatingBar rating={product.rating} />
+                          <span style={{ fontSize: "14px" }}>
+                            {" "}
+                            {product.rating}
+                          </span>
+                        </div>
+                        <div>
+                          <p className="fw-bold my-2">
                             <b>₹</b>
                             {(
                               product.price -

@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import Offcanvas from "../components/Offcanvas"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
+import RatingBar from "../components/RatingBar"
 
 export default function ProductListingPage() {
   const { category } = useParams()
@@ -122,32 +123,38 @@ export default function ProductListingPage() {
                       style={{ height: "300px" }}
                     />
                     <div className="card-body d-flex flex-column justify-content-between">
-                        <p id="name" className="my-0 lh-sm listProductName">
-                          {product.name.length > 61
-                            ? product.name.slice(0, 60).concat("...")
-                            : product.name}
+                      <p id="name" className="my-0 lh-sm listProductName">
+                        {product.name.length > 61
+                          ? product.name.slice(0, 60).concat("...")
+                          : product.name}
+                      </p>
+                      <div>
+                        <RatingBar rating={product.rating} />
+                        <span
+                          style={{ fontSize: "15px" }}
+                          className="ms-1 rating-listingPage"
+                        >
+                          {product.rating}
+                        </span>
+                      </div>
+                      <div>
+                        <p id="discount" className="my-0">
+                          <b>₹</b>
+                          {(
+                            product.price -
+                            (product.price *
+                              Number(product.discount.replace("%", ""))) /
+                              100
+                          ).toFixed(1)}{" "}
+                          (-{product.discount})
                         </p>
-                        <p id="rating" className="my-2">
-                          <b>Rating:</b> {product.rating}
-                        </p>
-                        <div>
-                          <p id="discount" className="my-0">
-                            <b>₹</b>
-                            {(
-                              product.price -
-                              (product.price *
-                                Number(product.discount.replace("%", ""))) /
-                                100
-                            ).toFixed(1)}{" "}
-                            (-{product.discount})
-                          </p>
-                          <small
-                            id="M.R.P."
-                            className="text-decoration-line-through"
-                          >
-                            M.R.P. ₹{product.price}
-                          </small>
-                        </div>
+                        <small
+                          id="M.R.P."
+                          className="text-decoration-line-through"
+                        >
+                          M.R.P. ₹{product.price}
+                        </small>
+                      </div>
                       <div>
                         <button
                           value={product.id}

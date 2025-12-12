@@ -270,3 +270,21 @@
   width: 104.14px;
   height: 37.5px;
 }
+
+.changeImage {
+  transform: translateX(30px) !important;
+  cursor: pointer !important;
+}
+
+.changeImage:hover {
+  background-color: aqua !important;
+}
+
+.floatingCardBtn {
+  width: 45%;
+  background-color: rgb(133, 214, 247) !important;
+}
+
+.floatingCard {
+  transform: translate(-50% , -10% );
+}

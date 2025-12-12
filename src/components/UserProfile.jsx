@@ -5,19 +5,25 @@ import { useState } from "react"
 import DeliveryBox from "../assets/deliveryBox.jpg"
 import AddressIcon from "../assets/address.png"
 import Support from "../assets/support.png"
+import { Link } from "react-router-dom"
 
-const user = {
-  name: "Malika Arora",
-  profileImage:
-    "https://tse3.mm.bing.net/th/id/OIP.msa3ta2jVWH735uP_b3f-wHaJQ?pid=Api&P=0&h=180",
-  email: "malikarora02052@gmail.com",
-  phoneNumber: 9883620996,
-  address: [],
+if (!localStorage.getItem("user")) {
+  const user = {
+    name: "Malika Arora",
+    profileImage:
+      "https://tse3.mm.bing.net/th/id/OIP.msa3ta2jVWH735uP_b3f-wHaJQ?pid=Api&P=0&h=180",
+    email: "malikarora02052@gmail.com",
+    address: [],
+  }
+  localStorage.setItem("user", JSON.stringify(user))
 }
 
 export default function UserProfile() {
   const [visible, setVisible] = useState(false)
-
+  const [userDetails, setUser] = useState(
+    JSON.parse(localStorage.getItem("user"))
+  )
+  console.log(userDetails)
   function setVisibility() {
     setVisible(visible ? false : true)
   }
@@ -31,7 +37,7 @@ export default function UserProfile() {
             className="overflow-hidden rounded-circle"
           >
             <img
-              src={user.profileImage}
+              src={userDetails.profileImage}
               alt=""
               className="img-fluid w-100 h-100"
             />
@@ -47,12 +53,12 @@ export default function UserProfile() {
               onClick={setVisibility}
             />
           </div>
-          <h2 className="mt-3">{user.name.toUpperCase()}</h2>
-          <h6>{user.email}</h6>
+          <h2 className="mt-3">{userDetails.name.toUpperCase()}</h2>
+          <h6>{userDetails.email}</h6>
           {visible && (
             <div
               className="card px-3 py-3 bg-light position-absolute top-50 start-50 floatingCard"
-              style={{ width: "400px",zIndex:1 }}
+              style={{ width: "400px", zIndex: 1 }}
             >
               <section className="position-relative">
                 <h2>User Account</h2>
@@ -77,7 +83,7 @@ export default function UserProfile() {
                   style={{ width: "350px", height: "350px" }}
                 >
                   <img
-                    src={user.profileImage}
+                    src={userDetails.profileImage}
                     alt=""
                     className="img-fluid w-100 h-100"
                   />
@@ -94,35 +100,59 @@ export default function UserProfile() {
             </div>
           )}
         </div>
-          <div className="row mt-5">
-            <div className="col-md-6 col-xl-4 mb-4">
-              <div className="card flex-row gap-2" style={{height:"155px"}}>
-                <img src={DeliveryBox} alt="" className="" style={{width:"150px"}} />
-                <div className="card-body">
+        <div className="row mt-5">
+          <div className="col-md-6 col-xl-4 mb-4">
+            <div className="card flex-row gap-2" style={{ height: "155px" }}>
+              <img
+                src={DeliveryBox}
+                alt=""
+                className=""
+                style={{ width: "150px" }}
+              />
+              <div className="card-body">
                 <h6>Your Orders</h6>
                 <p>Track, Return and buy things again</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-xl-4 mb-4">
-              <div className="card flex-row align-items-center gap-3" style={{height:"155px"}}>
-                <img src={AddressIcon} alt="" className="" style={{width:"100px"}} />
-                <div className="card-body">
-                <h6>Your Addresses</h6>
-                <p>Edit address for your orders and gifts</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6 col-xl-4 mb-4">
-              <div className="card flex-row align-items-center gap-3" style={{height:"155px"}}>
-                <img src={Support} alt="" className="ms-3" style={{width:"80px"}} />
-                <div className="card-body">
-                <h6>Contact Us</h6>
-                <p>Contact our customer service via phone or chart</p>
-                </div>
               </div>
             </div>
           </div>
+          <Link
+            to="/userAddress"
+            className="col-md-6 col-xl-4 mb-4 text-decoration-none"
+          >
+            <div
+              className="card flex-row align-items-center gap-3"
+              style={{ height: "155px" }}
+            >
+              <img
+                src={AddressIcon}
+                alt=""
+                className=""
+                style={{ width: "100px" }}
+              />
+              <div className="card-body">
+                <h6>Your Addresses</h6>
+                <p>Edit address for your orders and gifts</p>
+              </div>
+            </div>
+          </Link>
+          <div className="col-md-6 col-xl-4 mb-4">
+            <div
+              className="card flex-row align-items-center gap-3"
+              style={{ height: "155px" }}
+            >
+              <img
+                src={Support}
+                alt=""
+                className="ms-3"
+                style={{ width: "80px" }}
+              />
+              <div className="card-body">
+                <h6>Contact Us</h6>
+                <p>Contact our customer service via phone or chart</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
     </>
   )

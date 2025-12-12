@@ -288,3 +288,7 @@
 .floatingCard {
   transform: translate(-50% , -10% );
 }
+
+.addressEditOrRemove:hover {
+  text-decoration: underline;
+}

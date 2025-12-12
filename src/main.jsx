@@ -9,6 +9,8 @@ import ProductDetailsPage from "./pages/ProductDetailsPage.jsx"
 import WishlistPage from "./pages/WishlistPage.jsx"
 import CartPage from "./pages/CartPage.jsx"
 import UserProfile from "./components/UserProfile.jsx"
+import UserAddresses from "./components/UserAddresses.jsx"
+import AddAddressForm from "./components/AddAddressForm.jsx"
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
   { path: "/wishlist", element: <WishlistPage /> },
   { path: "/cart", element: <CartPage /> },
   { path: "/user", element: <UserProfile /> },
+  { path: "/userAddress", element: <UserAddresses /> },
+  { path: "/addAddress", element: <AddAddressForm /> },
 ])
 
 import ClothsContextProvider from "./contexts/ClothsContextProvider.jsx"

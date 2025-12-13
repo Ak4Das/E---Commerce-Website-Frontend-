@@ -21,6 +21,8 @@ const router = createBrowserRouter([
   { path: "/user", element: <UserProfile /> },
   { path: "/userAddress", element: <UserAddresses /> },
   { path: "/addAddress", element: <AddAddressForm /> },
+  { path: "/addAddress", element: <AddAddressForm /> },
+  { path: "/editAddress/:id", element: <AddAddressForm /> },
 ])
 
 import ClothsContextProvider from "./contexts/ClothsContextProvider.jsx"

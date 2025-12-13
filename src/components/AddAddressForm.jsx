@@ -1,20 +1,33 @@
 import { useState } from "react"
+import { useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export default function AddAddressForm() {
-  const [country, setCountry] = useState("")
-  const [fullName, setFullName] = useState("")
-  const [mobNo, setMobNo] = useState("")
-  const [pinCode, setPinCode] = useState("")
-  const [localInfo, setLocalInfo] = useState("")
-  const [area, setArea] = useState("")
-  const [city, setCity] = useState("")
-  const [state, setState] = useState("")
-  function handleSubmit (e) {
+  const id = Number(useParams().id)
+  const user = JSON.parse(localStorage.getItem("user"))
+  const address = user.address[id]
+  const [fullName, setFullName] = useState(address ? address.fullName : "")
+  const [mobNo, setMobNo] = useState(address ? address.mobNo : "")
+  const [pinCode, setPinCode] = useState(address ? address.pinCode : "")
+  const [localInfo, setLocalInfo] = useState(address ? address.localInfo : "")
+  const [area, setArea] = useState(address ? address.area : "")
+  const [city, setCity] = useState(address ? address.city : "")
+  const [state, setState] = useState(address ? address.state : "")
+  function handleSubmit(e) {
     e.preventDefault()
-    const address = {country,fullName,mobNo,pinCode,localInfo,area,city,state}
+    const Address = {
+      country: "India",
+      fullName,
+      mobNo,
+      pinCode,
+      localInfo,
+      area,
+      city,
+      state,
+    }
     const user = JSON.parse(localStorage.getItem("user"))
-    address.id = user.address.length
-    user.address.push(address)
+    Address.id = address ? id : user.address.length
+    address ? (user.address[id] = Address) : user.address.push(Address)
     localStorage.setItem("user", JSON.stringify(user))
   }
   return (
@@ -30,7 +43,7 @@ export default function AddAddressForm() {
             id="country"
             type="text"
             className="w-100 form-control"
-            onChange={(e) => setCountry(e.target.value)}
+            defaultValue="India"
           />
           <br />
           <label htmlFor="fullName" className="form-label">
@@ -41,6 +54,7 @@ export default function AddAddressForm() {
             id="fullName"
             type="text"
             className="w-100 form-control"
+            defaultValue={address ? address.fullName : ""}
             onChange={(e) => setFullName(e.target.value)}
           />
           <br />
@@ -52,6 +66,7 @@ export default function AddAddressForm() {
             id="mobileNo"
             type="text"
             className="w-100 form-control"
+            defaultValue={address ? address.mobNo : ""}
             onChange={(e) => setMobNo(e.target.value)}
           />
           <br />
@@ -63,6 +78,7 @@ export default function AddAddressForm() {
             id="pinCode"
             type="text"
             className="w-100 form-control"
+            defaultValue={address ? address.pinCode : ""}
             onChange={(e) => setPinCode(e.target.value)}
           />
           <br />
@@ -74,6 +90,7 @@ export default function AddAddressForm() {
             id="localInfo"
             type="text"
             className="w-100 form-control"
+            defaultValue={address ? address.localInfo : ""}
             onChange={(e) => setLocalInfo(e.target.value)}
           />
           <br />
@@ -85,6 +102,7 @@ export default function AddAddressForm() {
             id="area"
             type="text"
             className="w-100 form-control"
+            defaultValue={address ? address.area : ""}
             onChange={(e) => setArea(e.target.value)}
           />
           <br />
@@ -96,6 +114,7 @@ export default function AddAddressForm() {
             id="city"
             type="text"
             className="w-100 form-control"
+            defaultValue={address ? address.city : ""}
             onChange={(e) => setCity(e.target.value)}
           />
           <br />
@@ -107,6 +126,7 @@ export default function AddAddressForm() {
             id="state"
             type="text"
             className="w-100 form-control"
+            defaultValue={address ? address.state : ""}
             onChange={(e) => setState(e.target.value)}
           />
           <br />

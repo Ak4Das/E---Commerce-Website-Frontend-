@@ -19,7 +19,7 @@ export default function UserAddresses() {
       <Header />
       <main className="container mt-3">
         <h2>Your Addresses</h2>
-        <div className="row mt-4">
+        <div className="row row-gap-4 mt-4">
           <div className="col-sm-6 col-lg-4">
             <Link
               to="/addAddress"
@@ -64,14 +64,13 @@ export default function UserAddresses() {
                       </p>
                     </div>
                     <div>
-                      <button
-                        className="border border-0 bg-white me-1 fw-medium text-primary addressEditOrRemove"
+                      <Link
+                        to={`/editAddress/${address.id}`}
+                        className="text-decoration-none border border-0 bg-white me-1 fw-medium text-primary addressEditOrRemove"
                         style={{ cursor: "pointer" }}
-                        value={address.id}
-                        // onClick={editAddress}
                       >
                         Edit
-                      </button>
+                      </Link>
                       <span className="fw-medium text-primary">|</span>
                       <button
                         className="border border-0 bg-white ms-1 fw-medium text-primary addressEditOrRemove"

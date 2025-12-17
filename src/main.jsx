@@ -11,6 +11,9 @@ import CartPage from "./pages/CartPage.jsx"
 import UserProfile from "./components/UserProfile.jsx"
 import UserAddresses from "./components/UserAddresses.jsx"
 import AddAddressForm from "./components/AddAddressForm.jsx"
+import YourOrders from "./components/YourOrders.jsx"
+import PaymentMethods from "./components/PaymentMethod.jsx"
+import LoginForm from "./components/LoginForm.jsx"
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -23,6 +26,10 @@ const router = createBrowserRouter([
   { path: "/addAddress", element: <AddAddressForm /> },
   { path: "/addAddress", element: <AddAddressForm /> },
   { path: "/editAddress/:id", element: <AddAddressForm /> },
+  { path: "/yourOrders", element: <YourOrders /> },
+  { path: "/paymentMethods", element: <PaymentMethods /> },
+  { path: "/paymentMethods/:id", element: <PaymentMethods /> },
+  { path: "/login", element: <LoginForm /> },
 ])
 
 import ClothsContextProvider from "./contexts/ClothsContextProvider.jsx"

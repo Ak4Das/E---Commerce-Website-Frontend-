@@ -37,7 +37,7 @@ export default function Header({position,top,zIndex}) {
                 <NavLink
                   className="btn btn-secondary text-light"
                   aria-current="page"
-                  to="/"
+                  to="/login"
                   style={{ width: "70px" }}
                 >
                   Login

@@ -7,25 +7,53 @@ import AddressIcon from "../assets/address.png"
 import Support from "../assets/support.png"
 import { Link } from "react-router-dom"
 
-if (!localStorage.getItem("user")) {
-  const user = {
-    name: "Malika Arora",
-    profileImage:
-      "https://tse3.mm.bing.net/th/id/OIP.msa3ta2jVWH735uP_b3f-wHaJQ?pid=Api&P=0&h=180",
-    email: "malikarora02052@gmail.com",
-    address: [],
-  }
-  localStorage.setItem("user", JSON.stringify(user))
-}
-
 export default function UserProfile() {
   const [visible, setVisible] = useState(false)
-  const [userDetails, setUser] = useState(
-    JSON.parse(localStorage.getItem("user"))
-  )
-  console.log(userDetails)
+  const [profileImage, setProfileImage] = useState("")
+  const [edit, setEdit] = useState(false)
+  const [imageUrl, setImageUrl] = useState("")
+  const [imagePath, setImagePath] = useState("")
+  const [file, setFile] = useState({})
+
+  let userDetails = JSON.parse(localStorage.getItem("user"))
+
+  // if (imagePath) {
+  //   const reader = new FileReader()
+  //   reader.onload = () => {
+  //     userDetails.profileImageFile = reader.result
+  //     localStorage.setItem("user", JSON.stringify(userDetails))
+  //   }
+  //   reader.readAsDataURL(file)
+  // }
+
+  if (profileImage && !edit) {
+    userDetails.profileImage = profileImage
+    console.log(profileImage)
+    localStorage.setItem("user", JSON.stringify(userDetails))
+  }
+
+  function removeProfileImage() {
+    userDetails.profileImage = ""
+    localStorage.setItem("user", JSON.stringify(userDetails))
+    setEdit(false)
+    setProfileImage("")
+    setImageUrl("")
+    setImagePath("")
+  }
+
+  function editProfileImage() {
+    imageUrl && setProfileImage(imageUrl)
+    imageUrl && setImagePath("")
+    setEdit(edit ? false : true)
+    const enterImgUrl = document.querySelector(".enterImgUrl")
+    enterImgUrl.value = ""
+    const enterImagePath = document.querySelector(".enterImagePath")
+    enterImagePath.value = ""
+  }
+
   function setVisibility() {
     setVisible(visible ? false : true)
+    setEdit(false)
   }
   return (
     <>
@@ -36,11 +64,31 @@ export default function UserProfile() {
             style={{ width: "100px", height: "100px" }}
             className="overflow-hidden rounded-circle"
           >
-            <img
-              src={userDetails.profileImage}
-              alt=""
-              className="img-fluid w-100 h-100"
-            />
+            {userDetails.profileImage ? (
+              imagePath ? (
+                <img
+                  src={URL.createObjectURL(file)}
+                  alt=""
+                  className="img-fluid w-100 h-100"
+                />
+              ) : (
+                <img
+                  src={userDetails.profileImage}
+                  alt=""
+                  className="img-fluid w-100 h-100"
+                />
+              )
+            ) : imagePath ? (
+              <img
+                src={URL.createObjectURL(file)}
+                alt=""
+                className="img-fluid w-100 h-100"
+              />
+            ) : (
+              <div className="bg-info w-100 h-100 fs-1 d-flex align-items-center justify-content-center">
+                {userDetails.name.charAt(0).toUpperCase()}
+              </div>
+            )}
           </div>
           <div
             style={{ width: "25px", height: "25px", top: "70px" }}
@@ -58,7 +106,11 @@ export default function UserProfile() {
           {visible && (
             <div
               className="card px-3 py-3 bg-light position-absolute top-50 start-50 floatingCard"
-              style={{ width: "400px", zIndex: 1 }}
+              style={{
+                width: "400px",
+                zIndex: 1,
+                boxShadow: "0px 0px 100px rgba(0, 0, 0, 0.4)",
+              }}
             >
               <section className="position-relative">
                 <h2>User Account</h2>
@@ -82,17 +134,63 @@ export default function UserProfile() {
                   className="overflow-hidden rounded-circle mx-auto my-5"
                   style={{ width: "350px", height: "350px" }}
                 >
-                  <img
-                    src={userDetails.profileImage}
-                    alt=""
-                    className="img-fluid w-100 h-100"
+                  {userDetails.profileImage ? (
+                    imagePath ? (
+                      <img
+                        src={URL.createObjectURL(file)}
+                        alt=""
+                        className="img-fluid w-100 h-100"
+                      />
+                    ) : (
+                      <img
+                        src={userDetails.profileImage}
+                        alt=""
+                        className="img-fluid w-100 h-100"
+                      />
+                    )
+                  ) : imagePath ? (
+                    <img
+                      src={URL.createObjectURL(file)}
+                      alt=""
+                      className="img-fluid w-100 h-100"
+                    />
+                  ) : (
+                    <div className="bg-info w-100 h-100 fs-1 d-flex align-items-center justify-content-center">
+                      {userDetails.name.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                </div>
+                <div style={{ display: `${edit ? "" : "none"}` }}>
+                  <input
+                    type="text"
+                    placeholder="Enter Profile Image Url"
+                    className="form-control enterImgUrl"
+                    onChange={(e) => {
+                      setImageUrl(e.target.value)
+                    }}
+                  />
+                  <p className="my-0 text-center text-warning my-2">---OR---</p>
+                  <input
+                    type="file"
+                    className="form-control mb-4 enterImagePath"
+                    onChange={(e) => {
+                      const input = e.target
+                      setImagePath(input.value)
+                      setFile(e.target.files[0])
+                    }}
                   />
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
-                  <button className="btn floatingCardBtn border border-0 rounded-pill p-2">
-                    <i class="bi bi-pen"></i> Change
+                  <button
+                    className="btn floatingCardBtn border border-0 rounded-pill p-2 editImageUrl"
+                    onClick={editProfileImage}
+                  >
+                    <i class="bi bi-pen"></i> {edit ? "Edit" : "Change"}
                   </button>
-                  <button className="btn floatingCardBtn border border-0 rounded-pill p-2">
+                  <button
+                    className="btn floatingCardBtn border border-0 rounded-pill p-2 removeImageUrl"
+                    onClick={removeProfileImage}
+                  >
                     <i class="bi bi-trash"></i> Remove
                   </button>
                 </div>
@@ -101,7 +199,10 @@ export default function UserProfile() {
           )}
         </div>
         <div className="row mt-5">
-          <div className="col-md-6 col-xl-4 mb-4">
+          <Link
+            to="/yourOrders"
+            className="col-md-6 col-xl-4 mb-4 text-decoration-none"
+          >
             <div className="card flex-row gap-2" style={{ height: "155px" }}>
               <img
                 src={DeliveryBox}
@@ -114,7 +215,7 @@ export default function UserProfile() {
                 <p>Track, Return and buy things again</p>
               </div>
             </div>
-          </div>
+          </Link>
           <Link
             to="/userAddress"
             className="col-md-6 col-xl-4 mb-4 text-decoration-none"

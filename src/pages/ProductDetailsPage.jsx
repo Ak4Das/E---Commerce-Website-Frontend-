@@ -58,7 +58,12 @@ export default function ProductDetailsPage() {
                 className="img-fluid productImage"
               />
               <div className="btnContainer1">
-                <button className="btn btn-primary w-100 my-2">Buy Now </button>
+                <Link
+                  to="/paymentMethods"
+                  className="btn btn-primary w-100 my-2  text-decoration-none"
+                >
+                  Buy Now{" "}
+                </Link>
                 <br />
                 <button
                   className="btn btn-secondary w-100 mb-2"

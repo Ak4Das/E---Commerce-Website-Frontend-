@@ -37,7 +37,11 @@ export default function UserAddresses() {
           </div>
           {user.address.length !== 0 &&
             user.address.map((address) => (
-              <div key={address.id} className="col-sm-6 col-lg-4">
+              <Link
+                to={`/paymentMethods/${address.id}`}
+                key={address.id}
+                className="col-sm-6 col-lg-4 text-decoration-none"
+              >
                 <div
                   className="card"
                   style={{
@@ -83,7 +87,7 @@ export default function UserAddresses() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
         </div>
       </main>

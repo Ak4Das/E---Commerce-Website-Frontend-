@@ -47,6 +47,12 @@
   .productDetailsContainer {
     margin-inline: 60px;
   }
+  .paymentMethodSectionOne {
+    width: 70% !important;
+  }
+  .paymentMethodSectionTwo {
+    width: 30% !important;
+  }
 }
 @media (max-width: 800px) {
   .productCard {
@@ -151,6 +157,20 @@
   }
   .festivalBanner {
     height: 400px !important;
+  }
+}
+@media (max-width: 450px) {
+  .AddCardLink {
+    font-size: 15px !important;
+  }
+  .AtmCardImg {
+    display: none !important;
+  }
+  .addCardBtn {
+    display: none !important;
+  }
+  .cardImage {
+    width: 30px !important;
   }
 }
 @media (max-width: 420px) {
@@ -286,9 +306,21 @@
 }
 
 .floatingCard {
-  transform: translate(-50% , -10% );
+  transform: translate(-50%, -10%);
 }
 
 .addressEditOrRemove:hover {
   text-decoration: underline;
+}
+
+.AtmCardDetailsForm {
+  transform: translate(-50%, -50%);
+}
+
+.editImageUrl:hover {
+  color: yellow !important;
+}
+
+.removeImageUrl:hover {
+  color: red !important;
 }

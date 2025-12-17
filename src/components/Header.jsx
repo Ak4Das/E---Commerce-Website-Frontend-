@@ -4,17 +4,23 @@ import shoppingCart from "../assets/shoppingCart.png"
 import hamburgerIcon from "../assets/hamburgerIcon.png"
 import myntraLogo from "../assets/myntraLogo.png"
 
-export default function Header({position,top,zIndex}) {
+export default function Header({ position, top, zIndex }) {
+  let userDetails = JSON.parse(localStorage.getItem("user"))
   function handleHamburgerMenu(e) {
     const element = e.target.parentElement.nextElementSibling.nextElementSibling
     element.style.display = element.style.display ? "" : "none"
   }
   return (
-    <header style={{position,top,zIndex}}>
+    <header style={{ position, top, zIndex }}>
       <nav className="bg-body-tertiary mx-2 p-2">
         <div className="d-flex justify-content-between align-items-center">
           <NavLink className="navbar-brand" to="/">
-          <img src={myntraLogo} alt="" style={{width:"70px"}} className="myntraLogo"/>
+            <img
+              src={myntraLogo}
+              alt=""
+              style={{ width: "70px" }}
+              className="myntraLogo"
+            />
             <span className="navbarBrand">MyShoppingSite</span>
           </NavLink>
           <form role="search" className="searchInHeader">
@@ -34,14 +40,26 @@ export default function Header({position,top,zIndex}) {
               style={{ width: "300px" }}
             >
               <li className="nav-item">
-                <NavLink
-                  className="btn btn-secondary text-light"
-                  aria-current="page"
-                  to="/login"
-                  style={{ width: "70px" }}
-                >
-                  Login
-                </NavLink>
+                {userDetails ? (
+                  <NavLink to="/user" className="text-black" style={{textDecoration:"none"}}>
+                    <div
+                      style={{ height: "40px", fontSize: "14px" }}
+                      className="lh-sm px-1 profileBtnInHeader"
+                    >
+                      <p className="my-0 fw-medium">Hello, {userDetails.name.split(" ")[0]}</p>
+                      <p className="my-0 text-primary fw-bold">Account <i className="bi bi-chevron-down"></i></p>
+                    </div>
+                  </NavLink>
+                ) : (
+                  <NavLink
+                    className="btn btn-secondary text-light"
+                    aria-current="page"
+                    to="/login"
+                    style={{ width: "70px" }}
+                  >
+                    Login
+                  </NavLink>
+                )}
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/wishlist">

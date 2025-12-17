@@ -1,11 +1,11 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function LoginForm() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   function handleSubmit(e) {
-    e.preventDefault()
     const user = {
       name,
       email,
@@ -19,7 +19,7 @@ export default function LoginForm() {
   return (
     <main className="card w-50 mx-auto px-5 py-4 my-5">
       <h2>Login Form</h2>
-      <form className="mt-4" onSubmit={handleSubmit}>
+      <form className="mt-4">
         <label htmlFor="name" className="form-label">
           Full Name
         </label>
@@ -51,7 +51,9 @@ export default function LoginForm() {
         />
         <br />
         <br />
-        <button className="btn btn-warning">Submit</button>
+        <Link to="/userAddress" className="btn btn-warning" onClick={handleSubmit}>
+          Submit
+        </Link>
       </form>
     </main>
   )

@@ -324,3 +324,8 @@
 .removeImageUrl:hover {
   color: red !important;
 }
+
+.profileBtnInHeader:hover {
+  border:1px solid black;
+  cursor:pointer;
+}

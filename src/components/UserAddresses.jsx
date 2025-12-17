@@ -90,6 +90,7 @@ export default function UserAddresses() {
               </Link>
             ))}
         </div>
+        <Link to="/user" className="btn btn-warning mt-5">View Profile</Link>
       </main>
     </>
   )

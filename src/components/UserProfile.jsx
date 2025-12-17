@@ -93,6 +93,7 @@ export default function UserProfile() {
           <div
             style={{ width: "25px", height: "25px", top: "70px" }}
             className="bg-white rounded-circle p-1 d-flex align-items-center justify-content-center changeImage position-absolute"
+            title="Change Profile Image"
           >
             <img
               src={CameraIcon}

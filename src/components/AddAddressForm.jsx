@@ -13,8 +13,7 @@ export default function AddAddressForm() {
   const [area, setArea] = useState(address ? address.area : "")
   const [city, setCity] = useState(address ? address.city : "")
   const [state, setState] = useState(address ? address.state : "")
-  function handleSubmit(e) {
-    e.preventDefault()
+  function handleSubmit() {
     const Address = {
       country: "India",
       fullName,
@@ -34,7 +33,7 @@ export default function AddAddressForm() {
     <>
       <main className="container my-5">
         <h2>Add a new address</h2>
-        <form className="mt-3" onSubmit={handleSubmit}>
+        <form className="mt-3">
           <label htmlFor="country" className="form-label">
             Country/Region
           </label>
@@ -130,9 +129,9 @@ export default function AddAddressForm() {
             onChange={(e) => setState(e.target.value)}
           />
           <br />
-          <button className="btn btn-warning rounded-pill mt-3" type="submit">
+          <Link to="/userAddress" className="btn btn-warning rounded-pill mt-3" onClick={handleSubmit}>
             Add Address
-          </button>
+          </Link>
         </form>
       </main>
     </>

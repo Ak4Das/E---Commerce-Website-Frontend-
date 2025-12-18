@@ -5,7 +5,6 @@ import { useState } from "react"
 
 export default function UserAddresses() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
-
   function removeAddress(e) {
     user.address = user.address.filter(
       (address) => address.id !== Number(e.target.value)
@@ -37,10 +36,24 @@ export default function UserAddresses() {
           </div>
           {user.address.length !== 0 &&
             user.address.map((address) => (
-              <Link
-                to={`/paymentMethods/${address.id}`}
+              <div
                 key={address.id}
                 className="col-sm-6 col-lg-4 text-decoration-none"
+                onClick={() => {
+                  let Address = user.address.find(
+                    (add) => add.id === address.id
+                  )
+                  for (address of user.address) {
+                    console.log(address === Address)
+                    if (address === Address) {
+                      address.selected = true
+                    } else {
+                      address.selected = false
+                    }
+                  }
+                  localStorage.setItem("user", JSON.stringify(user))
+                  setUser(JSON.parse(localStorage.getItem("user")))
+                }}
               >
                 <div
                   className="card"
@@ -67,30 +80,37 @@ export default function UserAddresses() {
                         Phone Number: {address.mobNo}
                       </p>
                     </div>
-                    <div>
-                      <Link
-                        to={`/editAddress/${address.id}`}
-                        className="text-decoration-none border border-0 bg-white me-1 fw-medium text-primary addressEditOrRemove"
-                        style={{ cursor: "pointer" }}
-                      >
-                        Edit
-                      </Link>
-                      <span className="fw-medium text-primary">|</span>
-                      <button
-                        className="border border-0 bg-white ms-1 fw-medium text-primary addressEditOrRemove"
-                        style={{ cursor: "pointer" }}
-                        value={address.id}
-                        onClick={removeAddress}
-                      >
-                        Remove
-                      </button>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div>
+                        <Link
+                          to={`/editAddress/${address.id}`}
+                          className="text-decoration-none border border-0 bg-white me-1 fw-medium text-primary addressEditOrRemove"
+                          style={{ cursor: "pointer" }}
+                        >
+                          Edit
+                        </Link>
+                        <span className="fw-medium text-primary">|</span>
+                        <button
+                          className="border border-0 bg-white ms-1 fw-medium text-primary addressEditOrRemove"
+                          style={{ cursor: "pointer" }}
+                          value={address.id}
+                          onClick={removeAddress}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                      <div className="text-primary fw-bold" style={{fontSize:"20px"}}>
+                        {address.selected && <i class="bi bi-check2-all"></i>}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
         </div>
-        <Link to="/user" className="btn btn-warning mt-5">View Profile</Link>
+        <Link to="/user" className="btn btn-warning mt-5">
+          View Profile
+        </Link>
       </main>
     </>
   )

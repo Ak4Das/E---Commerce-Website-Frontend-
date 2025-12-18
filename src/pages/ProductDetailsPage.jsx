@@ -59,7 +59,7 @@ export default function ProductDetailsPage() {
               />
               <div className="btnContainer1">
                 <Link
-                  to="/paymentMethods"
+                  to={`/paymentMethods/${id}`}
                   className="btn btn-primary w-100 my-2  text-decoration-none"
                 >
                   Buy Now{" "}

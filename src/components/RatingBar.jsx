@@ -1,5 +1,4 @@
 export default function RatingBar({ rating }) {
-  console.log(rating)
   const percent = (100 / 5) * rating
   return (
     <div className="star-bottom position-relative d-inline-block">

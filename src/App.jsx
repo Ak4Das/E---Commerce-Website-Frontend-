@@ -59,7 +59,7 @@ const category = [
   {
     id: 11,
     url: "https://tse1.mm.bing.net/th/id/OIP.XUj_HA8JzZG3iJoxZpU-9AHaJ4?pid=Api&P=0&h=180",
-    name: "Gopi dress",
+    name: "Gopi Dress",
   },
   {
     id: 12,

@@ -1,4 +1,8 @@
 import Header from "./Header"
+if (!JSON.parse(localStorage.getItem("orders"))) {
+  const orders = []
+  localStorage.setItem("orders", JSON.stringify(orders))
+}
 
 export default function YourOrders() {
   return (

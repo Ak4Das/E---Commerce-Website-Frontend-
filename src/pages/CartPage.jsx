@@ -1,5 +1,6 @@
 import Header from "../components/Header"
 import GetClothsData from "../components/GetClothsData"
+import { Link } from "react-router-dom"
 
 export default function CartPage() {
   const { clothsData, setClothsData } = GetClothsData()
@@ -138,7 +139,7 @@ export default function CartPage() {
               </div>
               <hr />
               <p className="my-3">We will save ₹1000 on this order</p>
-              <button className="btn btn-primary w-100">Place Order</button>
+              <Link to="/paymentMethods/cart" className="btn btn-primary w-100">Place Order</Link>
             </section>
           </div>
         </div>

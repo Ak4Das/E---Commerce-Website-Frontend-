@@ -28,6 +28,7 @@ const router = createBrowserRouter([
   { path: "/yourOrders", element: <YourOrders /> },
   { path: "/paymentMethods", element: <PaymentMethods /> },
   { path: "/paymentMethods/:id", element: <PaymentMethods /> },
+  { path: "/paymentMethods/cart", element: <PaymentMethods cart={true}/> },
   { path: "/login", element: <LoginForm /> },
 ])
 

@@ -1,4 +1,4 @@
-import Header from "./Header"
+import Header from "../components/Header"
 if (!JSON.parse(localStorage.getItem("orders"))) {
   const orders = []
   localStorage.setItem("orders", JSON.stringify(orders))

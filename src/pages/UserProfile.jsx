@@ -1,4 +1,4 @@
-import Header from "./Header"
+import Header from "../components/Header"
 import CameraIcon from "../assets/camera.png"
 import crossBtn from "../assets/cross.png"
 import { useState } from "react"

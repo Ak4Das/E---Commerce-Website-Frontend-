@@ -1,10 +1,10 @@
-import Header from "./Header"
+import Header from "../components/Header"
 import { Link, useParams } from "react-router-dom"
 import Plus from "../assets/plus.png"
 import Card from "../assets/card.png"
 import { useState } from "react"
 import Cross from "../assets/cross.png"
-import RatingBar from "./RatingBar"
+import RatingBar from "../components/RatingBar"
 
 export default function PaymentMethods({ cart }) {
   console.log(cart)

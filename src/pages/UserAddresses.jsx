@@ -1,4 +1,4 @@
-import Header from "./Header"
+import Header from "../components/Header"
 import Plus from "../assets/plus.png"
 import { Link } from "react-router-dom"
 import { useState } from "react"

@@ -8,12 +8,12 @@ import ProductListingPage from "./pages/ProductListingPage.jsx"
 import ProductDetailsPage from "./pages/ProductDetailsPage.jsx"
 import WishlistPage from "./pages/WishlistPage.jsx"
 import CartPage from "./pages/CartPage.jsx"
-import UserProfile from "./components/UserProfile.jsx"
-import UserAddresses from "./components/UserAddresses.jsx"
-import AddAddressForm from "./components/AddAddressForm.jsx"
-import YourOrders from "./components/YourOrders.jsx"
-import PaymentMethods from "./components/PaymentMethod.jsx"
-import LoginForm from "./components/LoginForm.jsx"
+import UserProfile from "./pages/UserProfile.jsx"
+import UserAddresses from "./pages/UserAddresses.jsx"
+import AddAddressForm from "./pages/AddAddressForm.jsx"
+import YourOrders from "./pages/YourOrders.jsx"
+import PaymentMethods from "./pages/PaymentMethod.jsx"
+import LoginForm from "./pages/LoginForm.jsx"
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },

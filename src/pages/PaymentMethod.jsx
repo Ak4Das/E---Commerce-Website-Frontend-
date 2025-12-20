@@ -74,10 +74,10 @@ export default function PaymentMethods() {
       <Header />
       <main className="container mt-3 mb-5 d-lg-flex gap-5 align-items-start">
         <div className="paymentMethodSectionOne">
-          <section className="bg-light p-3 d-flex gap-5 justify-content-between align-items-start">
+          <section className="bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">
             <div>
-              <h5>Delivering to {address.fullName}</h5>
-              <p className="fw-medium">
+              <h5 className="userName">Delivering to {address.fullName}</h5>
+              <p className="fw-medium userAddress">
                 {address.localInfo}, {address.area},{" "}
                 {address.city.toUpperCase()}
                 {", "}
@@ -85,20 +85,20 @@ export default function PaymentMethods() {
                 {address.country}
               </p>
             </div>
-            <Link to="/userAddress" className="text-decoration-none fw-medium">
+            <Link to="/userAddress" className="text-decoration-none fw-medium changeBtn">
               Change
             </Link>
           </section>
           {isPaymentMethodSelected && (
-            <section className="bg-light p-3 d-flex gap-5 justify-content-between align-items-start mt-3">
+            <section className="bg-light p-3 d-flex column-gap-5 row-gap-3 justify-content-between align-items-start mt-3 paymentMethodSection">
               <div>
-                <h5>{orders[orders.length - 1].paymentMethod}</h5>
-                <Link className="fw-medium text-decoration-none">
+                <h5 className="paymentMethodHeading">{orders[orders.length - 1].paymentMethod}</h5>
+                <Link className="fw-medium text-decoration-none discountCard">
                   Use a gift card, voucher or promo code
                 </Link>
               </div>
               <p
-                className="text-decoration-none fw-medium my-0 text-primary"
+                className="text-decoration-none fw-medium my-0 text-primary changeBtn"
                 style={{ cursor: "pointer" }}
                 onClick={() => {
                   selectPaymentMethod(false)
@@ -113,13 +113,14 @@ export default function PaymentMethods() {
             <section>
               <h3 className="mt-4">Products List</h3>
               <div className="bg-light px-4 py-3 mt-3">
-                <h5 className="mb-3 fw-bold">Arriving 25 Dec 2025</h5>
+                <h5 className="mb-3 fw-bold deliveryDate">Arriving {setDeliveryDate()}</h5>
                 {products.map((product) => (
-                  <div key={product.id} className="card flex-row gap-4 my-3">
+                  <div key={product.id} className="card column-gap-4 my-3 cardInPaymentMethodPage">
                     <img
                       src={product.url}
                       alt=""
                       style={{ width: "125px", height: "200px" }}
+                      className="productImageInPaymentMethodPage"
                     />
                     <div className="p-2">
                       <p className="fw-medium my-0">{product.name}</p>
@@ -132,7 +133,7 @@ export default function PaymentMethods() {
                         </span>
                       </div>
                       <div
-                        className="border border-warning border-2 mt-2 d-flex align-items-center rounded-pill overflow-hidden justify-content-around"
+                        className="border border-warning border-2 mt-3 d-flex align-items-center rounded-pill overflow-hidden justify-content-around deleteOrIncreaseQuantityBtn"
                         style={{ width: "100px" }}
                       >
                         <button className="border border-0 bg-white text-danger">
@@ -371,12 +372,12 @@ export default function PaymentMethods() {
                       style={{ cursor: "pointer" }}
                     />
                     <div>
-                      <label className="fw-medium mb-2">Net Banking</label>
+                      <label htmlFor="netBanking" className="fw-medium mb-2">Net Banking</label>
                       <br />
                       <select
-                        id=""
+                        id="netBanking"
                         className="rounded p-2"
-                        style={{ cursor: "pointer" }}
+                        style={{ cursor: "pointer",width:"200px" }}
                       >
                         <option value="" className="fw-bold">
                           Choose an Option
@@ -581,14 +582,14 @@ export default function PaymentMethods() {
             </section>
           )}
           {isPaymentMethodSelected && (
-            <section className="bg-light mt-4 p-4 d-flex gap-4 fs-5">
+            <section className="bg-light mt-4 p-4 d-flex gap-4 fs-5 placeYourOrderSection">
               <button
                 className="btn btn-warning rounded-pill px-5"
                 onClick={placeOrder}
               >
                 Place your order
               </button>
-              <p className="fw-bold my-0">
+              <p className="fw-bold my-0 text-center">
                 Order Total: ₹
                 {totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)}
               </p>

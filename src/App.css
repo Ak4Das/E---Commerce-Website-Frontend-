@@ -99,7 +99,8 @@
     font-size: 18px !important;
   }
   .productCardInCart {
-    max-width: 250px !important;
+    max-width: 500px !important;
+    min-width: 400px !important;
   }
 }
 @media (min-width: 768px) {
@@ -123,7 +124,8 @@
     margin-top: 10px;
   }
   .productCardInCart {
-    max-width: 300px !important;
+    max-width: 400px !important;
+    min-width: 300px !important;
   }
   .listProductImage {
     height: 350px !important;
@@ -195,6 +197,7 @@
   }
   .productCardInCart {
     max-width: 250px !important;
+    min-width: 200px !important;
   }
 }
 @media (max-width: 300px) {

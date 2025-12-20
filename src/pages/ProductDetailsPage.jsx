@@ -4,21 +4,28 @@ import { useParams } from "react-router-dom"
 import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
+import { useState } from "react"
 
 export default function ProductDetailsPage() {
+  const [quantity, setQuantity] = useState(1)
+  const [size, setSize] = useState("")
+  const [isUpdated, setUpdated] = useState(false)
   const id = Number(useParams().id)
-  console.log(id)
   const { clothsData, setClothsData } = GetClothsData()
 
   function increaseCount(e) {
     let inputElementValue = Number(e.target.previousElementSibling.value)
     e.target.previousElementSibling.value = ++inputElementValue
+    setQuantity(Number(e.target.previousElementSibling.value))
+    setUpdated(true)
   }
 
   function decreaseCount(e) {
     let inputElementValue = Number(e.target.nextElementSibling.value)
     if (inputElementValue > 1) {
       e.target.nextElementSibling.value = --inputElementValue
+      setQuantity(Number(e.target.nextElementSibling.value))
+      setUpdated(true)
     }
   }
 
@@ -41,7 +48,19 @@ export default function ProductDetailsPage() {
   }
 
   const product = clothsData.find((product) => product.id === id)
-  console.log(product)
+
+  if (isUpdated) {
+    if (quantity > 1) {
+      product.quantity = quantity
+    }
+    if (size) {
+      product.size = size
+    }
+    const createOrder = { item: [product] }
+    localStorage.setItem("createOrder", JSON.stringify(createOrder))
+    setUpdated(false)
+  }
+
   return (
     <>
       <Header />
@@ -58,12 +77,24 @@ export default function ProductDetailsPage() {
                 className="img-fluid productImage"
               />
               <div className="btnContainer1">
-                <Link
-                  to={`/paymentMethods/${id}`}
-                  className="btn btn-primary w-100 my-2  text-decoration-none"
-                >
-                  Buy Now{" "}
-                </Link>
+                {!size && (
+                  <button
+                    className="btn btn-primary w-100 my-2"
+                    onClick={() =>
+                      alert("Please select the product size First")
+                    }
+                  >
+                    Buy Now
+                  </button>
+                )}
+                {size && (
+                  <Link
+                    to="/paymentMethods"
+                    className="btn btn-primary w-100 my-2 text-decoration-none"
+                  >
+                    Buy Now{" "}
+                  </Link>
+                )}
                 <br />
                 <button
                   className="btn btn-secondary w-100 mb-2"
@@ -117,9 +148,13 @@ export default function ProductDetailsPage() {
                 </button>
                 <input
                   type="text"
-                  value="1"
+                  defaultValue={quantity}
                   style={{ width: "30px" }}
                   className="mx-2"
+                  onChange={(e) => {
+                    setQuantity(Number(e.target.value))
+                    setUpdated(true)
+                  }}
                 />
                 <button
                   className="rounded-circle border border-1"
@@ -132,10 +167,51 @@ export default function ProductDetailsPage() {
               </div>
               <div>
                 <span className="fw-bold me-3">Size: </span>
-                <button className="border border-1 me-2">S</button>
-                <button className="border border-1 me-2">M</button>
-                <button className="border border-1 me-2">XL</button>
-                <button className="border border-1">XXL</button>
+                <button
+                  className="border border-1 me-2"
+                  onClick={() => {
+                    setSize("S")
+                    setUpdated(true)
+                  }}
+                >
+                  S
+                </button>
+                <button
+                  className="border border-1 me-2"
+                  onClick={() => {
+                    setSize("M")
+                    setUpdated(true)
+                  }}
+                >
+                  M
+                </button>
+                <button
+                  className="border border-1 me-2"
+                  onClick={() => {
+                    setSize("L")
+                    setUpdated(true)
+                  }}
+                >
+                  L
+                </button>
+                <button
+                  className="border border-1 me-2"
+                  onClick={() => {
+                    setSize("XL")
+                    setUpdated(true)
+                  }}
+                >
+                  XL
+                </button>
+                <button
+                  className="border border-1"
+                  onClick={() => {
+                    setSize("XXL")
+                    setUpdated(true)
+                  }}
+                >
+                  XXL
+                </button>
               </div>
               <hr />
 
@@ -210,8 +286,8 @@ export default function ProductDetailsPage() {
               <div>
                 <h5>Description</h5>
                 <ul>
-                  {product.description.map((list) => (
-                    <li>{list}</li>
+                  {product.description.map((list,index) => (
+                    <li key={index}>{list}</li>
                   ))}
                 </ul>
               </div>
@@ -226,7 +302,7 @@ export default function ProductDetailsPage() {
             <h3 className="my-3">More items you may like in apparel</h3>
             <div className="row row-gap-3">
               {product.similarProducts.map((product) => (
-                <div className="col-md-4 col-sm-6 col-lg-3 col-xxl-2 py-2 bg-body-tertiary cardContainer">
+                <div key={product.id} className="col-md-4 col-sm-6 col-lg-3 col-xxl-2 py-2 bg-body-tertiary cardContainer">
                   <Link
                     className="text-decoration-none"
                     to={`/productDetails/${product.id}`}

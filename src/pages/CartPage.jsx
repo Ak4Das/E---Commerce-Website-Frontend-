@@ -1,8 +1,10 @@
 import Header from "../components/Header"
 import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
 export default function CartPage() {
+  const [isUpdated, setUpdated] = useState(false)
   const { clothsData, setClothsData } = GetClothsData()
 
   function removeFromCart(e) {
@@ -27,18 +29,24 @@ export default function CartPage() {
     (product) => product.addToCart === true
   )
 
+  if (isUpdated) {
+    const createOrder = { item: productsInCart }
+    localStorage.setItem("createOrder", JSON.stringify(createOrder))
+    setUpdated(false)
+  }
+
   return (
     <>
       <Header />{" "}
       <main className="bg-body-secondary pb-3">
         <div className="container">
           <h3 className="py-4 text-center">My Cart</h3>
-          <div className="d-md-flex d-inline-block justify-content-between align-items-start cartContainer">
+          <div className="d-md-flex justify-content-between align-items-start cartContainer">
             <section className="productsInCurt">
               {productsInCart.map((product) => {
                 return (
-                  <div className="row mb-3">
-                    <div className="col-sm-6 col-md-12 mb-3">
+                  <div key={product.id} className="row mb-3">
+                    <div className="col-sm-12 col-md-12 mb-3">
                       <div className="card flex-lg-row gap-4 productCardInCart m-auto">
                         <img
                           src={product.url}
@@ -73,22 +81,100 @@ export default function CartPage() {
                               <button
                                 className="rounded-circle border border-1"
                                 style={{ width: "30px", height: "30px" }}
+                                onClick={(e) => {
+                                  let inputElementValue = Number(
+                                    e.target.nextElementSibling.value
+                                  )
+                                  if (inputElementValue > 1) {
+                                    e.target.nextElementSibling.value =
+                                      --inputElementValue
+                                    product.quantity = Number(
+                                      e.target.nextElementSibling.value
+                                    )
+                                    setUpdated(true)
+                                  }
+                                }}
                               >
                                 {" "}
                                 -{" "}
                               </button>
                               <input
                                 type="text"
-                                value="1"
+                                defaultValue="1"
                                 style={{ width: "30px" }}
                                 className="mx-2"
+                                onChange={(e) => {
+                                  if (Number(e.target.value) >= 0) {
+                                    product.quantity = Number(e.target.value)
+                                    setUpdated(true)
+                                  }
+                                }}
                               />
                               <button
                                 className="rounded-circle border border-1"
                                 style={{ width: "30px", height: "30px" }}
+                                onClick={(e) => {
+                                  let inputElementValue = Number(
+                                    e.target.previousElementSibling.value
+                                  )
+                                  e.target.previousElementSibling.value =
+                                    ++inputElementValue
+                                  product.quantity = Number(
+                                    e.target.previousElementSibling.value
+                                  )
+                                  setUpdated(true)
+                                }}
                               >
                                 {" "}
                                 +{" "}
+                              </button>
+                            </div>
+                            <div className="mb-3">
+                              <span className="fw-bold me-0">Size: </span>
+                              <button
+                                className="border border-1 me-2"
+                                onClick={() => {
+                                  product.size = "S"
+                                  setUpdated(true)
+                                }}
+                              >
+                                S
+                              </button>
+                              <button
+                                className="border border-1 me-2"
+                                onClick={() => {
+                                  product.size = "M"
+                                  setUpdated(true)
+                                }}
+                              >
+                                M
+                              </button>
+                              <button
+                                className="border border-1 me-2"
+                                onClick={() => {
+                                  product.size = "L"
+                                  setUpdated(true)
+                                }}
+                              >
+                                L
+                              </button>
+                              <button
+                                className="border border-1 me-2"
+                                onClick={() => {
+                                  product.size = "XL"
+                                  setUpdated(true)
+                                }}
+                              >
+                                XL
+                              </button>
+                              <button
+                                className="border border-1"
+                                onClick={() => {
+                                  product.size = "XXL"
+                                  setUpdated(true)
+                                }}
+                              >
+                                XXL
                               </button>
                             </div>
                           </div>
@@ -139,7 +225,25 @@ export default function CartPage() {
               </div>
               <hr />
               <p className="my-3">We will save ₹1000 on this order</p>
-              <Link to="/paymentMethods/cart" className="btn btn-primary w-100">Place Order</Link>
+              {!(
+                productsInCart.filter((product) => product.size).length <
+                productsInCart.length
+              ) ? (
+                <Link to="/paymentMethods" className="btn btn-primary w-100">
+                  Place Order
+                </Link>
+              ) : (
+                <button
+                  className="btn btn-primary w-100"
+                  onClick={() =>
+                    alert(
+                      "Please select size of all the products present in the cart"
+                    )
+                  }
+                >
+                  Place Order
+                </button>
+              )}
             </section>
           </div>
         </div>

@@ -111,7 +111,7 @@ export default function ProductListingPage() {
           <h4 className="my-3">Showing All Products</h4>
           <div className="row">
             {filterBySort.map((product) => (
-              <div className="col-sm-6 col-xl-4 col-xxl-3 mb-3">
+              <div key={product.id} className="col-sm-6 col-xl-4 col-xxl-3 mb-3">
                 <Link
                   className="text-decoration-none"
                   to={`/productDetails/${product.id}`}

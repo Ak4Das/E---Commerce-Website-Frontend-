@@ -1,14 +1,12 @@
 import Header from "../components/Header"
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Plus from "../assets/plus.png"
 import Card from "../assets/card.png"
 import { useState } from "react"
 import Cross from "../assets/cross.png"
 import RatingBar from "../components/RatingBar"
 
-export default function PaymentMethods({ cart }) {
-  console.log(cart)
-  const id = Number(useParams().id)
+export default function PaymentMethods() {
   const address = JSON.parse(localStorage.getItem("user")).address.find(
     (address) => address.selected
   )
@@ -21,28 +19,62 @@ export default function PaymentMethods({ cart }) {
   const [orders, setOrders] = useState(
     JSON.parse(localStorage.getItem("orders"))
   )
-  console.log(orders)
+
   const [isPaymentMethodSelected, selectPaymentMethod] = useState(false)
 
-  const products = JSON.parse(localStorage.getItem("clothsData")).filter(
-    (product) => (cart ? product.addToCart === true : product.id === id)
-  )
-  console.log(products)
+  const products = JSON.parse(localStorage.getItem("createOrder")).item
 
   function placeOrder() {
     localStorage.setItem("orders", JSON.stringify(orders))
-    setOrders(JSON.parse(localStorage.getItem("orders")))
   }
 
   const totalOrder = products.reduce((acc, curr) => acc + curr.price, 0)
-  console.log(totalOrder);
+
+  const deliveryCharge = Math.round(
+    products.reduce((acc, curr) => acc + curr.deliveryCharge, 0) /
+      products.length
+  )
+
+  function setDeliveryDate() {
+    const date = new Date().toLocaleDateString()
+    const array = date.split("/")
+    const day = String(Number(array[1]) + 7)
+    let month = ""
+    if (Number(array[0]) === 1) {
+      month = "January"
+    } else if (Number(array[0]) === 2) {
+      month = "February"
+    } else if (Number(array[0]) === 3) {
+      month = "March"
+    } else if (Number(array[0]) === 4) {
+      month = "April"
+    } else if (Number(array[0]) === 5) {
+      month = "May"
+    } else if (Number(array[0]) === 6) {
+      month = "june"
+    } else if (Number(array[0]) === 7) {
+      month = "July"
+    } else if (Number(array[0]) === 8) {
+      month = "August"
+    } else if (Number(array[0]) === 9) {
+      month = "September"
+    } else if (Number(array[0]) === 10) {
+      month = "October"
+    } else if (Number(array[0]) === 11) {
+      month = "November"
+    } else if (Number(array[0]) === 12) {
+      month = "December"
+    }
+    const year = array[2]
+    return `${day} ${month} ${year}`
+  }
 
   return (
     <>
       <Header />
       <main className="container mt-3 mb-5 d-lg-flex gap-5 align-items-start">
         <div className="paymentMethodSectionOne">
-          <section className="bg-light p-3 d-flex gap-5 justify-content-between">
+          <section className="bg-light p-3 d-flex gap-5 justify-content-between align-items-start">
             <div>
               <h5>Delivering to {address.fullName}</h5>
               <p className="fw-medium">
@@ -58,30 +90,38 @@ export default function PaymentMethods({ cart }) {
             </Link>
           </section>
           {isPaymentMethodSelected && (
-            <section className="bg-light p-3 d-flex gap-5 justify-content-between mt-3">
+            <section className="bg-light p-3 d-flex gap-5 justify-content-between align-items-start mt-3">
               <div>
-                <h5>Pay on delivery (cash/card)</h5>
-                <p className="fw-medium">
+                <h5>{orders[orders.length - 1].paymentMethod}</h5>
+                <Link className="fw-medium text-decoration-none">
                   Use a gift card, voucher or promo code
-                </p>
+                </Link>
               </div>
-              <Link
-                to="/paymentMethods"
-                className="text-decoration-none fw-medium"
+              <p
+                className="text-decoration-none fw-medium my-0 text-primary"
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  selectPaymentMethod(false)
+                  setOrders(JSON.parse(localStorage.getItem("orders")))
+                }}
               >
                 Change
-              </Link>
+              </p>
             </section>
           )}
           {isPaymentMethodSelected && (
             <section>
               <h3 className="mt-4">Products List</h3>
-              {products.map((product) => (
-                <div key={product.id} className="bg-light px-4 py-3 mt-3">
-                  <h5 className="mb-3 fw-bold">Arriving 25 Dec 2025</h5>
-                  <div className="d-flex gap-4" style={{ width: "500px" }}>
-                    <img src={product.url} alt="" style={{ width: "125px" }} />
-                    <div>
+              <div className="bg-light px-4 py-3 mt-3">
+                <h5 className="mb-3 fw-bold">Arriving 25 Dec 2025</h5>
+                {products.map((product) => (
+                  <div key={product.id} className="card flex-row gap-4 my-3">
+                    <img
+                      src={product.url}
+                      alt=""
+                      style={{ width: "125px", height: "200px" }}
+                    />
+                    <div className="p-2">
                       <p className="fw-medium my-0">{product.name}</p>
                       <RatingBar rating={product.rating} />
                       <span className="ms-1 fw-medium">{product.rating}</span>
@@ -91,10 +131,26 @@ export default function PaymentMethods({ cart }) {
                           (-{product.discount})
                         </span>
                       </div>
+                      <div
+                        className="border border-warning border-2 mt-2 d-flex align-items-center rounded-pill overflow-hidden justify-content-around"
+                        style={{ width: "100px" }}
+                      >
+                        <button className="border border-0 bg-white text-danger">
+                          <i className="bi bi-trash3-fill"></i>
+                        </button>
+                        <input
+                          type="text"
+                          className="border border-0"
+                          style={{ width: "30px", outline: "none" }}
+                        />
+                        <button className="border border-0 bg-white">
+                          <img src={Plus} alt="" style={{ width: "10px" }} />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </section>
           )}
           {!isPaymentMethodSelected && (
@@ -505,22 +561,17 @@ export default function PaymentMethods({ cart }) {
                   <button
                     className="btn btn-warning rounded-pill mt-4 px-4"
                     onClick={() => {
-                      if (cart) {
-                        setOrders(products)
-                        selectPaymentMethod(true)
+                      const order = {
+                        item: products,
+                        address,
+                        paymentMethod,
+                        deliveryCharge,
+                        orderDate: new Date().toLocaleDateString(),
+                        deliveryDate: setDeliveryDate(),
                       }
-                      if (id) {
-                        const order = {
-                          itemId: id,
-                          address,
-                          price:totalOrder,
-                          paymentMethod,
-                          delivery: 30,
-                        }
-                        orders.push(order)
-                        setOrders(orders)
-                        selectPaymentMethod(true)
-                      }
+                      orders.push(order)
+                      setOrders(orders)
+                      selectPaymentMethod(true)
                     }}
                   >
                     Use this payment method
@@ -537,26 +588,43 @@ export default function PaymentMethods({ cart }) {
               >
                 Place your order
               </button>
-              <p className="fw-bold my-0">Order Total: ₹</p>
+              <p className="fw-bold my-0">
+                Order Total: ₹
+                {totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)}
+              </p>
             </section>
           )}
         </div>
         <section className="bg-light p-3 paymentMethodSectionTwo mt-5 mt-lg-0 position-sticky top-0">
           <div>
             <p className="my-0 w-50 fw-medium d-inline-block">Items: </p>
-            <p className="my-0 w-50 fw-medium d-inline-block text-end">₹</p>
+            <p className="my-0 w-50 fw-medium d-inline-block text-end">
+              ₹{totalOrder}
+            </p>
           </div>
           <div>
             <p className="my-0 w-50 fw-medium d-inline-block">Delivery: </p>
-            <p className="my-0 w-50 fw-medium d-inline-block text-end">₹</p>
+            <p className="my-0 w-50 fw-medium d-inline-block text-end">
+              ₹{deliveryCharge}
+            </p>
           </div>
+          {isCashOnDelivery && (
+            <div>
+              <p className="my-0 w-50 fw-medium d-inline-block">
+                Cash On Delivery Charge:{" "}
+              </p>
+              <p className="my-0 w-50 fw-medium d-inline-block text-end">₹10</p>
+            </div>
+          )}
           <div>
             <p className="my-0 w-50 fw-medium d-inline-block">Total: </p>
-            <p className="my-0 w-50 fw-medium d-inline-block text-end">₹</p>
+            <p className="my-0 w-50 fw-medium d-inline-block text-end">
+              ₹{totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)}
+            </p>
           </div>
           <div>
             <p className="my-0 w-50 fw-medium d-inline-block text-success">
-              Free Delivery:{" "}
+              Free Delivery:
             </p>
             <p className="my-0 w-50 fw-medium d-inline-block text-end text-success">
               ₹
@@ -565,10 +633,10 @@ export default function PaymentMethods({ cart }) {
           <hr />
           <div>
             <p className="my-0 w-50 fw-medium d-inline-block fs-5">
-              Order Total:{" "}
+              Order Total:
             </p>
             <p className="my-0 w-50 fw-medium d-inline-block fs-5 text-end">
-              ₹
+              ₹{totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)}
             </p>
           </div>
         </section>

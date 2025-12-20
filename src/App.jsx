@@ -106,7 +106,7 @@ function App() {
         <div className="row">
           {category.map((category) => {
             return (
-              <div className="col-6 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
+              <div key = {category.id} className="col-6 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
                 <Link to={`/products/${category.name}`}>
                 <div className="card position-relative">
                   <img src={category.url} alt="" className="img-fluid image" />

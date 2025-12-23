@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 import wishlistLogo from "../assets/heart.png"
 import shoppingCart from "../assets/shoppingCart.png"
 import hamburgerIcon from "../assets/hamburgerIcon.png"
-import myntraLogo from "../assets/myntraLogo.png"
+import BharatVastra from "../assets/BharatVastra.png"
 
 export default function Header({ position, top, zIndex }) {
   let userDetails = JSON.parse(localStorage.getItem("user"))
@@ -16,12 +16,12 @@ export default function Header({ position, top, zIndex }) {
         <div className="d-flex justify-content-between align-items-center">
           <NavLink className="navbar-brand" to="/">
             <img
-              src={myntraLogo}
+              src={BharatVastra}
               alt=""
               style={{ width: "70px" }}
-              className="myntraLogo"
+              className="BharatVastra"
             />
-            <span className="navbarBrand">MyShoppingSite</span>
+            <span className="navbarBrand fw-medium fs-5">BharatVastra</span>
           </NavLink>
           <form role="search" className="searchInHeader">
             <input

@@ -14,6 +14,7 @@ import AddAddressForm from "./pages/AddAddressForm.jsx"
 import YourOrders from "./pages/YourOrders.jsx"
 import PaymentMethods from "./pages/PaymentMethod.jsx"
 import LoginForm from "./pages/LoginForm.jsx"
+import OrderDetails from "./pages/OrderDetails.jsx"
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
   { path: "/yourOrders", element: <YourOrders /> },
   { path: "/paymentMethods", element: <PaymentMethods /> },
   { path: "/login", element: <LoginForm /> },
+  { path: "/orderDetails", element: <OrderDetails /> },
 ])
 
 import ClothsContextProvider from "./contexts/ClothsContextProvider.jsx"

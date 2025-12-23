@@ -22,10 +22,15 @@ export default function PaymentMethods() {
 
   const [isPaymentMethodSelected, selectPaymentMethod] = useState(false)
 
-  const products = JSON.parse(localStorage.getItem("createOrder")).item
+  const [products, setProducts] = useState(
+    JSON.parse(localStorage.getItem("createOrder")).item
+  )
+
+  const [isOrderPlaced, setIsOrderPlaced] = useState(false)
 
   function placeOrder() {
     localStorage.setItem("orders", JSON.stringify(orders))
+    setIsOrderPlaced(true)
   }
 
   const totalOrder = products.reduce((acc, curr) => acc + curr.price, 0)
@@ -85,14 +90,19 @@ export default function PaymentMethods() {
                 {address.country}
               </p>
             </div>
-            <Link to="/userAddress" className="text-decoration-none fw-medium changeBtn">
+            <Link
+              to="/userAddress"
+              className="text-decoration-none fw-medium changeBtn"
+            >
               Change
             </Link>
           </section>
           {isPaymentMethodSelected && (
             <section className="bg-light p-3 d-flex column-gap-5 row-gap-3 justify-content-between align-items-start mt-3 paymentMethodSection">
               <div>
-                <h5 className="paymentMethodHeading">{orders[orders.length - 1].paymentMethod}</h5>
+                <h5 className="paymentMethodHeading">
+                  {orders[orders.length - 1].paymentMethod}
+                </h5>
                 <Link className="fw-medium text-decoration-none discountCard">
                   Use a gift card, voucher or promo code
                 </Link>
@@ -113,9 +123,14 @@ export default function PaymentMethods() {
             <section>
               <h3 className="mt-4">Products List</h3>
               <div className="bg-light px-4 py-3 mt-3">
-                <h5 className="mb-3 fw-bold deliveryDate">Arriving {setDeliveryDate()}</h5>
+                <h5 className="mb-3 fw-bold deliveryDate">
+                  Arriving {setDeliveryDate()}
+                </h5>
                 {products.map((product) => (
-                  <div key={product.id} className="card column-gap-4 my-3 cardInPaymentMethodPage">
+                  <div
+                    key={product.id}
+                    className="card column-gap-4 my-3 cardInPaymentMethodPage"
+                  >
                     <img
                       src={product.url}
                       alt=""
@@ -136,16 +151,51 @@ export default function PaymentMethods() {
                         className="border border-warning border-2 mt-3 d-flex align-items-center rounded-pill overflow-hidden justify-content-around deleteOrIncreaseQuantityBtn"
                         style={{ width: "100px" }}
                       >
-                        <button className="border border-0 bg-white text-danger">
+                        <button
+                          className="border border-0 bg-white text-danger"
+                          onClick={(e) => {
+                            const Product = products.filter(
+                              (item) => item.id !== product.id
+                            )
+                            orders[orders.length - 1].item = Product
+                            setProducts(Product)
+                          }}
+                        >
                           <i className="bi bi-trash3-fill"></i>
                         </button>
                         <input
                           type="text"
                           className="border border-0"
+                          defaultValue={product.quantity || 1}
                           style={{ width: "30px", outline: "none" }}
+                          onChange={(e) => {
+                            let inputElementValue = Number(e.target.value)
+                            const Product = products.find(
+                              (item) => item.id === product.id
+                            )
+                            Product.quantity = inputElementValue
+                            orders[orders.length - 1].item = products
+                          }}
                         />
-                        <button className="border border-0 bg-white">
-                          <img src={Plus} alt="" style={{ width: "10px" }} />
+                        <button
+                          className="border border-0 bg-white fs-5 fw-bold"
+                          style={{ marginTop: "-5px" }}
+                          onClick={(e) => {
+                            let inputElementValue = Number(
+                              e.target.previousElementSibling.value
+                            )
+                            e.target.previousElementSibling.value =
+                              ++inputElementValue
+                            const Product = products.find(
+                              (item) => item.id === product.id
+                            )
+                            Product.quantity = Number(
+                              e.target.previousElementSibling.value
+                            )
+                            orders[orders.length - 1].item = products
+                          }}
+                        >
+                          +
                         </button>
                       </div>
                     </div>
@@ -372,12 +422,14 @@ export default function PaymentMethods() {
                       style={{ cursor: "pointer" }}
                     />
                     <div>
-                      <label htmlFor="netBanking" className="fw-medium mb-2">Net Banking</label>
+                      <label htmlFor="netBanking" className="fw-medium mb-2">
+                        Net Banking
+                      </label>
                       <br />
                       <select
                         id="netBanking"
                         className="rounded p-2"
-                        style={{ cursor: "pointer",width:"200px" }}
+                        style={{ cursor: "pointer", width: "200px" }}
                       >
                         <option value="" className="fw-bold">
                           Choose an Option
@@ -583,12 +635,19 @@ export default function PaymentMethods() {
           )}
           {isPaymentMethodSelected && (
             <section className="bg-light mt-4 p-4 d-flex gap-4 fs-5 placeYourOrderSection">
-              <button
-                className="btn btn-warning rounded-pill px-5"
-                onClick={placeOrder}
-              >
-                Place your order
-              </button>
+              {isOrderPlaced ? (
+                <Link to="/orderDetails" className="btn btn-warning rounded-pill px-5">
+                  See your orders
+                </Link>
+              ) : (
+                <button
+                  className="btn btn-warning rounded-pill px-5"
+                  onClick={placeOrder}
+                >
+                  Place your order
+                </button>
+              )}
+
               <p className="fw-bold my-0 text-center">
                 Order Total: ₹
                 {totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)}

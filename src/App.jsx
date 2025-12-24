@@ -1,9 +1,11 @@
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
-import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap-icons/font/bootstrap-icons.css"
 import Header from "./components/Header"
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import { useState } from "react"
+import BharatVastra from "./assets/BharatVastra.png"
 
 const category = [
   {
@@ -98,78 +100,101 @@ const category = [
   },
 ]
 
-function App() {
+export default function App() {
+  const [show, hide] = useState(true)
+  setTimeout(() => {
+    hide(false)
+  }, 2000)
   return (
     <>
-      <Header />
-      <main className="mx-5 my-4">
-        <div className="row">
-          {category.map((category) => {
-            return (
-              <div key = {category.id} className="col-6 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3">
-                <Link to={`/products/${category.name}`}>
-                <div className="card position-relative">
-                  <img src={category.url} alt="" className="img-fluid image" />
-                  <p className="m-0 text-center bg-light position-absolute w-100 top-50">
-                    {category.name}
-                  </p>
-                </div>
-              </Link>
-              </div>
-            )
-          })}
+      {show ? (
+        <div
+          className="d-flex flex-column align-items-center justify-content-center"
+          style={{ height: "100vh" }}
+        >
+          <img src={BharatVastra} alt="" className="img-fluid" />
         </div>
-        <div className="bg-secondary my-4 festivalBanner">
-          <img
-            src="https://tse1.mm.bing.net/th/id/OIP.GFeDWGFyukqOSvVUO04kmAHaEK?pid=Api&P=0&h=180"
-            alt=""
-            className="w-100 h-100"
-          />
-        </div>
-        <div className="row">
-          <div className="col-md-6 my-3">
-            <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
+      ) : (
+        <>
+          <Header />
+          <main className="mx-5 my-4">
+            <div className="row">
+              {category.map((category) => {
+                return (
+                  <div
+                    key={category.id}
+                    className="col-6 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3"
+                  >
+                    <Link to={`/products/${category.name}`}>
+                      <div className="card position-relative">
+                        <img
+                          src={category.url}
+                          alt=""
+                          className="img-fluid image"
+                        />
+                        <p className="m-0 text-center bg-light position-absolute w-100 top-50">
+                          {category.name}
+                        </p>
+                      </div>
+                    </Link>
+                  </div>
+                )
+              })}
+            </div>
+            <div className="bg-secondary my-4 festivalBanner">
               <img
-                src="https://tse1.mm.bing.net/th/id/OIP.jngCe7THF9RyUMqBs3Lw6gHaDt?pid=Api&P=0&h=180"
+                src="https://tse1.mm.bing.net/th/id/OIP.GFeDWGFyukqOSvVUO04kmAHaEK?pid=Api&P=0&h=180"
                 alt=""
-                className="bannerImage"
-                style={{height:"200px"}}
+                className="w-100 h-100"
               />
-              <div className="card-body py-0 px-0 px-xxl-5 d-flex flex-column justify-content-between">
-                <p className="fw-bold mt-2">New Arrival</p>
-                <div style={{minWidth: "225px"}} className="description">
-                  <h3>New Collection</h3>
-                  <p className="m-0">
-                    Checkout our new collection to live your diwali with style. hurry up don't miss this chance.
-                  </p>
+            </div>
+            <div className="row">
+              <div className="col-md-6 my-3">
+                <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
+                  <img
+                    src="https://tse1.mm.bing.net/th/id/OIP.jngCe7THF9RyUMqBs3Lw6gHaDt?pid=Api&P=0&h=180"
+                    alt=""
+                    className="bannerImage"
+                    style={{ height: "200px" }}
+                  />
+                  <div className="card-body py-0 px-0 px-xxl-5 d-flex flex-column justify-content-between">
+                    <p className="fw-bold mt-2">New Arrival</p>
+                    <div style={{ minWidth: "225px" }} className="description">
+                      <h3>New Collection</h3>
+                      <p className="m-0">
+                        Checkout our new collection to live your diwali with
+                        style. hurry up don't miss this chance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6 my-3">
+                <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
+                  <img
+                    src="https://tse3.mm.bing.net/th/id/OIP.DZhMFCN8KQJup5G70IemgAHaDt?pid=Api&P=0&h=180"
+                    alt=""
+                    className="bannerImage"
+                    style={{ height: "200px" }}
+                  />
+                  <div className="card-body py-0 px-0 px-xxl-5 d-flex flex-column justify-content-between">
+                    <p className="fw-bold mt-2">Diwali Sale</p>
+                    <div style={{ minWidth: "225px" }} className="description">
+                      <h3>Upto 50% off</h3>
+                      <p className="m-0">
+                        Diwali sale is launch now, sale is live till 31st
+                        November, go and make your diwali stylish.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-md-6 my-3">
-            <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
-              <img
-                src="https://tse3.mm.bing.net/th/id/OIP.DZhMFCN8KQJup5G70IemgAHaDt?pid=Api&P=0&h=180"
-                alt=""
-                className="bannerImage"
-                style={{height:"200px"}}
-              />
-              <div className="card-body py-0 px-0 px-xxl-5 d-flex flex-column justify-content-between">
-                <p className="fw-bold mt-2">Diwali Sale</p>
-                <div style={{minWidth: "225px"}} className="description">
-                  <h3>Upto 50% off</h3>
-                  <p className="m-0">
-                    Diwali sale is launch now, sale is live till 31st November,
-                    go and make your diwali stylish.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
+          </main>
+        </>
+      )}
     </>
   )
 }
 
-export default App
+// export default App

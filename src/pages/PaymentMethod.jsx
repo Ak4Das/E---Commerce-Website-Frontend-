@@ -636,7 +636,7 @@ export default function PaymentMethods() {
           {isPaymentMethodSelected && (
             <section className="bg-light mt-4 p-4 d-flex gap-4 fs-5 placeYourOrderSection">
               {isOrderPlaced ? (
-                <Link to="/orderDetails" className="btn btn-warning rounded-pill px-5">
+                <Link to="/yourOrders" className="btn btn-warning rounded-pill px-5">
                   See your orders
                 </Link>
               ) : (

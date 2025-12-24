@@ -22,6 +22,11 @@
     display: none;
   }
 }
+@media (min-width: 420px) {
+  .shipTo {
+    display: none;
+  }
+}
 @media (min-width: 500px) {
   .BharatVastra {
     display: none;
@@ -96,6 +101,9 @@
   .paymentMethodSectionTwo {
     width: 30% !important;
   }
+  .orderDetailsBill {
+    width: 250px;
+  }
 }
 @media (min-width: 1200px) {
   .totalBill {
@@ -160,6 +168,9 @@
   }
   .cartContainer {
     gap: 30px !important;
+  }
+  .orderDetailsContainer {
+    width: 75%;
   }
 }
 @media (max-width: 800px) {
@@ -269,6 +280,9 @@
   .cardImage {
     width: 30px !important;
   }
+  .productOrderDetails {
+    flex-direction: column !important;
+  }
 }
 @media (max-width: 420px) {
   .description {
@@ -276,6 +290,9 @@
   }
   .listProductImage {
     height: 300px !important;
+  }
+  .shipToCard {
+    display: none;
   }
 }
 @media (max-width: 400px) {
@@ -287,6 +304,9 @@
   }
   .changeBtn {
     font-size: 14px !important;
+  }
+  .productYourOrder {
+    flex-direction: column;
   }
 }
 @media (max-width: 350px) {

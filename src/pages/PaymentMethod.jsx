@@ -17,7 +17,7 @@ export default function PaymentMethods() {
   const [showCard, setShowCard] = useState(false)
   const [paymentMethod, setPaymentMethod] = useState("")
   const [orders, setOrders] = useState(
-    JSON.parse(localStorage.getItem("orders"))
+    JSON.parse(localStorage.getItem("orders")) || []
   )
 
   const [isPaymentMethodSelected, selectPaymentMethod] = useState(false)
@@ -40,38 +40,48 @@ export default function PaymentMethods() {
       products.length
   )
 
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ]
+
+  function getOrderDate() {
+    const today = new Date()
+    return `${today.getDate()} ${
+      months[today.getMonth()]
+    } ${today.getFullYear()}`
+  }
+
   function setDeliveryDate() {
-    const date = new Date().toLocaleDateString()
-    const array = date.split("/")
-    const day = String(Number(array[1]) + 7)
-    let month = ""
-    if (Number(array[0]) === 1) {
-      month = "January"
-    } else if (Number(array[0]) === 2) {
-      month = "February"
-    } else if (Number(array[0]) === 3) {
-      month = "March"
-    } else if (Number(array[0]) === 4) {
-      month = "April"
-    } else if (Number(array[0]) === 5) {
-      month = "May"
-    } else if (Number(array[0]) === 6) {
-      month = "june"
-    } else if (Number(array[0]) === 7) {
-      month = "July"
-    } else if (Number(array[0]) === 8) {
-      month = "August"
-    } else if (Number(array[0]) === 9) {
-      month = "September"
-    } else if (Number(array[0]) === 10) {
-      month = "October"
-    } else if (Number(array[0]) === 11) {
-      month = "November"
-    } else if (Number(array[0]) === 12) {
-      month = "December"
-    }
-    const year = array[2]
-    return `${day} ${month} ${year}`
+    const today = new Date()
+    today.setDate(today.getDate() + 10)
+    return `${today.getDate()} ${
+      months[today.getMonth()]
+    } ${today.getFullYear()}`
+  }
+
+  function getDeliveryDay() {
+    const date = new Date()
+    date.setDate(date.getDate() + 10)
+    const dayName = date.toLocaleDateString("en-US", {
+      weekday: "long",
+    })
+    return dayName
+  }
+
+  function setDeliveryTime() {
+    const today = new Date()
+    return today.toLocaleTimeString()
   }
 
   return (
@@ -615,12 +625,19 @@ export default function PaymentMethods() {
                     className="btn btn-warning rounded-pill mt-4 px-4"
                     onClick={() => {
                       const order = {
+                        id: orders.length,
                         item: products,
                         address,
                         paymentMethod,
                         deliveryCharge,
-                        orderDate: new Date().toLocaleDateString(),
+                        orderDate: getOrderDate(),
+                        orderTime: setDeliveryTime(),
                         deliveryDate: setDeliveryDate(),
+                        deliveryDay: getDeliveryDay(),
+                        totalPrice:
+                          totalOrder +
+                          deliveryCharge +
+                          (isCashOnDelivery ? 10 : 0),
                       }
                       orders.push(order)
                       setOrders(orders)
@@ -636,7 +653,10 @@ export default function PaymentMethods() {
           {isPaymentMethodSelected && (
             <section className="bg-light mt-4 p-4 d-flex gap-4 fs-5 placeYourOrderSection">
               {isOrderPlaced ? (
-                <Link to="/yourOrders" className="btn btn-warning rounded-pill px-5">
+                <Link
+                  to="/yourOrders"
+                  className="btn btn-warning rounded-pill px-5"
+                >
                   See your orders
                 </Link>
               ) : (
@@ -687,7 +707,7 @@ export default function PaymentMethods() {
               Free Delivery:
             </p>
             <p className="my-0 w-50 fw-medium d-inline-block text-end text-success">
-              ₹
+              ₹0
             </p>
           </div>
           <hr />

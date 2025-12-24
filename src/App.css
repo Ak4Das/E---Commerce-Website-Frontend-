@@ -387,3 +387,12 @@
   border: 1px solid black;
   cursor: pointer;
 }
+
+.userAddressFloatingCard:hover {
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+.viewOrderDetailsYourOrders:hover {
+  text-decoration: underline !important;
+}

@@ -29,7 +29,7 @@ const router = createBrowserRouter([
   { path: "/yourOrders", element: <YourOrders /> },
   { path: "/paymentMethods", element: <PaymentMethods /> },
   { path: "/login", element: <LoginForm /> },
-  { path: "/orderDetails", element: <OrderDetails /> },
+  { path: "/orderDetails/:id", element: <OrderDetails /> },
 ])
 
 import ClothsContextProvider from "./contexts/ClothsContextProvider.jsx"

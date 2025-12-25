@@ -108,7 +108,7 @@ export default function YourOrders() {
                     <span># {order.id}</span>
                   </div>
                   <Link
-                    to="/orderDetails"
+                    to={`/orderDetails/${order.id}`}
                     className="text-decoration-none viewOrderDetailsYourOrders"
                     style={{ fontSize: "14px" }}
                   >

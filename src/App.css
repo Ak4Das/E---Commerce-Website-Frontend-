@@ -294,6 +294,9 @@
   .shipToCard {
     display: none;
   }
+  .productYourOrder {
+    flex-direction: column;
+  }
 }
 @media (max-width: 400px) {
   .deliveryAddressSection {
@@ -304,9 +307,6 @@
   }
   .changeBtn {
     font-size: 14px !important;
-  }
-  .productYourOrder {
-    flex-direction: column;
   }
 }
 @media (max-width: 350px) {

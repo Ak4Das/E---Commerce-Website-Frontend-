@@ -3838,7 +3838,7 @@ if (!localStorage.getItem("clothsData")) {
     {
       id: 71,
       url: "https://tse3.mm.bing.net/th/id/OIP.e3KVs0uQzVkK-hQfdnAYnQHaLH?pid=Api&P=0&h=180",
-      name: "Men's Traditional Embroidered,Panjabi Kurta,Small Size",
+      name: "Men's Traditional Embroidered, Panjabi Kurta, Small Size",
       price: 1499,
       rating: 3.6,
       discount: "60%",

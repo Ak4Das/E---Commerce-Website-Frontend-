@@ -21,7 +21,7 @@ export default function Header({ position, top, zIndex }) {
               style={{ width: "70px" }}
               className="BharatVastra"
             />
-            <span className="navbarBrand fw-medium fs-5">BharatVastra</span>
+            <span className="navbarBrand fw-bold fs-5 text-secondary">BharatVastra</span>
           </NavLink>
           <form role="search" className="searchInHeader">
             <input

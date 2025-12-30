@@ -57,6 +57,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 200,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 2,
@@ -112,6 +113,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 200,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 3,
@@ -163,6 +165,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 200,
       category: "Lehenga",
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 4,
@@ -215,6 +218,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 200,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 5,
@@ -270,6 +274,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 200,
       addToWishList: false,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 6,
@@ -325,6 +330,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 200,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 7,
@@ -380,6 +386,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 200,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 8,
@@ -433,6 +440,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 200,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 9,
@@ -486,6 +494,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 200,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 10,
@@ -539,6 +548,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 200,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 11,
@@ -594,6 +604,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 150,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 12,
@@ -649,6 +660,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 150,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 13,
@@ -704,6 +716,7 @@ if (!localStorage.getItem("clothsData")) {
       addToWishList: false,
       deliveryCharge: 150,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 14,
@@ -759,6 +772,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 150,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 15,
@@ -814,6 +828,7 @@ if (!localStorage.getItem("clothsData")) {
       addToWishList: false,
       deliveryCharge: 150,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 16,
@@ -868,6 +883,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 150,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 17,
@@ -922,6 +938,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 150,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 18,
@@ -977,6 +994,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 150,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 19,
@@ -1032,6 +1050,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 150,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 20,
@@ -1088,6 +1107,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 150,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 21,
@@ -1143,6 +1163,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 22,
@@ -1198,6 +1219,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 23,
@@ -1253,6 +1275,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 24,
@@ -1308,6 +1331,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 25,
@@ -1361,6 +1385,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 26,
@@ -1417,6 +1442,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 27,
@@ -1472,6 +1498,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 28,
@@ -1527,6 +1554,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 29,
@@ -1582,6 +1610,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 30,
@@ -1637,6 +1666,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 31,
@@ -1691,6 +1721,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 32,
@@ -1746,6 +1777,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 33,
@@ -1801,6 +1833,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 34,
@@ -1857,6 +1890,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 35,
@@ -1912,6 +1946,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 36,
@@ -1968,6 +2003,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 37,
@@ -2023,6 +2059,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 38,
@@ -2079,6 +2116,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 39,
@@ -2132,6 +2170,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 40,
@@ -2187,6 +2226,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 100,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 41,
@@ -2242,6 +2282,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 42,
@@ -2296,6 +2337,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 43,
@@ -2349,6 +2391,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 44,
@@ -2404,6 +2447,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 45,
@@ -2459,6 +2503,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 46,
@@ -2514,6 +2559,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 47,
@@ -2569,6 +2615,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 48,
@@ -2624,6 +2671,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 49,
@@ -2678,6 +2726,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 50,
@@ -2732,6 +2781,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 51,
@@ -2787,6 +2837,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 52,
@@ -2842,6 +2893,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 53,
@@ -2897,6 +2949,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 54,
@@ -2953,6 +3006,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 55,
@@ -3008,6 +3062,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 56,
@@ -3063,6 +3118,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 57,
@@ -3118,6 +3174,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 58,
@@ -3174,6 +3231,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 59,
@@ -3229,6 +3287,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 60,
@@ -3285,6 +3344,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 61,
@@ -3340,6 +3400,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 40,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 62,
@@ -3395,6 +3456,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 40,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 63,
@@ -3450,6 +3512,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 40,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 64,
@@ -3503,6 +3566,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Bermuda for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -3559,6 +3623,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 40,
       addToWishList: false,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 66,
@@ -3613,6 +3678,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Bermuda for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -3669,6 +3735,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 40,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 68,
@@ -3723,6 +3790,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Bermuda for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -3778,6 +3846,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Bermuda for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -3834,6 +3903,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 40,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 71,
@@ -3888,6 +3958,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Panjabi for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -3943,6 +4014,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Panjabi for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -3998,6 +4070,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Panjabi for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -4053,6 +4126,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Panjabi for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -4108,6 +4182,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Panjabi for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: true,
       addToCart: false,
     },
     {
@@ -4163,6 +4238,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Brand: Generic",
       category: "Panjabi for Men",
       deliveryCharge: 40,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -4219,6 +4295,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Panjabi for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -4274,6 +4351,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Panjabi for Men",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -4328,6 +4406,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the Amazon Brand - Symbol Store",
       category: "Panjabi for Men",
       deliveryCharge: 40,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -4383,6 +4462,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the Amazon Brand - Symbol Store",
       category: "Panjabi for Men",
       deliveryCharge: 40,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -4439,6 +4519,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -4494,6 +4575,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -4549,6 +4631,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -4604,6 +4687,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -4660,6 +4744,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 60,
       addToWishList: false,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 86,
@@ -4714,6 +4799,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -4766,6 +4852,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the London Hills Store",
       category: "Jeans for Men",
       deliveryCharge: 60,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -4822,6 +4909,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -4876,6 +4964,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the Thomas Scott Store",
       category: "Jeans for Men",
       deliveryCharge: 60,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -4930,6 +5019,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 60,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 91,
@@ -4985,6 +5075,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 60,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 92,
@@ -5040,6 +5131,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 60,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 93,
@@ -5095,6 +5187,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 60,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 94,
@@ -5147,6 +5240,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -5201,6 +5295,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the Campus Store",
       category: "Shoes for Men",
       deliveryCharge: 60,
+      newArrival: true,
       addToWishList: false,
       addToCart: false,
     },
@@ -5257,6 +5352,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -5312,6 +5408,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -5368,6 +5465,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 60,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 99,
@@ -5422,6 +5520,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -5477,6 +5576,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Men",
       deliveryCharge: 60,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -5533,6 +5633,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 65,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 102,
@@ -5587,6 +5688,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Women",
       deliveryCharge: 65,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -5642,6 +5744,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Women",
       deliveryCharge: 65,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -5696,6 +5799,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the London Hills Store",
       category: "Jeans for Women",
       deliveryCharge: 65,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -5753,6 +5857,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 65,
       addToWishList: false,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 106,
@@ -5808,6 +5913,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 65,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 107,
@@ -5862,6 +5968,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Women",
       deliveryCharge: 65,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -5917,6 +6024,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Women",
       deliveryCharge: 65,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -5972,6 +6080,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Women",
       deliveryCharge: 65,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6028,6 +6137,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Jeans for Women",
       deliveryCharge: 65,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6084,6 +6194,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 70,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 112,
@@ -6136,6 +6247,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Women",
       deliveryCharge: 70,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6191,6 +6303,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Women",
       deliveryCharge: 70,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6246,6 +6359,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Women",
       deliveryCharge: 70,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6300,6 +6414,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Women",
       deliveryCharge: 70,
       addToWishList: false,
+      newArrival: true,
       addToCart: false,
     },
     {
@@ -6355,6 +6470,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Women",
       deliveryCharge: 70,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6406,6 +6522,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Women",
       deliveryCharge: 70,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6460,6 +6577,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the Boldfit Store",
       category: "Shoes for Women",
       deliveryCharge: 70,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -6516,6 +6634,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Women",
       deliveryCharge: 70,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6571,6 +6690,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shoes for Women",
       deliveryCharge: 70,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6627,6 +6747,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 122,
@@ -6681,6 +6802,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Girls",
       deliveryCharge: 50,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6737,6 +6859,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 124,
@@ -6792,6 +6915,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 125,
@@ -6850,6 +6974,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Girls",
       deliveryCharge: 50,
       addToWishList: false,
+      newArrival: true,
       addToCart: false,
     },
     {
@@ -6909,6 +7034,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Girls",
       deliveryCharge: 50,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -6965,6 +7091,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Girls",
       deliveryCharge: 50,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -7022,6 +7149,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Girls",
       deliveryCharge: 50,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -7078,6 +7206,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Girls",
       deliveryCharge: 50,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -7135,6 +7264,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 50,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 131,
@@ -7190,6 +7320,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Boys",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -7244,6 +7375,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the JBN Creation Store",
       category: "Kids wear for Boys",
       deliveryCharge: 40,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -7299,6 +7431,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the Pro-Ethic Style Developer Store",
       category: "Kids wear for Boys",
       deliveryCharge: 40,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -7355,6 +7488,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Boys",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -7409,6 +7543,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Boys",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: true,
       addToCart: false,
     },
     {
@@ -7463,6 +7598,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Brand: Generic",
       category: "Kids wear for Boys",
       deliveryCharge: 40,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -7518,6 +7654,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the AJ DEZINES Store",
       category: "Kids wear for Boys",
       deliveryCharge: 40,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -7574,6 +7711,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Boys",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -7629,6 +7767,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Boys",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -7684,6 +7823,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids wear for Boys",
       deliveryCharge: 40,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -7740,6 +7880,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 142,
@@ -7795,6 +7936,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids Shoes for Girls",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -7850,6 +7992,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids Shoes for Girls",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -7906,6 +8049,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 145,
@@ -7961,6 +8105,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 146,
@@ -8016,6 +8161,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 147,
@@ -8070,6 +8216,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids Shoes for Girls",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -8125,6 +8272,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids Shoes for Girls",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -8181,6 +8329,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 150,
@@ -8236,6 +8385,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 151,
@@ -8289,6 +8439,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "Visit the ARETTO Store",
       category: "Kids Shoes for Boys",
       deliveryCharge: 30,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -8345,6 +8496,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids Shoes for Boys",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -8399,6 +8551,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 154,
@@ -8454,6 +8607,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 155,
@@ -8507,6 +8661,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids Shoes for Boys",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: true,
       addToCart: false,
     },
     {
@@ -8562,6 +8717,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids Shoes for Boys",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -8617,6 +8773,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Kids Shoes for Boys",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -8673,6 +8830,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 159,
@@ -8728,6 +8886,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 160,
@@ -8783,6 +8942,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 161,
@@ -8837,6 +8997,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 162,
@@ -8890,6 +9051,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 163,
@@ -8944,6 +9106,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 164,
@@ -8998,6 +9161,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Cloths for Girls",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -9056,6 +9220,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: true,
     },
     {
       id: 166,
@@ -9111,6 +9276,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 167,
@@ -9166,6 +9332,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Cloths for Girls",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -9221,6 +9388,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Cloths for Girls",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -9277,6 +9445,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Cloths for Girls",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -9336,6 +9505,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Cloths for Girls",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -9391,6 +9561,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shirts for Boys",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -9445,6 +9616,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "STONEBERG ",
       category: "Shirts for Boys",
       deliveryCharge: 30,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -9502,6 +9674,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 174,
@@ -9556,6 +9729,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shirts for Boys",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -9611,6 +9785,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shirts for Boys",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: true,
       addToCart: false,
     },
     {
@@ -9666,6 +9841,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shirts for Boys",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -9722,6 +9898,7 @@ if (!localStorage.getItem("clothsData")) {
       deliveryCharge: 30,
       addToWishList: false,
       addToCart: false,
+      newArrival: false,
     },
     {
       id: 178,
@@ -9775,6 +9952,7 @@ if (!localStorage.getItem("clothsData")) {
       soldBy: "STONEBERG ",
       category: "Shirts for Boys",
       deliveryCharge: 30,
+      newArrival: false,
       addToWishList: false,
       addToCart: false,
     },
@@ -9831,6 +10009,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shirts for Boys",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
     {
@@ -9886,6 +10065,7 @@ if (!localStorage.getItem("clothsData")) {
       category: "Shirts for Boys",
       deliveryCharge: 30,
       addToWishList: false,
+      newArrival: false,
       addToCart: false,
     },
   ]

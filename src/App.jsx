@@ -151,6 +151,19 @@ export default function App() {
       ) : (
         <>
           <Header />
+          <div
+            class="alert alert-success alert-dismissible fade show mt-3"
+            role="alert"
+          >
+            <p className="my-0 d-inline-block fs-5 fw-medium"><b className="fw-bold">Diwali Sale</b> is now live.</p>
+            <a href="#carousel" className="text-decoration-none fw-medium ms-4">Click Here</a>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+            ></button>
+          </div>
           <main className="mx-5 my-4">
             <div className="row">
               {category.map((category) => {
@@ -175,7 +188,7 @@ export default function App() {
                 )
               })}
             </div>
-            <div className="carousel">
+            <div id="carousel" className="carousel">
               <div
                 id="carouselExampleAutoplaying"
                 class="carousel slide"
@@ -579,7 +592,7 @@ export default function App() {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-6 my-3">
+              <Link to="/newArrival" className="col-md-6 my-3 text-decoration-none">
                 <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
                   <img
                     src="https://tse1.mm.bing.net/th/id/OIP.jngCe7THF9RyUMqBs3Lw6gHaDt?pid=Api&P=0&h=180"
@@ -598,7 +611,7 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
               <div className="col-md-6 my-3">
                 <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
                   <img

@@ -1,9 +1,6 @@
 .logo {
   width: 25px;
 }
-.festivalBanner {
-  height: 700px;
-}
 .productName {
   max-height: 96px !important;
   overflow: hidden !important;
@@ -75,6 +72,9 @@
   .hamburger {
     display: none;
   }
+  .upto {
+    font-size: 26px !important;
+  }
 }
 @media (min-width: 992px) {
   .totalBill {
@@ -104,6 +104,64 @@
   .orderDetailsBill {
     width: 250px;
   }
+  .text1 {
+    width: 40vw;
+    font-size: 28px !important;
+    font-family: "Salsa", cursive;
+    margin-left: 150px !important;
+    top: -15px !important;
+  }
+  .jhalarImage {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  .deepakImage {
+    width: 280px !important;
+    height: 280px !important;
+  }
+  .text2 {
+    font-size: 50px !important;
+  }
+  .line1 {
+    width: 610px !important;
+    margin-bottom: 50px !important;
+    padding-top: 10px !important;
+    height: 18px !important;
+  }
+  .line2 {
+    width: 610px !important;
+    height: 18px !important;
+    padding-bottom: 8px !important;
+    margin-top: 25px !important;
+  }
+  .saree1 {
+    width: 523px !important;
+  }
+  .saree2 {
+    width: 320px !important;
+  }
+  .uptoInCoat,
+  .uptoInShoe {
+    margin-top: 18px !important;
+  }
+  .diwaliOfferInSuitCard {
+    font-size: 36px !important;
+  }
+  .diwaliOfferOnLahenga {
+    max-width: 262px !important;
+  }
+  .groupOfWomenWearLahenga {
+    max-width: 615px !important;
+  }
+  .diwaliOfferOnShoes {
+    max-width: 263px !important;
+  }
+  .shoeContainerInDiwaliSaleBanner {
+    max-width: 613px !important;
+  }
+  .shoe1 {
+    width: 100% !important;
+  }
 }
 @media (min-width: 1200px) {
   .totalBill {
@@ -114,6 +172,12 @@
   }
   .productDetailsContainer {
     margin-inline: 70px;
+  }
+  .diwaliOfferOnMenSuit {
+    max-width: 316px !important;
+  }
+  .menWearCoatContainer {
+    max-width: 740px !important;
   }
 }
 @media (min-width: 1400px) {
@@ -135,6 +199,12 @@
   .saveToWishlist {
     font-size: 12px !important;
   }
+  .saree2offer {
+    display: none;
+  }
+  .offer2 {
+    display: none !important;
+  }
 }
 @media (min-width: 1500px) {
   .rating-listingPage {
@@ -155,8 +225,20 @@
   }
 }
 @media (max-width: 1400px) {
-  .festivalBanner {
-    height: 700px !important;
+  .offer {
+    display: none !important;
+  }
+  .diwaliDecoration3 {
+    display: none !important;
+  }
+  .diwaliDecoration13 {
+    display: none !important;
+  }
+  .offer2 {
+    display: block !important;
+  }
+  .menWearShoe {
+    display: none !important;
   }
 }
 @media (max-width: 991px) {
@@ -172,6 +254,20 @@
   .orderDetailsContainer {
     width: 75%;
   }
+  .diwaliOfferOnSuit {
+    font-size: 35px !important;
+  }
+  .uptoInCoat,
+  .uptoInShoe {
+    font-size: 15px !important;
+    margin-top: 10px !important;
+  }
+  .diwaliOfferInSuitCard {
+    font-size: 30px !important;
+  }
+  .shoe1 {
+    width: 75% !important;
+  }
 }
 @media (max-width: 800px) {
   .productCard {
@@ -184,8 +280,19 @@
   .firstUlContainer {
     display: none;
   }
-  .festivalBanner {
-    height: 600px !important;
+  .upto {
+    font-size: 20px !important;
+  }
+  .diwaliOfferOnSuit {
+    font-size: 25px !important;
+  }
+  .uptoInCoat,
+  .uptoInShoe {
+    font-size: 12px !important;
+    margin-top: 7px !important;
+  }
+  .diwaliOfferInSuitCard {
+    font-size: 20px !important;
   }
 }
 @media (max-width: 767px) {
@@ -198,6 +305,19 @@
   .productCardInCart {
     max-width: 500px !important;
     min-width: 400px !important;
+  }
+}
+@media (max-width: 650px) {
+  .diwaliOfferOnSuit {
+    font-size: 18px !important;
+  }
+  .uptoInCoat,
+  .uptoInShoe {
+    font-size: 10px !important;
+    margin-top: 5px !important;
+  }
+  .diwaliOfferInSuitCard {
+    font-size: 15px !important;
   }
 }
 @media (max-width: 575px) {
@@ -222,6 +342,9 @@
   .listProductImage {
     height: 350px !important;
   }
+  .upto {
+    font-size: 16px !important;
+  }
 }
 @media (max-width: 499px) {
   .navbarBrand {
@@ -229,9 +352,6 @@
   }
   .image {
     height: 150px !important;
-  }
-  .festivalBanner {
-    height: 400px !important;
   }
   .paymentMethodHeading {
     font-size: 16px !important;
@@ -266,6 +386,17 @@
   .placeYourOrderSection {
     flex-direction: column !important;
   }
+  .diwaliOfferOnSuit {
+    font-size: 15px !important;
+  }
+  .uptoInCoat,
+  .uptoInShoe {
+    font-size: 7px !important;
+    margin-top: 5px !important;
+  }
+  .diwaliOfferInSuitCard {
+    font-size: 12px !important;
+  }
 }
 @media (max-width: 450px) {
   .AddCardLink {
@@ -283,6 +414,9 @@
   .productOrderDetails {
     flex-direction: column !important;
   }
+  .upto {
+    font-size: 10px !important;
+  }
 }
 @media (max-width: 420px) {
   .description {
@@ -297,6 +431,17 @@
   .productYourOrder {
     flex-direction: column;
   }
+  .diwaliOfferOnSuit {
+    font-size: 12px !important;
+  }
+  .uptoInCoat,
+  .uptoInShoe {
+    font-size: 7px !important;
+    margin-top: 3px !important;
+  }
+  .diwaliOfferInSuitCard {
+    font-size: 10px !important;
+  }
 }
 @media (max-width: 400px) {
   .deliveryAddressSection {
@@ -309,21 +454,26 @@
     font-size: 14px !important;
   }
 }
+@media (max-width: 370px) {
+  .diwaliOfferOnSuit {
+    font-size: 9px !important;
+  }
+  .uptoInCoat,
+  .uptoInShoe {
+    font-size: 5px !important;
+    margin-top: 1px !important;
+  }
+  .diwaliOfferInSuitCard {
+    font-size: 7px !important;
+  }
+}
 @media (max-width: 350px) {
   .searchInHeader {
     display: none;
   }
-  .festivalBanner {
-    height: 300px !important;
-  }
   .productCardInCart {
     max-width: 250px !important;
     min-width: 200px !important;
-  }
-}
-@media (max-width: 300px) {
-  .festivalBanner {
-    height: 200px !important;
   }
 }
 
@@ -395,4 +545,86 @@
 
 .viewOrderDetailsYourOrders:hover {
   text-decoration: underline !important;
+}
+
+.text1 {
+  width: 40vw;
+  font-size: 2.8vw;
+  font-family: "Salsa", cursive;
+  margin-left: 15vw;
+  top: -1.5vw;
+}
+
+.line1 {
+  width: 70%;
+  margin: 0vw auto 5vw;
+  padding-top: 1vw;
+  height: 1.8vw;
+}
+
+.text2 {
+  font-size: 5vw;
+  font-family: "Style Script", cursive;
+  margin-top: 3vw;
+}
+
+.line2 {
+  width: 70%;
+  margin: 2.5vw auto 0vw;
+  padding-bottom: 0.8vw;
+  height: 1.8vw;
+}
+
+.slide2 {
+  background-image: linear-gradient(#f5b7d4 85%, #e595b8 20%);
+}
+
+.slide3 {
+  background-image: linear-gradient(#384967 85%, #6a6561 20%);
+}
+
+.menWearCoatContainer {
+  width: 70% !important;
+}
+
+.diwaliOfferOnMenSuit {
+  width: 30% !important;
+}
+
+.slide4 {
+  background-image: linear-gradient(rgb(253, 184, 220) 85%, #b37281 20%);
+}
+
+.groupOfWomenWearLahenga {
+  width: 70% !important;
+  max-width: 900px;
+}
+
+.diwaliOfferOnLahenga {
+  width: 30% !important;
+}
+
+.diwaliDecoration2 {
+  transform: rotate(90deg);
+}
+
+.slide5 {
+  background-image: linear-gradient(-250deg, #48484a 40%, #252324 30%),
+    linear-gradient(70deg, #2d2d2e 27%, #363636 20%);
+  background-size: 100% 85%, 100% 16%;
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+}
+
+.shoeContainerInDiwaliSaleBanner {
+  width: 70% !important;
+}
+
+.diwaliOfferOnShoes {
+  width: 30% !important;
+}
+
+.menWearShoe {
+  width: 30% !important;
+  max-width: 500px !important;
 }

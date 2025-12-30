@@ -6,6 +6,40 @@ import Header from "./components/Header"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import BharatVastra from "./assets/BharatVastra.png"
+import JHALAR from "./assets/jhalar.png"
+import DEEPAK from "./assets/deepak.png"
+import backgroundImage from "./assets/backgroundImage.png"
+import LakshmiMaaAndGaneshJi from "./assets/LakshmiMaaAndGaneshJi.png"
+import LINE from "./assets/line.png"
+import saree1 from "./assets/saree1.png"
+import saree2 from "./assets/saree2.png"
+import diwaliDecoration1 from "./assets/diwaliDecoration1.png"
+import diwaliDecoration2 from "./assets/diwaliDecoration2.png"
+import diwaliDecoration3 from "./assets/diwaliDecoration3.png"
+import diwaliDecoration4 from "./assets/diwaliDecoration4.png"
+import diwaliDecoration5 from "./assets/diwaliDecoration5.png"
+import diwaliDecoration6 from "./assets/diwaliDecoration6.png"
+import diwaliDecoration7 from "./assets/diwaliDecoration7.png"
+import diwaliDecoration8 from "./assets/diwaliDecoration8.png"
+import diwaliDecoration9 from "./assets/diwaliDecoration9.png"
+import diwaliDecoration10 from "./assets/diwaliDecoration10.png"
+import diwaliDecoration11 from "./assets/diwaliDecoration11.png"
+import diwaliDecoration12 from "./assets/diwaliDecoration12.png"
+import diwaliDecoration13 from "./assets/diwaliDecoration13.png"
+import diwaliDecoration14 from "./assets/diwaliDecoration14.png"
+import offer from "./assets/offer.png"
+import offer2 from "./assets/offer2.png"
+import offer3 from "./assets/offer3.png"
+import menWearCoat1 from "./assets/menWearCoat1.png"
+import menWearCoat2 from "./assets/menWearCoat2.png"
+import menWearCoat3 from "./assets/menWearCoat3.png"
+import womenWearLahenga1 from "./assets/womenWearLahenga1.png"
+import womenWearLahenga2 from "./assets/womenWearLahenga2.png"
+import womenWearLahenga3 from "./assets/womenWearLahenga3.png"
+import shoe1 from "./assets/shoe1.png"
+import goldenRibbon from "./assets/goldenRibbon.png"
+import littleGirlWithDiya from "./assets/littleGirlWithDiya.png"
+import menWearShoe from "./assets/menWearShoe.png"
 
 const category = [
   {
@@ -141,12 +175,408 @@ export default function App() {
                 )
               })}
             </div>
-            <div className="bg-secondary my-4 festivalBanner">
-              <img
-                src="https://tse1.mm.bing.net/th/id/OIP.GFeDWGFyukqOSvVUO04kmAHaEK?pid=Api&P=0&h=180"
-                alt=""
-                className="w-100 h-100"
-              />
+            <div className="carousel">
+              <div
+                id="carouselExampleAutoplaying"
+                class="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div
+                      className="slide1"
+                      style={{
+                        backgroundImage: `url(${backgroundImage})`,
+                        backgroundSize: "cover",
+                        maxHeight: "800px",
+                        height: "78.6vw",
+                      }}
+                    >
+                      <div
+                        id="jhalar"
+                        className="d-block"
+                        style={{ width: "25vw" }}
+                      >
+                        <img
+                          className="d-block jhalarImage"
+                          style={{ width: "25vw" }}
+                          src={JHALAR}
+                          alt="jhalar"
+                        />
+                      </div>
+                      <div
+                        className="text1 text-start position-relative fw-medium"
+                        style={{ maxWidth: "400px" }}
+                      >
+                        <p className="my-0">Hay,</p>
+                        <p className="my-0">
+                          BharatVastra Wish Happy Diwali To you and all of your
+                          loved ones
+                        </p>
+                        <p className="my-0">
+                          Checkout the latest trends waiting for you!
+                        </p>
+                      </div>
+                      <div id="deepak" className="d-inline-block">
+                        <img
+                          className="d-block deepakImage"
+                          style={{ width: "28vw" }}
+                          src={DEEPAK}
+                          alt="deepak"
+                        />
+                      </div>
+                      <div id="deepak" className="d-inline-block">
+                        <img
+                          className="d-block deepakImage"
+                          style={{ width: "28vw" }}
+                          src={DEEPAK}
+                          alt="deepak"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div
+                      className="slide2 bg-light p-4 d-flex justify-content-between"
+                      style={{ height: "78.6vw", maxHeight: "800px" }}
+                    >
+                      <div className="saree1 d-flex flex-column justify-content-between">
+                        <div className="w-50">
+                          <img
+                            src={diwaliDecoration2}
+                            className="img-fluid w-75"
+                            alt=""
+                          />
+                        </div>
+                        <div className="">
+                          <img
+                            src={saree1}
+                            className="img-fluid w-100"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="d-flex flex-column justify-content-between align-items-center text-center"
+                        style={{ width: "20vw" }}
+                      >
+                        <div className="offer">
+                          <p className="fs-3 fw-bold my-0 text-danger">UPTO</p>
+                          <img src={offer} className="img-fluid w-100" alt="" />
+                        </div>
+                        <div>
+                          <div className="diwaliDecoration3">
+                            <img
+                              src={diwaliDecoration3}
+                              style={{
+                                width: "5vw",
+                                marginBottom: "-2.2vw",
+                                position: "relative",
+                              }}
+                              className="img-fluid"
+                              alt=""
+                            />
+                          </div>
+                          <div className="diwaliDecoration13">
+                            <img
+                              src={diwaliDecoration13}
+                              className="img-fluid w-50"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="saree2 d-flex flex-column justify-content-between">
+                        <div className="text-center">
+                          <div className="saree2offer">
+                            <p className="upto fw-bold my-0 text-danger">
+                              UPTO
+                            </p>
+                            <div>
+                              <img
+                                src={offer}
+                                alt=""
+                                className="img-fluid w-75"
+                              />
+                            </div>
+                          </div>
+                          <div className="saree2diwaliDecoration1">
+                            <img
+                              src={diwaliDecoration1}
+                              className="img-fluid w-75"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div className="">
+                          <img
+                            src={saree2}
+                            className="img-fluid w-100"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <div
+                      className="slide3 p-4 d-flex justify-content-around"
+                      style={{ height: "78.6vw", maxHeight: "800px" }}
+                    >
+                      <div className="diwaliOfferOnMenSuit">
+                        <div className="w-75">
+                          <img
+                            src={diwaliDecoration7}
+                            className="img-fluid w-100"
+                            alt=""
+                          />
+                        </div>
+                        <div className="text-light mt-5">
+                          <p className="diwaliOfferInSuitCard my-0">
+                            Diwali Offer
+                          </p>
+                          <p className="my-0 d-flex align-items-start">
+                            <span className="uptoInCoat">UPTO</span>
+                            <span
+                              className="diwaliOfferOnSuit fw-bold"
+                              style={{ fontSize: "48px" }}
+                            >
+                              {" "}
+                              50% OFF
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                      <div className="menWearCoatContainer d-flex align-items-end">
+                        <div>
+                          <img
+                            src={menWearCoat1}
+                            className="img-fluid w-100"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <img
+                            src={menWearCoat2}
+                            className="img-fluid w-100"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <img
+                            src={menWearCoat3}
+                            className="img-fluid w-100"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <div
+                      className="slide4 p-2 d-flex justify-content-between"
+                      style={{ maxHeight: "800px", height: "78.6vw" }}
+                    >
+                      <div className="diwaliOfferOnLahenga d-flex flex-column justify-content-between">
+                        <div>
+                          <img
+                            src="https://png.pngtree.com/png-clipart/20231110/original/pngtree-happy-diwali-festival-png-image_13526566.png"
+                            className="img-fluid w-75"
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <img
+                            src={diwaliDecoration8}
+                            className="img-fluid w-50"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="d-flex flex-column justify-content-center align-items-center text-center"
+                        style={{ width: "20vw" }}
+                      >
+                        <div className="offer">
+                          <img
+                            src={offer2}
+                            className="img-fluid w-100"
+                            alt=""
+                          />
+                        </div>
+                        <div className="diwaliDecoration3">
+                          <img
+                            src={diwaliDecoration9}
+                            style={{ width: "10vw" }}
+                            className="img-fluid"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div className="groupOfWomenWearLahenga d-flex flex-column justify-content-between">
+                        <div className="w-25 ms-auto">
+                          <img
+                            src={diwaliDecoration2}
+                            className="diwaliDecoration2 img-fluid w-100"
+                            alt=""
+                          />
+                        </div>
+                        <div className="offer2">
+                          <img
+                            src={offer2}
+                            className="img-fluid w-50 d-block mx-auto"
+                            alt=""
+                          />
+                        </div>
+                        <div className="d-flex">
+                          <div>
+                            <img
+                              src={womenWearLahenga1}
+                              className="img-fluid w-100"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={womenWearLahenga3}
+                              className="img-fluid w-100"
+                              alt=""
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={womenWearLahenga2}
+                              className="img-fluid w-100"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <div
+                      className="slide5 p-2 d-flex justify-content-between"
+                      style={{ height: "78.6vw", maxHeight: "800px" }}
+                    >
+                      <div className="diwaliOfferOnShoes d-flex flex-column justify-content-between">
+                        <div>
+                          <img
+                            src={diwaliDecoration10}
+                            className="img-fluid w-50"
+                            alt=""
+                          />
+                        </div>
+                        <div className="">
+                          <img
+                            src={diwaliDecoration14}
+                            className="img-fluid w-75"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div className="menWearShoe align-self-end">
+                        <img
+                          src={menWearShoe}
+                          className="img-fluid w-100"
+                          alt=""
+                        />
+                      </div>
+                      <div className="shoeContainerInDiwaliSaleBanner d-flex flex-column justify-content-around">
+                        <div className="text-center">
+                          <div className="d-flex justify-content-center">
+                            <p className="uptoInShoe my-0 fw-bold text-warning">
+                              UPTO
+                            </p>
+                            <div className="w-25">
+                              <img
+                                src={offer3}
+                                className="img-fluid w-100"
+                                alt=""
+                              />
+                            </div>
+                            <p className="uptoInShoe my-0 fw-bold text-warning align-self-end">
+                              OFF
+                            </p>
+                          </div>
+                          <div>
+                            <img
+                              src={goldenRibbon}
+                              className="img-fluid w-50"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                        <div className="text-end">
+                          <img src={shoe1} className="shoe1 img-fluid" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <div
+                      className="slide6 px-3 d-flex align-items-center justify-content-center"
+                      style={{
+                        backgroundColor: "orange",
+                        height: "78.6vw",
+                        maxHeight: "800px",
+                      }}
+                    >
+                      <div className="w-100 d-flex flex-column align-items-center">
+                        <div className="line1">
+                          <img
+                            className="d-block w-100"
+                            src={LINE}
+                            alt="line"
+                          />
+                        </div>
+                        <div>
+                          <img
+                            className="w-100 img-fluid"
+                            src={LakshmiMaaAndGaneshJi}
+                            style={{ maxHeight: "410px" }}
+                            alt="lakshmi-ganesha"
+                          />
+                        </div>
+                        <div className="text2 text-center fw-medium">
+                          Wishing You a Blessed and Prosperous Deepawali
+                        </div>
+                        <div className="line2">
+                          <img
+                            className="d-block w-100"
+                            src={LINE}
+                            alt="line"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
             <div className="row">
               <div className="col-md-6 my-3">

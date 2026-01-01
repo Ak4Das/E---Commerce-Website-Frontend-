@@ -14,6 +14,76 @@
   height: 520px !important;
 }
 
+@media (min-width: 300px) {
+  .diwaliSaleCard {
+    height: 150px !important;
+  }
+  .diwaliSalePageOffer1 {
+    margin-left: 3px !important;
+  }
+  .diwaliSalePageOffer2 {
+    margin-left: -15px !important;
+  }
+  .diwaliSalePageOffer3 {
+    margin-left: -12px !important;
+  }
+  .diwaliSalePageOffer4 {
+    margin-left: 5px !important;
+  }
+  .diwaliSalePageOffer5 {
+    margin-left: -7px !important;
+  }
+  .diwaliSalePageOffer6 {
+    margin-left: -10px !important;
+  }
+  .DiwaliSaleProductName1 {
+    font-size: 10px !important;
+    margin-bottom: 7px !important;
+  }
+  .DiwaliSaleProductName2 {
+    font-size: 10px !important;
+    margin-bottom: 7px !important;
+    margin-left: -15px !important;
+  }
+  .DiwaliSaleProductName3 {
+    font-size: 10px !important;
+    margin-bottom: 7px !important;
+    margin-left: -12px !important;
+  }
+  .DiwaliSaleProductName4 {
+    font-size: 10px !important;
+    margin-bottom: 7px !important;
+    margin-left: 5px !important;
+  }
+  .DiwaliSaleProductName5 {
+    font-size: 10px !important;
+    margin-bottom: 7px !important;
+    margin-left: -7px !important;
+  }
+  .DiwaliSaleProductName6 {
+    font-size: 10px !important;
+    margin-bottom: 7px !important;
+    margin-left: -10px !important;
+  }
+  .diwaliSaleCheckBtn2 {
+    margin-left: -15px !important;
+  }
+  .diwaliSaleCheckBtn3 {
+    margin-left: -12px !important;
+  }
+  .diwaliSaleCheckBtn4 {
+    margin-left: 5px !important;
+  }
+  .diwaliSaleCheckBtn5 {
+    margin-left: -7px !important;
+  }
+  .diwaliSaleCheckBtn6 {
+    margin-left: -10px !important;
+  }
+  .diwaliSaleCheckBtn {
+    width: 45px !important;
+  }
+}
 @media (min-width: 351px) {
   .searchInApp {
     display: none;
@@ -22,6 +92,71 @@
 @media (min-width: 420px) {
   .shipTo {
     display: none;
+  }
+  .diwaliSaleCard {
+    height: 200px !important;
+  }
+  .diwaliSalePageOffer2 {
+    margin-left: -25px !important;
+  }
+  .diwaliSalePageOffer3 {
+    margin-left: -20px !important;
+  }
+  .diwaliSalePageOffer4 {
+    margin-left: 7px !important;
+  }
+  .diwaliSalePageOffer5 {
+    margin-left: -12px !important;
+  }
+  .diwaliSalePageOffer6 {
+    margin-left: -20px !important;
+  }
+  .DiwaliSaleProductName1 {
+    font-size: 15px !important;
+    margin-bottom: 10px !important;
+  }
+  .DiwaliSaleProductName2 {
+    font-size: 15px !important;
+    margin-bottom: 10px !important;
+    margin-left: -25px !important;
+  }
+  .DiwaliSaleProductName3 {
+    font-size: 15px !important;
+    margin-bottom: 10px !important;
+    margin-left: -20px !important;
+  }
+  .DiwaliSaleProductName4 {
+    font-size: 15px !important;
+    margin-bottom: 10px !important;
+    margin-left: 7px !important;
+  }
+  .DiwaliSaleProductName5 {
+    font-size: 15px !important;
+    margin-bottom: 10px !important;
+    margin-left: -12px !important;
+  }
+  .DiwaliSaleProductName6 {
+    font-size: 15px !important;
+    margin-bottom: 10px !important;
+    margin-left: -20px !important;
+  }
+  .diwaliSaleCheckBtn2 {
+    margin-left: -25px !important;
+  }
+  .diwaliSaleCheckBtn3 {
+    margin-left: -20px !important;
+  }
+  .diwaliSaleCheckBtn4 {
+    margin-left: 7px !important;
+  }
+  .diwaliSaleCheckBtn5 {
+    margin-left: -12px !important;
+  }
+  .diwaliSaleCheckBtn6 {
+    margin-left: -20px !important;
+  }
+  .diwaliSaleCheckBtn {
+    width: 90px !important;
   }
 }
 @media (min-width: 500px) {
@@ -51,6 +186,71 @@
   .productImage {
     width: 100% !important;
   }
+  .diwaliSaleCard {
+    height: 300px !important;
+  }
+  .diwaliSalePageOffer2 {
+    margin-left: -35px !important;
+  }
+  .diwaliSalePageOffer3 {
+    margin-left: -30px !important;
+  }
+  .diwaliSalePageOffer4 {
+    margin-left: 10px !important;
+  }
+  .diwaliSalePageOffer5 {
+    margin-left: -20px !important;
+  }
+  .diwaliSalePageOffer6 {
+    margin-left: -30px !important;
+  }
+  .DiwaliSaleProductName1 {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+  }
+  .DiwaliSaleProductName2 {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+    margin-left: -35px !important;
+  }
+  .DiwaliSaleProductName3 {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+    margin-left: -30px !important;
+  }
+  .DiwaliSaleProductName4 {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+    margin-left: 10px !important;
+  }
+  .DiwaliSaleProductName5 {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+    margin-left: -20px !important;
+  }
+  .DiwaliSaleProductName6 {
+    font-size: 20px !important;
+    margin-bottom: 15px !important;
+    margin-left: -30px !important;
+  }
+  .diwaliSaleCheckBtn2 {
+    margin-left: -35px !important;
+  }
+  .diwaliSaleCheckBtn3 {
+    margin-left: -30px !important;
+  }
+  .diwaliSaleCheckBtn4 {
+    margin-left: 10px !important;
+  }
+  .diwaliSaleCheckBtn5 {
+    margin-left: -20px !important;
+  }
+  .diwaliSaleCheckBtn6 {
+    margin-left: -30px !important;
+  }
+  .diwaliSaleCheckBtn {
+    width: 145px !important;
+  }
 }
 @media (min-width: 768px) {
   .totalBill {
@@ -74,6 +274,71 @@
   }
   .upto {
     font-size: 26px !important;
+  }
+  .diwaliSaleCard {
+    height: 430px !important;
+  }
+  .diwaliSalePageOffer2 {
+    margin-left: -50px !important;
+  }
+  .diwaliSalePageOffer3 {
+    margin-left: -40px !important;
+  }
+  .diwaliSalePageOffer4 {
+    margin-left: 15px !important;
+  }
+  .diwaliSalePageOffer5 {
+    margin-left: -20px !important;
+  }
+  .diwaliSalePageOffer6 {
+    margin-left: -30px !important;
+  }
+  .DiwaliSaleProductName1 {
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+  }
+  .DiwaliSaleProductName2 {
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+    margin-left: -50px !important;
+  }
+  .DiwaliSaleProductName3 {
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+    margin-left: -40px !important;
+  }
+  .DiwaliSaleProductName4 {
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+    margin-left: 15px !important;
+  }
+  .DiwaliSaleProductName5 {
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+    margin-left: -20px !important;
+  }
+  .DiwaliSaleProductName6 {
+    font-size: 24px !important;
+    margin-bottom: 20px !important;
+    margin-left: -30px !important;
+  }
+  .diwaliSaleCheckBtn2 {
+    margin-left: -50px !important;
+  }
+  .diwaliSaleCheckBtn3 {
+    margin-left: -40px !important;
+  }
+  .diwaliSaleCheckBtn4 {
+    margin-left: 15px !important;
+  }
+  .diwaliSaleCheckBtn5 {
+    margin-left: -20px !important;
+  }
+  .diwaliSaleCheckBtn6 {
+    margin-left: -30px !important;
+  }
+  .diwaliSaleCheckBtn {
+    width: 200px !important;
   }
 }
 @media (min-width: 992px) {
@@ -162,6 +427,9 @@
   .shoe1 {
     width: 100% !important;
   }
+  .diwaliSaleCheckBtn {
+    width: 250px !important;
+  }
 }
 @media (min-width: 1200px) {
   .totalBill {
@@ -178,6 +446,9 @@
   }
   .menWearCoatContainer {
     max-width: 740px !important;
+  }
+  .diwaliSaleCheckBtn {
+    width: 300px !important;
   }
 }
 @media (min-width: 1400px) {
@@ -205,6 +476,12 @@
   .offer2 {
     display: none !important;
   }
+  .diwaliSaleSection1 {
+    background-size: cover !important;
+  }
+  .diwaliSaleCheckBtn {
+    width: 150px !important;
+  }
 }
 @media (min-width: 1500px) {
   .rating-listingPage {
@@ -218,10 +495,16 @@
   .productDetailsContainer {
     margin-inline: 150px;
   }
+  .diwaliSaleCheckBtn {
+    width: 200px !important;
+  }
 }
 @media (min-width: 1800px) {
   .productDetailsContainer {
     margin-inline: 200px;
+  }
+  .diwaliSaleCheckBtn {
+    width: 230px !important;
   }
 }
 @media (max-width: 1400px) {
@@ -306,6 +589,10 @@
     max-width: 500px !important;
     min-width: 400px !important;
   }
+  .diwaliSaleCheckBtn {
+    padding-block: 3px !important;
+    padding-inline: 6px !important;
+  }
 }
 @media (max-width: 650px) {
   .diwaliOfferOnSuit {
@@ -344,6 +631,11 @@
   }
   .upto {
     font-size: 16px !important;
+  }
+  .diwaliSaleCheckBtn {
+    padding-block: 2px !important;
+    padding-inline: 4px !important;
+    font-size: 10px !important;
   }
 }
 @media (max-width: 499px) {
@@ -592,7 +884,7 @@
 }
 
 .slide4 {
-  background-image: linear-gradient(rgb(253, 184, 220) 85%, #b37281 20%);
+  background-image: linear-gradient(#fdb8dc 85%, #b37281 20%);
 }
 
 .groupOfWomenWearLahenga {

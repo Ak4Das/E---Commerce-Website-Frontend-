@@ -16,6 +16,7 @@ import PaymentMethods from "./pages/PaymentMethod.jsx"
 import LoginForm from "./pages/LoginForm.jsx"
 import OrderDetails from "./pages/OrderDetails.jsx"
 import NewArrival from "./pages/NewArrival.jsx"
+import DiwaliSale from "./pages/DiwaliSale.jsx"
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
   { path: "/login", element: <LoginForm /> },
   { path: "/orderDetails/:id", element: <OrderDetails /> },
   { path: "/newArrival", element: <NewArrival /> },
+  { path: "/diwaliSale", element: <DiwaliSale /> },
 ])
 
 import ClothsContextProvider from "./contexts/ClothsContextProvider.jsx"

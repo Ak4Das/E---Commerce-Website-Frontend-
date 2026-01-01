@@ -16,15 +16,10 @@ import saree2 from "./assets/saree2.png"
 import diwaliDecoration1 from "./assets/diwaliDecoration1.png"
 import diwaliDecoration2 from "./assets/diwaliDecoration2.png"
 import diwaliDecoration3 from "./assets/diwaliDecoration3.png"
-import diwaliDecoration4 from "./assets/diwaliDecoration4.png"
-import diwaliDecoration5 from "./assets/diwaliDecoration5.png"
-import diwaliDecoration6 from "./assets/diwaliDecoration6.png"
 import diwaliDecoration7 from "./assets/diwaliDecoration7.png"
 import diwaliDecoration8 from "./assets/diwaliDecoration8.png"
 import diwaliDecoration9 from "./assets/diwaliDecoration9.png"
 import diwaliDecoration10 from "./assets/diwaliDecoration10.png"
-import diwaliDecoration11 from "./assets/diwaliDecoration11.png"
-import diwaliDecoration12 from "./assets/diwaliDecoration12.png"
 import diwaliDecoration13 from "./assets/diwaliDecoration13.png"
 import diwaliDecoration14 from "./assets/diwaliDecoration14.png"
 import offer from "./assets/offer.png"
@@ -38,7 +33,6 @@ import womenWearLahenga2 from "./assets/womenWearLahenga2.png"
 import womenWearLahenga3 from "./assets/womenWearLahenga3.png"
 import shoe1 from "./assets/shoe1.png"
 import goldenRibbon from "./assets/goldenRibbon.png"
-import littleGirlWithDiya from "./assets/littleGirlWithDiya.png"
 import menWearShoe from "./assets/menWearShoe.png"
 
 const category = [
@@ -612,7 +606,7 @@ export default function App() {
                   </div>
                 </div>
               </Link>
-              <div className="col-md-6 my-3">
+              <Link to="/diwaliSale" className="col-md-6 my-3 text-decoration-none">
                 <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
                   <img
                     src="https://tse3.mm.bing.net/th/id/OIP.DZhMFCN8KQJup5G70IemgAHaDt?pid=Api&P=0&h=180"
@@ -631,7 +625,7 @@ export default function App() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </main>
         </>
@@ -639,5 +633,3 @@ export default function App() {
     </>
   )
 }
-
-// export default App

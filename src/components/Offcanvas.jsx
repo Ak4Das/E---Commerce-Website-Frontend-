@@ -76,7 +76,8 @@ export default function Offcanvas({
         <b>Category</b>
         <div className="mt-2 form-check">
           <input
-            type="checkbox"
+            type="radio"
+            name="category"
             id="menClothing"
             value="male"
             className="form-check-input"
@@ -85,7 +86,8 @@ export default function Offcanvas({
           <label htmlFor="menClothing">Male Clothing</label>
           <br />
           <input
-            type="checkbox"
+            type="radio"
+            name="category"
             id="menClothing"
             value="female"
             className="form-check-input"

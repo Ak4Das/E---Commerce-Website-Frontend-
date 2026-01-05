@@ -1,25 +1,33 @@
 import { useState } from "react"
 import GetClothsData from "../components/GetClothsData"
 import Header from "../components/Header"
-import Offcanvas from "../components/Offcanvas"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 
-export default function ProductListingPage() {
-  const { category } = useParams()
+export default function SaleProducts() {
+  const { commonCategory } = useParams()
   const { clothsData, setClothsData } = GetClothsData()
-  const [price, setPrice] = useState(0)
-  const [rating, setRating] = useState(0)
-  const [sortBy, setSortBy] = useState("")
-  const [Category, setCategory] = useState("")
+  const [gender, setGender] = useState("")
+
+  const filteredProducts = clothsData.filter(
+    (product) => product.commonCategory === commonCategory
+  )
+
+  const productWithOffer = filteredProducts.filter((product) =>
+    Number(product.offer.replace("%", ""))
+  )
+
+  const filteredByGender =
+    gender === ""
+      ? productWithOffer
+      : productWithOffer.filter((product) => product.gender === gender)
 
   function addToCart(e) {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
     )
     product.addToCart = product.addToCart === false ? true : false
-    // setClothsData(clothsData)
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
   }
@@ -29,93 +37,40 @@ export default function ProductListingPage() {
       (product) => product.id === Number(e.target.value)
     )
     product.addToWishList = product.addToWishList === false ? true : false
-    // setClothsData(clothsData)
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
   }
 
-  const filterByCategory = clothsData.filter(
-    (data) => data.category === category
-  )
-
-  const filterByPrice = filterByCategory.filter(
-    (product) =>
-      (
-        (product.price * Number(product.discount.replace("%", ""))) /
-        100
-      ).toFixed(1) >= price
-  )
-
-  const filterByRating = filterByPrice.filter(
-    (product) => product.rating >= rating
-  )
-
-  function discountedPrice(product) {
-    return (
-      (product.price * Number(product.discount.replace("%", ""))) /
-      100
-    ).toFixed(1)
-  }
-
-  function sortProducts() {
-    if (sortBy !== "") {
-      for (let i = 0; i < filterByRating.length; ) {
-        for (let j = i + 1; j < filterByRating.length; j++) {
-          if (sortBy === "lowToHigh") {
-            if (
-              Number(discountedPrice(filterByRating[i])) >
-              Number(discountedPrice(filterByRating[j]))
-            ) {
-              const a = filterByRating[j]
-              filterByRating[j] = filterByRating[i]
-              filterByRating[i] = a
-            }
-          } else {
-            if (
-              Number(discountedPrice(filterByRating[j])) >
-              Number(discountedPrice(filterByRating[i]))
-            ) {
-              const a = filterByRating[j]
-              filterByRating[j] = filterByRating[i]
-              filterByRating[i] = a
-            }
-          }
-        }
-        i++
-      }
-    }
-    return filterByRating
-  }
-
-  const filterBySort = sortProducts()
-
-  const finalFilter =
-    Category === ""
-      ? filterBySort
-      : filterBySort.filter((product) => product.gender === Category)
-
   return (
     <>
       <Header position="sticky" top={0} zIndex={1} />
-      <main className="d-flex">
-        <Offcanvas
-          setPrice={setPrice}
-          setRating={setRating}
-          setSortBy={setSortBy}
-          setCategory={setCategory}
-        />
+      <main>
         <div className="mx-5 my-3">
-          <form role="search" className="searchInApp">
-            <input
-              className="border border-0 p-2 bg-body-tertiary"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-          <h4 className="my-3 text-secondary">Showing All Products</h4>
+          <div className="d-flex justify-content-between saleProductFirstSection mb-3">
+            <h4 className="my-3 text-secondary">
+              Diwali offer on {commonCategory}
+            </h4>
+            <div className="" style={{ width: "160px" }}>
+              <label
+                htmlFor="gender"
+                className="form-label me-2 fw-bold text-secondary"
+              >
+                Gender
+              </label>
+              <select
+                name="gender"
+                id="gender"
+                className="py-1 px-2 rounded fw-medium text-secondary"
+                onChange={(e) => setGender(e.target.value)}
+              >
+                <option value="">All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </div>
           <div className="row">
-            {finalFilter.map((product) => (
+            {filteredByGender.map((product) => (
               <div
                 key={product.id}
                 className="col-sm-6 col-xl-4 col-xxl-3 mb-3"
@@ -132,9 +87,9 @@ export default function ProductListingPage() {
                     />
                     <div className="card-body d-flex flex-column justify-content-between">
                       <p id="name" className="my-0 lh-sm listProductName">
-                        {product.newArrival === true && (
-                          <span className="badge text-bg-success me-1">New</span>
-                        )}
+                        <span className="badge text-bg-warning me-1">
+                          Diwali Offer
+                        </span>
                         {product.name.length > 61
                           ? product.name.slice(0, 60).concat("...")
                           : product.name}
@@ -149,15 +104,15 @@ export default function ProductListingPage() {
                         </span>
                       </div>
                       <div>
-                        <p id="discount" className="my-0">
+                        <p id="offer" className="my-0">
                           <b>₹</b>
                           {(
                             product.price -
                             (product.price *
-                              Number(product.discount.replace("%", ""))) /
+                              Number(product.offer.replace("%", ""))) /
                               100
                           ).toFixed(1)}{" "}
-                          (-{product.discount})
+                          (-{product.offer})
                         </p>
                         <small
                           id="M.R.P."

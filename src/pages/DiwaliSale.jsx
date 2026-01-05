@@ -16,6 +16,7 @@ import girlHoldDiya1 from "../assets/girlHoldDiya1.png"
 import diwaliDecoration11 from "../assets/diwaliDecoration11.png"
 import diwaliDecoration12 from "../assets/diwaliDecoration12.png"
 import diwaliDecoration13 from "../assets/diwaliDecoration13.png"
+import { Link } from "react-router-dom"
 
 export default function DiwaliSale() {
   return (
@@ -48,7 +49,7 @@ export default function DiwaliSale() {
           </div>
           <div>
             <div className="row row-gap-3 row-gap-sm-4">
-              <div className="col-12 col-xxl-6">
+              <div className="col-12 col-xxl-6">z
                 <div
                   className="diwaliSaleCard card p-1 flex-row justify-content-around"
                   style={{
@@ -73,9 +74,12 @@ export default function DiwaliSale() {
                         alt=""
                       />
                     </div>
-                    <button className="diwaliSaleCheckBtn btn btn-outline-primary rounded-pill">
+                    <Link
+                      to={`/saleProducts/Saree`}
+                      className="diwaliSaleCheckBtn btn btn-outline-primary rounded-pill"
+                    >
                       Check
-                    </button>
+                    </Link>
                   </div>
                   <img src={saree1} className="img-fluid h-100" alt="" />
                 </div>
@@ -105,9 +109,12 @@ export default function DiwaliSale() {
                         alt=""
                       />
                     </div>
-                    <button className="diwaliSaleCheckBtn diwaliSaleCheckBtn2 btn btn-outline-info rounded-pill">
+                    <Link
+                      to={`/saleProducts/Suit Pant`}
+                      className="diwaliSaleCheckBtn diwaliSaleCheckBtn2 btn btn-outline-info rounded-pill"
+                    >
                       Check
-                    </button>
+                    </Link>
                   </div>
                   <img src={menWearCoat2} className="img-fluid h-100" alt="" />
                 </div>
@@ -137,9 +144,12 @@ export default function DiwaliSale() {
                         alt=""
                       />
                     </div>
-                    <button className="diwaliSaleCheckBtn diwaliSaleCheckBtn3 btn btn-outline-primary rounded-pill">
+                    <Link
+                      to={`/saleProducts/Lehenga`}
+                      className="diwaliSaleCheckBtn diwaliSaleCheckBtn3 btn btn-outline-primary rounded-pill"
+                    >
                       Check
-                    </button>
+                    </Link>
                   </div>
                   <img
                     src={womenWearLahenga3}
@@ -165,7 +175,7 @@ export default function DiwaliSale() {
                           color: "#48484A",
                         }}
                       >
-                        Shoe
+                        Shoes
                       </span>
                       <img
                         src={offer2}
@@ -173,9 +183,12 @@ export default function DiwaliSale() {
                         alt=""
                       />
                     </div>
-                    <button className="diwaliSaleCheckBtn diwaliSaleCheckBtn4 btn btn-outline-info rounded-pill">
+                    <Link
+                      to={`/saleProducts/Shoes`}
+                      className="diwaliSaleCheckBtn diwaliSaleCheckBtn4 btn btn-outline-info rounded-pill"
+                    >
                       Check
-                    </button>
+                    </Link>
                   </div>
                   <img src={shoe1} className="img-fluid h-100" alt="" />
                 </div>
@@ -205,9 +218,12 @@ export default function DiwaliSale() {
                         alt=""
                       />
                     </div>
-                    <button className="diwaliSaleCheckBtn diwaliSaleCheckBtn5 btn btn-outline-primary rounded-pill">
+                    <Link
+                      to={`/saleProducts/Panjabi`}
+                      className="diwaliSaleCheckBtn diwaliSaleCheckBtn5 btn btn-outline-primary rounded-pill"
+                    >
                       Check
-                    </button>
+                    </Link>
                   </div>
                   <img
                     src={menWearPanjabi1}
@@ -241,9 +257,12 @@ export default function DiwaliSale() {
                         alt=""
                       />
                     </div>
-                    <button className="diwaliSaleCheckBtn diwaliSaleCheckBtn6 btn btn-outline-info rounded-pill">
+                    <Link
+                      to={`/saleProducts/Jeans`}
+                      className="diwaliSaleCheckBtn diwaliSaleCheckBtn6 btn btn-outline-info rounded-pill"
+                    >
                       Check
-                    </button>
+                    </Link>
                   </div>
                   <img src={menWearJeans} className="img-fluid h-100" alt="" />
                 </div>
@@ -254,8 +273,7 @@ export default function DiwaliSale() {
         <section
           className="mt-4 mt-md-5 py-4"
           style={{
-            backgroundImage:
-              "radial-gradient(#FEEE02 20%, #F73A0A)",
+            backgroundImage: "radial-gradient(#FEEE02 20%, #F73A0A)",
           }}
         >
           <div className="w-50 d-flex flex-column mx-auto">
@@ -279,7 +297,7 @@ export default function DiwaliSale() {
                 <img
                   src={ghat}
                   className="img-fluid d-block mx-auto w-50 position-relative"
-                  style={{ marginBottom: "-5vw" }}
+                  style={{ marginBottom: "-4.5vw" }}
                   alt=""
                 />
                 <img
@@ -297,12 +315,43 @@ export default function DiwaliSale() {
               </div>
             </div>
           </div>
-          <div className="w-100">
-            <img
-              src={girlHoldDiya1}
-              className="img-fluid d-block ms-auto w-25"
-              alt=""
-            />
+          <div className="d-flex align-items-center">
+            <div
+              className="coupon"
+              style={{ padding: "2vw", minWidth: "140px" }}
+            >
+              <div className="">
+                <label
+                  className="form-label fw-bold text-light lh-1 couponInputLavel"
+                  style={{ fontSize: "2vw" }}
+                >
+                  Save 10%
+                </label>
+              </div>
+              <div className="">
+                <input
+                  type="text"
+                  value="HAPPYDIWALI"
+                  className="form-control fw-bold couponInput"
+                  style={{ minWidth: "140px", maxWidth: "140px" }}
+                ></input>
+              </div>
+              <div className="">
+                <span
+                  className="couponValid form-text fw-bold text-light"
+                  style={{ fontSize: "1vw" }}
+                >
+                  OFFER VALID TILL 30th SEPTEMBER
+                </span>
+              </div>
+            </div>
+            <div className="girlHoldDiya1 w-75">
+              <img
+                src={girlHoldDiya1}
+                className="img-fluid d-block ms-auto w-25"
+                alt=""
+              />
+            </div>
           </div>
         </section>
       </main>

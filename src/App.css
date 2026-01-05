@@ -252,6 +252,11 @@
     width: 145px !important;
   }
 }
+@media (min-width: 650px) {
+  .saleProductFirstSection {
+    align-items: center !important;
+  }
+}
 @media (min-width: 768px) {
   .totalBill {
     min-width: 300px !important;
@@ -260,6 +265,9 @@
   }
   .productDescription {
     font-size: 21px !important;
+  }
+  .coupon {
+    width: 25% !important;
   }
 }
 @media (min-width: 800px) {
@@ -593,6 +601,19 @@
     padding-block: 3px !important;
     padding-inline: 6px !important;
   }
+  .girlHoldDiya1 {
+    display: none !important;
+  }
+  .coupon {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-top: 20px !important;
+  }
+  .couponValid {
+    font-size: 2vw !important;
+  }
 }
 @media (max-width: 650px) {
   .diwaliOfferOnSuit {
@@ -605,6 +626,20 @@
   }
   .diwaliOfferInSuitCard {
     font-size: 15px !important;
+  }
+  .coupon {
+    flex-direction: column !important;
+    gap: 0px !important;
+  }
+  .couponInputLavel {
+    font-size: 3vw !important;
+  }
+  .couponValid {
+    font-size: 3vw !important;
+  }
+  .saleProductFirstSection {
+    flex-direction: column !important;
+    align-items: flex-start !important;
   }
 }
 @media (max-width: 575px) {

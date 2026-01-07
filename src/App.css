@@ -251,6 +251,15 @@
   .diwaliSaleCheckBtn {
     width: 145px !important;
   }
+  .couponSection {
+    gap: 25px !important;
+  }
+  .couponSectionInput {
+    width: 50% !important;
+  }
+  .couponSectionLabel {
+    width: 50% !important;
+  }
 }
 @media (min-width: 650px) {
   .saleProductFirstSection {
@@ -356,9 +365,6 @@
   .productsInCurt {
     min-width: 485px !important;
   }
-  .imageOnProductCurt {
-    min-width: 200px !important;
-  }
   .cartContainer {
     gap: 50px;
   }
@@ -438,6 +444,13 @@
   .diwaliSaleCheckBtn {
     width: 250px !important;
   }
+  .productCardInCart {
+    height: 370px !important;
+  }
+  .imageOnProductCurt {
+    max-width: 200px !important;
+    min-width: 200px !important;
+  }
 }
 @media (min-width: 1200px) {
   .totalBill {
@@ -457,6 +470,13 @@
   }
   .diwaliSaleCheckBtn {
     width: 300px !important;
+  }
+  .productCardInCart {
+    height: 350px !important;
+  }
+  .imageOnProductCurt {
+    max-width: 250px !important;
+    min-width: 250px !important;
   }
 }
 @media (min-width: 1400px) {
@@ -534,7 +554,7 @@
 }
 @media (max-width: 991px) {
   .imageOnProductCurt {
-    height: 300px !important;
+    height: 350px !important;
   }
   .productCardInCart {
     width: 300px !important;
@@ -614,6 +634,9 @@
   .couponValid {
     font-size: 2vw !important;
   }
+  .imageOnProductCurt {
+    height:400px !important;
+  }
 }
 @media (max-width: 650px) {
   .diwaliOfferOnSuit {
@@ -672,6 +695,10 @@
     padding-inline: 4px !important;
     font-size: 10px !important;
   }
+  .couponSection {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
 }
 @media (max-width: 499px) {
   .navbarBrand {
@@ -723,6 +750,10 @@
   }
   .diwaliOfferInSuitCard {
     font-size: 12px !important;
+  }
+  .couponInput {
+    font-size: 12px !important;
+    text-align: center !important;
   }
 }
 @media (max-width: 450px) {

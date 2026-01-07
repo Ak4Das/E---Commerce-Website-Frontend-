@@ -23,22 +23,37 @@ export default function PaymentMethods() {
   const [isPaymentMethodSelected, selectPaymentMethod] = useState(false)
 
   const [products, setProducts] = useState(
-    JSON.parse(localStorage.getItem("createOrder")).item
+    JSON.parse(localStorage.getItem("createOrder"))
+      ? JSON.parse(localStorage.getItem("createOrder")).item
+      : []
   )
 
   const [isOrderPlaced, setIsOrderPlaced] = useState(false)
 
-  function placeOrder() {
-    localStorage.setItem("orders", JSON.stringify(orders))
-    setIsOrderPlaced(true)
-  }
+  const [coupon, setCoupon] = useState("")
 
-  const totalOrder = products.reduce((acc, curr) => acc + curr.price, 0)
+  const totalOrder = products.reduce(
+    (acc, curr) =>
+      acc +
+      curr.price -
+      (curr.price / 100) * Number(curr.discount.replace("%", "")),
+    0
+  )
 
   const deliveryCharge = Math.round(
     products.reduce((acc, curr) => acc + curr.deliveryCharge, 0) /
       products.length
   )
+
+  const totalPrice = totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)
+
+  function placeOrder() {
+    orders[orders.length - 1].totalPrice = Math.round(
+      totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)
+    )
+    localStorage.setItem("orders", JSON.stringify(orders))
+    setIsOrderPlaced(true)
+  }
 
   const months = [
     "January",
@@ -152,7 +167,14 @@ export default function PaymentMethods() {
                       <RatingBar rating={product.rating} />
                       <span className="ms-1 fw-medium">{product.rating}</span>
                       <div className="mt-2">
-                        <span className="mt-2 fw-medium">₹{product.price}</span>
+                        <span className="mt-2 fw-medium">
+                          ₹
+                          {Math.round(
+                            product.price -
+                              (product.price / 100) *
+                                Number(product.discount.replace("%", ""))
+                          )}
+                        </span>
                         <span className="ms-2 fw-medium">
                           (-{product.discount})
                         </span>
@@ -621,33 +643,54 @@ export default function PaymentMethods() {
                       <p className="my-0">Cash, UPI and Cards accepted.</p>
                     </div>
                   </div>
-                  <button
-                    className="btn btn-warning rounded-pill mt-4 px-4"
-                    onClick={() => {
-                      const order = {
-                        id: orders.length,
-                        item: products,
-                        address,
-                        paymentMethod,
-                        deliveryCharge,
-                        orderDate: getOrderDate(),
-                        orderTime: setDeliveryTime(),
-                        deliveryDate: setDeliveryDate(),
-                        deliveryDay: getDeliveryDay(),
-                        totalPrice:
-                          totalOrder +
-                          deliveryCharge +
-                          (isCashOnDelivery ? 10 : 0),
-                      }
-                      orders.push(order)
-                      setOrders(orders)
-                      selectPaymentMethod(true)
-                    }}
-                  >
-                    Use this payment method
-                  </button>
+                  {products.length === 0 ? (
+                    <Link
+                      to="/cart"
+                      className="btn btn-warning rounded-pill mt-4 px-4"
+                    >
+                      Use this payment method
+                    </Link>
+                  ) : (
+                    <button
+                      className="btn btn-warning rounded-pill mt-4 px-4"
+                      onClick={() => {
+                        const order = {
+                          id: orders.length,
+                          item: products,
+                          address,
+                          paymentMethod,
+                          deliveryCharge,
+                          orderDate: getOrderDate(),
+                          orderTime: setDeliveryTime(),
+                          deliveryDate: setDeliveryDate(),
+                          deliveryDay: getDeliveryDay(),
+                          totalPrice: Math.round(totalPrice),
+                        }
+                        orders.push(order)
+                        setOrders(orders)
+                        selectPaymentMethod(true)
+                      }}
+                    >
+                      Use this payment method
+                    </button>
+                  )}
                 </div>
               </div>
+            </section>
+          )}
+          {isPaymentMethodSelected && (
+            <section className="bg-light mt-4 p-4 d-flex fs-5 align-items-center couponSection">
+              <input
+                type="text"
+                className="form-control couponSectionInput"
+                onChange={(e) => setCoupon(e.target.value)}
+              />
+              <label
+                htmlFor=""
+                className="form-lavel fw-medium text-secondary couponSectionLabel"
+              >
+                Have you any coupon?
+              </label>
             </section>
           )}
           {isPaymentMethodSelected && (
@@ -670,7 +713,9 @@ export default function PaymentMethods() {
 
               <p className="fw-bold my-0 text-center">
                 Order Total: ₹
-                {totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)}
+                {Math.round(
+                  totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)
+                )}
               </p>
             </section>
           )}
@@ -679,7 +724,7 @@ export default function PaymentMethods() {
           <div>
             <p className="my-0 w-50 fw-medium d-inline-block">Items: </p>
             <p className="my-0 w-50 fw-medium d-inline-block text-end">
-              ₹{totalOrder}
+              ₹{Math.round(totalOrder)}
             </p>
           </div>
           <div>
@@ -699,7 +744,7 @@ export default function PaymentMethods() {
           <div>
             <p className="my-0 w-50 fw-medium d-inline-block">Total: </p>
             <p className="my-0 w-50 fw-medium d-inline-block text-end">
-              ₹{totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)}
+              ₹{Math.round(totalPrice)}
             </p>
           </div>
           <div>
@@ -710,13 +755,26 @@ export default function PaymentMethods() {
               ₹0
             </p>
           </div>
+          {coupon === "HAPPYDIWALI" && (
+            <div>
+              <p className="my-0 w-50 fw-medium d-inline-block text-success">
+                Sale:
+              </p>
+              <p className="my-0 w-50 fw-medium d-inline-block text-end text-success">
+                ₹{Math.round(coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)}
+              </p>
+            </div>
+          )}
           <hr />
           <div>
             <p className="my-0 w-50 fw-medium d-inline-block fs-5">
               Order Total:
             </p>
             <p className="my-0 w-50 fw-medium d-inline-block fs-5 text-end">
-              ₹{totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)}
+              ₹
+              {Math.round(
+                totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)
+              )}
             </p>
           </div>
         </section>

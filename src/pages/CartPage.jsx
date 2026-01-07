@@ -29,11 +29,38 @@ export default function CartPage() {
     (product) => product.addToCart === true
   )
 
+  const createOrderInDatabase = JSON.parse(localStorage.getItem("createOrder"))
+  if (!createOrderInDatabase) {
+    const createOrder = { item: [] }
+    localStorage.setItem("createOrder", JSON.stringify(createOrder))
+  }
+
+  function newProduct(product) {
+    product.quantity = 1
+    return product
+  }
+
   if (isUpdated) {
-    const createOrder = { item: productsInCart }
+    const finalProductsInCart = productsInCart.map((product) =>
+      product.quantity ? product : newProduct(product)
+    )
+    const createOrder = { item: finalProductsInCart }
     localStorage.setItem("createOrder", JSON.stringify(createOrder))
     setUpdated(false)
   }
+
+  const totalOrder = productsInCart.reduce(
+    (acc, curr) =>
+      acc +
+      curr.price -
+      (curr.price / 100) * Number(curr.discount.replace("%", "")),
+    0
+  )
+
+  const deliveryCharge = Math.round(
+    productsInCart.reduce((acc, curr) => acc + curr.deliveryCharge, 0) /
+      productsInCart.length
+  )
 
   return (
     <>
@@ -64,9 +91,10 @@ export default function CartPage() {
                               <span className="fw-bold fs-5">
                                 ₹
                                 {(
+                                  product.price -
                                   (product.price *
                                     Number(product.discount.replace("%", ""))) /
-                                  100
+                                    100
                                 ).toFixed(1)}
                               </span>
                               <span className="text-decoration-line-through ms-2">
@@ -207,28 +235,29 @@ export default function CartPage() {
               <div>
                 <div className="my-3">
                   <p className="d-inline-block w-50 m-0">Price</p>
-                  <p className="d-inline-block w-50 text-end m-0">₹3000</p>
-                </div>
-                <div className="my-3">
-                  <p className="d-inline-block w-50 m-0">Discount</p>
-                  <p className="d-inline-block w-50 text-end m-0">- ₹1000</p>
+                  <p className="d-inline-block w-50 text-end m-0">
+                    ₹{Math.round(totalOrder)}
+                  </p>
                 </div>
                 <div className="my-3">
                   <p className="d-inline-block w-50 m-0">Delivery Charges</p>
-                  <p className="d-inline-block w-50 text-end m-0">₹30</p>
+                  <p className="d-inline-block w-50 text-end m-0">
+                    ₹{Math.round(deliveryCharge)}
+                  </p>
                 </div>
               </div>
               <hr />
               <div>
                 <p className="d-inline-block w-50 m-0">Total Amount</p>
-                <p className="d-inline-block w-50 text-end m-0">₹2030</p>
+                <p className="d-inline-block w-50 text-end m-0">
+                  ₹{Math.round(totalOrder + deliveryCharge)}
+                </p>
               </div>
-              <hr />
-              <p className="my-3">We will save ₹1000 on this order</p>
-              {!(
-                productsInCart.filter((product) => product.size).length <
-                productsInCart.length
-              ) ? (
+              <br />
+              {productsInCart.filter((product) => product.size).length ===
+                productsInCart.length &&
+              JSON.parse(localStorage.getItem("createOrder")).item.length !==
+                0 ? (
                 <Link to="/paymentMethods" className="btn btn-primary w-100">
                   Place Order
                 </Link>

@@ -3,15 +3,13 @@ import Header from "../components/Header"
 import RatingBar from "../components/RatingBar"
 import { useState } from "react"
 
-const orders = JSON.parse(localStorage.getItem("orders"))
-console.log(orders)
-
-const user = JSON.parse(localStorage.getItem("user"))
-console.log(user)
-
 export default function YourOrders() {
   const [isClicked, setClicked] = useState(false)
-  console.log(isClicked)
+
+  const orders = JSON.parse(localStorage.getItem("orders"))
+
+  const user = JSON.parse(localStorage.getItem("user"))
+
   return (
     <>
       <Header />

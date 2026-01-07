@@ -49,7 +49,7 @@ export default function DiwaliSale() {
           </div>
           <div>
             <div className="row row-gap-3 row-gap-sm-4">
-              <div className="col-12 col-xxl-6">z
+              <div className="col-12 col-xxl-6">
                 <div
                   className="diwaliSaleCard card p-1 flex-row justify-content-around"
                   style={{
@@ -341,7 +341,7 @@ export default function DiwaliSale() {
                   className="couponValid form-text fw-bold text-light"
                   style={{ fontSize: "1vw" }}
                 >
-                  OFFER VALID TILL 30th SEPTEMBER
+                  OFFER VALID TILL 30th NOVEMBER
                 </span>
               </div>
             </div>

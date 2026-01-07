@@ -156,7 +156,7 @@ export default function ProductListingPage() {
                             (product.price *
                               Number(product.discount.replace("%", ""))) /
                               100
-                          ).toFixed(1)}{" "}
+                          ).toFixed(1)}
                           (-{product.discount})
                         </p>
                         <small

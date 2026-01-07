@@ -4,7 +4,7 @@ import GetClothsData from "../components/GetClothsData"
 export default function WishlistPage() {
   const { clothsData, setClothsData } = GetClothsData()
 
-  function moveToCart(e){
+  function moveToCart(e) {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
     )
@@ -12,7 +12,7 @@ export default function WishlistPage() {
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
   }
-  function removeFromWishlist(e){
+  function removeFromWishlist(e) {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
     )
@@ -50,9 +50,10 @@ export default function WishlistPage() {
                     <p className="text-center fw-bold">
                       <b>₹</b>
                       {(
+                        product.price -
                         (product.price *
                           Number(product.discount.replace("%", ""))) /
-                        100
+                          100
                       ).toFixed(1)}{" "}
                       ({product.discount} off)
                     </p>

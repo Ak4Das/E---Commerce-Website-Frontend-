@@ -30,6 +30,8 @@ export default function ProductDetailsPage() {
   }
 
   function addToCart(e) {
+    e.preventDefault()
+    e.stopPropagation()
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
     )
@@ -39,6 +41,8 @@ export default function ProductDetailsPage() {
   }
 
   function addToWishlist(e) {
+    e.preventDefault()
+    e.stopPropagation()
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
     )
@@ -286,7 +290,7 @@ export default function ProductDetailsPage() {
               <div>
                 <h5>Description</h5>
                 <ul>
-                  {product.description.map((list,index) => (
+                  {product.description.map((list, index) => (
                     <li key={index}>{list}</li>
                   ))}
                 </ul>
@@ -302,7 +306,10 @@ export default function ProductDetailsPage() {
             <h3 className="my-3">More items you may like in apparel</h3>
             <div className="row row-gap-3">
               {product.similarProducts.map((product) => (
-                <div key={product.id} className="col-md-4 col-sm-6 col-lg-3 col-xxl-2 py-2 bg-body-tertiary cardContainer">
+                <div
+                  key={product.id}
+                  className="col-md-4 col-sm-6 col-lg-3 col-xxl-2 py-2 bg-body-tertiary cardContainer"
+                >
                   <Link
                     className="text-decoration-none"
                     to={`/productDetails/${product.id}`}

@@ -478,6 +478,9 @@
     max-width: 250px !important;
     min-width: 250px !important;
   }
+  .productNameOnCartPage {
+    height: 50px !important;
+  }
 }
 @media (min-width: 1400px) {
   .productDetailsImage {
@@ -550,6 +553,11 @@
   }
   .menWearShoe {
     display: none !important;
+  }
+}
+@media (max-width: 1199px) {
+  .productNameOnCartPage {
+    height: 75px !important;
   }
 }
 @media (max-width: 991px) {

@@ -80,9 +80,9 @@ export default function CartPage() {
                           alt=""
                           className="imageOnProductCurt"
                         />
-                        <div className="card-body d-flex flex-column justify-content-between pt-0 pt-lg-3">
+                        <div className="card-body d-flex flex-column justify-content-between pt-0 pt-lg-2">
                           <div>
-                            <p className="lh-sm fs-5 fw-bold m-0 mb-2">
+                            <p className="lh-sm fs-5 fw-bold m-0 mb-2 productNameOnCartPage overflow-hidden">
                               {product.name.length > 61
                                 ? product.name.slice(0, 60).concat("...")
                                 : product.name}

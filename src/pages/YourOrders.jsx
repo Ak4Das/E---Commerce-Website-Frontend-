@@ -14,9 +14,9 @@ export default function YourOrders() {
     <>
       <Header />
       <main className="container mt-3">
+        <h1>Your Orders</h1>
         {orders.map((order) => (
           <div key={order.id}>
-            <h1>Your Orders</h1>
             <div className="ms-auto d-md-none fw-medium">
               <div style={{ fontSize: "13px" }}>
                 <span>ORDER </span>
@@ -139,8 +139,11 @@ export default function YourOrders() {
                           </p>
                           <RatingBar rating={product.rating} />
                           <span> {product.rating}</span>
-                          <p>
+                          <p className="mt-0 mb-1">
                             <b>Price:</b> ₹{product.price}
+                          </p>
+                          <p className="my-0 text-secondary fs-6 fw-medium">
+                            {product.discount} off
                           </p>
                         </div>
                       </div>

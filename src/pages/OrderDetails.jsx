@@ -8,7 +8,13 @@ export default function OrderDetails() {
 
   const order = orders.find((order) => order.id === id)
 
-  const totalOrder = order.item.reduce((acc, curr) => acc + curr.price, 0)
+  const totalOrder = order.item.reduce(
+    (acc, curr) =>
+      acc +
+      curr.price -
+      (curr.price / 100) * Number(curr.discount.replace("%", "")),
+    0
+  )
 
   const deliveryCharge = Math.round(
     order.item.reduce((acc, curr) => acc + curr.deliveryCharge, 0) /
@@ -61,7 +67,7 @@ export default function OrderDetails() {
                     Item(s) Subtotal:{" "}
                   </p>
                   <p className="my-0 w-25 fw-medium d-inline-block text-end">
-                    ₹{totalOrder}
+                    ₹{Math.round(totalOrder)}
                   </p>
                 </div>
                 <div>
@@ -72,7 +78,7 @@ export default function OrderDetails() {
                     ₹{deliveryCharge}
                   </p>
                 </div>
-                {cashOnDeliveryCharge? (
+                {cashOnDeliveryCharge ? (
                   <div>
                     <p className="my-0 w-75 fw-medium d-inline-block">
                       Cash On Delivery Charge:{" "}
@@ -81,11 +87,16 @@ export default function OrderDetails() {
                       ₹{cashOnDeliveryCharge}
                     </p>
                   </div>
-                ):""}
+                ) : (
+                  ""
+                )}
                 <div>
                   <p className="my-0 w-75 fw-medium d-inline-block">Total: </p>
                   <p className="my-0 w-25 fw-medium d-inline-block text-end">
-                    ₹{totalOrder + deliveryCharge + cashOnDeliveryCharge}
+                    ₹
+                    {Math.round(
+                      totalOrder + deliveryCharge + cashOnDeliveryCharge
+                    )}
                   </p>
                 </div>
                 <div>
@@ -97,18 +108,28 @@ export default function OrderDetails() {
                   </p>
                 </div>
                 <div>
+                  <p className="my-0 w-50 fw-medium d-inline-block text-success">
+                    Sale:
+                  </p>
+                  <p className="my-0 w-50 fw-medium d-inline-block text-end text-success">
+                    -{order.sale ? order.sale : "0%"}
+                  </p>
+                </div>
+                <div>
                   <p className="my-0 w-75 fw-medium d-inline-block">
                     Order Total:
                   </p>
                   <p className="my-0 w-25 fw-medium d-inline-block text-end">
-                    ₹{totalOrder + deliveryCharge + cashOnDeliveryCharge}
+                    ₹{Math.round(order.totalPrice)}
                   </p>
                 </div>
               </div>
             </div>
           </div>
           <div className="border border-secondary-subtle rounded bg-white p-3 mt-3">
-            <p className="my-0 fs-5 fw-bold text-success">Arriving {order.deliveryDay}</p>
+            <p className="my-0 fs-5 fw-bold text-success">
+              Arriving {order.deliveryDay}
+            </p>
             <div className="d-flex flex-column flex-md-row justify-content-between gap-3 mt-3">
               <div className="d-flex flex-column gap-4">
                 {order.item.map((product) => (
@@ -130,8 +151,11 @@ export default function OrderDetails() {
                       </p>
                       <RatingBar rating={product.rating} />
                       <span> {product.rating}</span>
-                      <p>
+                      <p className="mt-0 mb-1">
                         <b>Price:</b> ₹{product.price}
+                      </p>
+                      <p className="my-0 text-secondary fs-6 fw-medium">
+                        {product.discount} off
                       </p>
                     </div>
                   </div>

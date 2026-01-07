@@ -15,6 +15,8 @@ export default function ProductListingPage() {
   const [Category, setCategory] = useState("")
 
   function addToCart(e) {
+    e.preventDefault()
+    e.stopPropagation()
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
     )
@@ -25,6 +27,8 @@ export default function ProductListingPage() {
   }
 
   function addToWishlist(e) {
+    e.preventDefault()
+    e.stopPropagation()
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value)
     )
@@ -133,7 +137,9 @@ export default function ProductListingPage() {
                     <div className="card-body d-flex flex-column justify-content-between">
                       <p id="name" className="my-0 lh-sm listProductName">
                         {product.newArrival === true && (
-                          <span className="badge text-bg-success me-1">New</span>
+                          <span className="badge text-bg-success me-1">
+                            New
+                          </span>
                         )}
                         {product.name.length > 61
                           ? product.name.slice(0, 60).concat("...")

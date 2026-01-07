@@ -31,15 +31,15 @@ export default function WishlistPage() {
       <main className="bg-body-secondary pb-3">
         <div className="container">
           <h3 className="py-3 text-center">My Wishlist</h3>
-          <div className="row">
+          <div className="row row-gap-4">
             {wishlistProducts.map((product) => (
-              <div className="col-sm-6 col-md-4 col-xl-3 col-xxl-2 cardContainer">
+              <div className="col-sm-6 col-md-4 col-xl-3 col-xxl-3 cardContainer">
                 <div className="card  border border-0">
                   <img
                     src={product.url}
                     alt=""
                     className="img-fluid"
-                    style={{ height: "250px" }}
+                    style={{ height: "300px" }}
                   />
                   <div className="card-body">
                     <p className="text-center">

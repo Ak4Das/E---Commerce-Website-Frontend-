@@ -358,6 +358,14 @@
     width: 200px !important;
   }
 }
+@media (min-width: 900px) {
+  .newArrivalCardTitle {
+    height: 72px !important;
+  }
+  .diwaliSaleCardTitle {
+    height: 72px !important;
+  }
+}
 @media (min-width: 992px) {
   .totalBill {
     min-width: 400px !important;
@@ -450,6 +458,12 @@
   .imageOnProductCurt {
     max-width: 200px !important;
     min-width: 200px !important;
+  }
+  .newArrivalCardTitle {
+    height: auto !important;
+  }
+  .diwaliSaleCardTitle {
+    height: auto !important;
   }
 }
 @media (min-width: 1200px) {

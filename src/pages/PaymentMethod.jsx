@@ -48,13 +48,14 @@ export default function PaymentMethods() {
   const totalPrice = totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)
 
   function placeOrder() {
-    if(coupon === "HAPPYDIWALI") {
+    if (coupon === "HAPPYDIWALI") {
       orders[orders.length - 1].sale = "10%"
     }
     orders[orders.length - 1].totalPrice = Math.round(
       totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)
     )
     localStorage.setItem("orders", JSON.stringify(orders))
+    localStorage.setItem("createOrder", JSON.stringify({ item: [] }))
     setIsOrderPlaced(true)
   }
 

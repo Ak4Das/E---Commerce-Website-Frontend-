@@ -20,7 +20,7 @@ export default function YourOrders() {
             <div className="ms-auto d-md-none fw-medium">
               <div style={{ fontSize: "13px" }}>
                 <span>ORDER </span>
-                <span># {order.id}</span>
+                <span>#{order.id}</span>
               </div>
               <Link
                 to="/orderDetails"

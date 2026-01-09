@@ -149,8 +149,12 @@ export default function App() {
             class="alert alert-success alert-dismissible fade show mt-3"
             role="alert"
           >
-            <p className="my-0 d-inline-block fs-5 fw-medium"><b className="fw-bold">Diwali Sale</b> is now live.</p>
-            <a href="#carousel" className="text-decoration-none fw-medium ms-4">Click Here</a>
+            <p className="my-0 d-inline-block fs-5 fw-medium">
+              <b className="fw-bold">Diwali Sale</b> is now live.
+            </p>
+            <a href="#carousel" className="text-decoration-none fw-medium ms-4">
+              Click Here
+            </a>
             <button
               type="button"
               class="btn-close"
@@ -586,7 +590,10 @@ export default function App() {
               </div>
             </div>
             <div className="row">
-              <Link to="/newArrival" className="col-md-6 my-3 text-decoration-none">
+              <Link
+                to="/newArrival"
+                className="col-md-6 my-3 text-decoration-none"
+              >
                 <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
                   <img
                     src="https://tse1.mm.bing.net/th/id/OIP.jngCe7THF9RyUMqBs3Lw6gHaDt?pid=Api&P=0&h=180"
@@ -598,7 +605,9 @@ export default function App() {
                     <p className="fw-bold mt-2">New Arrival</p>
                     <div style={{ minWidth: "225px" }} className="description">
                       <h3>New Collection</h3>
-                      <p className="m-0">
+                      <p
+                        className="m-0 newArrivalCardTitle"
+                      >
                         Checkout our new collection to live your diwali with
                         style. hurry up don't miss this chance.
                       </p>
@@ -606,7 +615,10 @@ export default function App() {
                   </div>
                 </div>
               </Link>
-              <Link to="/diwaliSale" className="col-md-6 my-3 text-decoration-none">
+              <Link
+                to="/diwaliSale"
+                className="col-md-6 my-3 text-decoration-none"
+              >
                 <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
                   <img
                     src="https://tse3.mm.bing.net/th/id/OIP.DZhMFCN8KQJup5G70IemgAHaDt?pid=Api&P=0&h=180"
@@ -618,7 +630,9 @@ export default function App() {
                     <p className="fw-bold mt-2">Diwali Sale</p>
                     <div style={{ minWidth: "225px" }} className="description">
                       <h3>Upto 50% off</h3>
-                      <p className="m-0">
+                      <p
+                        className="m-0 diwaliSaleCardTitle"
+                      >
                         Diwali sale is launch now, sale is live till 31st
                         November, go and make your diwali stylish.
                       </p>

@@ -141,6 +141,11 @@ export default function ProductListingPage() {
                             New
                           </span>
                         )}
+                        {Number(product.offer.replace("%", "")) && (
+                          <span className="badge text-bg-warning me-1">
+                            Diwali Offer
+                          </span>
+                        )}
                         {product.name.length > 61
                           ? product.name.slice(0, 60).concat("...")
                           : product.name}
@@ -157,13 +162,23 @@ export default function ProductListingPage() {
                       <div>
                         <p id="discount" className="my-0">
                           <b>₹</b>
-                          {(
-                            product.price -
-                            (product.price *
-                              Number(product.discount.replace("%", ""))) /
-                              100
-                          ).toFixed(1)}
-                          (-{product.discount})
+                          {Math.round(
+                            (
+                              product.price -
+                              (product.price *
+                                (Number(product.offer.replace("%", ""))
+                                  ? Number(product.offer.replace("%", ""))
+                                  : Number(
+                                      product.discount.replace("%", "")
+                                    ))) /
+                                100
+                            ).toFixed(1)
+                          )}
+                          (-
+                          {Number(product.offer.replace("%", ""))
+                            ? product.offer
+                            : product.discount}
+                          )
                         </p>
                         <small
                           id="M.R.P."

@@ -36,7 +36,10 @@ export default function PaymentMethods() {
     (acc, curr) =>
       acc +
       curr.price -
-      (curr.price / 100) * Number(curr.discount.replace("%", "")),
+      (curr.price / 100) *
+        (Number(curr.offer.replace("%", ""))
+          ? Number(curr.offer.replace("%", ""))
+          : Number(curr.discount.replace("%", ""))),
     0
   )
 
@@ -167,7 +170,19 @@ export default function PaymentMethods() {
                       className="productImageInPaymentMethodPage"
                     />
                     <div className="p-2">
-                      <p className="fw-medium my-0">{product.name}</p>
+                      <p className="fw-medium my-0">
+                        {product.newArrival === true && (
+                          <span className="badge text-bg-success me-1">
+                            New
+                          </span>
+                        )}
+                        {Number(product.offer.replace("%", "")) && (
+                          <span className="badge text-bg-warning me-1">
+                            Diwali Offer
+                          </span>
+                        )}
+                        {product.name}
+                      </p>
                       <RatingBar rating={product.rating} />
                       <span className="ms-1 fw-medium">{product.rating}</span>
                       <div className="mt-2">
@@ -175,12 +190,21 @@ export default function PaymentMethods() {
                           ₹
                           {Math.round(
                             product.price -
-                              (product.price / 100) *
-                                Number(product.discount.replace("%", ""))
+                              (product.price *
+                                (Number(product.offer.replace("%", ""))
+                                  ? Number(product.offer.replace("%", ""))
+                                  : Number(
+                                      product.discount.replace("%", "")
+                                    ))) /
+                                100
                           )}
                         </span>
                         <span className="ms-2 fw-medium">
-                          (-{product.discount})
+                          (-
+                          {Number(product.offer.replace("%", ""))
+                            ? product.offer
+                            : product.discount}
+                          )
                         </span>
                       </div>
                       <div

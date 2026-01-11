@@ -75,7 +75,10 @@ export default function CartPage() {
       (acc, curr) =>
         acc +
         curr.price -
-        (curr.price / 100) * Number(curr.discount.replace("%", "")),
+        (curr.price / 100) *
+          (Number(curr.offer.replace("%", ""))
+            ? Number(curr.offer.replace("%", ""))
+            : Number(curr.discount.replace("%", ""))),
       0
     )
 
@@ -115,21 +118,28 @@ export default function CartPage() {
                               <div>
                                 <span className="fw-bold fs-5">
                                   ₹
-                                  {(
+                                  {Math.round(
                                     product.price -
-                                    (product.price *
-                                      Number(
-                                        product.discount.replace("%", "")
-                                      )) /
-                                      100
-                                  ).toFixed(1)}
+                                      (product.price *
+                                        (Number(product.offer.replace("%", ""))
+                                          ? Number(
+                                              product.offer.replace("%", "")
+                                            )
+                                          : Number(
+                                              product.discount.replace("%", "")
+                                            ))) /
+                                        100
+                                  )}
                                 </span>
                                 <span className="text-decoration-line-through ms-2">
                                   ₹{product.price}
                                 </span>
                               </div>
                               <p className="fw-bold fs-5 text-body-tertiary">
-                                {product.discount} off
+                                {Number(product.offer.replace("%", ""))
+                                  ? product.offer
+                                  : product.discount}{" "}
+                                off
                               </p>
                               <div className="mb-3">
                                 <span className="fw-bold me-2">Quantity: </span>

@@ -43,19 +43,33 @@ export default function WishlistPage() {
                   />
                   <div className="card-body">
                     <p className="text-center">
+                      {product.newArrival === true && (
+                        <span className="badge text-bg-success me-1">New</span>
+                      )}
+                      {Number(product.offer.replace("%", "")) && (
+                        <span className="badge text-bg-warning me-1">
+                          Diwali Offer
+                        </span>
+                      )}
                       {product.name.length > 41
                         ? product.name.slice(0, 40).concat("...")
                         : product.name}
                     </p>
                     <p className="text-center fw-bold">
                       <b>₹</b>
-                      {(
+                      {Math.round(
                         product.price -
-                        (product.price *
-                          Number(product.discount.replace("%", ""))) /
-                          100
-                      ).toFixed(1)}{" "}
-                      ({product.discount} off)
+                          (product.price *
+                            (Number(product.offer.replace("%", ""))
+                              ? Number(product.offer.replace("%", ""))
+                              : Number(product.discount.replace("%", "")))) /
+                            100
+                      )}{" "}
+                      (
+                      {Number(product.offer.replace("%", ""))
+                        ? product.offer
+                        : product.discount}{" "}
+                      off)
                     </p>
                     <button
                       className="btn btn-secondary w-100 my-2"

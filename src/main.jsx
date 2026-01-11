@@ -18,6 +18,7 @@ import OrderDetails from "./pages/OrderDetails.jsx"
 import NewArrival from "./pages/NewArrival.jsx"
 import DiwaliSale from "./pages/DiwaliSale.jsx"
 import SaleProducts from "./pages/SaleProducts.jsx"
+import EditYourOrder from "./pages/EditYourOrder.jsx"
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
   { path: "/newArrival", element: <NewArrival /> },
   { path: "/diwaliSale", element: <DiwaliSale /> },
   { path: "/saleProducts/:commonCategory", element: <SaleProducts /> },
+  { path: "/editOrder/:orderId", element: <EditYourOrder /> },
 ])
 
 import ClothsContextProvider from "./contexts/ClothsContextProvider.jsx"

@@ -5,10 +5,21 @@ import { useState } from "react"
 
 export default function YourOrders() {
   const [isClicked, setClicked] = useState(false)
+  const [isUpdated, setUpdated] = useState(false)
 
   const orders = JSON.parse(localStorage.getItem("orders"))
 
   const user = JSON.parse(localStorage.getItem("user"))
+
+  function cancelOrder(id) {
+    const Orders = orders.filter((order) => order.id !== id)
+    localStorage.setItem("orders", JSON.stringify(Orders))
+    setUpdated(true)
+  }
+
+  if (isUpdated) {
+    setUpdated(false)
+  }
 
   return (
     <>
@@ -129,10 +140,24 @@ export default function YourOrders() {
                           src={product.url}
                           alt=""
                           className="img-fluid"
-                          style={{ minWidth: "135px", maxWidth: "135px" }}
+                          style={{
+                            minWidth: "135px",
+                            maxWidth: "135px",
+                            height: "200px",
+                          }}
                         />
                         <div>
                           <p className="my-0 fw-medium">
+                            {product.newArrival === true && (
+                              <span className="badge text-bg-success me-1">
+                                New
+                              </span>
+                            )}
+                            {Number(product.offer.replace("%", "")) && (
+                              <span className="badge text-bg-warning me-1">
+                                Diwali Offer
+                              </span>
+                            )}
                             {product.name.length > 61
                               ? product.name.slice(0, 60).concat("...")
                               : product.name}
@@ -140,10 +165,23 @@ export default function YourOrders() {
                           <RatingBar rating={product.rating} />
                           <span> {product.rating}</span>
                           <p className="mt-0 mb-1">
-                            <b>Price:</b> ₹{product.price}
+                            <b>Price:</b> ₹
+                            {Math.round(
+                              product.price -
+                                (product.price *
+                                  (Number(product.offer.replace("%", ""))
+                                    ? Number(product.offer.replace("%", ""))
+                                    : Number(
+                                        product.discount.replace("%", "")
+                                      ))) /
+                                  100
+                            )}
                           </p>
                           <p className="my-0 text-secondary fs-6 fw-medium">
-                            {product.discount} off
+                            {Number(product.offer.replace("%", ""))
+                              ? product.offer
+                              : product.discount}{" "}
+                            off
                           </p>
                         </div>
                       </div>
@@ -153,10 +191,16 @@ export default function YourOrders() {
                     className="d-flex flex-column gap-2"
                     style={{ minWidth: "200px" }}
                   >
-                    <button className="btn btn-warning rounded-pill">
+                    <Link
+                      to={`/editOrder/${order.id}`}
+                      className="btn btn-warning rounded-pill"
+                    >
                       View or edit order
-                    </button>
-                    <button className="btn btn-outline-danger rounded-pill">
+                    </Link>
+                    <button
+                      className="btn btn-outline-danger rounded-pill"
+                      onClick={() => cancelOrder(order.id)}
+                    >
                       Cancel Order
                     </button>
                   </div>

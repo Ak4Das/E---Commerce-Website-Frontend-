@@ -57,6 +57,9 @@ export default function ProductDetailsPage() {
     if (quantity > 1) {
       product.quantity = quantity
     }
+    if (quantity === 1) {
+      product.quantity = 1
+    }
     if (size) {
       product.size = size
     }
@@ -119,6 +122,14 @@ export default function ProductDetailsPage() {
             <div className="me-sm-5">
               <small className="text-primary">{product.soldBy}</small>
               <p className="fw-bold lh-sm productDescription mb-1">
+                {product.newArrival === true && (
+                  <span className="badge text-bg-success me-1">New</span>
+                )}
+                {Number(product.offer.replace("%", "")) && (
+                  <span className="badge text-bg-warning me-1">
+                    Diwali Offer
+                  </span>
+                )}
                 {product.name}
               </p>
               <RatingBar rating={product.rating} />
@@ -126,19 +137,26 @@ export default function ProductDetailsPage() {
               <div>
                 <span className="fw-bold fs-5">
                   ₹
-                  {(
-                    product.price -
-                    (product.price *
-                      Number(product.discount.replace("%", ""))) /
-                      100
-                  ).toFixed(1)}
+                  {Math.round(
+                    (
+                      product.price -
+                      (product.price *
+                        (Number(product.offer.replace("%", ""))
+                          ? Number(product.offer.replace("%", ""))
+                          : Number(product.discount.replace("%", "")))) /
+                        100
+                    ).toFixed(1)
+                  )}
                 </span>
                 <span className="text-decoration-line-through ms-2">
                   ₹{product.price}
                 </span>
               </div>
               <p className="fw-bold fs-5 text-body-tertiary">
-                {product.discount} off
+                {Number(product.offer.replace("%", ""))
+                  ? product.offer
+                  : product.discount}{" "}
+                off
               </p>
               <div className="mb-3">
                 <span className="fw-bold me-2">Quantity: </span>

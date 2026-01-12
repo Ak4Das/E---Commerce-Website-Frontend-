@@ -27,6 +27,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "11%",
+          offer: "0%",
         },
         {
           id: 3,
@@ -35,6 +36,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "16%",
+          offer: "41%",
         },
         {
           id: 4,
@@ -43,6 +45,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.1,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 5,
@@ -51,6 +54,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 9999,
           rating: 3.8,
           discount: "15%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -85,6 +89,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "16%",
+          offer: "41%",
         },
         {
           id: 4,
@@ -93,6 +98,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.1,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 5,
@@ -101,6 +107,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 9999,
           rating: 3.8,
           discount: "15%",
+          offer: "0%",
         },
         {
           id: 6,
@@ -109,6 +116,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5399,
           rating: 3.9,
           discount: "12%",
+          offer: "42%",
         },
       ],
       soldBy: "Brand: RENVAANI FASHION",
@@ -139,6 +147,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.1,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 5,
@@ -147,6 +156,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 9999,
           rating: 3.8,
           discount: "15%",
+          offer: "0%",
         },
         {
           id: 6,
@@ -155,6 +165,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5399,
           rating: 3.9,
           discount: "12%",
+          offer: "42%",
         },
         {
           id: 7,
@@ -163,6 +174,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4599,
           rating: 3.7,
           discount: "17%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the TILKI Store",
@@ -194,6 +206,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 9999,
           rating: 3.8,
           discount: "15%",
+          offer: "0%",
         },
         {
           id: 6,
@@ -202,6 +215,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5399,
           rating: 3.9,
           discount: "12%",
+          offer: "42%",
         },
         {
           id: 7,
@@ -210,6 +224,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4599,
           rating: 3.7,
           discount: "17%",
+          offer: "0%",
         },
         {
           id: 8,
@@ -218,6 +233,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -252,6 +268,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5399,
           rating: 3.9,
           discount: "12%",
+          offer: "42%",
         },
         {
           id: 7,
@@ -260,6 +277,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4599,
           rating: 3.7,
           discount: "17%",
+          offer: "0%",
         },
         {
           id: 8,
@@ -268,6 +286,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 9,
@@ -276,6 +295,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3849,
           rating: 4.2,
           discount: "19%",
+          offer: "43%",
         },
       ],
       soldBy: "Brand: JIHU CULTURE",
@@ -310,6 +330,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4599,
           rating: 3.7,
           discount: "17%",
+          offer: "0%",
         },
         {
           id: 8,
@@ -318,6 +339,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 9,
@@ -326,6 +348,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3849,
           rating: 4.2,
           discount: "19%",
+          offer: "43%",
         },
         {
           id: 10,
@@ -334,6 +357,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3897,
           rating: 4.0,
           discount: "19%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the SHAFNUFAB Store",
@@ -368,6 +392,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 9,
@@ -376,6 +401,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3849,
           rating: 4.2,
           discount: "19%",
+          offer: "43%",
         },
         {
           id: 10,
@@ -384,6 +410,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3897,
           rating: 4.0,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 1,
@@ -392,6 +419,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.0,
           discount: "10%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: KEYURA",
@@ -424,6 +452,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3849,
           rating: 4.2,
           discount: "19%",
+          offer: "43%",
         },
         {
           id: 10,
@@ -432,6 +461,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3897,
           rating: 4.0,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 1,
@@ -440,6 +470,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.0,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 2,
@@ -448,6 +479,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "11%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -480,6 +512,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3897,
           rating: 4.0,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 1,
@@ -488,6 +521,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.0,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 2,
@@ -496,6 +530,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "11%",
+          offer: "0%",
         },
         {
           id: 3,
@@ -504,6 +539,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "16%",
+          offer: "41%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -536,6 +572,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.0,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 2,
@@ -544,6 +581,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "11%",
+          offer: "0%",
         },
         {
           id: 3,
@@ -552,6 +590,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "16%",
+          offer: "41%",
         },
         {
           id: 4,
@@ -560,6 +599,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.1,
           discount: "18%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -594,6 +634,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 12998,
           rating: 3.8,
           discount: "32%",
+          offer: "45%",
         },
         {
           id: 13,
@@ -602,6 +643,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 23999,
           rating: 3.4,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 14,
@@ -610,6 +652,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.2,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 15,
@@ -618,6 +661,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7499,
           rating: 4.2,
           discount: "38%",
+          offer: "42%",
         },
       ],
       soldBy: "Visit the WINTAGE Store",
@@ -652,6 +696,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 23999,
           rating: 3.4,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 14,
@@ -660,6 +705,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.2,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 15,
@@ -668,6 +714,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7499,
           rating: 4.2,
           discount: "38%",
+          offer: "42%",
         },
         {
           id: 16,
@@ -676,6 +723,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Royal Rich",
@@ -710,6 +758,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.2,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 15,
@@ -718,6 +767,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7499,
           rating: 4.2,
           discount: "38%",
+          offer: "42%",
         },
         {
           id: 16,
@@ -726,6 +776,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 17,
@@ -734,6 +785,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.1,
           discount: "31%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the L'MONTE Store",
@@ -768,6 +820,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7499,
           rating: 4.2,
           discount: "38%",
+          offer: "42%",
         },
         {
           id: 16,
@@ -776,6 +829,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 17,
@@ -784,6 +838,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.1,
           discount: "31%",
+          offer: "0%",
         },
         {
           id: 18,
@@ -792,6 +847,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7599,
           rating: 3.5,
           discount: "35%",
+          offer: "44%",
         },
       ],
       soldBy: "Visit the VASTRAMAY Store",
@@ -826,6 +882,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 17,
@@ -834,6 +891,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.1,
           discount: "31%",
+          offer: "0%",
         },
         {
           id: 18,
@@ -842,6 +900,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7599,
           rating: 3.5,
           discount: "35%",
+          offer: "44%",
         },
         {
           id: 19,
@@ -850,6 +909,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6309,
           rating: 4.2,
           discount: "32%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the VASTRAMAY Store",
@@ -883,6 +943,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.1,
           discount: "31%",
+          offer: "0%",
         },
         {
           id: 18,
@@ -891,6 +952,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7599,
           rating: 3.5,
           discount: "35%",
+          offer: "44%",
         },
         {
           id: 19,
@@ -899,6 +961,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6309,
           rating: 4.2,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 20,
@@ -907,6 +970,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6999,
           rating: 4.0,
           discount: "39%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Darbar In Store",
@@ -940,6 +1004,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7599,
           rating: 3.5,
           discount: "35%",
+          offer: "44%",
         },
         {
           id: 19,
@@ -948,6 +1013,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6309,
           rating: 4.2,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 20,
@@ -956,6 +1022,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6999,
           rating: 4.0,
           discount: "39%",
+          offer: "0%",
         },
         {
           id: 11,
@@ -964,6 +1031,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7199,
           rating: 3.6,
           discount: "30%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Peter England Store",
@@ -998,6 +1066,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6309,
           rating: 4.2,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 20,
@@ -1006,6 +1075,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6999,
           rating: 4.0,
           discount: "39%",
+          offer: "0%",
         },
         {
           id: 11,
@@ -1014,6 +1084,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7199,
           rating: 3.6,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 12,
@@ -1022,6 +1093,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 12998,
           rating: 3.8,
           discount: "32%",
+          offer: "45%",
         },
       ],
       soldBy: "Visit the TAHVO Store",
@@ -1056,6 +1128,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6999,
           rating: 4.0,
           discount: "39%",
+          offer: "0%",
         },
         {
           id: 11,
@@ -1064,6 +1137,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7199,
           rating: 3.6,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 12,
@@ -1072,6 +1146,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 12998,
           rating: 3.8,
           discount: "32%",
+          offer: "45%",
         },
         {
           id: 13,
@@ -1080,6 +1155,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 23999,
           rating: 3.4,
           discount: "32%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the WINTAGE Store",
@@ -1115,6 +1191,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7199,
           rating: 3.6,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 12,
@@ -1123,6 +1200,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 12998,
           rating: 3.8,
           discount: "32%",
+          offer: "45%",
         },
         {
           id: 13,
@@ -1131,6 +1209,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 23999,
           rating: 3.4,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 14,
@@ -1139,6 +1218,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.2,
           discount: "30%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -1173,6 +1253,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1996,
           rating: 4.1,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 23,
@@ -1181,6 +1262,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4899,
           rating: 4.2,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 24,
@@ -1189,6 +1271,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1369,
           rating: 4.1,
           discount: "38%",
+          offer: "47%",
         },
         {
           id: 25,
@@ -1197,6 +1280,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7999,
           rating: 4.3,
           discount: "31%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the C J Enterprise Store",
@@ -1231,6 +1315,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4899,
           rating: 4.2,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 24,
@@ -1239,6 +1324,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1369,
           rating: 4.1,
           discount: "38%",
+          offer: "47%",
         },
         {
           id: 25,
@@ -1247,6 +1333,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7999,
           rating: 4.3,
           discount: "31%",
+          offer: "0%",
         },
         {
           id: 26,
@@ -1255,6 +1342,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3519,
           rating: 3.5,
           discount: "37%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the EthnicJunction Store",
@@ -1289,6 +1377,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1369,
           rating: 4.1,
           discount: "38%",
+          offer: "47%",
         },
         {
           id: 25,
@@ -1297,6 +1386,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7999,
           rating: 4.3,
           discount: "31%",
+          offer: "0%",
         },
         {
           id: 26,
@@ -1305,6 +1395,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3519,
           rating: 3.5,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 27,
@@ -1313,6 +1404,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1819,
           rating: 4.2,
           discount: "34%",
+          offer: "47%",
         },
       ],
       soldBy: "Visit the SIRIL Store",
@@ -1347,6 +1439,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 7999,
           rating: 4.3,
           discount: "31%",
+          offer: "0%",
         },
         {
           id: 26,
@@ -1355,6 +1448,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3519,
           rating: 3.5,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 27,
@@ -1363,6 +1457,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1819,
           rating: 4.2,
           discount: "34%",
+          offer: "47%",
         },
         {
           id: 28,
@@ -1371,6 +1466,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1799,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Garden Vareli Store",
@@ -1403,6 +1499,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3519,
           rating: 3.5,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 27,
@@ -1411,6 +1508,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1819,
           rating: 4.2,
           discount: "34%",
+          offer: "47%",
         },
         {
           id: 28,
@@ -1419,6 +1517,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1799,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 29,
@@ -1427,6 +1526,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.7,
           discount: "32%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Glory Sarees Store",
@@ -1462,6 +1562,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1819,
           rating: 4.2,
           discount: "34%",
+          offer: "47%",
         },
         {
           id: 28,
@@ -1470,6 +1571,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1799,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 29,
@@ -1478,6 +1580,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.7,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 30,
@@ -1486,6 +1589,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2276,
           rating: 4.2,
           discount: "79%",
+          offer: "45%",
         },
       ],
       soldBy: "Visit the SIRIL Store",
@@ -1520,6 +1624,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1799,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 29,
@@ -1528,6 +1633,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.7,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 30,
@@ -1536,6 +1642,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2276,
           rating: 4.2,
           discount: "39%",
+          offer: "45%",
         },
         {
           id: 21,
@@ -1544,6 +1651,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "30%",
+          offer: "46%",
         },
       ],
       soldBy: "Visit the SAMAH Store",
@@ -1578,6 +1686,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 3.7,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 30,
@@ -1586,6 +1695,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2276,
           rating: 4.2,
           discount: "39%",
+          offer: "45%",
         },
         {
           id: 21,
@@ -1594,6 +1704,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "30%",
+          offer: "46%",
         },
         {
           id: 22,
@@ -1602,6 +1713,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1996,
           rating: 4.1,
           discount: "36%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Yashika Store",
@@ -1636,6 +1748,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2276,
           rating: 4.2,
           discount: "39%",
+          offer: "45%",
         },
         {
           id: 21,
@@ -1644,6 +1757,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "30%",
+          offer: "46%",
         },
         {
           id: 22,
@@ -1652,6 +1766,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1996,
           rating: 4.1,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 23,
@@ -1660,6 +1775,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4899,
           rating: 4.2,
           discount: "32%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the SGF11 Store",
@@ -1694,6 +1810,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "30%",
+          offer: "46%",
         },
         {
           id: 22,
@@ -1702,6 +1819,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1996,
           rating: 4.1,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 23,
@@ -1710,6 +1828,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4899,
           rating: 4.2,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 24,
@@ -1718,6 +1837,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1369,
           rating: 4.1,
           discount: "38%",
+          offer: "47%",
         },
       ],
       soldBy: "Visit the EthnicJunction Store",
@@ -1751,6 +1871,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.7,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 33,
@@ -1759,6 +1880,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3000,
           rating: 4.3,
           discount: "20%",
+          offer: "48%",
         },
         {
           id: 34,
@@ -1767,6 +1889,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.0,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 35,
@@ -1775,6 +1898,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.3,
           discount: "25%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the PURVAJA Store",
@@ -1809,6 +1933,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3000,
           rating: 4.3,
           discount: "20%",
+          offer: "48%",
         },
         {
           id: 34,
@@ -1817,6 +1942,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.0,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 35,
@@ -1825,6 +1951,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.3,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 36,
@@ -1833,6 +1960,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "27%",
+          offer: "43%",
         },
       ],
       soldBy: "Brand: Sarathybiz",
@@ -1867,6 +1995,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.0,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 35,
@@ -1875,6 +2004,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.3,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 36,
@@ -1883,6 +2013,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "27%",
+          offer: "43%",
         },
         {
           id: 37,
@@ -1891,6 +2022,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.0,
           discount: "29%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the LooknBook Art Store",
@@ -1926,6 +2058,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.3,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 36,
@@ -1934,6 +2067,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "27%",
+          offer: "43%",
         },
         {
           id: 37,
@@ -1942,6 +2076,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.0,
           discount: "29%",
+          offer: "0%",
         },
         {
           id: 38,
@@ -1950,6 +2085,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "21%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Snazzy Stitch",
@@ -1984,6 +2120,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "27%",
+          offer: "43%",
         },
         {
           id: 37,
@@ -1992,6 +2129,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.0,
           discount: "29%",
+          offer: "0%",
         },
         {
           id: 38,
@@ -2000,6 +2138,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 39,
@@ -2008,6 +2147,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3197,
           rating: 3.6,
           discount: "23%",
+          offer: "45%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -2043,6 +2183,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.0,
           discount: "29%",
+          offer: "0%",
         },
         {
           id: 38,
@@ -2051,6 +2192,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 39,
@@ -2059,6 +2201,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3197,
           rating: 3.6,
           discount: "23%",
+          offer: "45%",
         },
         {
           id: 40,
@@ -2067,6 +2210,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 0,
           discount: "22%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -2101,6 +2245,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 39,
@@ -2109,6 +2254,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3197,
           rating: 3.6,
           discount: "23%",
+          offer: "45%",
         },
         {
           id: 40,
@@ -2117,6 +2263,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 0,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 31,
@@ -2125,6 +2272,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 4.0,
           discount: "26%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -2160,6 +2308,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3197,
           rating: 3.6,
           discount: "23%",
+          offer: "45%",
         },
         {
           id: 40,
@@ -2168,6 +2317,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 0,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 31,
@@ -2176,6 +2326,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 4.0,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 32,
@@ -2184,6 +2335,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.7,
           discount: "25%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -2216,6 +2368,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 0,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 31,
@@ -2224,6 +2377,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 4.0,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 32,
@@ -2232,6 +2386,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.7,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 33,
@@ -2240,6 +2395,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3000,
           rating: 4.3,
           discount: "20%",
+          offer: "48%",
         },
       ],
       soldBy: "Brand: GEKHA",
@@ -2274,6 +2430,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 4.0,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 32,
@@ -2282,6 +2439,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.7,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 33,
@@ -2290,6 +2448,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3000,
           rating: 4.3,
           discount: "20%",
+          offer: "48%",
         },
         {
           id: 34,
@@ -2298,6 +2457,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.0,
           discount: "20%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -2332,6 +2492,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.1,
           discount: "10%",
+          offer: "46%",
         },
         {
           id: 43,
@@ -2340,6 +2501,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.3,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 44,
@@ -2348,6 +2510,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.5,
           discount: "12%",
+          offer: "0%",
         },
         {
           id: 45,
@@ -2356,6 +2519,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.6,
           discount: "17%",
+          offer: "49%",
         },
       ],
       soldBy: "Brand: DIVISIVE",
@@ -2389,6 +2553,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.3,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 44,
@@ -2397,6 +2562,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.5,
           discount: "12%",
+          offer: "0%",
         },
         {
           id: 45,
@@ -2405,6 +2571,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.6,
           discount: "17%",
+          offer: "49%",
         },
         {
           id: 46,
@@ -2413,6 +2580,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2099,
           rating: 4.1,
           discount: "12%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Generic Store",
@@ -2445,6 +2613,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.5,
           discount: "12%",
+          offer: "0%",
         },
         {
           id: 45,
@@ -2453,6 +2622,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.6,
           discount: "17%",
+          offer: "49%",
         },
         {
           id: 46,
@@ -2461,6 +2631,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2099,
           rating: 4.1,
           discount: "12%",
+          offer: "0%",
         },
         {
           id: 47,
@@ -2469,6 +2640,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.2,
           discount: "16%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Raymond Store",
@@ -2503,6 +2675,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.6,
           discount: "17%",
+          offer: "49%",
         },
         {
           id: 46,
@@ -2511,6 +2684,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2099,
           rating: 4.1,
           discount: "12%",
+          offer: "0%",
         },
         {
           id: 47,
@@ -2519,6 +2693,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.2,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 48,
@@ -2527,6 +2702,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.5,
           discount: "15%",
+          offer: "44%",
         },
       ],
       soldBy: "Visit the Louis Philippe Store",
@@ -2561,6 +2737,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2099,
           rating: 4.1,
           discount: "12%",
+          offer: "0%",
         },
         {
           id: 47,
@@ -2569,6 +2746,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.2,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 48,
@@ -2577,6 +2755,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.5,
           discount: "15%",
+          offer: "44%",
         },
         {
           id: 49,
@@ -2585,6 +2764,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.3,
           discount: "19%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the TAGDO Store",
@@ -2619,6 +2799,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.2,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 48,
@@ -2627,6 +2808,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.5,
           discount: "15%",
+          offer: "44%",
         },
         {
           id: 49,
@@ -2635,6 +2817,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.3,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 50,
@@ -2643,6 +2826,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 4.3,
           discount: "11%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: AVANOVA",
@@ -2677,6 +2861,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.5,
           discount: "15%",
+          offer: "44%",
         },
         {
           id: 49,
@@ -2685,6 +2870,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.3,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 50,
@@ -2693,6 +2879,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 4.3,
           discount: "11%",
+          offer: "0%",
         },
         {
           id: 41,
@@ -2701,6 +2888,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.0,
           discount: "16%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: PALIANS",
@@ -2735,6 +2923,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.3,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 50,
@@ -2743,6 +2932,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 4.3,
           discount: "11%",
+          offer: "0%",
         },
         {
           id: 41,
@@ -2751,6 +2941,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.0,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 42,
@@ -2759,6 +2950,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.1,
           discount: "10%",
+          offer: "46%",
         },
       ],
       soldBy: "Visit the Symbol Premium Store",
@@ -2792,6 +2984,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 4.3,
           discount: "11%",
+          offer: "0%",
         },
         {
           id: 41,
@@ -2800,6 +2993,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.0,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 42,
@@ -2808,6 +3002,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.1,
           discount: "10%",
+          offer: "46%",
         },
         {
           id: 43,
@@ -2816,6 +3011,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.3,
           discount: "16%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the FYLTR Store",
@@ -2849,6 +3045,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.0,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 42,
@@ -2857,6 +3054,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.1,
           discount: "10%",
+          offer: "46%",
         },
         {
           id: 43,
@@ -2865,6 +3063,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.3,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 44,
@@ -2873,6 +3072,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.5,
           discount: "12%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Arrow Store",
@@ -2907,6 +3107,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 419,
           rating: 4.0,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 53,
@@ -2915,6 +3116,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.9,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 54,
@@ -2923,6 +3125,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.9,
           discount: "24%",
+          offer: "45%",
         },
         {
           id: 55,
@@ -2931,6 +3134,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2299,
           rating: 3.5,
           discount: "23%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the LAZYCHUNKS Store",
@@ -2965,6 +3169,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.9,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 54,
@@ -2973,6 +3178,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.9,
           discount: "24%",
+          offer: "45%",
         },
         {
           id: 55,
@@ -2981,6 +3187,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2299,
           rating: 3.5,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 56,
@@ -2989,6 +3196,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.7,
           discount: "26%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Lux Cozi Store",
@@ -3023,6 +3231,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.9,
           discount: "24%",
+          offer: "45%",
         },
         {
           id: 55,
@@ -3031,6 +3240,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2299,
           rating: 3.5,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 56,
@@ -3039,6 +3249,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.7,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 57,
@@ -3047,6 +3258,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 899,
           rating: 4.0,
           discount: "20%",
+          offer: "45%",
         },
       ],
       soldBy: "Visit the Peter England Store",
@@ -3082,6 +3294,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2299,
           rating: 3.5,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 56,
@@ -3090,6 +3303,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.7,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 57,
@@ -3098,6 +3312,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 899,
           rating: 4.0,
           discount: "20%",
+          offer: "45%",
         },
         {
           id: 58,
@@ -3106,6 +3321,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1947,
           rating: 4.2,
           discount: "24%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Amazon Brand - Symbol Store",
@@ -3140,6 +3356,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.7,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 57,
@@ -3148,6 +3365,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 899,
           rating: 4.0,
           discount: "20%",
+          offer: "45%",
         },
         {
           id: 58,
@@ -3156,6 +3374,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1947,
           rating: 4.2,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 59,
@@ -3164,6 +3383,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "25%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the GRECIILOOKS Store",
@@ -3198,6 +3418,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 899,
           rating: 4.0,
           discount: "20%",
+          offer: "45%",
         },
         {
           id: 58,
@@ -3206,6 +3427,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1947,
           rating: 4.2,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 59,
@@ -3214,6 +3436,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 60,
@@ -3222,6 +3445,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1199,
           rating: 4.1,
           discount: "27%",
+          offer: "47%",
         },
       ],
       soldBy: "Visit the Lymio Store",
@@ -3256,6 +3480,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1947,
           rating: 4.2,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 59,
@@ -3264,6 +3489,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 60,
@@ -3272,6 +3498,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1199,
           rating: 4.1,
           discount: "27%",
+          offer: "47%",
         },
         {
           id: 51,
@@ -3280,6 +3507,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 499,
           rating: 3.0,
           discount: "20%",
+          offer: "45%",
         },
       ],
       soldBy: "Visit the Allen Solly Store",
@@ -3315,6 +3543,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 60,
@@ -3323,6 +3552,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1199,
           rating: 4.1,
           discount: "27%",
+          offer: "47%",
         },
         {
           id: 51,
@@ -3331,6 +3561,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 499,
           rating: 3.0,
           discount: "20%",
+          offer: "45%",
         },
         {
           id: 52,
@@ -3339,6 +3570,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 419,
           rating: 4.0,
           discount: "22%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: The Happy Orca",
@@ -3373,6 +3605,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1199,
           rating: 4.1,
           discount: "27%",
+          offer: "47%",
         },
         {
           id: 51,
@@ -3381,6 +3614,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 499,
           rating: 3.0,
           discount: "20%",
+          offer: "45%",
         },
         {
           id: 52,
@@ -3389,6 +3623,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 419,
           rating: 4.0,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 53,
@@ -3397,6 +3632,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.9,
           discount: "25%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the AMERICAN CREW Store",
@@ -3432,6 +3668,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 499,
           rating: 3.0,
           discount: "20%",
+          offer: "45%",
         },
         {
           id: 52,
@@ -3440,6 +3677,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 419,
           rating: 4.0,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 53,
@@ -3448,6 +3686,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.9,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 54,
@@ -3456,6 +3695,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.9,
           discount: "24%",
+          offer: "45%",
         },
       ],
       soldBy: "Visit the Van Heusen Store",
@@ -3490,6 +3730,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.2,
           discount: "28%",
+          offer: "0%",
         },
         {
           id: 63,
@@ -3498,6 +3739,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 899,
           rating: 3.9,
           discount: "22%",
+          offer: "45%",
         },
         {
           id: 64,
@@ -3506,6 +3748,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1249,
           rating: 4.2,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 65,
@@ -3514,6 +3757,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 849,
           rating: 4.0,
           discount: "0%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Pepe Jeans Store",
@@ -3548,6 +3792,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 899,
           rating: 3.9,
           discount: "22%",
+          offer: "45%",
         },
         {
           id: 64,
@@ -3556,6 +3801,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1249,
           rating: 4.2,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 65,
@@ -3564,6 +3810,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 849,
           rating: 4.0,
           discount: "0%",
+          offer: "0%",
         },
         {
           id: 66,
@@ -3572,6 +3819,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "26%",
+          offer: "46%",
         },
       ],
       soldBy: "Visit the Boldfit Store",
@@ -3606,6 +3854,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1249,
           rating: 4.2,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 65,
@@ -3614,6 +3863,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 849,
           rating: 4.0,
           discount: "0%",
+          offer: "0%",
         },
         {
           id: 66,
@@ -3622,6 +3872,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "26%",
+          offer: "46%",
         },
         {
           id: 67,
@@ -3630,6 +3881,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "20%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the DAMENSCH Store",
@@ -3663,6 +3915,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 849,
           rating: 4.0,
           discount: "0%",
+          offer: "0%",
         },
         {
           id: 66,
@@ -3671,6 +3924,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "26%",
+          offer: "46%",
         },
         {
           id: 67,
@@ -3679,6 +3933,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 68,
@@ -3687,6 +3942,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.6,
           discount: "22%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Jockey Store",
@@ -3721,6 +3977,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "26%",
+          offer: "46%",
         },
         {
           id: 67,
@@ -3729,6 +3986,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 68,
@@ -3737,6 +3995,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.6,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 69,
@@ -3745,6 +4004,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1229,
           rating: 4.3,
           discount: "7%",
+          offer: "47%",
         },
       ],
       soldBy: "Visit the Jockey Store",
@@ -3779,6 +4039,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.8,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 68,
@@ -3787,6 +4048,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.6,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 69,
@@ -3795,6 +4057,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1229,
           rating: 4.3,
           discount: "7%",
+          offer: "47%",
         },
         {
           id: 70,
@@ -3803,6 +4066,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.2,
           discount: "8%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the 0-DEGREE Store",
@@ -3837,6 +4101,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.6,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 69,
@@ -3845,6 +4110,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1229,
           rating: 4.3,
           discount: "7%",
+          offer: "47%",
         },
         {
           id: 70,
@@ -3853,6 +4119,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.2,
           discount: "8%",
+          offer: "0%",
         },
         {
           id: 61,
@@ -3861,6 +4128,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1199,
           rating: 4.1,
           discount: "24%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the SMOWKLY Store",
@@ -3895,6 +4163,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1229,
           rating: 4.3,
           discount: "7%",
+          offer: "47%",
         },
         {
           id: 70,
@@ -3903,6 +4172,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.2,
           discount: "8%",
+          offer: "0%",
         },
         {
           id: 61,
@@ -3911,6 +4181,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1199,
           rating: 4.1,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 62,
@@ -3919,6 +4190,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.2,
           discount: "28%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Lymio Store",
@@ -3953,6 +4225,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.2,
           discount: "8%",
+          offer: "0%",
         },
         {
           id: 61,
@@ -3961,6 +4234,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1199,
           rating: 4.1,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 62,
@@ -3969,6 +4243,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.2,
           discount: "28%",
+          offer: "0%",
         },
         {
           id: 63,
@@ -3977,6 +4252,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 899,
           rating: 3.9,
           discount: "22%",
+          offer: "45%",
         },
       ],
       soldBy: "Visit the Jockey Store",
@@ -4011,6 +4287,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1199,
           rating: 4.1,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 62,
@@ -4019,6 +4296,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.2,
           discount: "28%",
+          offer: "0%",
         },
         {
           id: 63,
@@ -4027,6 +4305,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 899,
           rating: 3.9,
           discount: "22%",
+          offer: "45%",
         },
         {
           id: 64,
@@ -4035,6 +4314,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1249,
           rating: 4.2,
           discount: "21%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Jockey Store",
@@ -4069,6 +4349,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2663,
           rating: 3.6,
           discount: "13%",
+          offer: "48%",
         },
         {
           id: 73,
@@ -4077,6 +4358,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2472,
           rating: 4.0,
           discount: "14%",
+          offer: "0%",
         },
         {
           id: 74,
@@ -4085,6 +4367,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2349,
           rating: 3.9,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 75,
@@ -4093,6 +4376,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 4.1,
           discount: "12%",
+          offer: "46%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -4127,6 +4411,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2472,
           rating: 4.0,
           discount: "14%",
+          offer: "0%",
         },
         {
           id: 74,
@@ -4135,6 +4420,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2349,
           rating: 3.9,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 75,
@@ -4143,6 +4429,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 4.1,
           discount: "12%",
+          offer: "46%",
         },
         {
           id: 76,
@@ -4151,6 +4438,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.8,
           discount: "18%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the SOJANYA Store",
@@ -4185,6 +4473,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2349,
           rating: 3.9,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 75,
@@ -4193,6 +4482,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 4.1,
           discount: "12%",
+          offer: "46%",
         },
         {
           id: 76,
@@ -4201,6 +4491,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.8,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 77,
@@ -4209,6 +4500,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.1,
           discount: "12%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the SOJANYA Store",
@@ -4243,6 +4535,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 4.1,
           discount: "12%",
+          offer: "46%",
         },
         {
           id: 76,
@@ -4251,6 +4544,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.8,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 77,
@@ -4259,6 +4553,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.1,
           discount: "12%",
+          offer: "0%",
         },
         {
           id: 78,
@@ -4267,6 +4562,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2299,
           rating: 4.0,
           discount: "17%",
+          offer: "49%",
         },
       ],
       soldBy: "Brand: DIVISIVE",
@@ -4301,6 +4597,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.8,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 77,
@@ -4309,6 +4606,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.1,
           discount: "12%",
+          offer: "0%",
         },
         {
           id: 78,
@@ -4317,6 +4615,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2299,
           rating: 4.0,
           discount: "17%",
+          offer: "49%",
         },
         {
           id: 79,
@@ -4325,6 +4624,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 4.1,
           discount: "18%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Majestic Man Store",
@@ -4360,6 +4660,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.1,
           discount: "12%",
+          offer: "0%",
         },
         {
           id: 78,
@@ -4368,6 +4669,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2299,
           rating: 4.0,
           discount: "17%",
+          offer: "49%",
         },
         {
           id: 79,
@@ -4376,6 +4678,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 4.1,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 80,
@@ -4384,6 +4687,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 4.1,
           discount: "13%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -4418,6 +4722,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2299,
           rating: 4.0,
           discount: "17%",
+          offer: "49%",
         },
         {
           id: 79,
@@ -4426,6 +4731,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 4.1,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 80,
@@ -4434,6 +4740,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 4.1,
           discount: "13%",
+          offer: "0%",
         },
         {
           id: 71,
@@ -4442,6 +4749,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.6,
           discount: "10%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Studio Shringaar Store",
@@ -4476,6 +4784,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 4.1,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 80,
@@ -4484,6 +4793,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 4.1,
           discount: "13%",
+          offer: "0%",
         },
         {
           id: 71,
@@ -4492,6 +4802,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.6,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 72,
@@ -4500,6 +4811,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2663,
           rating: 3.6,
           discount: "13%",
+          offer: "48%",
         },
       ],
       soldBy: "Visit the Amazon Brand - Symbol Store",
@@ -4534,6 +4846,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 4.1,
           discount: "13%",
+          offer: "0%",
         },
         {
           id: 71,
@@ -4542,6 +4855,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.6,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 72,
@@ -4550,6 +4864,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2663,
           rating: 3.6,
           discount: "13%",
+          offer: "48%",
         },
         {
           id: 73,
@@ -4558,6 +4873,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2472,
           rating: 4.0,
           discount: "14%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Amazon Brand - Symbol Store",
@@ -4592,6 +4908,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.6,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 72,
@@ -4600,6 +4917,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2663,
           rating: 3.6,
           discount: "13%",
+          offer: "48%",
         },
         {
           id: 73,
@@ -4608,6 +4926,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2472,
           rating: 4.0,
           discount: "14%",
+          offer: "0%",
         },
         {
           id: 74,
@@ -4616,6 +4935,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2349,
           rating: 3.9,
           discount: "16%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Amazon Brand - Symbol Store",
@@ -4650,6 +4970,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.6,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 83,
@@ -4658,6 +4979,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 5.0,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 84,
@@ -4666,6 +4988,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.6,
           discount: "38%",
+          offer: "49%",
         },
         {
           id: 85,
@@ -4674,6 +4997,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "38%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: QNIM",
@@ -4708,6 +5032,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 5.0,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 84,
@@ -4716,6 +5041,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.6,
           discount: "38%",
+          offer: "49%",
         },
         {
           id: 85,
@@ -4724,6 +5050,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "38%",
+          offer: "0%",
         },
         {
           id: 86,
@@ -4732,6 +5059,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3699,
           rating: 5.0,
           discount: "37%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the TAGAS Store",
@@ -4766,6 +5094,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.6,
           discount: "38%",
+          offer: "49%",
         },
         {
           id: 85,
@@ -4774,6 +5103,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "38%",
+          offer: "0%",
         },
         {
           id: 86,
@@ -4782,6 +5112,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3699,
           rating: 5.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 87,
@@ -4790,6 +5121,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.0,
           discount: "38%",
+          offer: "46%",
         },
       ],
       soldBy: "Visit the Louis Philippe Store",
@@ -4824,6 +5156,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "38%",
+          offer: "0%",
         },
         {
           id: 86,
@@ -4832,6 +5165,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3699,
           rating: 5.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 87,
@@ -4840,6 +5174,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.0,
           discount: "38%",
+          offer: "46%",
         },
         {
           id: 88,
@@ -4848,6 +5183,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "32%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the KOTTY Store",
@@ -4882,6 +5218,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3699,
           rating: 5.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 87,
@@ -4890,6 +5227,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.0,
           discount: "38%",
+          offer: "46%",
         },
         {
           id: 88,
@@ -4898,6 +5236,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 89,
@@ -4906,6 +5245,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3799,
           rating: 4.1,
           discount: "34%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Peter England Store",
@@ -4940,6 +5280,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.0,
           discount: "38%",
+          offer: "46%",
         },
         {
           id: 88,
@@ -4948,6 +5289,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 89,
@@ -4956,6 +5298,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3799,
           rating: 4.1,
           discount: "34%",
+          offer: "0%",
         },
         {
           id: 90,
@@ -4964,6 +5307,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4499,
           rating: 4.0,
           discount: "32%",
+          offer: "43%",
         },
       ],
       soldBy: "Visit the Cantabil Store",
@@ -4996,6 +5340,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 89,
@@ -5004,6 +5349,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3799,
           rating: 4.1,
           discount: "34%",
+          offer: "0%",
         },
         {
           id: 90,
@@ -5012,6 +5358,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4499,
           rating: 4.0,
           discount: "32%",
+          offer: "43%",
         },
         {
           id: 81,
@@ -5020,6 +5367,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.6,
           discount: "32%",
+          offer: "49%",
         },
       ],
       soldBy: "Visit the London Hills Store",
@@ -5054,6 +5402,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3799,
           rating: 4.1,
           discount: "34%",
+          offer: "0%",
         },
         {
           id: 90,
@@ -5062,6 +5411,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4499,
           rating: 4.0,
           discount: "32%",
+          offer: "43%",
         },
         {
           id: 81,
@@ -5070,6 +5420,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.6,
           discount: "32%",
+          offer: "49%",
         },
         {
           id: 82,
@@ -5078,6 +5429,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.6,
           discount: "36%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Ben Martin Store",
@@ -5112,6 +5464,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4499,
           rating: 4.0,
           discount: "32%",
+          offer: "43%",
         },
         {
           id: 81,
@@ -5120,6 +5473,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.6,
           discount: "32%",
+          offer: "49%",
         },
         {
           id: 82,
@@ -5128,6 +5482,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.6,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 83,
@@ -5136,6 +5491,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 5.0,
           discount: "30%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Thomas Scott Store",
@@ -5167,6 +5523,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 3.6,
           discount: "32%",
+          offer: "49%",
         },
         {
           id: 82,
@@ -5175,6 +5532,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.6,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 83,
@@ -5183,6 +5541,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 5.0,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 84,
@@ -5191,6 +5550,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.6,
           discount: "38%",
+          offer: "49%",
         },
       ],
       soldBy: "Visit the Pepe Jeans Store",
@@ -5225,6 +5585,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.3,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 93,
@@ -5233,6 +5594,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1249,
           rating: 3.6,
           discount: "30%",
+          offer: "45%",
         },
         {
           id: 94,
@@ -5241,6 +5603,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 4.0,
           discount: "31%",
+          offer: "0%",
         },
         {
           id: 95,
@@ -5249,6 +5612,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the adidas Store",
@@ -5283,6 +5647,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1249,
           rating: 3.6,
           discount: "30%",
+          offer: "45%",
         },
         {
           id: 94,
@@ -5291,6 +5656,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 4.0,
           discount: "31%",
+          offer: "0%",
         },
         {
           id: 95,
@@ -5299,6 +5665,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 96,
@@ -5307,6 +5674,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.6,
           discount: "38%",
+          offer: "46%",
         },
       ],
       soldBy: "Visit the Bacca Bucci Store",
@@ -5341,6 +5709,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 4.0,
           discount: "31%",
+          offer: "0%",
         },
         {
           id: 95,
@@ -5349,6 +5718,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 96,
@@ -5357,6 +5727,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.6,
           discount: "38%",
+          offer: "46%",
         },
         {
           id: 97,
@@ -5365,6 +5736,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 4.0,
           discount: "33%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the LANCER Store",
@@ -5397,6 +5769,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 4.0,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 96,
@@ -5405,6 +5778,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.6,
           discount: "38%",
+          offer: "46%",
         },
         {
           id: 97,
@@ -5413,6 +5787,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 4.0,
           discount: "33%",
+          offer: "0%",
         },
         {
           id: 98,
@@ -5421,6 +5796,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5199,
           rating: 3.0,
           discount: "34%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the ASIAN Store",
@@ -5455,6 +5831,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.6,
           discount: "38%",
+          offer: "46%",
         },
         {
           id: 97,
@@ -5463,6 +5840,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 4.0,
           discount: "33%",
+          offer: "0%",
         },
         {
           id: 98,
@@ -5471,6 +5849,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5199,
           rating: 3.0,
           discount: "34%",
+          offer: "0%",
         },
         {
           id: 99,
@@ -5479,6 +5858,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "33%",
+          offer: "44%",
         },
       ],
       soldBy: "Visit the Campus Store",
@@ -5513,6 +5893,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 4.0,
           discount: "33%",
+          offer: "0%",
         },
         {
           id: 98,
@@ -5521,6 +5902,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5199,
           rating: 3.0,
           discount: "34%",
+          offer: "0%",
         },
         {
           id: 99,
@@ -5529,6 +5911,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "33%",
+          offer: "44%",
         },
         {
           id: 100,
@@ -5537,6 +5920,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1669,
           rating: 3.9,
           discount: "37%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the ASIAN Store",
@@ -5571,6 +5955,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5199,
           rating: 3.0,
           discount: "34%",
+          offer: "0%",
         },
         {
           id: 99,
@@ -5579,6 +5964,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "33%",
+          offer: "44%",
         },
         {
           id: 100,
@@ -5587,6 +5973,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1669,
           rating: 3.9,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 91,
@@ -5595,6 +5982,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5599,
           rating: 4.4,
           discount: "30%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the adidas Store",
@@ -5629,6 +6017,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "33%",
+          offer: "44%",
         },
         {
           id: 100,
@@ -5637,6 +6026,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1669,
           rating: 3.9,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 91,
@@ -5645,6 +6035,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5599,
           rating: 4.4,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 92,
@@ -5653,6 +6044,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.3,
           discount: "36%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Symbol Premium Store",
@@ -5687,6 +6079,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1669,
           rating: 3.9,
           discount: "37%",
+          offer: "0%",
         },
         {
           id: 91,
@@ -5695,6 +6088,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5599,
           rating: 4.4,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 92,
@@ -5703,6 +6097,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.3,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 93,
@@ -5711,6 +6106,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1249,
           rating: 3.6,
           discount: "30%",
+          offer: "45%",
         },
       ],
       soldBy: "Visit the Boldfit Store",
@@ -5745,6 +6141,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5599,
           rating: 4.4,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 92,
@@ -5753,6 +6150,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.3,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 93,
@@ -5761,6 +6159,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1249,
           rating: 3.6,
           discount: "30%",
+          offer: "45%",
         },
         {
           id: 94,
@@ -5769,6 +6168,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 4.0,
           discount: "31%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the AVANT Store",
@@ -5803,6 +6203,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 3.9,
           discount: "20%",
+          offer: "48%",
         },
         {
           id: 103,
@@ -5811,6 +6212,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 104,
@@ -5819,6 +6221,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.2,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 105,
@@ -5827,6 +6230,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.8,
           discount: "27%",
+          offer: "42%",
         },
       ],
       soldBy: "Visit the Miss Chase Store",
@@ -5861,6 +6265,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 104,
@@ -5869,6 +6274,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.2,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 105,
@@ -5877,6 +6283,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.8,
           discount: "27%",
+          offer: "42%",
         },
         {
           id: 106,
@@ -5885,6 +6292,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.1,
           discount: "21%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Miss Chase Store",
@@ -5919,6 +6327,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.2,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 105,
@@ -5927,6 +6336,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.8,
           discount: "27%",
+          offer: "42%",
         },
         {
           id: 106,
@@ -5935,6 +6345,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.1,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 107,
@@ -5943,6 +6354,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.5,
           discount: "20%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Miss Chase Store",
@@ -5977,6 +6389,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.8,
           discount: "27%",
+          offer: "42%",
         },
         {
           id: 106,
@@ -5985,6 +6398,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.1,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 107,
@@ -5993,6 +6407,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.5,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 108,
@@ -6001,6 +6416,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 3.5,
           discount: "24%",
+          offer: "45%",
         },
       ],
       soldBy: "Visit the London Hills Store",
@@ -6035,6 +6451,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.1,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 107,
@@ -6043,6 +6460,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.5,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 108,
@@ -6051,6 +6469,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 3.5,
           discount: "24%",
+          offer: "45%",
         },
         {
           id: 109,
@@ -6059,6 +6478,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the KOTTY Store",
@@ -6093,6 +6513,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.5,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 108,
@@ -6101,6 +6522,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 3.5,
           discount: "24%",
+          offer: "45%",
         },
         {
           id: 109,
@@ -6109,6 +6531,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 110,
@@ -6117,6 +6540,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.8,
           discount: "24%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the INKD Store",
@@ -6151,6 +6575,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 3.5,
           discount: "24%",
+          offer: "45%",
         },
         {
           id: 109,
@@ -6159,6 +6584,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 110,
@@ -6167,6 +6593,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.8,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 101,
@@ -6175,6 +6602,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3395,
           rating: 5.0,
           discount: "29%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: FCK-3",
@@ -6209,6 +6637,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 110,
@@ -6217,6 +6646,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.8,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 101,
@@ -6225,6 +6655,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3395,
           rating: 5.0,
           discount: "29%",
+          offer: "0%",
         },
         {
           id: 102,
@@ -6233,6 +6664,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 3.9,
           discount: "20%",
+          offer: "48%",
         },
       ],
       soldBy: "Visit the Miss Chase Store",
@@ -6267,6 +6699,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.8,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 101,
@@ -6275,6 +6708,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3395,
           rating: 5.0,
           discount: "29%",
+          offer: "0%",
         },
         {
           id: 102,
@@ -6283,6 +6717,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 3.9,
           discount: "20%",
+          offer: "48%",
         },
         {
           id: 103,
@@ -6291,6 +6726,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Miss Chase Store",
@@ -6326,6 +6762,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3395,
           rating: 5.0,
           discount: "29%",
+          offer: "0%",
         },
         {
           id: 102,
@@ -6334,6 +6771,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 3.9,
           discount: "20%",
+          offer: "48%",
         },
         {
           id: 103,
@@ -6342,6 +6780,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 104,
@@ -6350,6 +6789,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3999,
           rating: 4.2,
           discount: "23%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Symbol Premium Store",
@@ -6384,6 +6824,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.0,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 113,
@@ -6392,6 +6833,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3799,
           rating: 3.5,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 114,
@@ -6400,6 +6842,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.5,
           discount: "26%",
+          offer: "44%",
         },
         {
           id: 115,
@@ -6408,6 +6851,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.2,
           discount: "27%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the ATHCO Store",
@@ -6440,6 +6884,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3799,
           rating: 3.5,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 114,
@@ -6448,6 +6893,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.5,
           discount: "26%",
+          offer: "44%",
         },
         {
           id: 115,
@@ -6456,6 +6902,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.2,
           discount: "27%",
+          offer: "0%",
         },
         {
           id: 116,
@@ -6464,6 +6911,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1049,
           rating: 4.5,
           discount: "26%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the ASIAN Store",
@@ -6498,6 +6946,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.5,
           discount: "26%",
+          offer: "44%",
         },
         {
           id: 115,
@@ -6506,6 +6955,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.2,
           discount: "27%",
+          offer: "0%",
         },
         {
           id: 116,
@@ -6514,6 +6964,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1049,
           rating: 4.5,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 117,
@@ -6522,6 +6973,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 949,
           rating: 4.1,
           discount: "20%",
+          offer: "41%",
         },
       ],
       soldBy: "Visit the ASIAN Store",
@@ -6556,6 +7008,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.2,
           discount: "27%",
+          offer: "0%",
         },
         {
           id: 116,
@@ -6564,6 +7017,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1049,
           rating: 4.5,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 117,
@@ -6572,6 +7026,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 949,
           rating: 4.1,
           discount: "20%",
+          offer: "41%",
         },
         {
           id: 118,
@@ -6580,6 +7035,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 5.0,
           discount: "20%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Campus Store",
@@ -6613,6 +7069,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1049,
           rating: 4.5,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 117,
@@ -6621,6 +7078,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 949,
           rating: 4.1,
           discount: "20%",
+          offer: "41%",
         },
         {
           id: 118,
@@ -6629,6 +7087,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 5.0,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 119,
@@ -6637,6 +7096,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "21%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Reebok Store",
@@ -6671,6 +7131,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 949,
           rating: 4.1,
           discount: "20%",
+          offer: "41%",
         },
         {
           id: 118,
@@ -6679,6 +7140,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 5.0,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 119,
@@ -6687,6 +7149,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 120,
@@ -6695,6 +7158,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.0,
           discount: "20%",
+          offer: "48%",
         },
       ],
       soldBy: "Visit the SPARX Store",
@@ -6725,6 +7189,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 5.0,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 119,
@@ -6733,6 +7198,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 120,
@@ -6741,6 +7207,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.0,
           discount: "20%",
+          offer: "48%",
         },
         {
           id: 111,
@@ -6749,6 +7216,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "22%",
+          offer: "46%",
         },
       ],
       soldBy: "Visit the SPARX Store",
@@ -6783,6 +7251,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 120,
@@ -6791,6 +7260,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.0,
           discount: "20%",
+          offer: "48%",
         },
         {
           id: 111,
@@ -6799,6 +7269,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "22%",
+          offer: "46%",
         },
         {
           id: 112,
@@ -6807,6 +7278,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.0,
           discount: "24%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Boldfit Store",
@@ -6841,6 +7313,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 3.0,
           discount: "20%",
+          offer: "48%",
         },
         {
           id: 111,
@@ -6849,6 +7322,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "22%",
+          offer: "46%",
         },
         {
           id: 112,
@@ -6857,6 +7331,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.0,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 113,
@@ -6865,6 +7340,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3799,
           rating: 3.5,
           discount: "20%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the AVANT Store",
@@ -6899,6 +7375,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "22%",
+          offer: "46%",
         },
         {
           id: 112,
@@ -6907,6 +7384,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.0,
           discount: "24%",
+          offer: "0%",
         },
         {
           id: 113,
@@ -6915,6 +7393,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3799,
           rating: 3.5,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 114,
@@ -6923,6 +7402,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.5,
           discount: "26%",
+          offer: "44%",
         },
       ],
       soldBy: "Visit the TRASE Store",
@@ -6957,6 +7437,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.5,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 123,
@@ -6965,6 +7446,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "27%",
+          offer: "47%",
         },
         {
           id: 124,
@@ -6973,6 +7455,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 3.3,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 125,
@@ -6981,6 +7464,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 4.0,
           discount: "23%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -7015,6 +7499,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "27%",
+          offer: "47%",
         },
         {
           id: 124,
@@ -7023,6 +7508,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 3.3,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 125,
@@ -7031,6 +7517,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 4.0,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 126,
@@ -7039,6 +7526,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 3.0,
           discount: "26%",
+          offer: "42%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -7073,6 +7561,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 3.3,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 125,
@@ -7081,6 +7570,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 4.0,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 126,
@@ -7089,6 +7579,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 3.0,
           discount: "26%",
+          offer: "42%",
         },
         {
           id: 127,
@@ -7097,6 +7588,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 5.0,
           discount: "23%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Jwalin Store",
@@ -7131,6 +7623,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 4.0,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 126,
@@ -7139,6 +7632,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 3.0,
           discount: "26%",
+          offer: "42%",
         },
         {
           id: 127,
@@ -7147,6 +7641,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 5.0,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 128,
@@ -7155,6 +7650,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "23%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the A.T.U.N. (ALL THINGS UBER NICE) Store",
@@ -7193,6 +7689,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 3.0,
           discount: "26%",
+          offer: "42%",
         },
         {
           id: 127,
@@ -7201,6 +7698,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 5.0,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 128,
@@ -7209,6 +7707,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 129,
@@ -7217,6 +7716,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 3.7,
           discount: "28%",
+          offer: "46%",
         },
       ],
       soldBy: "Visit the A.T.U.N. (ALL THINGS UBER NICE) Store",
@@ -7255,6 +7755,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 5.0,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 128,
@@ -7263,6 +7764,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 129,
@@ -7271,6 +7773,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 3.7,
           discount: "28%",
+          offer: "46%",
         },
         {
           id: 130,
@@ -7279,6 +7782,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4854,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Angel f Studio Store",
@@ -7314,6 +7818,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "23%",
+          offer: "0%",
         },
         {
           id: 129,
@@ -7322,6 +7827,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 3.7,
           discount: "28%",
+          offer: "46%",
         },
         {
           id: 130,
@@ -7330,6 +7836,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4854,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 121,
@@ -7338,6 +7845,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4900,
           rating: 4.0,
           discount: "29%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Jwalin Store",
@@ -7374,6 +7882,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2399,
           rating: 3.7,
           discount: "28%",
+          offer: "46%",
         },
         {
           id: 130,
@@ -7382,6 +7891,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4854,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 121,
@@ -7390,6 +7900,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4900,
           rating: 4.0,
           discount: "29%",
+          offer: "0%",
         },
         {
           id: 122,
@@ -7398,6 +7909,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.5,
           discount: "26%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Niren Enterprise Store",
@@ -7433,6 +7945,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4854,
           rating: 3.9,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 121,
@@ -7441,6 +7954,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4900,
           rating: 4.0,
           discount: "29%",
+          offer: "0%",
         },
         {
           id: 122,
@@ -7449,6 +7963,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.5,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 123,
@@ -7457,6 +7972,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "27%",
+          offer: "47%",
         },
       ],
       soldBy: "Visit the Fashion Dream Store",
@@ -7492,6 +8008,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4900,
           rating: 4.0,
           discount: "29%",
+          offer: "0%",
         },
         {
           id: 122,
@@ -7500,6 +8017,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.5,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 123,
@@ -7508,6 +8026,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.0,
           discount: "27%",
+          offer: "47%",
         },
         {
           id: 124,
@@ -7516,6 +8035,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1899,
           rating: 3.3,
           discount: "21%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand : Pspeaches",
@@ -7551,6 +8071,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.5,
           discount: "22%",
+          offer: "45%",
         },
         {
           id: 133,
@@ -7559,6 +8080,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 2.5,
           discount: "28%",
+          offer: "0%",
         },
         {
           id: 134,
@@ -7567,6 +8089,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.4,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 135,
@@ -7575,6 +8098,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "20%",
+          offer: "47%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -7609,6 +8133,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 2.5,
           discount: "28%",
+          offer: "0%",
         },
         {
           id: 134,
@@ -7617,6 +8142,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.4,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 135,
@@ -7625,6 +8151,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "20%",
+          offer: "47%",
         },
         {
           id: 136,
@@ -7633,6 +8160,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.3,
           discount: "20%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the JBN Creation Store",
@@ -7667,6 +8195,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.4,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 135,
@@ -7675,6 +8204,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "20%",
+          offer: "47%",
         },
         {
           id: 136,
@@ -7683,6 +8213,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.3,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 137,
@@ -7691,6 +8222,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 4.0,
           discount: "32%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Pro-Ethic Style Developer Store",
@@ -7725,6 +8257,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "30%",
+          offer: "47%",
         },
         {
           id: 136,
@@ -7733,6 +8266,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.3,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 137,
@@ -7741,6 +8275,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 4.0,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 138,
@@ -7749,6 +8284,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.4,
           discount: "37%",
+          offer: "45%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -7782,6 +8318,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.3,
           discount: "30%",
+          offer: "0%",
         },
         {
           id: 137,
@@ -7790,6 +8327,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 4.0,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 138,
@@ -7798,6 +8336,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.4,
           discount: "37%",
+          offer: "45%",
         },
         {
           id: 139,
@@ -7806,6 +8345,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4599,
           rating: 4.4,
           discount: "36%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: ZOLARIO",
@@ -7840,6 +8380,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 4.0,
           discount: "32%",
+          offer: "0%",
         },
         {
           id: 138,
@@ -7848,6 +8389,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.4,
           discount: "37%",
+          offer: "45%",
         },
         {
           id: 139,
@@ -7856,6 +8398,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4599,
           rating: 4.4,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 140,
@@ -7864,6 +8407,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "33%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -7898,6 +8442,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.4,
           discount: "37%",
+          offer: "45%",
         },
         {
           id: 139,
@@ -7906,6 +8451,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4599,
           rating: 4.4,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 140,
@@ -7914,6 +8460,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "33%",
+          offer: "0%",
         },
         {
           id: 131,
@@ -7922,6 +8469,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.0,
           discount: "33%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the AJ DEZINES Store",
@@ -7956,6 +8504,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4599,
           rating: 4.4,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 140,
@@ -7964,6 +8513,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "33%",
+          offer: "0%",
         },
         {
           id: 131,
@@ -7972,6 +8522,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.0,
           discount: "33%",
+          offer: "0%",
         },
         {
           id: 132,
@@ -7980,6 +8531,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.5,
           discount: "32%",
+          offer: "45%",
         },
       ],
       soldBy: "Brand: Generic",
@@ -8014,6 +8566,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "33%",
+          offer: "0%",
         },
         {
           id: 131,
@@ -8022,6 +8575,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.0,
           discount: "33%",
+          offer: "0%",
         },
         {
           id: 132,
@@ -8030,6 +8584,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.5,
           discount: "32%",
+          offer: "45%",
         },
         {
           id: 133,
@@ -8038,6 +8593,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 2.5,
           discount: "38%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Pro-Ethic Style Developer Store",
@@ -8072,6 +8628,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.0,
           discount: "33%",
+          offer: "0%",
         },
         {
           id: 132,
@@ -8080,6 +8637,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.5,
           discount: "32%",
+          offer: "45%",
         },
         {
           id: 133,
@@ -8088,6 +8646,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 5999,
           rating: 2.5,
           discount: "38%",
+          offer: "0%",
         },
         {
           id: 134,
@@ -8096,6 +8655,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.4,
           discount: "35%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Suncity Fashion Mart",
@@ -8130,6 +8690,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 699,
           rating: 3.7,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 143,
@@ -8138,6 +8699,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 3.4,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 144,
@@ -8146,6 +8708,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.3,
           discount: "11%",
+          offer: "43%",
         },
         {
           id: 145,
@@ -8154,6 +8717,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "19%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the MOON MAMA Store",
@@ -8189,6 +8753,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 3.4,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 144,
@@ -8197,6 +8762,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.3,
           discount: "11%",
+          offer: "43%",
         },
         {
           id: 145,
@@ -8205,6 +8771,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 146,
@@ -8213,6 +8780,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: RGK",
@@ -8247,6 +8815,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.3,
           discount: "11%",
+          offer: "43%",
         },
         {
           id: 145,
@@ -8255,6 +8824,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 146,
@@ -8263,6 +8833,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 147,
@@ -8271,6 +8842,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 699,
           rating: 3.8,
           discount: "14%",
+          offer: "44%",
         },
       ],
       soldBy: "Brand: NEOBABY",
@@ -8305,6 +8877,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.2,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 146,
@@ -8313,6 +8886,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 147,
@@ -8321,6 +8895,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 699,
           rating: 3.8,
           discount: "14%",
+          offer: "44%",
         },
         {
           id: 148,
@@ -8329,6 +8904,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.2,
           discount: "15%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Liberty Store",
@@ -8363,6 +8939,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 799,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 147,
@@ -8371,6 +8948,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 699,
           rating: 3.8,
           discount: "14%",
+          offer: "44%",
         },
         {
           id: 148,
@@ -8379,6 +8957,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.2,
           discount: "15%",
+          offer: "0%",
         },
         {
           id: 149,
@@ -8387,6 +8966,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.1,
           discount: "5%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the TRASE Store",
@@ -8421,6 +9001,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 699,
           rating: 3.8,
           discount: "14%",
+          offer: "44%",
         },
         {
           id: 148,
@@ -8429,6 +9010,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.2,
           discount: "15%",
+          offer: "0%",
         },
         {
           id: 149,
@@ -8437,6 +9019,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.1,
           discount: "5%",
+          offer: "0%",
         },
         {
           id: 150,
@@ -8445,6 +9028,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.5,
           discount: "16%",
+          offer: "47%",
         },
       ],
       soldBy: "Visit the Liberty Store",
@@ -8479,6 +9063,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2999,
           rating: 4.2,
           discount: "15%",
+          offer: "0%",
         },
         {
           id: 149,
@@ -8487,6 +9072,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.1,
           discount: "5%",
+          offer: "0%",
         },
         {
           id: 150,
@@ -8495,6 +9081,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.5,
           discount: "16%",
+          offer: "47%",
         },
         {
           id: 141,
@@ -8503,6 +9090,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1123,
           rating: 5.0,
           discount: "10%",
+          offer: "44%",
         },
       ],
       soldBy: "Visit the KATS SHOES Store",
@@ -8537,6 +9125,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.1,
           discount: "5%",
+          offer: "0%",
         },
         {
           id: 150,
@@ -8545,6 +9134,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.5,
           discount: "16%",
+          offer: "47%",
         },
         {
           id: 141,
@@ -8553,6 +9143,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1123,
           rating: 5.0,
           discount: "10%",
+          offer: "44%",
         },
         {
           id: 142,
@@ -8561,6 +9152,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 699,
           rating: 3.7,
           discount: "16%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the KazarMax Store",
@@ -8595,6 +9187,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.5,
           discount: "16%",
+          offer: "47%",
         },
         {
           id: 141,
@@ -8603,6 +9196,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1123,
           rating: 5.0,
           discount: "10%",
+          offer: "44%",
         },
         {
           id: 142,
@@ -8611,6 +9205,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 699,
           rating: 3.7,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 143,
@@ -8619,6 +9214,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 3.4,
           discount: "16%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the ARETTO Store",
@@ -8653,6 +9249,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1123,
           rating: 5.0,
           discount: "10%",
+          offer: "44%",
         },
         {
           id: 142,
@@ -8661,6 +9258,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 699,
           rating: 3.7,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 143,
@@ -8669,6 +9267,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 3.4,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 144,
@@ -8677,6 +9276,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1299,
           rating: 4.3,
           discount: "11%",
+          offer: "43%",
         },
       ],
       soldBy: "Visit the KazarMax Store",
@@ -8711,6 +9311,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.2,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 153,
@@ -8719,6 +9320,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.2,
           discount: "18%",
+          offer: "46%",
         },
         {
           id: 154,
@@ -8727,6 +9329,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.7,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 155,
@@ -8735,6 +9338,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.3,
           discount: "10%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the ARETTO Store",
@@ -8769,6 +9373,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.2,
           discount: "18%",
+          offer: "46%",
         },
         {
           id: 154,
@@ -8777,6 +9382,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.7,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 155,
@@ -8785,6 +9391,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.3,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 156,
@@ -8793,6 +9400,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 900,
           rating: 4.2,
           discount: "18%",
+          offer: "49%",
         },
       ],
       soldBy: "Visit the KazarMax Store",
@@ -8825,6 +9433,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.7,
           discount: "18%",
+          offer: "0%",
         },
         {
           id: 155,
@@ -8833,6 +9442,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.3,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 156,
@@ -8841,6 +9451,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 900,
           rating: 4.2,
           discount: "18%",
+          offer: "49%",
         },
         {
           id: 157,
@@ -8849,6 +9460,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "13%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the ASIAN Store",
@@ -8883,6 +9495,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 3.3,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 156,
@@ -8891,6 +9504,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 900,
           rating: 4.2,
           discount: "18%",
+          offer: "49%",
         },
         {
           id: 157,
@@ -8899,6 +9513,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "13%",
+          offer: "0%",
         },
         {
           id: 158,
@@ -8907,6 +9522,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.9,
           discount: "19%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the ASIAN Store",
@@ -8940,6 +9556,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 900,
           rating: 4.2,
           discount: "18%",
+          offer: "49%",
         },
         {
           id: 157,
@@ -8948,6 +9565,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "13%",
+          offer: "0%",
         },
         {
           id: 158,
@@ -8956,6 +9574,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.9,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 159,
@@ -8964,6 +9583,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.2,
           discount: "16%",
+          offer: "47%",
         },
       ],
       soldBy: "Visit the Amico Store",
@@ -8998,6 +9618,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 4.0,
           discount: "13%",
+          offer: "0%",
         },
         {
           id: 158,
@@ -9006,6 +9627,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.9,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 159,
@@ -9014,6 +9636,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.2,
           discount: "16%",
+          offer: "47%",
         },
         {
           id: 160,
@@ -9022,6 +9645,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the GIGAHERTZ Store",
@@ -9056,6 +9680,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.9,
           discount: "19%",
+          offer: "0%",
         },
         {
           id: 159,
@@ -9064,6 +9689,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.2,
           discount: "16%",
+          offer: "47%",
         },
         {
           id: 160,
@@ -9072,6 +9698,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 151,
@@ -9080,6 +9707,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 3.2,
           discount: "0%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the TRASE Store",
@@ -9114,6 +9742,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.2,
           discount: "16%",
+          offer: "47%",
         },
         {
           id: 160,
@@ -9122,6 +9751,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 151,
@@ -9130,6 +9760,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 3.2,
           discount: "0%",
+          offer: "0%",
         },
         {
           id: 152,
@@ -9138,6 +9769,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.2,
           discount: "16%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the TRASE Store",
@@ -9172,6 +9804,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2899,
           rating: 4.1,
           discount: "10%",
+          offer: "0%",
         },
         {
           id: 151,
@@ -9180,6 +9813,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 3.2,
           discount: "0%",
+          offer: "0%",
         },
         {
           id: 152,
@@ -9188,6 +9822,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.2,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 153,
@@ -9196,6 +9831,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.2,
           discount: "18%",
+          offer: "46%",
         },
       ],
       soldBy: "Visit the KazarMax Store",
@@ -9230,6 +9866,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 3.2,
           discount: "0%",
+          offer: "0%",
         },
         {
           id: 152,
@@ -9238,6 +9875,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 4.2,
           discount: "16%",
+          offer: "0%",
         },
         {
           id: 153,
@@ -9246,6 +9884,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1099,
           rating: 3.2,
           discount: "18%",
+          offer: "46%",
         },
         {
           id: 154,
@@ -9254,6 +9893,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1499,
           rating: 3.7,
           discount: "18%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the ARETTO Store",
@@ -9287,6 +9927,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 4.1,
           discount: "27%",
+          offer: "48%",
         },
         {
           id: 163,
@@ -9295,6 +9936,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 5.0,
           discount: "27%",
+          offer: "0%",
         },
         {
           id: 164,
@@ -9303,6 +9945,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 165,
@@ -9311,6 +9954,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.9,
           discount: "29%",
+          offer: "45%",
         },
       ],
       soldBy: "Visit the A.T.U.N. (ALL THINGS UBER NICE) Store",
@@ -9340,6 +9984,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 5.0,
           discount: "27%",
+          offer: "0%",
         },
         {
           id: 164,
@@ -9348,6 +9993,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 165,
@@ -9356,6 +10002,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.9,
           discount: "29%",
+          offer: "45%",
         },
         {
           id: 166,
@@ -9364,6 +10011,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.0,
           discount: "25%",
+          offer: "0%",
         },
       ],
       discount: "27%",
@@ -9400,6 +10048,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 165,
@@ -9408,6 +10057,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.9,
           discount: "29%",
+          offer: "45%",
         },
         {
           id: 166,
@@ -9416,6 +10066,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.0,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 167,
@@ -9424,6 +10075,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 2.9,
           discount: "21%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Arshia Fashions Store",
@@ -9458,6 +10110,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2599,
           rating: 4.9,
           discount: "29%",
+          offer: "45%",
         },
         {
           id: 166,
@@ -9466,6 +10119,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.0,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 167,
@@ -9474,6 +10128,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 2.9,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 168,
@@ -9482,6 +10137,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3099,
           rating: 3.9,
           discount: "28%",
+          offer: "43%",
         },
       ],
       soldBy: "Brand: White Button",
@@ -9518,6 +10174,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3899,
           rating: 4.0,
           discount: "25%",
+          offer: "0%",
         },
         {
           id: 167,
@@ -9526,6 +10183,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 2.9,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 168,
@@ -9534,6 +10192,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3099,
           rating: 3.9,
           discount: "28%",
+          offer: "43%",
         },
         {
           id: 169,
@@ -9542,6 +10201,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.9,
           discount: "26%",
+          offer: "0%",
         },
       ],
       soldBy: "Brand: Gunatit",
@@ -9575,6 +10235,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 2.9,
           discount: "21%",
+          offer: "0%",
         },
         {
           id: 168,
@@ -9583,6 +10244,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3099,
           rating: 3.9,
           discount: "28%",
+          offer: "43%",
         },
         {
           id: 169,
@@ -9591,6 +10253,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.9,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 170,
@@ -9599,6 +10262,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6719,
           rating: 4.1,
           discount: "20%",
+          offer: "0%",
         },
       ],
       gender: "female",
@@ -9635,6 +10299,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3099,
           rating: 3.9,
           discount: "28%",
+          offer: "43%",
         },
         {
           id: 169,
@@ -9643,6 +10308,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.9,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 170,
@@ -9651,6 +10317,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6719,
           rating: 4.1,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 161,
@@ -9659,6 +10326,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.0,
           discount: "22%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the Fashion Dream Store",
@@ -9693,6 +10361,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.9,
           discount: "26%",
+          offer: "0%",
         },
         {
           id: 170,
@@ -9701,6 +10370,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6719,
           rating: 4.1,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 161,
@@ -9709,6 +10379,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.0,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 162,
@@ -9717,6 +10388,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 4.1,
           discount: "27%",
+          offer: "48%",
         },
       ],
       soldBy: "Visit the Naixa Store",
@@ -9752,6 +10424,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 6719,
           rating: 4.1,
           discount: "20%",
+          offer: "0%",
         },
         {
           id: 161,
@@ -9760,6 +10433,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.0,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 162,
@@ -9768,6 +10442,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 4.1,
           discount: "27%",
+          offer: "48%",
         },
         {
           id: 163,
@@ -9776,6 +10451,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 5.0,
           discount: "27%",
+          offer: "0%",
         },
       ],
       soldBy: "Visit the A.T.U.N. (ALL THINGS UBER NICE) Store",
@@ -9813,6 +10489,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 4999,
           rating: 3.0,
           discount: "22%",
+          offer: "0%",
         },
         {
           id: 162,
@@ -9821,6 +10498,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 3499,
           rating: 4.1,
           discount: "27%",
+          offer: "48%",
         },
         {
           id: 163,
@@ -9829,6 +10507,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2499,
           rating: 5.0,
           discount: "27%",
+          offer: "0%",
         },
         {
           id: 164,
@@ -9837,6 +10516,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1999,
           rating: 3.9,
           discount: "26%",
+          offer: "0%",
         },
       ],
       soldBy:
@@ -9872,6 +10552,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.0,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 173,
@@ -9880,6 +10561,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.8,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 174,
@@ -9888,6 +10570,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 4.0,
           discount: "33%",
+          offer: "41%",
         },
         {
           id: 175,
@@ -9896,6 +10579,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2000,
           rating: 2.0,
           discount: "35%",
+          offer: "0%",
         },
       ],
       soldBy: "SOLSTICE ",
@@ -9930,6 +10614,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.8,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 174,
@@ -9938,6 +10623,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 4.0,
           discount: "33%",
+          offer: "41%",
         },
         {
           id: 175,
@@ -9946,6 +10632,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2000,
           rating: 2.0,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 176,
@@ -9954,6 +10641,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.0,
           discount: "35%",
+          offer: "0%",
         },
       ],
       soldBy: "STONEBERG ",
@@ -9988,6 +10676,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 4.0,
           discount: "33%",
+          offer: "41%",
         },
         {
           id: 175,
@@ -9996,6 +10685,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2000,
           rating: 2.0,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 176,
@@ -10004,6 +10694,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.0,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 177,
@@ -10012,6 +10703,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1799,
           rating: 3.0,
           discount: "35%",
+          offer: "46%",
         },
       ],
       soldBy: "STONEBERG ",
@@ -10046,6 +10738,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2000,
           rating: 2.0,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 176,
@@ -10054,6 +10747,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.0,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 177,
@@ -10062,6 +10756,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1799,
           rating: 3.0,
           discount: "35%",
+          offer: "46%",
         },
         {
           id: 178,
@@ -10070,6 +10765,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 4.5,
           discount: "35%",
+          offer: "0%",
         },
       ],
       soldBy: "Voroxy ",
@@ -10104,6 +10800,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.0,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 177,
@@ -10112,6 +10809,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1799,
           rating: 3.0,
           discount: "35%",
+          offer: "46%",
         },
         {
           id: 178,
@@ -10120,6 +10818,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 4.5,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 179,
@@ -10128,6 +10827,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.8,
           discount: "36%",
+          offer: "0%",
         },
       ],
       soldBy: "STONEBERG ",
@@ -10162,6 +10862,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1799,
           rating: 3.0,
           discount: "35%",
+          offer: "46%",
         },
         {
           id: 178,
@@ -10170,6 +10871,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 4.5,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 179,
@@ -10178,6 +10880,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.8,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 180,
@@ -10186,6 +10889,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 4.1,
           discount: "30%",
+          offer: "46%",
         },
       ],
       soldBy: "STONEBERG ",
@@ -10220,6 +10924,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 4.5,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 179,
@@ -10228,6 +10933,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.8,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 180,
@@ -10236,6 +10942,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 4.1,
           discount: "30%",
+          offer: "46%",
         },
         {
           id: 171,
@@ -10244,6 +10951,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 3.8,
           discount: "34%",
+          offer: "43%",
         },
       ],
       soldBy: "STONEBERG ",
@@ -10278,6 +10986,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1699,
           rating: 4.8,
           discount: "36%",
+          offer: "0%",
         },
         {
           id: 180,
@@ -10286,6 +10995,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 4.1,
           discount: "30%",
+          offer: "46%",
         },
         {
           id: 171,
@@ -10294,6 +11004,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 3.8,
           discount: "34%",
+          offer: "43%",
         },
         {
           id: 172,
@@ -10302,6 +11013,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.0,
           discount: "35%",
+          offer: "0%",
         },
       ],
       soldBy: "STONEBERG ",
@@ -10336,6 +11048,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 4.1,
           discount: "30%",
+          offer: "46%",
         },
         {
           id: 171,
@@ -10344,6 +11057,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 3.8,
           discount: "34%",
+          offer: "43%",
         },
         {
           id: 172,
@@ -10352,6 +11066,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.0,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 173,
@@ -10360,6 +11075,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.8,
           discount: "35%",
+          offer: "0%",
         },
       ],
       soldBy: "FIBERMILL ",
@@ -10394,6 +11110,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 999,
           rating: 3.8,
           discount: "34%",
+          offer: "43%",
         },
         {
           id: 172,
@@ -10402,6 +11119,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.0,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 173,
@@ -10410,6 +11128,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 1599,
           rating: 3.8,
           discount: "35%",
+          offer: "0%",
         },
         {
           id: 174,
@@ -10418,6 +11137,7 @@ if (!localStorage.getItem("clothsData")) {
           price: 2199,
           rating: 4.0,
           discount: "33%",
+          offer: "41%",
         },
       ],
       soldBy: "VeBNoR",

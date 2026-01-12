@@ -341,6 +341,11 @@ export default function ProductDetailsPage() {
                       />
                       <div className="card-body d-flex flex-column justify-content-between align-items-center">
                         <p className="text-center m-0 productName lh-sm listProductName">
+                          {Number(product.offer.replace("%", "")) && (
+                            <span className="badge text-bg-warning me-1">
+                              Diwali Offer
+                            </span>
+                          )}
                           {product.name.length > 61
                             ? product.name.slice(0, 60).concat("...")
                             : product.name}
@@ -355,13 +360,23 @@ export default function ProductDetailsPage() {
                         <div>
                           <p className="fw-bold my-2">
                             <b>₹</b>
-                            {(
-                              product.price -
-                              (product.price *
-                                Number(product.discount.replace("%", ""))) /
-                                100
-                            ).toFixed(1)}{" "}
-                            (-{product.discount})
+                            {Math.round(
+                              (
+                                product.price -
+                                (product.price *
+                                  (Number(product.offer.replace("%", ""))
+                                    ? Number(product.offer.replace("%", ""))
+                                    : Number(
+                                        product.discount.replace("%", "")
+                                      ))) /
+                                  100
+                              ).toFixed(1)
+                            )}
+                            (-
+                            {Number(product.offer.replace("%", ""))
+                              ? product.offer
+                              : product.discount}
+                            )
                           </p>
                           <p
                             id="M.R.P."

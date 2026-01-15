@@ -22,6 +22,7 @@ export default function Offcanvas({
     setPrice(0)
     setRating(0)
     setSortBy("")
+    setCategory("")
   }
   function handleClick(e) {
     const element = e.target

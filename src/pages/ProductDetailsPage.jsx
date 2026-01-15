@@ -5,6 +5,8 @@ import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 import { useState } from "react"
+import location from "../assets/location.png"
+import { useEffect } from "react"
 
 export default function ProductDetailsPage() {
   const [quantity, setQuantity] = useState(1)
@@ -12,6 +14,8 @@ export default function ProductDetailsPage() {
   const [isUpdated, setUpdated] = useState(false)
   const id = Number(useParams().id)
   const { clothsData, setClothsData } = GetClothsData()
+  const [time, setTime] = useState("")
+  const [isFreeDeliveryAvailable,setFreeDelivery] = useState(false)
 
   function increaseCount(e) {
     let inputElementValue = Number(e.target.previousElementSibling.value)
@@ -53,6 +57,10 @@ export default function ProductDetailsPage() {
 
   const product = clothsData.find((product) => product.id === id)
 
+  const user = JSON.parse(localStorage.getItem("user"))
+
+  const address = user.address.find((address) => address.selected)
+
   if (isUpdated) {
     if (quantity > 1) {
       product.quantity = quantity
@@ -63,17 +71,79 @@ export default function ProductDetailsPage() {
     if (size) {
       product.size = size
     }
+    if(isFreeDeliveryAvailable) {
+      product.freeDelivery = true
+    }
     const createOrder = { item: [product] }
     localStorage.setItem("createOrder", JSON.stringify(createOrder))
     setUpdated(false)
   }
+
+  function preBtnClicked(e) {
+    const element = e.target
+    const container = element.parentElement.children[2]
+    const containerDimensions = container.getBoundingClientRect()
+    const containerWidth = containerDimensions.width
+    container.scrollLeft += containerWidth
+    element.style.opacity = 0
+    element.nextElementSibling.style.opacity = 1
+  }
+
+  function nxtBtnClicked(e) {
+    const element = e.target
+    const container = element.parentElement.children[2]
+    const containerDimensions = container.getBoundingClientRect()
+    const containerWidth = containerDimensions.width
+    container.scrollLeft -= containerWidth
+    element.style.opacity = 0
+    element.previousElementSibling.style.opacity = 1
+  }
+
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ]
+
+  function setDeliveryDate() {
+    const today = new Date()
+    today.setDate(today.getDate() + 10)
+    return `${today.getDate()} ${
+      months[today.getMonth()]
+    } ${today.getFullYear()}`
+  }
+
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      const currentTime = new Date()
+      const hours = currentTime.getHours()
+      const minutes = currentTime.getMinutes()
+      const seconds = currentTime.getSeconds()
+      setTime(`${23 - hours}:${59 - minutes}:${59 - seconds}`)
+      // console.log(hours, minutes, seconds)
+      setFreeDelivery(true)
+      if (hours === 23 && minutes === 59 && seconds === 59) {
+        setFreeDelivery(false)
+        clearInterval(timerId)
+      }
+    }, 1000)
+  }, [])
 
   return (
     <>
       <Header />
       <main className="bg-body-secondary py-3 px-4 py-sm-5 px-sm-5">
         <div className="bg-light-subtle py-3 px-3 productDetailsContainer">
-          <section className="d-sm-flex gap-sm-4 gap-md-5 align-items-start">
+          <section className="d-sm-flex gap-sm-4 gap-xl-5 align-items-start">
             <div
               className="productDetailsImage top-0 start-0"
               style={{ minWidth: "200px" }}
@@ -120,7 +190,7 @@ export default function ProductDetailsPage() {
               </div>
             </div>
             <div className="me-sm-5">
-              <small className="text-primary">{product.soldBy}</small>
+              <small className="text-primary fw-medium">{product.soldBy}</small>
               <p className="fw-bold lh-sm productDescription mb-1">
                 {product.newArrival === true && (
                   <span className="badge text-bg-success me-1">New</span>
@@ -158,150 +228,167 @@ export default function ProductDetailsPage() {
                   : product.discount}{" "}
                 off
               </p>
-              <div className="mb-3">
-                <span className="fw-bold me-2">Quantity: </span>
-                <button
-                  className="rounded-circle border border-1"
-                  style={{ width: "30px", height: "30px" }}
-                  onClick={decreaseCount}
-                >
-                  {" "}
-                  -{" "}
-                </button>
-                <input
-                  type="text"
-                  defaultValue={quantity}
-                  style={{ width: "30px" }}
-                  className="mx-2"
-                  onChange={(e) => {
-                    setQuantity(Number(e.target.value))
-                    setUpdated(true)
-                  }}
-                />
-                <button
-                  className="rounded-circle border border-1"
-                  style={{ width: "30px", height: "30px" }}
-                  onClick={increaseCount}
-                >
-                  {" "}
-                  +{" "}
-                </button>
+              <div>
+                <span className="quantityTextInProductDetailsPage fw-bold me-2">
+                  Quantity:{" "}
+                </span>
+                <div className="quantityBtnContainerInProductDetailsPage mb-3">
+                  <button
+                    className="rounded-circle border border-1"
+                    style={{ width: "30px", height: "30px" }}
+                    onClick={decreaseCount}
+                  >
+                    {" "}
+                    -{" "}
+                  </button>
+                  <input
+                    type="text"
+                    defaultValue={quantity}
+                    style={{ width: "30px" }}
+                    className="mx-2"
+                    onChange={(e) => {
+                      setQuantity(Number(e.target.value))
+                      setUpdated(true)
+                    }}
+                  />
+                  <button
+                    className="rounded-circle border border-1"
+                    style={{ width: "30px", height: "30px" }}
+                    onClick={increaseCount}
+                  >
+                    {" "}
+                    +{" "}
+                  </button>
+                </div>
               </div>
               <div>
-                <span className="fw-bold me-3">Size: </span>
-                <button
-                  className="border border-1 me-2"
-                  onClick={() => {
-                    setSize("S")
-                    setUpdated(true)
-                  }}
-                >
-                  S
-                </button>
-                <button
-                  className="border border-1 me-2"
-                  onClick={() => {
-                    setSize("M")
-                    setUpdated(true)
-                  }}
-                >
-                  M
-                </button>
-                <button
-                  className="border border-1 me-2"
-                  onClick={() => {
-                    setSize("L")
-                    setUpdated(true)
-                  }}
-                >
-                  L
-                </button>
-                <button
-                  className="border border-1 me-2"
-                  onClick={() => {
-                    setSize("XL")
-                    setUpdated(true)
-                  }}
-                >
-                  XL
-                </button>
-                <button
-                  className="border border-1"
-                  onClick={() => {
-                    setSize("XXL")
-                    setUpdated(true)
-                  }}
-                >
-                  XXL
-                </button>
+                <span className="sizeTextInProductDetailsPage fw-bold me-3">
+                  Size:{" "}
+                </span>
+                <div className="sizeBtnContainerInProductDetailsPage">
+                  <button
+                    className="border border-1 me-2 mb-2"
+                    onClick={() => {
+                      setSize("S")
+                      setUpdated(true)
+                    }}
+                  >
+                    S
+                  </button>
+                  <button
+                    className="border border-1 me-2 mb-2"
+                    onClick={() => {
+                      setSize("M")
+                      setUpdated(true)
+                    }}
+                  >
+                    M
+                  </button>
+                  <button
+                    className="border border-1 me-2 mb-2"
+                    onClick={() => {
+                      setSize("L")
+                      setUpdated(true)
+                    }}
+                  >
+                    L
+                  </button>
+                  <button
+                    className="border border-1 me-2 mb-2"
+                    onClick={() => {
+                      setSize("XL")
+                      setUpdated(true)
+                    }}
+                  >
+                    XL
+                  </button>
+                  <button
+                    className="border border-1 mb-2"
+                    onClick={() => {
+                      setSize("XXL")
+                      setUpdated(true)
+                    }}
+                  >
+                    XXL
+                  </button>
+                </div>
               </div>
               <hr />
-
-              <div className="d-flex gap-3 gap-sm-4 gap-md-5 mx-sm-3">
-                <div
-                  className="d-flex flex-column align-items-center gap-1 buyingFeatures"
-                  style={{ width: "50px" }}
-                >
-                  <img
-                    src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-returns._CB562506492_.png"
-                    alt=""
-                    className="w-100 img-fluid"
-                  />
-                  <p
-                    className="lh-1 m-0 text-center"
-                    style={{ fontSize: "10px" }}
+              <div className="orderFeaturesContainerInProductDetailsPage">
+                <i
+                  className="pre-btn bi bi-chevron-left"
+                  onClick={preBtnClicked}
+                ></i>
+                <i
+                  className="nxt-btn bi bi-chevron-right"
+                  onClick={nxtBtnClicked}
+                ></i>
+                <div className="orderFeaturesInProductDetailsPage d-flex gap-3 gap-sm-4 gap-md-5 px-sm-4">
+                  <div
+                    className="d-flex flex-column align-items-center gap-1 buyingFeatures"
+                    style={{ width: "50px", minWidth: "50px" }}
                   >
-                    10 days Return & Exchange
-                  </p>
-                </div>
-                <div
-                  className="d-flex flex-column align-items-center gap-1 buyingFeatures"
-                  style={{ width: "50px" }}
-                >
-                  <img
-                    src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/trust_icon_free_shipping_81px._CB562549966_.png"
-                    alt=""
-                    className="w-100 img-fluid"
-                  />
-                  <p
-                    className="lh-1 m-0 text-center"
-                    style={{ fontSize: "10px" }}
+                    <img
+                      src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-returns._CB562506492_.png"
+                      alt=""
+                      className="w-100 img-fluid"
+                    />
+                    <p
+                      className="lh-1 m-0 text-center"
+                      style={{ fontSize: "10px" }}
+                    >
+                      10 days Return & Exchange
+                    </p>
+                  </div>
+                  <div
+                    className="d-flex flex-column align-items-center gap-1 buyingFeatures"
+                    style={{ width: "50px", minWidth: "50px" }}
                   >
-                    Free Delivery
-                  </p>
-                </div>
-                <div
-                  className="d-flex flex-column align-items-center gap-1 buyingFeatures"
-                  style={{ width: "50px" }}
-                >
-                  <img
-                    src={cashOnDelivery}
-                    alt=""
-                    className="bg-body-tertiary p-2 rounded-circle w-100 img-fluid"
-                    style={{ width: "80px" }}
-                  />
-                  <p
-                    className="lh-1 m-0 text-center"
-                    style={{ fontSize: "10px" }}
+                    <img
+                      src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/trust_icon_free_shipping_81px._CB562549966_.png"
+                      alt=""
+                      className="w-100 img-fluid"
+                    />
+                    <p
+                      className="lh-1 m-0 text-center"
+                      style={{ fontSize: "10px" }}
+                    >
+                      Free Delivery
+                    </p>
+                  </div>
+                  <div
+                    className="d-flex flex-column align-items-center gap-1 buyingFeatures"
+                    style={{ width: "50px", minWidth: "50px" }}
                   >
-                    Cash on Delivery
-                  </p>
-                </div>
-                <div
-                  className="d-flex flex-column align-items-center gap-1 buyingFeatures"
-                  style={{ width: "50px" }}
-                >
-                  <img
-                    src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/Secure-payment._CB650126890_.png"
-                    alt=""
-                    className="w-100 img-fluid"
-                  />
-                  <p
-                    className="lh-1 m-0 text-center"
-                    style={{ fontSize: "10px" }}
+                    <img
+                      src={cashOnDelivery}
+                      alt=""
+                      className="bg-body-tertiary p-2 rounded-circle w-100 img-fluid"
+                      style={{ width: "80px" }}
+                    />
+                    <p
+                      className="lh-1 m-0 text-center"
+                      style={{ fontSize: "10px" }}
+                    >
+                      Cash on Delivery
+                    </p>
+                  </div>
+                  <div
+                    className="d-flex flex-column align-items-center gap-1 buyingFeatures"
+                    style={{ width: "50px", minWidth: "50px" }}
                   >
-                    Secure transaction
-                  </p>
+                    <img
+                      src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/Secure-payment._CB650126890_.png"
+                      alt=""
+                      className="w-100 img-fluid"
+                    />
+                    <p
+                      className="lh-1 m-0 text-center"
+                      style={{ fontSize: "10px" }}
+                    >
+                      Secure transaction
+                    </p>
+                  </div>
                 </div>
               </div>
               <hr />
@@ -316,6 +403,125 @@ export default function ProductDetailsPage() {
               <div className="btnContainer2">
                 <button className="btn btn-primary w-100 mb-2">Buy Now</button>
                 <button className="btn btn-secondary w-100">Add To Cart</button>
+              </div>
+            </div>
+            <div className="bg-white checkoutSidebar ms-auto px-4 py-3 fw-medium border border-secondary">
+              <span className="aboutProduct-sidebar-price">
+                <span
+                  style={{ fontSize: "18px", bottom: "7px" }}
+                  className="position-relative"
+                >
+                  ₹
+                </span>
+                {Math.round(
+                  (
+                    product.price -
+                    (product.price *
+                      (Number(product.offer.replace("%", ""))
+                        ? Number(product.offer.replace("%", ""))
+                        : Number(product.discount.replace("%", "")))) /
+                      100
+                  ).toFixed(1)
+                )}
+              </span>
+              {time !== "0:0:0" && (
+                <p className="aboutProduct-sidebar-deliveryEstimate lh-sm">
+                  FREE delivery
+                  <span className="fw-bold"> {setDeliveryDate()}</span>. Order
+                  within{" "}
+                  <span
+                    className="sidebar-deliveryEstimate-orderWithin"
+                    style={{ color: "green" }}
+                  >
+                    {time}
+                  </span>
+                  .
+                  {!size && (
+                    <a
+                      className="d-block text-decoration-underline"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        alert("Please select the product size First")
+                      }
+                    >
+                      Details
+                    </a>
+                  )}
+                  {size && (
+                    <Link
+                      to="/paymentMethods"
+                      className="d-block text-decoration-underline"
+                      style={{ cursor: "pointer" }}
+                    >
+                      Details
+                    </Link>
+                  )}
+                </p>
+              )}
+
+              <div className="d-flex align-items-start aboutProduct-sidebar-deliveryLocation">
+                <img
+                  className="sidebar-deliveryLocation-locationLogo"
+                  src={location}
+                  alt="Location icon"
+                />
+                <p className="sidebar-deliveryLocation-locationText lh-sm">
+                  Delivering to {user.name} - {address.city} {address.pinCode}
+                </p>
+              </div>
+              <p className="aboutProduct-sidebar-stockStatus fw-bold fs-5">
+                In stock
+              </p>
+              <table className="aboutProduct-sidebar-table">
+                <tbody>
+                  <tr>
+                    <td>Ships from</td>
+                    <td>{product.shipsFrom}</td>
+                  </tr>
+                  <tr>
+                    <td>Sold by</td>
+                    <td>{product.soldBy}</td>
+                  </tr>
+                  <tr>
+                    <td>Payment</td>
+                    <td>Secure transaction</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className="mt-4">
+                {!size && (
+                  <button
+                    className="btn btn-warning rounded w-100 my-2"
+                    onClick={() =>
+                      alert("Please select the product size First")
+                    }
+                  >
+                    Buy Now
+                  </button>
+                )}
+                {size && (
+                  <Link
+                    to="/paymentMethods"
+                    className="btn btn-warning rounded w-100 mb-2"
+                  >
+                    Buy Now
+                  </Link>
+                )}
+                <button
+                  className="btn btn-warning rounded w-100 mb-2"
+                  value={product.id}
+                  onClick={addToCart}
+                >
+                  Add to Cart
+                </button>
+                <hr className="mt-1 mb-3" />
+                <button
+                  className="btn btn-outline-secondary rounded w-100"
+                  value={product.id}
+                  onClick={addToWishlist}
+                >
+                  Add to Wish List
+                </button>
               </div>
             </div>
           </section>

@@ -43,9 +43,23 @@ export default function PaymentMethods() {
     0
   )
 
-  const deliveryCharge = Math.round(
+  const DeliveryCharge = Math.round(
     products.reduce((acc, curr) => acc + curr.deliveryCharge, 0) /
       products.length
+  )
+
+  const deliveryCharge = Math.round(
+    products.reduce(
+      (acc, curr) => acc + (curr.freeDelivery ? 0 : curr.deliveryCharge),
+      0
+    ) / products.length
+  )
+
+  const freeDelivery = Math.round(
+    products.reduce(
+      (acc, curr) => acc + (curr.freeDelivery ? curr.deliveryCharge : 0),
+      0
+    ) / products.length
   )
 
   const totalPrice = totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)
@@ -53,6 +67,9 @@ export default function PaymentMethods() {
   function placeOrder() {
     if (coupon === "HAPPYDIWALI") {
       orders[orders.length - 1].sale = "10%"
+    }
+    if(freeDelivery) {
+      orders[orders.length - 1].freeDelivery = `₹${freeDelivery}`
     }
     orders[orders.length - 1].totalPrice = Math.round(
       totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)
@@ -758,7 +775,15 @@ export default function PaymentMethods() {
           <div>
             <p className="my-0 w-50 fw-medium d-inline-block">Delivery: </p>
             <p className="my-0 w-50 fw-medium d-inline-block text-end">
-              ₹{deliveryCharge}
+              ₹{DeliveryCharge ? DeliveryCharge : 0}
+            </p>
+          </div>
+          <div>
+            <p className="my-0 w-50 fw-medium d-inline-block text-success">
+              Free Delivery:
+            </p>
+            <p className="my-0 w-50 fw-medium d-inline-block text-end text-success">
+              -₹{freeDelivery ? freeDelivery : 0}
             </p>
           </div>
           {isCashOnDelivery && (
@@ -772,15 +797,7 @@ export default function PaymentMethods() {
           <div>
             <p className="my-0 w-50 fw-medium d-inline-block">Total: </p>
             <p className="my-0 w-50 fw-medium d-inline-block text-end">
-              ₹{Math.round(totalPrice)}
-            </p>
-          </div>
-          <div>
-            <p className="my-0 w-50 fw-medium d-inline-block text-success">
-              Free Delivery:
-            </p>
-            <p className="my-0 w-50 fw-medium d-inline-block text-end text-success">
-              ₹0
+              ₹{totalPrice ? Math.round(totalPrice) : 0}
             </p>
           </div>
           {coupon === "HAPPYDIWALI" && (
@@ -789,7 +806,7 @@ export default function PaymentMethods() {
                 Sale:
               </p>
               <p className="my-0 w-50 fw-medium d-inline-block text-end text-success">
-                ₹{Math.round(coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)}
+                -₹{Math.round(coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)}
               </p>
             </div>
           )}
@@ -800,9 +817,12 @@ export default function PaymentMethods() {
             </p>
             <p className="my-0 w-50 fw-medium d-inline-block fs-5 text-end">
               ₹
-              {Math.round(
-                totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)
-              )}
+              {totalPrice
+                ? Math.round(
+                    totalPrice -
+                      (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)
+                  )
+                : 0}
             </p>
           </div>
         </section>

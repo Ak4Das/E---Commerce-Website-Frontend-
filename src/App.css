@@ -84,6 +84,24 @@
     width: 45px !important;
   }
 }
+@media (min-width: 321px) {
+  .pre-btn,
+  .nxt-btn {
+    display: none !important;
+  }
+  .sizeBtnContainerInProductDetailsPage {
+    display: inline-block !important;
+  }
+  .sizeTextInProductDetailsPage {
+    display: inline-block !important;
+  }
+  .quantityBtnContainerInProductDetailsPage {
+    display: inline-block !important;
+  }
+  .quantityTextInProductDetailsPage {
+    display: inline-block !important;
+  }
+}
 @media (min-width: 351px) {
   .searchInApp {
     display: none;
@@ -552,6 +570,11 @@
     width: 230px !important;
   }
 }
+@media (max-width:1450px) {
+  .checkoutSidebar {
+    display: none;
+  }
+}
 @media (max-width: 1400px) {
   .offer {
     display: none !important;
@@ -657,7 +680,7 @@
     font-size: 2vw !important;
   }
   .imageOnProductCurt {
-    height:400px !important;
+    height: 400px !important;
   }
 }
 @media (max-width: 650px) {
@@ -856,6 +879,25 @@
     min-width: 200px !important;
   }
 }
+@media (max-width: 320px) {
+  .orderFeaturesInProductDetailsPage {
+    padding-inline: 24px !important;
+  }
+  .sizeBtnContainerInProductDetailsPage {
+    display: block !important;
+  }
+  .sizeTextInProductDetailsPage {
+    display: block !important;
+    margin-bottom: 5px !important;
+  }
+  .quantityBtnContainerInProductDetailsPage {
+    display: block !important;
+  }
+  .quantityTextInProductDetailsPage {
+    display: block !important;
+    margin-bottom: 5px !important;
+  }
+}
 
 .star-bottom::before {
   content: "\2605 \2605 \2605 \2605 \2605";
@@ -1007,4 +1049,104 @@
 .menWearShoe {
   width: 30% !important;
   max-width: 500px !important;
+}
+
+.pre-btn,
+.nxt-btn {
+  width: 25px;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.nxt-btn {
+  right: 0;
+}
+.pre-btn img,
+.nxt-btn img {
+  opacity: 0.2;
+}
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
+}
+.pre-btn:hover,
+.nxt-btn:hover {
+  border: 2px solid black;
+}
+
+.orderFeaturesContainerInProductDetailsPage {
+  position: relative;
+  overflow: hidden;
+}
+.orderFeaturesInProductDetailsPage {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.orderFeaturesInProductDetailsPage::-webkit-scrollbar {
+  display: none;
+}
+
+.checkoutSidebar {
+  width: 17vw;
+  min-width: 250px;
+  max-width: 250px;
+  border-radius: 10px;
+}
+.aboutProduct-sidebar-price {
+  font-size: 30px;
+}
+.aboutProduct-sidebar-deliveryLocation {
+  gap: 5px;
+}
+.aboutProduct-sidebar-deliveryEstimate {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.aboutProduct-sidebar-deliveryLocation {
+  margin-top: 10px;
+}
+.sidebar-deliveryLocation-locationLogo {
+  width: 20px;
+}
+.sidebar-deliveryLocation-locationText {
+  font-size: 12px;
+  color: blue;
+}
+.aboutProduct-sidebar-stockStatus {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: green;
+}
+.aboutProduct-sidebar-table {
+  font-size: 12px;
+}
+.aboutProduct-sidebar-table td {
+  vertical-align: top;
+}
+.aboutProduct-sidebar-table td:nth-child(1) {
+  width: 70px;
+}
+.aboutProduct-sidebar-table td:nth-child(2) {
+  color: blue;
+}
+.action-button {
+  height: 35px;
+  margin-block: 10px;
+  font-size: 12px;
+}
+.aboutProduct-sidebar-quantitySelector {
+  background-color: #f0f2f2;
+  border-radius: 7px;
+  padding: 10px;
+}
+.sidebar-quantitySelector-dropdownIcon {
+  width: 15px;
 }

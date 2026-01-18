@@ -5,9 +5,16 @@ import { useState } from "react"
 
 export default function UserAddresses() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
+  if (user.address.length) {
+    const selectedAddress = user.address.find((address) => address.selected)
+    if (!selectedAddress) {
+      user.address[0].selected = true
+      localStorage.setItem("user", JSON.stringify(user))
+    }
+  }
   function removeAddress(e) {
     user.address = user.address.filter(
-      (address) => address.id !== Number(e.target.value)
+      (address) => address.id !== Number(e.target.value),
     )
     localStorage.setItem("user", JSON.stringify(user))
     setUser(JSON.parse(localStorage.getItem("user")))
@@ -41,10 +48,9 @@ export default function UserAddresses() {
                 className="col-sm-6 col-lg-4 text-decoration-none"
                 onClick={() => {
                   let Address = user.address.find(
-                    (add) => add.id === address.id
+                    (add) => add.id === address.id,
                   )
                   for (address of user.address) {
-                    console.log(address === Address)
                     if (address === Address) {
                       address.selected = true
                     } else {
@@ -99,8 +105,11 @@ export default function UserAddresses() {
                           Remove
                         </button>
                       </div>
-                      <div className="text-primary fw-bold" style={{fontSize:"20px"}}>
-                        {address.selected && <i class="bi bi-check2-all"></i>}
+                      <div
+                        className="text-primary fw-bold"
+                        style={{ fontSize: "20px" }}
+                      >
+                        {address.selected && <i className="bi bi-check2-all"></i>}
                       </div>
                     </div>
                   </div>

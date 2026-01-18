@@ -55,6 +55,7 @@ export default function AddAddressForm() {
             className="w-100 form-control"
             defaultValue={address ? address.fullName : ""}
             onChange={(e) => setFullName(e.target.value)}
+            required
           />
           <br />
           <label htmlFor="mobileNo" className="form-label">
@@ -67,6 +68,7 @@ export default function AddAddressForm() {
             className="w-100 form-control"
             defaultValue={address ? address.mobNo : ""}
             onChange={(e) => setMobNo(e.target.value)}
+            required
           />
           <br />
           <label htmlFor="pinCode" className="form-label">
@@ -79,6 +81,7 @@ export default function AddAddressForm() {
             className="w-100 form-control"
             defaultValue={address ? address.pinCode : ""}
             onChange={(e) => setPinCode(e.target.value)}
+            required
           />
           <br />
           <label htmlFor="localInfo" className="form-label">
@@ -91,6 +94,7 @@ export default function AddAddressForm() {
             className="w-100 form-control"
             defaultValue={address ? address.localInfo : ""}
             onChange={(e) => setLocalInfo(e.target.value)}
+            required
           />
           <br />
           <label htmlFor="area" className="form-label">
@@ -103,6 +107,7 @@ export default function AddAddressForm() {
             className="w-100 form-control"
             defaultValue={address ? address.area : ""}
             onChange={(e) => setArea(e.target.value)}
+            required
           />
           <br />
           <label htmlFor="city" className="form-label">
@@ -115,6 +120,7 @@ export default function AddAddressForm() {
             className="w-100 form-control"
             defaultValue={address ? address.city : ""}
             onChange={(e) => setCity(e.target.value)}
+            required
           />
           <br />
           <label htmlFor="state" className="form-label">
@@ -127,11 +133,28 @@ export default function AddAddressForm() {
             className="w-100 form-control"
             defaultValue={address ? address.state : ""}
             onChange={(e) => setState(e.target.value)}
+            required
           />
           <br />
-          <Link to="/userAddress" className="btn btn-warning rounded-pill mt-3" onClick={handleSubmit}>
-            Add Address
-          </Link>
+          {fullName &&
+          mobNo &&
+          pinCode &&
+          localInfo &&
+          area &&
+          city &&
+          state ? (
+            <Link
+              to="/userAddress"
+              className="btn btn-warning rounded-pill mt-3"
+              onClick={handleSubmit}
+            >
+              {address ? "Edit Address" : "Add Address"}
+            </Link>
+          ) : (
+            <button className="btn btn-warning rounded-pill mt-3">
+              {address ? "Edit Address" : "Add Address"}
+            </button>
+          )}
         </form>
       </main>
     </>

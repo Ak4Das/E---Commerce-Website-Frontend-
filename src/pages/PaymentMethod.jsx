@@ -8,7 +8,7 @@ import RatingBar from "../components/RatingBar"
 
 export default function PaymentMethods() {
   const address = JSON.parse(localStorage.getItem("user")).address.find(
-    (address) => address.selected
+    (address) => address.selected,
   )
   const [isCard, setIsCard] = useState(false)
   const [isNetBanking, setIsNetBanking] = useState(false)
@@ -17,7 +17,7 @@ export default function PaymentMethods() {
   const [showCard, setShowCard] = useState(false)
   const [paymentMethod, setPaymentMethod] = useState("")
   const [orders, setOrders] = useState(
-    JSON.parse(localStorage.getItem("orders")) || []
+    JSON.parse(localStorage.getItem("orders")) || [],
   )
 
   const [isPaymentMethodSelected, selectPaymentMethod] = useState(false)
@@ -25,7 +25,7 @@ export default function PaymentMethods() {
   const [products, setProducts] = useState(
     JSON.parse(localStorage.getItem("createOrder"))
       ? JSON.parse(localStorage.getItem("createOrder")).item
-      : []
+      : [],
   )
 
   const [isOrderPlaced, setIsOrderPlaced] = useState(false)
@@ -40,26 +40,26 @@ export default function PaymentMethods() {
         (Number(curr.offer.replace("%", ""))
           ? Number(curr.offer.replace("%", ""))
           : Number(curr.discount.replace("%", ""))),
-    0
+    0,
   )
 
   const DeliveryCharge = Math.round(
     products.reduce((acc, curr) => acc + curr.deliveryCharge, 0) /
-      products.length
+      products.length,
   )
 
   const deliveryCharge = Math.round(
     products.reduce(
       (acc, curr) => acc + (curr.freeDelivery ? 0 : curr.deliveryCharge),
-      0
-    ) / products.length
+      0,
+    ) / products.length,
   )
 
   const freeDelivery = Math.round(
     products.reduce(
       (acc, curr) => acc + (curr.freeDelivery ? curr.deliveryCharge : 0),
-      0
-    ) / products.length
+      0,
+    ) / products.length,
   )
 
   const totalPrice = totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)
@@ -68,11 +68,11 @@ export default function PaymentMethods() {
     if (coupon === "HAPPYDIWALI") {
       orders[orders.length - 1].sale = "10%"
     }
-    if(freeDelivery) {
+    if (freeDelivery) {
       orders[orders.length - 1].freeDelivery = `₹${freeDelivery}`
     }
     orders[orders.length - 1].totalPrice = Math.round(
-      totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)
+      totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0),
     )
     localStorage.setItem("orders", JSON.stringify(orders))
     localStorage.setItem("createOrder", JSON.stringify({ item: [] }))
@@ -193,7 +193,7 @@ export default function PaymentMethods() {
                             New
                           </span>
                         )}
-                        {Number(product.offer.replace("%", "")) && (
+                        {!!Number(product.offer.replace("%", "")) && (
                           <span className="badge text-bg-warning me-1">
                             Diwali Offer
                           </span>
@@ -211,9 +211,9 @@ export default function PaymentMethods() {
                                 (Number(product.offer.replace("%", ""))
                                   ? Number(product.offer.replace("%", ""))
                                   : Number(
-                                      product.discount.replace("%", "")
+                                      product.discount.replace("%", ""),
                                     ))) /
-                                100
+                                100,
                           )}
                         </span>
                         <span className="ms-2 fw-medium">
@@ -232,7 +232,7 @@ export default function PaymentMethods() {
                           className="border border-0 bg-white text-danger"
                           onClick={(e) => {
                             const Product = products.filter(
-                              (item) => item.id !== product.id
+                              (item) => item.id !== product.id,
                             )
                             orders[orders.length - 1].item = Product
                             setProducts(Product)
@@ -248,7 +248,7 @@ export default function PaymentMethods() {
                           onChange={(e) => {
                             let inputElementValue = Number(e.target.value)
                             const Product = products.find(
-                              (item) => item.id === product.id
+                              (item) => item.id === product.id,
                             )
                             Product.quantity = inputElementValue
                             orders[orders.length - 1].item = products
@@ -259,15 +259,15 @@ export default function PaymentMethods() {
                           style={{ marginTop: "-5px" }}
                           onClick={(e) => {
                             let inputElementValue = Number(
-                              e.target.previousElementSibling.value
+                              e.target.previousElementSibling.value,
                             )
                             e.target.previousElementSibling.value =
                               ++inputElementValue
                             const Product = products.find(
-                              (item) => item.id === product.id
+                              (item) => item.id === product.id,
                             )
                             Product.quantity = Number(
-                              e.target.previousElementSibling.value
+                              e.target.previousElementSibling.value,
                             )
                             orders[orders.length - 1].item = products
                           }}
@@ -696,28 +696,30 @@ export default function PaymentMethods() {
                       Use this payment method
                     </Link>
                   ) : (
-                    <button
-                      className="btn btn-warning rounded-pill mt-4 px-4"
-                      onClick={() => {
-                        const order = {
-                          id: orders.length,
-                          item: products,
-                          address,
-                          paymentMethod,
-                          deliveryCharge,
-                          orderDate: getOrderDate(),
-                          orderTime: setDeliveryTime(),
-                          deliveryDate: setDeliveryDate(),
-                          deliveryDay: getDeliveryDay(),
-                          totalPrice: Math.round(totalPrice),
-                        }
-                        orders.push(order)
-                        setOrders(orders)
-                        selectPaymentMethod(true)
-                      }}
-                    >
-                      Use this payment method
-                    </button>
+                    paymentMethod && (
+                      <button
+                        className="btn btn-warning rounded-pill mt-4 px-4"
+                        onClick={() => {
+                          const order = {
+                            id: orders.length,
+                            item: products,
+                            address,
+                            paymentMethod,
+                            deliveryCharge,
+                            orderDate: getOrderDate(),
+                            orderTime: setDeliveryTime(),
+                            deliveryDate: setDeliveryDate(),
+                            deliveryDay: getDeliveryDay(),
+                            totalPrice: Math.round(totalPrice),
+                          }
+                          orders.push(order)
+                          setOrders(orders)
+                          selectPaymentMethod(true)
+                        }}
+                      >
+                        Use this payment method
+                      </button>
+                    )
                   )}
                 </div>
               </div>
@@ -759,7 +761,7 @@ export default function PaymentMethods() {
               <p className="fw-bold my-0 text-center">
                 Order Total: ₹
                 {Math.round(
-                  totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)
+                  totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0),
                 )}
               </p>
             </section>
@@ -820,7 +822,7 @@ export default function PaymentMethods() {
               {totalPrice
                 ? Math.round(
                     totalPrice -
-                      (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)
+                      (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0),
                   )
                 : 0}
             </p>

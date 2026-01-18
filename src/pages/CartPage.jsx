@@ -8,44 +8,68 @@ export default function CartPage() {
   const { clothsData, setClothsData } = GetClothsData()
 
   const productsInCart = clothsData.filter(
-    (product) => product.addToCart === true
+    (product) => product.addToCart === true,
   )
+
   const idOfProductsInCart = productsInCart.map((product) => product.id)
+
   const createOrderInDatabase = JSON.parse(localStorage.getItem("createOrder"))
+
   if (
     createOrderInDatabase &&
     JSON.parse(localStorage.getItem("createOrder")).item.length
   ) {
     const idOfCreateOrderInDatabase = createOrderInDatabase.item.map(
-      (product) => product.id
+      (product) => product.id,
     )
     if (idOfProductsInCart.length !== idOfCreateOrderInDatabase.length) {
       localStorage.setItem(
         "createOrder",
-        JSON.stringify({ item: productsInCart })
+        JSON.stringify({ item: productsInCart }),
       )
     }
   } else {
     localStorage.setItem(
       "createOrder",
-      JSON.stringify({ item: productsInCart })
+      JSON.stringify({ item: productsInCart }),
     )
-  }
-
-  function moveToWishlist(e) {
-    const product = clothsData.find(
-      (product) => product.id === Number(e.target.value)
-    )
-    product.addToWishList = product.addToWishList === false ? true : false
-    localStorage.setItem("clothsData", JSON.stringify(clothsData))
-    setClothsData(JSON.parse(localStorage.getItem("clothsData")))
   }
 
   const ProductsInCart =
     JSON.parse(localStorage.getItem("createOrder")).item.length &&
     JSON.parse(localStorage.getItem("createOrder")).item.filter(
-      (product) => product.addToCart === true
+      (product) => product.addToCart === true,
     )
+
+  function moveToWishlist(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    const product = clothsData.find(
+      (product) => product.id === Number(e.target.value),
+    )
+    product.addToWishList = product.addToWishList === false ? true : false
+    localStorage.setItem("clothsData", JSON.stringify(clothsData))
+    setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+
+    const Product = ProductsInCart.find(
+      (product) => product.id === Number(e.target.value),
+    )
+    Product.addToWishList = Product.addToWishList === false ? true : false
+    localStorage.setItem(
+      "createOrder",
+      JSON.stringify({ item: ProductsInCart }),
+    )
+
+    const btn = e.target
+    btn.innerHTML = '<i class="bi bi-check2"></i>'
+    btn.style.backgroundColor = "#05a058"
+    btn.style.color = "white"
+    setTimeout(() => {
+      btn.innerHTML = "Added To Wishlist"
+      btn.style.backgroundColor = ""
+      btn.style.color = ""
+    }, 1000)
+  }
 
   function newProduct(product) {
     product.quantity = 1
@@ -59,7 +83,7 @@ export default function CartPage() {
     if (ProductsInCart.length) {
       if (ProductsInCart.length !== isQuantityPresent.length) {
         const finalProductsInCart = ProductsInCart.map((product) =>
-          product.quantity ? product : newProduct(product)
+          product.quantity ? product : newProduct(product),
         )
         const createOrder = { item: finalProductsInCart }
         localStorage.setItem("createOrder", JSON.stringify(createOrder))
@@ -79,14 +103,14 @@ export default function CartPage() {
           (Number(curr.offer.replace("%", ""))
             ? Number(curr.offer.replace("%", ""))
             : Number(curr.discount.replace("%", ""))),
-      0
+      0,
     )
 
   const deliveryCharge =
     ProductsInCart &&
     Math.round(
       ProductsInCart.reduce((acc, curr) => acc + curr.deliveryCharge, 0) /
-        ProductsInCart.length
+        ProductsInCart.length,
     )
 
   return (
@@ -102,215 +126,291 @@ export default function CartPage() {
                   return (
                     <div key={product.id} className="row mb-3">
                       <div className="col-sm-12 col-md-12 mb-3">
-                        <div className="card flex-lg-row gap-4 productCardInCart m-auto">
-                          <img
-                            src={product.url}
-                            alt=""
-                            className="imageOnProductCurt"
-                          />
-                          <div className="card-body d-flex flex-column justify-content-between pt-0 pt-lg-2">
-                            <div>
-                              <p className="lh-sm fs-5 fw-bold m-0 mb-2 productNameOnCartPage overflow-hidden">
-                                {product.name.length > 61
-                                  ? product.name.slice(0, 60).concat("...")
-                                  : product.name}
-                              </p>
+                        <Link
+                          className="text-decoration-none"
+                          to={`/productDetails/${product.id}`}
+                        >
+                          <div className="card flex-lg-row gap-4 productCardInCart m-auto">
+                            <img
+                              src={product.url}
+                              alt=""
+                              className="imageOnProductCurt"
+                            />
+                            <div className="card-body d-flex flex-column justify-content-between pt-0 pt-lg-2">
                               <div>
-                                <span className="fw-bold fs-5">
-                                  ₹
-                                  {Math.round(
-                                    product.price -
-                                      (product.price *
-                                        (Number(product.offer.replace("%", ""))
-                                          ? Number(
-                                              product.offer.replace("%", "")
-                                            )
-                                          : Number(
-                                              product.discount.replace("%", "")
-                                            ))) /
-                                        100
-                                  )}
-                                </span>
-                                <span className="text-decoration-line-through ms-2">
-                                  ₹{product.price}
-                                </span>
-                              </div>
-                              <p className="fw-bold fs-5 text-body-tertiary">
-                                {Number(product.offer.replace("%", ""))
-                                  ? product.offer
-                                  : product.discount}{" "}
-                                off
-                              </p>
-                              <div className="mb-3">
-                                <span className="fw-bold me-2">Quantity: </span>
-                                <button
-                                  className="rounded-circle border border-1"
-                                  style={{ width: "30px", height: "30px" }}
-                                  onClick={(e) => {
-                                    let inputElementValue = Number(
-                                      e.target.nextElementSibling.value
-                                    )
-                                    if (inputElementValue > 1) {
-                                      e.target.nextElementSibling.value =
-                                        --inputElementValue
+                                <p className="lh-sm fs-5 fw-bold m-0 mb-2 productNameOnCartPage overflow-hidden">
+                                  {product.name.length > 61
+                                    ? product.name.slice(0, 60).concat("...")
+                                    : product.name}
+                                </p>
+                                <div>
+                                  <span className="fw-bold fs-5">
+                                    ₹
+                                    {Math.round(
+                                      product.price -
+                                        (product.price *
+                                          (Number(
+                                            product.offer.replace("%", ""),
+                                          )
+                                            ? Number(
+                                                product.offer.replace("%", ""),
+                                              )
+                                            : Number(
+                                                product.discount.replace(
+                                                  "%",
+                                                  "",
+                                                ),
+                                              ))) /
+                                          100,
+                                    )}
+                                  </span>
+                                  <span className="text-decoration-line-through ms-2">
+                                    ₹{product.price}
+                                  </span>
+                                </div>
+                                <p className="fw-bold fs-5 text-body-tertiary">
+                                  {Number(product.offer.replace("%", ""))
+                                    ? product.offer
+                                    : product.discount}{" "}
+                                  off
+                                </p>
+                                <div className="mb-3">
+                                  <span className="fw-bold me-2">
+                                    Quantity:{" "}
+                                  </span>
+                                  <button
+                                    className="rounded-circle border border-1"
+                                    style={{ width: "30px", height: "30px" }}
+                                    onClick={(e) => {
+                                      e.preventDefault()
+                                      e.stopPropagation()
+                                      let inputElementValue = Number(
+                                        e.target.nextElementSibling.value,
+                                      )
+                                      if (inputElementValue > 1) {
+                                        e.target.nextElementSibling.value =
+                                          --inputElementValue
+                                        product.quantity = Number(
+                                          e.target.nextElementSibling.value,
+                                        )
+                                        localStorage.setItem(
+                                          "createOrder",
+                                          JSON.stringify({
+                                            item: ProductsInCart,
+                                          }),
+                                        )
+                                        setUpdated(true)
+                                      }
+                                    }}
+                                  >
+                                    {" "}
+                                    -{" "}
+                                  </button>
+                                  <input
+                                    type="text"
+                                    defaultValue={product.quantity || 1}
+                                    style={{ width: "30px" }}
+                                    className="mx-2"
+                                    onChange={(e) => {
+                                      if (Number(e.target.value) >= 0) {
+                                        product.quantity = Number(
+                                          e.target.value,
+                                        )
+                                        setUpdated(true)
+                                      }
+                                    }}
+                                  />
+                                  <button
+                                    className="rounded-circle border border-1"
+                                    style={{ width: "30px", height: "30px" }}
+                                    onClick={(e) => {
+                                      e.preventDefault()
+                                      e.stopPropagation()
+                                      let inputElementValue = Number(
+                                        e.target.previousElementSibling.value,
+                                      )
+                                      e.target.previousElementSibling.value =
+                                        ++inputElementValue
                                       product.quantity = Number(
-                                        e.target.nextElementSibling.value
+                                        e.target.previousElementSibling.value,
                                       )
                                       localStorage.setItem(
                                         "createOrder",
-                                        JSON.stringify({ item: ProductsInCart })
+                                        JSON.stringify({
+                                          item: ProductsInCart,
+                                        }),
                                       )
                                       setUpdated(true)
-                                    }
-                                  }}
-                                >
-                                  {" "}
-                                  -{" "}
-                                </button>
-                                <input
-                                  type="text"
-                                  defaultValue={product.quantity || 1}
-                                  style={{ width: "30px" }}
-                                  className="mx-2"
-                                  onChange={(e) => {
-                                    if (Number(e.target.value) >= 0) {
-                                      product.quantity = Number(e.target.value)
+                                    }}
+                                  >
+                                    {" "}
+                                    +{" "}
+                                  </button>
+                                </div>
+                                <div className="mb-3">
+                                  <span className="fw-bold me-0">Size: </span>
+                                  <button
+                                    className="border border-1 me-2"
+                                    onClick={(e) => {
+                                      e.preventDefault()
+                                      e.stopPropagation()
+                                      product.size = "S"
+                                      localStorage.setItem(
+                                        "createOrder",
+                                        JSON.stringify({
+                                          item: ProductsInCart,
+                                        }),
+                                      )
                                       setUpdated(true)
-                                    }
-                                  }}
-                                />
+                                      const btn = e.target
+                                      btn.innerHTML =
+                                        '<i class="bi bi-check2"></i>'
+                                      setTimeout(() => {
+                                        btn.innerHTML = "S"
+                                      }, 500)
+                                    }}
+                                  >
+                                    S
+                                  </button>
+                                  <button
+                                    className="border border-1 me-2"
+                                    onClick={(e) => {
+                                      e.preventDefault()
+                                      e.stopPropagation()
+                                      product.size = "M"
+                                      localStorage.setItem(
+                                        "createOrder",
+                                        JSON.stringify({
+                                          item: ProductsInCart,
+                                        }),
+                                      )
+                                      setUpdated(true)
+                                      const btn = e.target
+                                      btn.innerHTML =
+                                        '<i class="bi bi-check2"></i>'
+                                      setTimeout(() => {
+                                        btn.innerHTML = "M"
+                                      }, 500)
+                                    }}
+                                  >
+                                    M
+                                  </button>
+                                  <button
+                                    className="border border-1 me-2"
+                                    onClick={(e) => {
+                                      e.preventDefault()
+                                      e.stopPropagation()
+                                      product.size = "L"
+                                      localStorage.setItem(
+                                        "createOrder",
+                                        JSON.stringify({
+                                          item: ProductsInCart,
+                                        }),
+                                      )
+                                      setUpdated(true)
+                                      const btn = e.target
+                                      btn.innerHTML =
+                                        '<i class="bi bi-check2"></i>'
+                                      setTimeout(() => {
+                                        btn.innerHTML = "L"
+                                      }, 500)
+                                    }}
+                                  >
+                                    L
+                                  </button>
+                                  <button
+                                    className="border border-1 me-2"
+                                    onClick={(e) => {
+                                      e.preventDefault()
+                                      e.stopPropagation()
+                                      product.size = "XL"
+                                      localStorage.setItem(
+                                        "createOrder",
+                                        JSON.stringify({
+                                          item: ProductsInCart,
+                                        }),
+                                      )
+                                      setUpdated(true)
+                                      const btn = e.target
+                                      btn.innerHTML =
+                                        '<i class="bi bi-check2"></i>'
+                                      setTimeout(() => {
+                                        btn.innerHTML = "XL"
+                                      }, 500)
+                                    }}
+                                  >
+                                    XL
+                                  </button>
+                                  <button
+                                    className="border border-1"
+                                    onClick={(e) => {
+                                      e.preventDefault()
+                                      e.stopPropagation()
+                                      product.size = "XXL"
+                                      localStorage.setItem(
+                                        "createOrder",
+                                        JSON.stringify({
+                                          item: ProductsInCart,
+                                        }),
+                                      )
+                                      setUpdated(true)
+                                      const btn = e.target
+                                      btn.innerHTML =
+                                        '<i class="bi bi-check2"></i>'
+                                      setTimeout(() => {
+                                        btn.innerHTML = "XXL"
+                                      }, 500)
+                                    }}
+                                  >
+                                    XXL
+                                  </button>
+                                </div>
+                              </div>
+                              <div>
                                 <button
-                                  className="rounded-circle border border-1"
-                                  style={{ width: "30px", height: "30px" }}
+                                  className="btn btn-secondary w-100 my-2"
+                                  value={product.id}
                                   onClick={(e) => {
-                                    let inputElementValue = Number(
-                                      e.target.previousElementSibling.value
+                                    e.preventDefault()
+                                    e.stopPropagation()
+                                    const item = clothsData.find(
+                                      (Product) => Product.id === product.id,
                                     )
-                                    e.target.previousElementSibling.value =
-                                      ++inputElementValue
-                                    product.quantity = Number(
-                                      e.target.previousElementSibling.value
-                                    )
+                                    item.addToCart =
+                                      item.addToCart === false ? true : false
+                                    product.addToCart =
+                                      product.addToCart === false ? true : false
                                     localStorage.setItem(
                                       "createOrder",
-                                      JSON.stringify({ item: ProductsInCart })
+                                      JSON.stringify({ item: ProductsInCart }),
+                                    )
+                                    localStorage.setItem(
+                                      "clothsData",
+                                      JSON.stringify(clothsData),
+                                    )
+                                    setClothsData(
+                                      JSON.parse(
+                                        localStorage.getItem("clothsData"),
+                                      ),
                                     )
                                     setUpdated(true)
                                   }}
                                 >
-                                  {" "}
-                                  +{" "}
+                                  Remove From Cart
+                                </button>
+                                <button
+                                  className="btn btn-outline-secondary w-100"
+                                  value={product.id}
+                                  onClick={moveToWishlist}
+                                >
+                                  {product.addToWishList
+                                    ? "Added To Wishlist"
+                                    : "Move To Wishlist"}
                                 </button>
                               </div>
-                              <div className="mb-3">
-                                <span className="fw-bold me-0">Size: </span>
-                                <button
-                                  className="border border-1 me-2"
-                                  onClick={() => {
-                                    product.size = "S"
-                                    localStorage.setItem(
-                                      "createOrder",
-                                      JSON.stringify({ item: ProductsInCart })
-                                    )
-                                    setUpdated(true)
-                                  }}
-                                >
-                                  S
-                                </button>
-                                <button
-                                  className="border border-1 me-2"
-                                  onClick={() => {
-                                    product.size = "M"
-                                    localStorage.setItem(
-                                      "createOrder",
-                                      JSON.stringify({ item: ProductsInCart })
-                                    )
-                                    setUpdated(true)
-                                  }}
-                                >
-                                  M
-                                </button>
-                                <button
-                                  className="border border-1 me-2"
-                                  onClick={() => {
-                                    product.size = "L"
-                                    localStorage.setItem(
-                                      "createOrder",
-                                      JSON.stringify({ item: ProductsInCart })
-                                    )
-                                    setUpdated(true)
-                                  }}
-                                >
-                                  L
-                                </button>
-                                <button
-                                  className="border border-1 me-2"
-                                  onClick={() => {
-                                    product.size = "XL"
-                                    localStorage.setItem(
-                                      "createOrder",
-                                      JSON.stringify({ item: ProductsInCart })
-                                    )
-                                    setUpdated(true)
-                                  }}
-                                >
-                                  XL
-                                </button>
-                                <button
-                                  className="border border-1"
-                                  onClick={() => {
-                                    product.size = "XXL"
-                                    localStorage.setItem(
-                                      "createOrder",
-                                      JSON.stringify({ item: ProductsInCart })
-                                    )
-                                    setUpdated(true)
-                                  }}
-                                >
-                                  XXL
-                                </button>
-                              </div>
-                            </div>
-                            <div>
-                              <button
-                                className="btn btn-secondary w-100 my-2"
-                                value={product.id}
-                                onClick={() => {
-                                  const item = clothsData.find(
-                                    (Product) => Product.id === product.id
-                                  )
-                                  item.addToCart =
-                                    item.addToCart === false ? true : false
-                                  product.addToCart =
-                                    product.addToCart === false ? true : false
-                                  localStorage.setItem(
-                                    "createOrder",
-                                    JSON.stringify({ item: ProductsInCart })
-                                  )
-                                  localStorage.setItem(
-                                    "clothsData",
-                                    JSON.stringify(clothsData)
-                                  )
-                                  setClothsData(
-                                    JSON.parse(
-                                      localStorage.getItem("clothsData")
-                                    )
-                                  )
-                                  setUpdated(true)
-                                }}
-                              >
-                                Remove From Cart
-                              </button>
-                              <button
-                                className="btn btn-outline-secondary w-100"
-                                value={product.id}
-                                onClick={moveToWishlist}
-                              >
-                                Move To Wishlist
-                              </button>
                             </div>
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   )
@@ -343,7 +443,7 @@ export default function CartPage() {
               <br />
               {ProductsInCart &&
               JSON.parse(localStorage.getItem("createOrder")).item.filter(
-                (product) => product.size
+                (product) => product.size,
               ).length ===
                 JSON.parse(localStorage.getItem("createOrder")).item.length ? (
                 <Link to="/paymentMethods" className="btn btn-primary w-100">
@@ -355,7 +455,7 @@ export default function CartPage() {
                   onClick={() =>
                     ProductsInCart
                       ? alert(
-                          "Please select size of all the products present in the cart"
+                          "Please select size of all the products present in the cart",
                         )
                       : alert("There is no item in cart")
                   }

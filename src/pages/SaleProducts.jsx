@@ -11,11 +11,11 @@ export default function SaleProducts() {
   const [gender, setGender] = useState("")
 
   const filteredProducts = clothsData.filter(
-    (product) => product.commonCategory === commonCategory
+    (product) => product.commonCategory === commonCategory,
   )
 
   const productWithOffer = filteredProducts.filter((product) =>
-    Number(product.offer.replace("%", ""))
+    Number(product.offer.replace("%", "")),
   )
 
   const filteredByGender =
@@ -24,21 +24,43 @@ export default function SaleProducts() {
       : productWithOffer.filter((product) => product.gender === gender)
 
   function addToCart(e) {
+    e.preventDefault()
+    e.stopPropagation()
     const product = clothsData.find(
-      (product) => product.id === Number(e.target.value)
+      (product) => product.id === Number(e.target.value),
     )
     product.addToCart = product.addToCart === false ? true : false
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+    const btn = e.target
+    btn.innerHTML = '<i class="bi bi-check2"></i>'
+    btn.style.backgroundColor = "#05a058"
+    btn.style.color = "white"
+    setTimeout(() => {
+      btn.innerHTML = "Added To Cart"
+      btn.style.backgroundColor = ""
+      btn.style.color = ""
+    }, 1000)
   }
 
   function addToWishlist(e) {
+    e.preventDefault()
+    e.stopPropagation()
     const product = clothsData.find(
-      (product) => product.id === Number(e.target.value)
+      (product) => product.id === Number(e.target.value),
     )
     product.addToWishList = product.addToWishList === false ? true : false
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+    const btn = e.target
+    btn.innerHTML = '<i class="bi bi-check2"></i>'
+    btn.style.backgroundColor = "#05a058"
+    btn.style.color = "white"
+    setTimeout(() => {
+      btn.innerHTML = "Added To Wishlist"
+      btn.style.backgroundColor = ""
+      btn.style.color = ""
+    }, 1000)
   }
 
   return (
@@ -73,7 +95,7 @@ export default function SaleProducts() {
             {filteredByGender.map((product) => (
               <div
                 key={product.id}
-                className="col-sm-6 col-xl-4 col-xxl-3 mb-3"
+                className="col-sm-6 col-xl-4 mb-3"
               >
                 <Link
                   className="text-decoration-none"
@@ -127,14 +149,16 @@ export default function SaleProducts() {
                           className="btn btn-secondary w-100 mb-1"
                           onClick={addToCart}
                         >
-                          Add to cart
+                          {product.addToCart ? "Added To Cart" : "Add To cart"}
                         </button>
                         <button
                           value={product.id}
                           className="btn btn-outline-secondary w-100 saveToWishlist"
                           onClick={addToWishlist}
                         >
-                          Save to wishlist
+                          {product.addToWishList
+                            ? "Added To Wishlist"
+                            : "Save To Wishlist"}
                         </button>
                       </div>
                     </div>

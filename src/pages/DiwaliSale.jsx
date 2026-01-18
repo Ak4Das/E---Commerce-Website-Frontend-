@@ -334,6 +334,7 @@ export default function DiwaliSale() {
                   value="HAPPYDIWALI"
                   className="form-control fw-bold couponInput"
                   style={{ minWidth: "140px", maxWidth: "140px" }}
+                  onChange={() => {}}
                 ></input>
               </div>
               <div className="">

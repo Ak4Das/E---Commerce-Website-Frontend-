@@ -11,7 +11,7 @@
 }
 
 .similarCards {
-  height: 520px !important;
+  height: 450px !important;
 }
 
 @media (min-width: 300px) {
@@ -283,6 +283,13 @@
   .saleProductFirstSection {
     align-items: center !important;
   }
+  .similarItemsImage {
+    min-height: 300px !important;
+    max-height: 300px !important;
+  }
+  .similarCards {
+    height: 500px !important;
+  }
 }
 @media (min-width: 768px) {
   .totalBill {
@@ -295,6 +302,16 @@
   }
   .coupon {
     width: 25% !important;
+  }
+  .similarItemsImage {
+    min-height: 250px !important;
+    max-height: 250px !important;
+  }
+  .similarCards {
+    height: 450px !important;
+  }
+  .saveToWishlist {
+    font-size: 12px !important;
   }
 }
 @media (min-width: 800px) {
@@ -382,6 +399,9 @@
   }
   .diwaliSaleCardTitle {
     height: 72px !important;
+  }
+  .saveToWishlist {
+    font-size: 15px !important;
   }
 }
 @media (min-width: 992px) {
@@ -484,6 +504,15 @@
     height: auto !important;
   }
 }
+@media (min-width: 1100px) {
+  .similarItemsImage {
+    min-height: 300px !important;
+    max-height: 300px !important;
+  }
+  .similarCards {
+    height: 500px !important;
+  }
+}
 @media (min-width: 1200px) {
   .totalBill {
     min-width: 500px !important;
@@ -513,6 +542,21 @@
   .productNameOnCartPage {
     height: 50px !important;
   }
+  .similarItemsImage {
+    min-height: 250px !important;
+    max-height: 250px !important;
+  }
+  .similarCards {
+    height:450px !important;
+  }
+  .saveToWishlist {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 1300px) {
+  .saveToWishlist {
+    font-size: 15px !important;
+  }
 }
 @media (min-width: 1400px) {
   .productDetailsImage {
@@ -529,9 +573,6 @@
   }
   .bannerImage {
     width: 50%;
-  }
-  .saveToWishlist {
-    font-size: 12px !important;
   }
   .saree2offer {
     display: none;
@@ -553,6 +594,13 @@
   .saveToWishlist {
     font-size: 16px !important;
   }
+  .similarItemsImage {
+    min-height: 300px !important;
+    max-height: 300px !important;
+  }
+  .similarCards {
+    height: 500px !important;
+  }
 }
 @media (min-width: 1600px) {
   .productDetailsContainer {
@@ -569,8 +617,15 @@
   .diwaliSaleCheckBtn {
     width: 230px !important;
   }
+  .similarItemsImage {
+    min-height: 350px !important;
+    max-height: 350px !important;
+  }
+  .similarCards {
+    height: 550px !important;
+  }
 }
-@media (max-width:1450px) {
+@media (max-width: 1450px) {
   .checkoutSidebar {
     display: none;
   }
@@ -730,7 +785,7 @@
     min-width: 300px !important;
   }
   .listProductImage {
-    height: 350px !important;
+    height: 370px !important;
   }
   .upto {
     font-size: 16px !important;
@@ -743,6 +798,16 @@
   .couponSection {
     flex-direction: column !important;
     gap: 15px !important;
+  }
+  .similarItemsImage {
+    min-height: 350px !important;
+    max-height: 350px !important;
+  }
+  .similarCards {
+    height: 550px !important;
+  }
+  .productCard {
+    height: 650px !important;
   }
 }
 @media (max-width: 499px) {
@@ -868,6 +933,13 @@
   }
   .diwaliOfferInSuitCard {
     font-size: 7px !important;
+  }
+  .similarItemsImage {
+    min-height: 300px !important;
+    max-height: 300px !important;
+  }
+  .similarCards {
+    height: 500px !important;
   }
 }
 @media (max-width: 350px) {

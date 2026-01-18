@@ -43,7 +43,7 @@ export default function EditYourOrder() {
     localStorage.setItem("orders", JSON.stringify(Orders))
   }
 
-  function save() {
+  function save(e) {
     const order = {
       id: orderToBeEdit.id,
       item: products,
@@ -69,6 +69,11 @@ export default function EditYourOrder() {
     const ORDERS = JSON.parse(localStorage.getItem("orders"))
     const ORDER = ORDERS && ORDERS[OrderIndex]
     ORDER && ORDER.item.length === 0 ? cancelOrder(ORDERS, ORDER) : 0
+    const btn = e.target
+    btn.innerHTML = 'Changes Saved'
+    setTimeout(() => {
+      btn.innerHTML = "Save Changes"
+    }, 1000)
   }
 
   return (
@@ -547,7 +552,7 @@ export default function EditYourOrder() {
                     {product.newArrival === true && (
                       <span className="badge text-bg-success me-1">New</span>
                     )}
-                    {Number(product.offer.replace("%", "")) && (
+                    {!!Number(product.offer.replace("%", "")) && (
                       <span className="badge text-bg-warning me-1">
                         Diwali Offer
                       </span>
@@ -579,40 +584,65 @@ export default function EditYourOrder() {
                     <span className="fw-bold me-0 text-secondary">Size: </span>
                     <button
                       className="border border-1 me-2"
-                      onClick={() => {
+                      onClick={(e) => {
                         product.size = "S"
+                        const btn = e.target
+                        btn.innerHTML = '<i class="bi bi-check2"></i>'
+                        setTimeout(() => {
+                          btn.innerHTML = "S"
+                        }, 500)
                       }}
                     >
                       S
                     </button>
                     <button
                       className="border border-1 me-2"
-                      onClick={() => {
+                      onClick={(e) => {
                         product.size = "M"
+                        const btn = e.target
+                        btn.innerHTML = '<i class="bi bi-check2"></i>'
+                        setTimeout(() => {
+                          btn.innerHTML = "M"
+                        }, 500)
                       }}
                     >
                       M
                     </button>
                     <button
                       className="border border-1 me-2"
-                      onClick={() => {
+                      onClick={(e) => {
                         product.size = "L"
+                        const btn = e.target
+                        btn.innerHTML = '<i class="bi bi-check2"></i>'
+                        setTimeout(() => {
+                          btn.innerHTML = "L"
+                        }, 500)
                       }}
                     >
                       L
                     </button>
                     <button
                       className="border border-1 me-2"
-                      onClick={() => {
+                      onClick={(e) => {
                         product.size = "XL"
+                        const btn = e.target
+                        btn.innerHTML = '<i class="bi bi-check2"></i>'
+                        setTimeout(() => {
+                          btn.innerHTML = "XL"
+                        }, 500)
                       }}
                     >
                       XL
                     </button>
                     <button
                       className="border border-1"
-                      onClick={() => {
+                      onClick={(e) => {
                         product.size = "XXL"
+                        const btn = e.target
+                        btn.innerHTML = '<i class="bi bi-check2"></i>'
+                        setTimeout(() => {
+                          btn.innerHTML = "XXL"
+                        }, 500)
                       }}
                     >
                       XXL

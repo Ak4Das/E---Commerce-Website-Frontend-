@@ -153,7 +153,7 @@ export default function YourOrders() {
                                 New
                               </span>
                             )}
-                            {Number(product.offer.replace("%", "")) && (
+                            {!!Number(product.offer.replace("%", "")) && (
                               <span className="badge text-bg-warning me-1">
                                 Diwali Offer
                               </span>

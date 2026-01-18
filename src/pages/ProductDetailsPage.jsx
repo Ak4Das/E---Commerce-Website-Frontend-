@@ -15,7 +15,7 @@ export default function ProductDetailsPage() {
   const id = Number(useParams().id)
   const { clothsData, setClothsData } = GetClothsData()
   const [time, setTime] = useState("")
-  const [isFreeDeliveryAvailable,setFreeDelivery] = useState(false)
+  const [isFreeDeliveryAvailable, setFreeDelivery] = useState(false)
 
   function increaseCount(e) {
     let inputElementValue = Number(e.target.previousElementSibling.value)
@@ -37,22 +37,40 @@ export default function ProductDetailsPage() {
     e.preventDefault()
     e.stopPropagation()
     const product = clothsData.find(
-      (product) => product.id === Number(e.target.value)
+      (product) => product.id === Number(e.target.value),
     )
-    product.addToCart = product.addToCart === false ? true : false
+    product.addToCart = product.addToCart === false ? true : true
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+    const btn = e.target
+    btn.innerHTML = '<i class="bi bi-check2"></i>'
+    btn.style.backgroundColor = "#05a058"
+    btn.style.color = "white"
+    setTimeout(() => {
+      btn.innerHTML = "Added To Cart"
+      btn.style.backgroundColor = ""
+      btn.style.color = ""
+    }, 1000)
   }
 
   function addToWishlist(e) {
     e.preventDefault()
     e.stopPropagation()
     const product = clothsData.find(
-      (product) => product.id === Number(e.target.value)
+      (product) => product.id === Number(e.target.value),
     )
-    product.addToWishList = product.addToWishList === false ? true : false
+    product.addToWishList = product.addToWishList === false ? true : true
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+    const btn = e.target
+    btn.innerHTML = '<i class="bi bi-check2"></i>'
+    btn.style.backgroundColor = "#05a058"
+    btn.style.color = "white"
+    setTimeout(() => {
+      btn.innerHTML = "Added To Wishlist"
+      btn.style.backgroundColor = ""
+      btn.style.color = ""
+    }, 1000)
   }
 
   const product = clothsData.find((product) => product.id === id)
@@ -71,8 +89,10 @@ export default function ProductDetailsPage() {
     if (size) {
       product.size = size
     }
-    if(isFreeDeliveryAvailable) {
+    if (isFreeDeliveryAvailable) {
       product.freeDelivery = true
+    } else {
+      product.freeDelivery = false
     }
     const createOrder = { item: [product] }
     localStorage.setItem("createOrder", JSON.stringify(createOrder))
@@ -123,20 +143,34 @@ export default function ProductDetailsPage() {
   }
 
   useEffect(() => {
-    const timerId = setInterval(() => {
-      const currentTime = new Date()
-      const hours = currentTime.getHours()
-      const minutes = currentTime.getMinutes()
-      const seconds = currentTime.getSeconds()
-      setTime(`${23 - hours}:${59 - minutes}:${59 - seconds}`)
-      // console.log(hours, minutes, seconds)
+    if (product.freeDelivery) {
       setFreeDelivery(true)
-      if (hours === 23 && minutes === 59 && seconds === 59) {
-        setFreeDelivery(false)
-        clearInterval(timerId)
-      }
-    }, 1000)
+      const timerId = setInterval(() => {
+        const currentTime = new Date()
+        const hours = currentTime.getHours()
+        const minutes = currentTime.getMinutes()
+        const seconds = currentTime.getSeconds()
+        setTime(`${23 - hours}:${59 - minutes}:${59 - seconds}`)
+        // console.log(hours, minutes, seconds)
+        if (hours === 23 && minutes === 59 && seconds === 59) {
+          setFreeDelivery(false)
+          setUpdated(true)
+          const clothsData = JSON.parse(localStorage.getItem("clothsData"))
+          const cloth = clothsData.find((product) => product.id === id)
+          cloth.freeDelivery = false
+          localStorage.setItem("clothsData", JSON.stringify(clothsData))
+          clearInterval(timerId)
+        }
+      }, 1000)
+    } else {
+      setTime("0:0:0")
+    }
   }, [])
+
+  const similarProductIds = product.similarProducts.map((product) => product.id)
+  const similarProducts = JSON.parse(localStorage.getItem("clothsData")).filter(
+    (product) => similarProductIds.includes(product.id),
+  )
 
   return (
     <>
@@ -178,14 +212,16 @@ export default function ProductDetailsPage() {
                   value={product.id}
                   onClick={addToCart}
                 >
-                  Add To Cart
+                  {product.addToCart ? "Added To Cart" : "Add To cart"}
                 </button>
                 <button
                   className="btn btn-outline-secondary w-100 mb-2"
                   value={product.id}
                   onClick={addToWishlist}
                 >
-                  Add To Wishlist
+                  {product.addToWishList
+                    ? "Added To Wishlist"
+                    : "Save To Wishlist"}
                 </button>
               </div>
             </div>
@@ -195,7 +231,7 @@ export default function ProductDetailsPage() {
                 {product.newArrival === true && (
                   <span className="badge text-bg-success me-1">New</span>
                 )}
-                {Number(product.offer.replace("%", "")) && (
+                {!!Number(product.offer.replace("%", "")) && (
                   <span className="badge text-bg-warning me-1">
                     Diwali Offer
                   </span>
@@ -215,7 +251,7 @@ export default function ProductDetailsPage() {
                           ? Number(product.offer.replace("%", ""))
                           : Number(product.discount.replace("%", "")))) /
                         100
-                    ).toFixed(1)
+                    ).toFixed(1),
                   )}
                 </span>
                 <span className="text-decoration-line-through ms-2">
@@ -268,45 +304,70 @@ export default function ProductDetailsPage() {
                 <div className="sizeBtnContainerInProductDetailsPage">
                   <button
                     className="border border-1 me-2 mb-2"
-                    onClick={() => {
+                    onClick={(e) => {
                       setSize("S")
                       setUpdated(true)
+                      const btn = e.target
+                      btn.innerHTML = '<i class="bi bi-check2"></i>'
+                      setTimeout(() => {
+                        btn.innerHTML = "S"
+                      }, 500)
                     }}
                   >
                     S
                   </button>
                   <button
                     className="border border-1 me-2 mb-2"
-                    onClick={() => {
+                    onClick={(e) => {
                       setSize("M")
                       setUpdated(true)
+                      const btn = e.target
+                      btn.innerHTML = '<i class="bi bi-check2"></i>'
+                      setTimeout(() => {
+                        btn.innerHTML = "M"
+                      }, 500)
                     }}
                   >
                     M
                   </button>
                   <button
                     className="border border-1 me-2 mb-2"
-                    onClick={() => {
+                    onClick={(e) => {
                       setSize("L")
                       setUpdated(true)
+                      const btn = e.target
+                      btn.innerHTML = '<i class="bi bi-check2"></i>'
+                      setTimeout(() => {
+                        btn.innerHTML = "L"
+                      }, 500)
                     }}
                   >
                     L
                   </button>
                   <button
                     className="border border-1 me-2 mb-2"
-                    onClick={() => {
+                    onClick={(e) => {
                       setSize("XL")
                       setUpdated(true)
+                      const btn = e.target
+                      btn.innerHTML = '<i class="bi bi-check2"></i>'
+                      setTimeout(() => {
+                        btn.innerHTML = "XL"
+                      }, 500)
                     }}
                   >
                     XL
                   </button>
                   <button
                     className="border border-1 mb-2"
-                    onClick={() => {
+                    onClick={(e) => {
                       setSize("XXL")
                       setUpdated(true)
+                      const btn = e.target
+                      btn.innerHTML = '<i class="bi bi-check2"></i>'
+                      setTimeout(() => {
+                        btn.innerHTML = "XXL"
+                      }, 500)
                     }}
                   >
                     XXL
@@ -421,7 +482,7 @@ export default function ProductDetailsPage() {
                         ? Number(product.offer.replace("%", ""))
                         : Number(product.discount.replace("%", "")))) /
                       100
-                  ).toFixed(1)
+                  ).toFixed(1),
                 )}
               </span>
               {time !== "0:0:0" && (
@@ -512,7 +573,7 @@ export default function ProductDetailsPage() {
                   value={product.id}
                   onClick={addToCart}
                 >
-                  Add to Cart
+                  {product.addToCart ? "Added To Cart" : "Add To cart"}
                 </button>
                 <hr className="mt-1 mb-3" />
                 <button
@@ -520,7 +581,9 @@ export default function ProductDetailsPage() {
                   value={product.id}
                   onClick={addToWishlist}
                 >
-                  Add to Wish List
+                  {product.addToWishList
+                    ? "Added To Wishlist"
+                    : "Save To Wishlist"}
                 </button>
               </div>
             </div>
@@ -529,10 +592,10 @@ export default function ProductDetailsPage() {
           <section>
             <h3 className="my-3">More items you may like in apparel</h3>
             <div className="row row-gap-3">
-              {product.similarProducts.map((product) => (
+              {similarProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="col-md-4 col-sm-6 col-lg-3 col-xxl-2 py-2 bg-body-tertiary cardContainer"
+                  className="col-md-4 col-sm-6 col-xl-3 py-2 bg-body-tertiary cardContainer"
                 >
                   <Link
                     className="text-decoration-none"
@@ -542,12 +605,15 @@ export default function ProductDetailsPage() {
                       <img
                         src={product.url}
                         alt=""
-                        className="img-fluid"
+                        className="img-fluid similarItemsImage"
                         style={{ minHeight: "250px", maxHeight: "250px" }}
                       />
                       <div className="card-body d-flex flex-column justify-content-between align-items-center">
-                        <p className="text-center m-0 productName lh-sm listProductName">
-                          {Number(product.offer.replace("%", "")) && (
+                        <p
+                          className="text-center m-0 productName lh-sm overflow-hidden listProductName"
+                          style={{ height: "43px" }}
+                        >
+                          {!!Number(product.offer.replace("%", "")) && (
                             <span className="badge text-bg-warning me-1">
                               Diwali Offer
                             </span>
@@ -558,10 +624,6 @@ export default function ProductDetailsPage() {
                         </p>
                         <div>
                           <RatingBar rating={product.rating} />
-                          <span style={{ fontSize: "14px" }}>
-                            {" "}
-                            {product.rating}
-                          </span>
                         </div>
                         <div>
                           <p className="fw-bold my-2">
@@ -573,10 +635,10 @@ export default function ProductDetailsPage() {
                                   (Number(product.offer.replace("%", ""))
                                     ? Number(product.offer.replace("%", ""))
                                     : Number(
-                                        product.discount.replace("%", "")
+                                        product.discount.replace("%", ""),
                                       ))) /
                                   100
-                              ).toFixed(1)
+                              ).toFixed(1),
                             )}
                             (-
                             {Number(product.offer.replace("%", ""))
@@ -586,18 +648,14 @@ export default function ProductDetailsPage() {
                           </p>
                           <p
                             id="M.R.P."
-                            className="text-decoration-line-through text-center mt-0"
+                            className="text-decoration-line-through text-center my-0"
                           >
                             M.R.P. ₹{product.price}
                           </p>
+                          <p className="my-0 text-success fw-medium">
+                            {product.freeDelivery?"Free Deilvery":""}
+                          </p>
                         </div>
-                        <button
-                          className="btn btn-secondary w-100"
-                          value={product.id}
-                          onClick={addToCart}
-                        >
-                          Add To Cart
-                        </button>
                       </div>
                     </div>
                   </Link>

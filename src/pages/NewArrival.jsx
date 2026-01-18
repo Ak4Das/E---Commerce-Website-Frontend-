@@ -5,28 +5,48 @@ import RatingBar from "../components/RatingBar"
 
 export default function NewArrival() {
   const { clothsData, setClothsData } = GetClothsData()
-  console.log(clothsData)
   const filteredProducts = clothsData.filter(
-    (product) => product.newArrival === true
+    (product) => product.newArrival === true,
   )
-  console.log(filteredProducts)
 
   function addToCart(e) {
+    e.preventDefault()
+    e.stopPropagation()
     const product = clothsData.find(
-      (product) => product.id === Number(e.target.value)
+      (product) => product.id === Number(e.target.value),
     )
     product.addToCart = product.addToCart === false ? true : false
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+    const btn = e.target
+    btn.innerHTML = '<i className="bi bi-check2"></i>'
+    btn.style.backgroundColor = "#05a058"
+    btn.style.color = "white"
+    setTimeout(() => {
+      btn.innerHTML = "Added To Cart"
+      btn.style.backgroundColor = ""
+      btn.style.color = ""
+    }, 1000)
   }
 
   function addToWishlist(e) {
+    e.preventDefault()
+    e.stopPropagation()
     const product = clothsData.find(
-      (product) => product.id === Number(e.target.value)
+      (product) => product.id === Number(e.target.value),
     )
     product.addToWishList = product.addToWishList === false ? true : false
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+    const btn = e.target
+    btn.innerHTML = '<i className="bi bi-check2"></i>'
+    btn.style.backgroundColor = "#05a058"
+    btn.style.color = "white"
+    setTimeout(() => {
+      btn.innerHTML = "Added To Wishlist"
+      btn.style.backgroundColor = ""
+      btn.style.color = ""
+    }, 1000)
   }
 
   return (
@@ -53,7 +73,7 @@ export default function NewArrival() {
                     />
                     <div className="card-body d-flex flex-column justify-content-between">
                       <p id="name" className="my-0 lh-sm listProductName">
-                        <span class="badge text-bg-success me-1">New</span>
+                        <span className="badge text-bg-success me-1">New</span>
                         {product.name.length > 61
                           ? product.name.slice(0, 60).concat("...")
                           : product.name}
@@ -91,14 +111,16 @@ export default function NewArrival() {
                           className="btn btn-secondary w-100 mb-1"
                           onClick={addToCart}
                         >
-                          Add to cart
+                          {product.addToCart ? "Added To Cart" : "Add To cart"}
                         </button>
                         <button
                           value={product.id}
                           className="btn btn-outline-secondary w-100 saveToWishlist"
                           onClick={addToWishlist}
                         >
-                          Save to wishlist
+                          {product.addToWishList
+                            ? "Added To Wishlist"
+                            : "Save To Wishlist"}
                         </button>
                       </div>
                     </div>

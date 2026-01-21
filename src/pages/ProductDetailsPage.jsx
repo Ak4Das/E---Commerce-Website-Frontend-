@@ -183,7 +183,7 @@ export default function ProductDetailsPage() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" />
+      <SearchInPage margin="ms-3" setSearch={setSearch}/>
       <main className="bg-body-secondary py-3 px-4 py-sm-5 px-sm-5">
         <div className="bg-light-subtle py-3 px-3 productDetailsContainer">
           <section className="d-sm-flex gap-sm-4 gap-xl-5 productDetailsContainerFirstSection">

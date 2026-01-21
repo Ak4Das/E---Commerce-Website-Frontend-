@@ -69,7 +69,7 @@ export default function SaleProducts() {
   return (
     <>
       <Header position="sticky" top={0} zIndex={1} setSearch={setSearch}/>
-      <SearchInPage margin="ms-3"/>
+      <SearchInPage margin="ms-3" setSearch={setSearch}/>
       <main>
         <div className="mx-5 my-3">
           <div className="d-flex justify-content-between saleProductFirstSection mb-3">

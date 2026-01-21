@@ -159,16 +159,16 @@ export default function App() {
             zIndex="auto"
             setSearch={setSearch}
           />
-          <SearchInPage margin="ms-3" />
+          <SearchInPage margin="ms-3" setSearch={setSearch}/>
           <div
             className="alert alert-success alert-dismissible fade show mt-3"
             role="alert"
           >
             <div className="d-flex flex-column flex-sm-row align-items-sm-center col-gap-4">
-              <p className="my-0 d-inline-block fs-5 fw-medium me-4">
+              <p className="my-0 d-inline-block fw-medium me-4 alertMessage">
                 <b className="fw-bold">Diwali Sale</b> is now live.
               </p>
-              <a href="#carousel" className="text-decoration-none fw-medium">
+              <a href="#carousel" className="text-decoration-none fw-medium alertBtn">
                 Click Here
               </a>
             </div>

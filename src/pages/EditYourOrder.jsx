@@ -87,7 +87,7 @@ export default function EditYourOrder() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" />
+      <SearchInPage margin="ms-3" setSearch={setSearch}/>
       <main className="container my-4">
         <h1 className="text-success fw-medium mb-3">Edit Order</h1>
         <section className="editOrderSection1 bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">

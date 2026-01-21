@@ -66,7 +66,7 @@ export default function UserProfile() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" />
+      <SearchInPage margin="ms-3" setSearch={setSearch}/>
       <main className="container">
         <div className="d-flex flex-column align-items-center mt-5 position-relative">
           <div

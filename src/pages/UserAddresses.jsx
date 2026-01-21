@@ -31,7 +31,7 @@ export default function UserAddresses() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" />
+      <SearchInPage margin="ms-3" setSearch={setSearch}/>
       <main className="container mt-3">
         <h2>Your Addresses</h2>
         <div className="row row-gap-4 mt-4">

@@ -1,7 +1,15 @@
 import { NavLink } from "react-router-dom"
 import BharatVastra from "../assets/BharatVastra.png"
+import { useState } from "react"
+import { useEffect } from "react"
 
 export default function Header({ position, top, zIndex, setSearch }) {
+  const [input, setInput] = useState("")
+  useEffect(() => {
+    if (!input) {
+      setSearch(input)
+    }
+  }, [input])
   let userDetails = JSON.parse(localStorage.getItem("user"))
   function handleHamburgerMenu() {
     const element = document.querySelector(".secondUlContainer")
@@ -12,7 +20,10 @@ export default function Header({ position, top, zIndex, setSearch }) {
     element.classList.add(newDisplay)
   }
   function handleChange(e) {
-    setSearch(e.target.value);
+    setInput(e.target.value)
+  }
+  function handleClick() {
+    setSearch(input)
   }
   return (
     <header style={{ position, top, zIndex }}>
@@ -39,7 +50,11 @@ export default function Header({ position, top, zIndex, setSearch }) {
               aria-describedby="button-addon2"
               onChange={handleChange}
             ></input>
-            <button className="btn btn-warning w-25" type="button">
+            <button
+              className="btn btn-warning w-25"
+              type="button"
+              onClick={handleClick}
+            >
               Search
             </button>
           </div>

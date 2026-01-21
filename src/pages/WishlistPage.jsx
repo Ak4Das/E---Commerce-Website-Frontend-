@@ -7,7 +7,6 @@ import { useState } from "react"
 export default function WishlistPage() {
   const { clothsData, setClothsData } = GetClothsData()
   const [search, setSearch] = useState("")
-  console.log(search)
 
   const ProductsInCart =
     JSON.parse(localStorage.getItem("createOrder")).item.length &&
@@ -78,7 +77,7 @@ export default function WishlistPage() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" />
+      <SearchInPage margin="ms-3" setSearch={setSearch}/>
       <main className="bg-body-secondary pb-3">
         <div className="container">
           <h3 className="py-3 text-center">My Wishlist</h3>

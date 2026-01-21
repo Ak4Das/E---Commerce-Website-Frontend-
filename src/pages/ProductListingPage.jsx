@@ -122,7 +122,7 @@ export default function ProductListingPage() {
   return (
     <>
       <Header position="sticky" top={0} zIndex={1} setSearch={setSearch} />
-      <SearchInPage margin="ms-5" />
+      <SearchInPage margin="ms-5" setSearch={setSearch}/>
       <main className="d-flex">
         <Offcanvas
           setPrice={setPrice}

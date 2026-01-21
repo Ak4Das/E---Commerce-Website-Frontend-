@@ -134,7 +134,7 @@ export default function PaymentMethods() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" />
+      <SearchInPage margin="ms-3" setSearch={setSearch}/>
       <main className="container mt-3 mb-5 d-lg-flex gap-5 align-items-start">
         <div className="paymentMethodSectionOne">
           <section className="bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">

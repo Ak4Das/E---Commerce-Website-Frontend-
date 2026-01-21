@@ -129,7 +129,7 @@ export default function CartPage() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" />
+      <SearchInPage margin="ms-3" setSearch={setSearch}/>
       <main className="bg-body-secondary pb-3">
         <div className="container">
           <h3 className="py-4 text-center">My Cart</h3>

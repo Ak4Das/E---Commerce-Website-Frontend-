@@ -32,7 +32,7 @@ export default function YourOrders() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" />
+      <SearchInPage margin="ms-3" setSearch={setSearch}/>
       <main className="container mt-3">
         <h1>Your Orders</h1>
         {orders.map((order) => (

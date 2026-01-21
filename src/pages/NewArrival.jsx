@@ -7,7 +7,6 @@ import { useState } from "react"
 
 export default function NewArrival() {
   const [search, setSearch] = useState("")
-  console.log(search)
   const { clothsData, setClothsData } = GetClothsData()
   const filteredProducts = clothsData.filter(
     (product) => product.newArrival === true,
@@ -69,7 +68,7 @@ export default function NewArrival() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" />
+      <SearchInPage margin="ms-3" setSearch={setSearch}/>
       <main className="mx-5 my-3">
         <h2 className="my-3 text-secondary">New Arrival</h2>
         <div className="">

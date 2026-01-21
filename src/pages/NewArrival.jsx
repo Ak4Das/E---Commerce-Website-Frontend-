@@ -2,6 +2,7 @@ import Header from "../components/Header"
 import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
+import SearchInPage from "../components/SearchInPage"
 
 export default function NewArrival() {
   const { clothsData, setClothsData } = GetClothsData()
@@ -52,6 +53,7 @@ export default function NewArrival() {
   return (
     <>
       <Header />
+      <SearchInPage margin="ms-3"/>
       <main className="mx-5 my-3">
         <h2 className="my-3 text-secondary">New Arrival</h2>
         <div className="">

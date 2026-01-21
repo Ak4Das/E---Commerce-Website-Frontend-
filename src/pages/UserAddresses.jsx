@@ -2,6 +2,7 @@ import Header from "../components/Header"
 import Plus from "../assets/plus.png"
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import SearchInPage from "../components/SearchInPage"
 
 export default function UserAddresses() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
@@ -23,6 +24,7 @@ export default function UserAddresses() {
   return (
     <>
       <Header />
+      <SearchInPage margin="ms-3"/>
       <main className="container mt-3">
         <h2>Your Addresses</h2>
         <div className="row row-gap-4 mt-4">

@@ -1,18 +1,21 @@
 import { NavLink } from "react-router-dom"
-import wishlistLogo from "../assets/heart.png"
-import shoppingCart from "../assets/shoppingCart.png"
-import hamburgerIcon from "../assets/hamburgerIcon.png"
 import BharatVastra from "../assets/BharatVastra.png"
 
 export default function Header({ position, top, zIndex }) {
   let userDetails = JSON.parse(localStorage.getItem("user"))
-  function handleHamburgerMenu(e) {
-    const element = e.target.parentElement.nextElementSibling.nextElementSibling
-    element.style.display = element.style.display ? "" : "none"
+  function handleHamburgerMenu() {
+    const element = document.querySelector(".secondUlContainer")
+    // element.style.display = element.style.display ? "" : "none"
+    // debugger
+    const isNone = element.classList.contains("none")
+    const oldDisplay = isNone ? "none" : "block"
+    const newDisplay = isNone ? "block" : "none"
+    element.classList.remove(oldDisplay)
+    element.classList.add(newDisplay)
   }
   return (
     <header style={{ position, top, zIndex }}>
-      <nav className="bg-body-tertiary mx-2 p-2">
+      <nav className="bg-body-tertiary py-2 px-3">
         <div className="d-flex justify-content-between align-items-center">
           <NavLink className="navbar-brand" to="/">
             <img
@@ -21,33 +24,67 @@ export default function Header({ position, top, zIndex }) {
               style={{ width: "70px" }}
               className="BharatVastra"
             />
-            <span className="navbarBrand fw-bold fs-5 text-secondary">BharatVastra</span>
+            <span className="navbarBrand fw-bold fs-5 text-secondary">
+              BharatVastra
+            </span>
           </NavLink>
-          <form role="search" className="searchInHeader">
+          <div className="input-group searchInHeader justify-content-center">
             <input
-              className="border border-0 p-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-          <button className="hamburger" onClick={handleHamburgerMenu}>
-            <img src={hamburgerIcon} alt="" className="logo" />
-          </button>
+              type="text"
+              className="border border-1 w-75 p-2"
+              style={{ outline: "none" }}
+              placeholder="Search Product"
+              aria-label="Search Product"
+              aria-describedby="button-addon2"
+            ></input>
+            <button className="btn btn-warning w-25" type="button">
+              Search
+            </button>
+          </div>
+          <div className="hamburger">
+            <div
+              className="d-flex align-items-center gap-1"
+              onClick={handleHamburgerMenu}
+            >
+              <div
+                style={{
+                  width: "30px",
+                  height: "30px",
+                  overflow: "hidden",
+                  borderRadius: "100%",
+                }}
+              >
+                <img
+                  src={userDetails.profileImage}
+                  alt=""
+                  className="w-100 img-fluid h-100"
+                />
+              </div>
+              <i className="bi bi-chevron-down"></i>
+            </div>
+          </div>
           <div className="firstUlContainer">
             <ul
-              className="navbar-nav d-flex flex-row justify-content-between"
+              className="navbar-nav d-flex flex-row justify-content-between align-items-center"
               style={{ width: "300px" }}
             >
               <li className="nav-item">
                 {userDetails ? (
-                  <NavLink to="/user" className="text-black" style={{textDecoration:"none"}}>
+                  <NavLink
+                    to="/user"
+                    className="text-black"
+                    style={{ textDecoration: "none" }}
+                  >
                     <div
                       style={{ height: "40px", fontSize: "14px" }}
                       className="lh-sm px-1 profileBtnInHeader"
                     >
-                      <p className="my-0 fw-medium">Hello, {userDetails.name.split(" ")[0]}</p>
-                      <p className="my-0 text-primary fw-bold">Account <i className="bi bi-chevron-down"></i></p>
+                      <p className="my-0 fw-medium">
+                        Hello, {userDetails.name.split(" ")[0]}
+                      </p>
+                      <p className="my-0 text-primary fw-bold">
+                        Account <i className="bi bi-chevron-down"></i>
+                      </p>
                     </div>
                   </NavLink>
                 ) : (
@@ -63,21 +100,21 @@ export default function Header({ position, top, zIndex }) {
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/wishlist">
-                  <img src={wishlistLogo} className="logo" />
-                  <span>Wishlist</span>
+                  <i className="bi bi-heart-fill text-danger fs-5"></i>
+                  <span className="ms-1">Wishlist</span>
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/cart">
-                  <img src={shoppingCart} className="logo" />
-                  <span>Cart</span>
+                  <i className="bi bi-cart3 fs-5"></i>
+                  <span className="ms-1">Cart</span>
                 </NavLink>
               </li>
             </ul>
           </div>
           <div
-            className="secondUlContainer  position-absolute"
-            style={{ display: "none", zIndex: 1, top: "60px", right: "10px" }}
+            className="secondUlContainer position-absolute none"
+            style={{ zIndex: 3, top: "60px", right: "10px" }}
           >
             <ul
               className="d-flex flex-column  justify-content-between bg-body-tertiary p-3"
@@ -86,26 +123,46 @@ export default function Header({ position, top, zIndex }) {
                 listStyleType: "none",
               }}
             >
-              <li className="nav-item btn btn-secondary">
-                <NavLink
-                  aria-current="page"
-                  to="/"
-                  className="text-light"
-                  style={{ width: "70px", textDecoration: "none" }}
-                >
-                  Login
-                </NavLink>
+              <li className="nav-item btn btn-warning">
+                {userDetails ? (
+                  <NavLink
+                    to="/user"
+                    className="text-black"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <div
+                      style={{ height: "40px", fontSize: "14px" }}
+                      className="lh-sm px-1 profileBtnInHeader"
+                    >
+                      <p className="my-0 fw-medium">
+                        Hello, {userDetails.name.split(" ")[0]}
+                      </p>
+                      <p className="my-0 text-primary fw-bold">
+                        Account <i className="bi bi-chevron-down"></i>
+                      </p>
+                    </div>
+                  </NavLink>
+                ) : (
+                  <NavLink
+                    className="btn btn-secondary text-light"
+                    aria-current="page"
+                    to="/login"
+                    style={{ width: "70px" }}
+                  >
+                    Login
+                  </NavLink>
+                )}
               </li>
-              <li className="nav-item  btn btn-secondary text-light">
+              <li className="nav-item btn btn-warning">
                 <NavLink className="nav-link" to="/wishlist">
-                  <img src={wishlistLogo} className="logo" />
-                  <span>Wishlist</span>
+                  <i className="bi bi-heart-fill text-danger fs-5"></i>
+                  <span className="ms-1">Wishlist</span>
                 </NavLink>
               </li>
-              <li className="nav-item  btn btn-secondary text-light">
+              <li className="nav-item btn btn-warning">
                 <NavLink className="nav-link" to="/cart">
-                  <img src={shoppingCart} className="logo" />
-                  <span>Cart</span>
+                  <i className="bi bi-cart3 fs-5"></i>
+                  <span className="ms-1">Cart</span>
                 </NavLink>
               </li>
             </ul>

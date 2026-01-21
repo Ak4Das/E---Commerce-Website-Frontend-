@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import RatingBar from "../components/RatingBar"
 import { useState } from "react"
+import SearchInPage from "../components/SearchInPage"
 
 export default function YourOrders() {
   const [isClicked, setClicked] = useState(false)
@@ -24,6 +25,7 @@ export default function YourOrders() {
   return (
     <>
       <Header />
+      <SearchInPage margin="ms-3"/>
       <main className="container mt-3">
         <h1>Your Orders</h1>
         {orders.map((order) => (

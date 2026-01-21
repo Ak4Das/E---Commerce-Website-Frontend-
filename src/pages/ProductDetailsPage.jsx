@@ -7,6 +7,7 @@ import RatingBar from "../components/RatingBar"
 import { useState } from "react"
 import location from "../assets/location.png"
 import { useEffect } from "react"
+import SearchInPage from "../components/SearchInPage"
 
 export default function ProductDetailsPage() {
   const [quantity, setQuantity] = useState(1)
@@ -175,9 +176,10 @@ export default function ProductDetailsPage() {
   return (
     <>
       <Header />
+      <SearchInPage margin="ms-3" />
       <main className="bg-body-secondary py-3 px-4 py-sm-5 px-sm-5">
         <div className="bg-light-subtle py-3 px-3 productDetailsContainer">
-          <section className="d-sm-flex gap-sm-4 gap-xl-5 align-items-start">
+          <section className="d-sm-flex gap-sm-4 gap-xl-5 productDetailsContainerFirstSection">
             <div
               className="productDetailsImage top-0 start-0"
               style={{ minWidth: "200px" }}
@@ -225,7 +227,7 @@ export default function ProductDetailsPage() {
                 </button>
               </div>
             </div>
-            <div className="me-sm-5">
+            <div className="me-md-5">
               <small className="text-primary fw-medium">{product.soldBy}</small>
               <p className="fw-bold lh-sm productDescription mb-1">
                 {product.newArrival === true && (
@@ -462,8 +464,41 @@ export default function ProductDetailsPage() {
                 </ul>
               </div>
               <div className="btnContainer2">
-                <button className="btn btn-primary w-100 mb-2">Buy Now</button>
-                <button className="btn btn-secondary w-100">Add To Cart</button>
+                {!size && (
+                  <button
+                    className="btn btn-primary w-100 my-2"
+                    onClick={() =>
+                      alert("Please select the product size First")
+                    }
+                  >
+                    Buy Now
+                  </button>
+                )}
+                {size && (
+                  <Link
+                    to="/paymentMethods"
+                    className="btn btn-primary w-100 my-2 text-decoration-none"
+                  >
+                    Buy Now{" "}
+                  </Link>
+                )}
+                <br />
+                <button
+                  className="btn btn-secondary w-100 mb-2"
+                  value={product.id}
+                  onClick={addToCart}
+                >
+                  {product.addToCart ? "Added To Cart" : "Add To cart"}
+                </button>
+                <button
+                  className="btn btn-outline-secondary w-100 mb-2"
+                  value={product.id}
+                  onClick={addToWishlist}
+                >
+                  {product.addToWishList
+                    ? "Added To Wishlist"
+                    : "Save To Wishlist"}
+                </button>
               </div>
             </div>
             <div className="bg-white checkoutSidebar ms-auto px-4 py-3 fw-medium border border-secondary">
@@ -653,7 +688,7 @@ export default function ProductDetailsPage() {
                             M.R.P. ₹{product.price}
                           </p>
                           <p className="my-0 text-success fw-medium">
-                            {product.freeDelivery?"Free Deilvery":""}
+                            {product.freeDelivery ? "Free Deilvery" : ""}
                           </p>
                         </div>
                       </div>

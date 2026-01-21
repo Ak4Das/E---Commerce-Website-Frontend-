@@ -34,6 +34,7 @@ import womenWearLahenga3 from "./assets/womenWearLahenga3.png"
 import shoe1 from "./assets/shoe1.png"
 import goldenRibbon from "./assets/goldenRibbon.png"
 import menWearShoe from "./assets/menWearShoe.png"
+import SearchInPage from "./components/SearchInPage"
 
 const category = [
   {
@@ -145,16 +146,19 @@ export default function App() {
       ) : (
         <>
           <Header />
+          <SearchInPage margin="ms-3"/>
           <div
             className="alert alert-success alert-dismissible fade show mt-3"
             role="alert"
           >
-            <p className="my-0 d-inline-block fs-5 fw-medium">
-              <b className="fw-bold">Diwali Sale</b> is now live.
-            </p>
-            <a href="#carousel" className="text-decoration-none fw-medium ms-4">
-              Click Here
-            </a>
+            <div className="d-flex flex-column flex-sm-row align-items-sm-center col-gap-4">
+              <p className="my-0 d-inline-block fs-5 fw-medium me-4">
+                <b className="fw-bold">Diwali Sale</b> is now live.
+              </p>
+              <a href="#carousel" className="text-decoration-none fw-medium">
+                Click Here
+              </a>
+            </div>
             <button
               type="button"
               className="btn-close"
@@ -168,7 +172,7 @@ export default function App() {
                 return (
                   <div
                     key={category.id}
-                    className="col-6 col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3"
+                    className="col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3"
                   >
                     <Link to={`/products/${category.name}`}>
                       <div className="card position-relative">
@@ -605,9 +609,7 @@ export default function App() {
                     <p className="fw-bold mt-2">New Arrival</p>
                     <div style={{ minWidth: "225px" }} className="description">
                       <h3>New Collection</h3>
-                      <p
-                        className="m-0 newArrivalCardTitle"
-                      >
+                      <p className="m-0 newArrivalCardTitle">
                         Checkout our new collection to live your diwali with
                         style. hurry up don't miss this chance.
                       </p>
@@ -630,9 +632,7 @@ export default function App() {
                     <p className="fw-bold mt-2">Diwali Sale</p>
                     <div style={{ minWidth: "225px" }} className="description">
                       <h3>Upto 50% off</h3>
-                      <p
-                        className="m-0 diwaliSaleCardTitle"
-                      >
+                      <p className="m-0 diwaliSaleCardTitle">
                         Diwali sale is launch now, sale is live till 31st
                         November, go and make your diwali stylish.
                       </p>

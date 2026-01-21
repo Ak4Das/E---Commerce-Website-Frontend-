@@ -2,6 +2,7 @@ import Header from "../components/Header"
 import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import SearchInPage from "../components/SearchInPage"
 
 export default function CartPage() {
   const [isUpdated, setUpdated] = useState(false)
@@ -115,7 +116,8 @@ export default function CartPage() {
 
   return (
     <>
-      <Header />{" "}
+      <Header />
+      <SearchInPage margin="ms-3"/>
       <main className="bg-body-secondary pb-3">
         <div className="container">
           <h3 className="py-4 text-center">My Cart</h3>

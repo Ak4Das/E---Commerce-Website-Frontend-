@@ -6,6 +6,7 @@ import DeliveryBox from "../assets/deliveryBox.jpg"
 import AddressIcon from "../assets/address.png"
 import Support from "../assets/support.png"
 import { Link } from "react-router-dom"
+import SearchInPage from "../components/SearchInPage"
 
 export default function UserProfile() {
   const [visible, setVisible] = useState(false)
@@ -58,6 +59,7 @@ export default function UserProfile() {
   return (
     <>
       <Header />
+      <SearchInPage margin="ms-3"/>
       <main className="container">
         <div className="d-flex flex-column align-items-center mt-5 position-relative">
           <div

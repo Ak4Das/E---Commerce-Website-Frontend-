@@ -5,6 +5,7 @@ import Plus from "../assets/plus.png"
 import Card from "../assets/card.png"
 import Cross from "../assets/cross.png"
 import { useParams } from "react-router-dom"
+import SearchInPage from "../components/SearchInPage"
 
 export default function EditYourOrder() {
   const orderId = Number(useParams().orderId)
@@ -79,6 +80,7 @@ export default function EditYourOrder() {
   return (
     <>
       <Header />
+      <SearchInPage margin="ms-3"/>
       <main className="container my-4">
         <h1 className="text-success fw-medium mb-3">Edit Order</h1>
         <section className="editOrderSection1 bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">

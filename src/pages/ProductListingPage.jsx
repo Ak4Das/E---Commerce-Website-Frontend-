@@ -5,6 +5,7 @@ import Offcanvas from "../components/Offcanvas"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
+import SearchInPage from "../components/SearchInPage"
 
 export default function ProductListingPage() {
   const { category } = useParams()
@@ -119,6 +120,7 @@ export default function ProductListingPage() {
   return (
     <>
       <Header position="sticky" top={0} zIndex={1} />
+      <SearchInPage margin="ms-5"/>
       <main className="d-flex">
         <Offcanvas
           setPrice={setPrice}

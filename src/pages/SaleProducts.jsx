@@ -4,6 +4,7 @@ import Header from "../components/Header"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
+import SearchInPage from "../components/SearchInPage"
 
 export default function SaleProducts() {
   const { commonCategory } = useParams()
@@ -66,6 +67,7 @@ export default function SaleProducts() {
   return (
     <>
       <Header position="sticky" top={0} zIndex={1} />
+      <SearchInPage margin="ms-3"/>
       <main>
         <div className="mx-5 my-3">
           <div className="d-flex justify-content-between saleProductFirstSection mb-3">

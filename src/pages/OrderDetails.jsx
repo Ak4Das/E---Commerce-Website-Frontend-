@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
+import SearchInPage from "../components/SearchInPage"
 
 export default function OrderDetails() {
   const id = Number(useParams().id)
@@ -48,6 +49,7 @@ export default function OrderDetails() {
   return (
     <>
       <Header />
+      <SearchInPage margin="ms-3"/>
       {order && (
         <main className="py-3" style={{ fontSize: "15px" }}>
           <div

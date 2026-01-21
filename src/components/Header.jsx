@@ -1,17 +1,18 @@
 import { NavLink } from "react-router-dom"
 import BharatVastra from "../assets/BharatVastra.png"
 
-export default function Header({ position, top, zIndex }) {
+export default function Header({ position, top, zIndex, setSearch }) {
   let userDetails = JSON.parse(localStorage.getItem("user"))
   function handleHamburgerMenu() {
     const element = document.querySelector(".secondUlContainer")
-    // element.style.display = element.style.display ? "" : "none"
-    // debugger
     const isNone = element.classList.contains("none")
     const oldDisplay = isNone ? "none" : "block"
     const newDisplay = isNone ? "block" : "none"
     element.classList.remove(oldDisplay)
     element.classList.add(newDisplay)
+  }
+  function handleChange(e) {
+    setSearch(e.target.value);
   }
   return (
     <header style={{ position, top, zIndex }}>
@@ -36,6 +37,7 @@ export default function Header({ position, top, zIndex }) {
               placeholder="Search Product"
               aria-label="Search Product"
               aria-describedby="button-addon2"
+              onChange={handleChange}
             ></input>
             <button className="btn btn-warning w-25" type="button">
               Search

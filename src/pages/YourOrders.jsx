@@ -5,6 +5,8 @@ import { useState } from "react"
 import SearchInPage from "../components/SearchInPage"
 
 export default function YourOrders() {
+  const [search, setSearch] = useState("")
+  console.log(search)
   const [isClicked, setClicked] = useState(false)
   const [isUpdated, setUpdated] = useState(false)
 
@@ -24,8 +26,13 @@ export default function YourOrders() {
 
   return (
     <>
-      <Header />
-      <SearchInPage margin="ms-3"/>
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
+      <SearchInPage margin="ms-3" />
       <main className="container mt-3">
         <h1>Your Orders</h1>
         {orders.map((order) => (
@@ -174,9 +181,9 @@ export default function YourOrders() {
                                   (Number(product.offer.replace("%", ""))
                                     ? Number(product.offer.replace("%", ""))
                                     : Number(
-                                        product.discount.replace("%", "")
+                                        product.discount.replace("%", ""),
                                       ))) /
-                                  100
+                                  100,
                             )}
                           </p>
                           <p className="my-0 text-secondary fs-6 fw-medium">

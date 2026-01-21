@@ -9,6 +9,8 @@ import { Link } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
 
 export default function UserProfile() {
+  const [search, setSearch] = useState("")
+  console.log(search)
   const [visible, setVisible] = useState(false)
   const [profileImage, setProfileImage] = useState("")
   const [edit, setEdit] = useState(false)
@@ -58,8 +60,13 @@ export default function UserProfile() {
   }
   return (
     <>
-      <Header />
-      <SearchInPage margin="ms-3"/>
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
+      <SearchInPage margin="ms-3" />
       <main className="container">
         <div className="d-flex flex-column align-items-center mt-5 position-relative">
           <div

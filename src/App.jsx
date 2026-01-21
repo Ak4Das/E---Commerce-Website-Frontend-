@@ -130,10 +130,18 @@ const category = [
 ]
 
 export default function App() {
+  const [search, setSearch] = useState("")
   const [show, hide] = useState(true)
   setTimeout(() => {
     hide(false)
   }, 1000)
+
+  const filteredCategory = search
+    ? category.filter((category) =>
+        category.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+      )
+    : category
+
   return (
     <>
       {show ? (
@@ -145,8 +153,13 @@ export default function App() {
         </div>
       ) : (
         <>
-          <Header />
-          <SearchInPage margin="ms-3"/>
+          <Header
+            position="static"
+            top="auto"
+            zIndex="auto"
+            setSearch={setSearch}
+          />
+          <SearchInPage margin="ms-3" />
           <div
             className="alert alert-success alert-dismissible fade show mt-3"
             role="alert"
@@ -168,7 +181,7 @@ export default function App() {
           </div>
           <main className="mx-5 my-4">
             <div className="row">
-              {category.map((category) => {
+              {filteredCategory.map((category) => {
                 return (
                   <div
                     key={category.id}

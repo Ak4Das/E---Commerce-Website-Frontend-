@@ -9,6 +9,8 @@ import SearchInPage from "../components/SearchInPage"
 
 export default function EditYourOrder() {
   const orderId = Number(useParams().orderId)
+  const [search, setSearch] = useState("")
+  console.log(search)
 
   const orders = JSON.parse(localStorage.getItem("orders")) || []
 
@@ -25,7 +27,7 @@ export default function EditYourOrder() {
   const [products, setProducts] = useState(orderToBeEdit.item)
 
   const address = JSON.parse(localStorage.getItem("user")).address.find(
-    (address) => address.selected
+    (address) => address.selected,
   )
 
   const totalPrice =
@@ -33,10 +35,10 @@ export default function EditYourOrder() {
     (orderToBeEdit.paymentMethod === paymentMethod
       ? orderToBeEdit.totalPrice
       : orderToBeEdit.paymentMethod === "Cash on Delivery/Pay on Delivery"
-      ? orderToBeEdit.totalPrice - 10
-      : paymentMethod === "Cash on Delivery/Pay on Delivery"
-      ? orderToBeEdit.totalPrice + 10
-      : orderToBeEdit.totalPrice)
+        ? orderToBeEdit.totalPrice - 10
+        : paymentMethod === "Cash on Delivery/Pay on Delivery"
+          ? orderToBeEdit.totalPrice + 10
+          : orderToBeEdit.totalPrice)
 
   function cancelOrder(ORDERS, ORDER) {
     debugger
@@ -71,7 +73,7 @@ export default function EditYourOrder() {
     const ORDER = ORDERS && ORDERS[OrderIndex]
     ORDER && ORDER.item.length === 0 ? cancelOrder(ORDERS, ORDER) : 0
     const btn = e.target
-    btn.innerHTML = 'Changes Saved'
+    btn.innerHTML = "Changes Saved"
     setTimeout(() => {
       btn.innerHTML = "Save Changes"
     }, 1000)
@@ -79,8 +81,13 @@ export default function EditYourOrder() {
 
   return (
     <>
-      <Header />
-      <SearchInPage margin="ms-3"/>
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
+      <SearchInPage margin="ms-3" />
       <main className="container my-4">
         <h1 className="text-success fw-medium mb-3">Edit Order</h1>
         <section className="editOrderSection1 bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">
@@ -571,7 +578,7 @@ export default function EditYourOrder() {
                             (Number(product.offer.replace("%", ""))
                               ? Number(product.offer.replace("%", ""))
                               : Number(product.discount.replace("%", "")))) /
-                            100
+                            100,
                       )}
                     </span>
                     <span className="ms-2 fw-medium">
@@ -660,13 +667,13 @@ export default function EditYourOrder() {
                         style={{ marginTop: "-5px" }}
                         onClick={(e) => {
                           let inputElementValue = Number(
-                            e.target.nextElementSibling.value
+                            e.target.nextElementSibling.value,
                           )
                           if (inputElementValue > 1) {
                             e.target.nextElementSibling.value =
                               --inputElementValue
                             product.quantity = Number(
-                              e.target.nextElementSibling.value
+                              e.target.nextElementSibling.value,
                             )
                             setProducts(products)
                           }
@@ -682,7 +689,7 @@ export default function EditYourOrder() {
                         onChange={(e) => {
                           let inputElementValue = Number(e.target.value)
                           const Product = products.find(
-                            (item) => item.id === product.id
+                            (item) => item.id === product.id,
                           )
                           Product.quantity = inputElementValue
                           setProducts(products)
@@ -693,15 +700,15 @@ export default function EditYourOrder() {
                         style={{ marginTop: "-5px" }}
                         onClick={(e) => {
                           let inputElementValue = Number(
-                            e.target.previousElementSibling.value
+                            e.target.previousElementSibling.value,
                           )
                           e.target.previousElementSibling.value =
                             ++inputElementValue
                           const Product = products.find(
-                            (item) => item.id === product.id
+                            (item) => item.id === product.id,
                           )
                           Product.quantity = Number(
-                            e.target.previousElementSibling.value
+                            e.target.previousElementSibling.value,
                           )
                           setProducts(products)
                         }}
@@ -713,7 +720,7 @@ export default function EditYourOrder() {
                       className="btn btn-outline-danger btn-sm rounded-pill"
                       onClick={(e) => {
                         const Product = products.filter(
-                          (item) => item.id !== product.id
+                          (item) => item.id !== product.id,
                         )
                         setProducts(Product)
                       }}

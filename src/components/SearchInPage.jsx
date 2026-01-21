@@ -1,5 +1,4 @@
 export default function searchInPage({ margin }) {
-  console.log(margin)
   return (
     <div className={`input-group searchInPage ${margin} bg-light py-2`}>
       <input

@@ -5,6 +5,7 @@ import { useState } from "react"
 import SearchInPage from "../components/SearchInPage"
 
 export default function CartPage() {
+  const [search, setSearch] = useState("")
   const [isUpdated, setUpdated] = useState(false)
   const { clothsData, setClothsData } = GetClothsData()
 
@@ -41,6 +42,12 @@ export default function CartPage() {
     JSON.parse(localStorage.getItem("createOrder")).item.filter(
       (product) => product.addToCart === true,
     )
+
+    const FinalProductsInCart = search
+    ? ProductsInCart.filter((product) =>
+        product.commonCategory.toLocaleLowerCase().includes(search.toLocaleLowerCase()),
+      )
+    : ProductsInCart
 
   function moveToWishlist(e) {
     e.preventDefault()
@@ -116,15 +123,20 @@ export default function CartPage() {
 
   return (
     <>
-      <Header />
-      <SearchInPage margin="ms-3"/>
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
+      <SearchInPage margin="ms-3" />
       <main className="bg-body-secondary pb-3">
         <div className="container">
           <h3 className="py-4 text-center">My Cart</h3>
           <div className="d-md-flex justify-content-between align-items-start cartContainer">
             <section className="productsInCurt">
               {!!ProductsInCart &&
-                ProductsInCart.map((product) => {
+                FinalProductsInCart.map((product) => {
                   return (
                     <div key={product.id} className="row mb-3">
                       <div className="col-sm-12 col-md-12 mb-3">

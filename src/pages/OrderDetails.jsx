@@ -6,6 +6,8 @@ import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 
 export default function OrderDetails() {
+  const [search, setSearch] = useState("")
+  console.log(search)
   const id = Number(useParams().id)
   const orders = JSON.parse(localStorage.getItem("orders"))
 
@@ -27,14 +29,14 @@ export default function OrderDetails() {
           (Number(curr.offer.replace("%", ""))
             ? Number(curr.offer.replace("%", ""))
             : Number(curr.discount.replace("%", ""))),
-      0
+      0,
     )
 
   const deliveryCharge =
     order &&
     Math.round(
       order.item.reduce((acc, curr) => acc + curr.deliveryCharge, 0) /
-        order.item.length
+        order.item.length,
     )
 
   const cashOnDeliveryCharge =
@@ -48,8 +50,13 @@ export default function OrderDetails() {
 
   return (
     <>
-      <Header />
-      <SearchInPage margin="ms-3"/>
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
+      <SearchInPage margin="ms-3" />
       {order && (
         <main className="py-3" style={{ fontSize: "15px" }}>
           <div
@@ -121,7 +128,7 @@ export default function OrderDetails() {
                     <p className="my-0 w-25 fw-medium d-inline-block text-end">
                       ₹
                       {Math.round(
-                        totalOrder + deliveryCharge + cashOnDeliveryCharge
+                        totalOrder + deliveryCharge + cashOnDeliveryCharge,
                       )}
                     </p>
                   </div>
@@ -208,9 +215,9 @@ export default function OrderDetails() {
                                   (Number(product.offer.replace("%", ""))
                                     ? Number(product.offer.replace("%", ""))
                                     : Number(
-                                        product.discount.replace("%", "")
+                                        product.discount.replace("%", ""),
                                       ))) /
-                                  100
+                                  100,
                             )}
                           </span>
                           <span className="ms-2 fw-medium">

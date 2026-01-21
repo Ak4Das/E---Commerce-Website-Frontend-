@@ -8,6 +8,8 @@ import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 
 export default function PaymentMethods() {
+  const [search, setSearch] = useState("")
+  console.log(search)
   const address = JSON.parse(localStorage.getItem("user")).address.find(
     (address) => address.selected,
   )
@@ -126,8 +128,13 @@ export default function PaymentMethods() {
 
   return (
     <>
-      <Header />
-      <SearchInPage margin="ms-3"/>
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
+      <SearchInPage margin="ms-3" />
       <main className="container mt-3 mb-5 d-lg-flex gap-5 align-items-start">
         <div className="paymentMethodSectionOne">
           <section className="bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">

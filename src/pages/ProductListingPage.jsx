@@ -8,6 +8,8 @@ import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 
 export default function ProductListingPage() {
+  const [search, setSearch] = useState("")
+  console.log(search)
   const { category } = useParams()
   const { clothsData, setClothsData } = GetClothsData()
   const [price, setPrice] = useState(0)
@@ -19,7 +21,7 @@ export default function ProductListingPage() {
     e.preventDefault()
     e.stopPropagation()
     const product = clothsData.find(
-      (product) => product.id === Number(e.target.value)
+      (product) => product.id === Number(e.target.value),
     )
     product.addToCart = product.addToCart === false ? true : true
     // setClothsData(clothsData)
@@ -40,7 +42,7 @@ export default function ProductListingPage() {
     e.preventDefault()
     e.stopPropagation()
     const product = clothsData.find(
-      (product) => product.id === Number(e.target.value)
+      (product) => product.id === Number(e.target.value),
     )
     product.addToWishList = product.addToWishList === false ? true : true
     // setClothsData(clothsData)
@@ -58,7 +60,7 @@ export default function ProductListingPage() {
   }
 
   const filterByCategory = clothsData.filter(
-    (data) => data.category === category
+    (data) => data.category === category,
   )
 
   const filterByPrice = filterByCategory.filter(
@@ -66,11 +68,11 @@ export default function ProductListingPage() {
       (
         (product.price * Number(product.discount.replace("%", ""))) /
         100
-      ).toFixed(1) >= price
+      ).toFixed(1) >= price,
   )
 
   const filterByRating = filterByPrice.filter(
-    (product) => product.rating >= rating
+    (product) => product.rating >= rating,
   )
 
   function discountedPrice(product) {
@@ -119,8 +121,8 @@ export default function ProductListingPage() {
 
   return (
     <>
-      <Header position="sticky" top={0} zIndex={1} />
-      <SearchInPage margin="ms-5"/>
+      <Header position="sticky" top={0} zIndex={1} setSearch={setSearch} />
+      <SearchInPage margin="ms-5" />
       <main className="d-flex">
         <Offcanvas
           setPrice={setPrice}
@@ -189,10 +191,10 @@ export default function ProductListingPage() {
                                 (Number(product.offer.replace("%", ""))
                                   ? Number(product.offer.replace("%", ""))
                                   : Number(
-                                      product.discount.replace("%", "")
+                                      product.discount.replace("%", ""),
                                     ))) /
                                 100
-                            ).toFixed(1)
+                            ).toFixed(1),
                           )}
                           (-
                           {Number(product.offer.replace("%", ""))

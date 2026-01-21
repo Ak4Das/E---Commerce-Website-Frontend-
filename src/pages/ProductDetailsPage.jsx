@@ -10,6 +10,8 @@ import { useEffect } from "react"
 import SearchInPage from "../components/SearchInPage"
 
 export default function ProductDetailsPage() {
+  const [search, setSearch] = useState("")
+  console.log(search)
   const [quantity, setQuantity] = useState(1)
   const [size, setSize] = useState("")
   const [isUpdated, setUpdated] = useState(false)
@@ -175,7 +177,12 @@ export default function ProductDetailsPage() {
 
   return (
     <>
-      <Header />
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
       <SearchInPage margin="ms-3" />
       <main className="bg-body-secondary py-3 px-4 py-sm-5 px-sm-5">
         <div className="bg-light-subtle py-3 px-3 productDetailsContainer">

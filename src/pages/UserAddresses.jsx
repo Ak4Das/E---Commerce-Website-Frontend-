@@ -5,6 +5,8 @@ import { useState } from "react"
 import SearchInPage from "../components/SearchInPage"
 
 export default function UserAddresses() {
+  const [search, setSearch] = useState("")
+  console.log(search)
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
   if (user.address.length) {
     const selectedAddress = user.address.find((address) => address.selected)
@@ -23,8 +25,13 @@ export default function UserAddresses() {
 
   return (
     <>
-      <Header />
-      <SearchInPage margin="ms-3"/>
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
+      <SearchInPage margin="ms-3" />
       <main className="container mt-3">
         <h2>Your Addresses</h2>
         <div className="row row-gap-4 mt-4">
@@ -111,7 +118,9 @@ export default function UserAddresses() {
                         className="text-primary fw-bold"
                         style={{ fontSize: "20px" }}
                       >
-                        {address.selected && <i className="bi bi-check2-all"></i>}
+                        {address.selected && (
+                          <i className="bi bi-check2-all"></i>
+                        )}
                       </div>
                     </div>
                   </div>

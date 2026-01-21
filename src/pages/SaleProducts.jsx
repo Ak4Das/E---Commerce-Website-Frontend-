@@ -7,6 +7,8 @@ import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 
 export default function SaleProducts() {
+  const [search, setSearch] = useState("")
+  console.log(search)
   const { commonCategory } = useParams()
   const { clothsData, setClothsData } = GetClothsData()
   const [gender, setGender] = useState("")
@@ -66,7 +68,7 @@ export default function SaleProducts() {
 
   return (
     <>
-      <Header position="sticky" top={0} zIndex={1} />
+      <Header position="sticky" top={0} zIndex={1} setSearch={setSearch}/>
       <SearchInPage margin="ms-3"/>
       <main>
         <div className="mx-5 my-3">

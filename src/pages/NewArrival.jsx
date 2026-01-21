@@ -3,12 +3,23 @@ import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
+import { useState } from "react"
 
 export default function NewArrival() {
+  const [search, setSearch] = useState("")
+  console.log(search)
   const { clothsData, setClothsData } = GetClothsData()
   const filteredProducts = clothsData.filter(
     (product) => product.newArrival === true,
   )
+
+  const finalFilteredProducts = search
+    ? filteredProducts.filter((product) =>
+        product.commonCategory
+          .toLocaleLowerCase()
+          .includes(search.toLocaleLowerCase()),
+      )
+    : filteredProducts
 
   function addToCart(e) {
     e.preventDefault()
@@ -52,13 +63,18 @@ export default function NewArrival() {
 
   return (
     <>
-      <Header />
-      <SearchInPage margin="ms-3"/>
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
+      <SearchInPage margin="ms-3" />
       <main className="mx-5 my-3">
         <h2 className="my-3 text-secondary">New Arrival</h2>
         <div className="">
           <div className="row">
-            {filteredProducts.map((product) => (
+            {finalFilteredProducts.map((product) => (
               <div
                 key={product.id}
                 className="col-sm-6 col-xl-4 col-xxl-3 mb-3"

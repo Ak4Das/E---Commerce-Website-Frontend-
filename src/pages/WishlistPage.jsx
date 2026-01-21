@@ -2,9 +2,12 @@ import Header from "../components/Header"
 import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
+import { useState } from "react"
 
 export default function WishlistPage() {
   const { clothsData, setClothsData } = GetClothsData()
+  const [search, setSearch] = useState("")
+  console.log(search)
 
   const ProductsInCart =
     JSON.parse(localStorage.getItem("createOrder")).item.length &&
@@ -61,15 +64,26 @@ export default function WishlistPage() {
     (product) => product.addToWishList === true,
   )
 
+  const finalWishlistProducts = wishlistProducts.filter((product) =>
+    product.commonCategory
+      .toLocaleLowerCase()
+      .includes(search.toLocaleLowerCase()),
+  )
+
   return (
     <>
-      <Header />
-      <SearchInPage margin="ms-3"/>
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
+      <SearchInPage margin="ms-3" />
       <main className="bg-body-secondary pb-3">
         <div className="container">
           <h3 className="py-3 text-center">My Wishlist</h3>
           <div className="row row-gap-4">
-            {wishlistProducts.map((product) => (
+            {finalWishlistProducts.map((product) => (
               <div
                 key={product.id}
                 className="col-sm-6 col-md-4 col-xl-3 col-xxl-3 cardContainer"

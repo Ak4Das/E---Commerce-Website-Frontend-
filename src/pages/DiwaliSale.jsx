@@ -18,12 +18,20 @@ import diwaliDecoration12 from "../assets/diwaliDecoration12.png"
 import diwaliDecoration13 from "../assets/diwaliDecoration13.png"
 import { Link } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
+import { useState } from "react"
 
 export default function DiwaliSale() {
+  const [search, setSearch] = useState("")
+  console.log(search)
   return (
     <>
-      <Header />
-      <SearchInPage margin="ms-3"/>
+      <Header
+        position="static"
+        top="auto"
+        zIndex="auto"
+        setSearch={setSearch}
+      />
+      <SearchInPage margin="ms-3" />
       <main className="mx-5 my-4">
         <section
           className="diwaliSaleSection1"

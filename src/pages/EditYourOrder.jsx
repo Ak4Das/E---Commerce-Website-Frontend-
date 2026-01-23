@@ -87,7 +87,7 @@ export default function EditYourOrder() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="container my-4">
         <h1 className="text-success fw-medium mb-3">Edit Order</h1>
         <section className="editOrderSection1 bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">
@@ -112,7 +112,7 @@ export default function EditYourOrder() {
             <h5 className="paymentMethodHeading">
               {paymentMethod ? paymentMethod : orderToBeEdit.paymentMethod}
             </h5>
-            <Link className="fw-medium text-decoration-none discountCard">
+            <Link className="fw-medium text-decoration-none discountCard d-block lh-sm">
               Use a gift card, voucher or promo code
             </Link>
           </div>
@@ -590,76 +590,80 @@ export default function EditYourOrder() {
                     </span>
                   </div>
                   <div className="my-3">
-                    <span className="fw-bold me-0 text-secondary">Size: </span>
-                    <button
-                      className="border border-1 me-2"
-                      onClick={(e) => {
-                        product.size = "S"
-                        const btn = e.target
-                        btn.innerHTML = '<i class="bi bi-check2"></i>'
-                        setTimeout(() => {
-                          btn.innerHTML = "S"
-                        }, 500)
-                      }}
-                    >
-                      S
-                    </button>
-                    <button
-                      className="border border-1 me-2"
-                      onClick={(e) => {
-                        product.size = "M"
-                        const btn = e.target
-                        btn.innerHTML = '<i class="bi bi-check2"></i>'
-                        setTimeout(() => {
-                          btn.innerHTML = "M"
-                        }, 500)
-                      }}
-                    >
-                      M
-                    </button>
-                    <button
-                      className="border border-1 me-2"
-                      onClick={(e) => {
-                        product.size = "L"
-                        const btn = e.target
-                        btn.innerHTML = '<i class="bi bi-check2"></i>'
-                        setTimeout(() => {
-                          btn.innerHTML = "L"
-                        }, 500)
-                      }}
-                    >
-                      L
-                    </button>
-                    <button
-                      className="border border-1 me-2"
-                      onClick={(e) => {
-                        product.size = "XL"
-                        const btn = e.target
-                        btn.innerHTML = '<i class="bi bi-check2"></i>'
-                        setTimeout(() => {
-                          btn.innerHTML = "XL"
-                        }, 500)
-                      }}
-                    >
-                      XL
-                    </button>
-                    <button
-                      className="border border-1"
-                      onClick={(e) => {
-                        product.size = "XXL"
-                        const btn = e.target
-                        btn.innerHTML = '<i class="bi bi-check2"></i>'
-                        setTimeout(() => {
-                          btn.innerHTML = "XXL"
-                        }, 500)
-                      }}
-                    >
-                      XXL
-                    </button>
+                    <span className="fw-bold me-0 text-secondary sizeText me-3">
+                      Size:{" "}
+                    </span>
+                    <div className="sizeBtnContainer">
+                      <button
+                        className="border border-1 me-2 mb-2"
+                        onClick={(e) => {
+                          product.size = "S"
+                          const btn = e.target
+                          btn.innerHTML = '<i class="bi bi-check2"></i>'
+                          setTimeout(() => {
+                            btn.innerHTML = "S"
+                          }, 500)
+                        }}
+                      >
+                        S
+                      </button>
+                      <button
+                        className="border border-1 me-2 mb-2"
+                        onClick={(e) => {
+                          product.size = "M"
+                          const btn = e.target
+                          btn.innerHTML = '<i class="bi bi-check2"></i>'
+                          setTimeout(() => {
+                            btn.innerHTML = "M"
+                          }, 500)
+                        }}
+                      >
+                        M
+                      </button>
+                      <button
+                        className="border border-1 me-2 mb-2"
+                        onClick={(e) => {
+                          product.size = "L"
+                          const btn = e.target
+                          btn.innerHTML = '<i class="bi bi-check2"></i>'
+                          setTimeout(() => {
+                            btn.innerHTML = "L"
+                          }, 500)
+                        }}
+                      >
+                        L
+                      </button>
+                      <button
+                        className="border border-1 me-2 mb-2"
+                        onClick={(e) => {
+                          product.size = "XL"
+                          const btn = e.target
+                          btn.innerHTML = '<i class="bi bi-check2"></i>'
+                          setTimeout(() => {
+                            btn.innerHTML = "XL"
+                          }, 500)
+                        }}
+                      >
+                        XL
+                      </button>
+                      <button
+                        className="border border-1 mb-2"
+                        onClick={(e) => {
+                          product.size = "XXL"
+                          const btn = e.target
+                          btn.innerHTML = '<i class="bi bi-check2"></i>'
+                          setTimeout(() => {
+                            btn.innerHTML = "XXL"
+                          }, 500)
+                        }}
+                      >
+                        XXL
+                      </button>
+                    </div>
                   </div>
-                  <div className="d-flex gap-3 align-items-center my-3">
+                  <div className="d-flex gap-3 align-items-center my-3 btnInEditOrderPage">
                     <div
-                      className="border border-warning my-0 border-2 d-flex align-items-center rounded-pill overflow-hidden justify-content-around deleteOrIncreaseQuantityBtn"
+                      className="border border-warning w-100 my-0 border-2 d-flex align-items-center rounded-pill overflow-hidden justify-content-around deleteOrIncreaseQuantityBtn"
                       style={{ width: "100px" }}
                     >
                       <button
@@ -717,7 +721,7 @@ export default function EditYourOrder() {
                       </button>
                     </div>
                     <button
-                      className="btn btn-outline-danger btn-sm rounded-pill"
+                      className="btn btn-outline-danger btn-sm rounded-pill w-100"
                       onClick={(e) => {
                         const Product = products.filter(
                           (item) => item.id !== product.id,

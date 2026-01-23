@@ -122,7 +122,7 @@ export default function ProductListingPage() {
   return (
     <>
       <Header position="sticky" top={0} zIndex={1} setSearch={setSearch} />
-      <SearchInPage margin="ms-5" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="d-flex">
         <Offcanvas
           setPrice={setPrice}
@@ -131,14 +131,6 @@ export default function ProductListingPage() {
           setCategory={setCategory}
         />
         <div className="mx-5 my-3">
-          <form role="search" className="searchInApp">
-            <input
-              className="border border-0 p-2 bg-body-tertiary"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
           <h4 className="my-3 text-secondary">Showing All Products</h4>
           <div className="row">
             {finalFilter.map((product) => (
@@ -151,12 +143,14 @@ export default function ProductListingPage() {
                   to={`/productDetails/${product.id}`}
                 >
                   <div className="card productCard">
-                    <img
-                      src={product.url}
-                      className="img-fluid listProductImage"
-                      style={{ height: "300px" }}
-                    />
-                    <div className="card-body d-flex flex-column justify-content-between">
+                    <div className="productImageContainerProductListingPage">
+                      <img
+                        src={product.url}
+                        className="img-fluid listProductImage"
+                        style={{ height: "300px" }}
+                      />
+                    </div>
+                    <div className="card-body d-flex flex-column justify-content-between w-100">
                       <p id="name" className="my-0 lh-sm listProductName">
                         {product.newArrival === true && (
                           <span className="badge text-bg-success me-1">
@@ -212,7 +206,7 @@ export default function ProductListingPage() {
                       <div>
                         <button
                           value={product.id}
-                          className="btn btn-secondary w-100 mb-1"
+                          className="btn btn-secondary w-100 mb-1 addToCart"
                           onClick={addToCart}
                         >
                           {product.addToCart ? "Added To Cart" : "Add To cart"}

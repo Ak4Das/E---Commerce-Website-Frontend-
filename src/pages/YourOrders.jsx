@@ -32,7 +32,7 @@ export default function YourOrders() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="container mt-3">
         <h1>Your Orders</h1>
         {orders.map((order) => (
@@ -43,7 +43,7 @@ export default function YourOrders() {
                 <span>#{order.id}</span>
               </div>
               <Link
-                to="/orderDetails"
+                to={`/orderDetails/${order.id}`}
                 className="text-decoration-none viewOrderDetailsYourOrders"
                 style={{ fontSize: "14px" }}
               >
@@ -76,6 +76,14 @@ export default function YourOrders() {
                 </div>
               )}
             </div>
+            <div className="mt-2 totalOrder">
+              <p className="my-0 fw-medium" style={{ fontSize: "13px" }}>
+                TOTAL
+              </p>
+              <p className="my-0 fw-medium" style={{ fontSize: "14px" }}>
+                ₹{order.totalPrice}
+              </p>
+            </div>
             <div className="card my-3">
               <div className="bg-light p-3 rounded d-flex gap-5">
                 <div>
@@ -86,7 +94,7 @@ export default function YourOrders() {
                     {order.orderDate}
                   </p>
                 </div>
-                <div>
+                <div className="totalOrderCard">
                   <p className="my-0 fw-medium" style={{ fontSize: "13px" }}>
                     TOTAL
                   </p>
@@ -135,7 +143,7 @@ export default function YourOrders() {
                 </div>
               </div>
               <div className="p-3">
-                <p className="my-0 fs-5 fw-bold text-success">
+                <p className="my-0 fs-6 fw-bold text-success">
                   Arriving {order.deliveryDay}
                 </p>
                 <div className="d-flex flex-column flex-md-row justify-content-between gap-3 mt-3">
@@ -198,7 +206,7 @@ export default function YourOrders() {
                   </div>
                   <div
                     className="d-flex flex-column gap-2"
-                    style={{ minWidth: "200px" }}
+                    style={{ minWidth: "170px" }}
                   >
                     <Link
                       to={`/editOrder/${order.id}`}
@@ -216,6 +224,7 @@ export default function YourOrders() {
                 </div>
               </div>
             </div>
+            <hr className="my-4"/>
           </div>
         ))}
       </main>

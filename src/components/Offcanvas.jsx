@@ -33,11 +33,11 @@ export default function Offcanvas({
   return (
     <form
       style={{
-        height: "calc(100vh - 56px)",
+        height: "calc(100vh - 120px)",
         maxWidth: "30vw",
         minWidth: "350px",
         position: "fixed",
-        top:"58px",
+        top:"120px",
         left: "-305px",
         zIndex: 1,
       }}

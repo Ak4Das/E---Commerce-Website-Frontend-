@@ -134,7 +134,7 @@ export default function PaymentMethods() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="container mt-3 mb-5 d-lg-flex gap-5 align-items-start">
         <div className="paymentMethodSectionOne">
           <section className="bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">
@@ -161,7 +161,7 @@ export default function PaymentMethods() {
                 <h5 className="paymentMethodHeading">
                   {orders[orders.length - 1].paymentMethod}
                 </h5>
-                <Link className="fw-medium text-decoration-none discountCard">
+                <Link className="fw-medium text-decoration-none discountCard d-block lh-sm">
                   Use a gift card, voucher or promo code
                 </Link>
               </div>
@@ -181,7 +181,7 @@ export default function PaymentMethods() {
             <section>
               <h3 className="mt-4">Products List</h3>
               <div className="bg-light px-4 py-3 mt-3">
-                <h5 className="mb-3 fw-bold deliveryDate">
+                <h5 className="mb-3 fw-bold deliveryDate text-success">
                   Arriving {setDeliveryDate()}
                 </h5>
                 {products.map((product) => (
@@ -189,14 +189,15 @@ export default function PaymentMethods() {
                     key={product.id}
                     className="card column-gap-4 my-3 cardInPaymentMethodPage"
                   >
-                    <img
-                      src={product.url}
-                      alt=""
-                      style={{ width: "125px", height: "200px" }}
-                      className="productImageInPaymentMethodPage"
-                    />
-                    <div className="p-2">
-                      <p className="fw-medium my-0">
+                    <div className="h-100 mx-auto productImageContainerInPaymentMethodPage">
+                      <img
+                        src={product.url}
+                        alt=""
+                        className="w-100 h-100"
+                      />
+                    </div>
+                    <div className="p-2 w-100">
+                      <p className="fw-medium my-0" style={{height:"96px",overflow:"hidden"}}>
                         {product.newArrival === true && (
                           <span className="badge text-bg-success me-1">
                             New
@@ -320,7 +321,7 @@ export default function PaymentMethods() {
                         Credit or debit card
                       </label>
                       <br />
-                      <div className="d-flex">
+                      <div className="d-flex cardImagesInPaymentMethodPage">
                         <img
                           src="https://tse3.mm.bing.net/th/id/OIP.VxB3xx5PMyI8JoGlcWNkHAHaGE?pid=Api&P=0&h=180"
                           alt="master card"
@@ -514,7 +515,7 @@ export default function PaymentMethods() {
                       <br />
                       <select
                         id="netBanking"
-                        className="rounded p-2"
+                        className="rounded p-2 netBanking"
                         style={{ cursor: "pointer", width: "200px" }}
                       >
                         <option value="" className="fw-bold">
@@ -700,14 +701,14 @@ export default function PaymentMethods() {
                   {products.length === 0 ? (
                     <Link
                       to="/cart"
-                      className="btn btn-warning rounded-pill mt-4 px-4"
+                      className="btn btn-warning rounded-pill mt-4 px-4 useThisPaymentMethodBtn"
                     >
                       Use this payment method
                     </Link>
                   ) : (
                     paymentMethod && (
                       <button
-                        className="btn btn-warning rounded-pill mt-4 px-4"
+                        className="btn btn-warning rounded-pill mt-4 px-4 useThisPaymentMethodBtn"
                         onClick={() => {
                           const order = {
                             id: orders.length,
@@ -750,24 +751,24 @@ export default function PaymentMethods() {
             </section>
           )}
           {isPaymentMethodSelected && (
-            <section className="bg-light mt-4 p-4 d-flex gap-4 fs-5 placeYourOrderSection">
+            <section className="bg-light mt-4 p-4 d-flex gap-3 fs-5 placeYourOrderSection">
               {isOrderPlaced ? (
                 <Link
                   to="/yourOrders"
-                  className="btn btn-warning rounded-pill px-5"
+                  className="btn btn-warning rounded-pill px-4 placeYourOrderBtn"
                 >
                   See your orders
                 </Link>
               ) : (
                 <button
-                  className="btn btn-warning rounded-pill px-5"
+                  className="btn btn-warning rounded-pill px-4 placeYourOrderBtn"
                   onClick={placeOrder}
                 >
                   Place your order
                 </button>
               )}
 
-              <p className="fw-bold my-0 text-center">
+              <p className="fw-bold my-0 text-center orderTotalPlaceOrderSection">
                 Order Total: ₹
                 {Math.round(
                   totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0),

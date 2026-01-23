@@ -68,8 +68,8 @@ export default function SaleProducts() {
 
   return (
     <>
-      <Header position="sticky" top={0} zIndex={1} setSearch={setSearch}/>
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <Header position="sticky" top={0} zIndex={1} setSearch={setSearch} />
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main>
         <div className="mx-5 my-3">
           <div className="d-flex justify-content-between saleProductFirstSection mb-3">
@@ -97,21 +97,20 @@ export default function SaleProducts() {
           </div>
           <div className="row">
             {filteredByGender.map((product) => (
-              <div
-                key={product.id}
-                className="col-sm-6 col-xl-4 mb-3"
-              >
+              <div key={product.id} className="col-sm-6 col-xl-4 mb-3">
                 <Link
                   className="text-decoration-none"
                   to={`/productDetails/${product.id}`}
                 >
                   <div className="card productCard">
-                    <img
-                      src={product.url}
-                      className="img-fluid listProductImage"
-                      style={{ height: "300px" }}
-                    />
-                    <div className="card-body d-flex flex-column justify-content-between">
+                    <div className="productImageContainerSaleProductPage">
+                      <img
+                        src={product.url}
+                        className="img-fluid listProductImage"
+                        style={{ height: "300px" }}
+                      />
+                    </div>
+                    <div className="card-body d-flex flex-column justify-content-between w-100">
                       <p id="name" className="my-0 lh-sm listProductName">
                         <span className="badge text-bg-warning me-1">
                           Diwali Offer
@@ -150,7 +149,7 @@ export default function SaleProducts() {
                       <div>
                         <button
                           value={product.id}
-                          className="btn btn-secondary w-100 mb-1"
+                          className="btn btn-secondary w-100 mb-1 addToCart"
                           onClick={addToCart}
                         >
                           {product.addToCart ? "Added To Cart" : "Add To cart"}

@@ -183,7 +183,7 @@ export default function ProductDetailsPage() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="bg-body-secondary py-3 px-4 py-sm-5 px-sm-5">
         <div className="bg-light-subtle py-3 px-3 productDetailsContainer">
           <section className="d-sm-flex gap-sm-4 gap-xl-5 productDetailsContainerFirstSection">
@@ -225,6 +225,7 @@ export default function ProductDetailsPage() {
                 </button>
                 <button
                   className="btn btn-outline-secondary w-100 mb-2"
+                  style={{fontSize: "15px"}}
                   value={product.id}
                   onClick={addToWishlist}
                 >
@@ -274,10 +275,10 @@ export default function ProductDetailsPage() {
                 off
               </p>
               <div>
-                <span className="quantityTextInProductDetailsPage fw-bold me-2">
+                <span className="quantityText fw-bold me-2">
                   Quantity:{" "}
                 </span>
-                <div className="quantityBtnContainerInProductDetailsPage mb-3">
+                <div className="quantityBtnContainer mb-3">
                   <button
                     className="rounded-circle border border-1"
                     style={{ width: "30px", height: "30px" }}
@@ -307,10 +308,10 @@ export default function ProductDetailsPage() {
                 </div>
               </div>
               <div>
-                <span className="sizeTextInProductDetailsPage fw-bold me-3">
+                <span className="sizeText fw-bold me-3">
                   Size:{" "}
                 </span>
-                <div className="sizeBtnContainerInProductDetailsPage">
+                <div className="sizeBtnContainer">
                   <button
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
@@ -653,7 +654,7 @@ export default function ProductDetailsPage() {
                       <div className="card-body d-flex flex-column justify-content-between align-items-center">
                         <p
                           className="text-center m-0 productName lh-sm overflow-hidden listProductName"
-                          style={{ height: "43px" }}
+                          style={{ height: "40px" }}
                         >
                           {!!Number(product.offer.replace("%", "")) && (
                             <span className="badge text-bg-warning me-1">
@@ -697,6 +698,26 @@ export default function ProductDetailsPage() {
                           <p className="my-0 text-success fw-medium">
                             {product.freeDelivery ? "Free Deilvery" : ""}
                           </p>
+                        </div>
+                        <div className="w-100">
+                          <button
+                            className="btn btn-secondary w-100 mb-2 addToCart"
+                            value={product.id}
+                            onClick={addToCart}
+                          >
+                            {product.addToCart
+                              ? "Added To Cart"
+                              : "Add To cart"}
+                          </button>
+                          <button
+                            className="btn btn-outline-secondary w-100 mb-2 saveToWishlist"
+                            value={product.id}
+                            onClick={addToWishlist}
+                          >
+                            {product.addToWishList
+                              ? "Added To Wishlist"
+                              : "Save To Wishlist"}
+                          </button>
                         </div>
                       </div>
                     </div>

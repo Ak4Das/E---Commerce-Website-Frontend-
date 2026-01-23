@@ -68,7 +68,7 @@ export default function NewArrival() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="mx-5 my-3">
         <h2 className="my-3 text-secondary">New Arrival</h2>
         <div className="">
@@ -83,12 +83,14 @@ export default function NewArrival() {
                   to={`/productDetails/${product.id}`}
                 >
                   <div className="card productCard">
-                    <img
-                      src={product.url}
-                      className="img-fluid listProductImage"
-                      style={{ height: "300px" }}
-                    />
-                    <div className="card-body d-flex flex-column justify-content-between">
+                    <div className="productImageContainerNewArrivalPage">
+                      <img
+                        src={product.url}
+                        className="img-fluid listProductImage"
+                        style={{ height: "300px" }}
+                      />
+                    </div>
+                    <div className="card-body d-flex flex-column justify-content-between w-100">
                       <p id="name" className="my-0 lh-sm listProductName">
                         <span className="badge text-bg-success me-1">New</span>
                         {product.name.length > 61
@@ -105,14 +107,14 @@ export default function NewArrival() {
                         </span>
                       </div>
                       <div>
-                        <p id="discount" className="my-0">
+                        <p className="discount my-0">
                           <b>₹</b>
                           {(
                             product.price -
                             (product.price *
                               Number(product.discount.replace("%", ""))) /
                               100
-                          ).toFixed(1)}{" "}
+                          ).toFixed(1)}
                           (-{product.discount})
                         </p>
                         <small
@@ -125,7 +127,7 @@ export default function NewArrival() {
                       <div>
                         <button
                           value={product.id}
-                          className="btn btn-secondary w-100 mb-1"
+                          className="btn btn-secondary w-100 mb-1 addToCart"
                           onClick={addToCart}
                         >
                           {product.addToCart ? "Added To Cart" : "Add To cart"}

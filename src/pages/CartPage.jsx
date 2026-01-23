@@ -43,9 +43,11 @@ export default function CartPage() {
       (product) => product.addToCart === true,
     )
 
-    const FinalProductsInCart = search
+  const FinalProductsInCart = search
     ? ProductsInCart.filter((product) =>
-        product.commonCategory.toLocaleLowerCase().includes(search.toLocaleLowerCase()),
+        product.commonCategory
+          .toLocaleLowerCase()
+          .includes(search.toLocaleLowerCase()),
       )
     : ProductsInCart
 
@@ -129,7 +131,7 @@ export default function CartPage() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="bg-body-secondary pb-3">
         <div className="container">
           <h3 className="py-4 text-center">My Cart</h3>
@@ -189,23 +191,65 @@ export default function CartPage() {
                                   off
                                 </p>
                                 <div className="mb-3">
-                                  <span className="fw-bold me-2">
+                                  <span className="fw-bold me-2 quantityText">
                                     Quantity:{" "}
                                   </span>
-                                  <button
-                                    className="rounded-circle border border-1"
-                                    style={{ width: "30px", height: "30px" }}
-                                    onClick={(e) => {
-                                      e.preventDefault()
-                                      e.stopPropagation()
-                                      let inputElementValue = Number(
-                                        e.target.nextElementSibling.value,
-                                      )
-                                      if (inputElementValue > 1) {
-                                        e.target.nextElementSibling.value =
-                                          --inputElementValue
-                                        product.quantity = Number(
+                                  <div className="quantityBtnContainer mb-3">
+                                    <button
+                                      className="rounded-circle border border-1"
+                                      style={{ width: "30px", height: "30px" }}
+                                      onClick={(e) => {
+                                        e.preventDefault()
+                                        e.stopPropagation()
+                                        let inputElementValue = Number(
                                           e.target.nextElementSibling.value,
+                                        )
+                                        if (inputElementValue > 1) {
+                                          e.target.nextElementSibling.value =
+                                            --inputElementValue
+                                          product.quantity = Number(
+                                            e.target.nextElementSibling.value,
+                                          )
+                                          localStorage.setItem(
+                                            "createOrder",
+                                            JSON.stringify({
+                                              item: ProductsInCart,
+                                            }),
+                                          )
+                                          setUpdated(true)
+                                        }
+                                      }}
+                                    >
+                                      {" "}
+                                      -{" "}
+                                    </button>
+                                    <input
+                                      type="text"
+                                      defaultValue={product.quantity || 1}
+                                      style={{ width: "30px" }}
+                                      className="mx-2"
+                                      onChange={(e) => {
+                                        if (Number(e.target.value) >= 0) {
+                                          product.quantity = Number(
+                                            e.target.value,
+                                          )
+                                          setUpdated(true)
+                                        }
+                                      }}
+                                    />
+                                    <button
+                                      className="rounded-circle border border-1"
+                                      style={{ width: "30px", height: "30px" }}
+                                      onClick={(e) => {
+                                        e.preventDefault()
+                                        e.stopPropagation()
+                                        let inputElementValue = Number(
+                                          e.target.previousElementSibling.value,
+                                        )
+                                        e.target.previousElementSibling.value =
+                                          ++inputElementValue
+                                        product.quantity = Number(
+                                          e.target.previousElementSibling.value,
                                         )
                                         localStorage.setItem(
                                           "createOrder",
@@ -214,170 +258,134 @@ export default function CartPage() {
                                           }),
                                         )
                                         setUpdated(true)
-                                      }
-                                    }}
-                                  >
-                                    {" "}
-                                    -{" "}
-                                  </button>
-                                  <input
-                                    type="text"
-                                    defaultValue={product.quantity || 1}
-                                    style={{ width: "30px" }}
-                                    className="mx-2"
-                                    onChange={(e) => {
-                                      if (Number(e.target.value) >= 0) {
-                                        product.quantity = Number(
-                                          e.target.value,
-                                        )
-                                        setUpdated(true)
-                                      }
-                                    }}
-                                  />
-                                  <button
-                                    className="rounded-circle border border-1"
-                                    style={{ width: "30px", height: "30px" }}
-                                    onClick={(e) => {
-                                      e.preventDefault()
-                                      e.stopPropagation()
-                                      let inputElementValue = Number(
-                                        e.target.previousElementSibling.value,
-                                      )
-                                      e.target.previousElementSibling.value =
-                                        ++inputElementValue
-                                      product.quantity = Number(
-                                        e.target.previousElementSibling.value,
-                                      )
-                                      localStorage.setItem(
-                                        "createOrder",
-                                        JSON.stringify({
-                                          item: ProductsInCart,
-                                        }),
-                                      )
-                                      setUpdated(true)
-                                    }}
-                                  >
-                                    {" "}
-                                    +{" "}
-                                  </button>
+                                      }}
+                                    >
+                                      {" "}
+                                      +{" "}
+                                    </button>
+                                  </div>
                                 </div>
                                 <div className="mb-3">
-                                  <span className="fw-bold me-0">Size: </span>
-                                  <button
-                                    className="border border-1 me-2"
-                                    onClick={(e) => {
-                                      e.preventDefault()
-                                      e.stopPropagation()
-                                      product.size = "S"
-                                      localStorage.setItem(
-                                        "createOrder",
-                                        JSON.stringify({
-                                          item: ProductsInCart,
-                                        }),
-                                      )
-                                      setUpdated(true)
-                                      const btn = e.target
-                                      btn.innerHTML =
-                                        '<i class="bi bi-check2"></i>'
-                                      setTimeout(() => {
-                                        btn.innerHTML = "S"
-                                      }, 500)
-                                    }}
-                                  >
-                                    S
-                                  </button>
-                                  <button
-                                    className="border border-1 me-2"
-                                    onClick={(e) => {
-                                      e.preventDefault()
-                                      e.stopPropagation()
-                                      product.size = "M"
-                                      localStorage.setItem(
-                                        "createOrder",
-                                        JSON.stringify({
-                                          item: ProductsInCart,
-                                        }),
-                                      )
-                                      setUpdated(true)
-                                      const btn = e.target
-                                      btn.innerHTML =
-                                        '<i class="bi bi-check2"></i>'
-                                      setTimeout(() => {
-                                        btn.innerHTML = "M"
-                                      }, 500)
-                                    }}
-                                  >
-                                    M
-                                  </button>
-                                  <button
-                                    className="border border-1 me-2"
-                                    onClick={(e) => {
-                                      e.preventDefault()
-                                      e.stopPropagation()
-                                      product.size = "L"
-                                      localStorage.setItem(
-                                        "createOrder",
-                                        JSON.stringify({
-                                          item: ProductsInCart,
-                                        }),
-                                      )
-                                      setUpdated(true)
-                                      const btn = e.target
-                                      btn.innerHTML =
-                                        '<i class="bi bi-check2"></i>'
-                                      setTimeout(() => {
-                                        btn.innerHTML = "L"
-                                      }, 500)
-                                    }}
-                                  >
-                                    L
-                                  </button>
-                                  <button
-                                    className="border border-1 me-2"
-                                    onClick={(e) => {
-                                      e.preventDefault()
-                                      e.stopPropagation()
-                                      product.size = "XL"
-                                      localStorage.setItem(
-                                        "createOrder",
-                                        JSON.stringify({
-                                          item: ProductsInCart,
-                                        }),
-                                      )
-                                      setUpdated(true)
-                                      const btn = e.target
-                                      btn.innerHTML =
-                                        '<i class="bi bi-check2"></i>'
-                                      setTimeout(() => {
-                                        btn.innerHTML = "XL"
-                                      }, 500)
-                                    }}
-                                  >
-                                    XL
-                                  </button>
-                                  <button
-                                    className="border border-1"
-                                    onClick={(e) => {
-                                      e.preventDefault()
-                                      e.stopPropagation()
-                                      product.size = "XXL"
-                                      localStorage.setItem(
-                                        "createOrder",
-                                        JSON.stringify({
-                                          item: ProductsInCart,
-                                        }),
-                                      )
-                                      setUpdated(true)
-                                      const btn = e.target
-                                      btn.innerHTML =
-                                        '<i class="bi bi-check2"></i>'
-                                      setTimeout(() => {
-                                        btn.innerHTML = "XXL"
-                                      }, 500)
-                                    }}
-                                  >
-                                    XXL
-                                  </button>
+                                  <span className="sizeText fw-bold me-3">
+                                    Size:{" "}
+                                  </span>
+                                  <div className="sizeBtnContainer">
+                                    <button
+                                      className="border border-1 me-2 mb-2"
+                                      onClick={(e) => {
+                                        e.preventDefault()
+                                        e.stopPropagation()
+                                        product.size = "S"
+                                        localStorage.setItem(
+                                          "createOrder",
+                                          JSON.stringify({
+                                            item: ProductsInCart,
+                                          }),
+                                        )
+                                        setUpdated(true)
+                                        const btn = e.target
+                                        btn.innerHTML =
+                                          '<i class="bi bi-check2"></i>'
+                                        setTimeout(() => {
+                                          btn.innerHTML = "S"
+                                        }, 500)
+                                      }}
+                                    >
+                                      S
+                                    </button>
+                                    <button
+                                      className="border border-1 me-2 mb-2"
+                                      onClick={(e) => {
+                                        e.preventDefault()
+                                        e.stopPropagation()
+                                        product.size = "M"
+                                        localStorage.setItem(
+                                          "createOrder",
+                                          JSON.stringify({
+                                            item: ProductsInCart,
+                                          }),
+                                        )
+                                        setUpdated(true)
+                                        const btn = e.target
+                                        btn.innerHTML =
+                                          '<i class="bi bi-check2"></i>'
+                                        setTimeout(() => {
+                                          btn.innerHTML = "M"
+                                        }, 500)
+                                      }}
+                                    >
+                                      M
+                                    </button>
+                                    <button
+                                      className="border border-1 me-2 mb-2"
+                                      onClick={(e) => {
+                                        e.preventDefault()
+                                        e.stopPropagation()
+                                        product.size = "L"
+                                        localStorage.setItem(
+                                          "createOrder",
+                                          JSON.stringify({
+                                            item: ProductsInCart,
+                                          }),
+                                        )
+                                        setUpdated(true)
+                                        const btn = e.target
+                                        btn.innerHTML =
+                                          '<i class="bi bi-check2"></i>'
+                                        setTimeout(() => {
+                                          btn.innerHTML = "L"
+                                        }, 500)
+                                      }}
+                                    >
+                                      L
+                                    </button>
+                                    <button
+                                      className="border border-1 me-2 mb-2"
+                                      onClick={(e) => {
+                                        e.preventDefault()
+                                        e.stopPropagation()
+                                        product.size = "XL"
+                                        localStorage.setItem(
+                                          "createOrder",
+                                          JSON.stringify({
+                                            item: ProductsInCart,
+                                          }),
+                                        )
+                                        setUpdated(true)
+                                        const btn = e.target
+                                        btn.innerHTML =
+                                          '<i class="bi bi-check2"></i>'
+                                        setTimeout(() => {
+                                          btn.innerHTML = "XL"
+                                        }, 500)
+                                      }}
+                                    >
+                                      XL
+                                    </button>
+                                    <button
+                                      className="border border-1 mb-2"
+                                      onClick={(e) => {
+                                        e.preventDefault()
+                                        e.stopPropagation()
+                                        product.size = "XXL"
+                                        localStorage.setItem(
+                                          "createOrder",
+                                          JSON.stringify({
+                                            item: ProductsInCart,
+                                          }),
+                                        )
+                                        setUpdated(true)
+                                        const btn = e.target
+                                        btn.innerHTML =
+                                          '<i class="bi bi-check2"></i>'
+                                        setTimeout(() => {
+                                          btn.innerHTML = "XXL"
+                                        }, 500)
+                                      }}
+                                    >
+                                      XXL
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
                               <div>

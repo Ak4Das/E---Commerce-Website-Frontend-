@@ -134,11 +134,11 @@ export default function App() {
   const [show, hide] = useState(true)
   setTimeout(() => {
     hide(false)
-  }, 1000)
+  }, 1500)
 
   const filteredCategory = search
     ? category.filter((category) =>
-        category.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+        category.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()),
       )
     : category
 
@@ -159,7 +159,7 @@ export default function App() {
             zIndex="auto"
             setSearch={setSearch}
           />
-          <SearchInPage margin="ms-3" setSearch={setSearch}/>
+          <SearchInPage margin="ms-3" setSearch={setSearch} />
           <div
             className="alert alert-success alert-dismissible fade show mt-3"
             role="alert"
@@ -168,7 +168,10 @@ export default function App() {
               <p className="my-0 d-inline-block fw-medium me-4 alertMessage">
                 <b className="fw-bold">Diwali Sale</b> is now live.
               </p>
-              <a href="#carousel" className="text-decoration-none fw-medium alertBtn">
+              <a
+                href="#carousel"
+                className="text-decoration-none fw-medium alertBtn"
+              >
                 Click Here
               </a>
             </div>
@@ -187,18 +190,20 @@ export default function App() {
                     key={category.id}
                     className="col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3"
                   >
-                    <Link to={`/products/${category.name}`}>
-                      <div className="card position-relative">
-                        <img
-                          src={category.url}
-                          alt=""
-                          className="img-fluid image"
-                        />
-                        <p className="m-0 text-center bg-light position-absolute w-100 top-50">
-                          {category.name}
-                        </p>
-                      </div>
-                    </Link>
+                    <div className="categoryInLandingPage">
+                      <Link to={`/products/${category.name}`}>
+                        <div className="card position-relative">
+                          <img
+                            src={category.url}
+                            alt=""
+                            className="img-fluid image"
+                          />
+                          <p className="m-0 text-center bg-light position-absolute w-100 top-50 productCategoryLabel">
+                            {category.name}
+                          </p>
+                        </div>
+                      </Link>
+                    </div>
                   </div>
                 )
               })}
@@ -621,7 +626,7 @@ export default function App() {
                   <div className="card-body py-0 px-0 px-xxl-5 d-flex flex-column justify-content-between">
                     <p className="fw-bold mt-2">New Arrival</p>
                     <div style={{ minWidth: "225px" }} className="description">
-                      <h3>New Collection</h3>
+                      <h3 className="newArrivalHeader">New Collection</h3>
                       <p className="m-0 newArrivalCardTitle">
                         Checkout our new collection to live your diwali with
                         style. hurry up don't miss this chance.
@@ -644,7 +649,7 @@ export default function App() {
                   <div className="card-body py-0 px-0 px-xxl-5 d-flex flex-column justify-content-between">
                     <p className="fw-bold mt-2">Diwali Sale</p>
                     <div style={{ minWidth: "225px" }} className="description">
-                      <h3>Upto 50% off</h3>
+                      <h3 className="diwaliSaleHeader">Upto 50% off</h3>
                       <p className="m-0 diwaliSaleCardTitle">
                         Diwali sale is launch now, sale is live till 31st
                         November, go and make your diwali stylish.

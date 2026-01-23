@@ -31,7 +31,7 @@ export default function DiwaliSale() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="mx-5 my-4">
         <section
           className="diwaliSaleSection1"
@@ -91,7 +91,11 @@ export default function DiwaliSale() {
                       Check
                     </Link>
                   </div>
-                  <img src={saree1} className="img-fluid h-100" alt="" />
+                  <img
+                    src={saree1}
+                    className="img-fluid h-100 sareeImageInDiwaliSalePage"
+                    alt=""
+                  />
                 </div>
               </div>
               <div className="col-12 col-xxl-6">
@@ -200,7 +204,9 @@ export default function DiwaliSale() {
                       Check
                     </Link>
                   </div>
-                  <img src={shoe1} className="img-fluid h-100" alt="" />
+                  <div className="text-end">
+                    <img src={shoe1} className="img-fluid w-75 h-100" alt="" />
+                  </div>
                 </div>
               </div>
               <div className="col-12 col-xxl-6">
@@ -283,7 +289,7 @@ export default function DiwaliSale() {
         <section
           className="mt-4 mt-md-5 py-4"
           style={{
-            backgroundImage: "radial-gradient(#FEEE02 20%, #F73A0A)",
+            backgroundImage: "radial-gradient(#dcd350 20%, #F73A0A)",
           }}
         >
           <div className="w-50 d-flex flex-column mx-auto">

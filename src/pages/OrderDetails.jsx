@@ -64,8 +64,8 @@ export default function OrderDetails() {
             style={{ maxWidth: "960px" }}
           >
             <h1>Order Details</h1>
-            <div className="d-md-flex gap-3">
-              <p className="my-0 fw-medium" style={{ fontSize: "14px" }}>
+            <div className="d-md-flex align-items-center gap-3">
+              <p className="my-0 fw-medium" style={{ fontSize: "13px" }}>
                 Order placed {order.orderDate}
               </p>
               <span className="d-none d-md-inline"> | </span>
@@ -242,7 +242,7 @@ export default function OrderDetails() {
                 </div>
                 <div
                   className="d-flex flex-column gap-2"
-                  style={{ minWidth: "200px" }}
+                  style={{ minWidth: "170px" }}
                 >
                   <Link
                     to={`/editOrder/${order.id}`}

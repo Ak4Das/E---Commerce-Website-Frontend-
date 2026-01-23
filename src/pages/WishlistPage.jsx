@@ -101,7 +101,7 @@ export default function WishlistPage() {
                     <div className="card-body">
                       <p
                         className="text-center overflow-hidden"
-                        style={{ height: "50px" }}
+                        style={{ height: "75px" }}
                       >
                         {product.newArrival === true && (
                           <span className="badge text-bg-success me-1">
@@ -113,8 +113,8 @@ export default function WishlistPage() {
                             Diwali Offer
                           </span>
                         )}
-                        {product.name.length > 41
-                          ? product.name.slice(0, 40).concat("...")
+                        {product.name.length > 61
+                          ? product.name.slice(0, 60).concat("...")
                           : product.name}
                       </p>
                       <p className="text-center fw-bold">
@@ -141,7 +141,7 @@ export default function WishlistPage() {
                         {product.addToCart ? "Added To Cart" : "Move To Cart"}
                       </button>
                       <button
-                        className="btn btn-outline-secondary w-100"
+                        className="btn btn-outline-secondary w-100 saveToWishlist"
                         value={product.id}
                         onClick={removeFromWishlist}
                       >

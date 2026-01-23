@@ -213,7 +213,7 @@ export default function UserProfile() {
             to="/yourOrders"
             className="col-md-6 col-xl-4 mb-4 text-decoration-none"
           >
-            <div className="card flex-row gap-2" style={{ height: "155px" }}>
+            <div className="card align-items-center gap-2 cardInUserProfilePage p-2">
               <img
                 src={DeliveryBox}
                 alt=""
@@ -231,8 +231,7 @@ export default function UserProfile() {
             className="col-md-6 col-xl-4 mb-4 text-decoration-none"
           >
             <div
-              className="card flex-row align-items-center gap-3"
-              style={{ height: "155px" }}
+              className="card align-items-center gap-3 cardInUserProfilePage p-2"
             >
               <img
                 src={AddressIcon}
@@ -248,8 +247,7 @@ export default function UserProfile() {
           </Link>
           <div className="col-md-6 col-xl-4 mb-4">
             <div
-              className="card flex-row align-items-center gap-3"
-              style={{ height: "155px" }}
+              className="card align-items-center gap-3 cardInUserProfilePage p-2"
             >
               <img
                 src={Support}

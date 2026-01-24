@@ -984,6 +984,9 @@
   .imageOnProductCurt {
     height: 300px !important;
   }
+  .uptoInShoe {
+    margin-top: -2px !important;
+  }
 }
 @media (max-width: 499px) {
   .navbarBrand {
@@ -1021,10 +1024,13 @@
   .diwaliOfferOnSuit {
     font-size: 15px !important;
   }
-  .uptoInCoat,
-  .uptoInShoe {
+  .uptoInCoat {
     font-size: 7px !important;
     margin-top: 5px !important;
+  }
+  .uptoInShoe {
+    font-size: 7px !important;
+    margin-top: 1px !important;
   }
   .diwaliOfferInSuitCard {
     font-size: 12px !important;
@@ -1074,10 +1080,13 @@
   .diwaliOfferOnSuit {
     font-size: 12px !important;
   }
-  .uptoInCoat,
-  .uptoInShoe {
+  .uptoInCoat {
     font-size: 7px !important;
     margin-top: 3px !important;
+  }
+  .uptoInShoe {
+    font-size: 7px !important;
+    margin-top: 1px !important;
   }
   .diwaliOfferInSuitCard {
     font-size: 10px !important;
@@ -1108,15 +1117,21 @@
   .cardInUserProfilePage {
     flex-direction: column !important;
   }
+  .goldenRibbonCarousel {
+    margin-top: -2px;
+  }
 }
 @media (max-width: 370px) {
   .diwaliOfferOnSuit {
     font-size: 9px !important;
   }
-  .uptoInCoat,
-  .uptoInShoe {
+  .uptoInCoat {
     font-size: 5px !important;
     margin-top: 1px !important;
+  }
+  .uptoInShoe {
+    font-size: 5px !important;
+    margin-top: 3px !important;
   }
   .diwaliOfferInSuitCard {
     font-size: 7px !important;
@@ -1136,6 +1151,9 @@
   .productCardInCart {
     max-width: 250px !important;
     min-width: 200px !important;
+  }
+  .goldenRibbonCarousel {
+    margin-top: -3px;
   }
 }
 @media (max-width: 320px) {
@@ -1206,7 +1224,8 @@
   .cardImagesInPaymentMethodPage {
     flex-wrap: wrap !important;
   }
-  .useThisPaymentMethodBtn,.placeYourOrderBtn {
+  .useThisPaymentMethodBtn,
+  .placeYourOrderBtn {
     font-size: 14px !important;
   }
   .deliveryDate {
@@ -1217,6 +1236,9 @@
   }
   .totalOrderCard {
     display: none;
+  }
+  .goldenRibbonCarousel {
+    margin-top: -5px;
   }
 }
 @media (max-width: 291px) {
@@ -1260,7 +1282,8 @@
   .sareeImageInDiwaliSalePage {
     margin-left: -15px !important;
   }
-  .useThisPaymentMethodBtn,.placeYourOrderBtn {
+  .useThisPaymentMethodBtn,
+  .placeYourOrderBtn {
     font-size: 11px !important;
   }
   .orderTotalPlaceOrderSection {
@@ -1271,6 +1294,12 @@
   }
   .couponSectionLabel {
     font-size: 15px !important;
+  }
+  .goldenRibbonCarousel {
+    margin-top: -10px;
+  }
+  .uptoInShoe {
+    margin-top: 5px !important;
   }
 }
 
@@ -1528,3 +1557,4 @@
 .sidebar-quantitySelector-dropdownIcon {
   width: 15px;
 }
+/* uptoInShoe */

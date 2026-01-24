@@ -180,7 +180,7 @@ export default function App() {
                   </div>
                   <div className="carousel-item">
                     <div
-                      className="slide2 bg-light p-4 d-flex justify-content-between"
+                      className="slide2 bg-light p-2 d-flex justify-content-between"
                       style={{ height: "78.6vw", maxHeight: "800px" }}
                     >
                       <div className="saree1 d-flex flex-column justify-content-between">
@@ -263,7 +263,7 @@ export default function App() {
                   </div>
                   <div className="carousel-item">
                     <div
-                      className="slide3 p-4 d-flex justify-content-around"
+                      className="slide3 p-2 d-flex justify-content-around"
                       style={{ height: "78.6vw", maxHeight: "800px" }}
                     >
                       <div className="diwaliOfferOnMenSuit">
@@ -425,10 +425,10 @@ export default function App() {
                           alt="menWearShoeImage"
                         />
                       </div>
-                      <div className="shoeContainerInDiwaliSaleBanner d-flex flex-column justify-content-around">
+                      <div className="shoeContainerInDiwaliSaleBanner d-flex flex-column justify-content-between">
                         <div className="text-center">
-                          <div className="d-flex justify-content-center">
-                            <p className="uptoInShoe my-0 fw-bold text-warning">
+                          <div className="d-flex justify-content-center shoeOfferInCarousel">
+                            <p className="uptoInShoe fw-bold text-warning" style={{marginBlock:"0px"}}>
                               UPTO
                             </p>
                             <div className="w-25">
@@ -438,11 +438,11 @@ export default function App() {
                                 alt="offer"
                               />
                             </div>
-                            <p className="uptoInShoe my-0 fw-bold text-warning align-self-end">
+                            <p className="uptoInShoe fw-bold text-warning align-self-end" style={{marginBlock:"0px"}}>
                               OFF
                             </p>
                           </div>
-                          <div>
+                          <div className="goldenRibbonCarousel">
                             <img
                               src={goldenRibbon}
                               className="img-fluid w-50"

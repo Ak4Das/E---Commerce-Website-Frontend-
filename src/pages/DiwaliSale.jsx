@@ -1,6 +1,5 @@
 import Header from "../components/Header"
 import diwaliDecoration5 from "../assets/diwaliDecoration5.png"
-import background from "../assets/background.png"
 import background2 from "../assets/background2.png"
 import saree1 from "../assets/saree1.png"
 import offer2 from "../assets/offer2.png"
@@ -51,7 +50,7 @@ export default function DiwaliSale() {
               src={diwaliDecoration5}
               className=""
               style={{ width: "5vw" }}
-              alt=""
+              alt="diwaliDecoration"
             />
             <h1 className="" style={{ fontSize: "4vw", color: "#ff7440" }}>
               Diwali
@@ -81,7 +80,7 @@ export default function DiwaliSale() {
                       <img
                         src={offer2}
                         className="diwaliSalePageOffer1 d-block img-fluid w-100"
-                        alt=""
+                        alt="offer"
                       />
                     </div>
                     <Link
@@ -94,7 +93,7 @@ export default function DiwaliSale() {
                   <img
                     src={saree1}
                     className="img-fluid h-100 sareeImageInDiwaliSalePage"
-                    alt=""
+                    alt="saree"
                   />
                 </div>
               </div>
@@ -120,7 +119,7 @@ export default function DiwaliSale() {
                       <img
                         src={offer2}
                         className="diwaliSalePageOffer2 d-block img-fluid w-100"
-                        alt=""
+                        alt="offer"
                       />
                     </div>
                     <Link
@@ -130,7 +129,7 @@ export default function DiwaliSale() {
                       Check
                     </Link>
                   </div>
-                  <img src={menWearCoat2} className="img-fluid h-100" alt="" />
+                  <img src={menWearCoat2} className="img-fluid h-100" alt="menWearCoatImage" />
                 </div>
               </div>
               <div className="col-12 col-xxl-6">
@@ -155,7 +154,7 @@ export default function DiwaliSale() {
                       <img
                         src={offer2}
                         className="diwaliSalePageOffer3 d-block img-fluid w-100"
-                        alt=""
+                        alt="offer"
                       />
                     </div>
                     <Link
@@ -168,7 +167,7 @@ export default function DiwaliSale() {
                   <img
                     src={womenWearLahenga3}
                     className="img-fluid h-100"
-                    alt=""
+                    alt="womenWearLahengaImage"
                   />
                 </div>
               </div>
@@ -194,7 +193,7 @@ export default function DiwaliSale() {
                       <img
                         src={offer2}
                         className="diwaliSalePageOffer4 d-block img-fluid w-100"
-                        alt=""
+                        alt="offer"
                       />
                     </div>
                     <Link
@@ -205,7 +204,7 @@ export default function DiwaliSale() {
                     </Link>
                   </div>
                   <div className="text-end">
-                    <img src={shoe1} className="img-fluid w-75 h-100" alt="" />
+                    <img src={shoe1} className="img-fluid w-75 h-100" alt="shoe" />
                   </div>
                 </div>
               </div>
@@ -231,7 +230,7 @@ export default function DiwaliSale() {
                       <img
                         src={offer2}
                         className="diwaliSalePageOffer5 d-block img-fluid w-100"
-                        alt=""
+                        alt="offer"
                       />
                     </div>
                     <Link
@@ -244,7 +243,7 @@ export default function DiwaliSale() {
                   <img
                     src={menWearPanjabi1}
                     className="img-fluid h-100"
-                    alt=""
+                    alt="menWearPanjabiImage"
                   />
                 </div>
               </div>
@@ -270,7 +269,7 @@ export default function DiwaliSale() {
                       <img
                         src={offer2}
                         className="diwaliSalePageOffer6 d-block img-fluid w-100"
-                        alt=""
+                        alt="offer"
                       />
                     </div>
                     <Link
@@ -280,7 +279,7 @@ export default function DiwaliSale() {
                       Check
                     </Link>
                   </div>
-                  <img src={menWearJeans} className="img-fluid h-100" alt="" />
+                  <img src={menWearJeans} className="img-fluid h-100" alt="menWearJeansImage" />
                 </div>
               </div>
             </div>
@@ -295,10 +294,10 @@ export default function DiwaliSale() {
           <div className="w-50 d-flex flex-column mx-auto">
             <div className="d-flex">
               <div>
-                <img src={ganpati} className="img-fluid w-100" alt="" />
+                <img src={ganpati} className="img-fluid w-100" alt="ganpatiImage" />
               </div>
               <div>
-                <img src={lakshmiMata} className="img-fluid w-100" alt="" />
+                <img src={lakshmiMata} className="img-fluid w-100" alt="lakshmiMataImage" />
               </div>
             </div>
             <div className="d-flex align-items-end">
@@ -306,7 +305,7 @@ export default function DiwaliSale() {
                 <img
                   src={diwaliDecoration11}
                   className="img-fluid w-100"
-                  alt=""
+                  alt="diwaliDecoration"
                 />
               </div>
               <div className="w-50">
@@ -314,19 +313,19 @@ export default function DiwaliSale() {
                   src={ghat}
                   className="img-fluid d-block mx-auto w-50 position-relative"
                   style={{ marginBottom: "-4.5vw" }}
-                  alt=""
+                  alt="ghat"
                 />
                 <img
                   src={diwaliDecoration13}
                   className="img-fluid d-block mx-auto w-75"
-                  alt=""
+                  alt="diwaliDecoration"
                 />
               </div>
               <div className="w-25">
                 <img
                   src={diwaliDecoration12}
                   className="img-fluid w-50"
-                  alt=""
+                  alt="diwaliDecoration"
                 />
               </div>
             </div>
@@ -366,7 +365,7 @@ export default function DiwaliSale() {
               <img
                 src={girlHoldDiya1}
                 className="img-fluid d-block ms-auto w-25"
-                alt=""
+                alt="girlHoldDiyaImage"
               />
             </div>
           </div>

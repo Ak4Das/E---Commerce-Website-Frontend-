@@ -32,7 +32,7 @@ export default function Header({ position, top, zIndex, setSearch }) {
           <NavLink className="navbar-brand" to="/">
             <img
               src={BharatVastra}
-              alt=""
+              alt="BharatVastra"
               style={{ width: "70px" }}
               className="BharatVastra"
             />
@@ -73,7 +73,7 @@ export default function Header({ position, top, zIndex, setSearch }) {
               >
                 <img
                   src={userDetails.profileImage}
-                  alt=""
+                  alt="profileImage"
                   className="w-100 img-fluid h-100"
                 />
               </div>

@@ -1467,7 +1467,7 @@
   overflow-x: scroll;
   scroll-behavior: smooth;
 }
-.orderFeaturesInProductDetailsPage::-webkit-scrollbar {
+.orderFeaturesInProductDetailsPage {
   display: none;
 }
 
@@ -1528,4 +1528,3 @@
 .sidebar-quantitySelector-dropdownIcon {
   width: 15px;
 }
-/* shipToCard */

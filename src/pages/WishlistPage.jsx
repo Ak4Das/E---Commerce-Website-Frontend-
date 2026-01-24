@@ -94,7 +94,7 @@ export default function WishlistPage() {
                   <div className="card  border border-0">
                     <img
                       src={product.url}
-                      alt=""
+                      alt="productImage"
                       className="img-fluid"
                       style={{ height: "300px" }}
                     />

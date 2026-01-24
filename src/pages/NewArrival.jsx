@@ -88,6 +88,7 @@ export default function NewArrival() {
                         src={product.url}
                         className="img-fluid listProductImage"
                         style={{ height: "300px" }}
+                        alt="productImage"
                       />
                     </div>
                     <div className="card-body d-flex flex-column justify-content-between w-100">

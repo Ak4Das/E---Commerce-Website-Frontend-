@@ -22,6 +22,7 @@ import diwaliDecoration9 from "./assets/diwaliDecoration9.png"
 import diwaliDecoration10 from "./assets/diwaliDecoration10.png"
 import diwaliDecoration13 from "./assets/diwaliDecoration13.png"
 import diwaliDecoration14 from "./assets/diwaliDecoration14.png"
+import diwaliDecoration15 from "./assets/diwaliDecoration15.png"
 import offer from "./assets/offer.png"
 import offer2 from "./assets/offer2.png"
 import offer3 from "./assets/offer3.png"
@@ -36,98 +37,7 @@ import goldenRibbon from "./assets/goldenRibbon.png"
 import menWearShoe from "./assets/menWearShoe.png"
 import SearchInPage from "./components/SearchInPage"
 
-const category = [
-  {
-    id: 1,
-    url: "https://tse2.mm.bing.net/th/id/OIP.fxxDwdsmAFTihRD89cK3jAHaJv?pid=Api&P=0&h=180",
-    name: "Suit Pant for Men",
-  },
-  {
-    id: 2,
-    url: "https://tse1.mm.bing.net/th/id/OIP.ESvManl1iB70CHO02ftKRAHaLF?pid=Api&P=0&h=180",
-    name: "Pant for Men",
-  },
-  {
-    id: 3,
-    url: "https://tse2.mm.bing.net/th/id/OIP.X0rcNRRNItEK06oq9-4lMwHaIw?pid=Api&P=0&h=180",
-    name: "T-Shirt for Men",
-  },
-  {
-    id: 4,
-    url: "https://tse4.mm.bing.net/th/id/OIP.SkiyxHdVb7VuCNthIpUZSgHaIh?pid=Api&P=0&h=180",
-    name: "Bermuda for Men",
-  },
-  {
-    id: 5,
-    url: "https://tse3.mm.bing.net/th/id/OIP.e3KVs0uQzVkK-hQfdnAYnQHaLH?pid=Api&P=0&h=180",
-    name: "Panjabi for Men",
-  },
-  {
-    id: 6,
-    url: "https://tse2.mm.bing.net/th/id/OIP.Hy451qA33wOkFOsQ1aBuwQHaJ4?pid=Api&P=0&h=180",
-    name: "Jeans for Men",
-  },
-  {
-    id: 7,
-    url: "https://tse4.mm.bing.net/th/id/OIP.vXF3D9onL5W6FyjDbTquLAHaHa?pid=Api&P=0&h=180",
-    name: "Shoes for Men",
-  },
-  {
-    id: 8,
-    url: "https://tse3.mm.bing.net/th/id/OIP.-mq_09B45XD30vSwH8ANAwHaJQ?pid=Api&P=0&h=180",
-    name: "Saree",
-  },
-  {
-    id: 9,
-    url: "https://tse2.mm.bing.net/th/id/OIP.I0yJYhnRc2idKfKg6YzwLgHaJQ?pid=Api&P=0&h=180",
-    name: "Lehenga",
-  },
-  {
-    id: 10,
-    url: "https://tse2.mm.bing.net/th/id/OIP.5qkn_JjkYuFiFiXPJuyAygHaJ4?pid=Api&P=0&h=180",
-    name: "Jeans for Women",
-  },
-  {
-    id: 11,
-    url: "https://tse1.mm.bing.net/th/id/OIP.XUj_HA8JzZG3iJoxZpU-9AHaJ4?pid=Api&P=0&h=180",
-    name: "Gopi Dress",
-  },
-  {
-    id: 12,
-    url: "https://tse4.mm.bing.net/th/id/OIP.-IewqRMBffA3JePcMZqEWgHaHa?pid=Api&P=0&h=180",
-    name: "Shoes for Women",
-  },
-  {
-    id: 13,
-    url: "https://tse2.mm.bing.net/th/id/OIP.XkdERq6aRK2G1GH2de_EjQHaJ2?pid=Api&P=0&h=180",
-    name: "Kids wear for Girls",
-  },
-  {
-    id: 14,
-    url: "https://tse3.mm.bing.net/th/id/OIP.R32cCCzgzMe1q0cp6TRnpQHaJR?pid=Api&P=0&h=180",
-    name: "Kids wear for Boys",
-  },
-  {
-    id: 15,
-    url: "https://tse3.mm.bing.net/th/id/OIP.BS9LGFaTUl2lIuB2rysnrQHaHa?pid=Api&P=0&h=180",
-    name: "Kids Shoes for Girls",
-  },
-  {
-    id: 16,
-    url: "https://tse4.mm.bing.net/th/id/OIP.jtSNiIHAXqZasGMtkKufZgHaHa?pid=Api&P=0&h=180",
-    name: "Kids Shoes for Boys",
-  },
-  {
-    id: 17,
-    url: "https://tse2.mm.bing.net/th/id/OIP.WYh-fY5eHGI4ETGYmtIpCAHaJ3?pid=Api&P=0&h=180",
-    name: "Cloths for Girls",
-  },
-  {
-    id: 18,
-    url: "https://tse2.mm.bing.net/th/id/OIP.j9ib99k_7rVUCopA5ACRJQHaLK?pid=Api&P=0&h=180",
-    name: "Shirts for Boys",
-  },
-]
+import category from "./components/Category"
 
 export default function App() {
   const [search, setSearch] = useState("")
@@ -149,7 +59,7 @@ export default function App() {
           className="d-flex flex-column align-items-center justify-content-center"
           style={{ height: "100vh" }}
         >
-          <img src={BharatVastra} alt="" className="img-fluid" />
+          <img src={BharatVastra} alt="BharatVastra" className="img-fluid" />
         </div>
       ) : (
         <>
@@ -195,7 +105,7 @@ export default function App() {
                         <div className="card position-relative">
                           <img
                             src={category.url}
-                            alt=""
+                            alt="categoryImage"
                             className="img-fluid image"
                           />
                           <p className="m-0 text-center bg-light position-absolute w-100 top-50 productCategoryLabel">
@@ -278,14 +188,14 @@ export default function App() {
                           <img
                             src={diwaliDecoration2}
                             className="img-fluid w-75"
-                            alt=""
+                            alt="diwaliDecoration"
                           />
                         </div>
                         <div className="">
                           <img
                             src={saree1}
                             className="img-fluid w-100"
-                            alt=""
+                            alt="saree"
                           />
                         </div>
                       </div>
@@ -295,7 +205,7 @@ export default function App() {
                       >
                         <div className="offer">
                           <p className="fs-3 fw-bold my-0 text-danger">UPTO</p>
-                          <img src={offer} className="img-fluid w-100" alt="" />
+                          <img src={offer} className="img-fluid w-100" alt="offer" />
                         </div>
                         <div>
                           <div className="diwaliDecoration3">
@@ -307,14 +217,14 @@ export default function App() {
                                 position: "relative",
                               }}
                               className="img-fluid"
-                              alt=""
+                              alt="diwaliDecoration"
                             />
                           </div>
                           <div className="diwaliDecoration13">
                             <img
                               src={diwaliDecoration13}
                               className="img-fluid w-50"
-                              alt=""
+                              alt="diwaliDecoration"
                             />
                           </div>
                         </div>
@@ -328,7 +238,7 @@ export default function App() {
                             <div>
                               <img
                                 src={offer}
-                                alt=""
+                                alt="offer"
                                 className="img-fluid w-75"
                               />
                             </div>
@@ -337,7 +247,7 @@ export default function App() {
                             <img
                               src={diwaliDecoration1}
                               className="img-fluid w-75"
-                              alt=""
+                              alt="diwaliDecoration"
                             />
                           </div>
                         </div>
@@ -345,7 +255,7 @@ export default function App() {
                           <img
                             src={saree2}
                             className="img-fluid w-100"
-                            alt=""
+                            alt="saree"
                           />
                         </div>
                       </div>
@@ -361,7 +271,7 @@ export default function App() {
                           <img
                             src={diwaliDecoration7}
                             className="img-fluid w-100"
-                            alt=""
+                            alt="diwaliDecoration"
                           />
                         </div>
                         <div className="text-light mt-5">
@@ -385,21 +295,21 @@ export default function App() {
                           <img
                             src={menWearCoat1}
                             className="img-fluid w-100"
-                            alt=""
+                            alt="menWearCoatImage"
                           />
                         </div>
                         <div>
                           <img
                             src={menWearCoat2}
                             className="img-fluid w-100"
-                            alt=""
+                            alt="menWearCoatImage"
                           />
                         </div>
                         <div>
                           <img
                             src={menWearCoat3}
                             className="img-fluid w-100"
-                            alt=""
+                            alt="menWearCoatImage"
                           />
                         </div>
                       </div>
@@ -413,16 +323,16 @@ export default function App() {
                       <div className="diwaliOfferOnLahenga d-flex flex-column justify-content-between">
                         <div>
                           <img
-                            src="https://png.pngtree.com/png-clipart/20231110/original/pngtree-happy-diwali-festival-png-image_13526566.png"
-                            className="img-fluid w-75"
-                            alt=""
+                            src={diwaliDecoration15}
+                            className="img-fluid w-50"
+                            alt="jhalar"
                           />
                         </div>
                         <div>
                           <img
                             src={diwaliDecoration8}
                             className="img-fluid w-50"
-                            alt=""
+                            alt="diwaliDecoration"
                           />
                         </div>
                       </div>
@@ -434,7 +344,7 @@ export default function App() {
                           <img
                             src={offer2}
                             className="img-fluid w-100"
-                            alt=""
+                            alt="offer"
                           />
                         </div>
                         <div className="diwaliDecoration3">
@@ -442,7 +352,7 @@ export default function App() {
                             src={diwaliDecoration9}
                             style={{ width: "10vw" }}
                             className="img-fluid"
-                            alt=""
+                            alt="diwaliDecoration"
                           />
                         </div>
                       </div>
@@ -451,14 +361,14 @@ export default function App() {
                           <img
                             src={diwaliDecoration2}
                             className="diwaliDecoration2 img-fluid w-100"
-                            alt=""
+                            alt="diwaliDecoration"
                           />
                         </div>
                         <div className="offer2">
                           <img
                             src={offer2}
                             className="img-fluid w-50 d-block mx-auto"
-                            alt=""
+                            alt="offer"
                           />
                         </div>
                         <div className="d-flex">
@@ -466,21 +376,21 @@ export default function App() {
                             <img
                               src={womenWearLahenga1}
                               className="img-fluid w-100"
-                              alt=""
+                              alt="womenWearLahengaImage"
                             />
                           </div>
                           <div>
                             <img
                               src={womenWearLahenga3}
                               className="img-fluid w-100"
-                              alt=""
+                              alt="womenWearLahengaImage"
                             />
                           </div>
                           <div>
                             <img
                               src={womenWearLahenga2}
                               className="img-fluid w-100"
-                              alt=""
+                              alt="womenWearLahengaImage"
                             />
                           </div>
                         </div>
@@ -497,14 +407,14 @@ export default function App() {
                           <img
                             src={diwaliDecoration10}
                             className="img-fluid w-50"
-                            alt=""
+                            alt="diwaliDecoration"
                           />
                         </div>
                         <div className="">
                           <img
                             src={diwaliDecoration14}
                             className="img-fluid w-75"
-                            alt=""
+                            alt="diwaliDecoration"
                           />
                         </div>
                       </div>
@@ -512,7 +422,7 @@ export default function App() {
                         <img
                           src={menWearShoe}
                           className="img-fluid w-100"
-                          alt=""
+                          alt="menWearShoeImage"
                         />
                       </div>
                       <div className="shoeContainerInDiwaliSaleBanner d-flex flex-column justify-content-around">
@@ -525,7 +435,7 @@ export default function App() {
                               <img
                                 src={offer3}
                                 className="img-fluid w-100"
-                                alt=""
+                                alt="offer"
                               />
                             </div>
                             <p className="uptoInShoe my-0 fw-bold text-warning align-self-end">
@@ -536,12 +446,12 @@ export default function App() {
                             <img
                               src={goldenRibbon}
                               className="img-fluid w-50"
-                              alt=""
+                              alt="goldenRibbon"
                             />
                           </div>
                         </div>
                         <div className="text-end">
-                          <img src={shoe1} className="shoe1 img-fluid" alt="" />
+                          <img src={shoe1} className="shoe1 img-fluid" alt="shoe" />
                         </div>
                       </div>
                     </div>
@@ -568,7 +478,7 @@ export default function App() {
                             className="w-100 img-fluid"
                             src={LakshmiMaaAndGaneshJi}
                             style={{ maxHeight: "410px" }}
-                            alt="lakshmi-ganesha"
+                            alt="lakshmiGaneshaImage"
                           />
                         </div>
                         <div className="text2 text-center fw-medium">
@@ -619,7 +529,7 @@ export default function App() {
                 <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
                   <img
                     src="https://tse1.mm.bing.net/th/id/OIP.jngCe7THF9RyUMqBs3Lw6gHaDt?pid=Api&P=0&h=180"
-                    alt=""
+                    alt="newArrivalBannerImage"
                     className="bannerImage"
                     style={{ height: "200px" }}
                   />
@@ -642,7 +552,7 @@ export default function App() {
                 <div className="card flex-xxl-row p-sm-5 p-3 bg-body-secondary">
                   <img
                     src="https://tse3.mm.bing.net/th/id/OIP.DZhMFCN8KQJup5G70IemgAHaDt?pid=Api&P=0&h=180"
-                    alt=""
+                    alt="diwaliSaleBannerImage"
                     className="bannerImage"
                     style={{ height: "200px" }}
                   />

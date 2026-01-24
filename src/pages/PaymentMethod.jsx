@@ -192,7 +192,7 @@ export default function PaymentMethods() {
                     <div className="h-100 mx-auto productImageContainerInPaymentMethodPage">
                       <img
                         src={product.url}
-                        alt=""
+                        alt="productImage"
                         className="w-100 h-100"
                       />
                     </div>
@@ -361,7 +361,7 @@ export default function PaymentMethods() {
                           >
                             <img
                               src={Plus}
-                              alt=""
+                              alt="plusIcon"
                               className="img-fluid bg-white p-1"
                               style={{ width: "20px" }}
                               onClick={() =>
@@ -371,7 +371,7 @@ export default function PaymentMethods() {
                           </Link>
                           <img
                             src={Card}
-                            alt=""
+                            alt="cardIcon"
                             style={{ width: "30px", cursor: "pointer" }}
                             className="AtmCardImg"
                             onClick={() => setShowCard(showCard ? false : true)}
@@ -397,7 +397,7 @@ export default function PaymentMethods() {
                           <h5>Add a new credit or debit card</h5>
                           <img
                             src={Cross}
-                            alt=""
+                            alt="crossIcon"
                             className="img-fluid"
                             style={{ width: "15px", cursor: "pointer" }}
                             onClick={() => setShowCard(showCard ? false : true)}

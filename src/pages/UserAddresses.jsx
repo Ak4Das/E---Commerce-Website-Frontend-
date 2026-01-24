@@ -45,7 +45,7 @@ export default function UserAddresses() {
               }}
             >
               <div className="text-center">
-                <img src={Plus} alt="" style={{ width: "30px" }} />
+                <img src={Plus} alt="plusIcon" style={{ width: "30px" }} />
                 <h4 className="mt-2">Add Address</h4>
               </div>
             </Link>

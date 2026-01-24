@@ -193,7 +193,7 @@ export default function ProductDetailsPage() {
             >
               <img
                 src={product.url}
-                alt=""
+                alt="productImage"
                 className="img-fluid productImage"
               />
               <div className="btnContainer1">
@@ -401,7 +401,7 @@ export default function ProductDetailsPage() {
                   >
                     <img
                       src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-returns._CB562506492_.png"
-                      alt=""
+                      alt="returnProductIcon"
                       className="w-100 img-fluid"
                     />
                     <p
@@ -417,7 +417,7 @@ export default function ProductDetailsPage() {
                   >
                     <img
                       src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/trust_icon_free_shipping_81px._CB562549966_.png"
-                      alt=""
+                      alt="freeDeliveryIcon"
                       className="w-100 img-fluid"
                     />
                     <p
@@ -433,7 +433,7 @@ export default function ProductDetailsPage() {
                   >
                     <img
                       src={cashOnDelivery}
-                      alt=""
+                      alt="cashOnDeliveryIcon"
                       className="bg-body-tertiary p-2 rounded-circle w-100 img-fluid"
                       style={{ width: "80px" }}
                     />
@@ -450,7 +450,7 @@ export default function ProductDetailsPage() {
                   >
                     <img
                       src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/Secure-payment._CB650126890_.png"
-                      alt=""
+                      alt="securePaymentIcon"
                       className="w-100 img-fluid"
                     />
                     <p
@@ -647,7 +647,7 @@ export default function ProductDetailsPage() {
                     <div className="card border border-0 similarCards">
                       <img
                         src={product.url}
-                        alt=""
+                        alt="productImage"
                         className="img-fluid similarItemsImage"
                         style={{ minHeight: "250px", maxHeight: "250px" }}
                       />

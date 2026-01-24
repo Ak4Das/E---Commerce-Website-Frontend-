@@ -149,7 +149,7 @@ export default function CartPage() {
                           <div className="card flex-lg-row gap-4 productCardInCart m-auto">
                             <img
                               src={product.url}
-                              alt=""
+                              alt="productImage"
                               className="imageOnProductCurt"
                             />
                             <div className="card-body d-flex flex-column justify-content-between pt-0 pt-lg-2">

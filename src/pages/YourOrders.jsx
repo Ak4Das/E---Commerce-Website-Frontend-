@@ -155,7 +155,7 @@ export default function YourOrders() {
                       >
                         <img
                           src={product.url}
-                          alt=""
+                          alt="productImage"
                           className="img-fluid"
                           style={{
                             minWidth: "135px",

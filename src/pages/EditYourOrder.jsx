@@ -196,7 +196,7 @@ export default function EditYourOrder() {
                         >
                           <img
                             src={Plus}
-                            alt=""
+                            alt="plusIcon"
                             className="img-fluid bg-white p-1"
                             style={{ width: "20px" }}
                             onClick={() => setShowCard(showCard ? false : true)}
@@ -204,7 +204,7 @@ export default function EditYourOrder() {
                         </Link>
                         <img
                           src={Card}
-                          alt=""
+                          alt="cardIcon"
                           style={{ width: "30px", cursor: "pointer" }}
                           className="AtmCardImg"
                           onClick={() => setShowCard(showCard ? false : true)}
@@ -230,7 +230,7 @@ export default function EditYourOrder() {
                         <h5>Add a new credit or debit card</h5>
                         <img
                           src={Cross}
-                          alt=""
+                          alt="crossIcon"
                           className="img-fluid"
                           style={{ width: "15px", cursor: "pointer" }}
                           onClick={() => setShowCard(showCard ? false : true)}
@@ -552,7 +552,7 @@ export default function EditYourOrder() {
               >
                 <img
                   src={product.url}
-                  alt=""
+                  alt="productImage"
                   style={{ width: "125px", height: "200px" }}
                   className="productImageInPaymentMethodPage"
                 />

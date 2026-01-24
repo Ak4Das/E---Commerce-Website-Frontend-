@@ -77,20 +77,20 @@ export default function UserProfile() {
               imagePath ? (
                 <img
                   src={URL.createObjectURL(file)}
-                  alt=""
+                  alt="profileImage"
                   className="img-fluid w-100 h-100"
                 />
               ) : (
                 <img
                   src={userDetails.profileImage}
-                  alt=""
+                  alt="profileImage"
                   className="img-fluid w-100 h-100"
                 />
               )
             ) : imagePath ? (
               <img
                 src={URL.createObjectURL(file)}
-                alt=""
+                alt="profileImage"
                 className="img-fluid w-100 h-100"
               />
             ) : (
@@ -106,7 +106,7 @@ export default function UserProfile() {
           >
             <img
               src={CameraIcon}
-              alt=""
+              alt="CameraIcon"
               className="img-fluid w-100"
               onClick={setVisibility}
             />
@@ -127,7 +127,7 @@ export default function UserProfile() {
                 <button className="border border-0 position-absolute end-0 top-0 bg-light">
                   <img
                     src={crossBtn}
-                    alt=""
+                    alt="crossBtn"
                     className=""
                     style={{ width: "20px" }}
                     onClick={setVisibility}
@@ -148,20 +148,20 @@ export default function UserProfile() {
                     imagePath ? (
                       <img
                         src={URL.createObjectURL(file)}
-                        alt=""
+                        alt="profileImage"
                         className="img-fluid w-100 h-100"
                       />
                     ) : (
                       <img
                         src={userDetails.profileImage}
-                        alt=""
+                        alt="profileImage"
                         className="img-fluid w-100 h-100"
                       />
                     )
                   ) : imagePath ? (
                     <img
                       src={URL.createObjectURL(file)}
-                      alt=""
+                      alt="profileImage"
                       className="img-fluid w-100 h-100"
                     />
                   ) : (
@@ -216,7 +216,7 @@ export default function UserProfile() {
             <div className="card align-items-center gap-2 cardInUserProfilePage p-2">
               <img
                 src={DeliveryBox}
-                alt=""
+                alt="deliveryBox"
                 className=""
                 style={{ width: "150px" }}
               />
@@ -235,7 +235,7 @@ export default function UserProfile() {
             >
               <img
                 src={AddressIcon}
-                alt=""
+                alt="addressIcon"
                 className=""
                 style={{ width: "100px" }}
               />
@@ -251,7 +251,7 @@ export default function UserProfile() {
             >
               <img
                 src={Support}
-                alt=""
+                alt="support"
                 className="ms-3"
                 style={{ width: "80px" }}
               />

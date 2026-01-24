@@ -47,7 +47,7 @@ export default function Offcanvas({
         src={crossBtn}
         alt=""
         className="logo"
-        style={{ position: "relative", left: "265px", top: "-5px" }}
+        style={{ position: "relative", left: "265px", top: "-5px", cursor:"pointer" }}
         onClick={handleClick}
         title="filter"
       />

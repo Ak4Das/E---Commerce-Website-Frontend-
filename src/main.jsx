@@ -27,6 +27,8 @@ const router = createBrowserRouter([
   { path: "/wishlist", element: <WishlistPage /> },
   { path: "/cart", element: <CartPage /> },
   { path: "/user", element: <UserProfile /> },
+  { path: "/userAddress/editOrder/:orderId", element: <UserAddresses /> },
+  { path: "/userAddress/:route", element: <UserAddresses /> },
   { path: "/userAddress", element: <UserAddresses /> },
   { path: "/addAddress", element: <AddAddressForm /> },
   { path: "/editAddress/:id", element: <AddAddressForm /> },

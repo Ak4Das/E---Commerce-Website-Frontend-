@@ -155,7 +155,7 @@ export default function PaymentMethods() {
               </p>
             </div>
             <Link
-              to="/userAddress"
+              to="/userAddress/paymentMethods"
               className="text-decoration-none fw-medium changeBtn"
             >
               Change

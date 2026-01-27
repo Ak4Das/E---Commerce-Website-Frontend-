@@ -117,7 +117,7 @@ export default function EditYourOrder() {
               </p>
             </div>
             <Link
-              to="/userAddress"
+              to={`/userAddress/editOrder/${orderId}`}
               className="text-decoration-none fw-medium changeBtn"
             >
               Change

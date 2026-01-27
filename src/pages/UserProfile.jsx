@@ -227,7 +227,7 @@ export default function UserProfile() {
             </div>
           </Link>
           <Link
-            to="/userAddress"
+            to="/userAddress/user"
             className="col-md-6 col-xl-4 mb-4 text-decoration-none"
           >
             <div

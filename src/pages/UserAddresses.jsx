@@ -1,10 +1,11 @@
 import Header from "../components/Header"
 import Plus from "../assets/plus.png"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useState } from "react"
 import SearchInPage from "../components/SearchInPage"
 
 export default function UserAddresses() {
+  const param = useParams()
   const [search, setSearch] = useState("")
   console.log(search)
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
@@ -31,7 +32,7 @@ export default function UserAddresses() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="container mt-3">
         <h2>Your Addresses</h2>
         <div className="row row-gap-4 mt-4">
@@ -128,9 +129,21 @@ export default function UserAddresses() {
               </div>
             ))}
         </div>
-        <Link to="/user" className="btn btn-warning mt-5">
-          View Profile
-        </Link>
+        {param.orderId && (
+          <Link
+            to={`/editOrder/${param.orderId}`}
+            className="btn btn-warning mt-5"
+          >
+            <i className="bi bi-arrow-left"></i>
+            Back
+          </Link>
+        )}
+        {param.route && (
+          <Link to={`/${param.route}`} className="btn btn-warning mt-5">
+            <i className="bi bi-arrow-left me-1"></i>
+            Back
+          </Link>
+        )}
       </main>
     </>
   )

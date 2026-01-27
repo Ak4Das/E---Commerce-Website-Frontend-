@@ -24,11 +24,12 @@ export default function OrderDetails() {
     order.item.reduce(
       (acc, curr) =>
         acc +
-        curr.price -
-        (curr.price / 100) *
-          (Number(curr.offer.replace("%", ""))
-            ? Number(curr.offer.replace("%", ""))
-            : Number(curr.discount.replace("%", ""))),
+        (curr.price -
+          (curr.price / 100) *
+            (Number(curr.offer.replace("%", ""))
+              ? Number(curr.offer.replace("%", ""))
+              : Number(curr.discount.replace("%", "")))) *
+          (curr.quantity ? curr.quantity : 1),
       0,
     )
 

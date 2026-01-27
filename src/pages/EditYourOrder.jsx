@@ -11,6 +11,8 @@ export default function EditYourOrder() {
   const orderId = Number(useParams().orderId)
   const [search, setSearch] = useState("")
   console.log(search)
+  const [isUpdated, setUpdated] = useState(false)
+  const [deductPrice, setDeductPrice] = useState(0)
 
   const orders = JSON.parse(localStorage.getItem("orders")) || []
 
@@ -23,8 +25,9 @@ export default function EditYourOrder() {
   const [isNetBanking, setIsNetBanking] = useState(false)
   const [isCashOnDelivery, setIsCashOnDelivery] = useState(false)
   const [paymentMethod, setPaymentMethod] = useState("")
+  const [deliveryCharge, setDeliveryCharge] = useState(0)
 
-  const [products, setProducts] = useState(orderToBeEdit.item)
+  const [products, setProducts] = useState(orderToBeEdit && orderToBeEdit.item)
 
   const address = JSON.parse(localStorage.getItem("user")).address.find(
     (address) => address.selected,
@@ -41,7 +44,6 @@ export default function EditYourOrder() {
           : orderToBeEdit.totalPrice)
 
   function cancelOrder(ORDERS, ORDER) {
-    debugger
     const Orders = ORDERS && ORDERS.filter((order) => order.id !== ORDER.id)
     localStorage.setItem("orders", JSON.stringify(Orders))
   }
@@ -54,12 +56,17 @@ export default function EditYourOrder() {
       paymentMethod: paymentMethod
         ? paymentMethod
         : orderToBeEdit.paymentMethod,
-      deliveryCharge: orderToBeEdit.deliveryCharge,
+      deliveryCharge: deliveryCharge
+        ? deliveryCharge
+        : orderToBeEdit.deliveryCharge,
       orderDate: orderToBeEdit.orderDate,
       orderTime: orderToBeEdit.orderTime,
       deliveryDate: orderToBeEdit.deliveryDate,
       deliveryDay: orderToBeEdit.deliveryDay,
-      totalPrice: totalPrice ? totalPrice : orderToBeEdit.totalPrice,
+      sale: orderToBeEdit.sale,
+      totalPrice: totalPrice
+        ? Math.round(totalPrice + deductPrice)
+        : Math.round(orderToBeEdit.totalPrice + deductPrice),
     }
     let OrderIndex = null
     orders.forEach((Order, index) => {
@@ -69,14 +76,21 @@ export default function EditYourOrder() {
     })
     orders[OrderIndex] = order
     localStorage.setItem("orders", JSON.stringify(orders))
+    setDeductPrice(0)
+
     const ORDERS = JSON.parse(localStorage.getItem("orders"))
     const ORDER = ORDERS && ORDERS[OrderIndex]
     ORDER && ORDER.item.length === 0 ? cancelOrder(ORDERS, ORDER) : 0
+
     const btn = e.target
     btn.innerHTML = "Changes Saved"
     setTimeout(() => {
       btn.innerHTML = "Save Changes"
     }, 1000)
+  }
+
+  if (isUpdated) {
+    setUpdated(false)
   }
 
   return (
@@ -550,14 +564,18 @@ export default function EditYourOrder() {
                 key={product.id}
                 className="card column-gap-4 my-3 cardInPaymentMethodPage"
               >
-                <img
-                  src={product.url}
-                  alt="productImage"
-                  style={{ width: "125px", height: "200px" }}
-                  className="productImageInPaymentMethodPage"
-                />
-                <div className="p-2">
-                  <p className="fw-medium my-0">
+                <div className="h-100 mx-auto productImageContainerInEditYourOrderPage">
+                  <img
+                    src={product.url}
+                    alt="productImage"
+                    className="w-100 h-100"
+                  />
+                </div>
+                <div className="p-2 w-100">
+                  <p
+                    className="fw-medium my-0"
+                    style={{ height: "72px", overflow: "hidden" }}
+                  >
                     {product.newArrival === true && (
                       <span className="badge text-bg-success me-1">New</span>
                     )}
@@ -590,7 +608,7 @@ export default function EditYourOrder() {
                     </span>
                   </div>
                   <div className="my-3">
-                    <span className="fw-bold me-0 text-secondary sizeText me-3">
+                    <span className="fw-bold me-0 text-secondary sizeText me-1 me-sm-3">
                       Size:{" "}
                     </span>
                     <div className="sizeBtnContainer">
@@ -661,7 +679,7 @@ export default function EditYourOrder() {
                       </button>
                     </div>
                   </div>
-                  <div className="d-flex gap-3 align-items-center my-3 btnInEditOrderPage">
+                  <div className="d-flex gap-3 align-items-center btnInEditOrderPage">
                     <div
                       className="border border-warning w-100 my-0 border-2 d-flex align-items-center rounded-pill overflow-hidden justify-content-around deleteOrIncreaseQuantityBtn"
                       style={{ width: "100px" }}
@@ -679,7 +697,20 @@ export default function EditYourOrder() {
                             product.quantity = Number(
                               e.target.nextElementSibling.value,
                             )
-                            setProducts(products)
+                            const price = Math.round(
+                              (
+                                product.price -
+                                (product.price *
+                                  (Number(product.offer.replace("%", ""))
+                                    ? Number(product.offer.replace("%", ""))
+                                    : Number(
+                                        product.discount.replace("%", ""),
+                                      ))) /
+                                  100
+                              ).toFixed(1),
+                            )
+                            setDeductPrice(deductPrice - price)
+                            setUpdated(true)
                           }
                         }}
                       >
@@ -691,12 +722,26 @@ export default function EditYourOrder() {
                         defaultValue={product.quantity || 1}
                         style={{ width: "30px", outline: "none" }}
                         onChange={(e) => {
+                          const initialQuantity = product.quantity
                           let inputElementValue = Number(e.target.value)
-                          const Product = products.find(
-                            (item) => item.id === product.id,
+                          product.quantity = inputElementValue
+                          const price = Math.round(
+                            (
+                              product.price -
+                              (product.price *
+                                (Number(product.offer.replace("%", ""))
+                                  ? Number(product.offer.replace("%", ""))
+                                  : Number(
+                                      product.discount.replace("%", ""),
+                                    ))) /
+                                100
+                            ).toFixed(1),
                           )
-                          Product.quantity = inputElementValue
-                          setProducts(products)
+                          const updatedQuantity = product.quantity
+                          const changeInQuantity =
+                            updatedQuantity - initialQuantity
+                          setDeductPrice(deductPrice + price * changeInQuantity)
+                          setUpdated(true)
                         }}
                       />
                       <button
@@ -708,13 +753,24 @@ export default function EditYourOrder() {
                           )
                           e.target.previousElementSibling.value =
                             ++inputElementValue
-                          const Product = products.find(
-                            (item) => item.id === product.id,
-                          )
-                          Product.quantity = Number(
+                          product.quantity = Number(
                             e.target.previousElementSibling.value,
                           )
-                          setProducts(products)
+                          const price = Math.round(
+                            (
+                              product.price -
+                              (product.price *
+                                (Number(product.offer.replace("%", ""))
+                                  ? Number(product.offer.replace("%", ""))
+                                  : Number(
+                                      product.discount.replace("%", ""),
+                                    ))) /
+                                100
+                            ).toFixed(1),
+                          )
+                          console.log(price)
+                          setDeductPrice(deductPrice + price)
+                          setUpdated(true)
                         }}
                       >
                         +
@@ -722,10 +778,63 @@ export default function EditYourOrder() {
                     </div>
                     <button
                       className="btn btn-outline-danger btn-sm rounded-pill w-100"
-                      onClick={(e) => {
+                      onClick={() => {
                         const Product = products.filter(
                           (item) => item.id !== product.id,
                         )
+
+                        const price = Math.round(
+                          (
+                            product.price -
+                            (product.price *
+                              (Number(product.offer.replace("%", ""))
+                                ? Number(product.offer.replace("%", ""))
+                                : Number(product.discount.replace("%", "")))) /
+                              100
+                          ).toFixed(1),
+                        )
+
+                        const newDeliveryCharge =
+                          Product.length &&
+                          Math.round(
+                            Product.reduce(
+                              (acc, curr) =>
+                                acc +
+                                (curr.freeDelivery ? 0 : curr.deliveryCharge),
+                              0,
+                            ) / Product.length,
+                          )
+
+                        setDeliveryCharge(newDeliveryCharge)
+
+                        const deductInDeliveryCharge =
+                          orderToBeEdit.deliveryCharge - newDeliveryCharge
+
+                        const salePercent = orderToBeEdit.sale
+                          ? Number(orderToBeEdit.sale.replace("%", ""))
+                          : 0
+
+                        const saleDeduction = salePercent
+                          ? Math.round(price / salePercent)
+                          : 0
+
+                        let paymentMethodChargeDeduction = 0
+                        if (
+                          orderToBeEdit.paymentMethod ===
+                            "Cash on Delivery/Pay on Delivery" &&
+                          Product.length === 0
+                        ) {
+                          paymentMethodChargeDeduction = 10
+                        }
+
+                        setDeductPrice(
+                          deductPrice -
+                            price -
+                            deductInDeliveryCharge +
+                            saleDeduction -
+                            paymentMethodChargeDeduction,
+                        )
+
                         setProducts(Product)
                       }}
                     >

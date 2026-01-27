@@ -19,6 +19,7 @@ export default function PaymentMethods() {
   const [isVisible, setVisible] = useState(false)
   const [showCard, setShowCard] = useState(false)
   const [paymentMethod, setPaymentMethod] = useState("")
+  const [updated, setUpdated] = useState(false)
   const [orders, setOrders] = useState(
     JSON.parse(localStorage.getItem("orders")) || [],
   )
@@ -38,11 +39,12 @@ export default function PaymentMethods() {
   const totalOrder = products.reduce(
     (acc, curr) =>
       acc +
-      curr.price -
-      (curr.price / 100) *
-        (Number(curr.offer.replace("%", ""))
-          ? Number(curr.offer.replace("%", ""))
-          : Number(curr.discount.replace("%", ""))),
+      (curr.price -
+        (curr.price / 100) *
+          (Number(curr.offer.replace("%", ""))
+            ? Number(curr.offer.replace("%", ""))
+            : Number(curr.discount.replace("%", "")))) *
+        (curr.quantity ? curr.quantity : 1),
     0,
   )
 
@@ -75,7 +77,7 @@ export default function PaymentMethods() {
       orders[orders.length - 1].freeDelivery = `₹${freeDelivery}`
     }
     orders[orders.length - 1].totalPrice = Math.round(
-      totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0),
+      totalPrice - (coupon === "HAPPYDIWALI" ? totalOrder / 10 : 0),
     )
     localStorage.setItem("orders", JSON.stringify(orders))
     localStorage.setItem("createOrder", JSON.stringify({ item: [] }))
@@ -124,6 +126,10 @@ export default function PaymentMethods() {
   function setDeliveryTime() {
     const today = new Date()
     return today.toLocaleTimeString()
+  }
+
+  if (updated) {
+    setUpdated(false)
   }
 
   return (
@@ -197,7 +203,10 @@ export default function PaymentMethods() {
                       />
                     </div>
                     <div className="p-2 w-100">
-                      <p className="fw-medium my-0" style={{height:"96px",overflow:"hidden"}}>
+                      <p
+                        className="fw-medium my-0"
+                        style={{ height: "96px", overflow: "hidden" }}
+                      >
                         {product.newArrival === true && (
                           <span className="badge text-bg-success me-1">
                             New
@@ -280,6 +289,7 @@ export default function PaymentMethods() {
                               e.target.previousElementSibling.value,
                             )
                             orders[orders.length - 1].item = products
+                            setUpdated(true)
                           }}
                         >
                           +
@@ -711,7 +721,10 @@ export default function PaymentMethods() {
                         className="btn btn-warning rounded-pill mt-4 px-4 useThisPaymentMethodBtn"
                         onClick={() => {
                           const order = {
-                            id: orders.length,
+                            id: Number(
+                              Date.now().toString() +
+                                Math.floor(Math.random() * 1000),
+                            ),
                             item: products,
                             address,
                             paymentMethod,
@@ -770,9 +783,12 @@ export default function PaymentMethods() {
 
               <p className="fw-bold my-0 text-center orderTotalPlaceOrderSection">
                 Order Total: ₹
-                {Math.round(
-                  totalPrice - (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0),
-                )}
+                {totalPrice && totalOrder
+                  ? Math.round(
+                      totalPrice -
+                        (coupon === "HAPPYDIWALI" ? totalOrder / 10 : 0),
+                    )
+                  : 0}
               </p>
             </section>
           )}
@@ -818,7 +834,7 @@ export default function PaymentMethods() {
                 Sale:
               </p>
               <p className="my-0 w-50 fw-medium d-inline-block text-end text-success">
-                -₹{Math.round(coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0)}
+                -₹{Math.round(coupon === "HAPPYDIWALI" ? totalOrder / 10 : 0)}
               </p>
             </div>
           )}
@@ -832,7 +848,7 @@ export default function PaymentMethods() {
               {totalPrice
                 ? Math.round(
                     totalPrice -
-                      (coupon === "HAPPYDIWALI" ? totalPrice / 10 : 0),
+                      (coupon === "HAPPYDIWALI" ? totalOrder / 10 : 0),
                   )
                 : 0}
             </p>

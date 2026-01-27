@@ -8,6 +8,7 @@ export default function CartPage() {
   const [search, setSearch] = useState("")
   const [isUpdated, setUpdated] = useState(false)
   const { clothsData, setClothsData } = GetClothsData()
+  const [isRemoveFromCart, setIsRemoveFromCart] = useState(false)
 
   const productsInCart = clothsData.filter(
     (product) => product.addToCart === true,
@@ -17,24 +18,27 @@ export default function CartPage() {
 
   const createOrderInDatabase = JSON.parse(localStorage.getItem("createOrder"))
 
-  if (
-    createOrderInDatabase &&
-    JSON.parse(localStorage.getItem("createOrder")).item.length
-  ) {
-    const idOfCreateOrderInDatabase = createOrderInDatabase.item.map(
-      (product) => product.id,
-    )
-    if (idOfProductsInCart.length !== idOfCreateOrderInDatabase.length) {
+  if (!isRemoveFromCart) {
+    if (
+      createOrderInDatabase &&
+      JSON.parse(localStorage.getItem("createOrder")).item.length
+    ) {
+      const idOfCreateOrderInDatabase = createOrderInDatabase.item.map(
+        (product) => product.id,
+      )
+      if (idOfProductsInCart.length !== idOfCreateOrderInDatabase.length) {
+        localStorage.setItem(
+          "createOrder",
+          JSON.stringify({ item: productsInCart }),
+        )
+        console.log("inside if  condition sir")
+      }
+    } else {
       localStorage.setItem(
         "createOrder",
         JSON.stringify({ item: productsInCart }),
       )
     }
-  } else {
-    localStorage.setItem(
-      "createOrder",
-      JSON.stringify({ item: productsInCart }),
-    )
   }
 
   const ProductsInCart =
@@ -97,9 +101,13 @@ export default function CartPage() {
         )
         const createOrder = { item: finalProductsInCart }
         localStorage.setItem("createOrder", JSON.stringify(createOrder))
+      } else {
+        const createOrder = { item: ProductsInCart }
+        localStorage.setItem("createOrder", JSON.stringify(createOrder))
       }
     }
   } else {
+    setIsRemoveFromCart(false)
     setUpdated(false)
   }
 
@@ -108,11 +116,12 @@ export default function CartPage() {
     ProductsInCart.reduce(
       (acc, curr) =>
         acc +
-        curr.price -
-        (curr.price / 100) *
-          (Number(curr.offer.replace("%", ""))
-            ? Number(curr.offer.replace("%", ""))
-            : Number(curr.discount.replace("%", ""))),
+        (curr.price -
+          (curr.price / 100) *
+            (Number(curr.offer.replace("%", ""))
+              ? Number(curr.offer.replace("%", ""))
+              : Number(curr.discount.replace("%", "")))) *
+          (curr.quantity ? curr.quantity : 1),
       0,
     )
 
@@ -190,7 +199,7 @@ export default function CartPage() {
                                     : product.discount}{" "}
                                   off
                                 </p>
-                                <div className="mb-3">
+                                <div className="mb-2">
                                   <span className="fw-bold me-2 quantityText">
                                     Quantity:{" "}
                                   </span>
@@ -265,7 +274,7 @@ export default function CartPage() {
                                     </button>
                                   </div>
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-2">
                                   <span className="sizeText fw-bold me-3">
                                     Size:{" "}
                                   </span>
@@ -415,7 +424,7 @@ export default function CartPage() {
                                         localStorage.getItem("clothsData"),
                                       ),
                                     )
-                                    setUpdated(true)
+                                    setIsRemoveFromCart(true)
                                   }}
                                 >
                                   Remove From Cart
@@ -451,7 +460,7 @@ export default function CartPage() {
                 <div className="my-3">
                   <p className="d-inline-block w-50 m-0">Delivery Charges</p>
                   <p className="d-inline-block w-50 text-end m-0">
-                    ₹{Math.round(deliveryCharge)}
+                    ₹{deliveryCharge ? Math.round(deliveryCharge) : 0}
                   </p>
                 </div>
               </div>
@@ -459,7 +468,10 @@ export default function CartPage() {
               <div>
                 <p className="d-inline-block w-50 m-0">Total Amount</p>
                 <p className="d-inline-block w-50 text-end m-0">
-                  ₹{Math.round(totalOrder + deliveryCharge)}
+                  ₹
+                  {totalOrder && deliveryCharge
+                    ? Math.round(totalOrder + deliveryCharge)
+                    : 0}
                 </p>
               </div>
               <br />

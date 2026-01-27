@@ -20,13 +20,23 @@ export default function WishlistPage() {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value),
     )
-    product.addToCart = product.addToCart === false ? true : false
+    if (product.addToCart) {
+      product.quantity = product.quantity ? product.quantity + 1 : 2
+    } else {
+      product.addToCart = true
+    }
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
     const btn = e.target
-    btn.innerHTML = '<i class="bi bi-check2"></i>'
-    btn.style.backgroundColor = "#05a058"
-    btn.style.color = "white"
+    if (product.quantity) {
+      btn.innerHTML = `quantity: ${product.quantity}`
+      btn.style.backgroundColor = "#05a058"
+      btn.style.color = "white"
+    } else {
+      btn.innerHTML = '<i class="bi bi-check2"></i>'
+      btn.style.backgroundColor = "#05a058"
+      btn.style.color = "white"
+    }
     setTimeout(() => {
       btn.innerHTML = "Added To Cart"
       btn.style.backgroundColor = ""
@@ -77,7 +87,7 @@ export default function WishlistPage() {
         zIndex="auto"
         setSearch={setSearch}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="bg-body-secondary pb-3">
         <div className="container">
           <h3 className="py-3 text-center">My Wishlist</h3>

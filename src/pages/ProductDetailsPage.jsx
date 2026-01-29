@@ -225,7 +225,7 @@ export default function ProductDetailsPage() {
                 </button>
                 <button
                   className="btn btn-outline-secondary w-100 mb-2"
-                  style={{fontSize: "15px"}}
+                  style={{ fontSize: "15px" }}
                   value={product.id}
                   onClick={addToWishlist}
                 >
@@ -275,9 +275,7 @@ export default function ProductDetailsPage() {
                 off
               </p>
               <div>
-                <span className="quantityText fw-bold me-2">
-                  Quantity:{" "}
-                </span>
+                <span className="quantityText fw-bold me-2">Quantity: </span>
                 <div className="quantityBtnContainer mb-3">
                   <button
                     className="rounded-circle border border-1"
@@ -308,9 +306,7 @@ export default function ProductDetailsPage() {
                 </div>
               </div>
               <div>
-                <span className="sizeText fw-bold me-3">
-                  Size:{" "}
-                </span>
+                <span className="sizeText fw-bold me-3">Size: </span>
                 <div className="sizeBtnContainer">
                   <button
                     className="border border-1 me-2 mb-2"
@@ -653,14 +649,24 @@ export default function ProductDetailsPage() {
                       />
                       <div className="card-body d-flex flex-column justify-content-between align-items-center">
                         <p
-                          className="text-center m-0 productName lh-sm overflow-hidden listProductName"
-                          style={{ height: "40px" }}
+                          className="text-center m-0 lh-sm overflow-hidden listProductName lh-base"
+                          style={{ height: "72px" }}
                         >
                           {!!Number(product.offer.replace("%", "")) && (
                             <span className="badge text-bg-warning me-1">
                               Diwali Offer
                             </span>
                           )}
+                          {product.newArrival === true && (
+                            <span className="badge text-bg-primary me-1">
+                              New
+                            </span>
+                          )}
+                          {product.freeDelivery && (
+                            <span class="badge text-bg-success">
+                              Free Deilvery
+                            </span>
+                          )}{" "}
                           {product.name.length > 61
                             ? product.name.slice(0, 60).concat("...")
                             : product.name}
@@ -695,11 +701,8 @@ export default function ProductDetailsPage() {
                           >
                             M.R.P. ₹{product.price}
                           </p>
-                          <p className="my-0 text-success fw-medium">
-                            {product.freeDelivery ? "Free Deilvery" : ""}
-                          </p>
                         </div>
-                        <div className="w-100">
+                        <div className="w-100 mt-3">
                           <button
                             className="btn btn-secondary w-100 mb-2 addToCart"
                             value={product.id}

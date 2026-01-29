@@ -103,7 +103,7 @@ export default function SaleProducts() {
                   to={`/productDetails/${product.id}`}
                 >
                   <div className="card productCard">
-                    <div className="productImageContainerSaleProductPage">
+                    <div className="ProductImageContainer">
                       <img
                         src={product.url}
                         className="img-fluid listProductImage"

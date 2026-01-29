@@ -195,7 +195,7 @@ export default function PaymentMethods() {
                     key={product.id}
                     className="card column-gap-4 my-3 cardInPaymentMethodPage"
                   >
-                    <div className="h-100 mx-auto productImageContainerInPaymentMethodPage">
+                    <div className="h-100 mx-auto productImageDiv">
                       <img
                         src={product.url}
                         alt="productImage"

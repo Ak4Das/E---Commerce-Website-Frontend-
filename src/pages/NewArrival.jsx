@@ -83,7 +83,7 @@ export default function NewArrival() {
                   to={`/productDetails/${product.id}`}
                 >
                   <div className="card productCard">
-                    <div className="productImageContainerNewArrivalPage">
+                    <div className="ProductImageContainer">
                       <img
                         src={product.url}
                         className="img-fluid listProductImage"

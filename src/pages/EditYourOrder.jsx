@@ -570,7 +570,7 @@ export default function EditYourOrder() {
                   key={product.id}
                   className="card column-gap-4 my-3 cardInPaymentMethodPage"
                 >
-                  <div className="h-100 mx-auto productImageContainerInEditYourOrderPage">
+                  <div className="h-100 mx-auto productImageContainerDiv">
                     <img
                       src={product.url}
                       alt="productImage"

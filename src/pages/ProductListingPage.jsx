@@ -143,7 +143,7 @@ export default function ProductListingPage() {
                   to={`/productDetails/${product.id}`}
                 >
                   <div className="card productCard">
-                    <div className="productImageContainerProductListingPage">
+                    <div className="ProductImageContainer">
                       <img
                         src={product.url}
                         className="img-fluid listProductImage"
@@ -152,17 +152,26 @@ export default function ProductListingPage() {
                       />
                     </div>
                     <div className="card-body d-flex flex-column justify-content-between w-100">
-                      <p id="name" className="my-0 lh-sm listProductName">
-                        {product.newArrival === true && (
-                          <span className="badge text-bg-success me-1">
-                            New
-                          </span>
-                        )}
+                      <p
+                        id="name"
+                        className="my-0 lh-sm listProductName lh-base"
+                      >
                         {!!Number(product.offer.replace("%", "")) && (
                           <span className="badge text-bg-warning me-1">
                             Diwali Offer
                           </span>
                         )}
+                        {product.newArrival === true && (
+                          <span className="badge text-bg-primary me-1">
+                            New
+                          </span>
+                        )}
+                        {product.freeDelivery && (
+                          <span class="badge text-bg-success">
+                            Free Deilvery
+                          </span>
+                        )}
+                        {" "}
                         {product.name.length > 61
                           ? product.name.slice(0, 60).concat("...")
                           : product.name}

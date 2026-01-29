@@ -1,16 +1,13 @@
 .logo {
   width: 25px;
 }
+.listProductName,
 .productName {
   max-height: 96px !important;
   overflow: hidden !important;
 }
-.listProductName {
-  max-height: 79px !important;
-  overflow: hidden !important;
-}
 .similarCards {
-  height: 520px !important;
+  height: 550px !important;
 }
 .none {
   display: none;
@@ -281,8 +278,8 @@
     flex-direction: row !important;
     height: 255px !important;
   }
-  .productImageContainerInPaymentMethodPage,
-  .productImageContainerInEditYourOrderPage {
+  .productImageDiv,
+  .productImageContainerDiv {
     width: 75%;
   }
 }
@@ -370,10 +367,8 @@
   .couponSectionLabel {
     width: 50% !important;
   }
-  .productImageContainerProductListingPage,
-  .categoryInLandingPage,
-  .productImageContainerNewArrivalPage,
-  .productImageContainerSaleProductPage {
+  .ProductImageContainer,
+  .categoryCard {
     width: 100% !important;
   }
   .listProductImage {
@@ -389,17 +384,11 @@
     max-height: 300px !important;
   }
   .similarCards {
-    height: 570px !important;
+    height: 600px !important;
   }
   .productDetailsContainerFirstSection {
     flex-direction: row !important;
     align-items: flex-start !important;
-  }
-  .productDetailsImage {
-    position: sticky !important;
-  }
-  .btnContainer2 {
-    display: none;
   }
 }
 @media (min-width: 768px) {
@@ -419,7 +408,7 @@
     max-height: 250px !important;
   }
   .similarCards {
-    height: 520px !important;
+    height: 550px !important;
   }
   .saveToWishlist {
     font-size: 12px !important;
@@ -429,6 +418,12 @@
   }
   .searchInPage {
     display: none !important;
+  }
+  .productDetailsImage {
+    position: sticky !important;
+  }
+  .btnContainer2 {
+    display: none;
   }
 }
 @media (min-width: 800px) {
@@ -623,7 +618,7 @@
   .secondUlContainer {
     display: none;
   }
-  .productImageContainerInEditYourOrderPage {
+  .productImageContainerDiv {
     width: 30%;
   }
   .btnInEditOrderPage {
@@ -636,7 +631,7 @@
     max-height: 300px !important;
   }
   .similarCards {
-    height: 570px !important;
+    height: 600px !important;
   }
 }
 @media (min-width: 1200px) {
@@ -673,7 +668,7 @@
     max-height: 250px !important;
   }
   .similarCards {
-    height: 520px !important;
+    height: 550px !important;
   }
   .saveToWishlist {
     font-size: 12px !important;
@@ -681,7 +676,7 @@
   .searchInHeader {
     width: 400px !important;
   }
-  .productImageContainerInPaymentMethodPage {
+  .productImageDiv {
     width: 50%;
   }
 }
@@ -737,7 +732,7 @@
     max-height: 300px !important;
   }
   .similarCards {
-    height: 570px !important;
+    height: 600px !important;
   }
 }
 @media (min-width: 1600px) {
@@ -763,7 +758,7 @@
     max-height: 350px !important;
   }
   .similarCards {
-    height: 620px !important;
+    height: 650px !important;
   }
 }
 @media (max-width: 1450px) {
@@ -851,9 +846,6 @@
   }
 }
 @media (max-width: 767px) {
-  .productDetailsImage {
-    min-width: 150px !important;
-  }
   .productDescription {
     font-size: 18px !important;
   }
@@ -890,6 +882,16 @@
   .hamburger {
     display: none;
   }
+  .productDetailsContainerFirstSection {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .btnContainer1 {
+    display: none;
+  }
+  .productDetailsImage {
+    min-width: 50% !important;
+  }
 }
 @media (575px<width<767px) {
   .secondUlContainer {
@@ -922,16 +924,6 @@
     flex-direction: column !important;
     align-items: flex-start !important;
   }
-  .productDetailsContainerFirstSection {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-  .btnContainer1 {
-    display: none;
-  }
-  .productDetailsImage {
-    min-width: 50% !important;
-  }
 }
 @media (max-width: 575px) {
   .cardContainer {
@@ -939,7 +931,7 @@
     margin: auto !important;
   }
   .productImage {
-    width: 50% !important;
+    width: 75% !important;
     display: block;
     margin-inline: auto;
     margin-bottom: 20px;
@@ -969,7 +961,7 @@
     max-height: 350px !important;
   }
   .similarCards {
-    height: 620px !important;
+    height: 650px !important;
   }
   .productCard {
     height: 650px !important;
@@ -983,10 +975,8 @@
   .image {
     height: 350px !important;
   }
-  .productImageContainerProductListingPage,
-  .categoryInLandingPage,
-  .productImageContainerNewArrivalPage,
-  .productImageContainerSaleProductPage {
+  .ProductImageContainer,
+  .categoryCard {
     width: 75%;
     margin-inline: auto;
     margin-top: 16px;
@@ -996,6 +986,9 @@
   }
   .uptoInShoe {
     margin-top: -2px !important;
+  }
+  .productDetailsImage {
+    min-width: 75% !important;
   }
 }
 @media (max-width: 499px) {
@@ -1049,8 +1042,8 @@
     font-size: 12px !important;
     text-align: center !important;
   }
-  .productImageContainerInPaymentMethodPage,
-  .productImageContainerInEditYourOrderPage {
+  .productImageDiv,
+  .productImageContainerDiv {
     width: 75%;
     margin-top: 12px !important;
   }
@@ -1152,7 +1145,7 @@
     max-height: 300px !important;
   }
   .similarCards {
-    height: 570px !important;
+    height: 600px !important;
   }
 }
 @media (max-width: 350px) {
@@ -1211,10 +1204,8 @@
     font-size: 14px !important;
     font-weight: 600 !important;
   }
-  .productImageContainerProductListingPage,
-  .categoryInLandingPage,
-  .productImageContainerNewArrivalPage,
-  .productImageContainerSaleProductPage {
+  .ProductImageContainer,
+  .categoryCard {
     width: 100%;
     margin-inline: unset;
     margin-top: unset;
@@ -1250,6 +1241,12 @@
   }
   .goldenRibbonCarousel {
     margin-top: -5px;
+  }
+  .listProductName {
+    height: 96px !important;
+  }
+  .similarCards {
+    height: 650px !important;
   }
 }
 @media (max-width: 291px) {
@@ -1506,8 +1503,10 @@
 .orderFeaturesInProductDetailsPage {
   overflow-x: scroll;
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.orderFeaturesInProductDetailsPage {
+.orderFeaturesInProductDetailsPage::-webkit-scrollbar {
   display: none;
 }
 
@@ -1568,4 +1567,3 @@
 .sidebar-quantitySelector-dropdownIcon {
   width: 15px;
 }
-/* btnInEditOrderPage */

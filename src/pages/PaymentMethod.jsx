@@ -6,8 +6,10 @@ import { useState } from "react"
 import Cross from "../assets/cross.png"
 import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
+import GetClothsData from "../components/GetClothsData"
 
 export default function PaymentMethods() {
+  const { clothsData, setClothsData } = GetClothsData()
   const [search, setSearch] = useState("")
   console.log(search)
   const address = JSON.parse(localStorage.getItem("user")).address.find(
@@ -282,6 +284,34 @@ export default function PaymentMethods() {
                             )
                             e.target.previousElementSibling.value =
                               ++inputElementValue
+                            const item = clothsData.find(
+                              (item) => item.id === product.id,
+                            )
+                            if (item.addToCart) {
+                              item.quantity = Number(
+                                e.target.previousElementSibling.value,
+                              )
+                              localStorage.setItem(
+                                "clothsData",
+                                JSON.stringify(clothsData),
+                              )
+                              setClothsData(
+                                JSON.parse(localStorage.getItem("clothsData")),
+                              )
+                              const createOrder = JSON.parse(
+                                localStorage.getItem("createOrder"),
+                              )
+                              const createOrderItem = createOrder.item.find(
+                                (item) => item.id === product.id,
+                              )
+                              createOrderItem.quantity = Number(
+                                e.target.previousElementSibling.value,
+                              )
+                              localStorage.setItem(
+                                "createOrder",
+                                JSON.stringify(createOrder),
+                              )
+                            }
                             const Product = products.find(
                               (item) => item.id === product.id,
                             )

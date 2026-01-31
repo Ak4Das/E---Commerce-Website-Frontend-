@@ -20,6 +20,12 @@ export default function WishlistPage() {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value),
     )
+
+    const user = JSON.parse(localStorage.getItem("user"))
+    const item = user.addToCartItems.filter((item) => item.id === product.id)
+    item.length || user.addToCartItems.push({ id: product.id })
+    localStorage.setItem("user", JSON.stringify(user))
+
     if (product.addToCart) {
       product.quantity = product.quantity ? product.quantity + 1 : 2
     } else {
@@ -27,6 +33,28 @@ export default function WishlistPage() {
     }
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+
+    const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+    const createOrderItem = createOrder.item.find(
+      (item) => item.id === Number(e.target.value),
+    )
+    if (createOrderItem) {
+      if (createOrderItem.addToCart) {
+        createOrderItem.quantity = createOrderItem.quantity
+          ? createOrderItem.quantity + 1
+          : 2
+      } else {
+        createOrderItem.addToCart = true
+      }
+      localStorage.setItem("createOrder", JSON.stringify(createOrder))
+    } else {
+      const pushItem = JSON.parse(localStorage.getItem("clothsData")).find(
+        (item) => item.id === Number(e.target.value),
+      )
+      createOrder.item.push(pushItem)
+      localStorage.setItem("createOrder", JSON.stringify(createOrder))
+    }
+
     const btn = e.target
     if (product.quantity) {
       btn.innerHTML = `quantity: ${product.quantity}`
@@ -50,7 +78,17 @@ export default function WishlistPage() {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value),
     )
+
+    const user = JSON.parse(localStorage.getItem("user"))
+    const remainingWishlistItem = user.addToWishlistItems.filter(
+      (item) => item.id !== product.id,
+    )
+    user.addToWishlistItems = remainingWishlistItem
+    localStorage.setItem("user", JSON.stringify(user))
+
     product.addToWishList = product.addToWishList === false ? true : false
+    delete product.quantity
+    delete product.size
     localStorage.setItem("clothsData", JSON.stringify(clothsData))
     setClothsData(JSON.parse(localStorage.getItem("clothsData")))
 

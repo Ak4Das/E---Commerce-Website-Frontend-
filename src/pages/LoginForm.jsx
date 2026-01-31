@@ -12,6 +12,8 @@ export default function LoginForm() {
       password,
       profileImage: "",
       address: [],
+      addToCartItems:[],
+      addToWishlistItems:[]
     }
     console.log(user)
     localStorage.setItem("user", JSON.stringify(user))

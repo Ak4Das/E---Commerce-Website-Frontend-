@@ -58,25 +58,45 @@ export default function Header({ position, top, zIndex, setSearch }) {
               Search
             </button>
           </div>
-          <div className="hamburger">
+          <div className="hamburger" style={{ cursor: "pointer" }}>
             <div
               className="d-flex align-items-center gap-1"
               onClick={handleHamburgerMenu}
             >
-              <div
-                style={{
-                  width: "30px",
-                  height: "30px",
-                  overflow: "hidden",
-                  borderRadius: "100%",
-                }}
-              >
-                <img
-                  src={userDetails.profileImage}
-                  alt="profileImage"
-                  className="w-100 img-fluid h-100"
-                />
-              </div>
+              {userDetails ? (
+                <div
+                  style={{
+                    width: "30px",
+                    height: "30px",
+                    overflow: "hidden",
+                    borderRadius: "100%",
+                  }}
+                >
+                  {userDetails.profileImage ? (
+                    <img
+                      src={userDetails.profileImage}
+                      alt="profileImage"
+                      className="w-100 img-fluid h-100"
+                    />
+                  ) : (
+                    <div className="bg-info fs-5 d-flex align-items-center justify-content-center">
+                      {userDetails.name.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div
+                  className="d-flex align-items-center justify-content-center rounded"
+                  style={{
+                    width: "30px",
+                    height: "30px",
+                    border: "2px solid #757373c4",
+                  }}
+                >
+                  <i className="bi bi-list fs-5"></i>
+                </div>
+              )}
+
               <i className="bi bi-chevron-down"></i>
             </div>
           </div>
@@ -161,7 +181,7 @@ export default function Header({ position, top, zIndex, setSearch }) {
                   </NavLink>
                 ) : (
                   <NavLink
-                    className="btn btn-secondary text-light"
+                    className="btn btn-warning text-black"
                     aria-current="page"
                     to="/login"
                     style={{ width: "70px" }}

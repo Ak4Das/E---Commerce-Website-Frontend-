@@ -60,28 +60,34 @@ export default function CartPage() {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value),
     )
-    product.addToWishList = product.addToWishList === false ? true : false
-    localStorage.setItem("clothsData", JSON.stringify(clothsData))
-    setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+    if (product.addToWishList === false) {
+      const user = JSON.parse(localStorage.getItem("user"))
+      user.addToWishlistItems.push({ id: product.id })
+      localStorage.setItem("user", JSON.stringify(user))
 
-    const Product = ProductsInCart.find(
-      (product) => product.id === Number(e.target.value),
-    )
-    Product.addToWishList = Product.addToWishList === false ? true : false
-    localStorage.setItem(
-      "createOrder",
-      JSON.stringify({ item: ProductsInCart }),
-    )
+      product.addToWishList = true
+      localStorage.setItem("clothsData", JSON.stringify(clothsData))
+      setClothsData(JSON.parse(localStorage.getItem("clothsData")))
 
-    const btn = e.target
-    btn.innerHTML = '<i class="bi bi-check2"></i>'
-    btn.style.backgroundColor = "#05a058"
-    btn.style.color = "white"
-    setTimeout(() => {
-      btn.innerHTML = "Added To Wishlist"
-      btn.style.backgroundColor = ""
-      btn.style.color = ""
-    }, 1000)
+      const Product = ProductsInCart.find(
+        (product) => product.id === Number(e.target.value),
+      )
+      Product.addToWishList = true
+      localStorage.setItem(
+        "createOrder",
+        JSON.stringify({ item: ProductsInCart }),
+      )
+
+      const btn = e.target
+      btn.innerHTML = '<i class="bi bi-check2"></i>'
+      btn.style.backgroundColor = "#05a058"
+      btn.style.color = "white"
+      setTimeout(() => {
+        btn.innerHTML = "Added To Wishlist"
+        btn.style.backgroundColor = ""
+        btn.style.color = ""
+      }, 1000)
+    }
   }
 
   function newProduct(product) {
@@ -496,6 +502,19 @@ export default function CartPage() {
                                   onClick={(e) => {
                                     e.preventDefault()
                                     e.stopPropagation()
+                                    const user = JSON.parse(
+                                      localStorage.getItem("user"),
+                                    )
+                                    const remainingCartItems =
+                                      user.addToCartItems.filter(
+                                        (item) => item.id !== product.id,
+                                      )
+                                    user.addToCartItems = remainingCartItems
+                                    localStorage.setItem(
+                                      "user",
+                                      JSON.stringify(user),
+                                    )
+
                                     const item = clothsData.find(
                                       (Product) => Product.id === product.id,
                                     )

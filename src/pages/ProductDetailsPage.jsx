@@ -42,18 +42,32 @@ export default function ProductDetailsPage() {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value),
     )
-    product.addToCart = product.addToCart === false ? true : true
-    localStorage.setItem("clothsData", JSON.stringify(clothsData))
-    setClothsData(JSON.parse(localStorage.getItem("clothsData")))
-    const btn = e.target
-    btn.innerHTML = '<i class="bi bi-check2"></i>'
-    btn.style.backgroundColor = "#05a058"
-    btn.style.color = "white"
-    setTimeout(() => {
-      btn.innerHTML = "Added To Cart"
-      btn.style.backgroundColor = ""
-      btn.style.color = ""
-    }, 1000)
+    if (product.addToCart === false) {
+      const user = JSON.parse(localStorage.getItem("user"))
+      user.addToCartItems.push({ id: product.id })
+      localStorage.setItem("user", JSON.stringify(user))
+
+      product.addToCart = true
+      localStorage.setItem("clothsData", JSON.stringify(clothsData))
+      setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+
+      const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+      const item = createOrder.item.find(
+        (item) => item.id === id,
+      )
+      item.addToCart = true
+      localStorage.setItem("createOrder", JSON.stringify(createOrder))
+
+      const btn = e.target
+      btn.innerHTML = '<i class="bi bi-check2"></i>'
+      btn.style.backgroundColor = "#05a058"
+      btn.style.color = "white"
+      setTimeout(() => {
+        btn.innerHTML = "Added To Cart"
+        btn.style.backgroundColor = ""
+        btn.style.color = ""
+      }, 1000)
+    }
   }
 
   function addToWishlist(e) {
@@ -62,18 +76,25 @@ export default function ProductDetailsPage() {
     const product = clothsData.find(
       (product) => product.id === Number(e.target.value),
     )
-    product.addToWishList = product.addToWishList === false ? true : true
-    localStorage.setItem("clothsData", JSON.stringify(clothsData))
-    setClothsData(JSON.parse(localStorage.getItem("clothsData")))
-    const btn = e.target
-    btn.innerHTML = '<i class="bi bi-check2"></i>'
-    btn.style.backgroundColor = "#05a058"
-    btn.style.color = "white"
-    setTimeout(() => {
-      btn.innerHTML = "Added To Wishlist"
-      btn.style.backgroundColor = ""
-      btn.style.color = ""
-    }, 1000)
+    if (product.addToWishList === false) {
+      const user = JSON.parse(localStorage.getItem("user"))
+      user.addToWishlistItems.push({ id: product.id })
+      localStorage.setItem("user", JSON.stringify(user))
+
+      product.addToWishList = true
+      localStorage.setItem("clothsData", JSON.stringify(clothsData))
+      setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+
+      const btn = e.target
+      btn.innerHTML = '<i class="bi bi-check2"></i>'
+      btn.style.backgroundColor = "#05a058"
+      btn.style.color = "white"
+      setTimeout(() => {
+        btn.innerHTML = "Added To Wishlist"
+        btn.style.backgroundColor = ""
+        btn.style.color = ""
+      }, 1000)
+    }
   }
 
   const product = clothsData.find((product) => product.id === id)
@@ -83,11 +104,14 @@ export default function ProductDetailsPage() {
   const address = user.address.find((address) => address.selected)
 
   if (isUpdated) {
-    if (quantity > 1) {
+    if (product.addToCart) {
+      if (quantity > 1) {
+        product.quantity = quantity
+        localStorage.setItem("clothsData", JSON.stringify(clothsData))
+        setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+      }
+    } else {
       product.quantity = quantity
-    }
-    if (quantity === 1) {
-      product.quantity = 1
     }
     if (size) {
       product.size = size
@@ -287,7 +311,9 @@ export default function ProductDetailsPage() {
                   </button>
                   <input
                     type="text"
-                    defaultValue={quantity}
+                    defaultValue={
+                      product.quantity ? product.quantity : quantity
+                    }
                     style={{ width: "30px" }}
                     className="mx-2"
                     onChange={(e) => {

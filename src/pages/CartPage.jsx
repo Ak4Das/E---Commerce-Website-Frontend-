@@ -137,6 +137,8 @@ export default function CartPage() {
         ProductsInCart.length,
     )
 
+  const user = JSON.parse(localStorage.getItem("user"))
+
   return (
     <>
       <Header
@@ -588,27 +590,51 @@ export default function CartPage() {
                 </p>
               </div>
               <br />
-              {ProductsInCart &&
-              JSON.parse(localStorage.getItem("createOrder")).item.filter(
-                (product) => product.size,
-              ).length ===
-                JSON.parse(localStorage.getItem("createOrder")).item.length ? (
-                <Link to="/paymentMethods" className="btn btn-primary w-100">
-                  Place Order
-                </Link>
-              ) : (
+              {!user && (
                 <button
-                  className="btn btn-primary w-100"
-                  onClick={() =>
-                    ProductsInCart
-                      ? alert(
-                          "Please select size of all the products present in the cart",
-                        )
-                      : alert("There is no item in cart")
-                  }
+                  className="btn btn-primary w-100 my-2"
+                  onClick={() => alert("Please login to your account")}
                 >
                   Place Order
                 </button>
+              )}
+              {user && !user.address.length && (
+                <button
+                  className="btn btn-primary w-100 my-2"
+                  onClick={() => alert("Please add your address")}
+                >
+                  Place Order
+                </button>
+              )}
+              {user && user.address.length !== 0 && (
+                <div>
+                  {ProductsInCart &&
+                  JSON.parse(localStorage.getItem("createOrder")).item.filter(
+                    (product) => product.size,
+                  ).length ===
+                    JSON.parse(localStorage.getItem("createOrder")).item
+                      .length ? (
+                    <Link
+                      to="/paymentMethods"
+                      className="btn btn-primary w-100"
+                    >
+                      Place Order
+                    </Link>
+                  ) : (
+                    <button
+                      className="btn btn-primary w-100"
+                      onClick={() =>
+                        ProductsInCart
+                          ? alert(
+                              "Please select size of all the products present in the cart",
+                            )
+                          : alert("There is no item in cart")
+                      }
+                    >
+                      Place Order
+                    </button>
+                  )}
+                </div>
               )}
             </section>
           </div>

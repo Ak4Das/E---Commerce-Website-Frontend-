@@ -12,9 +12,11 @@ export default function PaymentMethods() {
   const { clothsData, setClothsData } = GetClothsData()
   const [search, setSearch] = useState("")
   console.log(search)
-  const address = JSON.parse(localStorage.getItem("user")).address.find(
-    (address) => address.selected,
-  )
+  const user = JSON.parse(localStorage.getItem("user"))
+  const address =
+    user &&
+    user.address.length !== 0 &&
+    user.address.find((address) => address.selected)
   const [isCard, setIsCard] = useState(false)
   const [isNetBanking, setIsNetBanking] = useState(false)
   const [isCashOnDelivery, setIsCashOnDelivery] = useState(false)
@@ -145,24 +147,26 @@ export default function PaymentMethods() {
       <SearchInPage margin="ms-3" setSearch={setSearch} />
       <main className="container mt-3 mb-5 d-lg-flex gap-5 align-items-start">
         <div className="paymentMethodSectionOne">
-          <section className="bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">
-            <div>
-              <h5 className="userName">Delivering to {address.fullName}</h5>
-              <p className="fw-medium userAddress">
-                {address.localInfo}, {address.area},{" "}
-                {address.city.toUpperCase()}
-                {", "}
-                {address.state.toUpperCase()}, {address.pinCode},{" "}
-                {address.country}
-              </p>
-            </div>
-            <Link
-              to="/userAddress/paymentMethods"
-              className="text-decoration-none fw-medium changeBtn"
-            >
-              Change
-            </Link>
-          </section>
+          {user && user.address.length !== 0 && (
+            <section className="bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">
+              <div>
+                <h5 className="userName">Delivering to {address.fullName}</h5>
+                <p className="fw-medium userAddress">
+                  {address.localInfo}, {address.area},{" "}
+                  {address.city.toUpperCase()}
+                  {", "}
+                  {address.state.toUpperCase()}, {address.pinCode},{" "}
+                  {address.country}
+                </p>
+              </div>
+              <Link
+                to="/userAddress/paymentMethods"
+                className="text-decoration-none fw-medium changeBtn"
+              >
+                Change
+              </Link>
+            </section>
+          )}
           {isPaymentMethodSelected && (
             <section className="bg-light p-3 d-flex column-gap-5 row-gap-3 justify-content-between align-items-start mt-3 paymentMethodSection">
               <div>

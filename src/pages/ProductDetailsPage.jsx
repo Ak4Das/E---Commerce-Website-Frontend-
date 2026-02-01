@@ -52,9 +52,7 @@ export default function ProductDetailsPage() {
       setClothsData(JSON.parse(localStorage.getItem("clothsData")))
 
       const createOrder = JSON.parse(localStorage.getItem("createOrder"))
-      const item = createOrder.item.find(
-        (item) => item.id === id,
-      )
+      const item = createOrder.item.find((item) => item.id === id)
       item.addToCart = true
       localStorage.setItem("createOrder", JSON.stringify(createOrder))
 
@@ -101,7 +99,10 @@ export default function ProductDetailsPage() {
 
   const user = JSON.parse(localStorage.getItem("user"))
 
-  const address = user.address.find((address) => address.selected)
+  const address =
+    user &&
+    user.address.length !== 0 &&
+    user.address.find((address) => address.selected)
 
   if (isUpdated) {
     if (product.addToCart) {
@@ -221,17 +222,31 @@ export default function ProductDetailsPage() {
                 className="img-fluid productImage"
               />
               <div className="btnContainer1">
-                {!size && (
+                {!user && (
                   <button
                     className="btn btn-primary w-100 my-2"
-                    onClick={() =>
-                      alert("Please select the product size First")
-                    }
+                    onClick={() => alert("Please login to your account")}
                   >
                     Buy Now
                   </button>
                 )}
-                {size && (
+                {user && !user.address.length && (
+                  <button
+                    className="btn btn-primary w-100 my-2"
+                    onClick={() => alert("Please add your address")}
+                  >
+                    Buy Now
+                  </button>
+                )}
+                {user && user.address.length !== 0 && !size && (
+                  <button
+                    className="btn btn-primary w-100 my-2"
+                    onClick={() => alert("Please select the product size")}
+                  >
+                    Buy Now
+                  </button>
+                )}
+                {user && user.address.length !== 0 && size && (
                   <Link
                     to="/paymentMethods"
                     className="btn btn-primary w-100 my-2 text-decoration-none"
@@ -494,17 +509,31 @@ export default function ProductDetailsPage() {
                 </ul>
               </div>
               <div className="btnContainer2">
-                {!size && (
+                {!user && (
                   <button
                     className="btn btn-primary w-100 my-2"
-                    onClick={() =>
-                      alert("Please select the product size First")
-                    }
+                    onClick={() => alert("Please login to your account")}
                   >
                     Buy Now
                   </button>
                 )}
-                {size && (
+                {user && !user.address.length && (
+                  <button
+                    className="btn btn-primary w-100 my-2"
+                    onClick={() => alert("Please add your address")}
+                  >
+                    Buy Now
+                  </button>
+                )}
+                {user && user.address.length !== 0 && !size && (
+                  <button
+                    className="btn btn-primary w-100 my-2"
+                    onClick={() => alert("Please select the product size")}
+                  >
+                    Buy Now
+                  </button>
+                )}
+                {user && user.address.length !== 0 && size && (
                   <Link
                     to="/paymentMethods"
                     className="btn btn-primary w-100 my-2 text-decoration-none"
@@ -584,17 +613,18 @@ export default function ProductDetailsPage() {
                   )}
                 </p>
               )}
-
-              <div className="d-flex align-items-start aboutProduct-sidebar-deliveryLocation">
-                <img
-                  className="sidebar-deliveryLocation-locationLogo"
-                  src={location}
-                  alt="Location icon"
-                />
-                <p className="sidebar-deliveryLocation-locationText lh-sm">
-                  Delivering to {user.name} - {address.city} {address.pinCode}
-                </p>
-              </div>
+              {user && user.address.length !== 0 && (
+                <div className="d-flex align-items-start aboutProduct-sidebar-deliveryLocation">
+                  <img
+                    className="sidebar-deliveryLocation-locationLogo"
+                    src={location}
+                    alt="Location icon"
+                  />
+                  <p className="sidebar-deliveryLocation-locationText lh-sm">
+                    Delivering to {user.name} - {address.city} {address.pinCode}
+                  </p>
+                </div>
+              )}
               <p className="aboutProduct-sidebar-stockStatus fw-bold fs-5">
                 In stock
               </p>
@@ -615,17 +645,31 @@ export default function ProductDetailsPage() {
                 </tbody>
               </table>
               <div className="mt-4">
-                {!size && (
+                {!user && (
                   <button
-                    className="btn btn-warning rounded w-100 my-2"
-                    onClick={() =>
-                      alert("Please select the product size First")
-                    }
+                    className="btn btn-warning w-100 my-2"
+                    onClick={() => alert("Please login to your account")}
                   >
                     Buy Now
                   </button>
                 )}
-                {size && (
+                {user && !user.address.length && (
+                  <button
+                    className="btn btn-warning w-100 my-2"
+                    onClick={() => alert("Please add your address")}
+                  >
+                    Buy Now
+                  </button>
+                )}
+                {user && user.address.length !== 0 && !size && (
+                  <button
+                    className="btn btn-warning rounded w-100 my-2"
+                    onClick={() => alert("Please select the product size")}
+                  >
+                    Buy Now
+                  </button>
+                )}
+                {user && user.address.length !== 0 && size && (
                   <Link
                     to="/paymentMethods"
                     className="btn btn-warning rounded w-100 mb-2"
@@ -689,7 +733,7 @@ export default function ProductDetailsPage() {
                             </span>
                           )}
                           {product.freeDelivery && (
-                            <span class="badge text-bg-success">
+                            <span className="badge text-bg-success">
                               Free Deilvery
                             </span>
                           )}{" "}

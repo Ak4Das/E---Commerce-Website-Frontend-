@@ -255,23 +255,47 @@ export default function ProductDetailsPage() {
                   </Link>
                 )}
                 <br />
-                <button
-                  className="btn btn-secondary w-100 mb-2"
-                  value={product.id}
-                  onClick={addToCart}
-                >
-                  {product.addToCart ? "Added To Cart" : "Add To cart"}
-                </button>
-                <button
-                  className="btn btn-outline-secondary w-100 mb-2"
-                  style={{ fontSize: "15px" }}
-                  value={product.id}
-                  onClick={addToWishlist}
-                >
-                  {product.addToWishList
-                    ? "Added To Wishlist"
-                    : "Save To Wishlist"}
-                </button>
+                <div>
+                  {!user ? (
+                    <button
+                      className="btn btn-secondary w-100 mb-2"
+                      onClick={() => alert("Please login to your account")}
+                    >
+                      {product.addToCart ? "Added To Cart" : "Add To cart"}
+                    </button>
+                  ) : (
+                    <button
+                      className="btn btn-secondary w-100 mb-2"
+                      value={product.id}
+                      onClick={addToCart}
+                    >
+                      {product.addToCart ? "Added To Cart" : "Add To cart"}
+                    </button>
+                  )}
+                </div>
+                <div>
+                  {!user ? (
+                    <button
+                      className="btn btn-outline-secondary w-100 mb-2"
+                      onClick={() => alert("Please login to your account")}
+                    >
+                      {product.addToWishList
+                        ? "Added To Wishlist"
+                        : "Save To Wishlist"}
+                    </button>
+                  ) : (
+                    <button
+                      className="btn btn-outline-secondary w-100 mb-2"
+                      style={{ fontSize: "15px" }}
+                      value={product.id}
+                      onClick={addToWishlist}
+                    >
+                      {product.addToWishList
+                        ? "Added To Wishlist"
+                        : "Save To Wishlist"}
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
             <div className="me-md-5">
@@ -542,22 +566,46 @@ export default function ProductDetailsPage() {
                   </Link>
                 )}
                 <br />
-                <button
-                  className="btn btn-secondary w-100 mb-2"
-                  value={product.id}
-                  onClick={addToCart}
-                >
-                  {product.addToCart ? "Added To Cart" : "Add To cart"}
-                </button>
-                <button
-                  className="btn btn-outline-secondary w-100 mb-2"
-                  value={product.id}
-                  onClick={addToWishlist}
-                >
-                  {product.addToWishList
-                    ? "Added To Wishlist"
-                    : "Save To Wishlist"}
-                </button>
+                <div>
+                  {!user ? (
+                    <button
+                      className="btn btn-secondary w-100 mb-2"
+                      onClick={() => alert("Please login to your account")}
+                    >
+                      {product.addToCart ? "Added To Cart" : "Add To cart"}
+                    </button>
+                  ) : (
+                    <button
+                      className="btn btn-secondary w-100 mb-2"
+                      value={product.id}
+                      onClick={addToCart}
+                    >
+                      {product.addToCart ? "Added To Cart" : "Add To cart"}
+                    </button>
+                  )}
+                </div>
+                <div>
+                  {!user ? (
+                    <button
+                      className="btn btn-outline-secondary w-100 mb-2"
+                      onClick={() => alert("Please login to your account")}
+                    >
+                      {product.addToWishList
+                        ? "Added To Wishlist"
+                        : "Save To Wishlist"}
+                    </button>
+                  ) : (
+                    <button
+                      className="btn btn-outline-secondary w-100 mb-2"
+                      value={product.id}
+                      onClick={addToWishlist}
+                    >
+                      {product.addToWishList
+                        ? "Added To Wishlist"
+                        : "Save To Wishlist"}
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
             <div className="bg-white checkoutSidebar ms-auto px-4 py-3 fw-medium border border-secondary">
@@ -677,23 +725,47 @@ export default function ProductDetailsPage() {
                     Buy Now
                   </Link>
                 )}
-                <button
-                  className="btn btn-warning rounded w-100 mb-2"
-                  value={product.id}
-                  onClick={addToCart}
-                >
-                  {product.addToCart ? "Added To Cart" : "Add To cart"}
-                </button>
+                <div>
+                  {!user ? (
+                    <button
+                      className="btn btn-warning rounded w-100 mb-2"
+                      onClick={() => alert("Please login to your account")}
+                    >
+                      {product.addToCart ? "Added To Cart" : "Add To cart"}
+                    </button>
+                  ) : (
+                    <button
+                      className="btn btn-warning rounded w-100 mb-2"
+                      value={product.id}
+                      onClick={addToCart}
+                    >
+                      {product.addToCart ? "Added To Cart" : "Add To cart"}
+                    </button>
+                  )}
+                </div>
                 <hr className="mt-1 mb-3" />
-                <button
-                  className="btn btn-outline-secondary rounded w-100"
-                  value={product.id}
-                  onClick={addToWishlist}
-                >
-                  {product.addToWishList
-                    ? "Added To Wishlist"
-                    : "Save To Wishlist"}
-                </button>
+                <div>
+                  {!user ? (
+                    <button
+                      className="btn btn-outline-secondary rounded w-100"
+                      onClick={() => alert("Please login to your account")}
+                    >
+                      {product.addToWishList
+                        ? "Added To Wishlist"
+                        : "Save To Wishlist"}
+                    </button>
+                  ) : (
+                    <button
+                      className="btn btn-outline-secondary rounded w-100"
+                      value={product.id}
+                      onClick={addToWishlist}
+                    >
+                      {product.addToWishList
+                        ? "Added To Wishlist"
+                        : "Save To Wishlist"}
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
           </section>
@@ -773,24 +845,54 @@ export default function ProductDetailsPage() {
                           </p>
                         </div>
                         <div className="w-100 mt-3">
-                          <button
-                            className="btn btn-secondary w-100 mb-2 addToCart"
-                            value={product.id}
-                            onClick={addToCart}
-                          >
-                            {product.addToCart
-                              ? "Added To Cart"
-                              : "Add To cart"}
-                          </button>
-                          <button
-                            className="btn btn-outline-secondary w-100 mb-2 saveToWishlist"
-                            value={product.id}
-                            onClick={addToWishlist}
-                          >
-                            {product.addToWishList
-                              ? "Added To Wishlist"
-                              : "Save To Wishlist"}
-                          </button>
+                          <div>
+                            {!user ? (
+                              <button
+                                className="btn btn-secondary w-100 mb-2 addToCart"
+                                onClick={() =>
+                                  alert("Please login to your account")
+                                }
+                              >
+                                {product.addToCart
+                                  ? "Added To Cart"
+                                  : "Add To cart"}
+                              </button>
+                            ) : (
+                              <button
+                                className="btn btn-secondary w-100 mb-2 addToCart"
+                                value={product.id}
+                                onClick={addToCart}
+                              >
+                                {product.addToCart
+                                  ? "Added To Cart"
+                                  : "Add To cart"}
+                              </button>
+                            )}
+                          </div>
+                          <div>
+                            {!user ? (
+                              <button
+                                className="btn btn-outline-secondary w-100 mb-2 saveToWishlist"
+                                onClick={() =>
+                                  alert("Please login to your account")
+                                }
+                              >
+                                {product.addToWishList
+                                  ? "Added To Wishlist"
+                                  : "Save To Wishlist"}
+                              </button>
+                            ) : (
+                              <button
+                                className="btn btn-outline-secondary w-100 mb-2 saveToWishlist"
+                                value={product.id}
+                                onClick={addToWishlist}
+                              >
+                                {product.addToWishList
+                                  ? "Added To Wishlist"
+                                  : "Save To Wishlist"}
+                              </button>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -58,7 +58,7 @@ export default function ProductListingPage() {
       product.addToWishList = true
       localStorage.setItem("clothsData", JSON.stringify(clothsData))
       setClothsData(JSON.parse(localStorage.getItem("clothsData")))
-      
+
       const btn = e.target
       btn.innerHTML = '<i className="bi bi-check2"></i>'
       btn.style.backgroundColor = "#05a058"
@@ -130,6 +130,8 @@ export default function ProductListingPage() {
     Category === ""
       ? filterBySort
       : filterBySort.filter((product) => product.gender === Category)
+
+  const user = JSON.parse(localStorage.getItem("user"))
 
   return (
     <>
@@ -225,22 +227,54 @@ export default function ProductListingPage() {
                         </small>
                       </div>
                       <div>
-                        <button
-                          value={product.id}
-                          className="btn btn-secondary w-100 mb-1 addToCart"
-                          onClick={addToCart}
-                        >
-                          {product.addToCart ? "Added To Cart" : "Add To cart"}
-                        </button>
-                        <button
-                          value={product.id}
-                          className="btn btn-outline-secondary w-100 saveToWishlist"
-                          onClick={addToWishlist}
-                        >
-                          {product.addToWishList
-                            ? "Added To Wishlist"
-                            : "Save To Wishlist"}
-                        </button>
+                        <div>
+                          {!user ? (
+                            <button
+                              className="btn btn-secondary w-100 mb-1 addToCart"
+                              onClick={() =>
+                                alert("Please login to your account")
+                              }
+                            >
+                              {product.addToCart
+                                ? "Added To Cart"
+                                : "Add To cart"}
+                            </button>
+                          ) : (
+                            <button
+                              value={product.id}
+                              className="btn btn-secondary w-100 mb-1 addToCart"
+                              onClick={addToCart}
+                            >
+                              {product.addToCart
+                                ? "Added To Cart"
+                                : "Add To cart"}
+                            </button>
+                          )}
+                        </div>
+                        <div>
+                          {!user ? (
+                            <button
+                              className="btn btn-outline-secondary w-100 saveToWishlist"
+                              onClick={() =>
+                                alert("Please login to your account")
+                              }
+                            >
+                              {product.addToWishList
+                                ? "Added To Wishlist"
+                                : "Save To Wishlist"}
+                            </button>
+                          ) : (
+                            <button
+                              value={product.id}
+                              className="btn btn-outline-secondary w-100 saveToWishlist"
+                              onClick={addToWishlist}
+                            >
+                              {product.addToWishList
+                                ? "Added To Wishlist"
+                                : "Save To Wishlist"}
+                            </button>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

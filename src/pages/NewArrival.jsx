@@ -74,6 +74,8 @@ export default function NewArrival() {
     }
   }
 
+  const user = JSON.parse(localStorage.getItem("user"))
+
   return (
     <>
       <Header
@@ -140,22 +142,54 @@ export default function NewArrival() {
                         </small>
                       </div>
                       <div>
-                        <button
-                          value={product.id}
-                          className="btn btn-secondary w-100 mb-1 addToCart"
-                          onClick={addToCart}
-                        >
-                          {product.addToCart ? "Added To Cart" : "Add To cart"}
-                        </button>
-                        <button
-                          value={product.id}
-                          className="btn btn-outline-secondary w-100 saveToWishlist"
-                          onClick={addToWishlist}
-                        >
-                          {product.addToWishList
-                            ? "Added To Wishlist"
-                            : "Save To Wishlist"}
-                        </button>
+                        <div>
+                          {!user ? (
+                            <button
+                              className="btn btn-secondary w-100 mb-1 addToCart"
+                              onClick={() =>
+                                alert("Please login to your account")
+                              }
+                            >
+                              {product.addToCart
+                                ? "Added To Cart"
+                                : "Add To cart"}
+                            </button>
+                          ) : (
+                            <button
+                              value={product.id}
+                              className="btn btn-secondary w-100 mb-1 addToCart"
+                              onClick={addToCart}
+                            >
+                              {product.addToCart
+                                ? "Added To Cart"
+                                : "Add To cart"}
+                            </button>
+                          )}
+                        </div>
+                        <div>
+                          {!user ? (
+                            <button
+                              className="btn btn-outline-secondary w-100 saveToWishlist"
+                              onClick={() =>
+                                alert("Please login to your account")
+                              }
+                            >
+                              {product.addToWishList
+                                ? "Added To Wishlist"
+                                : "Save To Wishlist"}
+                            </button>
+                          ) : (
+                            <button
+                              value={product.id}
+                              className="btn btn-outline-secondary w-100 saveToWishlist"
+                              onClick={addToWishlist}
+                            >
+                              {product.addToWishList
+                                ? "Added To Wishlist"
+                                : "Save To Wishlist"}
+                            </button>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

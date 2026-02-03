@@ -715,7 +715,12 @@ export default function EditYourOrder() {
                                     100
                                 ).toFixed(1),
                               )
-                              setDeductPrice(deductPrice - price)
+                              const discountDueToSale = orderToBeEdit.sale
+                                ? price / 10
+                                : 0
+                              setDeductPrice(
+                                deductPrice - price + discountDueToSale,
+                              )
                               setUpdated(true)
                             }
                           }}
@@ -743,11 +748,16 @@ export default function EditYourOrder() {
                                   100
                               ).toFixed(1),
                             )
+                            const discountDueToSale = orderToBeEdit.sale
+                              ? price / 10
+                              : 0
                             const updatedQuantity = product.quantity
                             const changeInQuantity =
                               updatedQuantity - initialQuantity
                             setDeductPrice(
-                              deductPrice + price * changeInQuantity,
+                              deductPrice +
+                                price * changeInQuantity -
+                                discountDueToSale * changeInQuantity,
                             )
                             setUpdated(true)
                           }}
@@ -776,8 +786,13 @@ export default function EditYourOrder() {
                                   100
                               ).toFixed(1),
                             )
-                            console.log(price)
-                            setDeductPrice(deductPrice + price)
+                            const discountDueToSale = orderToBeEdit.sale
+                              ? price / 10
+                              : 0
+                            console.log(discountDueToSale)
+                            setDeductPrice(
+                              deductPrice + price - discountDueToSale,
+                            )
                             setUpdated(true)
                           }}
                         >
@@ -839,7 +854,7 @@ export default function EditYourOrder() {
 
                           setDeductPrice(
                             deductPrice -
-                              price -
+                              price * product.quantity -
                               deductInDeliveryCharge +
                               saleDeduction -
                               paymentMethodChargeDeduction,

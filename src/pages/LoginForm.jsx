@@ -12,15 +12,18 @@ export default function LoginForm() {
       password,
       profileImage: "",
       address: [],
-      addToCartItems:[],
-      addToWishlistItems:[]
+      addToCartItems: [],
+      addToWishlistItems: [],
     }
     console.log(user)
     localStorage.setItem("user", JSON.stringify(user))
   }
   return (
-    <main className="card w-50 mx-auto px-5 py-4 my-5">
-      <h2>Login Form</h2>
+    <main
+      className="card mx-auto my-5 loginForm"
+      style={{ width: "50%", paddingInline: "48px", paddingBlock: "24px" }}
+    >
+      <h2 className="text-success">Login Form</h2>
       <form className="mt-4">
         <label htmlFor="name" className="form-label">
           Full Name
@@ -53,7 +56,11 @@ export default function LoginForm() {
         />
         <br />
         <br />
-        <Link to="/userAddress" className="btn btn-warning" onClick={handleSubmit}>
+        <Link
+          to="/userAddress"
+          className="btn btn-warning"
+          onClick={handleSubmit}
+        >
           Submit
         </Link>
       </form>

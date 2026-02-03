@@ -818,6 +818,25 @@
   .firstUlContainer {
     display: none;
   }
+  .floatingAddCardBody {
+    flex-direction: column;
+  }
+  .floatingAddCardBodyText {
+    border: none !important;
+    padding-left: 0px !important;
+    margin-top: 25px;
+    width: 100% !important;
+    font-weight: 600;
+  }
+  .AtmCardDetailsForm {
+    width: 500px !important;
+  }
+  .floatingAddCardForm {
+    width: 100% !important;
+  }
+  .loginForm {
+    width: 75% !important;
+  }
 }
 @media (max-width: 800px) {
   .productCard {
@@ -891,6 +910,19 @@
   }
   .productDetailsImage {
     min-width: 50% !important;
+  }
+  .floatingCard {
+    width: 300px !important;
+  }
+  .floatingCardUserImage {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  .AtmCardDetailsForm {
+    width: 400px !important;
+  }
+  .floatingCardHeaderText {
+    font-size: 18px;
   }
 }
 @media (575px<width<767px) {
@@ -990,6 +1022,13 @@
   .productDetailsImage {
     min-width: 75% !important;
   }
+  .AtmCardDetailsForm {
+    width: 350px !important;
+  }
+  .floatingCardHeaderText {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
 }
 @media (max-width: 499px) {
   .navbarBrand {
@@ -1047,6 +1086,19 @@
     width: 75%;
     margin-top: 12px !important;
   }
+  .floatingCard {
+    width: 250px !important;
+  }
+  .floatingCardUserImage {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .floatingCardText {
+    font-size: 14px;
+  }
+  .loginForm {
+    width: 85% !important;
+  }
 }
 @media (max-width: 450px) {
   .AddCardLink {
@@ -1066,6 +1118,24 @@
   }
   .upto {
     font-size: 10px !important;
+  }
+  .AtmCardDetailsForm {
+    width: 300px !important;
+  }
+  .floatingCardHeaderText {
+    font-size: 14px;
+  }
+  .floatingCardHeaderCrossBtn {
+    width: 12px !important;
+  }
+  .floatingAddCardBodyInput {
+    margin-left: 0px !important;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .floatingAddCardBodyBr {
+    display: none;
   }
 }
 @media (max-width: 420px) {
@@ -1124,6 +1194,41 @@
   .goldenRibbonCarousel {
     margin-top: -2px;
   }
+  .floatingCard {
+    width: 200px !important;
+  }
+  .floatingCardUserImage {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .floatingCardText {
+    line-height: 18px;
+  }
+  .usrAccTextFloatingCard {
+    font-size: 20px;
+  }
+  .crossBtnFloatingCard {
+    width: 15px !important;
+  }
+  .profilePicTextFloatingCard {
+    font-size: 18px;
+  }
+  .floatingCardBtns {
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  .floatingCardBtn {
+    min-width: 100%;
+  }
+  .AtmCardDetailsForm {
+    width: 250px !important;
+  }
+  .floatingCardHeaderText {
+    font-size: 12px;
+  }
+  .loginForm {
+    padding-inline: 24px !important;
+  }
 }
 @media (max-width: 370px) {
   .diwaliOfferOnSuit {
@@ -1146,6 +1251,18 @@
   }
   .similarCards {
     height: 600px !important;
+  }
+  .AddCardLink {
+    display: none;
+  }
+  .AddCardLink2 {
+    display: block !important;
+  }
+  .paymentViaCashOnDeliveryLabel {
+    font-size: 15px;
+  }
+  .paymentViaCashOnDeliveryText {
+    font-size: 15px;
   }
 }
 @media (max-width: 350px) {
@@ -1219,7 +1336,7 @@
   .btnInEditOrderPage {
     flex-direction: column !important;
   }
-  .netBanking {
+  .BanksFacilitateNetBanking {
     width: 140px !important;
     font-size: 12px !important;
   }
@@ -1247,6 +1364,12 @@
   }
   .similarCards {
     height: 650px !important;
+  }
+  .AtmCardDetailsForm {
+    width: 220px !important;
+  }
+  .floatingCardHeaderText {
+    font-size: 10px;
   }
 }
 @media (max-width: 291px) {
@@ -1308,6 +1431,20 @@
   }
   .uptoInShoe {
     margin-top: 5px !important;
+  }
+  .paymentViaCardLabel {
+    font-size: 14px;
+  }
+  .paymentViaCashOnDeliveryLabel {
+    font-size: 13px;
+  }
+  .paymentViaCashOnDeliveryText {
+    font-size: 13px;
+  }
+  .loginForm {
+    width: 95% !important;
+    padding-inline: 12px !important;
+    padding-block: 12px !important;
   }
 }
 

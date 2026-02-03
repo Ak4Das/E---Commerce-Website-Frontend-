@@ -123,25 +123,25 @@ export default function UserProfile() {
               }}
             >
               <section className="position-relative">
-                <h2>User Account</h2>
+                <h2 className="usrAccTextFloatingCard">User Account</h2>
                 <button className="border border-0 position-absolute end-0 top-0 bg-light">
                   <img
                     src={crossBtn}
                     alt="crossBtn"
-                    className=""
+                    className="crossBtnFloatingCard"
                     style={{ width: "20px" }}
                     onClick={setVisibility}
                   />
                 </button>
               </section>
               <section className="mt-3">
-                <h4>Profile picture</h4>
-                <p>
+                <h4 className="profilePicTextFloatingCard">Profile picture</h4>
+                <p className="floatingCardText">
                   A picture helps people recognize you and lets you know when
                   you’re signed in to your account
                 </p>
                 <div
-                  className="overflow-hidden rounded-circle mx-auto my-5"
+                  className="overflow-hidden rounded-circle mx-auto my-5 floatingCardUserImage"
                   style={{ width: "350px", height: "350px" }}
                 >
                   {userDetails.profileImage ? (
@@ -173,7 +173,7 @@ export default function UserProfile() {
                 <div style={{ display: `${edit ? "" : "none"}` }}>
                   <input
                     type="text"
-                    placeholder="Enter Profile Image Url"
+                    placeholder="Enter Image Url"
                     className="form-control enterImgUrl"
                     onChange={(e) => {
                       setImageUrl(e.target.value)
@@ -190,7 +190,7 @@ export default function UserProfile() {
                     }}
                   />
                 </div>
-                <div className="d-flex justify-content-between align-items-center">
+                <div className="d-flex justify-content-between align-items-center floatingCardBtns">
                   <button
                     className="btn floatingCardBtn border border-0 rounded-pill p-2 editImageUrl"
                     onClick={editProfileImage}

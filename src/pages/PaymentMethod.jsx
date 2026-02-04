@@ -302,6 +302,21 @@ export default function PaymentMethods() {
                               setClothsData(
                                 JSON.parse(localStorage.getItem("clothsData")),
                               )
+                              const user = JSON.parse(
+                                localStorage.getItem("user"),
+                              )
+                              const clothItem = user.addToCartItems.find(
+                                (item) => item.id === product.id,
+                              )
+                              if (clothItem) {
+                                clothItem.quantity = Number(
+                                  e.target.previousElementSibling.value,
+                                )
+                                localStorage.setItem(
+                                  "user",
+                                  JSON.stringify(user),
+                                )
+                              }
                               const createOrder = JSON.parse(
                                 localStorage.getItem("createOrder"),
                               )
@@ -350,7 +365,7 @@ export default function PaymentMethods() {
                       type="radio"
                       name="payment"
                       value="Credit or debit card"
-                      className="mt-1"
+                      className="mt-1 paymentViaCardInput"
                       onClick={(e) => {
                         setPaymentMethod(e.target.value)
                         setIsCard(true)
@@ -360,8 +375,8 @@ export default function PaymentMethods() {
                       }}
                       style={{ cursor: "pointer" }}
                     />
-                    <div>
-                      <label className="fw-medium mb-2">
+                    <div className="paymentViaCard">
+                      <label className="fw-medium mb-2 paymentViaCardLabel">
                         Credit or debit card
                       </label>
                       <br />
@@ -427,6 +442,13 @@ export default function PaymentMethods() {
                           >
                             Add a new credit or debit card
                           </Link>
+                          <Link
+                            className="text-decoration-none fw-medium AddCardLink2"
+                            onClick={() => setShowCard(showCard ? false : true)}
+                            style={{ cursor: "pointer", display: "none" }}
+                          >
+                            Add a new card
+                          </Link>
                         </div>
                       </div>
                       <div
@@ -438,37 +460,61 @@ export default function PaymentMethods() {
                         className="card rounded position-absolute top-50 start-50 AtmCardDetailsForm"
                       >
                         <div className="bg-light d-flex justify-content-between align-items-center p-3">
-                          <h5>Add a new credit or debit card</h5>
+                          <h5 className="floatingCardHeaderText">
+                            Add a new credit or debit card
+                          </h5>
                           <img
                             src={Cross}
                             alt="crossIcon"
-                            className="img-fluid"
+                            className="img-fluid floatingCardHeaderCrossBtn"
                             style={{ width: "15px", cursor: "pointer" }}
                             onClick={() => setShowCard(showCard ? false : true)}
                           />
                         </div>
-                        <div className="bg-white p-3 d-flex justify-content-between">
-                          <div className="w-50">
+                        <div className="bg-white p-3 d-flex justify-content-between floatingAddCardBody">
+                          <div
+                            className="floatingAddCardForm"
+                            style={{ width: "50%" }}
+                          >
                             <label htmlFor="" className="fw-medium">
                               Card number
                             </label>
-                            <input type="text" className="ms-2 rounded" />
-                            <br />
-                            <br />
-                            <label htmlFor="" className="fw-medium">
+                            <input
+                              type="text"
+                              className="rounded floatingAddCardBodyInput"
+                              style={{ marginLeft: "8px" }}
+                            />
+                            <br className="floatingAddCardBodyBr" />
+                            <br className="floatingAddCardBodyBr" />
+                            <label
+                              htmlFor=""
+                              className="fw-medium floatingAddCardBodyInput"
+                            >
                               Nickname
                             </label>
-                            <input type="text" className="ms-2 rounded" />
-                            <br />
-                            <br />
+                            <input
+                              type="text"
+                              className="rounded floatingAddCardBodyInput"
+                              style={{ marginLeft: "8px" }}
+                            />
+                            <br className="floatingAddCardBodyBr" />
+                            <br className="floatingAddCardBodyBr" />
                             <label htmlFor="" className="fw-medium">
                               Expiry date
                             </label>
-                            <input type="date" className="ms-2 rounded" />
+                            <input
+                              type="date"
+                              className="rounded floatingAddCardBodyInput"
+                              style={{ marginLeft: "8px" }}
+                            />
                           </div>
                           <div
-                            className="w-50 ps-3"
-                            style={{ borderLeft: "1px solid black" }}
+                            className="floatingAddCardBodyText"
+                            style={{
+                              width: "50%",
+                              paddingLeft: "16px",
+                              borderLeft: "1px solid black",
+                            }}
                           >
                             <p>
                               Please ensure that you enable your card for online
@@ -543,6 +589,7 @@ export default function PaymentMethods() {
                       type="radio"
                       name="payment"
                       value="Net Banking"
+                      className="paymentViaNetBankingInput"
                       onClick={(e) => {
                         setPaymentMethod(e.target.value)
                         setIsCard(false)
@@ -553,13 +600,16 @@ export default function PaymentMethods() {
                       style={{ cursor: "pointer" }}
                     />
                     <div>
-                      <label htmlFor="netBanking" className="fw-medium mb-2">
+                      <label
+                        htmlFor="netBanking"
+                        className="fw-medium mb-2 paymentViaNetBankingLabel"
+                      >
                         Net Banking
                       </label>
                       <br />
                       <select
                         id="netBanking"
-                        className="rounded p-2 netBanking"
+                        className="rounded p-2 BanksFacilitateNetBanking"
                         style={{ cursor: "pointer", width: "200px" }}
                       >
                         <option value="" className="fw-bold">
@@ -726,6 +776,7 @@ export default function PaymentMethods() {
                       type="radio"
                       name="payment"
                       value="Cash on Delivery/Pay on Delivery"
+                      className="paymentViaCashOnDeliveryInput"
                       style={{ cursor: "pointer" }}
                       onClick={(e) => {
                         setPaymentMethod(e.target.value)
@@ -736,10 +787,12 @@ export default function PaymentMethods() {
                       }}
                     />
                     <div>
-                      <label className="fw-medium">
+                      <label className="fw-medium paymentViaCashOnDeliveryLabel">
                         Cash on Delivery/Pay on Delivery
                       </label>
-                      <p className="my-0">Cash, UPI and Cards accepted.</p>
+                      <p className="my-0 paymentViaCashOnDeliveryText">
+                        Cash, UPI and Cards accepted.
+                      </p>
                     </div>
                   </div>
                   {products.length === 0 ? (

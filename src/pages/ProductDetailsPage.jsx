@@ -23,6 +23,12 @@ export default function ProductDetailsPage() {
   function increaseCount(e) {
     let inputElementValue = Number(e.target.previousElementSibling.value)
     e.target.previousElementSibling.value = ++inputElementValue
+    const user = JSON.parse(localStorage.getItem("user"))
+    const clothItem = user.addToCartItems.find((item) => item.id === id)
+    if (clothItem) {
+      clothItem.quantity = Number(e.target.previousElementSibling.value)
+      localStorage.setItem("user", JSON.stringify(user))
+    }
     setQuantity(Number(e.target.previousElementSibling.value))
     setUpdated(true)
   }
@@ -31,6 +37,12 @@ export default function ProductDetailsPage() {
     let inputElementValue = Number(e.target.nextElementSibling.value)
     if (inputElementValue > 1) {
       e.target.nextElementSibling.value = --inputElementValue
+      const user = JSON.parse(localStorage.getItem("user"))
+      const clothItem = user.addToCartItems.find((item) => item.id === id)
+      if (clothItem) {
+        clothItem.quantity = Number(e.target.nextElementSibling.value)
+        localStorage.setItem("user", JSON.stringify(user))
+      }
       setQuantity(Number(e.target.nextElementSibling.value))
       setUpdated(true)
     }
@@ -44,10 +56,16 @@ export default function ProductDetailsPage() {
     )
     if (product.addToCart === false) {
       const user = JSON.parse(localStorage.getItem("user"))
-      user.addToCartItems.push({ id: product.id })
+      user.addToCartItems.push({
+        id: product.id,
+        quantity: quantity,
+        size: size,
+      })
       localStorage.setItem("user", JSON.stringify(user))
 
       product.addToCart = true
+      product.quantity = quantity
+      product.size = size
       localStorage.setItem("clothsData", JSON.stringify(clothsData))
       setClothsData(JSON.parse(localStorage.getItem("clothsData")))
 
@@ -356,6 +374,14 @@ export default function ProductDetailsPage() {
                     style={{ width: "30px" }}
                     className="mx-2"
                     onChange={(e) => {
+                      const user = JSON.parse(localStorage.getItem("user"))
+                      const clothItem = user.addToCartItems.find(
+                        (item) => item.id === id,
+                      )
+                      if (clothItem) {
+                        clothItem.quantity = Number(e.target.value)
+                        localStorage.setItem("user", JSON.stringify(user))
+                      }
                       setQuantity(Number(e.target.value))
                       setUpdated(true)
                     }}
@@ -377,6 +403,13 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("S")
+                      const clothItem = user.addToCartItems.find(
+                        (item) => item.id === id,
+                      )
+                      if (clothItem) {
+                        clothItem.size = "S"
+                        localStorage.setItem("user", JSON.stringify(user))
+                      }
                       setUpdated(true)
                       const btn = e.target
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
@@ -391,6 +424,13 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("M")
+                      const clothItem = user.addToCartItems.find(
+                        (item) => item.id === id,
+                      )
+                      if (clothItem) {
+                        clothItem.size = "M"
+                        localStorage.setItem("user", JSON.stringify(user))
+                      }
                       setUpdated(true)
                       const btn = e.target
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
@@ -405,6 +445,13 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("L")
+                      const clothItem = user.addToCartItems.find(
+                        (item) => item.id === id,
+                      )
+                      if (clothItem) {
+                        clothItem.size = "L"
+                        localStorage.setItem("user", JSON.stringify(user))
+                      }
                       setUpdated(true)
                       const btn = e.target
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
@@ -419,6 +466,13 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("XL")
+                      const clothItem = user.addToCartItems.find(
+                        (item) => item.id === id,
+                      )
+                      if (clothItem) {
+                        clothItem.size = "XL"
+                        localStorage.setItem("user", JSON.stringify(user))
+                      }
                       setUpdated(true)
                       const btn = e.target
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
@@ -433,6 +487,13 @@ export default function ProductDetailsPage() {
                     className="border border-1 mb-2"
                     onClick={(e) => {
                       setSize("XXL")
+                      const clothItem = user.addToCartItems.find(
+                        (item) => item.id === id,
+                      )
+                      if (clothItem) {
+                        clothItem.size = "XXL"
+                        localStorage.setItem("user", JSON.stringify(user))
+                      }
                       setUpdated(true)
                       const btn = e.target
                       btn.innerHTML = '<i class="bi bi-check2"></i>'

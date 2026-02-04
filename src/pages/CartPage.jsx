@@ -26,6 +26,16 @@ export default function CartPage() {
       const idOfCreateOrderInDatabase = createOrderInDatabase.item.map(
         (product) => product.id,
       )
+      let pass = false
+      for (const id of idOfCreateOrderInDatabase) {
+        pass = idOfProductsInCart.includes(id)
+      }
+      if (!pass) {
+        localStorage.setItem(
+          "createOrder",
+          JSON.stringify({ item: productsInCart }),
+        )
+      }
       if (idOfProductsInCart.length !== idOfCreateOrderInDatabase.length) {
         localStorage.setItem(
           "createOrder",
@@ -226,6 +236,15 @@ export default function CartPage() {
                                           product.quantity = Number(
                                             e.target.nextElementSibling.value,
                                           )
+                                          const clothItem =
+                                            user.addToCartItems.find(
+                                              (item) => item.id === product.id,
+                                            )
+                                          clothItem.quantity = product.quantity
+                                          localStorage.setItem(
+                                            "user",
+                                            JSON.stringify(user),
+                                          )
                                           localStorage.setItem(
                                             "createOrder",
                                             JSON.stringify({
@@ -281,6 +300,15 @@ export default function CartPage() {
                                           ++inputElementValue
                                         product.quantity = Number(
                                           e.target.previousElementSibling.value,
+                                        )
+                                        const clothItem =
+                                          user.addToCartItems.find(
+                                            (item) => item.id === product.id,
+                                          )
+                                        clothItem.quantity = product.quantity
+                                        localStorage.setItem(
+                                          "user",
+                                          JSON.stringify(user),
                                         )
                                         localStorage.setItem(
                                           "createOrder",
@@ -339,6 +367,15 @@ export default function CartPage() {
                                             localStorage.getItem("clothsData"),
                                           ),
                                         )
+                                        const clothItem =
+                                          user.addToCartItems.find(
+                                            (item) => item.id === product.id,
+                                          )
+                                        clothItem.size = "S"
+                                        localStorage.setItem(
+                                          "user",
+                                          JSON.stringify(user),
+                                        )
                                         setUpdated(true)
                                         const btn = e.target
                                         btn.innerHTML =
@@ -374,6 +411,15 @@ export default function CartPage() {
                                           JSON.parse(
                                             localStorage.getItem("clothsData"),
                                           ),
+                                        )
+                                        const clothItem =
+                                          user.addToCartItems.find(
+                                            (item) => item.id === product.id,
+                                          )
+                                        clothItem.size = "M"
+                                        localStorage.setItem(
+                                          "user",
+                                          JSON.stringify(user),
                                         )
                                         setUpdated(true)
                                         const btn = e.target
@@ -411,6 +457,15 @@ export default function CartPage() {
                                             localStorage.getItem("clothsData"),
                                           ),
                                         )
+                                        const clothItem =
+                                          user.addToCartItems.find(
+                                            (item) => item.id === product.id,
+                                          )
+                                        clothItem.size = "L"
+                                        localStorage.setItem(
+                                          "user",
+                                          JSON.stringify(user),
+                                        )
                                         setUpdated(true)
                                         const btn = e.target
                                         btn.innerHTML =
@@ -447,6 +502,15 @@ export default function CartPage() {
                                             localStorage.getItem("clothsData"),
                                           ),
                                         )
+                                        const clothItem =
+                                          user.addToCartItems.find(
+                                            (item) => item.id === product.id,
+                                          )
+                                        clothItem.size = "XL"
+                                        localStorage.setItem(
+                                          "user",
+                                          JSON.stringify(user),
+                                        )
                                         setUpdated(true)
                                         const btn = e.target
                                         btn.innerHTML =
@@ -482,6 +546,15 @@ export default function CartPage() {
                                           JSON.parse(
                                             localStorage.getItem("clothsData"),
                                           ),
+                                        )
+                                        const clothItem =
+                                          user.addToCartItems.find(
+                                            (item) => item.id === product.id,
+                                          )
+                                        clothItem.size = "XXL"
+                                        localStorage.setItem(
+                                          "user",
+                                          JSON.stringify(user),
                                         )
                                         setUpdated(true)
                                         const btn = e.target

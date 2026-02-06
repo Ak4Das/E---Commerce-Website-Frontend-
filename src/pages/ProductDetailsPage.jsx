@@ -20,15 +20,27 @@ export default function ProductDetailsPage() {
   const [time, setTime] = useState("")
   const [isFreeDeliveryAvailable, setFreeDelivery] = useState(false)
 
+  const product = clothsData.find((product) => product.id === id)
+
+  const user = JSON.parse(localStorage.getItem("user"))
+
   function increaseCount(e) {
+    // Update the input element value
     let inputElementValue = Number(e.target.previousElementSibling.value)
     e.target.previousElementSibling.value = ++inputElementValue
-    const user = JSON.parse(localStorage.getItem("user"))
+
+    // Update user in Database
     const clothItem = user.addToCartItems.find((item) => item.id === id)
     if (clothItem) {
       clothItem.quantity = Number(e.target.previousElementSibling.value)
       localStorage.setItem("user", JSON.stringify(user))
     }
+
+    // Update clothsData in memory
+    if (product) {
+      product.quantity = Number(e.target.previousElementSibling.value)
+    }
+
     setQuantity(Number(e.target.previousElementSibling.value))
     setUpdated(true)
   }
@@ -36,26 +48,46 @@ export default function ProductDetailsPage() {
   function decreaseCount(e) {
     let inputElementValue = Number(e.target.nextElementSibling.value)
     if (inputElementValue > 1) {
+      // Update the input element value
       e.target.nextElementSibling.value = --inputElementValue
-      const user = JSON.parse(localStorage.getItem("user"))
+
+      // Update user in Database
       const clothItem = user.addToCartItems.find((item) => item.id === id)
       if (clothItem) {
         clothItem.quantity = Number(e.target.nextElementSibling.value)
         localStorage.setItem("user", JSON.stringify(user))
       }
+
+      // Update clothsData in memory
+      if (product) {
+        product.quantity = Number(e.target.nextElementSibling.value)
+      }
+
       setQuantity(Number(e.target.nextElementSibling.value))
       setUpdated(true)
     }
   }
 
   function addToCart(e) {
+    // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
-    const product = clothsData.find(
-      (product) => product.id === Number(e.target.value),
+
+    // Update clothsData in memory
+    const cloth = clothsData.find(
+      (Product) => Product.id === Number(e.target.value),
     )
-    if (product.addToCart === false) {
-      const user = JSON.parse(localStorage.getItem("user"))
+    if (cloth) {
+      cloth.addToCart = true
+      cloth.quantity = quantity
+      cloth.size = size
+    }
+
+    // Update user in Database
+    const isAddedToCart = user.addToCartItems.filter(
+      (item) => item.id === Number(e.target.value),
+    )
+    if (!isAddedToCart.length) {
       user.addToCartItems.push({
         id: product.id,
         quantity: quantity,
@@ -63,46 +95,47 @@ export default function ProductDetailsPage() {
       })
       localStorage.setItem("user", JSON.stringify(user))
 
-      product.addToCart = true
-      product.quantity = quantity
-      product.size = size
-      localStorage.setItem("clothsData", JSON.stringify(clothsData))
-      setClothsData(JSON.parse(localStorage.getItem("clothsData")))
-
-      const createOrder = JSON.parse(localStorage.getItem("createOrder"))
-      const item = createOrder.item.find((item) => item.id === id)
-      item.addToCart = true
-      localStorage.setItem("createOrder", JSON.stringify(createOrder))
-
+      // For interactivity
       const btn = e.target
-      btn.innerHTML = '<i class="bi bi-check2"></i>'
+      btn.innerHTML = "Added To Cart"
       btn.style.backgroundColor = "#05a058"
       btn.style.color = "white"
+
       setTimeout(() => {
         btn.innerHTML = "Added To Cart"
         btn.style.backgroundColor = ""
         btn.style.color = ""
       }, 1000)
     }
+
+    // To update the variables present in this page
+    setUpdated(true)
   }
 
   function addToWishlist(e) {
+    // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
-    const product = clothsData.find(
-      (product) => product.id === Number(e.target.value),
+
+    // Update user in Database
+    const isAddedToWishlist = user.addToWishlistItems.filter(
+      (item) => item.id === product.id,
     )
-    if (product.addToWishList === false) {
-      const user = JSON.parse(localStorage.getItem("user"))
-      user.addToWishlistItems.push({ id: product.id })
+    if (!isAddedToWishlist.length) {
+      user.addToWishlistItems.push({ id: Number(e.target.value) })
       localStorage.setItem("user", JSON.stringify(user))
 
-      product.addToWishList = true
-      localStorage.setItem("clothsData", JSON.stringify(clothsData))
-      setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+      // Update clothsData in memory
+      const item = clothsData.find(
+        (Product) => Product.id === Number(e.target.value),
+      )
+      if (item) {
+        item.addToWishList = true
+      }
 
+      // For interactivity
       const btn = e.target
-      btn.innerHTML = '<i class="bi bi-check2"></i>'
+      btn.innerHTML = "Added To Wishlist"
       btn.style.backgroundColor = "#05a058"
       btn.style.color = "white"
       setTimeout(() => {
@@ -110,27 +143,42 @@ export default function ProductDetailsPage() {
         btn.style.backgroundColor = ""
         btn.style.color = ""
       }, 1000)
+
+      // To update the variables present in this page
+      setUpdated(true)
     }
   }
 
-  const product = clothsData.find((product) => product.id === id)
+  /* Reset the quantity and size value of the product while i enter the page 
+  if this product is not added to cart */
+  const isProductAddedToCart =
+    user && user.addToCartItems.filter((item) => item.id === id)
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  if (isProductAddedToCart) {
+    if (!isProductAddedToCart.length) {
+      product.quantity = quantity
+      product.size = size
+    }
+  }
 
   const address =
     user &&
     user.address.length !== 0 &&
     user.address.find((address) => address.selected)
 
+  /* Update createOrder in Database while quantity, size, freeDelivery will change and 
+  update user in database while quantity change and if product is already added to cart */
   if (isUpdated) {
-    if (product.addToCart) {
+    if (isProductAddedToCart.length) {
       if (quantity > 1) {
+        isProductAddedToCart[0].quantity = quantity
+        localStorage.setItem("user", JSON.stringify(user))
         product.quantity = quantity
-        localStorage.setItem("clothsData", JSON.stringify(clothsData))
-        setClothsData(JSON.parse(localStorage.getItem("clothsData")))
       }
     } else {
-      product.quantity = quantity
+      if (quantity > 1) {
+        product.quantity = quantity
+      }
     }
     if (size) {
       product.size = size
@@ -145,6 +193,7 @@ export default function ProductDetailsPage() {
     setUpdated(false)
   }
 
+  // Slide content btn logic
   function preBtnClicked(e) {
     const element = e.target
     const container = element.parentElement.children[2]
@@ -154,7 +203,6 @@ export default function ProductDetailsPage() {
     element.style.opacity = 0
     element.nextElementSibling.style.opacity = 1
   }
-
   function nxtBtnClicked(e) {
     const element = e.target
     const container = element.parentElement.children[2]
@@ -403,11 +451,11 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("S")
-                      const clothItem = user.addToCartItems.find(
+                      const isClothAddedToCart = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
-                      if (clothItem) {
-                        clothItem.size = "S"
+                      if (isClothAddedToCart) {
+                        isClothAddedToCart.size = "S"
                         localStorage.setItem("user", JSON.stringify(user))
                       }
                       setUpdated(true)
@@ -424,11 +472,11 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("M")
-                      const clothItem = user.addToCartItems.find(
+                      const isClothAddedToCart = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
-                      if (clothItem) {
-                        clothItem.size = "M"
+                      if (isClothAddedToCart) {
+                        isClothAddedToCart.size = "M"
                         localStorage.setItem("user", JSON.stringify(user))
                       }
                       setUpdated(true)
@@ -445,11 +493,11 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("L")
-                      const clothItem = user.addToCartItems.find(
+                      const isClothAddedToCart = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
-                      if (clothItem) {
-                        clothItem.size = "L"
+                      if (isClothAddedToCart) {
+                        isClothAddedToCart.size = "L"
                         localStorage.setItem("user", JSON.stringify(user))
                       }
                       setUpdated(true)
@@ -466,11 +514,11 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("XL")
-                      const clothItem = user.addToCartItems.find(
+                      const isClothAddedToCart = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
-                      if (clothItem) {
-                        clothItem.size = "XL"
+                      if (isClothAddedToCart) {
+                        isClothAddedToCart.size = "XL"
                         localStorage.setItem("user", JSON.stringify(user))
                       }
                       setUpdated(true)
@@ -487,11 +535,11 @@ export default function ProductDetailsPage() {
                     className="border border-1 mb-2"
                     onClick={(e) => {
                       setSize("XXL")
-                      const clothItem = user.addToCartItems.find(
+                      const isClothAddedToCart = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
-                      if (clothItem) {
-                        clothItem.size = "XXL"
+                      if (isClothAddedToCart) {
+                        isClothAddedToCart.size = "XXL"
                         localStorage.setItem("user", JSON.stringify(user))
                       }
                       setUpdated(true)

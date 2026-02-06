@@ -8,7 +8,31 @@ import { useState } from "react"
 export default function NewArrival() {
   const [search, setSearch] = useState("")
   const { clothsData, setClothsData } = GetClothsData()
-  const filteredProducts = clothsData.filter(
+  const [isUpdate, setUpdate] = useState(false)
+
+  const user = JSON.parse(localStorage.getItem("user"))
+
+  const finalClothsData = clothsData.map((cloth) => {
+    const isClothPresentInCart =
+      user && user.addToCartItems.filter((item) => item.id === cloth.id)
+    if (isClothPresentInCart && isClothPresentInCart.length) {
+      cloth.addToCart = true
+      cloth.quantity = isClothPresentInCart[0].quantity
+        ? isClothPresentInCart[0].quantity
+        : 1
+      cloth.size = isClothPresentInCart[0].size
+        ? isClothPresentInCart[0].size
+        : ""
+    }
+    const isClothPresentInWishlist =
+      user && user.addToWishlistItems.filter((item) => item.id === cloth.id)
+    if (isClothPresentInWishlist && isClothPresentInWishlist.length) {
+      cloth.addToWishList = true
+    }
+    return cloth
+  })
+
+  const filteredProducts = finalClothsData.filter(
     (product) => product.newArrival === true,
   )
 
@@ -21,22 +45,53 @@ export default function NewArrival() {
     : filteredProducts
 
   function addToCart(e) {
+    // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
-    const product = clothsData.find(
-      (product) => product.id === Number(e.target.value),
+
+    const isAddedToCart = user.addToCartItems.filter(
+      (item) => item.id === Number(e.target.value),
     )
-    if (product.addToCart === false) {
+    if (!isAddedToCart.length) {
+      // Update user in Database
       const user = JSON.parse(localStorage.getItem("user"))
-      user.addToCartItems.push({ id: product.id })
+      user.addToCartItems.push({
+        id: Number(e.target.value),
+        quantity: 1,
+        size: "",
+      })
       localStorage.setItem("user", JSON.stringify(user))
 
-      product.addToCart = true
-      localStorage.setItem("clothsData", JSON.stringify(clothsData))
-      setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+      // Update clothsData in memory
+      const item = clothsData.find(
+        (Product) => Product.id === Number(e.target.value),
+      )
+      if (item) {
+        item.addToCart = true
+        item.quantity = 1
+        item.size = ""
+      }
 
+      // Update createOrder in Database
+      const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+      const Product =
+        createOrder &&
+        createOrder.item.length &&
+        createOrder.item.filter(
+          (product) => product.id === Number(e.target.value),
+        )
+      if (Product && Product.length) {
+        Product[0].addToCart = true
+        Product[0].quantity = 1
+        Product[0].size = ""
+      }
+      Product &&
+        Product.length &&
+        localStorage.setItem("createOrder", JSON.stringify(createOrder))
+
+      // For interactivity
       const btn = e.target
-      btn.innerHTML = '<i className="bi bi-check2"></i>'
+      btn.innerHTML = "Added To Cart"
       btn.style.backgroundColor = "#05a058"
       btn.style.color = "white"
       setTimeout(() => {
@@ -44,24 +99,50 @@ export default function NewArrival() {
         btn.style.backgroundColor = ""
         btn.style.color = ""
       }, 1000)
+
+      // To update the variables present in this page
+      setUpdate(true)
     }
   }
 
   function addToWishlist(e) {
+    // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
-    const product = clothsData.find(
-      (product) => product.id === Number(e.target.value),
+    
+    const isAddedToWishlist = user.addToWishlistItems.find(
+      (item) => item.id === Number(e.target.value),
     )
-    if (product.addToWishList === false) {
+    if (!isAddedToWishlist) {
+      // Update user in Database
       const user = JSON.parse(localStorage.getItem("user"))
-      user.addToWishlistItems.push({ id: product.id })
+      user.addToWishlistItems.push({ id: Number(e.target.value) })
       localStorage.setItem("user", JSON.stringify(user))
 
-      product.addToWishList = true
-      localStorage.setItem("clothsData", JSON.stringify(clothsData))
-      setClothsData(JSON.parse(localStorage.getItem("clothsData")))
+      // Update clothsData in memory
+      const item = clothsData.find(
+        (Product) => Product.id === Number(e.target.value),
+      )
+      if (item) {
+        item.addToWishList = true
+      }
 
+      // Update createOrder in Database
+      const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+      const Product =
+        createOrder &&
+        createOrder.item.length &&
+        createOrder.item.filter(
+          (product) => product.id === Number(e.target.value),
+        )
+      if (Product && Product.length) {
+        Product[0].addToWishList = true
+      }
+      Product &&
+        Product.length &&
+        localStorage.setItem("createOrder", JSON.stringify(createOrder))
+
+      // For interactivity
       const btn = e.target
       btn.innerHTML = '<i className="bi bi-check2"></i>'
       btn.style.backgroundColor = "#05a058"
@@ -71,10 +152,15 @@ export default function NewArrival() {
         btn.style.backgroundColor = ""
         btn.style.color = ""
       }, 1000)
+
+      // To update the variables present in this page
+      setUpdate(true)
     }
   }
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  if (isUpdate) {
+    setUpdate(false)
+  }
 
   return (
     <>

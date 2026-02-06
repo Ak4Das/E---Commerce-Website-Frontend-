@@ -10,25 +10,36 @@ export default function CartPage() {
   const { clothsData, setClothsData } = GetClothsData()
   const [isRemoveFromCart, setIsRemoveFromCart] = useState(false)
 
-  const productsInCart = clothsData.filter(
-    (product) => product.addToCart === true,
-  )
+  const user = JSON.parse(localStorage.getItem("user"))
 
-  const idOfProductsInCart = productsInCart.map((product) => product.id)
+  const productsInCart =
+    user &&
+    user.addToCartItems.map((cartItem) => {
+      const cloth = clothsData.find((item) => item.id === cartItem.id)
+      cloth.addToCart = true
+      cloth.quantity = cartItem.quantity
+      cloth.size = cartItem.size
+      return cloth
+    })
+  const idOfProductsInCart =
+    productsInCart && productsInCart.map((product) => product.id)
 
   const createOrderInDatabase = JSON.parse(localStorage.getItem("createOrder"))
+  const idOfCreateOrderInDatabase =
+    createOrderInDatabase &&
+    createOrderInDatabase.item.map((product) => product.id)
 
+  /* The Following if statement Maintaining createOrder because entire logic written 
+  below this if statement is only depend on createOrder data not on clothsData */
   if (!isRemoveFromCart) {
     if (
       createOrderInDatabase &&
+      JSON.parse(localStorage.getItem("createOrder")).item &&
       JSON.parse(localStorage.getItem("createOrder")).item.length
     ) {
-      const idOfCreateOrderInDatabase = createOrderInDatabase.item.map(
-        (product) => product.id,
-      )
       let pass = false
       for (const id of idOfCreateOrderInDatabase) {
-        pass = idOfProductsInCart.includes(id)
+        pass = idOfProductsInCart && idOfProductsInCart.includes(id)
       }
       if (!pass) {
         localStorage.setItem(
@@ -36,11 +47,13 @@ export default function CartPage() {
           JSON.stringify({ item: productsInCart }),
         )
       }
-      if (idOfProductsInCart.length !== idOfCreateOrderInDatabase.length) {
-        localStorage.setItem(
-          "createOrder",
-          JSON.stringify({ item: productsInCart }),
-        )
+      if (idOfProductsInCart && idOfCreateOrderInDatabase) {
+        if (idOfProductsInCart.length !== idOfCreateOrderInDatabase.length) {
+          localStorage.setItem(
+            "createOrder",
+            JSON.stringify({ item: productsInCart }),
+          )
+        }
       }
     } else {
       localStorage.setItem(
@@ -51,6 +64,7 @@ export default function CartPage() {
   }
 
   const ProductsInCart =
+    JSON.parse(localStorage.getItem("createOrder")).item &&
     JSON.parse(localStorage.getItem("createOrder")).item.length &&
     JSON.parse(localStorage.getItem("createOrder")).item.filter(
       (product) => product.addToCart === true,
@@ -65,29 +79,43 @@ export default function CartPage() {
     : ProductsInCart
 
   function moveToWishlist(e) {
+    // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
-    const product = clothsData.find(
-      (product) => product.id === Number(e.target.value),
+
+    const isAddedToWishlist = user.addToWishlistItems.filter(
+      (item) => item.id === Number(e.target.value),
     )
-    if (product.addToWishList === false) {
+    if (!isAddedToWishlist.length) {
+      // Update user in Database
       const user = JSON.parse(localStorage.getItem("user"))
-      user.addToWishlistItems.push({ id: product.id })
+      user.addToWishlistItems.push({ id: Number(e.target.value) })
       localStorage.setItem("user", JSON.stringify(user))
 
-      product.addToWishList = true
-      localStorage.setItem("clothsData", JSON.stringify(clothsData))
-      setClothsData(JSON.parse(localStorage.getItem("clothsData")))
-
-      const Product = ProductsInCart.find(
-        (product) => product.id === Number(e.target.value),
+      // Update clothsData in memory
+      const item = clothsData.find(
+        (Product) => Product.id === Number(e.target.value),
       )
-      Product.addToWishList = true
-      localStorage.setItem(
-        "createOrder",
-        JSON.stringify({ item: ProductsInCart }),
-      )
+      if (item) {
+        item.addToWishList = true
+      }
 
+      // Update createOrder in Database
+      const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+      const Product =
+        createOrder &&
+        createOrder.item.length &&
+        createOrder.item.filter(
+          (product) => product.id === Number(e.target.value),
+        )
+      if (Product && Product.length) {
+        Product[0].addToWishList = true
+      }
+      Product &&
+        Product.length &&
+        localStorage.setItem("createOrder", JSON.stringify(createOrder))
+
+      // For interactivity
       const btn = e.target
       btn.innerHTML = '<i class="bi bi-check2"></i>'
       btn.style.backgroundColor = "#05a058"
@@ -97,19 +125,21 @@ export default function CartPage() {
         btn.style.backgroundColor = ""
         btn.style.color = ""
       }, 1000)
+
+      // To update the variables present in this page
+      setUpdated(true)
     }
   }
 
+  // Add quantity property to each product in createOrder item
   function newProduct(product) {
     product.quantity = 1
     return product
   }
-
   const isQuantityPresent =
     ProductsInCart && ProductsInCart.filter((product) => product.quantity)
-
   if (!isUpdated) {
-    if (ProductsInCart.length) {
+    if (ProductsInCart && ProductsInCart.length) {
       if (ProductsInCart.length !== isQuantityPresent.length) {
         const finalProductsInCart = ProductsInCart.map((product) =>
           product.quantity ? product : newProduct(product),
@@ -146,8 +176,6 @@ export default function CartPage() {
       ProductsInCart.reduce((acc, curr) => acc + curr.deliveryCharge, 0) /
         ProductsInCart.length,
     )
-
-  const user = JSON.parse(localStorage.getItem("user"))
 
   return (
     <>
@@ -236,36 +264,32 @@ export default function CartPage() {
                                           product.quantity = Number(
                                             e.target.nextElementSibling.value,
                                           )
-                                          const clothItem =
-                                            user.addToCartItems.find(
-                                              (item) => item.id === product.id,
-                                            )
-                                          clothItem.quantity = product.quantity
-                                          localStorage.setItem(
-                                            "user",
-                                            JSON.stringify(user),
-                                          )
                                           localStorage.setItem(
                                             "createOrder",
                                             JSON.stringify({
                                               item: ProductsInCart,
                                             }),
                                           )
+
+                                          const clothItem =
+                                            user.addToCartItems.find(
+                                              (item) => item.id === product.id,
+                                            )
+                                          clothItem.quantity = Number(
+                                            e.target.nextElementSibling.value,
+                                          )
+                                          localStorage.setItem(
+                                            "user",
+                                            JSON.stringify(user),
+                                          )
+
                                           const cloth = clothsData.find(
                                             (cloth) => cloth.id === product.id,
                                           )
-                                          cloth.quantity = product.quantity
-                                          localStorage.setItem(
-                                            "clothsData",
-                                            JSON.stringify(clothsData),
+                                          cloth.quantity = Number(
+                                            e.target.nextElementSibling.value,
                                           )
-                                          setClothsData(
-                                            JSON.parse(
-                                              localStorage.getItem(
-                                                "clothsData",
-                                              ),
-                                            ),
-                                          )
+
                                           setUpdated(true)
                                         }
                                       }}
@@ -301,34 +325,32 @@ export default function CartPage() {
                                         product.quantity = Number(
                                           e.target.previousElementSibling.value,
                                         )
-                                        const clothItem =
-                                          user.addToCartItems.find(
-                                            (item) => item.id === product.id,
-                                          )
-                                        clothItem.quantity = product.quantity
-                                        localStorage.setItem(
-                                          "user",
-                                          JSON.stringify(user),
-                                        )
                                         localStorage.setItem(
                                           "createOrder",
                                           JSON.stringify({
                                             item: ProductsInCart,
                                           }),
                                         )
+
+                                        const clothItem =
+                                          user.addToCartItems.find(
+                                            (item) => item.id === product.id,
+                                          )
+                                        clothItem.quantity = Number(
+                                          e.target.previousElementSibling.value,
+                                        )
+                                        localStorage.setItem(
+                                          "user",
+                                          JSON.stringify(user),
+                                        )
+
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
-                                        cloth.quantity = product.quantity
-                                        localStorage.setItem(
-                                          "clothsData",
-                                          JSON.stringify(clothsData),
+                                        cloth.quantity = Number(
+                                          e.target.previousElementSibling.value,
                                         )
-                                        setClothsData(
-                                          JSON.parse(
-                                            localStorage.getItem("clothsData"),
-                                          ),
-                                        )
+
                                         setUpdated(true)
                                       }}
                                     >
@@ -354,19 +376,12 @@ export default function CartPage() {
                                             item: ProductsInCart,
                                           }),
                                         )
+
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
                                         cloth.size = "S"
-                                        localStorage.setItem(
-                                          "clothsData",
-                                          JSON.stringify(clothsData),
-                                        )
-                                        setClothsData(
-                                          JSON.parse(
-                                            localStorage.getItem("clothsData"),
-                                          ),
-                                        )
+
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -399,19 +414,12 @@ export default function CartPage() {
                                             item: ProductsInCart,
                                           }),
                                         )
+
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
                                         cloth.size = "M"
-                                        localStorage.setItem(
-                                          "clothsData",
-                                          JSON.stringify(clothsData),
-                                        )
-                                        setClothsData(
-                                          JSON.parse(
-                                            localStorage.getItem("clothsData"),
-                                          ),
-                                        )
+
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -444,19 +452,12 @@ export default function CartPage() {
                                             item: ProductsInCart,
                                           }),
                                         )
+
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
                                         cloth.size = "L"
-                                        localStorage.setItem(
-                                          "clothsData",
-                                          JSON.stringify(clothsData),
-                                        )
-                                        setClothsData(
-                                          JSON.parse(
-                                            localStorage.getItem("clothsData"),
-                                          ),
-                                        )
+
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -489,19 +490,12 @@ export default function CartPage() {
                                             item: ProductsInCart,
                                           }),
                                         )
+
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
                                         cloth.size = "XL"
-                                        localStorage.setItem(
-                                          "clothsData",
-                                          JSON.stringify(clothsData),
-                                        )
-                                        setClothsData(
-                                          JSON.parse(
-                                            localStorage.getItem("clothsData"),
-                                          ),
-                                        )
+
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -534,19 +528,12 @@ export default function CartPage() {
                                             item: ProductsInCart,
                                           }),
                                         )
+
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
                                         cloth.size = "XXL"
-                                        localStorage.setItem(
-                                          "clothsData",
-                                          JSON.stringify(clothsData),
-                                        )
-                                        setClothsData(
-                                          JSON.parse(
-                                            localStorage.getItem("clothsData"),
-                                          ),
-                                        )
+
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -577,6 +564,15 @@ export default function CartPage() {
                                   onClick={(e) => {
                                     e.preventDefault()
                                     e.stopPropagation()
+                                    const item = clothsData.find(
+                                      (Product) => Product.id === product.id,
+                                    )
+                                    if (item) {
+                                      item.addToCart = false
+                                      delete item.quantity
+                                      delete item.size
+                                    }
+
                                     const user = JSON.parse(
                                       localStorage.getItem("user"),
                                     )
@@ -590,29 +586,8 @@ export default function CartPage() {
                                       JSON.stringify(user),
                                     )
 
-                                    const item = clothsData.find(
-                                      (Product) => Product.id === product.id,
-                                    )
-                                    item.addToCart =
-                                      item.addToCart === false ? true : false
-                                    delete item.quantity
-                                    delete item.size
-                                    product.addToCart =
-                                      product.addToCart === false ? true : false
-                                    localStorage.setItem(
-                                      "createOrder",
-                                      JSON.stringify({ item: ProductsInCart }),
-                                    )
-                                    localStorage.setItem(
-                                      "clothsData",
-                                      JSON.stringify(clothsData),
-                                    )
-                                    setClothsData(
-                                      JSON.parse(
-                                        localStorage.getItem("clothsData"),
-                                      ),
-                                    )
                                     setIsRemoveFromCart(true)
+                                    setUpdated(true)
                                   }}
                                 >
                                   Remove From Cart

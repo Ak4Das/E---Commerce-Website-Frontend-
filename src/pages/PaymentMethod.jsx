@@ -283,54 +283,54 @@ export default function PaymentMethods() {
                           className="border border-0 bg-white fs-5 fw-bold"
                           style={{ marginTop: "-5px" }}
                           onClick={(e) => {
+                            // Update the input element value
                             let inputElementValue = Number(
                               e.target.previousElementSibling.value,
                             )
                             e.target.previousElementSibling.value =
                               ++inputElementValue
+
+                            // Update clothsData in memory
                             const item = clothsData.find(
                               (item) => item.id === product.id,
                             )
-                            if (item.addToCart) {
-                              item.quantity = Number(
-                                e.target.previousElementSibling.value,
-                              )
-                              localStorage.setItem(
-                                "clothsData",
-                                JSON.stringify(clothsData),
-                              )
-                              setClothsData(
-                                JSON.parse(localStorage.getItem("clothsData")),
-                              )
-                              const user = JSON.parse(
-                                localStorage.getItem("user"),
-                              )
-                              const clothItem = user.addToCartItems.find(
+                            item.quantity = Number(
+                              e.target.previousElementSibling.value,
+                            )
+
+                            // Update user in Database
+                            const isItemAddedToCart =
+                              user.addToCartItems.filter(
                                 (item) => item.id === product.id,
                               )
-                              if (clothItem) {
-                                clothItem.quantity = Number(
-                                  e.target.previousElementSibling.value,
-                                )
-                                localStorage.setItem(
-                                  "user",
-                                  JSON.stringify(user),
-                                )
-                              }
-                              const createOrder = JSON.parse(
-                                localStorage.getItem("createOrder"),
-                              )
-                              const createOrderItem = createOrder.item.find(
-                                (item) => item.id === product.id,
-                              )
-                              createOrderItem.quantity = Number(
+                            if (isItemAddedToCart.length) {
+                              isItemAddedToCart[0].quantity = Number(
                                 e.target.previousElementSibling.value,
                               )
-                              localStorage.setItem(
-                                "createOrder",
-                                JSON.stringify(createOrder),
+                              localStorage.setItem("user", JSON.stringify(user))
+                            }
+
+                            // Update createOrder in Database
+                            const createOrder = JSON.parse(
+                              localStorage.getItem("createOrder"),
+                            )
+                            const createOrderItem =
+                              createOrder &&
+                              createOrder.item.length &&
+                              createOrder.item.filter(
+                                (product) => product.id === product.id,
+                              )
+                            if (createOrderItem && createOrderItem.length) {
+                              createOrderItem[0].quantity = Number(
+                                e.target.previousElementSibling.value,
                               )
                             }
+                            localStorage.setItem(
+                              "createOrder",
+                              JSON.stringify(createOrder),
+                            )
+
+                            // Update items of current order
                             const Product = products.find(
                               (item) => item.id === product.id,
                             )
@@ -338,6 +338,8 @@ export default function PaymentMethods() {
                               e.target.previousElementSibling.value,
                             )
                             orders[orders.length - 1].item = products
+
+                            // To update the variables present in this page
                             setUpdated(true)
                           }}
                         >

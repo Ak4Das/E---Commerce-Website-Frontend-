@@ -15,7 +15,6 @@ export default function LoginForm() {
       addToCartItems: [],
       addToWishlistItems: [],
     }
-    console.log(user)
     localStorage.setItem("user", JSON.stringify(user))
   }
   return (

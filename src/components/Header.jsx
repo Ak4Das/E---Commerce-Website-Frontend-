@@ -25,6 +25,7 @@ export default function Header({ position, top, zIndex, setSearch }) {
   function handleClick() {
     setSearch(input)
   }
+  const user = JSON.parse(localStorage.getItem("user"))
   return (
     <header style={{ position, top, zIndex }}>
       <nav className="bg-body-tertiary py-2 px-3">
@@ -135,15 +136,42 @@ export default function Header({ position, top, zIndex, setSearch }) {
                   </NavLink>
                 )}
               </li>
-              <li className="nav-item">
+              <li className="nav-item position-relative">
                 <NavLink className="nav-link" to="/wishlist">
-                  <i className="bi bi-heart-fill text-danger fs-5"></i>
+                  <i className="bi bi-heart fs-5"></i>
+                  <div
+                    className="bg-danger d-flex align-items-center justify-content-center text-white fw-medium position-absolute"
+                    style={{
+                      width: "15px",
+                      height: "15px",
+                      borderRadius: "100%",
+                      fontSize: "10px",
+                      bottom: "10px",
+                      left: "10px",
+                    }}
+                  >
+                    {user ? user.addToWishlistItems.length : 0}
+                  </div>
+                  {"   "}
                   <span className="ms-1">Wishlist</span>
                 </NavLink>
               </li>
-              <li className="nav-item">
+              <li className="nav-item position-relative">
                 <NavLink className="nav-link" to="/cart">
                   <i className="bi bi-cart3 fs-5"></i>
+                  <div
+                    className="bg-danger d-flex align-items-center justify-content-center text-white fw-medium position-absolute"
+                    style={{
+                      width: "15px",
+                      height: "15px",
+                      borderRadius: "100%",
+                      fontSize: "10px",
+                      bottom: "29px",
+                      left: "3px",
+                    }}
+                  >
+                    {user ? user.addToCartItems.length : 0}
+                  </div>
                   <span className="ms-1">Cart</span>
                 </NavLink>
               </li>
@@ -160,7 +188,7 @@ export default function Header({ position, top, zIndex, setSearch }) {
                 listStyleType: "none",
               }}
             >
-              <li className="nav-item btn btn-warning">
+              <li className="nav-item btn btn-warning" style={{width:"125px"}}>
                 {userDetails ? (
                   <NavLink
                     to="/user"
@@ -190,15 +218,42 @@ export default function Header({ position, top, zIndex, setSearch }) {
                   </NavLink>
                 )}
               </li>
-              <li className="nav-item btn btn-warning">
+              <li className="nav-item btn btn-warning position-relative" style={{width:"125px"}}>
                 <NavLink className="nav-link" to="/wishlist">
-                  <i className="bi bi-heart-fill text-danger fs-5"></i>
+                  <i className="bi bi-heart fs-5"></i>
+                  <div
+                    className="bg-danger d-flex align-items-center justify-content-center text-white fw-medium position-absolute"
+                    style={{
+                      width: "15px",
+                      height: "15px",
+                      borderRadius: "100%",
+                      fontSize: "10px",
+                      bottom: "10px",
+                      left: "30px",
+                    }}
+                  >
+                    {user ? user.addToWishlistItems.length : 0}
+                  </div>
+                  {"   "}
                   <span className="ms-1">Wishlist</span>
                 </NavLink>
               </li>
-              <li className="nav-item btn btn-warning">
+              <li className="nav-item btn btn-warning position-relative" style={{width:"125px"}}>
                 <NavLink className="nav-link" to="/cart">
                   <i className="bi bi-cart3 fs-5"></i>
+                  <div
+                    className="bg-danger d-flex align-items-center justify-content-center text-white fw-medium position-absolute"
+                    style={{
+                      width: "15px",
+                      height: "15px",
+                      borderRadius: "100%",
+                      fontSize: "10px",
+                      bottom: "25px",
+                      left: "38px",
+                    }}
+                  >
+                    {user ? user.addToCartItems.length : 0}
+                  </div>
                   <span className="ms-1">Cart</span>
                 </NavLink>
               </li>

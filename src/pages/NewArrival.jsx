@@ -12,6 +12,9 @@ export default function NewArrival() {
 
   const user = JSON.parse(localStorage.getItem("user"))
 
+  const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+
+  // To fix clothsData for first render of this page
   const finalClothsData = clothsData.map((cloth) => {
     const isClothPresentInCart =
       user && user.addToCartItems.filter((item) => item.id === cloth.id)
@@ -54,7 +57,6 @@ export default function NewArrival() {
     )
     if (!isAddedToCart.length) {
       // Update user in Database
-      const user = JSON.parse(localStorage.getItem("user"))
       user.addToCartItems.push({
         id: Number(e.target.value),
         quantity: 1,
@@ -73,7 +75,6 @@ export default function NewArrival() {
       }
 
       // Update createOrder in Database
-      const createOrder = JSON.parse(localStorage.getItem("createOrder"))
       const Product =
         createOrder &&
         createOrder.item.length &&
@@ -115,7 +116,6 @@ export default function NewArrival() {
     )
     if (!isAddedToWishlist) {
       // Update user in Database
-      const user = JSON.parse(localStorage.getItem("user"))
       user.addToWishlistItems.push({ id: Number(e.target.value) })
       localStorage.setItem("user", JSON.stringify(user))
 
@@ -128,7 +128,6 @@ export default function NewArrival() {
       }
 
       // Update createOrder in Database
-      const createOrder = JSON.parse(localStorage.getItem("createOrder"))
       const Product =
         createOrder &&
         createOrder.item.length &&

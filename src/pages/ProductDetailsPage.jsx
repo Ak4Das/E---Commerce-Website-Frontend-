@@ -89,7 +89,7 @@ export default function ProductDetailsPage() {
     )
     if (!isAddedToCart.length) {
       user.addToCartItems.push({
-        id: product.id,
+        id: id,
         quantity: quantity,
         size: size,
       })
@@ -117,11 +117,11 @@ export default function ProductDetailsPage() {
     e.preventDefault()
     e.stopPropagation()
 
-    // Update user in Database
     const isAddedToWishlist = user.addToWishlistItems.filter(
-      (item) => item.id === product.id,
+      (item) => item.id === Number(e.target.value),
     )
     if (!isAddedToWishlist.length) {
+      // Update user in Database
       user.addToWishlistItems.push({ id: Number(e.target.value) })
       localStorage.setItem("user", JSON.stringify(user))
 
@@ -149,11 +149,11 @@ export default function ProductDetailsPage() {
     }
   }
 
-  /* Reset the quantity and size value of the product while i enter the page 
-  if this product is not added to cart */
   const isProductAddedToCart =
     user && user.addToCartItems.filter((item) => item.id === id)
 
+  /* Reset the quantity and size value of the product in clothsData 
+  while i enter the page if this product is not added to cart */
   if (isProductAddedToCart) {
     if (!isProductAddedToCart.length) {
       product.quantity = quantity
@@ -422,6 +422,7 @@ export default function ProductDetailsPage() {
                     style={{ width: "30px" }}
                     className="mx-2"
                     onChange={(e) => {
+                      // Update user in Database
                       const user = JSON.parse(localStorage.getItem("user"))
                       const clothItem = user.addToCartItems.find(
                         (item) => item.id === id,
@@ -430,7 +431,10 @@ export default function ProductDetailsPage() {
                         clothItem.quantity = Number(e.target.value)
                         localStorage.setItem("user", JSON.stringify(user))
                       }
+
                       setQuantity(Number(e.target.value))
+
+                      // To update the variables present in this page
                       setUpdated(true)
                     }}
                   />
@@ -451,6 +455,8 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("S")
+
+                      // Update user in Database
                       const isClothAddedToCart = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
@@ -458,7 +464,11 @@ export default function ProductDetailsPage() {
                         isClothAddedToCart.size = "S"
                         localStorage.setItem("user", JSON.stringify(user))
                       }
+
+                      // To update the variables present in this page
                       setUpdated(true)
+
+                      // For interactivity
                       const btn = e.target
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
                       setTimeout(() => {
@@ -472,6 +482,8 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("M")
+
+                      // Update user in Database
                       const isClothAddedToCart = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
@@ -479,7 +491,11 @@ export default function ProductDetailsPage() {
                         isClothAddedToCart.size = "M"
                         localStorage.setItem("user", JSON.stringify(user))
                       }
+
+                      // To update the variables present in this page
                       setUpdated(true)
+
+                      // For interactivity
                       const btn = e.target
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
                       setTimeout(() => {
@@ -493,6 +509,8 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("L")
+
+                      // Update user in Database
                       const isClothAddedToCart = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
@@ -500,7 +518,11 @@ export default function ProductDetailsPage() {
                         isClothAddedToCart.size = "L"
                         localStorage.setItem("user", JSON.stringify(user))
                       }
+
+                      // To update the variables present in this page
                       setUpdated(true)
+
+                      // For interactivity
                       const btn = e.target
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
                       setTimeout(() => {
@@ -514,6 +536,8 @@ export default function ProductDetailsPage() {
                     className="border border-1 me-2 mb-2"
                     onClick={(e) => {
                       setSize("XL")
+
+                      // Update user in Database
                       const isClothAddedToCart = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
@@ -521,7 +545,11 @@ export default function ProductDetailsPage() {
                         isClothAddedToCart.size = "XL"
                         localStorage.setItem("user", JSON.stringify(user))
                       }
+
+                      // To update the variables present in this page
                       setUpdated(true)
+
+                      // For interactivity
                       const btn = e.target
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
                       setTimeout(() => {
@@ -535,6 +563,8 @@ export default function ProductDetailsPage() {
                     className="border border-1 mb-2"
                     onClick={(e) => {
                       setSize("XXL")
+
+                      // Update user in Database
                       const isClothAddedToCart = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
@@ -542,7 +572,11 @@ export default function ProductDetailsPage() {
                         isClothAddedToCart.size = "XXL"
                         localStorage.setItem("user", JSON.stringify(user))
                       }
+
+                      // To update the variables present in this page
                       setUpdated(true)
+
+                      // For interactivity
                       const btn = e.target
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
                       setTimeout(() => {

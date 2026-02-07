@@ -34,12 +34,17 @@ export default function CartPage() {
   if (!isRemoveFromCart) {
     if (
       createOrderInDatabase &&
-      JSON.parse(localStorage.getItem("createOrder")).item &&
-      JSON.parse(localStorage.getItem("createOrder")).item.length
+      createOrderInDatabase.item &&
+      createOrderInDatabase.item.length
     ) {
-      let pass = false
+      let pass = true
       for (const id of idOfCreateOrderInDatabase) {
-        pass = idOfProductsInCart && idOfProductsInCart.includes(id)
+        if (idOfProductsInCart && idOfProductsInCart.includes(id)) {
+          pass = true
+        } else {
+          pass = false
+          break
+        }
       }
       if (!pass) {
         localStorage.setItem(
@@ -63,12 +68,10 @@ export default function CartPage() {
     }
   }
 
+  // Here i get createOrder directly from the database to get the updated data
   const ProductsInCart =
-    JSON.parse(localStorage.getItem("createOrder")).item &&
-    JSON.parse(localStorage.getItem("createOrder")).item.length &&
-    JSON.parse(localStorage.getItem("createOrder")).item.filter(
-      (product) => product.addToCart === true,
-    )
+    JSON.parse(localStorage.getItem("createOrder")) &&
+    JSON.parse(localStorage.getItem("createOrder")).item
 
   const FinalProductsInCart = search
     ? ProductsInCart.filter((product) =>
@@ -88,7 +91,6 @@ export default function CartPage() {
     )
     if (!isAddedToWishlist.length) {
       // Update user in Database
-      const user = JSON.parse(localStorage.getItem("user"))
       user.addToWishlistItems.push({ id: Number(e.target.value) })
       localStorage.setItem("user", JSON.stringify(user))
 
@@ -101,11 +103,10 @@ export default function CartPage() {
       }
 
       // Update createOrder in Database
-      const createOrder = JSON.parse(localStorage.getItem("createOrder"))
       const Product =
-        createOrder &&
-        createOrder.item.length &&
-        createOrder.item.filter(
+        createOrderInDatabase &&
+        createOrderInDatabase.item.length &&
+        createOrderInDatabase.item.filter(
           (product) => product.id === Number(e.target.value),
         )
       if (Product && Product.length) {
@@ -113,7 +114,10 @@ export default function CartPage() {
       }
       Product &&
         Product.length &&
-        localStorage.setItem("createOrder", JSON.stringify(createOrder))
+        localStorage.setItem(
+          "createOrder",
+          JSON.stringify(createOrderInDatabase),
+        )
 
       // For interactivity
       const btn = e.target
@@ -131,27 +135,7 @@ export default function CartPage() {
     }
   }
 
-  // Add quantity property to each product in createOrder item
-  function newProduct(product) {
-    product.quantity = 1
-    return product
-  }
-  const isQuantityPresent =
-    ProductsInCart && ProductsInCart.filter((product) => product.quantity)
-  if (!isUpdated) {
-    if (ProductsInCart && ProductsInCart.length) {
-      if (ProductsInCart.length !== isQuantityPresent.length) {
-        const finalProductsInCart = ProductsInCart.map((product) =>
-          product.quantity ? product : newProduct(product),
-        )
-        const createOrder = { item: finalProductsInCart }
-        localStorage.setItem("createOrder", JSON.stringify(createOrder))
-      } else {
-        const createOrder = { item: ProductsInCart }
-        localStorage.setItem("createOrder", JSON.stringify(createOrder))
-      }
-    }
-  } else {
+  if (isUpdated) {
     setIsRemoveFromCart(false)
     setUpdated(false)
   }
@@ -253,14 +237,19 @@ export default function CartPage() {
                                       className="rounded-circle border border-1"
                                       style={{ width: "30px", height: "30px" }}
                                       onClick={(e) => {
+                                        // To stop Event Bubbling
                                         e.preventDefault()
                                         e.stopPropagation()
+
                                         let inputElementValue = Number(
                                           e.target.nextElementSibling.value,
                                         )
                                         if (inputElementValue > 1) {
+                                          // Update the input element value
                                           e.target.nextElementSibling.value =
                                             --inputElementValue
+
+                                          // Update createOrder in Database
                                           product.quantity = Number(
                                             e.target.nextElementSibling.value,
                                           )
@@ -271,6 +260,7 @@ export default function CartPage() {
                                             }),
                                           )
 
+                                          // Update user in Database
                                           const clothItem =
                                             user.addToCartItems.find(
                                               (item) => item.id === product.id,
@@ -283,6 +273,7 @@ export default function CartPage() {
                                             JSON.stringify(user),
                                           )
 
+                                          // Update clothsData in memory
                                           const cloth = clothsData.find(
                                             (cloth) => cloth.id === product.id,
                                           )
@@ -290,6 +281,7 @@ export default function CartPage() {
                                             e.target.nextElementSibling.value,
                                           )
 
+                                          // To update the variables present in this page
                                           setUpdated(true)
                                         }
                                       }}
@@ -315,13 +307,18 @@ export default function CartPage() {
                                       className="rounded-circle border border-1"
                                       style={{ width: "30px", height: "30px" }}
                                       onClick={(e) => {
+                                        // To stop Event Bubbling
                                         e.preventDefault()
                                         e.stopPropagation()
+
+                                        // Update the input element value
                                         let inputElementValue = Number(
                                           e.target.previousElementSibling.value,
                                         )
                                         e.target.previousElementSibling.value =
                                           ++inputElementValue
+
+                                        // Update createOrder in Database
                                         product.quantity = Number(
                                           e.target.previousElementSibling.value,
                                         )
@@ -332,6 +329,7 @@ export default function CartPage() {
                                           }),
                                         )
 
+                                        // Update user in Database
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -344,6 +342,7 @@ export default function CartPage() {
                                           JSON.stringify(user),
                                         )
 
+                                        // Update clothsData in memory
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
@@ -351,6 +350,7 @@ export default function CartPage() {
                                           e.target.previousElementSibling.value,
                                         )
 
+                                        // To update the variables present in this page
                                         setUpdated(true)
                                       }}
                                     >
@@ -367,8 +367,11 @@ export default function CartPage() {
                                     <button
                                       className="border border-1 me-2 mb-2"
                                       onClick={(e) => {
+                                        // To stop Event Bubbling
                                         e.preventDefault()
                                         e.stopPropagation()
+
+                                        // Update createOrder in Database
                                         product.size = "S"
                                         localStorage.setItem(
                                           "createOrder",
@@ -377,11 +380,13 @@ export default function CartPage() {
                                           }),
                                         )
 
+                                        // Update clothsData in memory
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
                                         cloth.size = "S"
 
+                                        // Update user in Database
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -391,7 +396,11 @@ export default function CartPage() {
                                           "user",
                                           JSON.stringify(user),
                                         )
+
+                                        // To update the variables present in this page
                                         setUpdated(true)
+
+                                        // For interactivity
                                         const btn = e.target
                                         btn.innerHTML =
                                           '<i class="bi bi-check2"></i>'
@@ -405,8 +414,11 @@ export default function CartPage() {
                                     <button
                                       className="border border-1 me-2 mb-2"
                                       onClick={(e) => {
+                                        // To stop Event Bubbling
                                         e.preventDefault()
                                         e.stopPropagation()
+
+                                        // Update createOrder in Database
                                         product.size = "M"
                                         localStorage.setItem(
                                           "createOrder",
@@ -415,11 +427,13 @@ export default function CartPage() {
                                           }),
                                         )
 
+                                        // Update clothsData in memory
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
                                         cloth.size = "M"
 
+                                        // Update user in Database
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -429,7 +443,11 @@ export default function CartPage() {
                                           "user",
                                           JSON.stringify(user),
                                         )
+
+                                        // To update the variables present in this page
                                         setUpdated(true)
+
+                                        // For interactivity
                                         const btn = e.target
                                         btn.innerHTML =
                                           '<i class="bi bi-check2"></i>'
@@ -443,8 +461,11 @@ export default function CartPage() {
                                     <button
                                       className="border border-1 me-2 mb-2"
                                       onClick={(e) => {
+                                        // To stop Event Bubbling
                                         e.preventDefault()
                                         e.stopPropagation()
+
+                                        // Update createOrder in Database
                                         product.size = "L"
                                         localStorage.setItem(
                                           "createOrder",
@@ -453,11 +474,13 @@ export default function CartPage() {
                                           }),
                                         )
 
+                                        // Update clothsData in memory
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
                                         cloth.size = "L"
 
+                                        // Update user in Database
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -467,7 +490,11 @@ export default function CartPage() {
                                           "user",
                                           JSON.stringify(user),
                                         )
+
+                                        // To update the variables present in this page
                                         setUpdated(true)
+
+                                        // For interactivity
                                         const btn = e.target
                                         btn.innerHTML =
                                           '<i class="bi bi-check2"></i>'
@@ -481,8 +508,11 @@ export default function CartPage() {
                                     <button
                                       className="border border-1 me-2 mb-2"
                                       onClick={(e) => {
+                                        // To stop Event Bubbling
                                         e.preventDefault()
                                         e.stopPropagation()
+
+                                        // Update createOrder in Database
                                         product.size = "XL"
                                         localStorage.setItem(
                                           "createOrder",
@@ -491,11 +521,13 @@ export default function CartPage() {
                                           }),
                                         )
 
+                                        // Update clothsData in memory
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
                                         cloth.size = "XL"
 
+                                        // Update user in Database
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -505,7 +537,11 @@ export default function CartPage() {
                                           "user",
                                           JSON.stringify(user),
                                         )
+
+                                        // To update the variables present in this page
                                         setUpdated(true)
+
+                                        // For interactivity
                                         const btn = e.target
                                         btn.innerHTML =
                                           '<i class="bi bi-check2"></i>'
@@ -519,8 +555,11 @@ export default function CartPage() {
                                     <button
                                       className="border border-1 mb-2"
                                       onClick={(e) => {
+                                        // To stop Event Bubbling
                                         e.preventDefault()
                                         e.stopPropagation()
+
+                                        // Update createOrder in Database
                                         product.size = "XXL"
                                         localStorage.setItem(
                                           "createOrder",
@@ -529,11 +568,13 @@ export default function CartPage() {
                                           }),
                                         )
 
+                                        // Update clothsData in memory
                                         const cloth = clothsData.find(
                                           (cloth) => cloth.id === product.id,
                                         )
                                         cloth.size = "XXL"
 
+                                        // Update user in Database
                                         const clothItem =
                                           user.addToCartItems.find(
                                             (item) => item.id === product.id,
@@ -543,7 +584,11 @@ export default function CartPage() {
                                           "user",
                                           JSON.stringify(user),
                                         )
+
+                                        // To update the variables present in this page
                                         setUpdated(true)
+
+                                        // For interactivity
                                         const btn = e.target
                                         btn.innerHTML =
                                           '<i class="bi bi-check2"></i>'
@@ -562,8 +607,11 @@ export default function CartPage() {
                                   className="btn btn-secondary w-100 my-2"
                                   value={product.id}
                                   onClick={(e) => {
+                                    // To stop Event Bubbling
                                     e.preventDefault()
                                     e.stopPropagation()
+
+                                    // Update clothsData in memory
                                     const item = clothsData.find(
                                       (Product) => Product.id === product.id,
                                     )
@@ -573,6 +621,7 @@ export default function CartPage() {
                                       delete item.size
                                     }
 
+                                    // Update user in Database
                                     const user = JSON.parse(
                                       localStorage.getItem("user"),
                                     )

@@ -133,6 +133,7 @@ export default function ProductListingPage() {
     }
   }
 
+  // To fix clothsData for first render of this page
   const finalClothsData = clothsData.map((cloth) => {
     const isClothPresentInCart =
       user && user.addToCartItems.filter((item) => item.id === cloth.id)

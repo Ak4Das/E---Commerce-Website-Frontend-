@@ -11,6 +11,8 @@ export default function WishlistPage() {
 
   const user = JSON.parse(localStorage.getItem("user"))
 
+  const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+
   function moveToCart(e) {
     // To stop Event Bubbling
     e.preventDefault()
@@ -27,7 +29,6 @@ export default function WishlistPage() {
     }
 
     // Update createOrder in Database
-    const createOrder = JSON.parse(localStorage.getItem("createOrder"))
     const createOrderItem =
       createOrder.item.length &&
       createOrder.item.find((item) => item.id === Number(e.target.value))
@@ -36,13 +37,9 @@ export default function WishlistPage() {
         (item) => item.id === createOrderItem.id,
       )
       if (isCreateOrderItemAddedToCart.length) {
-        createOrderItem.addToCart = true
         createOrderItem.quantity = isCreateOrderItemAddedToCart[0].quantity
           ? isCreateOrderItemAddedToCart[0].quantity + 1
           : 2
-        createOrderItem.size = isCreateOrderItemAddedToCart[0].size
-          ? isCreateOrderItemAddedToCart[0].size
-          : ""
       } else {
         createOrderItem.addToCart = true
         createOrderItem.quantity = 1
@@ -100,7 +97,7 @@ export default function WishlistPage() {
       (Product) => Product.id === Number(e.target.value),
     )
     if (item) {
-      item.addToWishList = false
+      delete item.addToWishList
     }
 
     // Update user in Database
@@ -111,7 +108,6 @@ export default function WishlistPage() {
     localStorage.setItem("user", JSON.stringify(user))
 
     // Update createOrder in Database
-    const createOrder = JSON.parse(localStorage.getItem("createOrder"))
     const Product =
       createOrder &&
       createOrder.item.length &&
@@ -119,7 +115,7 @@ export default function WishlistPage() {
         (product) => product.id === Number(e.target.value),
       )
     if (Product && Product.length) {
-      Product[0].addToWishList = false
+      delete Product[0].addToWishList
     }
     Product &&
       Product.length &&
@@ -129,6 +125,7 @@ export default function WishlistPage() {
     setUpdated(true)
   }
 
+  // To fix clothsData for first render of this page
   const finalClothsData = clothsData.map((cloth) => {
     const isClothPresentInCart =
       user && user.addToCartItems.filter((item) => item.id === cloth.id)

@@ -272,6 +272,41 @@ export default function PaymentMethods() {
                           style={{ width: "30px", outline: "none" }}
                           onChange={(e) => {
                             let inputElementValue = Number(e.target.value)
+                            // Update clothsData in memory
+                            const item = clothsData.find(
+                              (item) => item.id === product.id,
+                            )
+                            item.quantity = inputElementValue
+
+                            // Update user in Database
+                            const isItemAddedToCart =
+                              user.addToCartItems.filter(
+                                (item) => item.id === product.id,
+                              )
+                            if (isItemAddedToCart.length) {
+                              isItemAddedToCart[0].quantity = inputElementValue
+                              localStorage.setItem("user", JSON.stringify(user))
+                            }
+
+                            // Update createOrder in Database
+                            const createOrder = JSON.parse(
+                              localStorage.getItem("createOrder"),
+                            )
+                            const createOrderItem =
+                              createOrder &&
+                              createOrder.item.length &&
+                              createOrder.item.filter(
+                                (product) => product.id === product.id,
+                              )
+                            if (createOrderItem && createOrderItem.length) {
+                              createOrderItem[0].quantity = inputElementValue
+                            }
+                            localStorage.setItem(
+                              "createOrder",
+                              JSON.stringify(createOrder),
+                            )
+
+                            // Update items of current order
                             const Product = products.find(
                               (item) => item.id === product.id,
                             )

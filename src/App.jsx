@@ -41,9 +41,9 @@ import category from "./components/Category"
 
 export default function App() {
   const [search, setSearch] = useState("")
-  const [show, hide] = useState(true)
+  const [show, setShow] = useState(true)
   setTimeout(() => {
-    hide(false)
+    setShow(false)
   }, 1500)
 
   const filteredCategory = search

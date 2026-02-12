@@ -11,11 +11,9 @@ export default function OrderDetails() {
   const id = Number(useParams().id)
   const orders = JSON.parse(localStorage.getItem("orders"))
 
+  /* isUpdated useState is used only to update the variables on this page 
+  while user will cancel any order */
   const [isUpdated, setUpdated] = useState(false)
-
-  if (isUpdated) {
-    setUpdated(false)
-  }
 
   const order = orders.find((order) => order.id === id)
 
@@ -47,6 +45,10 @@ export default function OrderDetails() {
     const Orders = order && orders.filter((order) => order.id !== id)
     localStorage.setItem("orders", JSON.stringify(Orders))
     setUpdated(true)
+  }
+
+  if (isUpdated) {
+    setUpdated(false)
   }
 
   return (

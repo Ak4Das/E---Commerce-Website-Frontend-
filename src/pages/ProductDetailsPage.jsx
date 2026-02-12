@@ -15,10 +15,12 @@ export default function ProductDetailsPage() {
   const [quantity, setQuantity] = useState(1)
   const [size, setSize] = useState("")
   const [isUpdated, setUpdated] = useState(false)
-  const id = Number(useParams().id)
-  const { clothsData, setClothsData } = GetClothsData()
   const [time, setTime] = useState("")
   const [isFreeDeliveryAvailable, setFreeDelivery] = useState(false)
+
+  const id = Number(useParams().id)
+  
+  const { clothsData, setClothsData } = GetClothsData()
 
   const product = clothsData.find((product) => product.id === id)
 
@@ -434,7 +436,7 @@ export default function ProductDetailsPage() {
 
                       setQuantity(Number(e.target.value))
 
-                      // To update the variables present in this page
+                      // To update clothsData, createOrder and the variables present in this page
                       setUpdated(true)
                     }}
                   />
@@ -465,7 +467,7 @@ export default function ProductDetailsPage() {
                         localStorage.setItem("user", JSON.stringify(user))
                       }
 
-                      // To update the variables present in this page
+                      // To update clothsData, createOrder and the variables present in this page
                       setUpdated(true)
 
                       // For interactivity
@@ -492,7 +494,7 @@ export default function ProductDetailsPage() {
                         localStorage.setItem("user", JSON.stringify(user))
                       }
 
-                      // To update the variables present in this page
+                      // To update clothsData, createOrder and the variables present in this page
                       setUpdated(true)
 
                       // For interactivity
@@ -519,7 +521,7 @@ export default function ProductDetailsPage() {
                         localStorage.setItem("user", JSON.stringify(user))
                       }
 
-                      // To update the variables present in this page
+                      // To update clothsData, createOrder and the variables present in this page
                       setUpdated(true)
 
                       // For interactivity
@@ -546,7 +548,7 @@ export default function ProductDetailsPage() {
                         localStorage.setItem("user", JSON.stringify(user))
                       }
 
-                      // To update the variables present in this page
+                      // To update clothsData, createOrder and the variables present in this page
                       setUpdated(true)
 
                       // For interactivity
@@ -573,7 +575,7 @@ export default function ProductDetailsPage() {
                         localStorage.setItem("user", JSON.stringify(user))
                       }
 
-                      // To update the variables present in this page
+                      // To update clothsData, createOrder and the variables present in this page
                       setUpdated(true)
 
                       // For interactivity

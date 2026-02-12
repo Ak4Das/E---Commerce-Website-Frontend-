@@ -12,10 +12,15 @@ export default function ProductListingPage() {
   console.log(search)
   const { category } = useParams()
   const { clothsData, setClothsData } = GetClothsData()
+
+  // price, rating, sortBy, Category these useStates is used for filter
   const [price, setPrice] = useState(0)
   const [rating, setRating] = useState(0)
   const [sortBy, setSortBy] = useState("")
   const [Category, setCategory] = useState("")
+
+  /* isUpdate useState is used to if user add to cart a item or add to wishlist a item 
+  then variables present on this page will reinitialize */
   const [isUpdate, setUpdate] = useState(false)
 
   const user = JSON.parse(localStorage.getItem("user"))

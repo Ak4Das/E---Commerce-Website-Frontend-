@@ -7,6 +7,9 @@ import { useState } from "react"
 export default function WishlistPage() {
   const { clothsData, setClothsData } = GetClothsData()
   const [search, setSearch] = useState("")
+
+  /* isUpdated useState is used to if user press moveToCart btn  or  removeFromWishlist btn 
+  then variables present on this page will reinitialize */
   const [isUpdated, setUpdated] = useState(false)
 
   const user = JSON.parse(localStorage.getItem("user"))

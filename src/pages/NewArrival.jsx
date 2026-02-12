@@ -8,6 +8,9 @@ import { useState } from "react"
 export default function NewArrival() {
   const [search, setSearch] = useState("")
   const { clothsData, setClothsData } = GetClothsData()
+
+  /* isUpdate useState is used to if user add to cart a item or add to wishlist a item 
+  then variables present on this page will reinitialize */
   const [isUpdate, setUpdate] = useState(false)
 
   const user = JSON.parse(localStorage.getItem("user"))

@@ -12,6 +12,9 @@ export default function SaleProducts() {
   const { commonCategory } = useParams()
   const { clothsData, setClothsData } = GetClothsData()
   const [gender, setGender] = useState("")
+
+  /* isUpdate useState is used to if user add to cart a item or add to wishlist a item 
+  then variables present on this page will reinitialize */
   const [isUpdate, setUpdate] = useState(false)
 
   const user = JSON.parse(localStorage.getItem("user"))

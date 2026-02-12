@@ -12,18 +12,40 @@ export default function PaymentMethods() {
   const { clothsData, setClothsData } = GetClothsData()
   const [search, setSearch] = useState("")
   console.log(search)
+
+  /* isCard useState is used only to set background color of card option if user will select 
+  card option for payment */
+  const [isCard, setIsCard] = useState(false)
+
+  /* isNetBanking useState is used only to set background color of Net Banking option 
+  if user will select Net Banking option for payment */
+  const [isNetBanking, setIsNetBanking] = useState(false)
+
+  /* isCashOnDelivery is used only to know that user select cash on delivery option or not 
+  if yes then set background color of cash on delivery option, add COD charge etc.  */
+  const [isCashOnDelivery, setIsCashOnDelivery] = useState(false)
+
+  /* isVisible useState is used only to manage if user select card option for payment 
+  then only he/she can see the Add a new credit or debit card option */
+  const [isVisible, setVisible] = useState(false)
+
+  /* showCard useState is used only to if user wants to add new card then the floating form to 
+  add a new credit or debit card will appear on the page */
+  const [showCard, setShowCard] = useState(false)
+
+  // paymentMethod useState is used only to retain the payment option which user was selected
+  const [paymentMethod, setPaymentMethod] = useState("")
+
+  /* isUpdated useState is used to rerender the page if quantity will change 
+  to update the variables present on this page */
+  const [updated, setUpdated] = useState(false)
+
   const user = JSON.parse(localStorage.getItem("user"))
   const address =
     user &&
     user.address.length !== 0 &&
     user.address.find((address) => address.selected)
-  const [isCard, setIsCard] = useState(false)
-  const [isNetBanking, setIsNetBanking] = useState(false)
-  const [isCashOnDelivery, setIsCashOnDelivery] = useState(false)
-  const [isVisible, setVisible] = useState(false)
-  const [showCard, setShowCard] = useState(false)
-  const [paymentMethod, setPaymentMethod] = useState("")
-  const [updated, setUpdated] = useState(false)
+
   const [orders, setOrders] = useState(
     JSON.parse(localStorage.getItem("orders")) || [],
   )

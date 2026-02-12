@@ -11,11 +11,18 @@ import SearchInPage from "../components/SearchInPage"
 export default function UserProfile() {
   const [search, setSearch] = useState("")
   console.log(search)
+
+  /* visible useState is used to if user press change profile image btn then 
+  the floating form to change profile image will open and if user will press the cross btn 
+  on the floating page then the floating form will disappear from the page */
   const [visible, setVisible] = useState(false)
+  
   const [profileImage, setProfileImage] = useState("")
   const [edit, setEdit] = useState(false)
   const [imageUrl, setImageUrl] = useState("")
   const [imagePath, setImagePath] = useState("")
+
+  // file useState is used to store user's selected image file
   const [file, setFile] = useState({})
 
   let userDetails = JSON.parse(localStorage.getItem("user"))
@@ -195,13 +202,13 @@ export default function UserProfile() {
                     className="btn floatingCardBtn border border-0 rounded-pill p-2 editImageUrl"
                     onClick={editProfileImage}
                   >
-                    <i class="bi bi-pen"></i> {edit ? "Edit" : "Change"}
+                    <i className="bi bi-pen"></i> {edit ? "Edit" : "Change"}
                   </button>
                   <button
                     className="btn floatingCardBtn border border-0 rounded-pill p-2 removeImageUrl"
                     onClick={removeProfileImage}
                   >
-                    <i class="bi bi-trash"></i> Remove
+                    <i className="bi bi-trash"></i> Remove
                   </button>
                 </div>
               </section>

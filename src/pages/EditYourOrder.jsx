@@ -11,21 +11,47 @@ export default function EditYourOrder() {
   const orderId = Number(useParams().orderId)
   const [search, setSearch] = useState("")
   console.log(search)
+
+  /* isUpdated useState is used to rerender the page if quantity will change 
+  to update the variables present on this page */
   const [isUpdated, setUpdated] = useState(false)
+
+  // deductPrice useState is used only to manage calculation on this page
   const [deductPrice, setDeductPrice] = useState(0)
+
+  /* changePaymentMethod useState is used only to if user wants to change payment method then 
+  select payment method will render on the page */
+  const [changePaymentMethod, setChangePaymentMethod] = useState(false)
+
+  /* isCard useState is used only to set background color of card option if user will select 
+  card option for payment */
+  const [isCard, setIsCard] = useState(false)
+
+  /* isVisible useState is used only to manage if user select card option for payment 
+  then only he/she can see the Add a new credit or debit card option */
+  const [isVisible, setVisible] = useState(false)
+
+  /* showCard useState is used only to if user wants to add new card then the floating form to 
+  add a new credit or debit card will appear on the page */
+  const [showCard, setShowCard] = useState(false)
+
+  /* isNetBanking useState is used only to set background color of Net Banking option 
+  if user will select Net Banking option for payment */
+  const [isNetBanking, setIsNetBanking] = useState(false)
+
+  /* isCashOnDelivery useState is used only to set background color of cash on delivery option 
+  if user will select cash on delivery option for payment */
+  const [isCashOnDelivery, setIsCashOnDelivery] = useState(false)
+
+  // paymentMethod useState is used only to retain the payment option which user was selected
+  const [paymentMethod, setPaymentMethod] = useState("")
+
+  // deliveryCharge useState is used only to retain the new delivery charge if user delete a item
+  const [deliveryCharge, setDeliveryCharge] = useState(0)
 
   const orders = JSON.parse(localStorage.getItem("orders")) || []
 
   const orderToBeEdit = orders.find((order) => order.id === orderId)
-
-  const [changePaymentMethod, setChangePaymentMethod] = useState(false)
-  const [isCard, setIsCard] = useState(false)
-  const [isVisible, setVisible] = useState(false)
-  const [showCard, setShowCard] = useState(false)
-  const [isNetBanking, setIsNetBanking] = useState(false)
-  const [isCashOnDelivery, setIsCashOnDelivery] = useState(false)
-  const [paymentMethod, setPaymentMethod] = useState("")
-  const [deliveryCharge, setDeliveryCharge] = useState(0)
 
   const [products, setProducts] = useState(orderToBeEdit && orderToBeEdit.item)
 

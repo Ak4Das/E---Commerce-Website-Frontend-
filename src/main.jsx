@@ -19,6 +19,7 @@ import NewArrival from "./pages/NewArrival.jsx"
 import DiwaliSale from "./pages/DiwaliSale.jsx"
 import SaleProducts from "./pages/SaleProducts.jsx"
 import EditYourOrder from "./pages/EditYourOrder.jsx"
+import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -48,6 +49,7 @@ createRoot(document.getElementById("root")).render(
   <ClothsContextProvider>
     <StrictMode>
       <RouterProvider router={router} />
+      <ToastContainer />
     </StrictMode>
   </ClothsContextProvider>
 )

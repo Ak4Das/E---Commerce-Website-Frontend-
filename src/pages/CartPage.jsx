@@ -3,6 +3,7 @@ import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import SearchInPage from "../components/SearchInPage"
+import { toast } from "react-toastify"
 
 export default function CartPage() {
   const [search, setSearch] = useState("")
@@ -27,6 +28,7 @@ export default function CartPage() {
   const createOrderInDatabase = JSON.parse(localStorage.getItem("createOrder"))
   const idOfCreateOrderInDatabase =
     createOrderInDatabase &&
+    createOrderInDatabase.item &&
     createOrderInDatabase.item.map((product) => product.id)
 
   /* The Following if statement Maintaining createOrder because entire logic written 
@@ -690,7 +692,11 @@ export default function CartPage() {
               {!user && (
                 <button
                   className="btn btn-primary w-100 my-2"
-                  onClick={() => alert("Please login to your account")}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    toast("Please login to your account")
+                  }}
                 >
                   Place Order
                 </button>
@@ -698,7 +704,11 @@ export default function CartPage() {
               {user && !user.address.length && (
                 <button
                   className="btn btn-primary w-100 my-2"
-                  onClick={() => alert("Please add your address")}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    toast("Please add your address")
+                  }}
                 >
                   Place Order
                 </button>
@@ -722,10 +732,10 @@ export default function CartPage() {
                       className="btn btn-primary w-100"
                       onClick={() =>
                         ProductsInCart
-                          ? alert(
+                          ? toast(
                               "Please select size of all the products present in the cart",
                             )
-                          : alert("There is no item in cart")
+                          : toast("There is no item in cart")
                       }
                     >
                       Place Order

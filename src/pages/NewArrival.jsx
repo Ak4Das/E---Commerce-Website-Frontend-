@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 import { useState } from "react"
+import { toast } from "react-toastify"
 
 export default function NewArrival() {
   const [search, setSearch] = useState("")
@@ -113,7 +114,7 @@ export default function NewArrival() {
     // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
-    
+
     const isAddedToWishlist = user.addToWishlistItems.find(
       (item) => item.id === Number(e.target.value),
     )
@@ -234,9 +235,11 @@ export default function NewArrival() {
                           {!user ? (
                             <button
                               className="btn btn-secondary w-100 mb-1 addToCart"
-                              onClick={() =>
-                                alert("Please login to your account")
-                              }
+                              onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                toast("Please login to your account")
+                              }}
                             >
                               {product.addToCart
                                 ? "Added To Cart"
@@ -258,9 +261,11 @@ export default function NewArrival() {
                           {!user ? (
                             <button
                               className="btn btn-outline-secondary w-100 saveToWishlist"
-                              onClick={() =>
-                                alert("Please login to your account")
-                              }
+                              onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                toast("Please login to your account")
+                              }}
                             >
                               {product.addToWishList
                                 ? "Added To Wishlist"

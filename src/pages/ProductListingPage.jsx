@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
+import { toast } from "react-toastify"
 
 export default function ProductListingPage() {
   const [search, setSearch] = useState("")
@@ -327,9 +328,11 @@ export default function ProductListingPage() {
                           {!user ? (
                             <button
                               className="btn btn-secondary w-100 mb-1 addToCart"
-                              onClick={() =>
-                                alert("Please login to your account")
-                              }
+                              onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                toast("Please login to your account")
+                              }}
                             >
                               {product.addToCart
                                 ? "Added To Cart"
@@ -351,9 +354,11 @@ export default function ProductListingPage() {
                           {!user ? (
                             <button
                               className="btn btn-outline-secondary w-100 saveToWishlist"
-                              onClick={() =>
-                                alert("Please login to your account")
-                              }
+                              onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                toast("Please login to your account")
+                              }}
                             >
                               {product.addToWishList
                                 ? "Added To Wishlist"

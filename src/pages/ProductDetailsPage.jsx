@@ -8,6 +8,7 @@ import { useState } from "react"
 import location from "../assets/location.png"
 import { useEffect } from "react"
 import SearchInPage from "../components/SearchInPage"
+import { toast } from "react-toastify"
 
 export default function ProductDetailsPage() {
   const [search, setSearch] = useState("")
@@ -19,7 +20,7 @@ export default function ProductDetailsPage() {
   const [isFreeDeliveryAvailable, setFreeDelivery] = useState(false)
 
   const id = Number(useParams().id)
-  
+
   const { clothsData, setClothsData } = GetClothsData()
 
   const product = clothsData.find((product) => product.id === id)
@@ -293,7 +294,7 @@ export default function ProductDetailsPage() {
                 {!user && (
                   <button
                     className="btn btn-primary w-100 my-2"
-                    onClick={() => alert("Please login to your account")}
+                    onClick={() => toast("Please login to your account")}
                   >
                     Buy Now
                   </button>
@@ -301,7 +302,7 @@ export default function ProductDetailsPage() {
                 {user && !user.address.length && (
                   <button
                     className="btn btn-primary w-100 my-2"
-                    onClick={() => alert("Please add your address")}
+                    onClick={() => toast("Please add your address")}
                   >
                     Buy Now
                   </button>
@@ -309,7 +310,7 @@ export default function ProductDetailsPage() {
                 {user && user.address.length !== 0 && !size && (
                   <button
                     className="btn btn-primary w-100 my-2"
-                    onClick={() => alert("Please select the product size")}
+                    onClick={() => toast("Please select the product size")}
                   >
                     Buy Now
                   </button>
@@ -322,12 +323,11 @@ export default function ProductDetailsPage() {
                     Buy Now{" "}
                   </Link>
                 )}
-                <br />
                 <div>
                   {!user ? (
                     <button
                       className="btn btn-secondary w-100 mb-2"
-                      onClick={() => alert("Please login to your account")}
+                      onClick={() => toast("Please login to your account")}
                     >
                       {product.addToCart ? "Added To Cart" : "Add To cart"}
                     </button>
@@ -345,7 +345,7 @@ export default function ProductDetailsPage() {
                   {!user ? (
                     <button
                       className="btn btn-outline-secondary w-100 mb-2"
-                      onClick={() => alert("Please login to your account")}
+                      onClick={() => toast("Please login to your account")}
                     >
                       {product.addToWishList
                         ? "Added To Wishlist"
@@ -681,7 +681,7 @@ export default function ProductDetailsPage() {
                 {!user && (
                   <button
                     className="btn btn-primary w-100 my-2"
-                    onClick={() => alert("Please login to your account")}
+                    onClick={() => toast("Please login to your account")}
                   >
                     Buy Now
                   </button>
@@ -689,7 +689,7 @@ export default function ProductDetailsPage() {
                 {user && !user.address.length && (
                   <button
                     className="btn btn-primary w-100 my-2"
-                    onClick={() => alert("Please add your address")}
+                    onClick={() => toast("Please add your address")}
                   >
                     Buy Now
                   </button>
@@ -697,7 +697,7 @@ export default function ProductDetailsPage() {
                 {user && user.address.length !== 0 && !size && (
                   <button
                     className="btn btn-primary w-100 my-2"
-                    onClick={() => alert("Please select the product size")}
+                    onClick={() => toast("Please select the product size")}
                   >
                     Buy Now
                   </button>
@@ -715,7 +715,7 @@ export default function ProductDetailsPage() {
                   {!user ? (
                     <button
                       className="btn btn-secondary w-100 mb-2"
-                      onClick={() => alert("Please login to your account")}
+                      onClick={() => toast("Please login to your account")}
                     >
                       {product.addToCart ? "Added To Cart" : "Add To cart"}
                     </button>
@@ -733,7 +733,7 @@ export default function ProductDetailsPage() {
                   {!user ? (
                     <button
                       className="btn btn-outline-secondary w-100 mb-2"
-                      onClick={() => alert("Please login to your account")}
+                      onClick={() => toast("Please login to your account")}
                     >
                       {product.addToWishList
                         ? "Added To Wishlist"
@@ -788,9 +788,7 @@ export default function ProductDetailsPage() {
                     <a
                       className="d-block text-decoration-underline"
                       style={{ cursor: "pointer" }}
-                      onClick={() =>
-                        alert("Please select the product size First")
-                      }
+                      onClick={() => toast("Please select the product size")}
                     >
                       Details
                     </a>
@@ -841,7 +839,7 @@ export default function ProductDetailsPage() {
                 {!user && (
                   <button
                     className="btn btn-warning w-100 my-2"
-                    onClick={() => alert("Please login to your account")}
+                    onClick={() => toast("Please login to your account")}
                   >
                     Buy Now
                   </button>
@@ -849,7 +847,7 @@ export default function ProductDetailsPage() {
                 {user && !user.address.length && (
                   <button
                     className="btn btn-warning w-100 my-2"
-                    onClick={() => alert("Please add your address")}
+                    onClick={() => toast("Please add your address")}
                   >
                     Buy Now
                   </button>
@@ -857,7 +855,7 @@ export default function ProductDetailsPage() {
                 {user && user.address.length !== 0 && !size && (
                   <button
                     className="btn btn-warning rounded w-100 my-2"
-                    onClick={() => alert("Please select the product size")}
+                    onClick={() => toast("Please select the product size")}
                   >
                     Buy Now
                   </button>
@@ -874,7 +872,7 @@ export default function ProductDetailsPage() {
                   {!user ? (
                     <button
                       className="btn btn-warning rounded w-100 mb-2"
-                      onClick={() => alert("Please login to your account")}
+                      onClick={() => toast("Please login to your account")}
                     >
                       {product.addToCart ? "Added To Cart" : "Add To cart"}
                     </button>
@@ -893,7 +891,7 @@ export default function ProductDetailsPage() {
                   {!user ? (
                     <button
                       className="btn btn-outline-secondary rounded w-100"
-                      onClick={() => alert("Please login to your account")}
+                      onClick={() => toast("Please login to your account")}
                     >
                       {product.addToWishList
                         ? "Added To Wishlist"
@@ -994,9 +992,11 @@ export default function ProductDetailsPage() {
                             {!user ? (
                               <button
                                 className="btn btn-secondary w-100 mb-2 addToCart"
-                                onClick={() =>
-                                  alert("Please login to your account")
-                                }
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  e.stopPropagation()
+                                  toast("Please login to your account")
+                                }}
                               >
                                 {product.addToCart
                                   ? "Added To Cart"
@@ -1018,9 +1018,11 @@ export default function ProductDetailsPage() {
                             {!user ? (
                               <button
                                 className="btn btn-outline-secondary w-100 mb-2 saveToWishlist"
-                                onClick={() =>
-                                  alert("Please login to your account")
-                                }
+                                onClick={(e) => {
+                                  e.preventDefault()
+                                  e.stopPropagation()
+                                  toast("Please login to your account")
+                                }}
                               >
                                 {product.addToWishList
                                   ? "Added To Wishlist"

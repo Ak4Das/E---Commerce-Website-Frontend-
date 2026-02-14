@@ -27,6 +27,33 @@ export default function ProductDetailsPage() {
 
   const user = JSON.parse(localStorage.getItem("user"))
 
+  const isClothPresentInCart =
+    user && user.addToCartItems.filter((item) => item.id === product.id)
+
+  if (isClothPresentInCart && isClothPresentInCart.length) {
+    product.addToCart = true
+    product.quantity = isClothPresentInCart[0].quantity
+      ? isClothPresentInCart[0].quantity
+      : 1
+    product.size = isClothPresentInCart[0].size
+      ? isClothPresentInCart[0].size
+      : ""
+  }
+
+  /* Reset the quantity and size value of the product in clothsData 
+  while i enter the page if this product is not added to cart */
+  if (isClothPresentInCart && !isClothPresentInCart.length) {
+    product.quantity = quantity
+    product.size = size
+  }
+
+  const isClothPresentInWishlist =
+    user && user.addToWishlistItems.filter((item) => item.id === product.id)
+
+  if (isClothPresentInWishlist && isClothPresentInWishlist.length) {
+    product.addToWishList = true
+  }
+
   function increaseCount(e) {
     // Update the input element value
     let inputElementValue = Number(e.target.previousElementSibling.value)
@@ -149,18 +176,6 @@ export default function ProductDetailsPage() {
 
       // To update the variables present in this page
       setUpdated(true)
-    }
-  }
-
-  const isProductAddedToCart =
-    user && user.addToCartItems.filter((item) => item.id === id)
-
-  /* Reset the quantity and size value of the product in clothsData 
-  while i enter the page if this product is not added to cart */
-  if (isProductAddedToCart) {
-    if (!isProductAddedToCart.length) {
-      product.quantity = quantity
-      product.size = size
     }
   }
 

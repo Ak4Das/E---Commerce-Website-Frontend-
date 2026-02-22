@@ -146,8 +146,8 @@ export default function Header({ position, top, zIndex, setSearch }) {
                       height: "15px",
                       borderRadius: "100%",
                       fontSize: "10px",
-                      bottom: "10px",
-                      left: "10px",
+                      bottom: "24px",
+                      left: "12px",
                     }}
                   >
                     {user ? user.addToWishlistItems.length : 0}
@@ -228,8 +228,8 @@ export default function Header({ position, top, zIndex, setSearch }) {
                       height: "15px",
                       borderRadius: "100%",
                       fontSize: "10px",
-                      bottom: "10px",
-                      left: "30px",
+                      bottom: "20px",
+                      left: "33px",
                     }}
                   >
                     {user ? user.addToWishlistItems.length : 0}

@@ -44,7 +44,7 @@ export default function SaleProducts() {
   })
 
   const filteredProducts = finalClothsData.filter(
-    (product) => product.commonCategory === commonCategory,
+    (product) => product.commonCategory === commonCategory.toLocaleLowerCase(),
   )
 
   const productWithOffer = filteredProducts.filter((product) =>

@@ -123,7 +123,7 @@ export default function DiwaliSale() {
                       />
                     </div>
                     <Link
-                      to={`/saleProducts/Suit Pant`}
+                      to={`/saleProducts/Suit`}
                       className="diwaliSaleCheckBtn diwaliSaleCheckBtn2 btn btn-outline-info rounded-pill"
                     >
                       Check

@@ -101,7 +101,7 @@ export default function App() {
                     className="col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3"
                   >
                     <div className="categoryCard">
-                      <Link to={`/products/${category.name}`}>
+                      <Link to={`/products/${category.for}`}>
                         <div className="card position-relative">
                           <img
                             src={category.url}
@@ -205,7 +205,11 @@ export default function App() {
                       >
                         <div className="offer">
                           <p className="fs-3 fw-bold my-0 text-danger">UPTO</p>
-                          <img src={offer} className="img-fluid w-100" alt="offer" />
+                          <img
+                            src={offer}
+                            className="img-fluid w-100"
+                            alt="offer"
+                          />
                         </div>
                         <div>
                           <div className="diwaliDecoration3">
@@ -428,7 +432,10 @@ export default function App() {
                       <div className="shoeContainerInDiwaliSaleBanner d-flex flex-column justify-content-between">
                         <div className="text-center">
                           <div className="d-flex justify-content-center shoeOfferInCarousel">
-                            <p className="uptoInShoe fw-bold text-warning" style={{marginBlock:"0px"}}>
+                            <p
+                              className="uptoInShoe fw-bold text-warning"
+                              style={{ marginBlock: "0px" }}
+                            >
                               UPTO
                             </p>
                             <div className="w-25">
@@ -438,7 +445,10 @@ export default function App() {
                                 alt="offer"
                               />
                             </div>
-                            <p className="uptoInShoe fw-bold text-warning align-self-end" style={{marginBlock:"0px"}}>
+                            <p
+                              className="uptoInShoe fw-bold text-warning align-self-end"
+                              style={{ marginBlock: "0px" }}
+                            >
                               OFF
                             </p>
                           </div>
@@ -451,7 +461,11 @@ export default function App() {
                           </div>
                         </div>
                         <div className="text-end">
-                          <img src={shoe1} className="shoe1 img-fluid" alt="shoe" />
+                          <img
+                            src={shoe1}
+                            className="shoe1 img-fluid"
+                            alt="shoe"
+                          />
                         </div>
                       </div>
                     </div>

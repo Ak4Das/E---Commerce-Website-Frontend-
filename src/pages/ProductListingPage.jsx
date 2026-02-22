@@ -11,14 +11,15 @@ import { toast } from "react-toastify"
 export default function ProductListingPage() {
   const [search, setSearch] = useState("")
   console.log(search)
-  const { category } = useParams()
+  const { mainCategory } = useParams()
   const { clothsData, setClothsData } = GetClothsData()
 
   // price, rating, sortBy, Category these useStates is used for filter
   const [price, setPrice] = useState(0)
   const [rating, setRating] = useState(0)
   const [sortBy, setSortBy] = useState("")
-  const [Category, setCategory] = useState("")
+  const [gender, setGender] = useState("")
+  const [productCategory, setProductCategory] = useState([])
 
   /* isUpdate useState is used to if user add to cart a item or add to wishlist a item 
   then variables present on this page will reinitialize */
@@ -160,33 +161,36 @@ export default function ProductListingPage() {
     return cloth
   })
 
-  const filterByCategory = finalClothsData.filter(
-    (data) => data.category === category,
+  const filterByCategory = finalClothsData.filter((data) =>
+    data.mainCategory.includes(mainCategory),
   )
 
-  const filterByPrice = filterByCategory.filter(
-    (product) =>
-      (
-        product.price -
+  const filterByPrice = filterByCategory.filter((product) => {
+    const actualPrice = Math.round(
+      product.price -
         (product.price / 100) *
           (Number(product.offer.replace("%", ""))
             ? Number(product.offer.replace("%", ""))
-            : Number(product.discount.replace("%", "")))
-      ).toFixed(1) >= price,
-  )
+            : Number(product.discount.replace("%", ""))),
+    )
+    if (actualPrice >= price) {
+      return true
+    }
+  })
 
   const filterByRating = filterByPrice.filter(
     (product) => product.rating >= rating,
   )
 
   function discountedPrice(product) {
-    return (
+    const actualPrice = Math.round(
       product.price -
-      (product.price / 100) *
-        (Number(product.offer.replace("%", ""))
-          ? Number(product.offer.replace("%", ""))
-          : Number(product.discount.replace("%", "")))
-    ).toFixed(1)
+        (product.price / 100) *
+          (Number(product.offer.replace("%", ""))
+            ? Number(product.offer.replace("%", ""))
+            : Number(product.discount.replace("%", ""))),
+    )
+    return actualPrice
   }
 
   function sortProducts() {
@@ -221,10 +225,17 @@ export default function ProductListingPage() {
 
   const filterBySort = sortProducts()
 
-  const finalFilter =
-    Category === ""
+  const filterByGender =
+    gender === ""
       ? filterBySort
-      : filterBySort.filter((product) => product.gender === Category)
+      : filterBySort.filter((product) => product.gender === gender)
+
+  const finalFilter =
+    productCategory.length === 0
+      ? filterByGender
+      : filterByGender.filter((product) =>
+          productCategory.includes(product.commonCategory),
+        )
 
   if (isUpdate) {
     setUpdate(false)
@@ -234,12 +245,15 @@ export default function ProductListingPage() {
     <>
       <Header position="sticky" top={0} zIndex={1} setSearch={setSearch} />
       <SearchInPage margin="ms-3" setSearch={setSearch} />
-      <main className="d-flex">
+      <main>
         <Offcanvas
           setPrice={setPrice}
           setRating={setRating}
           setSortBy={setSortBy}
-          setCategory={setCategory}
+          setGender={setGender}
+          productCategory={productCategory}
+          setProductCategory={setProductCategory}
+          setUpdate={setUpdate}
         />
         <div className="mx-5 my-3">
           <h4 className="my-3 text-secondary">Showing All Products</h4>
@@ -299,16 +313,14 @@ export default function ProductListingPage() {
                         <p id="discount" className="my-0">
                           <b>₹</b>
                           {Math.round(
-                            (
-                              product.price -
+                            product.price -
                               (product.price *
                                 (Number(product.offer.replace("%", ""))
                                   ? Number(product.offer.replace("%", ""))
                                   : Number(
                                       product.discount.replace("%", ""),
                                     ))) /
-                                100
-                            ).toFixed(1),
+                                100,
                           )}
                           (-
                           {Number(product.offer.replace("%", ""))

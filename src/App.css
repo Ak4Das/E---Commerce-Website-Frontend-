@@ -425,6 +425,10 @@
   .btnContainer2 {
     display: none;
   }
+  .offcanvasFilterForm {
+    height: calc(100vh - 60px);
+    top: 60px;
+  }
 }
 @media (min-width: 800px) {
   .productCard {
@@ -923,6 +927,10 @@
   }
   .floatingCardHeaderText {
     font-size: 18px;
+  }
+  .offcanvasFilterForm {
+    height: calc(100vh - 120px);
+    top: 120px;
   }
 }
 @media (575px<width<767px) {

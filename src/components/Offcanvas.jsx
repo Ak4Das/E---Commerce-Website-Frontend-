@@ -1,11 +1,17 @@
 import crossBtn from "../assets/close.png"
+import { useState } from "react"
 
 export default function Offcanvas({
   setPrice,
   setRating,
   setSortBy,
-  setCategory,
+  setGender,
+  productCategory,
+  setProductCategory,
+  setUpdate
 }) {
+  // open useState is used only to open or close Offcanvas
+  const [open, setOpen] = useState(false)
   function filterWithPrice(e) {
     setPrice(e.target.value)
   }
@@ -15,42 +21,73 @@ export default function Offcanvas({
   function filterBySort(e) {
     setSortBy(e.target.value)
   }
+  function filterByGender(e) {
+    setGender(e.target.value)
+  }
   function filterByCategory(e) {
-    setCategory(e.target.value)
+    if (e.target.checked) {
+      productCategory.push(e.target.value)
+      setProductCategory(productCategory)
+      setUpdate(true)
+    } else {
+      setProductCategory(
+        productCategory.filter((category) => category !== e.target.value),
+      )
+    }
   }
   function resetFilters() {
     setPrice(0)
     setRating(0)
     setSortBy("")
-    setCategory("")
+    setGender("")
+    setProductCategory("")
   }
   function handleClick(e) {
     const element = e.target
     const parentElement = element.parentElement
     parentElement.style.left =
       parentElement.style.left === "-305px" ? "" : "-305px"
+    setOpen(open ? false : true)
   }
   return (
     <form
       style={{
-        height: "calc(100vh - 120px)",
         maxWidth: "30vw",
         minWidth: "350px",
         position: "fixed",
-        top:"120px",
         left: "-305px",
         zIndex: 1,
       }}
-      className="bg-light-subtle px-5 py-3 d-inline-block"
+      className="bg-light-subtle px-5 py-3 d-inline-block offcanvasFilterForm"
     >
-      <img
-        src={crossBtn}
-        alt=""
-        className="logo"
-        style={{ position: "relative", left: "265px", top: "-5px", cursor:"pointer" }}
-        onClick={handleClick}
-        title="filter"
-      />
+      {open ? (
+        <img
+          src={crossBtn}
+          alt="close button"
+          className="logo"
+          style={{
+            position: "relative",
+            left: "265px",
+            top: "-5px",
+            cursor: "pointer",
+          }}
+          onClick={handleClick}
+          title="filter"
+        />
+      ) : (
+        <button
+          style={{
+            position: "relative",
+            left: "265px",
+            top: "-5px",
+            cursor: "pointer",
+          }}
+          className="rounded bi bi-list"
+          type="button"
+          onClick={handleClick}
+          title="filter"
+        ></button>
+      )}
       <div className="d-flex justify-content-between my-3">
         <b>Filters</b>
         <button type="reset" onClick={resetFilters}>
@@ -74,7 +111,7 @@ export default function Offcanvas({
         />
       </section>
       <section className="my-3">
-        <b>Category</b>
+        <b>Gender</b>
         <div className="mt-2 form-check">
           <input
             type="radio"
@@ -82,9 +119,9 @@ export default function Offcanvas({
             id="menClothing"
             value="male"
             className="form-check-input"
-            onClick={filterByCategory}
+            onClick={filterByGender}
           />
-          <label htmlFor="menClothing">Male Clothing</label>
+          <label htmlFor="menClothing">Male</label>
           <br />
           <input
             type="radio"
@@ -92,9 +129,9 @@ export default function Offcanvas({
             id="menClothing"
             value="female"
             className="form-check-input"
-            onClick={filterByCategory}
+            onClick={filterByGender}
           />
-          <label htmlFor="menClothing">Female Clothing</label>
+          <label htmlFor="menClothing">Female</label>
         </div>
       </section>
       <section className="my-3">
@@ -169,6 +206,111 @@ export default function Offcanvas({
           <label htmlFor="highToLow" className="ms-2">
             Price - High to Low
           </label>
+        </div>
+      </section>
+      <section className="my-3">
+        <b>Category</b>
+        <div className="mt-2">
+          <input
+            id="Suit"
+            type="checkbox"
+            value="suit"
+            onChange={filterByCategory}
+          />
+          <label htmlFor="Suit" className="ms-2">
+            Suit
+          </label>
+          <br />
+          <input
+            id="pant"
+            type="checkbox"
+            value="pant"
+            onChange={filterByCategory}
+          />
+          <label htmlFor="pant" className="ms-2">
+            Pant
+          </label>
+          <br />
+          <input
+            id="tShirt"
+            type="checkbox"
+            value="tShirt"
+            onChange={filterByCategory}
+          />
+          <label htmlFor="tShirt" className="ms-2">
+            T - Shirt
+          </label>
+          <br />
+          <input
+            id="bermuda"
+            type="checkbox"
+            value="bermuda"
+            onChange={filterByCategory}
+          />
+          <label htmlFor="bermuda" className="ms-2">
+            Bermuda
+          </label>
+          <br />
+          <input
+            id="panjabi"
+            type="checkbox"
+            value="panjabi"
+            onChange={filterByCategory}
+          />
+          <label htmlFor="panjabi" className="ms-2">
+            panjabi
+          </label>
+          <br />
+          <input
+            id="jeans"
+            type="checkbox"
+            value="jeans"
+            onChange={filterByCategory}
+          />
+          <label htmlFor="jeans" className="ms-2">
+            Jeans
+          </label>
+          <br />
+          <input
+            id="shoes"
+            type="checkbox"
+            value="shoes"
+            onChange={filterByCategory}
+          />
+          <label htmlFor="shoes" className="ms-2">
+            Shoes
+          </label>
+          <br />
+          <input
+            id="saree"
+            type="checkbox"
+            value="saree"
+            onChange={filterByCategory}
+          />
+          <label htmlFor="saree" className="ms-2">
+            Saree
+          </label>
+          <br />
+          <input
+            id="lehenga"
+            type="checkbox"
+            value="lehenga"
+            onChange={filterByCategory}
+          />
+          <label htmlFor="lehenga" className="ms-2">
+            Lehenga
+          </label>
+          <br />
+          <input
+            id="gopiDress"
+            type="checkbox"
+            value="gopiDress"
+            onChange={filterByCategory}
+          />
+          <label htmlFor="gopiDress" className="ms-2">
+            Gopi Dress
+          </label>
+          <br />
         </div>
       </section>
     </form>

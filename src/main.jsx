@@ -23,7 +23,7 @@ import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
-  { path: "/products/:category", element: <ProductListingPage /> },
+  { path: "/products/:mainCategory", element: <ProductListingPage /> },
   { path: "/productDetails/:id", element: <ProductDetailsPage /> },
   { path: "/wishlist", element: <WishlistPage /> },
   { path: "/cart", element: <CartPage /> },

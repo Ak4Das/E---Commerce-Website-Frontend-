@@ -15,6 +15,7 @@ export default function ProductDetailsPage() {
   console.log(search)
   const [quantity, setQuantity] = useState(1)
   const [size, setSize] = useState("")
+  console.log(size);
   const [isUpdated, setUpdated] = useState(false)
   const [time, setTime] = useState("")
   const [isFreeDeliveryAvailable, setFreeDelivery] = useState(false)
@@ -119,7 +120,7 @@ export default function ProductDetailsPage() {
     )
     if (!isAddedToCart.length) {
       user.addToCartItems.push({
-        id: id,
+        id: cloth.id,
         quantity: quantity,
         size: size,
       })
@@ -187,9 +188,9 @@ export default function ProductDetailsPage() {
   /* Update createOrder in Database while quantity, size, freeDelivery will change and 
   update user in database while quantity change and if product is already added to cart */
   if (isUpdated) {
-    if (isProductAddedToCart.length) {
+    if (isClothPresentInCart.length) {
       if (quantity > 1) {
-        isProductAddedToCart[0].quantity = quantity
+        isClothPresentInCart[0].quantity = quantity
         localStorage.setItem("user", JSON.stringify(user))
         product.quantity = quantity
       }

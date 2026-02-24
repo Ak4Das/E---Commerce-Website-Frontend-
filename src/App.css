@@ -374,6 +374,9 @@
   .listProductImage {
     width: 100% !important;
   }
+  .paymentMethodMainElement {
+    margin-inline: 50px;
+  }
 }
 @media (min-width: 650px) {
   .saleProductFirstSection {
@@ -428,6 +431,9 @@
   .offcanvasFilterForm {
     height: calc(100vh - 60px);
     top: 60px;
+  }
+  .productImageDiv {
+    width: 50%;
   }
 }
 @media (min-width: 800px) {
@@ -681,7 +687,7 @@
     width: 400px !important;
   }
   .productImageDiv {
-    width: 50%;
+    width: 36%;
   }
 }
 @media (min-width: 1300px) {
@@ -723,6 +729,9 @@
   .btnInEditOrderPage {
     width: 30%;
   }
+  .couponSectionInput {
+    width: 40% !important;
+  }
 }
 @media (min-width: 1500px) {
   .rating-listingPage {
@@ -763,6 +772,12 @@
   }
   .similarCards {
     height: 650px !important;
+  }
+  .productImageDiv {
+    width: 30%;
+  }
+  .couponSectionInput {
+    width: 36% !important;
   }
 }
 @media (max-width: 1450px) {
@@ -1037,6 +1052,9 @@
     font-size: 16px;
     margin-bottom: 0px;
   }
+  .paymentMethodMainElement {
+    margin-inline: 40px;
+  }
 }
 @media (max-width: 499px) {
   .navbarBrand {
@@ -1144,6 +1162,9 @@
   }
   .floatingAddCardBodyBr {
     display: none;
+  }
+  .paymentMethodMainElement {
+    margin-inline: 30px;
   }
 }
 @media (max-width: 420px) {
@@ -1283,6 +1304,9 @@
   }
   .goldenRibbonCarousel {
     margin-top: -3px;
+  }
+  .paymentMethodMainElement {
+    margin-inline: 20px;
   }
 }
 @media (max-width: 320px) {
@@ -1453,6 +1477,9 @@
     width: 95% !important;
     padding-inline: 12px !important;
     padding-block: 12px !important;
+  }
+  .paymentMethodMainElement {
+    margin-inline: 10px;
   }
 }
 

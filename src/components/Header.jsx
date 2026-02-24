@@ -1,9 +1,19 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import BharatVastra from "../assets/BharatVastra.png"
 import { useState } from "react"
 import { useEffect } from "react"
+import GetClothsData from "./GetClothsData"
 
-export default function Header({ position, top, zIndex, setSearch }) {
+export default function Header({
+  position,
+  top,
+  zIndex,
+  setSearch,
+  placeHolder = "Search",
+  isSearchBarNeeded = true,
+  page = "",
+}) {
+  const { clothsData, setClothsData } = GetClothsData()
   const [input, setInput] = useState("")
   useEffect(() => {
     if (!input) {
@@ -41,24 +51,33 @@ export default function Header({ position, top, zIndex, setSearch }) {
               BharatVastra
             </span>
           </NavLink>
-          <div className="input-group searchInHeader justify-content-center">
-            <input
-              type="text"
-              className="border border-1 w-75 p-2"
-              style={{ outline: "none" }}
-              placeholder="Search Product"
-              aria-label="Search Product"
-              aria-describedby="button-addon2"
-              onChange={handleChange}
-            ></input>
-            <button
-              className="btn btn-warning w-25"
-              type="button"
-              onClick={handleClick}
-            >
-              Search
-            </button>
-          </div>
+          {isSearchBarNeeded && (
+            <div className="input-group searchInHeader justify-content-center">
+              <input
+                type="text"
+                className="border border-1 w-75 p-2"
+                style={{ outline: "none" }}
+                placeholder={placeHolder}
+                aria-label="Search Product"
+                aria-describedby="button-addon2"
+                onChange={handleChange}
+              ></input>
+              {!page ? (
+                <button
+                  className="btn btn-warning w-25"
+                  type="button"
+                  onClick={handleClick}
+                >
+                  Search
+                </button>
+              ) : (
+                <Link to={`/products/${input}`} className="btn btn-warning w-25">
+                  Search
+                </Link>
+              )}
+            </div>
+          )}
+
           <div className="hamburger" style={{ cursor: "pointer" }}>
             <div
               className="d-flex align-items-center gap-1"
@@ -146,7 +165,7 @@ export default function Header({ position, top, zIndex, setSearch }) {
                       height: "15px",
                       borderRadius: "100%",
                       fontSize: "10px",
-                      bottom: "24px",
+                      bottom: "27px",
                       left: "12px",
                     }}
                   >
@@ -166,7 +185,7 @@ export default function Header({ position, top, zIndex, setSearch }) {
                       height: "15px",
                       borderRadius: "100%",
                       fontSize: "10px",
-                      bottom: "29px",
+                      bottom: "27px",
                       left: "3px",
                     }}
                   >
@@ -188,7 +207,10 @@ export default function Header({ position, top, zIndex, setSearch }) {
                 listStyleType: "none",
               }}
             >
-              <li className="nav-item btn btn-warning" style={{width:"125px"}}>
+              <li
+                className="nav-item btn btn-warning"
+                style={{ width: "125px" }}
+              >
                 {userDetails ? (
                   <NavLink
                     to="/user"
@@ -218,7 +240,10 @@ export default function Header({ position, top, zIndex, setSearch }) {
                   </NavLink>
                 )}
               </li>
-              <li className="nav-item btn btn-warning position-relative" style={{width:"125px"}}>
+              <li
+                className="nav-item btn btn-warning position-relative"
+                style={{ width: "125px" }}
+              >
                 <NavLink className="nav-link" to="/wishlist">
                   <i className="bi bi-heart fs-5"></i>
                   <div
@@ -238,7 +263,10 @@ export default function Header({ position, top, zIndex, setSearch }) {
                   <span className="ms-1">Wishlist</span>
                 </NavLink>
               </li>
-              <li className="nav-item btn btn-warning position-relative" style={{width:"125px"}}>
+              <li
+                className="nav-item btn btn-warning position-relative"
+                style={{ width: "125px" }}
+              >
                 <NavLink className="nav-link" to="/cart">
                   <i className="bi bi-cart3 fs-5"></i>
                   <div

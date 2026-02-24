@@ -11,7 +11,7 @@ import GetClothsData from "../components/GetClothsData"
 export default function PaymentMethods() {
   const { clothsData, setClothsData } = GetClothsData()
   const [search, setSearch] = useState("")
-  console.log(search)
+  console.log(search);
 
   /* isCard useState is used only to set background color of card option if user will select 
   card option for payment */
@@ -107,6 +107,8 @@ export default function PaymentMethods() {
     )
     localStorage.setItem("orders", JSON.stringify(orders))
     localStorage.setItem("createOrder", JSON.stringify({ item: [] }))
+    user.addToCartItems = []
+    localStorage.setItem("user", JSON.stringify(user))
     setIsOrderPlaced(true)
   }
 
@@ -165,9 +167,14 @@ export default function PaymentMethods() {
         top="auto"
         zIndex="auto"
         setSearch={setSearch}
+        isSearchBarNeeded={false}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} />
-      <main className="container mt-3 mb-5 d-lg-flex gap-5 align-items-start">
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        isSearchBarNeeded={false}
+      />
+      <main className="mt-3 mb-5 d-lg-flex gap-5 align-items-start paymentMethodMainElement">
         <div className="paymentMethodSectionOne">
           {user && user.address.length !== 0 && (
             <section className="bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">

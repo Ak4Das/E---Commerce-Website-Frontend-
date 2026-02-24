@@ -6,7 +6,7 @@ import SearchInPage from "../components/SearchInPage"
 
 export default function YourOrders() {
   const [search, setSearch] = useState("")
-  console.log(search)
+  console.log(search);
 
   /* isClicked useState is used to show user's selected address 
   while user click on user's name on your orders page */
@@ -37,8 +37,9 @@ export default function YourOrders() {
         top="auto"
         zIndex="auto"
         setSearch={setSearch}
+        isSearchBarNeeded={false}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} />
+      <SearchInPage margin="ms-3" setSearch={setSearch} isSearchBarNeeded={false}/>
       <main className="container mt-3">
         <h1>Your Orders</h1>
         {orders &&

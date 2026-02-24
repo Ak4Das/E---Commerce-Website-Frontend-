@@ -29,8 +29,10 @@ export default function DiwaliSale() {
         top="auto"
         zIndex="auto"
         setSearch={setSearch}
+        placeHolder="Search Product"
+        page="diwaliSale"
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} />
+      <SearchInPage margin="ms-3" setSearch={setSearch} placeHolder="Search Product" page="diwaliSale"/>
       <main className="mx-5 my-4">
         <section
           className="diwaliSaleSection1"

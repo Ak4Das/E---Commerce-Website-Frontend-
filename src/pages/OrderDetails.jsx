@@ -58,8 +58,9 @@ export default function OrderDetails() {
         top="auto"
         zIndex="auto"
         setSearch={setSearch}
+        isSearchBarNeeded={false}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch}/>
+      <SearchInPage margin="ms-3" setSearch={setSearch} isSearchBarNeeded={false}/>
       {order && (
         <main className="py-3" style={{ fontSize: "15px" }}>
           <div

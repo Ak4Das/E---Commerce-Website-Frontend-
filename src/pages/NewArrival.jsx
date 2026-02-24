@@ -172,8 +172,9 @@ export default function NewArrival() {
         top="auto"
         zIndex="auto"
         setSearch={setSearch}
+        placeHolder="Search Product"
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} />
+      <SearchInPage margin="ms-3" setSearch={setSearch} placeHolder="Search Product"/>
       <main className="mx-5 my-3">
         <h2 className="my-3 text-secondary">New Arrival</h2>
         <div className="">

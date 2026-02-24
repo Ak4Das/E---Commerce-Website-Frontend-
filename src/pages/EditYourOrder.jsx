@@ -126,8 +126,9 @@ export default function EditYourOrder() {
         top="auto"
         zIndex="auto"
         setSearch={setSearch}
+        isSearchBarNeeded={false}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} />
+      <SearchInPage margin="ms-3" setSearch={setSearch} isSearchBarNeeded={false}/>
       <h1 className="text-success fw-medium my-3 container">Edit Order</h1>
       {orderToBeEdit && (
         <main className="container my-4">

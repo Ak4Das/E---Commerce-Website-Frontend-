@@ -9,7 +9,6 @@ import { toast } from "react-toastify"
 
 export default function SaleProducts() {
   const [search, setSearch] = useState("")
-  console.log(search)
   const { commonCategory } = useParams()
   const { clothsData, setClothsData } = GetClothsData()
   const [gender, setGender] = useState("")
@@ -55,6 +54,13 @@ export default function SaleProducts() {
     gender === ""
       ? productWithOffer
       : productWithOffer.filter((product) => product.gender === gender)
+
+  const filterByMaterial =
+    search === ""
+      ? filteredByGender
+      : filteredByGender.filter((product) =>
+          product.material.toLowerCase().includes(search.toLowerCase()),
+        )
 
   function addToCart(e) {
     // To stop Event Bubbling
@@ -172,8 +178,18 @@ export default function SaleProducts() {
 
   return (
     <>
-      <Header position="sticky" top={0} zIndex={1} setSearch={setSearch} />
-      <SearchInPage margin="ms-3" setSearch={setSearch} />
+      <Header
+        position="sticky"
+        top={0}
+        zIndex={1}
+        setSearch={setSearch}
+        placeHolder="Search by product Material"
+      />
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        placeHolder="Search by product Material"
+      />
       <main>
         <div className="mx-5 my-3">
           <div className="d-flex justify-content-between saleProductFirstSection mb-3">
@@ -200,7 +216,7 @@ export default function SaleProducts() {
             </div>
           </div>
           <div className="row">
-            {filteredByGender.map((product) => (
+            {filterByMaterial.map((product) => (
               <div key={product.id} className="col-sm-6 col-xl-4 mb-3">
                 <Link
                   className="text-decoration-none"

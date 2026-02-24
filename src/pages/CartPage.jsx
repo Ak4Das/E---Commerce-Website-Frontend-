@@ -170,8 +170,13 @@ export default function CartPage() {
         top="auto"
         zIndex="auto"
         setSearch={setSearch}
+        page="cartPage"
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} />
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        page="cartPage"
+      />
       <main className="bg-body-secondary pb-3">
         <div className="container">
           <h3 className="py-4 text-center">My Cart</h3>
@@ -294,7 +299,10 @@ export default function CartPage() {
                                     <input
                                       type="text"
                                       defaultValue={product.quantity || 1}
-                                      style={{ width: "30px" }}
+                                      style={{
+                                        width: "30px",
+                                        textAlign: "center",
+                                      }}
                                       className="mx-2"
                                       onChange={(e) => {
                                         if (Number(e.target.value) >= 0) {
@@ -368,12 +376,19 @@ export default function CartPage() {
                                   <div className="sizeBtnContainer">
                                     <button
                                       className="border border-1 me-2 mb-2"
+                                      style={{
+                                        backgroundColor:
+                                          product.size === "S" ? "green" : "",
+                                        color:
+                                          product.size === "S" ? "white" : "",
+                                      }}
                                       onClick={(e) => {
                                         // To stop Event Bubbling
                                         e.preventDefault()
                                         e.stopPropagation()
 
                                         // Update createOrder in Database
+                                        console.log(product)
                                         product.size = "S"
                                         localStorage.setItem(
                                           "createOrder",
@@ -408,6 +423,19 @@ export default function CartPage() {
                                           '<i class="bi bi-check2"></i>'
                                         setTimeout(() => {
                                           btn.innerHTML = "S"
+                                          btn.style.backgroundColor = "green"
+                                          btn.style.color = "white"
+                                          const parentElement =
+                                            btn.parentElement
+                                          const siblings =
+                                            parentElement.children
+                                          const arrayOfSiblings = [...siblings]
+                                          arrayOfSiblings.forEach((sibling) => {
+                                            if (sibling !== btn) {
+                                              sibling.style.backgroundColor = ""
+                                              sibling.style.color = ""
+                                            }
+                                          })
                                         }, 500)
                                       }}
                                     >
@@ -415,6 +443,12 @@ export default function CartPage() {
                                     </button>
                                     <button
                                       className="border border-1 me-2 mb-2"
+                                      style={{
+                                        backgroundColor:
+                                          product.size === "M" ? "green" : "",
+                                        color:
+                                          product.size === "M" ? "white" : "",
+                                      }}
                                       onClick={(e) => {
                                         // To stop Event Bubbling
                                         e.preventDefault()
@@ -455,6 +489,19 @@ export default function CartPage() {
                                           '<i class="bi bi-check2"></i>'
                                         setTimeout(() => {
                                           btn.innerHTML = "M"
+                                          btn.style.backgroundColor = "green"
+                                          btn.style.color = "white"
+                                          const parentElement =
+                                            btn.parentElement
+                                          const siblings =
+                                            parentElement.children
+                                          const arrayOfSiblings = [...siblings]
+                                          arrayOfSiblings.forEach((sibling) => {
+                                            if (sibling !== btn) {
+                                              sibling.style.backgroundColor = ""
+                                              sibling.style.color = ""
+                                            }
+                                          })
                                         }, 500)
                                       }}
                                     >
@@ -462,6 +509,12 @@ export default function CartPage() {
                                     </button>
                                     <button
                                       className="border border-1 me-2 mb-2"
+                                      style={{
+                                        backgroundColor:
+                                          product.size === "L" ? "green" : "",
+                                        color:
+                                          product.size === "L" ? "white" : "",
+                                      }}
                                       onClick={(e) => {
                                         // To stop Event Bubbling
                                         e.preventDefault()
@@ -502,6 +555,19 @@ export default function CartPage() {
                                           '<i class="bi bi-check2"></i>'
                                         setTimeout(() => {
                                           btn.innerHTML = "L"
+                                          btn.style.backgroundColor = "green"
+                                          btn.style.color = "white"
+                                          const parentElement =
+                                            btn.parentElement
+                                          const siblings =
+                                            parentElement.children
+                                          const arrayOfSiblings = [...siblings]
+                                          arrayOfSiblings.forEach((sibling) => {
+                                            if (sibling !== btn) {
+                                              sibling.style.backgroundColor = ""
+                                              sibling.style.color = ""
+                                            }
+                                          })
                                         }, 500)
                                       }}
                                     >
@@ -509,6 +575,12 @@ export default function CartPage() {
                                     </button>
                                     <button
                                       className="border border-1 me-2 mb-2"
+                                      style={{
+                                        backgroundColor:
+                                          product.size === "XL" ? "green" : "",
+                                        color:
+                                          product.size === "XL" ? "white" : "",
+                                      }}
                                       onClick={(e) => {
                                         // To stop Event Bubbling
                                         e.preventDefault()
@@ -549,6 +621,19 @@ export default function CartPage() {
                                           '<i class="bi bi-check2"></i>'
                                         setTimeout(() => {
                                           btn.innerHTML = "XL"
+                                          btn.style.backgroundColor = "green"
+                                          btn.style.color = "white"
+                                          const parentElement =
+                                            btn.parentElement
+                                          const siblings =
+                                            parentElement.children
+                                          const arrayOfSiblings = [...siblings]
+                                          arrayOfSiblings.forEach((sibling) => {
+                                            if (sibling !== btn) {
+                                              sibling.style.backgroundColor = ""
+                                              sibling.style.color = ""
+                                            }
+                                          })
                                         }, 500)
                                       }}
                                     >
@@ -556,6 +641,12 @@ export default function CartPage() {
                                     </button>
                                     <button
                                       className="border border-1 mb-2"
+                                      style={{
+                                        backgroundColor:
+                                          product.size === "XXL" ? "green" : "",
+                                        color:
+                                          product.size === "XXL" ? "white" : "",
+                                      }}
                                       onClick={(e) => {
                                         // To stop Event Bubbling
                                         e.preventDefault()
@@ -596,6 +687,19 @@ export default function CartPage() {
                                           '<i class="bi bi-check2"></i>'
                                         setTimeout(() => {
                                           btn.innerHTML = "XXL"
+                                          btn.style.backgroundColor = "green"
+                                          btn.style.color = "white"
+                                          const parentElement =
+                                            btn.parentElement
+                                          const siblings =
+                                            parentElement.children
+                                          const arrayOfSiblings = [...siblings]
+                                          arrayOfSiblings.forEach((sibling) => {
+                                            if (sibling !== btn) {
+                                              sibling.style.backgroundColor = ""
+                                              sibling.style.color = ""
+                                            }
+                                          })
                                         }, 500)
                                       }}
                                     >

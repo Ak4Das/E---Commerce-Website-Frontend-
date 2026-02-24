@@ -170,16 +170,21 @@ export default function WishlistPage() {
         top="auto"
         zIndex="auto"
         setSearch={setSearch}
+        placeHolder="Search Product"
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} />
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        placeHolder="Search Product"
+      />
       <main className="bg-body-secondary pb-3">
-        <div className="container">
+        <div className="mx-5">
           <h3 className="py-3 text-center">My Wishlist</h3>
           <div className="row row-gap-4">
             {finalWishlistProducts.map((product) => (
               <div
                 key={product.id}
-                className="col-sm-6 col-md-4 col-xl-3 col-xxl-3 cardContainer"
+                className="col-sm-6 col-md-4 col-xl-3 col-xxl-2 cardContainer"
               >
                 <Link
                   className="text-decoration-none"

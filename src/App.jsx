@@ -68,8 +68,9 @@ export default function App() {
             top="auto"
             zIndex="auto"
             setSearch={setSearch}
+            placeHolder="Search Product"
           />
-          <SearchInPage margin="ms-3" setSearch={setSearch} />
+          <SearchInPage margin="ms-3" setSearch={setSearch} placeHolder="Search Product"/>
           <div
             className="alert alert-success alert-dismissible fade show mt-3"
             role="alert"

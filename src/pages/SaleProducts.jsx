@@ -264,7 +264,7 @@ export default function SaleProducts() {
                           ? product.name.slice(0, 60).concat("...")
                           : product.name}
                       </p>
-                      <div>
+                      <div className="d-flex align-items-end">
                         <RatingBar rating={product.rating} />
                         <span
                           style={{ fontSize: "15px" }}

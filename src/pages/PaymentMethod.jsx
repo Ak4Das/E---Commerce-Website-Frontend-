@@ -12,7 +12,7 @@ import { toast } from "react-toastify"
 export default function PaymentMethods() {
   const { clothsData, setClothsData } = GetClothsData()
   const [search, setSearch] = useState("")
-  console.log(search);
+  console.log(search)
 
   /* isCard useState is used only to set background color of card option if user will select 
   card option for payment */
@@ -107,15 +107,19 @@ export default function PaymentMethods() {
       totalPrice - (coupon === "HAPPYDIWALI" ? totalOrder / 10 : 0),
     )
     localStorage.setItem("orders", JSON.stringify(orders))
-    
+
     localStorage.setItem("createOrder", JSON.stringify({ item: [] }))
 
     const productsArray = orders[orders.length - 1].item
     productsArray.forEach((product) => {
-      if(product.addToCart) {
-        user.addToCartItems = user.addToCartItems.filter((item) => item.id !== product.id)
+      if (product.addToCart) {
+        user.addToCartItems = user.addToCartItems.filter(
+          (item) => item.id !== product.id,
+        )
         localStorage.setItem("user", JSON.stringify(user))
-        const itemInClothsData = clothsData.find((item)=> item.id === product.id)
+        const itemInClothsData = clothsData.find(
+          (item) => item.id === product.id,
+        )
         delete itemInClothsData.addToCart
         delete itemInClothsData.quantity
         delete itemInClothsData.size
@@ -268,8 +272,10 @@ export default function PaymentMethods() {
                         )}
                         {product.name}
                       </p>
-                      <RatingBar rating={product.rating} />
-                      <span className="ms-1 fw-medium">{product.rating}</span>
+                      <div className="d-flex align-items-end">
+                        <RatingBar rating={product.rating} />
+                        <span className="ms-1 fw-medium">{product.rating}</span>
+                      </div>
                       <div className="mt-2">
                         <span className="mt-2 fw-medium">
                           ₹

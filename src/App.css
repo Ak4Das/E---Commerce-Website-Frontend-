@@ -1483,26 +1483,12 @@
   }
 }
 
-.star-bottom::before {
-  content: "\2605 \2605 \2605 \2605 \2605";
-  font-size: 25px;
-  color: rgb(150, 147, 147);
-}
-
-.star-top::before {
-  content: "\2605 \2605 \2605 \2605 \2605";
-  font-size: 25px;
-  color: gold;
-}
-
 .star-bottom {
-  width: 104.14px;
-  height: 37.5px;
+  width: 104px;
 }
 
 .star-top {
-  width: 104.14px;
-  height: 37.5px;
+  width: 104px;
 }
 
 .changeImage {

@@ -55,10 +55,9 @@ export default function ProductDetailsPage() {
 
   useEffect(() => {
     if (search !== "" && !isCloth) {
-    toast("No such product available")
-  }
+      toast("No such product available")
+    }
   }, [search])
-  
 
   const product = finalClothsData.find((product) => product.id === id)
 
@@ -440,8 +439,13 @@ export default function ProductDetailsPage() {
                 )}
                 {product.name}
               </p>
-              <RatingBar rating={product.rating} />
-              <span style={{ fontSize: "15px" }}> {product.rating}</span>
+              <div className="d-flex align-items-end">
+                <RatingBar rating={product.rating} />
+                <span style={{ fontSize: "15px", marginLeft: "5px" }}>
+                  {" "}
+                  {product.rating}
+                </span>
+              </div>
               <div>
                 <span className="fw-bold fs-5">
                   ₹

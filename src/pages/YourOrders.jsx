@@ -7,7 +7,7 @@ import { toast } from "react-toastify"
 
 export default function YourOrders() {
   const [search, setSearch] = useState("")
-  console.log(search);
+  console.log(search)
 
   /* isClicked useState is used to show user's selected address 
   while user click on user's name on your orders page */
@@ -42,7 +42,11 @@ export default function YourOrders() {
         setSearch={setSearch}
         isSearchBarNeeded={false}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} isSearchBarNeeded={false}/>
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        isSearchBarNeeded={false}
+      />
       <main className="container mt-3">
         <h1>Your Orders</h1>
         {orders &&
@@ -190,8 +194,10 @@ export default function YourOrders() {
                                 ? product.name.slice(0, 60).concat("...")
                                 : product.name}
                             </p>
-                            <RatingBar rating={product.rating} />
-                            <span> {product.rating}</span>
+                            <div className="d-flex align-items-end">
+                              <RatingBar rating={product.rating} />
+                              <span className="ms-1"> {product.rating}</span>
+                            </div>
                             <p className="mt-0 mb-1">
                               <b>Price:</b> ₹
                               {Math.round(

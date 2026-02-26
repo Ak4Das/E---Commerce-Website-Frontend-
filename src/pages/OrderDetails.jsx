@@ -63,7 +63,11 @@ export default function OrderDetails() {
         setSearch={setSearch}
         isSearchBarNeeded={false}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} isSearchBarNeeded={false}/>
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        isSearchBarNeeded={false}
+      />
       {order && (
         <main className="py-3" style={{ fontSize: "15px" }}>
           <div
@@ -203,13 +207,15 @@ export default function OrderDetails() {
                             ? product.name.slice(0, 60).concat("...")
                             : product.name}
                         </p>
-                        <RatingBar rating={product.rating} />
-                        <span
-                          style={{ fontSize: "15px" }}
-                          className="ms-1 text-success"
-                        >
-                          {product.rating}
-                        </span>
+                        <div className="d-flex align-items-end">
+                          <RatingBar rating={product.rating} />
+                          <span
+                            style={{ fontSize: "15px" }}
+                            className="ms-1 text-success"
+                          >
+                            {product.rating}
+                          </span>
+                        </div>
                         <div className="mt-0 mb-0 fw-medium text-success">
                           <span className="fw-bold text-secondary">
                             Price:{" "}

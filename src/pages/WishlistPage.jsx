@@ -3,6 +3,7 @@ import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
 import { useState } from "react"
+import { toast } from "react-toastify"
 
 export default function WishlistPage() {
   const { clothsData, setClothsData } = GetClothsData()
@@ -88,6 +89,8 @@ export default function WishlistPage() {
 
     // To update the variables present in this page
     setUpdated(true)
+
+    toast("Product added to cart😊")
   }
 
   function removeFromWishlist(e) {
@@ -126,6 +129,8 @@ export default function WishlistPage() {
 
     // To update the variables present in this page
     setUpdated(true)
+
+    toast("Product remove from wishlist")
   }
 
   // To fix clothsData for first render of this page

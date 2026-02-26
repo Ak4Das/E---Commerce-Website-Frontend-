@@ -4,12 +4,27 @@ import { Link } from "react-router-dom"
 import { useState } from "react"
 import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
+import { useEffect } from "react"
 
 export default function CartPage() {
   const [search, setSearch] = useState("")
   const [isUpdated, setUpdated] = useState(false)
   const { clothsData, setClothsData } = GetClothsData()
   const [isRemoveFromCart, setIsRemoveFromCart] = useState(false)
+
+  const isCloth =
+    search !== ""
+      ? clothsData.filter((cloth) => cloth.commonCategory.includes(search))
+          .length
+        ? true
+        : false
+      : false
+
+  useEffect(() => {
+    if (search !== "" && !isCloth) {
+      toast("No such product available")
+    }
+  }, [search])
 
   const user = JSON.parse(localStorage.getItem("user"))
 
@@ -75,14 +90,6 @@ export default function CartPage() {
     JSON.parse(localStorage.getItem("createOrder")) &&
     JSON.parse(localStorage.getItem("createOrder")).item
 
-  const FinalProductsInCart = search
-    ? ProductsInCart.filter((product) =>
-        product.commonCategory
-          .toLocaleLowerCase()
-          .includes(search.toLocaleLowerCase()),
-      )
-    : ProductsInCart
-
   function moveToWishlist(e) {
     // To stop Event Bubbling
     e.preventDefault()
@@ -134,6 +141,8 @@ export default function CartPage() {
 
       // To update the variables present in this page
       setUpdated(true)
+
+      toast("Product added to wishlist😊")
     }
   }
 
@@ -170,12 +179,14 @@ export default function CartPage() {
         top="auto"
         zIndex="auto"
         setSearch={setSearch}
+        placeHolder="Search Product"
         page="cartPage"
       />
       <SearchInPage
         margin="ms-3"
         setSearch={setSearch}
         page="cartPage"
+        placeHolder="Search Product"
       />
       <main className="bg-body-secondary pb-3">
         <div className="container">
@@ -183,7 +194,7 @@ export default function CartPage() {
           <div className="d-md-flex justify-content-between align-items-start cartContainer">
             <section className="productsInCurt">
               {!!ProductsInCart &&
-                FinalProductsInCart.map((product) => {
+                ProductsInCart.map((product) => {
                   return (
                     <div key={product.id} className="row mb-3">
                       <div className="col-sm-12 col-md-12 mb-3">
@@ -743,6 +754,8 @@ export default function CartPage() {
 
                                     setIsRemoveFromCart(true)
                                     setUpdated(true)
+
+                                    toast("Product remove from cart")
                                   }}
                                 >
                                   Remove From Cart

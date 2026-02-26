@@ -3,6 +3,7 @@ import Header from "../components/Header"
 import RatingBar from "../components/RatingBar"
 import { useState } from "react"
 import SearchInPage from "../components/SearchInPage"
+import { toast } from "react-toastify"
 
 export default function YourOrders() {
   const [search, setSearch] = useState("")
@@ -24,6 +25,8 @@ export default function YourOrders() {
     const Orders = orders.filter((order) => order.id !== id)
     localStorage.setItem("orders", JSON.stringify(Orders))
     setUpdated(true)
+
+    toast("Order deleted successfully")
   }
 
   if (isUpdated) {

@@ -3,12 +3,26 @@ import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 
 export default function NewArrival() {
   const [search, setSearch] = useState("")
   const { clothsData, setClothsData } = GetClothsData()
+
+  const isCloth =
+    search !== ""
+      ? clothsData.filter((cloth) => cloth.commonCategory.includes(search))
+          .length
+        ? true
+        : false
+      : false
+
+  useEffect(() => {
+    if (search !== "" && !isCloth) {
+      toast("No such product available")
+    }
+  }, [search])
 
   /* isUpdate useState is used to if user add to cart a item or add to wishlist a item 
   then variables present on this page will reinitialize */
@@ -107,6 +121,8 @@ export default function NewArrival() {
 
       // To update the variables present in this page
       setUpdate(true)
+
+      toast("Product added to cart😊")
     }
   }
 
@@ -158,6 +174,8 @@ export default function NewArrival() {
 
       // To update the variables present in this page
       setUpdate(true)
+
+      toast("Product added to wishlist😊")
     }
   }
 
@@ -174,7 +192,11 @@ export default function NewArrival() {
         setSearch={setSearch}
         placeHolder="Search Product"
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} placeHolder="Search Product"/>
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        placeHolder="Search Product"
+      />
       <main className="mx-5 my-3">
         <h2 className="my-3 text-secondary">New Arrival</h2>
         <div className="">

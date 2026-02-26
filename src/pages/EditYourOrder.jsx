@@ -6,6 +6,7 @@ import Card from "../assets/card.png"
 import Cross from "../assets/cross.png"
 import { useParams } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
+import { toast } from "react-toastify"
 
 export default function EditYourOrder() {
   const orderId = Number(useParams().orderId)
@@ -113,6 +114,8 @@ export default function EditYourOrder() {
     setTimeout(() => {
       btn.innerHTML = "Save Changes"
     }, 1000)
+
+    toast("Changes Saved Successfully😊")
   }
 
   if (isUpdated) {
@@ -888,6 +891,8 @@ export default function EditYourOrder() {
                           )
 
                           setProducts(Product)
+
+                          toast("Product removed successfully")
                         }}
                       >
                         <i className="bi bi-trash3-fill"></i> Remove

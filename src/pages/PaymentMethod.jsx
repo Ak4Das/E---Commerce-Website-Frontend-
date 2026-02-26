@@ -7,6 +7,7 @@ import Cross from "../assets/cross.png"
 import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 import GetClothsData from "../components/GetClothsData"
+import { toast } from "react-toastify"
 
 export default function PaymentMethods() {
   const { clothsData, setClothsData } = GetClothsData()
@@ -106,10 +107,23 @@ export default function PaymentMethods() {
       totalPrice - (coupon === "HAPPYDIWALI" ? totalOrder / 10 : 0),
     )
     localStorage.setItem("orders", JSON.stringify(orders))
+    
     localStorage.setItem("createOrder", JSON.stringify({ item: [] }))
-    user.addToCartItems = []
-    localStorage.setItem("user", JSON.stringify(user))
+
+    const productsArray = orders[orders.length - 1].item
+    productsArray.forEach((product) => {
+      if(product.addToCart) {
+        user.addToCartItems = user.addToCartItems.filter((item) => item.id !== product.id)
+        localStorage.setItem("user", JSON.stringify(user))
+        const itemInClothsData = clothsData.find((item)=> item.id === product.id)
+        delete itemInClothsData.addToCart
+        delete itemInClothsData.quantity
+        delete itemInClothsData.size
+      }
+    })
     setIsOrderPlaced(true)
+
+    toast("Order Placed Successfully🎉😊")
   }
 
   const months = [

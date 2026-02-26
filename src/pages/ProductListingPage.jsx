@@ -13,7 +13,7 @@ import { useEffect } from "react"
 export default function ProductListingPage() {
   const [search, setSearch] = useState("")
   const { mainCategory } = useParams()
-  
+
   const isCategory = category.filter(
     (category) => category.for === mainCategory,
   ).length
@@ -24,25 +24,26 @@ export default function ProductListingPage() {
 
   const isCloth =
     search !== ""
-      ? clothsData.filter((cloth) => cloth.commonCategory.includes(search))
-          .length
+      ? clothsData.filter((cloth) => {
+          if (cloth.mainCategory.includes(mainCategory)) {
+            return cloth.commonCategory.includes(search.toLowerCase())
+          }
+        }).length
         ? true
         : false
-      : clothsData.filter((cloth) =>
-            cloth.commonCategory.includes(mainCategory),
-          ).length
-        ? true
-        : false
-
-  if (search && isCategory && !isCloth) {
-    toast("No such product available")
-  }
+      : false
 
   useEffect(() => {
-    if (!isCategory && !isCloth) {
+    if (search !== "" && isCategory && !isCloth) {
       toast("No such product available")
     }
-  }, [])
+  }, [search])
+
+  // useEffect(() => {
+  //   if (search !== "" && !isCloth) {
+  //     toast("No such product available")
+  //   }
+  // }, [search])
 
   // price, rating, sortBy, Category these useStates is used for filter
   const [price, setPrice] = useState(0)
@@ -116,6 +117,8 @@ export default function ProductListingPage() {
 
       // To update the variables present in this page
       setUpdate(true)
+
+      toast("Product added to cart😊")
     }
   }
 
@@ -167,6 +170,8 @@ export default function ProductListingPage() {
 
       // To update the variables present in this page
       setUpdate(true)
+
+      toast("Product added to wishlist😊")
     }
   }
 

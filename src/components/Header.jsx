@@ -15,12 +15,15 @@ export default function Header({
 }) {
   const { clothsData, setClothsData } = GetClothsData()
   const [input, setInput] = useState("")
+
   useEffect(() => {
     if (!input) {
       setSearch(input)
     }
   }, [input])
+
   let userDetails = JSON.parse(localStorage.getItem("user"))
+
   function handleHamburgerMenu() {
     const element = document.querySelector(".secondUlContainer")
     const isNone = element.classList.contains("none")
@@ -29,13 +32,25 @@ export default function Header({
     element.classList.remove(oldDisplay)
     element.classList.add(newDisplay)
   }
+
+  const isCloth =
+    input !== ""
+      ? clothsData.filter((cloth) => cloth.commonCategory.includes(input))
+          .length
+        ? true
+        : false
+      : false
+
   function handleChange(e) {
     setInput(e.target.value)
   }
+
   function handleClick() {
     setSearch(input)
   }
+
   const user = JSON.parse(localStorage.getItem("user"))
+  
   return (
     <header style={{ position, top, zIndex }}>
       <nav className="bg-body-tertiary py-2 px-3">
@@ -62,7 +77,14 @@ export default function Header({
                 aria-describedby="button-addon2"
                 onChange={handleChange}
               ></input>
-              {!page ? (
+              {page && isCloth ? (
+                <Link
+                  to={`/products/${input}`}
+                  className="btn btn-warning w-25"
+                >
+                  Search
+                </Link>
+              ) : (
                 <button
                   className="btn btn-warning w-25"
                   type="button"
@@ -70,10 +92,6 @@ export default function Header({
                 >
                   Search
                 </button>
-              ) : (
-                <Link to={`/products/${input}`} className="btn btn-warning w-25">
-                  Search
-                </Link>
               )}
             </div>
           )}

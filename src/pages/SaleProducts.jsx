@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import GetClothsData from "../components/GetClothsData"
 import Header from "../components/Header"
 import { useParams } from "react-router-dom"
@@ -12,6 +12,26 @@ export default function SaleProducts() {
   const { commonCategory } = useParams()
   const { clothsData, setClothsData } = GetClothsData()
   const [gender, setGender] = useState("")
+
+  const isMaterial =
+    search !== ""
+      ? clothsData.filter((cloth) => {
+          if (
+            cloth.commonCategory.toLowerCase() === commonCategory.toLowerCase()
+          ) {
+            return cloth.material.toLowerCase().includes(search)
+          }
+        }).length
+        ? true
+        : false
+      : false
+  console.log(isMaterial)
+
+  useEffect(() => {
+    if (search !== "" && !isMaterial) {
+      toast("No such product with this material available")
+    }
+  }, [search])
 
   /* isUpdate useState is used to if user add to cart a item or add to wishlist a item 
   then variables present on this page will reinitialize */
@@ -118,6 +138,8 @@ export default function SaleProducts() {
 
       // To update the variables present in this page
       setUpdate(true)
+
+      toast("Product added to cart😊")
     }
   }
 
@@ -169,6 +191,8 @@ export default function SaleProducts() {
 
       // To update the variables present in this page
       setUpdate(true)
+
+      toast("Product added to wishlist😊")
     }
   }
 

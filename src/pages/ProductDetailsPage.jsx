@@ -15,7 +15,6 @@ export default function ProductDetailsPage() {
   console.log(search)
   const [quantity, setQuantity] = useState(1)
   const [size, setSize] = useState("")
-  console.log(size);
   const [isUpdated, setUpdated] = useState(false)
   const [time, setTime] = useState("")
   const [isFreeDeliveryAvailable, setFreeDelivery] = useState(false)
@@ -24,9 +23,44 @@ export default function ProductDetailsPage() {
 
   const { clothsData, setClothsData } = GetClothsData()
 
-  const product = clothsData.find((product) => product.id === id)
-
   const user = JSON.parse(localStorage.getItem("user"))
+
+  const finalClothsData = clothsData.map((cloth) => {
+    const isClothPresentInCart =
+      user && user.addToCartItems.filter((item) => item.id === cloth.id)
+    if (isClothPresentInCart && isClothPresentInCart.length) {
+      cloth.addToCart = true
+      cloth.quantity = isClothPresentInCart[0].quantity
+        ? isClothPresentInCart[0].quantity
+        : 1
+      cloth.size = isClothPresentInCart[0].size
+        ? isClothPresentInCart[0].size
+        : ""
+    }
+    const isClothPresentInWishlist =
+      user && user.addToWishlistItems.filter((item) => item.id === cloth.id)
+    if (isClothPresentInWishlist && isClothPresentInWishlist.length) {
+      cloth.addToWishList = true
+    }
+    return cloth
+  })
+
+  const isCloth =
+    search !== ""
+      ? finalClothsData.filter((cloth) => cloth.commonCategory.includes(search))
+          .length
+        ? true
+        : false
+      : false
+
+  useEffect(() => {
+    if (search !== "" && !isCloth) {
+    toast("No such product available")
+  }
+  }, [search])
+  
+
+  const product = finalClothsData.find((product) => product.id === id)
 
   const isClothPresentInCart =
     user && user.addToCartItems.filter((item) => item.id === product.id)
@@ -105,7 +139,7 @@ export default function ProductDetailsPage() {
     e.stopPropagation()
 
     // Update clothsData in memory
-    const cloth = clothsData.find(
+    const cloth = finalClothsData.find(
       (Product) => Product.id === Number(e.target.value),
     )
     if (cloth) {
@@ -141,6 +175,8 @@ export default function ProductDetailsPage() {
 
     // To update the variables present in this page
     setUpdated(true)
+
+    toast("Product added to cart😊")
   }
 
   function addToWishlist(e) {
@@ -157,7 +193,7 @@ export default function ProductDetailsPage() {
       localStorage.setItem("user", JSON.stringify(user))
 
       // Update clothsData in memory
-      const item = clothsData.find(
+      const item = finalClothsData.find(
         (Product) => Product.id === Number(e.target.value),
       )
       if (item) {
@@ -177,6 +213,8 @@ export default function ProductDetailsPage() {
 
       // To update the variables present in this page
       setUpdated(true)
+
+      toast("Product added to wishlist😊")
     }
   }
 
@@ -281,8 +319,8 @@ export default function ProductDetailsPage() {
   }, [])
 
   const similarProductIds = product.similarProducts.map((product) => product.id)
-  const similarProducts = JSON.parse(localStorage.getItem("clothsData")).filter(
-    (product) => similarProductIds.includes(product.id),
+  const similarProducts = finalClothsData.filter((product) =>
+    similarProductIds.includes(product.id),
   )
 
   return (
@@ -295,7 +333,12 @@ export default function ProductDetailsPage() {
         placeHolder="Search Product"
         page="productDetails"
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} page="productDetails" placeHolder="Search Product"/>
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        page="productDetails"
+        placeHolder="Search Product"
+      />
       <main className="bg-body-secondary py-3 px-4 py-sm-5 px-sm-5">
         <div className="bg-light-subtle py-3 px-3 productDetailsContainer">
           <section className="d-sm-flex gap-sm-4 gap-xl-5 productDetailsContainerFirstSection">

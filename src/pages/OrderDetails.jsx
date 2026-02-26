@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
+import { toast } from "react-toastify"
 
 export default function OrderDetails() {
   const [search, setSearch] = useState("")
@@ -45,6 +46,8 @@ export default function OrderDetails() {
     const Orders = order && orders.filter((order) => order.id !== id)
     localStorage.setItem("orders", JSON.stringify(Orders))
     setUpdated(true)
+
+    toast("Order deleted successfully")
   }
 
   if (isUpdated) {

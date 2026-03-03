@@ -25,7 +25,6 @@ export default function SaleProducts() {
         ? true
         : false
       : false
-  console.log(isMaterial)
 
   useEffect(() => {
     if (search !== "" && !isMaterial) {

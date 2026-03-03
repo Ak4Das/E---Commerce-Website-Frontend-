@@ -33,118 +33,137 @@ export default function UserAddresses() {
         setSearch={setSearch}
         isSearchBarNeeded={false}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} isSearchBarNeeded={false}/>
-      <main className="container mt-3">
-        <h2>Your Addresses</h2>
-        <div className="row row-gap-4 mt-4">
-          <div className="col-sm-6 col-lg-4">
-            <Link
-              to="/addAddress"
-              className="card align-items-center justify-content-center text-decoration-none text-dark"
-              style={{
-                height: "300px",
-                border: "3px dashed black",
-              }}
-            >
-              <div className="text-center">
-                <img src={Plus} alt="plusIcon" style={{ width: "30px" }} />
-                <h4 className="mt-2">Add Address</h4>
-              </div>
-            </Link>
-          </div>
-          {user.address.length !== 0 &&
-            user.address.map((address) => (
-              <div
-                key={address.id}
-                className="col-sm-6 col-lg-4 text-decoration-none"
-                onClick={() => {
-                  let Address = user.address.find(
-                    (add) => add.id === address.id,
-                  )
-                  for (address of user.address) {
-                    if (address === Address) {
-                      address.selected = true
-                    } else {
-                      address.selected = false
-                    }
-                  }
-                  localStorage.setItem("user", JSON.stringify(user))
-                  setUser(JSON.parse(localStorage.getItem("user")))
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        isSearchBarNeeded={false}
+      />
+      <main>
+        <div className="container mt-3">
+          <h2>Your Addresses</h2>
+          <div className="row row-gap-4 mt-4">
+            <div className="col-sm-6 col-lg-4 addAddressBtn1">
+              <Link
+                to="/addAddress"
+                className="card align-items-center justify-content-center text-decoration-none text-dark"
+                style={{
+                  height: "300px",
+                  border: "3px dashed black",
                 }}
               >
+                <div className="text-center">
+                  <img src={Plus} alt="plusIcon" style={{ width: "30px" }} />
+                  <h4 className="mt-2">Add Address</h4>
+                </div>
+              </Link>
+            </div>
+            {user.address.length !== 0 &&
+              user.address.map((address) => (
                 <div
-                  className="card"
-                  style={{
-                    height: "300px",
-                    border: "3px solid black",
+                  key={address.id}
+                  className="col-sm-6 col-lg-4 text-decoration-none"
+                  onClick={() => {
+                    let Address = user.address.find(
+                      (add) => add.id === address.id,
+                    )
+                    for (address of user.address) {
+                      if (address === Address) {
+                        address.selected = true
+                      } else {
+                        address.selected = false
+                      }
+                    }
+                    localStorage.setItem("user", JSON.stringify(user))
+                    setUser(JSON.parse(localStorage.getItem("user")))
                   }}
                 >
-                  <div className="card-body d-flex flex-column justify-content-between">
-                    <div>
-                      <p className="my-0 fw-bold">{address.fullName}</p>
-                      <p className="my-0 fw-medium">{address.localInfo}</p>
-                      <p className="my-0 fw-medium">{address.area}</p>
-                      <p className="my-0 fw-medium">
-                        {address.city.toUpperCase()}
-                        {", "}
-                        {address.state.toUpperCase()}{" "}
-                        {address.pinCode.toUpperCase()}
-                      </p>
-                      <p className="my-0 fw-medium">
-                        {address.country.toUpperCase()}
-                      </p>
-                      <p className="my-0 fw-medium">
-                        Phone Number: {address.mobNo}
-                      </p>
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center">
+                  <div
+                    className="card"
+                    style={{
+                      height: "300px",
+                      border: "3px solid black",
+                    }}
+                  >
+                    <div className="card-body d-flex flex-column justify-content-between">
                       <div>
-                        <Link
-                          to={`/editAddress/${address.id}`}
-                          className="text-decoration-none border border-0 bg-white me-1 fw-medium text-primary addressEditOrRemove"
-                          style={{ cursor: "pointer" }}
-                        >
-                          Edit
-                        </Link>
-                        <span className="fw-medium text-primary">|</span>
-                        <button
-                          className="border border-0 bg-white ms-1 fw-medium text-primary addressEditOrRemove"
-                          style={{ cursor: "pointer" }}
-                          value={address.id}
-                          onClick={removeAddress}
-                        >
-                          Remove
-                        </button>
+                        <p className="my-0 fw-bold">{address.fullName}</p>
+                        <p className="my-0 fw-medium">{address.localInfo}</p>
+                        <p className="my-0 fw-medium">{address.area}</p>
+                        <p className="my-0 fw-medium">
+                          {address.city.toUpperCase()}
+                          {", "}
+                          {address.state.toUpperCase()}{" "}
+                          {address.pinCode.toUpperCase()}
+                        </p>
+                        <p className="my-0 fw-medium">
+                          {address.country.toUpperCase()}
+                        </p>
+                        <p className="my-0 fw-medium">
+                          Phone Number: {address.mobNo}
+                        </p>
                       </div>
-                      <div
-                        className="text-primary fw-bold"
-                        style={{ fontSize: "20px" }}
-                      >
-                        {address.selected && (
-                          <i className="bi bi-check2-all"></i>
-                        )}
+                      <div className="d-flex justify-content-between align-items-center">
+                        <div>
+                          <Link
+                            to={`/editAddress/${address.id}`}
+                            className="text-decoration-none border border-0 bg-white me-1 fw-medium text-primary addressEditOrRemove"
+                            style={{ cursor: "pointer" }}
+                          >
+                            Edit
+                          </Link>
+                          <span className="fw-medium text-primary">|</span>
+                          <button
+                            className="border border-0 bg-white ms-1 fw-medium text-primary addressEditOrRemove"
+                            style={{ cursor: "pointer" }}
+                            value={address.id}
+                            onClick={removeAddress}
+                          >
+                            Remove
+                          </button>
+                        </div>
+                        <div
+                          className="text-primary fw-bold"
+                          style={{ fontSize: "20px" }}
+                        >
+                          {address.selected && (
+                            <i className="bi bi-check2-all"></i>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+          </div>
+          {param.orderId && (
+            <Link
+              to={`/editOrder/${param.orderId}`}
+              className="btn btn-warning mt-5 mb-3"
+            >
+              <i className="bi bi-arrow-left"></i>
+              Back
+            </Link>
+          )}
+          {param.route && (
+            <Link to={`/${param.route}`} className="btn btn-warning mt-5 mb-3">
+              <i className="bi bi-arrow-left me-1"></i>
+              Back
+            </Link>
+          )}
         </div>
-        {param.orderId && (
+        <div
+          className="fs-3 position-fixed addAddressBtn2"
+          style={{ right: "21px", top: "91%" }}
+          title="Add new address"
+        >
           <Link
-            to={`/editOrder/${param.orderId}`}
-            className="btn btn-warning mt-5"
+            to="/addAddress"
+            className="card align-items-center justify-content-center text-decoration-none text-dark d-inline-block px-2 py-1 rounded-circle bg-warning"
+            style={{ border: "2px dashed black" }}
           >
-            <i className="bi bi-arrow-left"></i>
-            Back
+            <i className="bi bi-plus-lg"></i>
           </Link>
-        )}
-        {param.route && (
-          <Link to={`/${param.route}`} className="btn btn-warning mt-5">
-            <i className="bi bi-arrow-left me-1"></i>
-            Back
-          </Link>
-        )}
+        </div>
       </main>
     </>
   )

@@ -5,24 +5,11 @@ import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
+import { Search } from "../components/Search"
 
 export default function NewArrival() {
   const [search, setSearch] = useState("")
   const { clothsData, setClothsData } = GetClothsData()
-
-  const isCloth =
-    search !== ""
-      ? clothsData.filter((cloth) => cloth.commonCategory.includes(search))
-          .length
-        ? true
-        : false
-      : false
-
-  useEffect(() => {
-    if (search !== "" && !isCloth) {
-      toast("No such product available")
-    }
-  }, [search])
 
   /* isUpdate useState is used to if user add to cart a item or add to wishlist a item 
   then variables present on this page will reinitialize */
@@ -53,16 +40,29 @@ export default function NewArrival() {
     return cloth
   })
 
+  const searchProducts = search ? Search(finalClothsData, search) : []
+
+  const isCloth = searchProducts.length
+    ? searchProducts.length
+      ? true
+      : false
+    : false
+
+  useEffect(() => {
+    if (search !== "" && !isCloth) {
+      toast("No such product available")
+    }
+  }, [search])
+
   const filteredProducts = finalClothsData.filter(
     (product) => product.newArrival === true,
   )
 
   const finalFilteredProducts = search
-    ? filteredProducts.filter((product) =>
-        product.commonCategory
-          .toLocaleLowerCase()
-          .includes(search.toLocaleLowerCase()),
-      )
+    ? filteredProducts.filter((product) => {
+        const cloth = searchProducts.filter((item) => item.id === product.id)
+        return cloth.length
+      })
     : filteredProducts
 
   function addToCart(e) {

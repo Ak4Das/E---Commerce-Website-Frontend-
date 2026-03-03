@@ -3,6 +3,7 @@ import BharatVastra from "../assets/BharatVastra.png"
 import { useState } from "react"
 import { useEffect } from "react"
 import GetClothsData from "./GetClothsData"
+import { Search } from "./Search"
 
 export default function Header({
   position,
@@ -15,6 +16,8 @@ export default function Header({
 }) {
   const { clothsData, setClothsData } = GetClothsData()
   const [input, setInput] = useState("")
+
+  const searchProducts = input ? Search(clothsData, input) : []
 
   useEffect(() => {
     if (!input) {
@@ -33,13 +36,7 @@ export default function Header({
     element.classList.add(newDisplay)
   }
 
-  const isCloth =
-    input !== ""
-      ? clothsData.filter((cloth) => cloth.commonCategory.includes(input))
-          .length
-        ? true
-        : false
-      : false
+  const isCloth = input !== "" ? (searchProducts.length ? true : false) : false
 
   function handleChange(e) {
     setInput(e.target.value)
@@ -50,10 +47,13 @@ export default function Header({
   }
 
   const user = JSON.parse(localStorage.getItem("user"))
-  
+
   return (
-    <header style={{ position, top, zIndex }}>
-      <nav className="bg-body-tertiary py-2 px-3">
+    <header
+      className="bg-body-tertiary "
+      style={{ position, top, zIndex, height: "62px" }}
+    >
+      <nav className="py-2 px-3">
         <div className="d-flex justify-content-between align-items-center">
           <NavLink className="navbar-brand" to="/">
             <img
@@ -79,7 +79,7 @@ export default function Header({
               ></input>
               {page && isCloth ? (
                 <Link
-                  to={`/products/${input}`}
+                  to={`/products/${searchProducts[0].commonCategory}`}
                   className="btn btn-warning w-25"
                 >
                   Search

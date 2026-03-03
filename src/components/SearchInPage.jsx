@@ -9,6 +9,9 @@ export default function searchInPage({
   placeHolder = "Search",
   isSearchBarNeeded = true,
   page = "",
+  position = "position-static",
+  top = "",
+  zIndex = 0,
 }) {
   const { clothsData, setClothsData } = GetClothsData()
   const [input, setInput] = useState("")
@@ -37,7 +40,10 @@ export default function searchInPage({
   return (
     <>
       {isSearchBarNeeded && (
-        <div className={`input-group searchInPage ${margin} bg-light py-2`}>
+        <div
+          className={`input-group searchInPage ${margin} bg-light py-2 ${position}`}
+          style={{ top: `${top}`, zIndex }}
+        >
           <input
             type="text"
             className="border border-1 p-2 searchInputInPage"

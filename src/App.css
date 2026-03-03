@@ -377,6 +377,12 @@
   .paymentMethodMainElement {
     margin-inline: 50px;
   }
+  .addAddressBtn1 {
+    display: block;
+  }
+  .addAddressBtn2 {
+    display: none;
+  }
 }
 @media (min-width: 650px) {
   .saleProductFirstSection {
@@ -430,10 +436,17 @@
   }
   .offcanvasFilterForm {
     height: calc(100vh - 60px);
+    overflow-y: scroll;
     top: 60px;
+  }
+  .offcanvasFilterForm::-webkit-scrollbar {
+    display: none;
   }
   .productImageDiv {
     width: 50%;
+  }
+  .listingPageHeading {
+    margin-block: 16px;
   }
 }
 @media (min-width: 800px) {
@@ -945,7 +958,15 @@
   }
   .offcanvasFilterForm {
     height: calc(100vh - 120px);
+    overflow-y: scroll;
     top: 120px;
+  }
+  .offcanvasFilterForm::-webkit-scrollbar {
+    display: none;
+  }
+  .listingPageHeading {
+    margin-top: 70px;
+    margin-bottom: 16px;
   }
 }
 @media (575px<width<767px) {
@@ -1054,6 +1075,12 @@
   }
   .paymentMethodMainElement {
     margin-inline: 40px;
+  }
+  .addAddressBtn2 {
+    display: block;
+  }
+  .addAddressBtn1 {
+    display: none;
   }
 }
 @media (max-width: 499px) {

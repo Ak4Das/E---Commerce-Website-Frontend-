@@ -9,6 +9,7 @@ import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
 import category from "../components/Category"
 import { useEffect } from "react"
+import { Search } from "../components/Search"
 
 export default function ProductListingPage() {
   const [search, setSearch] = useState("")
@@ -21,29 +22,6 @@ export default function ProductListingPage() {
     : false
 
   const { clothsData, setClothsData } = GetClothsData()
-
-  const isCloth =
-    search !== ""
-      ? clothsData.filter((cloth) => {
-          if (cloth.mainCategory.includes(mainCategory)) {
-            return cloth.commonCategory.includes(search.toLowerCase())
-          }
-        }).length
-        ? true
-        : false
-      : false
-
-  useEffect(() => {
-    if (search !== "" && isCategory && !isCloth) {
-      toast("No such product available")
-    }
-  }, [search])
-
-  // useEffect(() => {
-  //   if (search !== "" && !isCloth) {
-  //     toast("No such product available")
-  //   }
-  // }, [search])
 
   // price, rating, sortBy, Category these useStates is used for filter
   const [price, setPrice] = useState(0)
@@ -196,6 +174,28 @@ export default function ProductListingPage() {
     return cloth
   })
 
+  const searchProducts = search ? Search(finalClothsData, search) : []
+
+  const isCloth = searchProducts.length
+    ? searchProducts.filter((cloth) => {
+        return cloth.mainCategory.includes(mainCategory)
+      }).length
+      ? true
+      : false
+    : false
+
+  useEffect(() => {
+    if (search !== "" && isCategory && !isCloth) {
+      toast("No such product available")
+    }
+  }, [search])
+
+  // useEffect(() => {
+  //   if (search !== "" && !isCloth) {
+  //     toast("No such product available")
+  //   }
+  // }, [search])
+
   const filterByCategory = isCategory
     ? finalClothsData.filter((data) => data.mainCategory.includes(mainCategory))
     : finalClothsData.filter((data) =>
@@ -270,9 +270,10 @@ export default function ProductListingPage() {
   const filterBySearch =
     search === ""
       ? filterByGender
-      : filterByGender.filter((product) =>
-          product.commonCategory.toLowerCase().includes(search.toLowerCase()),
-        )
+      : filterByGender.filter((product) => {
+          const cloth = searchProducts.filter((item) => item.id === product.id)
+          return cloth.length
+        })
 
   const finalFilter =
     productCategory.length === 0
@@ -298,6 +299,9 @@ export default function ProductListingPage() {
         margin="ms-3"
         setSearch={setSearch}
         placeHolder="Search Product"
+        position="position-fixed"
+        top="62px"
+        zIndex = {1}
       />
       <main>
         <Offcanvas
@@ -310,7 +314,9 @@ export default function ProductListingPage() {
           setUpdate={setUpdate}
         />
         <div className="mx-5 my-3">
-          <h4 className="my-3 text-secondary">Showing All Products</h4>
+          <h4 className="listingPageHeading text-secondary">
+            Showing All Products
+          </h4>
           <div className="row">
             {finalFilter.map((product) => (
               <div

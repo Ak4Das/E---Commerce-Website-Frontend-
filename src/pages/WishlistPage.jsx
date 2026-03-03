@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
 import { useState } from "react"
 import { toast } from "react-toastify"
+import { Search } from "../components/Search"
 
 export default function WishlistPage() {
   const { clothsData, setClothsData } = GetClothsData()
@@ -154,15 +155,17 @@ export default function WishlistPage() {
     return cloth
   })
 
+  const searchProducts = search ? Search(finalClothsData, search) : []
+
   const wishlistProducts = finalClothsData.filter(
     (product) => product.addToWishList === true,
   )
 
-  const finalWishlistProducts = wishlistProducts.filter((product) =>
-    product.commonCategory
-      .toLocaleLowerCase()
-      .includes(search.toLocaleLowerCase()),
-  )
+  const finalWishlistProducts = searchProducts.length ? wishlistProducts.filter((product) => {
+    const filteredSearchProducts = searchProducts.filter((item) => item.addToWishList)
+    const cloth = filteredSearchProducts.filter((item) => item.id === product.id)
+    return cloth.length
+  }) : wishlistProducts
 
   if (isUpdated) {
     setUpdated(false)

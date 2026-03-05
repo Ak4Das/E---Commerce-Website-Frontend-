@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import GetClothsData from "./GetClothsData"
+import { Search } from "./Search"
 
 export default function searchInPage({
   margin,
@@ -16,19 +17,15 @@ export default function searchInPage({
   const { clothsData, setClothsData } = GetClothsData()
   const [input, setInput] = useState("")
 
+  const searchProducts = input ? Search(clothsData, input) : []
+
   useEffect(() => {
     if (!input) {
       setSearch(input)
     }
   }, [input])
 
-  const isCloth =
-    input !== ""
-      ? clothsData.filter((cloth) => cloth.commonCategory.includes(input))
-          .length
-        ? true
-        : false
-      : false
+  const isCloth = input !== "" ? (searchProducts.length ? true : false) : false
 
   function handleChange(e) {
     setInput(e.target.value)
@@ -55,7 +52,7 @@ export default function searchInPage({
           ></input>
           {page && isCloth ? (
             <Link
-              to={`/products/${input}`}
+              to={`/products/${searchProducts[0].commonCategory}`}
               className="btn btn-warning searchBtnInPage1"
               style={{ zIndex: 0 }}
               id="button-addon2"
@@ -75,7 +72,7 @@ export default function searchInPage({
           )}
           {page && isCloth ? (
             <Link
-              to={`/products/${input}`}
+              to={`/products/${searchProducts[0].commonCategory}`}
               className="btn btn-warning searchBtnInPage2"
               style={{ zIndex: 0 }}
               id="button-addon2"

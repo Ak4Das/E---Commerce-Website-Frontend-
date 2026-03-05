@@ -29,6 +29,7 @@ export default function ProductListingPage() {
   const [sortBy, setSortBy] = useState("")
   const [gender, setGender] = useState("")
   const [productCategory, setProductCategory] = useState([])
+  const [age, setAge] = useState([])
 
   /* isUpdate useState is used to if user add to cart a item or add to wishlist a item 
   then variables present on this page will reinitialize */
@@ -186,7 +187,7 @@ export default function ProductListingPage() {
 
   useEffect(() => {
     if (search !== "" && isCategory && !isCloth) {
-      toast("No such product available")
+      toast("No Product Found😔")
     }
   }, [search])
 
@@ -275,12 +276,27 @@ export default function ProductListingPage() {
           return cloth.length
         })
 
+  const filterByUserAge =
+    age.length === 0
+      ? filterBySearch
+      : filterBySearch.filter((product) => {
+          return age.filter((age) => product.mainCategory.includes(age)).length
+            ? true
+            : false
+        })
+
   const finalFilter =
     productCategory.length === 0
-      ? filterBySearch
-      : filterBySearch.filter((product) =>
+      ? filterByUserAge
+      : filterByUserAge.filter((product) =>
           productCategory.includes(product.commonCategory),
         )
+
+  useEffect(() => {
+    if (!finalFilter.length) {
+      toast("No Product Found😔")
+    }
+  }, [age.length])
 
   if (isUpdate) {
     setUpdate(false)
@@ -301,7 +317,7 @@ export default function ProductListingPage() {
         placeHolder="Search Product"
         position="position-fixed"
         top="62px"
-        zIndex = {1}
+        zIndex={1}
       />
       <main>
         <Offcanvas
@@ -312,6 +328,9 @@ export default function ProductListingPage() {
           productCategory={productCategory}
           setProductCategory={setProductCategory}
           setUpdate={setUpdate}
+          age={age}
+          setAge={setAge}
+          isCategory={isCategory}
         />
         <div className="mx-5 my-3">
           <h4 className="listingPageHeading text-secondary">

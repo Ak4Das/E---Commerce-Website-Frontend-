@@ -9,6 +9,9 @@ export default function Offcanvas({
   productCategory,
   setProductCategory,
   setUpdate,
+  age,
+  setAge,
+  isCategory,
 }) {
   // open useState is used only to open or close Offcanvas
   const [open, setOpen] = useState(false)
@@ -35,12 +38,22 @@ export default function Offcanvas({
       )
     }
   }
+  function filterByAge(e) {
+    if (e.target.checked) {
+      age.push(e.target.value)
+      setAge(age)
+      setUpdate(true)
+    } else {
+      setAge(age.filter((age) => age !== e.target.value))
+    }
+  }
   function resetFilters() {
     setPrice(0)
     setRating(0)
     setSortBy("")
     setGender("")
-    setProductCategory("")
+    setProductCategory([])
+    setAge([])
   }
   function handleClick(e) {
     const element = e.target
@@ -314,6 +327,73 @@ export default function Offcanvas({
             <br />
           </div>
         </section>
+        {!isCategory && (
+          <section className="my-3">
+            <b>Age</b>
+            <div className="mt-2">
+              <input
+                id="child"
+                type="checkbox"
+                value="child"
+                onChange={filterByAge}
+              />
+              <label htmlFor="child" className="ms-2">
+                Child
+              </label>
+              <br />
+              <input
+                id="teenager"
+                type="checkbox"
+                value="teenager"
+                onChange={filterByAge}
+              />
+              <label htmlFor="teenager" className="ms-2">
+                Teenager
+              </label>
+              <br />
+              <input
+                id="youngAdult"
+                type="checkbox"
+                value="youngAdult"
+                onChange={filterByAge}
+              />
+              <label htmlFor="youngAdult" className="ms-2">
+                Young Adult
+              </label>
+              <br />
+              <input
+                id="adult"
+                type="checkbox"
+                value="adult"
+                onChange={filterByAge}
+              />
+              <label htmlFor="adult" className="ms-2">
+                Adult
+              </label>
+              <br />
+              <input
+                id="matureAdult"
+                type="checkbox"
+                value="matureAdult"
+                onChange={filterByAge}
+              />
+              <label htmlFor="matureAdult" className="ms-2">
+                Mature Adult
+              </label>
+              <br />
+              <input
+                id="senior"
+                type="checkbox"
+                value="senior"
+                onChange={filterByAge}
+              />
+              <label htmlFor="senior" className="ms-2">
+                Senior
+              </label>
+              <br />
+            </div>
+          </section>
+        )}
       </div>
     </form>
   )

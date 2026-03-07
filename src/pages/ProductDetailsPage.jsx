@@ -18,6 +18,8 @@ export default function ProductDetailsPage() {
   const [isUpdated, setUpdated] = useState(false)
   const [time, setTime] = useState("")
   const [isFreeDeliveryAvailable, setFreeDelivery] = useState(false)
+  const [expand, setExpand] = useState(false)
+  console.log(expand)
 
   const id = Number(useParams().id)
 
@@ -343,7 +345,7 @@ export default function ProductDetailsPage() {
           <section className="d-sm-flex gap-sm-4 gap-xl-5 productDetailsContainerFirstSection">
             <div
               className="productDetailsImage top-0 start-0"
-              style={{ minWidth: "200px" }}
+              style={{ minWidth: "200px", maxWidth: "300px" }}
             >
               <img
                 src={product.url}
@@ -736,11 +738,25 @@ export default function ProductDetailsPage() {
               <hr />
               <div>
                 <h5>Description</h5>
-                <ul>
+                <ul
+                  className={`mb-0 ${expand ? "" : "productDescriptionLimit"}`}
+                >
                   {product.description.map((list, index) => (
                     <li key={index}>{list}</li>
                   ))}
                 </ul>
+                <div
+                  className="text-primary"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setExpand(expand ? false : true)}
+                >
+                  <span>{expand ? "show less" : "show more"}</span>{" "}
+                  {expand ? (
+                    <i className="bi bi-chevron-up"></i>
+                  ) : (
+                    <i className="bi bi-chevron-down"></i>
+                  )}
+                </div>
               </div>
               <div className="btnContainer2">
                 {!user && (

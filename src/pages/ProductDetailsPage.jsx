@@ -12,14 +12,25 @@ import { toast } from "react-toastify"
 
 export default function ProductDetailsPage() {
   const [search, setSearch] = useState("")
-  console.log(search)
   const [quantity, setQuantity] = useState(1)
   const [size, setSize] = useState("")
   const [isUpdated, setUpdated] = useState(false)
   const [time, setTime] = useState("")
   const [isFreeDeliveryAvailable, setFreeDelivery] = useState(false)
   const [expand, setExpand] = useState(false)
-  console.log(expand)
+  const [showTable1, setShowTable1] = useState(false)
+  const [showTable2, setShowTable2] = useState(false)
+  const [showTable3, setShowTable3] = useState(false)
+  const [showTable4, setShowTable4] = useState(false)
+  const [checkBox1Clicked, setCheckBox1Clicked] = useState(false)
+  const [checkBox2Clicked, setCheckBox2Clicked] = useState(false)
+  const [returnAndExchangePopover, setReturnAndExchangePopover] =
+    useState(false)
+  const [freeDeliveryPopover, setFreeDeliveryPopover] = useState(false)
+  const [payOnDeliveryPopover, setPayOnDeliveryPopover] = useState(false)
+  const [secureTransactionPopover, setSecureTransactionPopover] =
+    useState(false)
+  const [knowMore, setKnowMore] = useState(false)
 
   const id = Number(useParams().id)
 
@@ -239,15 +250,23 @@ export default function ProductDetailsPage() {
       }
     }
     if (size) {
-      product.size = size
+      const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+      createOrder.item.forEach((item) => (item.size = size))
+      // product.size = size
+      localStorage.setItem("createOrder", JSON.stringify(createOrder))
     }
     if (isFreeDeliveryAvailable) {
       product.freeDelivery = true
     } else {
       product.freeDelivery = false
     }
-    const createOrder = { item: [product] }
-    localStorage.setItem("createOrder", JSON.stringify(createOrder))
+    const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+    const filteredItem = createOrder.item.filter(
+      (item) => item.id !== product.id,
+    )
+    filteredItem.push(product)
+    const CreateOrder = { item: filteredItem }
+    localStorage.setItem("createOrder", JSON.stringify(CreateOrder))
     setUpdated(false)
   }
 
@@ -317,12 +336,75 @@ export default function ProductDetailsPage() {
     } else {
       setTime("0:0:0")
     }
+    // set createOrder for every mount
+    const obj = { item: [] }
+    obj.item.push(product)
+    localStorage.setItem("createOrder", JSON.stringify(obj))
   }, [])
 
   const similarProductIds = product.similarProducts.map((product) => product.id)
   const similarProducts = finalClothsData.filter((product) =>
     similarProductIds.includes(product.id),
   )
+
+  const additionalInformationKeys = Object.keys(
+    product.productDetails.additionalInformation,
+  )
+
+  const itemDetailsKeys = Object.keys(product.productDetails.itemDetails)
+
+  const styleKeys = Object.keys(product.productDetails.style)
+
+  const topHighlightsKeys = Object.keys(product.productDetails.topHighlights)
+
+  function camelCaseToTitle(camelCase) {
+    const wordsArray = []
+    const arrayOfLetters = camelCase.split("")
+    arrayOfLetters[0] = arrayOfLetters[0].toUpperCase()
+    let firstIndex = 0
+    let lastIndex = 0
+    arrayOfLetters.forEach((letter) => {
+      if (letter.toUpperCase() === letter) {
+        const word = arrayOfLetters.slice(firstIndex, lastIndex).join("")
+        wordsArray.push(word)
+        firstIndex = lastIndex
+      }
+      lastIndex++
+    })
+    const lastWord = arrayOfLetters.slice(firstIndex).join("")
+    wordsArray.push(lastWord)
+    return wordsArray.join(" ")
+  }
+
+  function addToCreateOrder(e, productId) {
+    const checked = e.target.checked
+    const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+    const product = finalClothsData.find((item) => item.id === productId)
+    const isIncluded = createOrder.item.filter((item) => item.id === product.id)
+      .length
+      ? true
+      : false
+    if (checked) {
+      if (!isIncluded) {
+        if (size) {
+          product.size = size
+        }
+        product.quantity = 1
+        createOrder.item.push(product)
+        localStorage.setItem("createOrder", JSON.stringify(createOrder))
+      }
+    } else {
+      if (isIncluded) {
+        const updatedItem = createOrder.item.filter(
+          (item) => item.id !== product.id,
+        )
+        localStorage.setItem(
+          "createOrder",
+          JSON.stringify({ item: updatedItem }),
+        )
+      }
+    }
+  }
 
   return (
     <>
@@ -443,7 +525,10 @@ export default function ProductDetailsPage() {
               </p>
               <div className="d-flex align-items-end">
                 <RatingBar rating={product.rating} />
-                <span style={{ fontSize: "15px", marginLeft: "5px" }}>
+                <span
+                  className="fw-bold"
+                  style={{ fontSize: "15px", marginLeft: "5px" }}
+                >
                   {" "}
                   {product.rating}
                 </span>
@@ -489,7 +574,7 @@ export default function ProductDetailsPage() {
                       product.quantity ? product.quantity : quantity
                     }
                     style={{ width: "30px" }}
-                    className="mx-2"
+                    className="mx-2 text-center"
                     onChange={(e) => {
                       // Update user in Database
                       const user = JSON.parse(localStorage.getItem("user"))
@@ -542,6 +627,17 @@ export default function ProductDetailsPage() {
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
                       setTimeout(() => {
                         btn.innerHTML = "S"
+                        btn.style.backgroundColor = "green"
+                        btn.style.color = "white"
+                        const parentElement = btn.parentElement
+                        const siblings = parentElement.children
+                        const arrayOfSiblings = [...siblings]
+                        arrayOfSiblings.forEach((sibling) => {
+                          if (sibling !== btn) {
+                            sibling.style.backgroundColor = ""
+                            sibling.style.color = ""
+                          }
+                        })
                       }, 500)
                     }}
                   >
@@ -569,6 +665,17 @@ export default function ProductDetailsPage() {
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
                       setTimeout(() => {
                         btn.innerHTML = "M"
+                        btn.style.backgroundColor = "green"
+                        btn.style.color = "white"
+                        const parentElement = btn.parentElement
+                        const siblings = parentElement.children
+                        const arrayOfSiblings = [...siblings]
+                        arrayOfSiblings.forEach((sibling) => {
+                          if (sibling !== btn) {
+                            sibling.style.backgroundColor = ""
+                            sibling.style.color = ""
+                          }
+                        })
                       }, 500)
                     }}
                   >
@@ -596,6 +703,17 @@ export default function ProductDetailsPage() {
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
                       setTimeout(() => {
                         btn.innerHTML = "L"
+                        btn.style.backgroundColor = "green"
+                        btn.style.color = "white"
+                        const parentElement = btn.parentElement
+                        const siblings = parentElement.children
+                        const arrayOfSiblings = [...siblings]
+                        arrayOfSiblings.forEach((sibling) => {
+                          if (sibling !== btn) {
+                            sibling.style.backgroundColor = ""
+                            sibling.style.color = ""
+                          }
+                        })
                       }, 500)
                     }}
                   >
@@ -623,6 +741,17 @@ export default function ProductDetailsPage() {
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
                       setTimeout(() => {
                         btn.innerHTML = "XL"
+                        btn.style.backgroundColor = "green"
+                        btn.style.color = "white"
+                        const parentElement = btn.parentElement
+                        const siblings = parentElement.children
+                        const arrayOfSiblings = [...siblings]
+                        arrayOfSiblings.forEach((sibling) => {
+                          if (sibling !== btn) {
+                            sibling.style.backgroundColor = ""
+                            sibling.style.color = ""
+                          }
+                        })
                       }, 500)
                     }}
                   >
@@ -650,6 +779,17 @@ export default function ProductDetailsPage() {
                       btn.innerHTML = '<i class="bi bi-check2"></i>'
                       setTimeout(() => {
                         btn.innerHTML = "XXL"
+                        btn.style.backgroundColor = "green"
+                        btn.style.color = "white"
+                        const parentElement = btn.parentElement
+                        const siblings = parentElement.children
+                        const arrayOfSiblings = [...siblings]
+                        arrayOfSiblings.forEach((sibling) => {
+                          if (sibling !== btn) {
+                            sibling.style.backgroundColor = ""
+                            sibling.style.color = ""
+                          }
+                        })
                       }, 500)
                     }}
                   >
@@ -669,8 +809,21 @@ export default function ProductDetailsPage() {
                 ></i>
                 <div className="orderFeaturesInProductDetailsPage d-flex gap-3 gap-sm-4 gap-md-5 px-sm-4">
                   <div
-                    className="d-flex flex-column align-items-center gap-1 buyingFeatures"
-                    style={{ width: "50px", minWidth: "50px" }}
+                    className="d-flex flex-column align-items-center gap-1 buyingFeatures returnAndExchange"
+                    style={{
+                      width: "50px",
+                      minWidth: "50px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      setReturnAndExchangePopover(
+                        returnAndExchangePopover ? false : true,
+                      )
+                      setFreeDeliveryPopover(false)
+                      setPayOnDeliveryPopover(false)
+                      setSecureTransactionPopover(false)
+                      setKnowMore(false)
+                    }}
                   >
                     <img
                       src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/icon-returns._CB562506492_.png"
@@ -685,8 +838,18 @@ export default function ProductDetailsPage() {
                     </p>
                   </div>
                   <div
-                    className="d-flex flex-column align-items-center gap-1 buyingFeatures"
-                    style={{ width: "50px", minWidth: "50px" }}
+                    className="d-flex flex-column align-items-center gap-1 buyingFeatures freeDelivery"
+                    style={{
+                      width: "50px",
+                      minWidth: "50px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      setFreeDeliveryPopover(freeDeliveryPopover ? false : true)
+                      setReturnAndExchangePopover(false)
+                      setPayOnDeliveryPopover(false)
+                      setSecureTransactionPopover(false)
+                    }}
                   >
                     <img
                       src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/trust_icon_free_shipping_81px._CB562549966_.png"
@@ -701,8 +864,20 @@ export default function ProductDetailsPage() {
                     </p>
                   </div>
                   <div
-                    className="d-flex flex-column align-items-center gap-1 buyingFeatures"
-                    style={{ width: "50px", minWidth: "50px" }}
+                    className="d-flex flex-column align-items-center gap-1 buyingFeatures payOnDelivery"
+                    style={{
+                      width: "50px",
+                      minWidth: "50px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      setPayOnDeliveryPopover(
+                        payOnDeliveryPopover ? false : true,
+                      )
+                      setFreeDeliveryPopover(false)
+                      setReturnAndExchangePopover(false)
+                      setSecureTransactionPopover(false)
+                    }}
                   >
                     <img
                       src={cashOnDelivery}
@@ -714,12 +889,24 @@ export default function ProductDetailsPage() {
                       className="lh-1 m-0 text-center"
                       style={{ fontSize: "10px" }}
                     >
-                      Cash on Delivery
+                      Pay on Delivery
                     </p>
                   </div>
                   <div
-                    className="d-flex flex-column align-items-center gap-1 buyingFeatures"
-                    style={{ width: "50px", minWidth: "50px" }}
+                    className="d-flex flex-column align-items-center gap-1 buyingFeatures secureTransaction"
+                    style={{
+                      width: "50px",
+                      minWidth: "50px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      setSecureTransactionPopover(
+                        secureTransactionPopover ? false : true,
+                      )
+                      setPayOnDeliveryPopover(false)
+                      setFreeDeliveryPopover(false)
+                      setReturnAndExchangePopover(false)
+                    }}
                   >
                     <img
                       src="https://m.media-amazon.com/images/G/31/A2I-Convert/mobile/IconFarm/Secure-payment._CB650126890_.png"
@@ -734,6 +921,170 @@ export default function ProductDetailsPage() {
                     </p>
                   </div>
                 </div>
+              </div>
+              <div className="popoverContainer position-relative">
+                {returnAndExchangePopover && (
+                  <div className="popover">
+                    <div
+                      className="position-absolute"
+                      style={{
+                        top: "-14px",
+                        left: "37px",
+                      }}
+                    >
+                      <i class="bi bi-chevron-up"></i>
+                    </div>
+                    <div className="d-flex justify-content-between pb-2 fw-bold">
+                      <h6>10 days Return & Exchange</h6>
+                      <i
+                        className="bi bi-x-lg fs-6"
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                          setReturnAndExchangePopover(false)
+                          setKnowMore(false)
+                        }}
+                      ></i>
+                    </div>
+                    <table>
+                      <thead>
+                        <tr className="border-secondary-subtle border-top border-bottom">
+                          <th className="py-2">Return Reason</th>
+                          <th className="py-2">Return Period</th>
+                          <th className="py-2">Return Policy</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="border-secondary-subtle border-bottom">
+                          <td className="py-1">Any other reason</td>
+                          <td className="py-1">10 days from delivery</td>
+                          <td className="py-1">Full refund</td>
+                        </tr>
+                        <tr className="border-secondary-subtle border-bottom">
+                          <td className="py-1">
+                            Size too large, Size too small
+                          </td>
+                          <td className="py-1">10 days from delivery</td>
+                          <td className="py-1">
+                            Exchange with a different size or colour
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div
+                      className="mt-3 mb-2 text-primary"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setKnowMore(knowMore ? false : true)}
+                    >
+                      {knowMore ? (
+                        <span className="me-1">Know Less</span>
+                      ) : (
+                        <span className="me-1">Know More</span>
+                      )}
+                      {knowMore ? (
+                        <i className="bi bi-chevron-up"></i>
+                      ) : (
+                        <i className="bi bi-chevron-down"></i>
+                      )}
+                    </div>
+                    {knowMore && (
+                      <div>
+                        <h5>Return Instructions</h5>
+                        <div className="d-flex gap-3">
+                          <img
+                            src="https://m.media-amazon.com/images/I/11Sa2OpQXzL.png"
+                            style={{ width: "100px" }}
+                            alt="return"
+                          />
+                          <p>
+                            Keep the item in its original condition and
+                            packaging along with MRP tag and accessories for a
+                            successful pick-up.
+                          </p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+                {freeDeliveryPopover && (
+                  <div className="popover">
+                    <div
+                      className="position-absolute"
+                      style={{
+                        top: "-14px",
+                        left: "137px",
+                      }}
+                    >
+                      <i class="bi bi-chevron-up"></i>
+                    </div>
+                    <div className="d-flex justify-content-between fw-bold pb-2">
+                      <h6>Free Delivery</h6>
+                      <i
+                        className="bi bi-x-lg fs-6"
+                        style={{ cursor: "pointer" }}
+                        onClick={() => setFreeDeliveryPopover(false)}
+                      ></i>
+                    </div>
+                    {product.freeDelivery ? (
+                      <p>The product is eligible for Free delivery.</p>
+                    ) : (
+                      <p>The product is not eligible for Free delivery.</p>
+                    )}
+                  </div>
+                )}
+                {payOnDeliveryPopover && (
+                  <div className="popover">
+                    <div
+                      className="position-absolute"
+                      style={{
+                        top: "-14px",
+                        left: "237px",
+                      }}
+                    >
+                      <i class="bi bi-chevron-up"></i>
+                    </div>
+                    <div className="d-flex justify-content-between fw-bold pb-2">
+                      <h6>What is Pay on Delivery (Cash/Card)?</h6>
+                      <i
+                        className="bi bi-x-lg fs-6"
+                        style={{ cursor: "pointer" }}
+                        onClick={() => setPayOnDeliveryPopover(false)}
+                      ></i>
+                    </div>
+                    <p>
+                      Pay on Delivery (Cash/Card) payment method includes Cash
+                      on Delivery (COD) as well as Debit card / Credit card /
+                      Net banking payments at your doorstep.
+                    </p>
+                  </div>
+                )}
+                {secureTransactionPopover && (
+                  <div className="popover">
+                    <div
+                      className="position-absolute"
+                      style={{
+                        top: "-14px",
+                        left: "337px",
+                      }}
+                    >
+                      <i class="bi bi-chevron-up"></i>
+                    </div>
+                    <div className="d-flex justify-content-between fw-bold pb-2">
+                      <h6>Your transaction is secure</h6>
+                      <i
+                        className="bi bi-x-lg fs-6"
+                        style={{ cursor: "pointer" }}
+                        onClick={() => setSecureTransactionPopover(false)}
+                      ></i>
+                    </div>
+                    <p>
+                      We work hard to protect your security and privacy. Our
+                      payment security system encrypts your information during
+                      transmission. We don’t share your credit card details with
+                      third-party sellers, and we don’t sell your information to
+                      others.
+                    </p>
+                  </div>
+                )}
               </div>
               <hr />
               <div>
@@ -994,6 +1345,394 @@ export default function ProductDetailsPage() {
             </div>
           </section>
           <hr />
+          <section className="frequentlyBoughtSection">
+            <h3 className="mt-2 mb-4">Frequently bought together</h3>
+            <div className="frequentlyBoughtContainer">
+              <div className="frequently-bought-item">
+                <div className="frequently-bought-image">
+                  <img src={product.url} alt="Frequently bought item 1" />
+                  <input type="checkbox" checked readOnly />
+                </div>
+                <p
+                  style={{
+                    height: "67px",
+                    overflow: "hidden",
+                    fontSize: "14px",
+                    marginBottom: "0px",
+                  }}
+                >
+                  <span className="fw-bold">This item:</span>{" "}
+                  {product.name.length > 71
+                    ? product.name.slice(0, 70).concat("...")
+                    : product.name}
+                </p>
+                <div className="item-price">
+                  <b>₹</b>
+                  <span>
+                    {Math.round(
+                      product.price -
+                        (product.price *
+                          (Number(product.offer.replace("%", ""))
+                            ? Number(product.offer.replace("%", ""))
+                            : Number(product.discount.replace("%", "")))) /
+                          100,
+                    )}
+                  </span>
+                  <span className="ms-1">
+                    (-
+                    {Number(product.offer.replace("%", ""))
+                      ? product.offer
+                      : product.discount}
+                    )
+                  </span>
+                </div>
+              </div>
+              <span className="plus-symbol" style={{ fontSize: "30px" }}>
+                +
+              </span>
+              <div className="frequently-bought-item">
+                <div className="frequently-bought-image">
+                  <img
+                    src={similarProducts[2].url}
+                    alt="Frequently bought item 2"
+                  />
+                  <input
+                    type="checkbox"
+                    style={{ cursor: "pointer" }}
+                    onChange={(e) => {
+                      addToCreateOrder(e, similarProducts[2].id)
+                      setCheckBox1Clicked(checkBox1Clicked ? false : true)
+                    }}
+                  />
+                </div>
+                <a
+                  href={`/productDetails/${similarProducts[2].id}`}
+                  style={{
+                    height: "67px",
+                    overflow: "hidden",
+                    fontSize: "14px",
+                    display: "block",
+                    marginBottom: "0px",
+                  }}
+                >
+                  {similarProducts[2].name.length > 71
+                    ? similarProducts[2].name.slice(0, 70).concat("...")
+                    : similarProducts[2].name}
+                </a>
+                <div className="item-price text-black">
+                  <b>₹</b>
+                  <span>
+                    {Math.round(
+                      similarProducts[2].price -
+                        (similarProducts[2].price *
+                          (Number(similarProducts[2].offer.replace("%", ""))
+                            ? Number(similarProducts[2].offer.replace("%", ""))
+                            : Number(
+                                similarProducts[2].discount.replace("%", ""),
+                              ))) /
+                          100,
+                    )}
+                  </span>
+                  <span className="ms-1">
+                    (-
+                    {Number(similarProducts[2].offer.replace("%", ""))
+                      ? similarProducts[2].offer
+                      : similarProducts[2].discount}
+                    )
+                  </span>
+                </div>
+              </div>
+              <span
+                className="plus-symbol frequentlyBoughtThirdPlusSymbol"
+                style={{ fontSize: "30px" }}
+              >
+                +
+              </span>
+              <div className="frequently-bought-item frequentlyBoughtThirdItem">
+                <div className="frequently-bought-image">
+                  <img
+                    src={similarProducts[3].url}
+                    alt="Frequently bought item 3"
+                  />
+                  <input
+                    type="checkbox"
+                    style={{ cursor: "pointer" }}
+                    onChange={(e) => {
+                      addToCreateOrder(e, similarProducts[3].id)
+                      setCheckBox2Clicked(checkBox2Clicked ? false : true)
+                    }}
+                  />
+                </div>
+                <a
+                  href={`/productDetails/${similarProducts[3].id}`}
+                  style={{
+                    height: "67px",
+                    overflow: "hidden",
+                    fontSize: "14px",
+                    display: "block",
+                    marginBottom: "0px",
+                  }}
+                >
+                  {similarProducts[3].name.length > 71
+                    ? similarProducts[3].name.slice(0, 70).concat("...")
+                    : similarProducts[3].name}
+                </a>
+                <div className="item-price text-black">
+                  <b>₹</b>
+                  <span>
+                    {Math.round(
+                      similarProducts[3].price -
+                        (similarProducts[3].price *
+                          (Number(similarProducts[3].offer.replace("%", ""))
+                            ? Number(similarProducts[3].offer.replace("%", ""))
+                            : Number(
+                                similarProducts[3].discount.replace("%", ""),
+                              ))) /
+                          100,
+                    )}
+                  </span>
+                  <span className="ms-1">
+                    (-
+                    {Number(similarProducts[3].offer.replace("%", ""))
+                      ? similarProducts[3].offer
+                      : similarProducts[3].discount}
+                    )
+                  </span>
+                </div>
+              </div>
+              <div className="frequentlyBroughtPriceSection">
+                <div className="text-center fw-medium">
+                  <p className="d-inline-block fs-6 mb-0">Total Price:</p>
+                  <p className="d-inline-block ms-1 mb-0">
+                    ₹
+                    <span>
+                      {Math.round(
+                        product.price -
+                          (product.price *
+                            (Number(product.offer.replace("%", ""))
+                              ? Number(product.offer.replace("%", ""))
+                              : Number(product.discount.replace("%", "")))) /
+                            100,
+                      ) +
+                        (checkBox1Clicked
+                          ? Math.round(
+                              similarProducts[2].price -
+                                (similarProducts[2].price *
+                                  (Number(
+                                    similarProducts[2].offer.replace("%", ""),
+                                  )
+                                    ? Number(
+                                        similarProducts[2].offer.replace(
+                                          "%",
+                                          "",
+                                        ),
+                                      )
+                                    : Number(
+                                        similarProducts[2].discount.replace(
+                                          "%",
+                                          "",
+                                        ),
+                                      ))) /
+                                  100,
+                            )
+                          : 0) +
+                        (checkBox2Clicked
+                          ? Math.round(
+                              similarProducts[3].price -
+                                (similarProducts[3].price *
+                                  (Number(
+                                    similarProducts[3].offer.replace("%", ""),
+                                  )
+                                    ? Number(
+                                        similarProducts[3].offer.replace(
+                                          "%",
+                                          "",
+                                        ),
+                                      )
+                                    : Number(
+                                        similarProducts[3].discount.replace(
+                                          "%",
+                                          "",
+                                        ),
+                                      ))) /
+                                  100,
+                            )
+                          : 0)}
+                    </span>
+                  </p>
+                </div>
+                <div
+                  className="frequentlyBroughtBuyNowBtn"
+                  style={{ width: "250px" }}
+                >
+                  {!user && (
+                    <button
+                      className="btn btn-warning w-100 my-2 rounded-pill"
+                      onClick={() => toast("Please login to your account")}
+                    >
+                      Buy now
+                    </button>
+                  )}
+                  {user && !user.address.length && (
+                    <button
+                      className="btn btn-warning w-100 my-2 rounded-pill"
+                      onClick={() => toast("Please add your address")}
+                    >
+                      Buy now
+                    </button>
+                  )}
+                  {user && user.address.length !== 0 && !size && (
+                    <button
+                      className="btn btn-warning w-100 my-2 rounded-pill"
+                      onClick={() => toast("Please select the product size")}
+                    >
+                      Buy now
+                    </button>
+                  )}
+                  {user && user.address.length !== 0 && size && (
+                    <Link
+                      to="/paymentMethods"
+                      className="btn btn-warning w-100 mb-2 rounded-pill"
+                    >
+                      Buy now
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
+          <hr className="frequentlyBroughtSectionHr" />
+          <section className="productSpecsSection">
+            <h3>Product information</h3>
+            <div className="specsContainer specsContainerFirst">
+              <div
+                className="Product-details mt-3 additionalInformationTable"
+                style={{ cursor: "pointer" }}
+                onClick={() => setShowTable1(showTable1 ? false : true)}
+              >
+                <div className="tableHeader p-2">
+                  <h4 className="additionalInformationHeader">
+                    Additional Information
+                  </h4>
+                  {showTable1 ? (
+                    <i className="bi bi-chevron-up"></i>
+                  ) : (
+                    <i className="bi bi-chevron-down"></i>
+                  )}
+                </div>
+                <table className={`${showTable1 ? "showTable" : ""}`}>
+                  <tbody>
+                    {additionalInformationKeys &&
+                      additionalInformationKeys.map((key) => {
+                        return (
+                          <tr key={key}>
+                            <td>{camelCaseToTitle(key)}</td>
+                            <td>
+                              {
+                                product.productDetails.additionalInformation[
+                                  key
+                                ]
+                              }
+                            </td>
+                          </tr>
+                        )
+                      })}
+                  </tbody>
+                </table>
+              </div>
+              <div
+                className="Product-details mt-3 itemDetailsTable"
+                style={{ cursor: "pointer" }}
+                onClick={() => setShowTable2(showTable2 ? false : true)}
+              >
+                <div className="tableHeader p-2">
+                  <h4 className="itemDetailsHeader">Item Details</h4>
+                  {showTable2 ? (
+                    <i className="bi bi-chevron-up"></i>
+                  ) : (
+                    <i className="bi bi-chevron-down"></i>
+                  )}
+                </div>
+                <table className={`${showTable2 ? "showTable" : ""}`}>
+                  <tbody>
+                    {itemDetailsKeys &&
+                      itemDetailsKeys.map((key) => {
+                        return (
+                          <tr key={key}>
+                            <td>{camelCaseToTitle(key)}</td>
+                            <td>
+                              {key !== "bestSellersRank"
+                                ? product.productDetails.itemDetails[key]
+                                : Object.values(
+                                    product.productDetails.itemDetails
+                                      .bestSellersRank,
+                                  ).join(", ")}
+                            </td>
+                          </tr>
+                        )
+                      })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div className="specsContainer specsContainerSecond">
+              <div
+                className="Product-details mt-3 styleTable"
+                style={{ cursor: "pointer" }}
+                onClick={() => setShowTable3(showTable3 ? false : true)}
+              >
+                <div className="tableHeader p-2">
+                  <h4 className="styleHeader">Style</h4>
+                  {showTable3 ? (
+                    <i className="bi bi-chevron-up"></i>
+                  ) : (
+                    <i className="bi bi-chevron-down"></i>
+                  )}
+                </div>
+                <table className={`${showTable3 ? "showTable" : ""}`}>
+                  <tbody>
+                    {styleKeys &&
+                      styleKeys.map((key) => {
+                        return (
+                          <tr key={key}>
+                            <td>{camelCaseToTitle(key)}</td>
+                            <td>{product.productDetails.style[key]}</td>
+                          </tr>
+                        )
+                      })}
+                  </tbody>
+                </table>
+              </div>
+              <div
+                className="Product-details mt-3 topHighlightsTable"
+                style={{ cursor: "pointer" }}
+                onClick={() => setShowTable4(showTable4 ? false : true)}
+              >
+                <div className="tableHeader p-2">
+                  <h4 className="topHighlightsHeader">Top Highlights</h4>
+                  {showTable4 ? (
+                    <i className="bi bi-chevron-up"></i>
+                  ) : (
+                    <i className="bi bi-chevron-down"></i>
+                  )}
+                </div>
+                <table className={`${showTable4 ? "showTable" : ""}`}>
+                  <tbody>
+                    {topHighlightsKeys &&
+                      topHighlightsKeys.map((key) => {
+                        return (
+                          <tr key={key}>
+                            <td>{camelCaseToTitle(key)}</td>
+                            <td>{product.productDetails.topHighlights[key]}</td>
+                          </tr>
+                        )
+                      })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <hr className="productSpecsSectionHr" />
           <section>
             <h3 className="my-3">More items you may like in apparel</h3>
             <div className="row row-gap-3">

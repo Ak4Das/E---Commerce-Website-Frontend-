@@ -20,6 +20,44 @@
   overflow: hidden;
 }
 
+/* compareSimilarItemsTable slider */
+.compareSimilarItemsDiv {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.compareSimilarItemsDiv::-webkit-scrollbar {
+  display: none;
+}
+.pre-content,
+.nxt-content {
+  border: none;
+  width: 10vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+.pre-content {
+  left: 0;
+  transform: rotate(180deg);
+}
+.nxt-content {
+  right: 0;
+}
+.pre-content img,
+.nxt-content img {
+  width: 5vw;
+  opacity: 0.2;
+}
+.pre-content:hover img,
+.nxt-content:hover img {
+  opacity: 1;
+}
+
 @media (min-width: 250px) {
   .diwaliSaleCard {
     height: 150px !important;
@@ -161,6 +199,9 @@
   }
 }
 @media (min-width: 321px) {
+  .BharatVastra {
+    display: none;
+  }
   .pre-btn,
   .nxt-btn {
     display: none !important;
@@ -272,9 +313,6 @@
   }
 }
 @media (min-width: 500px) {
-  .BharatVastra {
-    display: none;
-  }
   .image {
     height: 300px !important;
   }
@@ -804,6 +842,12 @@
   .couponSectionInput {
     width: 36% !important;
   }
+  .pre-content {
+    display: none;
+  }
+  .nxt-content {
+    display: none;
+  }
 }
 @media (max-width: 1450px) {
   .checkoutSidebar {
@@ -1138,10 +1182,6 @@
   .AtmCardDetailsForm {
     width: 350px !important;
   }
-  .floatingCardHeaderText {
-    font-size: 16px;
-    margin-bottom: 0px;
-  }
   .paymentMethodMainElement {
     margin-inline: 40px;
   }
@@ -1153,9 +1193,6 @@
   }
 }
 @media (max-width: 499px) {
-  .navbarBrand {
-    display: none;
-  }
   .paymentMethodHeading {
     font-size: 16px !important;
   }
@@ -1208,18 +1245,11 @@
     width: 75%;
     margin-top: 12px !important;
   }
-  .floatingCard {
-    width: 250px !important;
-  }
-  .floatingCardUserImage {
-    width: 200px !important;
-    height: 200px !important;
-  }
-  .floatingCardText {
-    font-size: 14px;
-  }
   .loginForm {
     width: 85% !important;
+  }
+  .compareSimilarItemsSection {
+    display: none;
   }
 }
 @media (max-width: 450px) {
@@ -1243,9 +1273,6 @@
   }
   .AtmCardDetailsForm {
     width: 300px !important;
-  }
-  .floatingCardHeaderText {
-    font-size: 14px;
   }
   .floatingCardHeaderCrossBtn {
     width: 12px !important;
@@ -1322,24 +1349,8 @@
   .goldenRibbonCarousel {
     margin-top: -2px;
   }
-  .floatingCard {
-    width: 200px !important;
-  }
-  .floatingCardUserImage {
-    width: 150px !important;
-    height: 150px !important;
-  }
-  .floatingCardText {
-    line-height: 18px;
-  }
-  .usrAccTextFloatingCard {
-    font-size: 20px;
-  }
   .crossBtnFloatingCard {
     width: 15px !important;
-  }
-  .profilePicTextFloatingCard {
-    font-size: 18px;
   }
   .floatingCardBtns {
     flex-direction: column;
@@ -1350,9 +1361,6 @@
   }
   .AtmCardDetailsForm {
     width: 250px !important;
-  }
-  .floatingCardHeaderText {
-    font-size: 12px;
   }
   .loginForm {
     padding-inline: 24px !important;
@@ -1416,8 +1424,18 @@
   .frequentlyBroughtBuyNowBtn {
     width: 200px !important;
   }
+  .floatingCard {
+    width: 250px !important;
+  }
+  .floatingCardUserImage {
+    width: 220px !important;
+    height: 220px !important;
+  }
 }
 @media (max-width: 320px) {
+  .navbarBrand {
+    display: none;
+  }
   .orderFeaturesInProductDetailsPage {
     padding-inline: 24px !important;
   }
@@ -1507,6 +1525,13 @@
   }
   .AtmCardDetailsForm {
     width: 220px !important;
+  }
+  .floatingCard {
+    width: 240px !important;
+  }
+  .floatingCardUserImage {
+    width: 200px !important;
+    height: 200px !important;
   }
   .floatingCardHeaderText {
     font-size: 10px;
@@ -1600,6 +1625,26 @@
   }
   .paymentMethodMainElement {
     margin-inline: 10px;
+  }
+  .floatingCard {
+    width: 200px !important;
+  }
+  .floatingCardUserImage {
+    width: 170px !important;
+    height: 170px !important;
+  }
+  .floatingCardText {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .usrAccTextFloatingCard {
+    font-size: 20px;
+  }
+  .profilePicTextFloatingCard {
+    font-size: 18px;
+  }
+  .floatingCardHeaderText {
+    font-size: 12px;
   }
 }
 
@@ -1926,4 +1971,85 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 10px;
+}
+
+/* Compare similar items */
+.compareSimilarItemsSection {
+  position: relative;
+  overflow: hidden;
+}
+.compareSimilarItemsTable img {
+  display: block;
+  width: 200px;
+  height: 250px;
+  background-color: #f0f2f2;
+  margin-block: 10px;
+  margin-inline: auto;
+}
+.compareSimilarItemsTable .item {
+  width: 200px;
+}
+.compareSimilarItemsTable tr td {
+  min-width: 160px;
+}
+.compareSimilarItemsTable .chooseColor {
+  width: 100px;
+  margin-inline: auto;
+  margin-block: 10px;
+}
+.compareSimilarItemsTable .chooseColor a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  outline: 1px solid black;
+  outline-offset: 2px;
+  margin-inline: 5px;
+  border-radius: 100%;
+}
+.compareSimilarItemsTable .chooseColor a:hover {
+  outline: 2px solid #0000ff;
+}
+
+.similarItems-item1 .chooseColor .anchor1 {
+  background-color: #ff0000;
+}
+.similarItems-item1 .chooseColor .anchor2 {
+  background-color: #808080;
+}
+.similarItems-item1 .chooseColor .anchor3 {
+  background-color: #000000;
+}
+.compareSimilarItemsTable {
+  border-collapse: collapse;
+  font-size: 14px;
+  width: 100%;
+}
+.compareSimilarItemsTable tr {
+  border: 1px solid #e0e0e0;
+}
+.compareSimilarItemsTable td {
+  padding: 10px 12px;
+  height: 30px;
+}
+.compareSimilarItemsTable tr:nth-child(1) {
+  border: none;
+}
+.compareSimilarItemsTable tr > :nth-child(1) {
+  font-weight: bold;
+}
+.compareSimilarItemsTable .productLink {
+  font-size: 13px;
+}
+.discountedPrice {
+  font-size: 23px;
+  margin-top: 20px;
+}
+.discount {
+  color: red;
+}
+.originalPrice {
+  font-size: 16px;
+}
+.originalPrice span {
+  text-decoration: line-through;
 }

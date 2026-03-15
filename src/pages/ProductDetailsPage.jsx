@@ -9,6 +9,7 @@ import location from "../assets/location.png"
 import { useEffect } from "react"
 import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
+import rightArrow from "../assets/right-arrow.png"
 
 export default function ProductDetailsPage() {
   const [search, setSearch] = useState("")
@@ -288,6 +289,15 @@ export default function ProductDetailsPage() {
     container.scrollLeft -= containerWidth
     element.style.opacity = 0
     element.previousElementSibling.style.opacity = 1
+  }
+
+  function preContentClicked() {
+    const container = document.querySelector(".compareSimilarItemsDiv")
+    container.scrollLeft -= 210
+  }
+  function nxtContentClicked() {
+    const container = document.querySelector(".compareSimilarItemsDiv")
+    container.scrollLeft += 280
   }
 
   const months = [
@@ -624,7 +634,7 @@ export default function ProductDetailsPage() {
 
                       // For interactivity
                       const btn = e.target
-                      btn.innerHTML = '<i class="bi bi-check2"></i>'
+                      btn.innerHTML = '✓'
                       setTimeout(() => {
                         btn.innerHTML = "S"
                         btn.style.backgroundColor = "green"
@@ -662,7 +672,7 @@ export default function ProductDetailsPage() {
 
                       // For interactivity
                       const btn = e.target
-                      btn.innerHTML = '<i class="bi bi-check2"></i>'
+                      btn.innerHTML = '✓'
                       setTimeout(() => {
                         btn.innerHTML = "M"
                         btn.style.backgroundColor = "green"
@@ -700,7 +710,7 @@ export default function ProductDetailsPage() {
 
                       // For interactivity
                       const btn = e.target
-                      btn.innerHTML = '<i class="bi bi-check2"></i>'
+                      btn.innerHTML = '✓'
                       setTimeout(() => {
                         btn.innerHTML = "L"
                         btn.style.backgroundColor = "green"
@@ -738,7 +748,7 @@ export default function ProductDetailsPage() {
 
                       // For interactivity
                       const btn = e.target
-                      btn.innerHTML = '<i class="bi bi-check2"></i>'
+                      btn.innerHTML = '✓'
                       setTimeout(() => {
                         btn.innerHTML = "XL"
                         btn.style.backgroundColor = "green"
@@ -776,7 +786,7 @@ export default function ProductDetailsPage() {
 
                       // For interactivity
                       const btn = e.target
-                      btn.innerHTML = '<i class="bi bi-check2"></i>'
+                      btn.innerHTML = '✓'
                       setTimeout(() => {
                         btn.innerHTML = "XXL"
                         btn.style.backgroundColor = "green"
@@ -932,7 +942,7 @@ export default function ProductDetailsPage() {
                         left: "37px",
                       }}
                     >
-                      <i class="bi bi-chevron-up"></i>
+                      <i className="bi bi-chevron-up"></i>
                     </div>
                     <div className="d-flex justify-content-between pb-2 fw-bold">
                       <h6>10 days Return & Exchange</h6>
@@ -1014,7 +1024,7 @@ export default function ProductDetailsPage() {
                         left: "137px",
                       }}
                     >
-                      <i class="bi bi-chevron-up"></i>
+                      <i className="bi bi-chevron-up"></i>
                     </div>
                     <div className="d-flex justify-content-between fw-bold pb-2">
                       <h6>Free Delivery</h6>
@@ -1040,7 +1050,7 @@ export default function ProductDetailsPage() {
                         left: "237px",
                       }}
                     >
-                      <i class="bi bi-chevron-up"></i>
+                      <i className="bi bi-chevron-up"></i>
                     </div>
                     <div className="d-flex justify-content-between fw-bold pb-2">
                       <h6>What is Pay on Delivery (Cash/Card)?</h6>
@@ -1066,7 +1076,7 @@ export default function ProductDetailsPage() {
                         left: "337px",
                       }}
                     >
-                      <i class="bi bi-chevron-up"></i>
+                      <i className="bi bi-chevron-up"></i>
                     </div>
                     <div className="d-flex justify-content-between fw-bold pb-2">
                       <h6>Your transaction is secure</h6>
@@ -1733,6 +1743,278 @@ export default function ProductDetailsPage() {
             </div>
           </section>
           <hr className="productSpecsSectionHr" />
+          <section className="compareSimilarItemsSection">
+            <h3>Compare similar items</h3>
+            <button className="pre-content" onClick={preContentClicked}>
+              <img src={rightArrow} alt="" />
+            </button>
+            <button className="nxt-content" onClick={nxtContentClicked}>
+              <img src={rightArrow} alt="" />
+            </button>
+            <div className="compareSimilarItemsDiv">
+              <table className="compareSimilarItemsTable">
+                <thead>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <div className="similarItems-item1 item">
+                        <img src={product.url} alt="" />
+                        <a
+                          className="productLink d-block"
+                          style={{
+                            height: "56px",
+                            overflow: "hidden",
+                            color: "black",
+                            textDecoration: "none",
+                            cursor: "default",
+                          }}
+                        >
+                          <b>{product.productDetails.itemDetails.brandName}</b>
+                          <span className="ms-1">
+                            {product.name.length > 61
+                              ? product.name.slice(0, 60).concat("...")
+                              : product.name}
+                          </span>
+                        </a>
+                        <button
+                          className="btn btn-warning btn-sm rounded-pill mt-2"
+                          value={product.id}
+                          onClick={addToCart}
+                        >
+                          {product.addToCart ? "Added To Cart" : "Add To cart"}
+                        </button>
+                      </div>
+                    </td>
+                    {product.similarProducts.map((item) => {
+                      const product = finalClothsData.find(
+                        (product) => product.id === item.id,
+                      )
+                      return (
+                        <td key={item.id}>
+                          <div className="similarItems-item1 item">
+                            <img src={product.url} alt="" />
+                            <a
+                              className="productLink d-block"
+                              style={{ height: "56px", overflow: "hidden" }}
+                              href={`/productDetails/${product.id}`}
+                            >
+                              <b>
+                                {product.productDetails.itemDetails.brandName}
+                              </b>
+                              <span className="ms-1">
+                                {product.name.length > 61
+                                  ? product.name.slice(0, 60).concat("...")
+                                  : product.name}
+                              </span>
+                            </a>
+                            <button
+                              className="btn btn-warning btn-sm rounded-pill mt-2"
+                              value={product.id}
+                              onClick={addToCart}
+                            >
+                              {product.addToCart
+                                ? "Added To Cart"
+                                : "Add To cart"}
+                            </button>
+                          </div>
+                        </td>
+                      )
+                    })}
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Price</td>
+                    <td>
+                      <p className="discountedPrice my-0">
+                        <span className="discount me-2">
+                          -{product.discount}
+                        </span>
+                        <span>
+                          ₹
+                          {Math.round(
+                            product.price -
+                              (product.price *
+                                (Number(product.offer.replace("%", ""))
+                                  ? Number(product.offer.replace("%", ""))
+                                  : Number(
+                                      product.discount.replace("%", ""),
+                                    ))) /
+                                100,
+                          )}
+                        </span>
+                      </p>
+                      <p className="originalPrice my-0">
+                        M.R.P: <span>{product.price}</span>
+                      </p>
+                    </td>
+                    {product.similarProducts.map((item) => {
+                      const product = finalClothsData.find(
+                        (product) => product.id === item.id,
+                      )
+                      return (
+                        <td key={item.id}>
+                          <p className="discountedPrice my-0">
+                            <span className="discount me-2">
+                              -{product.discount}
+                            </span>
+                            <span>
+                              ₹
+                              {Math.round(
+                                product.price -
+                                  (product.price *
+                                    (Number(product.offer.replace("%", ""))
+                                      ? Number(product.offer.replace("%", ""))
+                                      : Number(
+                                          product.discount.replace("%", ""),
+                                        ))) /
+                                    100,
+                              )}
+                            </span>
+                          </p>
+                          <p className="originalPrice my-0">
+                            M.R.P: <span>{product.price}</span>
+                          </p>
+                        </td>
+                      )
+                    })}
+                  </tr>
+                  <tr>
+                    <td>Delivery</td>
+                    <td>
+                      Get it <b className="text-success">{setDeliveryDate()}</b>
+                    </td>
+                    <td>
+                      Get it <b className="text-success">{setDeliveryDate()}</b>
+                    </td>
+                    <td>
+                      Get it <b className="text-success">{setDeliveryDate()}</b>
+                    </td>
+                    <td>
+                      Get it <b className="text-success">{setDeliveryDate()}</b>
+                    </td>
+                    <td>
+                      Get it <b className="text-success">{setDeliveryDate()}</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Customer Ratings</td>
+                    <td>
+                      <b className="text-success">{product.rating}</b> out of 5
+                    </td>
+                    {product.similarProducts.map((item) => {
+                      const product = finalClothsData.find(
+                        (product) => product.id === item.id,
+                      )
+                      return (
+                        <td key={item.id}>
+                          <b className="text-success">{product.rating}</b> out
+                          of 5
+                        </td>
+                      )
+                    })}
+                  </tr>
+                  <tr>
+                    <td>Sold By</td>
+                    <td>{product.soldBy}</td>
+                    {product.similarProducts.map((item) => {
+                      const product = finalClothsData.find(
+                        (product) => product.id === item.id,
+                      )
+                      return <td key={item.id}>{product.soldBy}</td>
+                    })}
+                  </tr>
+                  <tr>
+                    <td>Size</td>
+                    <td className="text-success fw-bold">S, M, L, XL, XXL</td>
+                    <td className="text-success fw-bold">S, M, L, XL, XXL</td>
+                    <td className="text-success fw-bold">S, M, L, XL, XXL</td>
+                    <td className="text-success fw-bold">S, M, L, XL, XXL</td>
+                    <td className="text-success fw-bold">S, M, L, XL, XXL</td>
+                  </tr>
+                  <tr>
+                    <td>Offer</td>
+                    <td className="text-success fw-bold">{product.offer}</td>
+                    {product.similarProducts.map((item) => {
+                      const product = finalClothsData.find(
+                        (product) => product.id === item.id,
+                      )
+                      return (
+                        <td key={item.id} className="text-success fw-bold">
+                          {product.offer}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                  <tr>
+                    <td>Gender</td>
+                    <td>
+                      {product.gender.replace(
+                        product.gender[0],
+                        product.gender[0].toUpperCase(),
+                      )}
+                    </td>
+                    {product.similarProducts.map((item) => {
+                      const product = finalClothsData.find(
+                        (product) => product.id === item.id,
+                      )
+                      return (
+                        <td key={item.id}>
+                          {product.gender.replace(
+                            product.gender[0],
+                            product.gender[0].toUpperCase(),
+                          )}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                  <tr>
+                    <td>Age Group</td>
+                    <td className="text-success fw-bold">
+                      {product.mainCategory.join(", ")}
+                    </td>
+                    {product.similarProducts.map((item) => {
+                      const product = finalClothsData.find(
+                        (product) => product.id === item.id,
+                      )
+                      return (
+                        <td key={item.id} className="text-success fw-bold">
+                          {product.mainCategory.join(", ")}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                  <tr>
+                    <td>Cloth Material</td>
+                    <td>{product.material}</td>
+                    {product.similarProducts.map((item) => {
+                      const product = finalClothsData.find(
+                        (product) => product.id === item.id,
+                      )
+                      return <td key={item.id}>{product.material}</td>
+                    })}
+                  </tr>
+                  <tr>
+                    <td>Country of Origin</td>
+                    <td>
+                      {product.productDetails.topHighlights.countryOfOrigin}
+                    </td>
+                    {product.similarProducts.map((item) => {
+                      const product = finalClothsData.find(
+                        (product) => product.id === item.id,
+                      )
+                      return (
+                        <td key={item.id}>
+                          {product.productDetails.topHighlights.countryOfOrigin}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <hr className="compareSimilarItemsSectionHr" />
           <section>
             <h3 className="my-3">More items you may like in apparel</h3>
             <div className="row row-gap-3">

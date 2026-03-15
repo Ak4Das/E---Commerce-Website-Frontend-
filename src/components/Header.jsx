@@ -16,6 +16,7 @@ export default function Header({
 }) {
   const { clothsData, setClothsData } = GetClothsData()
   const [input, setInput] = useState("")
+  const [clickedHamburger, setClickedHamburger] = useState(false)
 
   const searchProducts = input ? Search(clothsData, input) : []
 
@@ -34,6 +35,7 @@ export default function Header({
     const newDisplay = isNone ? "block" : "none"
     element.classList.remove(oldDisplay)
     element.classList.add(newDisplay)
+    setClickedHamburger(clickedHamburger ? false : true)
   }
 
   const isCloth = input !== "" ? (searchProducts.length ? true : false) : false
@@ -95,7 +97,6 @@ export default function Header({
               )}
             </div>
           )}
-
           <div className="hamburger" style={{ cursor: "pointer" }}>
             <div
               className="d-flex align-items-center gap-1"
@@ -134,8 +135,11 @@ export default function Header({
                   <i className="bi bi-list fs-5"></i>
                 </div>
               )}
-
-              <i className="bi bi-chevron-down"></i>
+              {clickedHamburger ? (
+                <i className="bi bi-chevron-up"></i>
+              ) : (
+                <i className="bi bi-chevron-down"></i>
+              )}
             </div>
           </div>
           <div className="firstUlContainer">

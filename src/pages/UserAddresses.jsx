@@ -144,7 +144,7 @@ export default function UserAddresses() {
               Back
             </Link>
           )}
-          {param.route && (
+          {param.route && !!user.address.length && (
             <Link to={`/${param.route}`} className="btn btn-warning mt-5 mb-3">
               <i className="bi bi-arrow-left me-1"></i>
               Back
@@ -152,14 +152,20 @@ export default function UserAddresses() {
           )}
         </div>
         <div
-          className="fs-3 position-fixed addAddressBtn2"
-          style={{ right: "21px", top: "91%" }}
+          className="fs-3 position-fixed addAddressBtn2 rounded-circle bg-warning"
+          style={{
+            right: "30px",
+            top: "86%",
+            width: "50px",
+            height: "50px",
+            overflow: "hidden",
+            border: "2px dashed black",
+          }}
           title="Add new address"
         >
           <Link
             to="/addAddress"
-            className="card align-items-center justify-content-center text-decoration-none text-dark d-inline-block px-2 py-1 rounded-circle bg-warning"
-            style={{ border: "2px dashed black" }}
+            className="d-flex align-items-center justify-content-center text-decoration-none text-dark d-inline-block px-2 py-1"
           >
             <i className="bi bi-plus-lg"></i>
           </Link>

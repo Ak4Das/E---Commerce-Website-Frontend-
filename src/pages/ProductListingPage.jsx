@@ -307,7 +307,7 @@ export default function ProductListingPage() {
       <Header
         position="sticky"
         top={0}
-        zIndex={1}
+        zIndex={2}
         setSearch={setSearch}
         placeHolder="Search Product"
       />

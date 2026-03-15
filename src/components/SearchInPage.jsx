@@ -38,12 +38,12 @@ export default function searchInPage({
     <>
       {isSearchBarNeeded && (
         <div
-          className={`input-group searchInPage ${margin} bg-light py-2 ${position}`}
+          className={`input-group searchInPage bg-light py-2 ${position}`}
           style={{ top: `${top}`, zIndex }}
         >
           <input
             type="text"
-            className="border border-1 p-2 searchInputInPage"
+            className={`border border-1 ${margin} p-2 searchInputInPage`}
             style={{ outline: "none" }}
             placeholder={placeHolder}
             aria-label={placeHolder}

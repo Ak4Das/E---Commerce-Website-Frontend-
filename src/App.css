@@ -2053,3 +2053,36 @@
 .originalPrice span {
   text-decoration: line-through;
 }
+
+.hamburgerPointer {
+  display: inline-block;
+  height: 44px;
+  font-family: sans-serif;
+  background-color: aqua;
+  padding-block: 10px;
+  padding-left: 15px;
+  padding-right: 10px;
+  left: 55px;
+  top: 65px;
+  z-index: 1;
+}
+
+.leftPointerDiv1 {
+  top: 0px;
+  left: -12px;
+  background-color: aqua;
+}
+
+.leftPointerDiv2 {
+  top: -35px;
+  left: -25px;
+  background-color: #ffffff;
+  transform: rotate(62deg);
+}
+
+.leftPointerDiv3 {
+  top: 32px;
+  left: -23px;
+  background-color: #ffffff;
+  transform: rotate(113deg);
+}

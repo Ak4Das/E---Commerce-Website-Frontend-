@@ -30,6 +30,17 @@ export default function ProductListingPage() {
   const [gender, setGender] = useState("")
   const [productCategory, setProductCategory] = useState([])
   const [age, setAge] = useState([])
+  const [showHamburgerPointer, setShowHamburgerPointer] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowHamburgerPointer(true)
+    }, 1000)
+
+    setTimeout(() => {
+      setShowHamburgerPointer(false)
+    }, 5000)
+  }, [])
 
   /* isUpdate useState is used to if user add to cart a item or add to wishlist a item 
   then variables present on this page will reinitialize */
@@ -331,8 +342,26 @@ export default function ProductListingPage() {
           age={age}
           setAge={setAge}
           isCategory={isCategory}
+          setShowHamburgerPointer={setShowHamburgerPointer}
         />
         <div className="mx-5 my-3">
+          {showHamburgerPointer && (
+            <div className="hamburgerPointer position-fixed">
+              <div
+                className="leftPointerDiv1 position-absolute"
+                style={{ width: "46px", height: "46px" }}
+              ></div>
+              <div
+                className="leftPointerDiv2 position-absolute"
+                style={{ width: "50px", height: "50px" }}
+              ></div>
+              <div
+                className="leftPointerDiv3 position-absolute"
+                style={{ width: "50px", height: "50px" }}
+              ></div>
+              <p className="my-0 ms-4">Filter Products</p>
+            </div>
+          )}
           <h4 className="listingPageHeading text-secondary">
             Showing All Products
           </h4>

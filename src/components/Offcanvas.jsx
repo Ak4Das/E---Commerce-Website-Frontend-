@@ -12,6 +12,7 @@ export default function Offcanvas({
   age,
   setAge,
   isCategory,
+  setShowHamburgerPointer
 }) {
   // open useState is used only to open or close Offcanvas
   const [open, setOpen] = useState(false)
@@ -61,6 +62,7 @@ export default function Offcanvas({
     parentElement.style.left =
       parentElement.style.left === "-305px" ? "" : "-305px"
     setOpen(open ? false : true)
+    setShowHamburgerPointer(false)
   }
   return (
     <form>

@@ -35,10 +35,12 @@ export default function ProductListingPage() {
   useEffect(() => {
     setTimeout(() => {
       setShowHamburgerPointer(true)
-    }, 1000)
+      document.querySelector("body").style.overflowY = "hidden"
+    }, 2000)
 
     setTimeout(() => {
       setShowHamburgerPointer(false)
+      document.querySelector("body").style.overflowY = "scroll"
     }, 5000)
   }, [])
 
@@ -318,7 +320,7 @@ export default function ProductListingPage() {
       <Header
         position="sticky"
         top={0}
-        zIndex={2}
+        zIndex={3}
         setSearch={setSearch}
         placeHolder="Search Product"
       />
@@ -328,7 +330,7 @@ export default function ProductListingPage() {
         placeHolder="Search Product"
         position="position-fixed"
         top="62px"
-        zIndex={1}
+        zIndex={2}
       />
       <main>
         <Offcanvas
@@ -359,13 +361,13 @@ export default function ProductListingPage() {
                 className="leftPointerDiv3 position-absolute"
                 style={{ width: "50px", height: "50px" }}
               ></div>
-              <p className="my-0 ms-4">Filter Products</p>
+              <p className="my-0 ms-4">Use Filters</p>
             </div>
           )}
           <h4 className="listingPageHeading text-secondary">
             Showing All Products
           </h4>
-          <div className="row">
+          <div className="row position-relative" style={{ zIndex: 1 }}>
             {finalFilter.map((product) => (
               <div
                 key={product.id}

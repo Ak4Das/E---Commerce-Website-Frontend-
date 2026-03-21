@@ -1058,6 +1058,9 @@
     margin-top: 70px;
     margin-bottom: 16px;
   }
+  .hamburgerPointer {
+    top: 120px !important;
+  }
 }
 @media (575px<width<767px) {
   .secondUlContainer {
@@ -2062,9 +2065,8 @@
   padding-block: 10px;
   padding-left: 15px;
   padding-right: 10px;
-  left: 55px;
+  left: 60px;
   top: 65px;
-  z-index: 1;
 }
 
 .leftPointerDiv1 {

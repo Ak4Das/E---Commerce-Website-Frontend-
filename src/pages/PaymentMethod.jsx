@@ -8,6 +8,12 @@ import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 import GetClothsData from "../components/GetClothsData"
 import { toast } from "react-toastify"
+import { useEffect } from "react"
+import {
+  fetchCreateOrder,
+  updateAllItemsInCreateOrder,
+  deleteManyItemsInCreateOrder,
+} from "../components/FetchRequests.js"
 
 export default function PaymentMethods() {
   const { clothsData, setClothsData } = GetClothsData()
@@ -53,9 +59,43 @@ export default function PaymentMethods() {
 
   const [isPaymentMethodSelected, selectPaymentMethod] = useState(false)
 
+  const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
+  const uniqueCreateOrderInDatabase =
+    CreateOrderInDatabase &&
+    CreateOrderInDatabase.reduce((acc, item) => {
+      if (!acc.length) {
+        acc.push(item)
+      } else {
+        const searchInAcc = acc.find((obj) => obj.id === item.id) ? true : false
+        if (!searchInAcc) {
+          acc.push(item)
+        }
+      }
+      return acc
+    }, [])
+  const createOrderInDatabase = { item: uniqueCreateOrderInDatabase }
+
+  async function updateAllItems(url, data) {
+    try {
+      await updateAllItemsInCreateOrder(url, data)
+      setUpdated(true)
+    } catch (error) {
+      throw error
+    }
+  }
+
+  async function removeAllItemsFromCreateOrder() {
+    try {
+      await deleteManyItemsInCreateOrder()
+      setUpdated(true)
+    } catch (error) {
+      throw error
+    }
+  }
+
   const [products, setProducts] = useState(
-    JSON.parse(localStorage.getItem("createOrder"))
-      ? JSON.parse(localStorage.getItem("createOrder")).item
+    createOrderInDatabase && createOrderInDatabase.item
+      ? createOrderInDatabase.item
       : [],
   )
 
@@ -96,7 +136,7 @@ export default function PaymentMethods() {
 
   const totalPrice = totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)
 
-  function placeOrder() {
+  async function placeOrder() {
     if (coupon === "HAPPYDIWALI") {
       orders[orders.length - 1].sale = "10%"
     }
@@ -108,7 +148,7 @@ export default function PaymentMethods() {
     )
     localStorage.setItem("orders", JSON.stringify(orders))
 
-    localStorage.setItem("createOrder", JSON.stringify({ item: [] }))
+    await removeAllItemsFromCreateOrder()
 
     const productsArray = orders[orders.length - 1].item
     productsArray.forEach((product) => {
@@ -174,9 +214,17 @@ export default function PaymentMethods() {
     return today.toLocaleTimeString()
   }
 
-  if (updated) {
-    setUpdated(false)
-  }
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetchCreateOrder()
+      setCreateOrderInDatabase(response)
+      setProducts(response)
+      if (updated) {
+        setUpdated(false)
+      }
+    }
+    fetchData()
+  }, [updated])
 
   return (
     <>
@@ -243,196 +291,209 @@ export default function PaymentMethods() {
                 <h5 className="mb-3 fw-bold deliveryDate text-success">
                   Arriving {setDeliveryDate()}
                 </h5>
-                {products.map((product) => (
-                  <div
-                    key={product.id}
-                    className="card column-gap-4 my-3 cardInPaymentMethodPage"
-                  >
-                    <div className="h-100 mx-auto productImageDiv">
-                      <img
-                        src={product.url}
-                        alt="productImage"
-                        className="w-100 h-100"
-                      />
-                    </div>
-                    <div className="p-2 w-100">
-                      <p
-                        className="fw-medium my-0"
-                        style={{ height: "96px", overflow: "hidden" }}
-                      >
-                        {product.newArrival === true && (
-                          <span className="badge text-bg-success me-1">
-                            New
-                          </span>
-                        )}
-                        {!!Number(product.offer.replace("%", "")) && (
-                          <span className="badge text-bg-warning me-1">
-                            Diwali Offer
-                          </span>
-                        )}
-                        {product.name}
-                      </p>
-                      <div className="d-flex align-items-end">
-                        <RatingBar rating={product.rating} />
-                        <span className="ms-1 fw-medium">{product.rating}</span>
-                      </div>
-                      <div className="mt-2">
-                        <span className="mt-2 fw-medium">
-                          ₹
-                          {Math.round(
-                            product.price -
-                              (product.price *
-                                (Number(product.offer.replace("%", ""))
-                                  ? Number(product.offer.replace("%", ""))
-                                  : Number(
-                                      product.discount.replace("%", ""),
-                                    ))) /
-                                100,
-                          )}
-                        </span>
-                        <span className="ms-2 fw-medium">
-                          (-
-                          {Number(product.offer.replace("%", ""))
-                            ? product.offer
-                            : product.discount}
-                          )
-                        </span>
-                      </div>
-                      <div
-                        className="border border-warning border-2 mt-3 d-flex align-items-center rounded-pill overflow-hidden justify-content-around deleteOrIncreaseQuantityBtn"
-                        style={{ width: "100px" }}
-                      >
-                        <button
-                          className="border border-0 bg-white text-danger"
-                          onClick={(e) => {
-                            const Product = products.filter(
-                              (item) => item.id !== product.id,
-                            )
-                            orders[orders.length - 1].item = Product
-                            setProducts(Product)
-                          }}
-                        >
-                          <i className="bi bi-trash3-fill"></i>
-                        </button>
-                        <input
-                          type="text"
-                          className="border border-0"
-                          defaultValue={product.quantity || 1}
-                          style={{ width: "30px", outline: "none" }}
-                          onChange={(e) => {
-                            let inputElementValue = Number(e.target.value)
-                            // Update clothsData in memory
-                            const item = clothsData.find(
-                              (item) => item.id === product.id,
-                            )
-                            item.quantity = inputElementValue
-
-                            // Update user in Database
-                            const isItemAddedToCart =
-                              user.addToCartItems.filter(
-                                (item) => item.id === product.id,
-                              )
-                            if (isItemAddedToCart.length) {
-                              isItemAddedToCart[0].quantity = inputElementValue
-                              localStorage.setItem("user", JSON.stringify(user))
-                            }
-
-                            // Update createOrder in Database
-                            const createOrder = JSON.parse(
-                              localStorage.getItem("createOrder"),
-                            )
-                            const createOrderItem =
-                              createOrder &&
-                              createOrder.item.length &&
-                              createOrder.item.filter(
-                                (product) => product.id === product.id,
-                              )
-                            if (createOrderItem && createOrderItem.length) {
-                              createOrderItem[0].quantity = inputElementValue
-                            }
-                            localStorage.setItem(
-                              "createOrder",
-                              JSON.stringify(createOrder),
-                            )
-
-                            // Update items of current order
-                            const Product = products.find(
-                              (item) => item.id === product.id,
-                            )
-                            Product.quantity = inputElementValue
-                            orders[orders.length - 1].item = products
-                          }}
+                {products &&
+                  products.map((product) => (
+                    <div
+                      key={product.id}
+                      className="card column-gap-4 my-3 cardInPaymentMethodPage"
+                    >
+                      <div className="h-100 mx-auto productImageDiv">
+                        <img
+                          src={product.url}
+                          alt="productImage"
+                          className="w-100 h-100"
                         />
-                        <button
-                          className="border border-0 bg-white fs-5 fw-bold"
-                          style={{ marginTop: "-5px" }}
-                          onClick={(e) => {
-                            // Update the input element value
-                            let inputElementValue = Number(
-                              e.target.previousElementSibling.value,
+                      </div>
+                      <div className="p-2 w-100">
+                        <p
+                          className="fw-medium my-0"
+                          style={{ height: "96px", overflow: "hidden" }}
+                        >
+                          {product.newArrival === true && (
+                            <span className="badge text-bg-success me-1">
+                              New
+                            </span>
+                          )}
+                          {!!Number(product.offer.replace("%", "")) && (
+                            <span className="badge text-bg-warning me-1">
+                              Diwali Offer
+                            </span>
+                          )}
+                          {product.name}
+                        </p>
+                        <div className="d-flex align-items-end">
+                          <RatingBar rating={product.rating} />
+                          <span className="ms-1 fw-medium">
+                            {product.rating}
+                          </span>
+                        </div>
+                        <div className="mt-2">
+                          <span className="mt-2 fw-medium">
+                            ₹
+                            {Math.round(
+                              product.price -
+                                (product.price *
+                                  (Number(product.offer.replace("%", ""))
+                                    ? Number(product.offer.replace("%", ""))
+                                    : Number(
+                                        product.discount.replace("%", ""),
+                                      ))) /
+                                  100,
+                            )}
+                          </span>
+                          <span className="ms-2 fw-medium">
+                            (-
+                            {Number(product.offer.replace("%", ""))
+                              ? product.offer
+                              : product.discount}
                             )
-                            e.target.previousElementSibling.value =
-                              ++inputElementValue
-
-                            // Update clothsData in memory
-                            const item = clothsData.find(
-                              (item) => item.id === product.id,
-                            )
-                            item.quantity = Number(
-                              e.target.previousElementSibling.value,
-                            )
-
-                            // Update user in Database
-                            const isItemAddedToCart =
-                              user.addToCartItems.filter(
+                          </span>
+                        </div>
+                        <div
+                          className="border border-warning border-2 mt-3 d-flex align-items-center rounded-pill overflow-hidden justify-content-around deleteOrIncreaseQuantityBtn"
+                          style={{ width: "100px" }}
+                        >
+                          <button
+                            className="border border-0 bg-white text-danger"
+                            onClick={(e) => {
+                              const Product = products.filter(
+                                (item) => item.id !== product.id,
+                              )
+                              orders[orders.length - 1].item = Product
+                              setProducts(Product)
+                            }}
+                          >
+                            <i className="bi bi-trash3-fill"></i>
+                          </button>
+                          <input
+                            type="text"
+                            className="border border-0"
+                            defaultValue={product.quantity || 1}
+                            style={{ width: "30px", outline: "none" }}
+                            onChange={async (e) => {
+                              let inputElementValue = Number(e.target.value)
+                              // Update clothsData in memory
+                              const item = clothsData.find(
                                 (item) => item.id === product.id,
                               )
-                            if (isItemAddedToCart.length) {
-                              isItemAddedToCart[0].quantity = Number(
+                              item.quantity = inputElementValue
+
+                              // Update user in Database
+                              const isItemAddedToCart =
+                                user.addToCartItems.filter(
+                                  (item) => item.id === product.id,
+                                )
+                              if (isItemAddedToCart.length) {
+                                isItemAddedToCart[0].quantity =
+                                  inputElementValue
+                                localStorage.setItem(
+                                  "user",
+                                  JSON.stringify(user),
+                                )
+                              }
+
+                              // Update createOrder in Database
+                              const createOrder = createOrderInDatabase
+
+                              const createOrderItem =
+                                createOrder &&
+                                createOrder.item.length &&
+                                createOrder.item.filter(
+                                  (item) => item.id === product.id,
+                                )
+
+                              if (createOrderItem && createOrderItem.length) {
+                                createOrderItem[0].quantity = inputElementValue
+                              }
+                              
+                              await updateAllItems(
+                                "http://localhost:3000/createOrder/updateItems",
+                                createOrder.item,
+                              )
+
+                              // Update items of current order
+                              const Product = products.find(
+                                (item) => item.id === product.id,
+                              )
+                              Product.quantity = inputElementValue
+                              orders[orders.length - 1].item = products
+                              // useState(true)
+                            }}
+                          />
+                          <button
+                            className="border border-0 bg-white fs-5 fw-bold"
+                            style={{ marginTop: "-5px" }}
+                            onClick={async (e) => {
+                              // Update the input element value
+                              let inputElementValue = Number(
                                 e.target.previousElementSibling.value,
                               )
-                              localStorage.setItem("user", JSON.stringify(user))
-                            }
+                              e.target.previousElementSibling.value =
+                                ++inputElementValue
 
-                            // Update createOrder in Database
-                            const createOrder = JSON.parse(
-                              localStorage.getItem("createOrder"),
-                            )
-                            const createOrderItem =
-                              createOrder &&
-                              createOrder.item.length &&
-                              createOrder.item.filter(
-                                (product) => product.id === product.id,
+                              // Update clothsData in memory
+                              const item = clothsData.find(
+                                (item) => item.id === product.id,
                               )
-                            if (createOrderItem && createOrderItem.length) {
-                              createOrderItem[0].quantity = Number(
+                              item.quantity = Number(
                                 e.target.previousElementSibling.value,
                               )
-                            }
-                            localStorage.setItem(
-                              "createOrder",
-                              JSON.stringify(createOrder),
-                            )
 
-                            // Update items of current order
-                            const Product = products.find(
-                              (item) => item.id === product.id,
-                            )
-                            Product.quantity = Number(
-                              e.target.previousElementSibling.value,
-                            )
-                            orders[orders.length - 1].item = products
+                              // Update user in Database
+                              const isItemAddedToCart =
+                                user.addToCartItems.filter(
+                                  (item) => item.id === product.id,
+                                )
+                              if (isItemAddedToCart.length) {
+                                isItemAddedToCart[0].quantity = Number(
+                                  e.target.previousElementSibling.value,
+                                )
+                                localStorage.setItem(
+                                  "user",
+                                  JSON.stringify(user),
+                                )
+                              }
 
-                            // To update the variables present in this page
-                            setUpdated(true)
-                          }}
-                        >
-                          +
-                        </button>
+                              // Update createOrder in Database
+                              const createOrder = createOrderInDatabase
+
+                              const createOrderItem =
+                                createOrder &&
+                                createOrder.item.length &&
+                                createOrder.item.filter(
+                                  (item) => item.id === product.id,
+                                )
+
+                              if (createOrderItem && createOrderItem.length) {
+                                createOrderItem[0].quantity = Number(
+                                  e.target.previousElementSibling.value,
+                                )
+                              }
+
+                              await updateAllItemsInCreateOrder(
+                                "http://localhost:3000/createOrder/updateItems",
+                                createOrder.item,
+                              )
+
+                              // Update items of current order
+                              const Product = products.find(
+                                (item) => item.id === product.id,
+                              )
+                              Product.quantity = Number(
+                                e.target.previousElementSibling.value,
+                              )
+                              orders[orders.length - 1].item = products
+
+                              // To update the variables present in this page
+                              setUpdated(true)
+                            }}
+                          >
+                            +
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </section>
           )}
@@ -881,7 +942,7 @@ export default function PaymentMethods() {
                       </p>
                     </div>
                   </div>
-                  {products.length === 0 ? (
+                  {products && products.length === 0 ? (
                     <Link
                       to="/cart"
                       className="btn btn-warning rounded-pill mt-4 px-4 useThisPaymentMethodBtn"

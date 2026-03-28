@@ -6,6 +6,10 @@ import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
+import {
+  fetchCreateOrder,
+  updateAllItemsInCreateOrder,
+} from "../components/FetchRequests.js"
 
 export default function SaleProducts() {
   const [search, setSearch] = useState("")
@@ -38,7 +42,21 @@ export default function SaleProducts() {
 
   const user = JSON.parse(localStorage.getItem("user"))
 
-  const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+  const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
+  const uniqueCreateOrderInDatabase =
+    CreateOrderInDatabase &&
+    CreateOrderInDatabase.reduce((acc, item) => {
+      if (!acc.length) {
+        acc.push(item)
+      } else {
+        const searchInAcc = acc.find((obj) => obj.id === item.id) ? true : false
+        if (!searchInAcc) {
+          acc.push(item)
+        }
+      }
+      return acc
+    }, [])
+  const createOrder = { item: uniqueCreateOrderInDatabase }
 
   // To fix clothsData for first render of this page
   const finalClothsData = clothsData.map((cloth) => {
@@ -81,7 +99,7 @@ export default function SaleProducts() {
           product.material.toLowerCase().includes(search.toLowerCase()),
         )
 
-  function addToCart(e) {
+  async function addToCart(e) {
     // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
@@ -122,7 +140,10 @@ export default function SaleProducts() {
       }
       Product &&
         Product.length &&
-        localStorage.setItem("createOrder", JSON.stringify(createOrder))
+        (await updateAllItemsInCreateOrder(
+          "http://localhost:3000/createOrder/updateItems",
+          createOrder.item,
+        ))
 
       // For interactivity
       const btn = e.target
@@ -142,7 +163,7 @@ export default function SaleProducts() {
     }
   }
 
-  function addToWishlist(e) {
+  async function addToWishlist(e) {
     // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
@@ -175,7 +196,10 @@ export default function SaleProducts() {
       }
       Product &&
         Product.length &&
-        localStorage.setItem("createOrder", JSON.stringify(createOrder))
+        (await updateAllItemsInCreateOrder(
+          "http://localhost:3000/createOrder/updateItems",
+          createOrder.item,
+        ))
 
       // For interactivity
       const btn = e.target
@@ -195,9 +219,16 @@ export default function SaleProducts() {
     }
   }
 
-  if (isUpdate) {
-    setUpdate(false)
-  }
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetchCreateOrder()
+      setCreateOrderInDatabase(response)
+      if (isUpdate) {
+        setUpdate(false)
+      }
+    }
+    fetchData()
+  }, [isUpdate])
 
   return (
     <>

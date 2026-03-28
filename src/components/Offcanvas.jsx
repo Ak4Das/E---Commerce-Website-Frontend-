@@ -72,7 +72,7 @@ export default function Offcanvas({
           minWidth: "350px",
           position: "fixed",
           left: "-305px",
-          zIndex: 1,
+          zIndex: 2,
         }}
         className="bg-light-subtle px-5 py-3 d-inline-block offcanvasFilterForm"
       >

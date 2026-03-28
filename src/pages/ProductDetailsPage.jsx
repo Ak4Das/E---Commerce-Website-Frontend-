@@ -10,6 +10,12 @@ import { useEffect } from "react"
 import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
 import rightArrow from "../assets/right-arrow.png"
+import {
+  fetchAllCloths,
+  updateClothById,
+  fetchCreateOrder,
+  updateAllItemsInCreateOrder,
+} from "../components/FetchRequests.js"
 
 export default function ProductDetailsPage() {
   const [search, setSearch] = useState("")
@@ -38,6 +44,31 @@ export default function ProductDetailsPage() {
   const { clothsData, setClothsData } = GetClothsData()
 
   const user = JSON.parse(localStorage.getItem("user"))
+
+  const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
+  const uniqueCreateOrderInDatabase =
+    CreateOrderInDatabase &&
+    CreateOrderInDatabase.reduce((acc, item) => {
+      if (!acc.length) {
+        acc.push(item)
+      } else {
+        const searchInAcc = acc.find((obj) => obj.id === item.id) ? true : false
+        if (!searchInAcc) {
+          acc.push(item)
+        }
+      }
+      return acc
+    }, [])
+  const createOrderInDatabase = { item: uniqueCreateOrderInDatabase }
+
+  async function updateAllItems(url, data) {
+    try {
+      await updateAllItemsInCreateOrder(url, data)
+      setUpdated(true)
+    } catch (error) {
+      throw error
+    }
+  }
 
   const finalClothsData = clothsData.map((cloth) => {
     const isClothPresentInCart =
@@ -238,38 +269,50 @@ export default function ProductDetailsPage() {
 
   /* Update createOrder in Database while quantity, size, freeDelivery will change and 
   update user in database while quantity change and if product is already added to cart */
-  if (isUpdated) {
-    if (isClothPresentInCart.length) {
-      if (quantity > 1) {
-        isClothPresentInCart[0].quantity = quantity
-        localStorage.setItem("user", JSON.stringify(user))
-        product.quantity = quantity
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetchCreateOrder()
+      setCreateOrderInDatabase(response)
+      if (isUpdated) {
+        if (isClothPresentInCart.length) {
+          if (quantity > 1) {
+            isClothPresentInCart[0].quantity = quantity
+            localStorage.setItem("user", JSON.stringify(user))
+            product.quantity = quantity
+          }
+        } else {
+          if (quantity > 1) {
+            product.quantity = quantity
+          }
+        }
+        if (size) {
+          const createOrderItems = await fetchCreateOrder()
+          createOrderItems.forEach((item) => (item.size = size))
+          // product.size = size
+          await updateAllItemsInCreateOrder(
+            "http://localhost:3000/createOrder/updateItems",
+            createOrderItems,
+          )
+        }
+        if (isFreeDeliveryAvailable) {
+          product.freeDelivery = true
+        } else {
+          product.freeDelivery = false
+        }
+        const createOrderItems = await fetchCreateOrder()
+        const filteredItem = createOrderItems.filter(
+          (item) => item.id !== product.id,
+        )
+        filteredItem.push(product)
+        await updateAllItemsInCreateOrder(
+          "http://localhost:3000/createOrder/updateItems",
+          filteredItem,
+        )
+        setUpdated(false)
       }
-    } else {
-      if (quantity > 1) {
-        product.quantity = quantity
-      }
     }
-    if (size) {
-      const createOrder = JSON.parse(localStorage.getItem("createOrder"))
-      createOrder.item.forEach((item) => (item.size = size))
-      // product.size = size
-      localStorage.setItem("createOrder", JSON.stringify(createOrder))
-    }
-    if (isFreeDeliveryAvailable) {
-      product.freeDelivery = true
-    } else {
-      product.freeDelivery = false
-    }
-    const createOrder = JSON.parse(localStorage.getItem("createOrder"))
-    const filteredItem = createOrder.item.filter(
-      (item) => item.id !== product.id,
-    )
-    filteredItem.push(product)
-    const CreateOrder = { item: filteredItem }
-    localStorage.setItem("createOrder", JSON.stringify(CreateOrder))
-    setUpdated(false)
-  }
+    fetchData()
+  }, [isUpdated])
 
   // Slide content btn logic
   function preBtnClicked(e) {
@@ -326,7 +369,7 @@ export default function ProductDetailsPage() {
   useEffect(() => {
     if (product.freeDelivery) {
       setFreeDelivery(true)
-      const timerId = setInterval(() => {
+      const timerId = setInterval(async () => {
         const currentTime = new Date()
         const hours = currentTime.getHours()
         const minutes = currentTime.getMinutes()
@@ -336,10 +379,10 @@ export default function ProductDetailsPage() {
         if (hours === 23 && minutes === 59 && seconds === 59) {
           setFreeDelivery(false)
           setUpdated(true)
-          const clothsData = JSON.parse(localStorage.getItem("clothsData"))
+          const clothsData = await fetchAllCloths()
           const cloth = clothsData.find((product) => product.id === id)
           cloth.freeDelivery = false
-          localStorage.setItem("clothsData", JSON.stringify(clothsData))
+          await updateClothById(product.id, cloth)
           clearInterval(timerId)
         }
       }, 1000)
@@ -347,9 +390,11 @@ export default function ProductDetailsPage() {
       setTime("0:0:0")
     }
     // set createOrder for every mount
-    const obj = { item: [] }
-    obj.item.push(product)
-    localStorage.setItem("createOrder", JSON.stringify(obj))
+    const arr = [product]
+    updateAllItems(
+      "http://localhost:3000/createOrder/updateItems",
+      arr,
+    )
   }, [])
 
   const similarProductIds = product.similarProducts.map((product) => product.id)
@@ -386,11 +431,11 @@ export default function ProductDetailsPage() {
     return wordsArray.join(" ")
   }
 
-  function addToCreateOrder(e, productId) {
+  async function addToCreateOrder(e, productId) {
     const checked = e.target.checked
-    const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+    const createOrderItems = await fetchCreateOrder()
     const product = finalClothsData.find((item) => item.id === productId)
-    const isIncluded = createOrder.item.filter((item) => item.id === product.id)
+    const isIncluded = createOrderItems.filter((item) => item.id === product.id)
       .length
       ? true
       : false
@@ -400,20 +445,24 @@ export default function ProductDetailsPage() {
           product.size = size
         }
         product.quantity = 1
-        createOrder.item.push(product)
-        localStorage.setItem("createOrder", JSON.stringify(createOrder))
+        createOrderItems.push(product)
+        await updateAllItemsInCreateOrder(
+          "http://localhost:3000/createOrder/updateItems",
+          createOrderItems,
+        )
       }
     } else {
       if (isIncluded) {
-        const updatedItem = createOrder.item.filter(
+        const updatedItem = createOrderItems.filter(
           (item) => item.id !== product.id,
         )
-        localStorage.setItem(
-          "createOrder",
-          JSON.stringify({ item: updatedItem }),
+        await updateAllItemsInCreateOrder(
+          "http://localhost:3000/createOrder/updateItems",
+          updatedItem,
         )
       }
     }
+    setUpdated(true)
   }
 
   return (
@@ -634,7 +683,7 @@ export default function ProductDetailsPage() {
 
                       // For interactivity
                       const btn = e.target
-                      btn.innerHTML = '✓'
+                      btn.innerHTML = "✓"
                       setTimeout(() => {
                         btn.innerHTML = "S"
                         btn.style.backgroundColor = "green"
@@ -672,7 +721,7 @@ export default function ProductDetailsPage() {
 
                       // For interactivity
                       const btn = e.target
-                      btn.innerHTML = '✓'
+                      btn.innerHTML = "✓"
                       setTimeout(() => {
                         btn.innerHTML = "M"
                         btn.style.backgroundColor = "green"
@@ -710,7 +759,7 @@ export default function ProductDetailsPage() {
 
                       // For interactivity
                       const btn = e.target
-                      btn.innerHTML = '✓'
+                      btn.innerHTML = "✓"
                       setTimeout(() => {
                         btn.innerHTML = "L"
                         btn.style.backgroundColor = "green"
@@ -748,7 +797,7 @@ export default function ProductDetailsPage() {
 
                       // For interactivity
                       const btn = e.target
-                      btn.innerHTML = '✓'
+                      btn.innerHTML = "✓"
                       setTimeout(() => {
                         btn.innerHTML = "XL"
                         btn.style.backgroundColor = "green"
@@ -786,7 +835,7 @@ export default function ProductDetailsPage() {
 
                       // For interactivity
                       const btn = e.target
-                      btn.innerHTML = '✓'
+                      btn.innerHTML = "✓"
                       setTimeout(() => {
                         btn.innerHTML = "XXL"
                         btn.style.backgroundColor = "green"

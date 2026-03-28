@@ -2,6 +2,7 @@ import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import "./index.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import ClothsContextProvider from "./contexts/ClothsContextProvider.jsx"
 
 import App from "./App.jsx"
 import ProductListingPage from "./pages/ProductListingPage.jsx"
@@ -42,8 +43,6 @@ const router = createBrowserRouter([
   { path: "/saleProducts/:commonCategory", element: <SaleProducts /> },
   { path: "/editOrder/:orderId", element: <EditYourOrder /> },
 ])
-
-import ClothsContextProvider from "./contexts/ClothsContextProvider.jsx"
 
 createRoot(document.getElementById("root")).render(
   <ClothsContextProvider>

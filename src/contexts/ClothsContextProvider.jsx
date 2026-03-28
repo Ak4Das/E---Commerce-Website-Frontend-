@@ -1,15 +1,16 @@
 import { useState } from "react"
 import ClothsContext from "./ClothsContext"
-import initialClothsData from "../components/InitialClothsData"
+import { fetchAllCloths, setAllCloths } from "../components/FetchRequests.js"
 
-if (!localStorage.getItem("clothsData")) {
-  localStorage.setItem("clothsData", JSON.stringify(initialClothsData))
+let initialClothsData = await fetchAllCloths()
+
+if (!initialClothsData.length) {
+  await setAllCloths()
+  initialClothsData = await fetchAllCloths()
 }
 
 export default function ClothsContextProvider({ children }) {
-  const [clothsData, setClothsData] = useState(
-    JSON.parse(localStorage.getItem("clothsData")),
-  )
+  const [clothsData, setClothsData] = useState(initialClothsData)
 
   return (
     <ClothsContext.Provider value={{ clothsData, setClothsData }}>

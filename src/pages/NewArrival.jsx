@@ -6,6 +6,10 @@ import SearchInPage from "../components/SearchInPage"
 import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import { Search } from "../components/Search"
+import {
+  fetchCreateOrder,
+  updateAllItemsInCreateOrder,
+} from "../components/FetchRequests.js"
 
 export default function NewArrival() {
   const [search, setSearch] = useState("")
@@ -17,7 +21,21 @@ export default function NewArrival() {
 
   const user = JSON.parse(localStorage.getItem("user"))
 
-  const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+  const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
+  const uniqueCreateOrderInDatabase =
+    CreateOrderInDatabase &&
+    CreateOrderInDatabase.reduce((acc, item) => {
+      if (!acc.length) {
+        acc.push(item)
+      } else {
+        const searchInAcc = acc.find((obj) => obj.id === item.id) ? true : false
+        if (!searchInAcc) {
+          acc.push(item)
+        }
+      }
+      return acc
+    }, [])
+  const createOrder = { item: uniqueCreateOrderInDatabase }
 
   // To fix clothsData for first render of this page
   const finalClothsData = clothsData.map((cloth) => {
@@ -65,7 +83,7 @@ export default function NewArrival() {
       })
     : filteredProducts
 
-  function addToCart(e) {
+  async function addToCart(e) {
     // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
@@ -106,7 +124,10 @@ export default function NewArrival() {
       }
       Product &&
         Product.length &&
-        localStorage.setItem("createOrder", JSON.stringify(createOrder))
+        await updateAllItemsInCreateOrder(
+          "http://localhost:3000/createOrder/updateItems",
+          createOrder.item,
+        )
 
       // For interactivity
       const btn = e.target
@@ -126,7 +147,7 @@ export default function NewArrival() {
     }
   }
 
-  function addToWishlist(e) {
+  async function addToWishlist(e) {
     // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
@@ -159,7 +180,10 @@ export default function NewArrival() {
       }
       Product &&
         Product.length &&
-        localStorage.setItem("createOrder", JSON.stringify(createOrder))
+        await updateAllItemsInCreateOrder(
+          "http://localhost:3000/createOrder/updateItems",
+          createOrder.item,
+        )
 
       // For interactivity
       const btn = e.target
@@ -179,9 +203,16 @@ export default function NewArrival() {
     }
   }
 
-  if (isUpdate) {
-    setUpdate(false)
-  }
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetchCreateOrder()
+      setCreateOrderInDatabase(response)
+      if (isUpdate) {
+        setUpdate(false)
+      }
+    }
+    fetchData()
+  }, [isUpdate])
 
   return (
     <>

@@ -2,9 +2,13 @@ import Header from "../components/Header"
 import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { toast } from "react-toastify"
 import { Search } from "../components/Search"
+import {
+  fetchCreateOrder,
+  updateAllItemsInCreateOrder,
+} from "../components/FetchRequests.js"
 
 export default function WishlistPage() {
   const { clothsData, setClothsData } = GetClothsData()
@@ -16,9 +20,23 @@ export default function WishlistPage() {
 
   const user = JSON.parse(localStorage.getItem("user"))
 
-  const createOrder = JSON.parse(localStorage.getItem("createOrder"))
+  const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
+  const uniqueCreateOrderInDatabase =
+    CreateOrderInDatabase &&
+    CreateOrderInDatabase.reduce((acc, item) => {
+      if (!acc.length) {
+        acc.push(item)
+      } else {
+        const searchInAcc = acc.find((obj) => obj.id === item.id) ? true : false
+        if (!searchInAcc) {
+          acc.push(item)
+        }
+      }
+      return acc
+    }, [])
+  const createOrder = { item: uniqueCreateOrderInDatabase }
 
-  function moveToCart(e) {
+  async function moveToCart(e) {
     // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
@@ -50,7 +68,10 @@ export default function WishlistPage() {
         createOrderItem.quantity = 1
         createOrderItem.size = ""
       }
-      localStorage.setItem("createOrder", JSON.stringify(createOrder))
+      await updateAllItemsInCreateOrder(
+        "http://localhost:3000/createOrder/updateItems",
+        createOrder.item,
+      )
     }
 
     // Update user in Database
@@ -94,7 +115,7 @@ export default function WishlistPage() {
     toast("Product added to cart😊")
   }
 
-  function removeFromWishlist(e) {
+  async function removeFromWishlist(e) {
     // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
@@ -126,7 +147,10 @@ export default function WishlistPage() {
     }
     Product &&
       Product.length &&
-      localStorage.setItem("createOrder", JSON.stringify(createOrder))
+      (await updateAllItemsInCreateOrder(
+        "http://localhost:3000/createOrder/updateItems",
+        createOrder.item,
+      ))
 
     // To update the variables present in this page
     setUpdated(true)
@@ -161,15 +185,28 @@ export default function WishlistPage() {
     (product) => product.addToWishList === true,
   )
 
-  const finalWishlistProducts = searchProducts.length ? wishlistProducts.filter((product) => {
-    const filteredSearchProducts = searchProducts.filter((item) => item.addToWishList)
-    const cloth = filteredSearchProducts.filter((item) => item.id === product.id)
-    return cloth.length
-  }) : wishlistProducts
+  const finalWishlistProducts = searchProducts.length
+    ? wishlistProducts.filter((product) => {
+        const filteredSearchProducts = searchProducts.filter(
+          (item) => item.addToWishList,
+        )
+        const cloth = filteredSearchProducts.filter(
+          (item) => item.id === product.id,
+        )
+        return cloth.length
+      })
+    : wishlistProducts
 
-  if (isUpdated) {
-    setUpdated(false)
-  }
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetchCreateOrder()
+      setCreateOrderInDatabase(response)
+      if (isUpdated) {
+        setUpdated(false)
+      }
+    }
+    fetchData()
+  }, [isUpdated])
 
   return (
     <>

@@ -12,7 +12,7 @@ export default function Offcanvas({
   age,
   setAge,
   isCategory,
-  setShowHamburgerPointer
+  setShowHamburgerPointer,
 }) {
   // open useState is used only to open or close Offcanvas
   const [open, setOpen] = useState(false)
@@ -106,7 +106,11 @@ export default function Offcanvas({
         )}
         <div className="d-flex justify-content-between my-3">
           <b>Filters</b>
-          <button type="reset" onClick={resetFilters}>
+          <button
+            className="btn btn-danger btn-sm"
+            type="reset"
+            onClick={resetFilters}
+          >
             Clear
           </button>
         </div>

@@ -13,6 +13,7 @@ export default function Header({
   placeHolder = "Search",
   isSearchBarNeeded = true,
   page = "",
+  userDetails: user,
 }) {
   const { clothsData, setClothsData } = GetClothsData()
   const [input, setInput] = useState("")
@@ -25,8 +26,6 @@ export default function Header({
       setSearch(input)
     }
   }, [input])
-
-  let userDetails = JSON.parse(localStorage.getItem("user"))
 
   function handleHamburgerMenu() {
     const element = document.querySelector(".secondUlContainer")
@@ -47,8 +46,6 @@ export default function Header({
   function handleClick() {
     setSearch(input)
   }
-
-  const user = JSON.parse(localStorage.getItem("user"))
 
   return (
     <header
@@ -102,7 +99,7 @@ export default function Header({
               className="d-flex align-items-center gap-1"
               onClick={handleHamburgerMenu}
             >
-              {userDetails ? (
+              {user && user ? (
                 <div
                   style={{
                     width: "30px",
@@ -111,15 +108,15 @@ export default function Header({
                     borderRadius: "100%",
                   }}
                 >
-                  {userDetails.profileImage ? (
+                  {user && user.profileImage ? (
                     <img
-                      src={userDetails.profileImage}
+                      src={user.profileImage}
                       alt="profileImage"
                       className="w-100 img-fluid h-100"
                     />
                   ) : (
                     <div className="bg-info fs-5 d-flex align-items-center justify-content-center">
-                      {userDetails.name.charAt(0).toUpperCase()}
+                      {user && user.name.charAt(0).toUpperCase()}
                     </div>
                   )}
                 </div>
@@ -148,7 +145,7 @@ export default function Header({
               style={{ width: "300px" }}
             >
               <li className="nav-item">
-                {userDetails ? (
+                {user ? (
                   <NavLink
                     to="/user"
                     className="text-black"
@@ -159,7 +156,7 @@ export default function Header({
                       className="lh-sm px-1 profileBtnInHeader"
                     >
                       <p className="my-0 fw-medium">
-                        Hello, {userDetails.name.split(" ")[0]}
+                        Hello, {user && user.name.split(" ")[0]}
                       </p>
                       <p className="my-0 text-primary fw-bold">
                         Account <i className="bi bi-chevron-down"></i>
@@ -233,7 +230,7 @@ export default function Header({
                 className="nav-item btn btn-warning"
                 style={{ width: "125px" }}
               >
-                {userDetails ? (
+                {user ? (
                   <NavLink
                     to="/user"
                     className="text-black"
@@ -244,7 +241,7 @@ export default function Header({
                       className="lh-sm px-1 profileBtnInHeader"
                     >
                       <p className="my-0 fw-medium">
-                        Hello, {userDetails.name.split(" ")[0]}
+                        Hello, {user && user.name.split(" ")[0]}
                       </p>
                       <p className="my-0 text-primary fw-bold">
                         Account <i className="bi bi-chevron-down"></i>

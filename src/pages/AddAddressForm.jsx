@@ -1,19 +1,24 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
+import { fetchUserById, updateAddressOfUser } from "../components/FetchRequests"
 
 export default function AddAddressForm() {
   const id = Number(useParams().id)
-  const user = JSON.parse(localStorage.getItem("user"))
-  const address = user.address[id]
-  const [fullName, setFullName] = useState(address ? address.fullName : "")
-  const [mobNo, setMobNo] = useState(address ? address.mobNo : "")
-  const [pinCode, setPinCode] = useState(address ? address.pinCode : "")
-  const [localInfo, setLocalInfo] = useState(address ? address.localInfo : "")
-  const [area, setArea] = useState(address ? address.area : "")
-  const [city, setCity] = useState(address ? address.city : "")
-  const [state, setState] = useState(address ? address.state : "")
-  function handleSubmit() {
+
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
+  const [isUpdated, setUpdated] = useState(false)
+
+  const address = user && user.address[id]
+  const [fullName, setFullName] = useState("")
+  const [mobNo, setMobNo] = useState("")
+  const [pinCode, setPinCode] = useState("")
+  const [localInfo, setLocalInfo] = useState("")
+  const [area, setArea] = useState("")
+  const [city, setCity] = useState("")
+  const [state, setState] = useState("")
+  async function handleSubmit() {
     const Address = {
       country: "India",
       fullName,
@@ -24,11 +29,31 @@ export default function AddAddressForm() {
       city,
       state,
     }
-    const user = JSON.parse(localStorage.getItem("user"))
+
     Address.id = address ? id : user.address.length
     address ? (user.address[id] = Address) : user.address.push(Address)
-    localStorage.setItem("user", JSON.stringify(user))
+    await updateAddressOfUser(userId, user.address)
   }
+
+  useEffect(() => {
+    async function fetch() {
+      const user = await fetchUserById(userId)
+      setUser(user)
+      const address = id >= 0 && user.address[id]
+      address && setFullName(address.fullName)
+      address && setMobNo(address.mobNo)
+      address && setPinCode(address.pinCode)
+      address && setLocalInfo(address.localInfo)
+      address && setArea(address.area)
+      address && setCity(address.city)
+      address && setState(address.state)
+      if (isUpdated) {
+        setUpdated(false)
+      }
+    }
+    fetch()
+  }, [isUpdated])
+
   return (
     <>
       <main className="container my-5">
@@ -151,7 +176,7 @@ export default function AddAddressForm() {
               {address ? "Edit Address" : "Add Address"}
             </Link>
           ) : (
-            <button className="btn btn-warning rounded-pill mt-3">
+            <button className="btn btn-warning rounded-pill mt-3" type="button">
               {address ? "Edit Address" : "Add Address"}
             </button>
           )}

@@ -8,6 +8,9 @@ import { Search } from "../components/Search"
 import {
   fetchCreateOrder,
   updateAllItemsInCreateOrder,
+  fetchUserById,
+  updateCartItemsInUser,
+  updateWishlistItemsInUser,
 } from "../components/FetchRequests.js"
 
 export default function WishlistPage() {
@@ -18,7 +21,8 @@ export default function WishlistPage() {
   then variables present on this page will reinitialize */
   const [isUpdated, setUpdated] = useState(false)
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
 
   const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
   const uniqueCreateOrderInDatabase =
@@ -87,7 +91,7 @@ export default function WishlistPage() {
     } else {
       item[0].quantity = item[0].quantity ? item[0].quantity + 1 : 2
     }
-    localStorage.setItem("user", JSON.stringify(user))
+    await updateCartItemsInUser(user._id, user.addToCartItems)
 
     // For interactivity
     const product = user.addToCartItems.find(
@@ -132,8 +136,8 @@ export default function WishlistPage() {
     const remainingWishlistItem = user.addToWishlistItems.filter(
       (item) => item.id !== Number(e.target.value),
     )
-    user.addToWishlistItems = remainingWishlistItem
-    localStorage.setItem("user", JSON.stringify(user))
+
+    await updateWishlistItemsInUser(user._id, remainingWishlistItem)
 
     // Update createOrder in Database
     const Product =
@@ -170,11 +174,15 @@ export default function WishlistPage() {
       cloth.size = isClothPresentInCart[0].size
         ? isClothPresentInCart[0].size
         : ""
+    } else {
+      delete cloth.addToCart
     }
     const isClothPresentInWishlist =
       user && user.addToWishlistItems.filter((item) => item.id === cloth.id)
     if (isClothPresentInWishlist && isClothPresentInWishlist.length) {
       cloth.addToWishList = true
+    } else {
+      delete cloth.addToWishList
     }
     return cloth
   })
@@ -199,8 +207,10 @@ export default function WishlistPage() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetchCreateOrder()
-      setCreateOrderInDatabase(response)
+      const createOrder = await fetchCreateOrder()
+      setCreateOrderInDatabase(createOrder)
+      const user = await fetchUserById(userId)
+      setUser(user)
       if (isUpdated) {
         setUpdated(false)
       }
@@ -216,6 +226,7 @@ export default function WishlistPage() {
         zIndex="auto"
         setSearch={setSearch}
         placeHolder="Search Product"
+        userDetails={user}
       />
       <SearchInPage
         margin="ms-3"

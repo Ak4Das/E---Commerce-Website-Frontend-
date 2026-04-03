@@ -9,6 +9,9 @@ import { toast } from "react-toastify"
 import {
   fetchCreateOrder,
   updateAllItemsInCreateOrder,
+  fetchUserById,
+  updateCartItemsInUser,
+  updateWishlistItemsInUser,
 } from "../components/FetchRequests.js"
 
 export default function SaleProducts() {
@@ -40,7 +43,8 @@ export default function SaleProducts() {
   then variables present on this page will reinitialize */
   const [isUpdate, setUpdate] = useState(false)
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
 
   const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
   const uniqueCreateOrderInDatabase =
@@ -70,11 +74,15 @@ export default function SaleProducts() {
       cloth.size = isClothPresentInCart[0].size
         ? isClothPresentInCart[0].size
         : ""
+    } else {
+      delete cloth.addToCart
     }
     const isClothPresentInWishlist =
       user && user.addToWishlistItems.filter((item) => item.id === cloth.id)
     if (isClothPresentInWishlist && isClothPresentInWishlist.length) {
       cloth.addToWishList = true
+    } else {
+      delete cloth.addToWishList
     }
     return cloth
   })
@@ -114,7 +122,7 @@ export default function SaleProducts() {
         quantity: 1,
         size: "",
       })
-      localStorage.setItem("user", JSON.stringify(user))
+      await updateCartItemsInUser(user._id, user.addToCartItems)
 
       // Update clothsData in memory
       const item = clothsData.find(
@@ -174,7 +182,7 @@ export default function SaleProducts() {
     if (!isAddedToWishlist.length) {
       // Update user in Database
       user.addToWishlistItems.push({ id: Number(e.target.value) })
-      localStorage.setItem("user", JSON.stringify(user))
+      await updateWishlistItemsInUser(user._id, user.addToWishlistItems)
 
       // Update clothsData in memory
       const item = clothsData.find(
@@ -221,8 +229,10 @@ export default function SaleProducts() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetchCreateOrder()
-      setCreateOrderInDatabase(response)
+      const createOrder = await fetchCreateOrder()
+      setCreateOrderInDatabase(createOrder)
+      const user = await fetchUserById(userId)
+      setUser(user)
       if (isUpdate) {
         setUpdate(false)
       }
@@ -238,6 +248,7 @@ export default function SaleProducts() {
         zIndex={1}
         setSearch={setSearch}
         placeHolder="Search by product Material"
+        userDetails={user}
       />
       <SearchInPage
         margin="ms-3"

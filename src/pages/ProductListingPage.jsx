@@ -13,6 +13,9 @@ import { Search } from "../components/Search"
 import {
   fetchCreateOrder,
   updateAllItemsInCreateOrder,
+  fetchUserById,
+  updateCartItemsInUser,
+  updateWishlistItemsInUser,
 } from "../components/FetchRequests.js"
 
 export default function ProductListingPage() {
@@ -52,7 +55,8 @@ export default function ProductListingPage() {
   then variables present on this page will reinitialize */
   const [isUpdate, setUpdate] = useState(false)
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
 
   const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
   const uniqueCreateOrderInDatabase =
@@ -85,7 +89,7 @@ export default function ProductListingPage() {
         quantity: 1,
         size: "",
       })
-      localStorage.setItem("user", JSON.stringify(user))
+      await updateCartItemsInUser(user._id, user.addToCartItems)
 
       // Update clothsData in memory
       const item = clothsData.find(
@@ -146,7 +150,7 @@ export default function ProductListingPage() {
     if (!isAddedToWishlist.length) {
       // Update user in Database
       user.addToWishlistItems.push({ id: Number(e.target.value) })
-      localStorage.setItem("user", JSON.stringify(user))
+      await updateWishlistItemsInUser(user._id, user.addToWishlistItems)
 
       // Update clothsData in memory
       const item = clothsData.find(
@@ -203,11 +207,15 @@ export default function ProductListingPage() {
       cloth.size = isClothPresentInCart[0].size
         ? isClothPresentInCart[0].size
         : ""
+    } else {
+      delete cloth.addToCart
     }
     const isClothPresentInWishlist =
       user && user.addToWishlistItems.filter((item) => item.id === cloth.id)
     if (isClothPresentInWishlist && isClothPresentInWishlist.length) {
       cloth.addToWishList = true
+    } else {
+      delete cloth.addToWishList
     }
     return cloth
   })
@@ -337,8 +345,10 @@ export default function ProductListingPage() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetchCreateOrder()
-      setCreateOrderInDatabase(response)
+      const createOrder = await fetchCreateOrder()
+      setCreateOrderInDatabase(createOrder)
+      const user = await fetchUserById(userId)
+      setUser(user)
       if (isUpdate) {
         setUpdate(false)
       }
@@ -354,6 +364,7 @@ export default function ProductListingPage() {
         zIndex={3}
         setSearch={setSearch}
         placeHolder="Search Product"
+        userDetails={user}
       />
       <SearchInPage
         margin="ms-3"

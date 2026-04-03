@@ -1,12 +1,13 @@
 import Header from "../components/Header"
 import CameraIcon from "../assets/camera.png"
 import crossBtn from "../assets/cross.png"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import DeliveryBox from "../assets/deliveryBox.jpg"
 import AddressIcon from "../assets/address.png"
 import Support from "../assets/support.png"
 import { Link } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
+import { fetchUserById, updateUser } from "../components/FetchRequests"
 
 export default function UserProfile() {
   const [search, setSearch] = useState("")
@@ -16,7 +17,7 @@ export default function UserProfile() {
   the floating form to change profile image will open and if user will press the cross btn 
   on the floating page then the floating form will disappear from the page */
   const [visible, setVisible] = useState(false)
-  
+
   const [profileImage, setProfileImage] = useState("")
   const [edit, setEdit] = useState(false)
   const [imageUrl, setImageUrl] = useState("")
@@ -25,26 +26,37 @@ export default function UserProfile() {
   // file useState is used to store user's selected image file
   const [file, setFile] = useState({})
 
-  let userDetails = JSON.parse(localStorage.getItem("user"))
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
+  const [isUpdated, setUpdated] = useState(false)
+
 
   // if (imagePath) {
   //   const reader = new FileReader()
   //   reader.onload = () => {
-  //     userDetails.profileImageFile = reader.result
-  //     localStorage.setItem("user", JSON.stringify(userDetails))
+  //     user.profileImageFile = reader.result
+  //     localStorage.setItem("user", JSON.stringify(user))
   //   }
   //   reader.readAsDataURL(file)
   // }
 
-  if (profileImage && !edit) {
-    userDetails.profileImage = profileImage
-    console.log(profileImage)
-    localStorage.setItem("user", JSON.stringify(userDetails))
+  async function updatePropertiesOfUser(userId, data) {
+    try {
+      await updateUser(userId, data)
+      setUpdated(true)
+    } catch (error) {
+      throw error
+    }
   }
 
-  function removeProfileImage() {
-    userDetails.profileImage = ""
-    localStorage.setItem("user", JSON.stringify(userDetails))
+  if (profileImage && !edit) {
+    user.profileImage = profileImage
+    updatePropertiesOfUser(userId, { profileImage: user.profileImage })
+  }
+
+  async function removeProfileImage() {
+    user.profileImage = ""
+    await updateUser(userId, { profileImage: user.profileImage })
     setEdit(false)
     setProfileImage("")
     setImageUrl("")
@@ -65,6 +77,18 @@ export default function UserProfile() {
     setVisible(visible ? false : true)
     setEdit(false)
   }
+
+  useEffect(() => {
+    async function fetch() {
+      const response = await fetchUserById(userId)
+      setUser(response)
+      if (isUpdated) {
+        setUpdated(false)
+      }
+    }
+    fetch()
+  }, [isUpdated])
+
   return (
     <>
       <Header
@@ -73,15 +97,20 @@ export default function UserProfile() {
         zIndex="auto"
         setSearch={setSearch}
         isSearchBarNeeded={false}
+        userDetails={user}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} isSearchBarNeeded={false}/>
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        isSearchBarNeeded={false}
+      />
       <main className="container">
         <div className="d-flex flex-column align-items-center mt-5 position-relative">
           <div
             style={{ width: "100px", height: "100px" }}
             className="overflow-hidden rounded-circle"
           >
-            {userDetails.profileImage ? (
+            {user && user.profileImage ? (
               imagePath ? (
                 <img
                   src={URL.createObjectURL(file)}
@@ -90,7 +119,7 @@ export default function UserProfile() {
                 />
               ) : (
                 <img
-                  src={userDetails.profileImage}
+                  src={user.profileImage}
                   alt="profileImage"
                   className="img-fluid w-100 h-100"
                 />
@@ -103,7 +132,7 @@ export default function UserProfile() {
               />
             ) : (
               <div className="bg-info w-100 h-100 fs-1 d-flex align-items-center justify-content-center">
-                {userDetails.name.charAt(0).toUpperCase()}
+                {user && user.name.charAt(0).toUpperCase()}
               </div>
             )}
           </div>
@@ -119,8 +148,8 @@ export default function UserProfile() {
               onClick={setVisibility}
             />
           </div>
-          <h2 className="mt-3">{userDetails.name.toUpperCase()}</h2>
-          <h6>{userDetails.email}</h6>
+          <h2 className="mt-3">{user && user.name.toUpperCase()}</h2>
+          <h6>{user && user.email}</h6>
           {visible && (
             <div
               className="card px-3 py-3 bg-light position-absolute top-50 start-50 floatingCard"
@@ -152,7 +181,7 @@ export default function UserProfile() {
                   className="overflow-hidden rounded-circle mx-auto my-5 floatingCardUserImage"
                   style={{ width: "350px", height: "350px" }}
                 >
-                  {userDetails.profileImage ? (
+                  {user.profileImage ? (
                     imagePath ? (
                       <img
                         src={URL.createObjectURL(file)}
@@ -161,7 +190,7 @@ export default function UserProfile() {
                       />
                     ) : (
                       <img
-                        src={userDetails.profileImage}
+                        src={user.profileImage}
                         alt="profileImage"
                         className="img-fluid w-100 h-100"
                       />
@@ -174,7 +203,7 @@ export default function UserProfile() {
                     />
                   ) : (
                     <div className="bg-info w-100 h-100 fs-1 d-flex align-items-center justify-content-center">
-                      {userDetails.name.charAt(0).toUpperCase()}
+                      {user.name.charAt(0).toUpperCase()}
                     </div>
                   )}
                 </div>
@@ -238,9 +267,7 @@ export default function UserProfile() {
             to="/userAddress/user"
             className="col-md-6 col-xl-4 mb-4 text-decoration-none"
           >
-            <div
-              className="card align-items-center gap-3 cardInUserProfilePage p-2"
-            >
+            <div className="card align-items-center gap-3 cardInUserProfilePage p-2">
               <img
                 src={AddressIcon}
                 alt="addressIcon"
@@ -254,9 +281,7 @@ export default function UserProfile() {
             </div>
           </Link>
           <div className="col-md-6 col-xl-4 mb-4">
-            <div
-              className="card align-items-center gap-3 cardInUserProfilePage p-2"
-            >
+            <div className="card align-items-center gap-3 cardInUserProfilePage p-2">
               <img
                 src={Support}
                 alt="support"

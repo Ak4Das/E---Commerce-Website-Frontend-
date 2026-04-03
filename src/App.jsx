@@ -36,8 +36,11 @@ import shoe1 from "./assets/shoe1.png"
 import goldenRibbon from "./assets/goldenRibbon.png"
 import menWearShoe from "./assets/menWearShoe.png"
 import SearchInPage from "./components/SearchInPage"
+import { useEffect } from "react"
 
 import category from "./components/Category"
+
+import { fetchUserById } from "./components/FetchRequests.js"
 
 export default function App() {
   const [search, setSearch] = useState("")
@@ -46,11 +49,22 @@ export default function App() {
     setShow(false)
   }, 1500)
 
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
+
   const filteredCategory = search
     ? category.filter((category) =>
         category.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()),
       )
     : category
+
+  useEffect(() => {
+    async function fetchData() {
+      const user = await fetchUserById(userId)
+      setUser(user)
+    }
+    fetchData()
+  }, [])
 
   return (
     <>
@@ -69,8 +83,13 @@ export default function App() {
             zIndex="auto"
             setSearch={setSearch}
             placeHolder="Search Product"
+            userDetails={user}
           />
-          <SearchInPage margin="ms-3" setSearch={setSearch} placeHolder="Search Product"/>
+          <SearchInPage
+            margin="ms-3"
+            setSearch={setSearch}
+            placeHolder="Search Product"
+          />
           <div
             className="alert alert-success alert-dismissible fade show mt-3"
             role="alert"

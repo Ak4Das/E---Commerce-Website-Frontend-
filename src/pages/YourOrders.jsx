@@ -4,6 +4,10 @@ import RatingBar from "../components/RatingBar"
 import { useState } from "react"
 import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
+import { useEffect } from "react"
+import {
+  fetchUserById,
+} from "../components/FetchRequests.js"
 
 export default function YourOrders() {
   const [search, setSearch] = useState("")
@@ -19,7 +23,8 @@ export default function YourOrders() {
 
   const orders = JSON.parse(localStorage.getItem("orders"))
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
 
   function cancelOrder(id) {
     const Orders = orders.filter((order) => order.id !== id)
@@ -29,9 +34,16 @@ export default function YourOrders() {
     toast("Order deleted successfully")
   }
 
-  if (isUpdated) {
-    setUpdated(false)
-  }
+  useEffect(() => {
+    async function fetchData() {
+      const user = await fetchUserById(userId)
+      setUser(user)
+      if (isUpdated) {
+        setUpdated(false)
+      }
+    }
+    fetchData()
+  }, [isUpdated])
 
   return (
     <>
@@ -41,6 +53,7 @@ export default function YourOrders() {
         zIndex="auto"
         setSearch={setSearch}
         isSearchBarNeeded={false}
+        userDetails={user}
       />
       <SearchInPage
         margin="ms-3"
@@ -74,7 +87,7 @@ export default function YourOrders() {
                   style={{ fontSize: "14px" }}
                   onClick={() => setClicked(isClicked ? false : true)}
                 >
-                  {user.name} <i className="bi bi-chevron-down"></i>
+                  {user && user.name} <i className="bi bi-chevron-down"></i>
                 </p>
                 {isClicked && (
                   <div
@@ -126,7 +139,7 @@ export default function YourOrders() {
                       style={{ fontSize: "14px" }}
                       onClick={() => setClicked(isClicked ? false : true)}
                     >
-                      {user.name} <i className="bi bi-chevron-down"></i>
+                      {user && user.name} <i className="bi bi-chevron-down"></i>
                     </p>
                     {isClicked && (
                       <div

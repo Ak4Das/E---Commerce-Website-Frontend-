@@ -17,11 +17,24 @@ import diwaliDecoration12 from "../assets/diwaliDecoration12.png"
 import diwaliDecoration13 from "../assets/diwaliDecoration13.png"
 import { Link } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { fetchUserById } from "../components/FetchRequests"
 
 export default function DiwaliSale() {
   const [search, setSearch] = useState("")
   console.log(search)
+
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    async function fetchData() {
+      const user = await fetchUserById(userId)
+      setUser(user)
+    }
+    fetchData()
+  }, [])
+
   return (
     <>
       <Header
@@ -31,8 +44,14 @@ export default function DiwaliSale() {
         setSearch={setSearch}
         placeHolder="Search Product"
         page="diwaliSale"
+        userDetails={user}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} placeHolder="Search Product" page="diwaliSale"/>
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        placeHolder="Search Product"
+        page="diwaliSale"
+      />
       <main className="mx-5 my-4">
         <section
           className="diwaliSaleSection1"
@@ -131,7 +150,11 @@ export default function DiwaliSale() {
                       Check
                     </Link>
                   </div>
-                  <img src={menWearCoat2} className="img-fluid h-100" alt="menWearCoatImage" />
+                  <img
+                    src={menWearCoat2}
+                    className="img-fluid h-100"
+                    alt="menWearCoatImage"
+                  />
                 </div>
               </div>
               <div className="col-12 col-xxl-6">
@@ -206,7 +229,11 @@ export default function DiwaliSale() {
                     </Link>
                   </div>
                   <div className="text-end">
-                    <img src={shoe1} className="img-fluid w-75 h-100" alt="shoe" />
+                    <img
+                      src={shoe1}
+                      className="img-fluid w-75 h-100"
+                      alt="shoe"
+                    />
                   </div>
                 </div>
               </div>
@@ -281,7 +308,11 @@ export default function DiwaliSale() {
                       Check
                     </Link>
                   </div>
-                  <img src={menWearJeans} className="img-fluid h-100" alt="menWearJeansImage" />
+                  <img
+                    src={menWearJeans}
+                    className="img-fluid h-100"
+                    alt="menWearJeansImage"
+                  />
                 </div>
               </div>
             </div>
@@ -296,10 +327,18 @@ export default function DiwaliSale() {
           <div className="w-50 d-flex flex-column mx-auto">
             <div className="d-flex">
               <div>
-                <img src={ganpati} className="img-fluid w-100" alt="ganpatiImage" />
+                <img
+                  src={ganpati}
+                  className="img-fluid w-100"
+                  alt="ganpatiImage"
+                />
               </div>
               <div>
-                <img src={lakshmiMata} className="img-fluid w-100" alt="lakshmiMataImage" />
+                <img
+                  src={lakshmiMata}
+                  className="img-fluid w-100"
+                  alt="lakshmiMataImage"
+                />
               </div>
             </div>
             <div className="d-flex align-items-end">

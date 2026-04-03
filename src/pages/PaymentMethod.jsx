@@ -13,6 +13,8 @@ import {
   fetchCreateOrder,
   updateAllItemsInCreateOrder,
   deleteManyItemsInCreateOrder,
+  fetchUserById,
+  updateCartItemsInUser,
 } from "../components/FetchRequests.js"
 
 export default function PaymentMethods() {
@@ -47,7 +49,9 @@ export default function PaymentMethods() {
   to update the variables present on this page */
   const [updated, setUpdated] = useState(false)
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
+
   const address =
     user &&
     user.address.length !== 0 &&
@@ -87,6 +91,15 @@ export default function PaymentMethods() {
   async function removeAllItemsFromCreateOrder() {
     try {
       await deleteManyItemsInCreateOrder()
+      setUpdated(true)
+    } catch (error) {
+      throw error
+    }
+  }
+
+  async function updateCartItems(id, items) {
+    try {
+      await updateCartItemsInUser(id, items)
       setUpdated(true)
     } catch (error) {
       throw error
@@ -151,12 +164,11 @@ export default function PaymentMethods() {
     await removeAllItemsFromCreateOrder()
 
     const productsArray = orders[orders.length - 1].item
-    productsArray.forEach((product) => {
+    productsArray.forEach(async (product) => {
       if (product.addToCart) {
         user.addToCartItems = user.addToCartItems.filter(
           (item) => item.id !== product.id,
         )
-        localStorage.setItem("user", JSON.stringify(user))
         const itemInClothsData = clothsData.find(
           (item) => item.id === product.id,
         )
@@ -165,8 +177,9 @@ export default function PaymentMethods() {
         delete itemInClothsData.size
       }
     })
+    await updateCartItems(user._id, user.addToCartItems)
+    
     setIsOrderPlaced(true)
-
     toast("Order Placed Successfully🎉😊")
   }
 
@@ -216,9 +229,11 @@ export default function PaymentMethods() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetchCreateOrder()
-      setCreateOrderInDatabase(response)
-      setProducts(response)
+      const createOrder = await fetchCreateOrder()
+      setCreateOrderInDatabase(createOrder)
+      setProducts(createOrder)
+      const user = await fetchUserById(userId)
+      setUser(user)
       if (updated) {
         setUpdated(false)
       }
@@ -234,6 +249,7 @@ export default function PaymentMethods() {
         zIndex="auto"
         setSearch={setSearch}
         isSearchBarNeeded={false}
+        userDetails={user}
       />
       <SearchInPage
         margin="ms-3"
@@ -376,7 +392,11 @@ export default function PaymentMethods() {
                               const item = clothsData.find(
                                 (item) => item.id === product.id,
                               )
-                              item.quantity = inputElementValue
+                              if (inputElementValue > 0) {
+                                item.quantity = inputElementValue
+                              } else {
+                                item.quantity = 1
+                              }
 
                               // Update user in Database
                               const isItemAddedToCart =
@@ -384,11 +404,16 @@ export default function PaymentMethods() {
                                   (item) => item.id === product.id,
                                 )
                               if (isItemAddedToCart.length) {
-                                isItemAddedToCart[0].quantity =
-                                  inputElementValue
-                                localStorage.setItem(
-                                  "user",
-                                  JSON.stringify(user),
+                                if (inputElementValue > 0) {
+                                  isItemAddedToCart[0].quantity =
+                                    inputElementValue
+                                } else {
+                                  isItemAddedToCart[0].quantity = 1
+                                }
+
+                                await updateCartItems(
+                                  user._id,
+                                  user.addToCartItems,
                                 )
                               }
 
@@ -403,9 +428,14 @@ export default function PaymentMethods() {
                                 )
 
                               if (createOrderItem && createOrderItem.length) {
-                                createOrderItem[0].quantity = inputElementValue
+                                if (inputElementValue > 0) {
+                                  createOrderItem[0].quantity =
+                                    inputElementValue
+                                } else {
+                                  createOrderItem[0].quantity = 1
+                                }
                               }
-                              
+
                               await updateAllItems(
                                 "http://localhost:3000/createOrder/updateItems",
                                 createOrder.item,
@@ -448,9 +478,9 @@ export default function PaymentMethods() {
                                 isItemAddedToCart[0].quantity = Number(
                                   e.target.previousElementSibling.value,
                                 )
-                                localStorage.setItem(
-                                  "user",
-                                  JSON.stringify(user),
+                                await updateCartItemsInUser(
+                                  user._id,
+                                  user.addToCartItems,
                                 )
                               }
 

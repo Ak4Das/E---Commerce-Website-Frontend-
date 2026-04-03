@@ -15,6 +15,9 @@ import {
   updateClothById,
   fetchCreateOrder,
   updateAllItemsInCreateOrder,
+  fetchUserById,
+  updateCartItemsInUser,
+  updateWishlistItemsInUser,
 } from "../components/FetchRequests.js"
 
 export default function ProductDetailsPage() {
@@ -43,7 +46,8 @@ export default function ProductDetailsPage() {
 
   const { clothsData, setClothsData } = GetClothsData()
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
 
   const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
   const uniqueCreateOrderInDatabase =
@@ -81,11 +85,15 @@ export default function ProductDetailsPage() {
       cloth.size = isClothPresentInCart[0].size
         ? isClothPresentInCart[0].size
         : ""
+    } else {
+      delete cloth.addToCart
     }
     const isClothPresentInWishlist =
       user && user.addToWishlistItems.filter((item) => item.id === cloth.id)
     if (isClothPresentInWishlist && isClothPresentInWishlist.length) {
       cloth.addToWishList = true
+    } else {
+      delete cloth.addToWishList
     }
     return cloth
   })
@@ -133,16 +141,16 @@ export default function ProductDetailsPage() {
     product.addToWishList = true
   }
 
-  function increaseCount(e) {
+  async function increaseCount(e) {
     // Update the input element value
     let inputElementValue = Number(e.target.previousElementSibling.value)
     e.target.previousElementSibling.value = ++inputElementValue
 
     // Update user in Database
-    const clothItem = user.addToCartItems.find((item) => item.id === id)
+    const clothItem = user && user.addToCartItems.find((item) => item.id === id)
     if (clothItem) {
       clothItem.quantity = Number(e.target.previousElementSibling.value)
-      localStorage.setItem("user", JSON.stringify(user))
+      await updateCartItemsInUser(user._id, user.addToCartItems)
     }
 
     // Update clothsData in memory
@@ -154,7 +162,7 @@ export default function ProductDetailsPage() {
     setUpdated(true)
   }
 
-  function decreaseCount(e) {
+  async function decreaseCount(e) {
     let inputElementValue = Number(e.target.nextElementSibling.value)
     if (inputElementValue > 1) {
       // Update the input element value
@@ -164,7 +172,7 @@ export default function ProductDetailsPage() {
       const clothItem = user.addToCartItems.find((item) => item.id === id)
       if (clothItem) {
         clothItem.quantity = Number(e.target.nextElementSibling.value)
-        localStorage.setItem("user", JSON.stringify(user))
+        await updateCartItemsInUser(user._id, user.addToCartItems)
       }
 
       // Update clothsData in memory
@@ -177,7 +185,7 @@ export default function ProductDetailsPage() {
     }
   }
 
-  function addToCart(e) {
+  async function addToCart(e) {
     // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
@@ -202,7 +210,7 @@ export default function ProductDetailsPage() {
         quantity: quantity,
         size: size,
       })
-      localStorage.setItem("user", JSON.stringify(user))
+      await updateCartItemsInUser(user._id, user.addToCartItems)
 
       // For interactivity
       const btn = e.target
@@ -223,7 +231,7 @@ export default function ProductDetailsPage() {
     toast("Product added to cart😊")
   }
 
-  function addToWishlist(e) {
+  async function addToWishlist(e) {
     // To stop Event Bubbling
     e.preventDefault()
     e.stopPropagation()
@@ -234,7 +242,7 @@ export default function ProductDetailsPage() {
     if (!isAddedToWishlist.length) {
       // Update user in Database
       user.addToWishlistItems.push({ id: Number(e.target.value) })
-      localStorage.setItem("user", JSON.stringify(user))
+      await updateWishlistItemsInUser(user._id, user.addToWishlistItems)
 
       // Update clothsData in memory
       const item = finalClothsData.find(
@@ -271,13 +279,15 @@ export default function ProductDetailsPage() {
   update user in database while quantity change and if product is already added to cart */
   useEffect(() => {
     async function fetchData() {
-      const response = await fetchCreateOrder()
-      setCreateOrderInDatabase(response)
+      const createOrder = await fetchCreateOrder()
+      setCreateOrderInDatabase(createOrder)
+      const user = await fetchUserById(userId)
+      setUser(user)
       if (isUpdated) {
-        if (isClothPresentInCart.length) {
+        if (isClothPresentInCart && isClothPresentInCart.length) {
           if (quantity > 1) {
             isClothPresentInCart[0].quantity = quantity
-            localStorage.setItem("user", JSON.stringify(user))
+            await updateCartItemsInUser(user._id, user.addToCartItems)
             product.quantity = quantity
           }
         } else {
@@ -288,7 +298,7 @@ export default function ProductDetailsPage() {
         if (size) {
           const createOrderItems = await fetchCreateOrder()
           createOrderItems.forEach((item) => (item.size = size))
-          // product.size = size
+          product.size = size
           await updateAllItemsInCreateOrder(
             "http://localhost:3000/createOrder/updateItems",
             createOrderItems,
@@ -389,13 +399,21 @@ export default function ProductDetailsPage() {
     } else {
       setTime("0:0:0")
     }
+  }, [])
+
+  useEffect(() => {
     // set createOrder for every mount
     const arr = [product]
-    updateAllItems(
-      "http://localhost:3000/createOrder/updateItems",
-      arr,
+    updateAllItems("http://localhost:3000/createOrder/updateItems", arr)
+    const input1 = document.querySelector(
+      "#root > main > div > section.frequentlyBoughtSection > div > div:nth-child(3) > div.frequently-bought-image > input[type=checkbox]",
     )
-  }, [])
+    input1.checked = false
+    const input2 = document.querySelector(
+      "#root > main > div > section.frequentlyBoughtSection > div > div.frequently-bought-item.frequentlyBoughtThirdItem > div.frequently-bought-image > input[type=checkbox]",
+    )
+    input2.checked = false
+  }, [id])
 
   const similarProductIds = product.similarProducts.map((product) => product.id)
   const similarProducts = finalClothsData.filter((product) =>
@@ -474,6 +492,7 @@ export default function ProductDetailsPage() {
         setSearch={setSearch}
         placeHolder="Search Product"
         page="productDetails"
+        userDetails={user}
       />
       <SearchInPage
         margin="ms-3"
@@ -634,15 +653,17 @@ export default function ProductDetailsPage() {
                     }
                     style={{ width: "30px" }}
                     className="mx-2 text-center"
-                    onChange={(e) => {
+                    onChange={async (e) => {
                       // Update user in Database
-                      const user = JSON.parse(localStorage.getItem("user"))
                       const clothItem = user.addToCartItems.find(
                         (item) => item.id === id,
                       )
                       if (clothItem) {
                         clothItem.quantity = Number(e.target.value)
-                        localStorage.setItem("user", JSON.stringify(user))
+                        await updateCartItemsInUser(
+                          user._id,
+                          user.addToCartItems,
+                        )
                       }
 
                       setQuantity(Number(e.target.value))
@@ -666,7 +687,7 @@ export default function ProductDetailsPage() {
                 <div className="sizeBtnContainer">
                   <button
                     className="border border-1 me-2 mb-2"
-                    onClick={(e) => {
+                    onClick={async (e) => {
                       setSize("S")
 
                       // Update user in Database
@@ -675,7 +696,10 @@ export default function ProductDetailsPage() {
                       )
                       if (isClothAddedToCart) {
                         isClothAddedToCart.size = "S"
-                        localStorage.setItem("user", JSON.stringify(user))
+                        await updateCartItemsInUser(
+                          user._id,
+                          user.addToCartItems,
+                        )
                       }
 
                       // To update clothsData, createOrder and the variables present in this page
@@ -704,16 +728,19 @@ export default function ProductDetailsPage() {
                   </button>
                   <button
                     className="border border-1 me-2 mb-2"
-                    onClick={(e) => {
+                    onClick={async (e) => {
                       setSize("M")
 
                       // Update user in Database
-                      const isClothAddedToCart = user.addToCartItems.find(
-                        (item) => item.id === id,
-                      )
+                      const isClothAddedToCart =
+                        user &&
+                        user.addToCartItems.find((item) => item.id === id)
                       if (isClothAddedToCart) {
                         isClothAddedToCart.size = "M"
-                        localStorage.setItem("user", JSON.stringify(user))
+                        await updateCartItemsInUser(
+                          user._id,
+                          user.addToCartItems,
+                        )
                       }
 
                       // To update clothsData, createOrder and the variables present in this page
@@ -742,7 +769,7 @@ export default function ProductDetailsPage() {
                   </button>
                   <button
                     className="border border-1 me-2 mb-2"
-                    onClick={(e) => {
+                    onClick={async (e) => {
                       setSize("L")
 
                       // Update user in Database
@@ -751,7 +778,10 @@ export default function ProductDetailsPage() {
                       )
                       if (isClothAddedToCart) {
                         isClothAddedToCart.size = "L"
-                        localStorage.setItem("user", JSON.stringify(user))
+                        await updateCartItemsInUser(
+                          user._id,
+                          user.addToCartItems,
+                        )
                       }
 
                       // To update clothsData, createOrder and the variables present in this page
@@ -780,7 +810,7 @@ export default function ProductDetailsPage() {
                   </button>
                   <button
                     className="border border-1 me-2 mb-2"
-                    onClick={(e) => {
+                    onClick={async (e) => {
                       setSize("XL")
 
                       // Update user in Database
@@ -789,7 +819,10 @@ export default function ProductDetailsPage() {
                       )
                       if (isClothAddedToCart) {
                         isClothAddedToCart.size = "XL"
-                        localStorage.setItem("user", JSON.stringify(user))
+                        await updateCartItemsInUser(
+                          user._id,
+                          user.addToCartItems,
+                        )
                       }
 
                       // To update clothsData, createOrder and the variables present in this page
@@ -818,7 +851,7 @@ export default function ProductDetailsPage() {
                   </button>
                   <button
                     className="border border-1 mb-2"
-                    onClick={(e) => {
+                    onClick={async (e) => {
                       setSize("XXL")
 
                       // Update user in Database
@@ -827,7 +860,10 @@ export default function ProductDetailsPage() {
                       )
                       if (isClothAddedToCart) {
                         isClothAddedToCart.size = "XXL"
-                        localStorage.setItem("user", JSON.stringify(user))
+                        await updateCartItemsInUser(
+                          user._id,
+                          user.addToCartItems,
+                        )
                       }
 
                       // To update clothsData, createOrder and the variables present in this page
@@ -1464,8 +1500,8 @@ export default function ProductDetailsPage() {
                     }}
                   />
                 </div>
-                <a
-                  href={`/productDetails/${similarProducts[2].id}`}
+                <Link
+                  to={`/productDetails/${similarProducts[2].id}`}
                   style={{
                     height: "67px",
                     overflow: "hidden",
@@ -1477,7 +1513,7 @@ export default function ProductDetailsPage() {
                   {similarProducts[2].name.length > 71
                     ? similarProducts[2].name.slice(0, 70).concat("...")
                     : similarProducts[2].name}
-                </a>
+                </Link>
                 <div className="item-price text-black">
                   <b>₹</b>
                   <span>
@@ -1522,8 +1558,8 @@ export default function ProductDetailsPage() {
                     }}
                   />
                 </div>
-                <a
-                  href={`/productDetails/${similarProducts[3].id}`}
+                <Link
+                  to={`/productDetails/${similarProducts[3].id}`}
                   style={{
                     height: "67px",
                     overflow: "hidden",
@@ -1535,7 +1571,7 @@ export default function ProductDetailsPage() {
                   {similarProducts[3].name.length > 71
                     ? similarProducts[3].name.slice(0, 70).concat("...")
                     : similarProducts[3].name}
-                </a>
+                </Link>
                 <div className="item-price text-black">
                   <b>₹</b>
                   <span>
@@ -1808,7 +1844,7 @@ export default function ProductDetailsPage() {
                     <td>
                       <div className="similarItems-item1 item">
                         <img src={product.url} alt="" />
-                        <a
+                        <Link
                           className="productLink d-block"
                           style={{
                             height: "56px",
@@ -1824,7 +1860,7 @@ export default function ProductDetailsPage() {
                               ? product.name.slice(0, 60).concat("...")
                               : product.name}
                           </span>
-                        </a>
+                        </Link>
                         <button
                           className="btn btn-warning btn-sm rounded-pill mt-2"
                           value={product.id}
@@ -1842,10 +1878,10 @@ export default function ProductDetailsPage() {
                         <td key={item.id}>
                           <div className="similarItems-item1 item">
                             <img src={product.url} alt="" />
-                            <a
+                            <Link
                               className="productLink d-block"
                               style={{ height: "56px", overflow: "hidden" }}
-                              href={`/productDetails/${product.id}`}
+                              to={`/productDetails/${product.id}`}
                             >
                               <b>
                                 {product.productDetails.itemDetails.brandName}
@@ -1855,16 +1891,29 @@ export default function ProductDetailsPage() {
                                   ? product.name.slice(0, 60).concat("...")
                                   : product.name}
                               </span>
-                            </a>
-                            <button
-                              className="btn btn-warning btn-sm rounded-pill mt-2"
-                              value={product.id}
-                              onClick={addToCart}
-                            >
-                              {product.addToCart
-                                ? "Added To Cart"
-                                : "Add To cart"}
-                            </button>
+                            </Link>
+                            {!user ? (
+                              <button
+                                className="btn btn-warning btn-sm rounded-pill mt-2"
+                                onClick={() =>
+                                  toast("Please login to your account")
+                                }
+                              >
+                                {product.addToCart
+                                  ? "Added To Cart"
+                                  : "Add To cart"}
+                              </button>
+                            ) : (
+                              <button
+                                className="btn btn-warning btn-sm rounded-pill mt-2"
+                                value={product.id}
+                                onClick={addToCart}
+                              >
+                                {product.addToCart
+                                  ? "Added To Cart"
+                                  : "Add To cart"}
+                              </button>
+                            )}
                           </div>
                         </td>
                       )

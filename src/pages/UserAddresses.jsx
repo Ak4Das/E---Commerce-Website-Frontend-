@@ -1,28 +1,52 @@
 import Header from "../components/Header"
 import Plus from "../assets/plus.png"
 import { Link, useParams } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import SearchInPage from "../components/SearchInPage"
+import { fetchUserById, updateAddressOfUser } from "../components/FetchRequests"
 
 export default function UserAddresses() {
   const param = useParams()
   const [search, setSearch] = useState("")
   console.log(search)
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")))
-  if (user.address.length) {
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
+  const [isUpdated, setUpdated] = useState(false)
+
+  async function updateAddress(userId, addresses) {
+    try {
+      await updateAddressOfUser(userId, addresses)
+      setUpdated(true)
+    } catch (error) {
+      throw error
+    }
+  }
+
+  if (user && user.address.length) {
     const selectedAddress = user.address.find((address) => address.selected)
     if (!selectedAddress) {
       user.address[0].selected = true
-      localStorage.setItem("user", JSON.stringify(user))
+      updateAddress(userId, user.address)
     }
   }
-  function removeAddress(e) {
+  async function removeAddress(e) {
     user.address = user.address.filter(
       (address) => address.id !== Number(e.target.value),
     )
-    localStorage.setItem("user", JSON.stringify(user))
-    setUser(JSON.parse(localStorage.getItem("user")))
+    await updateAddressOfUser(userId, user.address)
+    setUpdated(true)
   }
+
+  useEffect(() => {
+    async function fetch() {
+      const response = await fetchUserById(userId)
+      setUser(response)
+      if (isUpdated) {
+        setUpdated(false)
+      }
+    }
+    fetch()
+  }, [isUpdated])
 
   return (
     <>
@@ -32,6 +56,7 @@ export default function UserAddresses() {
         zIndex="auto"
         setSearch={setSearch}
         isSearchBarNeeded={false}
+        userDetails={user}
       />
       <SearchInPage
         margin="ms-3"
@@ -57,12 +82,12 @@ export default function UserAddresses() {
                 </div>
               </Link>
             </div>
-            {user.address.length !== 0 &&
+            {user && user.address.length !== 0 &&
               user.address.map((address) => (
                 <div
                   key={address.id}
                   className="col-sm-6 col-lg-4 text-decoration-none"
-                  onClick={() => {
+                  onClick={async () => {
                     let Address = user.address.find(
                       (add) => add.id === address.id,
                     )
@@ -73,8 +98,8 @@ export default function UserAddresses() {
                         address.selected = false
                       }
                     }
-                    localStorage.setItem("user", JSON.stringify(user))
-                    setUser(JSON.parse(localStorage.getItem("user")))
+                    await updateAddressOfUser(userId, user.address)
+                    setUpdated(true)
                   }}
                 >
                   <div
@@ -144,7 +169,7 @@ export default function UserAddresses() {
               Back
             </Link>
           )}
-          {param.route && !!user.address.length && (
+          {param.route && user && !!user.address.length && (
             <Link to={`/${param.route}`} className="btn btn-warning mt-5 mb-3">
               <i className="bi bi-arrow-left me-1"></i>
               Back

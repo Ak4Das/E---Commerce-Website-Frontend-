@@ -1,16 +1,20 @@
 import Header from "../components/Header"
 import { useParams } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
+import { fetchUserById } from "../components/FetchRequests"
 
 export default function OrderDetails() {
   const [search, setSearch] = useState("")
   console.log(search)
   const id = Number(useParams().id)
   const orders = JSON.parse(localStorage.getItem("orders"))
+
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
 
   /* isUpdated useState is used only to update the variables on this page 
   while user will cancel any order */
@@ -50,9 +54,16 @@ export default function OrderDetails() {
     toast("Order deleted successfully")
   }
 
-  if (isUpdated) {
-    setUpdated(false)
-  }
+  useEffect(() => {
+    async function fetchData() {
+      const user = await fetchUserById(userId)
+      setUser(user)
+      if (isUpdated) {
+        setUpdated(false)
+      }
+    }
+    fetchData()
+  }, [isUpdated])
 
   return (
     <>
@@ -62,6 +73,7 @@ export default function OrderDetails() {
         zIndex="auto"
         setSearch={setSearch}
         isSearchBarNeeded={false}
+        userDetails={user}
       />
       <SearchInPage
         margin="ms-3"

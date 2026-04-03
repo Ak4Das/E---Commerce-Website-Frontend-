@@ -1,11 +1,12 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { saveNewUser } from "../components/FetchRequests"
 
 export default function LoginForm() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  function handleSubmit(e) {
+  async function handleSubmit() {
     const user = {
       name,
       email,
@@ -15,7 +16,8 @@ export default function LoginForm() {
       addToCartItems: [],
       addToWishlistItems: [],
     }
-    localStorage.setItem("user", JSON.stringify(user))
+    const newUser = await saveNewUser(user)
+    localStorage.setItem("userId", newUser._id)
   }
   return (
     <main

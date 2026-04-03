@@ -9,6 +9,9 @@ import { Search } from "../components/Search"
 import {
   fetchCreateOrder,
   updateAllItemsInCreateOrder,
+  fetchUserById,
+  updateCartItemsInUser,
+  updateWishlistItemsInUser,
 } from "../components/FetchRequests.js"
 
 export default function NewArrival() {
@@ -19,7 +22,8 @@ export default function NewArrival() {
   then variables present on this page will reinitialize */
   const [isUpdate, setUpdate] = useState(false)
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
 
   const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
   const uniqueCreateOrderInDatabase =
@@ -49,11 +53,15 @@ export default function NewArrival() {
       cloth.size = isClothPresentInCart[0].size
         ? isClothPresentInCart[0].size
         : ""
+    } else {
+      delete cloth.addToCart
     }
     const isClothPresentInWishlist =
       user && user.addToWishlistItems.filter((item) => item.id === cloth.id)
     if (isClothPresentInWishlist && isClothPresentInWishlist.length) {
       cloth.addToWishList = true
+    } else {
+      delete cloth.addToWishList
     }
     return cloth
   })
@@ -98,7 +106,8 @@ export default function NewArrival() {
         quantity: 1,
         size: "",
       })
-      localStorage.setItem("user", JSON.stringify(user))
+
+      await updateCartItemsInUser(user._id, user.addToCartItems)
 
       // Update clothsData in memory
       const item = clothsData.find(
@@ -124,10 +133,10 @@ export default function NewArrival() {
       }
       Product &&
         Product.length &&
-        await updateAllItemsInCreateOrder(
+        (await updateAllItemsInCreateOrder(
           "http://localhost:3000/createOrder/updateItems",
           createOrder.item,
-        )
+        ))
 
       // For interactivity
       const btn = e.target
@@ -158,7 +167,7 @@ export default function NewArrival() {
     if (!isAddedToWishlist) {
       // Update user in Database
       user.addToWishlistItems.push({ id: Number(e.target.value) })
-      localStorage.setItem("user", JSON.stringify(user))
+      await updateWishlistItemsInUser(user._id, user.addToWishlistItems)
 
       // Update clothsData in memory
       const item = clothsData.find(
@@ -180,10 +189,10 @@ export default function NewArrival() {
       }
       Product &&
         Product.length &&
-        await updateAllItemsInCreateOrder(
+        (await updateAllItemsInCreateOrder(
           "http://localhost:3000/createOrder/updateItems",
           createOrder.item,
-        )
+        ))
 
       // For interactivity
       const btn = e.target
@@ -205,8 +214,10 @@ export default function NewArrival() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetchCreateOrder()
-      setCreateOrderInDatabase(response)
+      const createOrder = await fetchCreateOrder()
+      setCreateOrderInDatabase(createOrder)
+      const user = await fetchUserById(userId)
+      setUser(user)
       if (isUpdate) {
         setUpdate(false)
       }
@@ -222,6 +233,7 @@ export default function NewArrival() {
         zIndex="auto"
         setSearch={setSearch}
         placeHolder="Search Product"
+        userDetails={user}
       />
       <SearchInPage
         margin="ms-3"

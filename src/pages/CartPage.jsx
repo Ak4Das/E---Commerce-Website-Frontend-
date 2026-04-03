@@ -8,6 +8,9 @@ import { useEffect } from "react"
 import {
   fetchCreateOrder,
   updateAllItemsInCreateOrder,
+  fetchUserById,
+  updateWishlistItemsInUser,
+  updateCartItemsInUser,
 } from "../components/FetchRequests.js"
 
 export default function CartPage() {
@@ -31,19 +34,43 @@ export default function CartPage() {
     }
   }, [search])
 
-  const user = JSON.parse(localStorage.getItem("user"))
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
 
-  const productsInCart =
-    user &&
-    user.addToCartItems.map((cartItem) => {
-      const cloth = clothsData.find((item) => item.id === cartItem.id)
+  const finalClothsData = clothsData.map((cloth) => {
+    const isClothPresentInCart =
+      user && user.addToCartItems.filter((item) => item.id === cloth.id)
+    if (isClothPresentInCart && isClothPresentInCart.length) {
       cloth.addToCart = true
-      cloth.quantity = cartItem.quantity
-      cloth.size = cartItem.size
-      return cloth
-    })
-  const idOfProductsInCart =
-    productsInCart && productsInCart.map((product) => product.id)
+      cloth.quantity = isClothPresentInCart[0].quantity
+        ? isClothPresentInCart[0].quantity
+        : 1
+      cloth.size = isClothPresentInCart[0].size
+        ? isClothPresentInCart[0].size
+        : ""
+    } else {
+      delete cloth.addToCart
+    }
+    const isClothPresentInWishlist =
+      user && user.addToWishlistItems.filter((item) => item.id === cloth.id)
+    if (isClothPresentInWishlist && isClothPresentInWishlist.length) {
+      cloth.addToWishList = true
+    } else {
+      delete cloth.addToWishList
+    }
+    return cloth
+  })
+
+  const productsInCart = user
+    ? user.addToCartItems.map((cartItem) => {
+        const cloth = finalClothsData.find((item) => item.id === cartItem.id)
+        cloth.addToCart = true
+        cloth.quantity = cartItem.quantity
+        cloth.size = cartItem.size
+        return cloth
+      })
+    : []
+  const idOfProductsInCart = productsInCart.map((product) => product.id)
 
   const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
   const uniqueCreateOrderInDatabase =
@@ -81,7 +108,7 @@ export default function CartPage() {
     createOrderInDatabase.item.map((product) => product.id)
 
   /* The Following if statement Maintaining createOrder because entire logic written 
-  below this if statement is only depend on createOrder data not on clothsData */
+  below this if statement is only depend on createOrder data not on finalClothsData */
   if (!isRemoveFromCart) {
     if (
       createOrderInDatabase &&
@@ -98,28 +125,32 @@ export default function CartPage() {
         }
       }
       if (!pass) {
-        if (url === "") {
+        if (url === "" && productsInCart.length) {
           setUrl("http://localhost:3000/createOrder/updateItems")
           setData(productsInCart)
         }
       }
       if (idOfProductsInCart && idOfCreateOrderInDatabase) {
         if (idOfProductsInCart.length !== idOfCreateOrderInDatabase.length) {
-          if (url === "") {
+          if (url === "" && productsInCart.length) {
             setUrl("http://localhost:3000/createOrder/updateItems")
             setData(productsInCart)
           }
         }
       }
     } else {
-      if (url === "") {
+      if (url === "" && productsInCart.length) {
         setUrl("http://localhost:3000/createOrder/updateItems")
         setData(productsInCart)
       }
     }
   }
 
-  const ProductsInCart = createOrderInDatabase && createOrderInDatabase.item
+  const ProductsInCart =
+    user &&
+    idOfProductsInCart.length &&
+    createOrderInDatabase &&
+    createOrderInDatabase.item
 
   async function moveToWishlist(e) {
     // To stop Event Bubbling
@@ -132,10 +163,10 @@ export default function CartPage() {
     if (!isAddedToWishlist.length) {
       // Update user in Database
       user.addToWishlistItems.push({ id: Number(e.target.value) })
-      localStorage.setItem("user", JSON.stringify(user))
+      await updateWishlistItemsInUser(user._id, user.addToWishlistItems)
 
-      // Update clothsData in memory
-      const item = clothsData.find(
+      // Update finalClothsData in memory
+      const item = finalClothsData.find(
         (Product) => Product.id === Number(e.target.value),
       )
       if (item) {
@@ -179,8 +210,10 @@ export default function CartPage() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetchCreateOrder()
-      setCreateOrderInDatabase(response)
+      const createOrder = await fetchCreateOrder()
+      setCreateOrderInDatabase(createOrder)
+      const user = await fetchUserById(userId)
+      setUser(user)
       if (isUpdated) {
         setIsRemoveFromCart(false)
         setUpdated(false)
@@ -220,6 +253,7 @@ export default function CartPage() {
         setSearch={setSearch}
         placeHolder="Search Product"
         page="cartPage"
+        userDetails={user}
       />
       <SearchInPage
         margin="ms-3"
@@ -333,13 +367,13 @@ export default function CartPage() {
                                             clothItem.quantity = Number(
                                               e.target.nextElementSibling.value,
                                             )
-                                            localStorage.setItem(
-                                              "user",
-                                              JSON.stringify(user),
+                                            await updateCartItemsInUser(
+                                              user._id,
+                                              user.addToCartItems,
                                             )
 
-                                            // Update clothsData in memory
-                                            const cloth = clothsData.find(
+                                            // Update finalClothsData in memory
+                                            const cloth = finalClothsData.find(
                                               (cloth) =>
                                                 cloth.id === product.id,
                                             )
@@ -410,13 +444,13 @@ export default function CartPage() {
                                             e.target.previousElementSibling
                                               .value,
                                           )
-                                          localStorage.setItem(
-                                            "user",
-                                            JSON.stringify(user),
+                                          await updateCartItemsInUser(
+                                            user._id,
+                                            user.addToCartItems,
                                           )
 
-                                          // Update clothsData in memory
-                                          const cloth = clothsData.find(
+                                          // Update finalClothsData in memory
+                                          const cloth = finalClothsData.find(
                                             (cloth) => cloth.id === product.id,
                                           )
                                           cloth.quantity = Number(
@@ -458,8 +492,8 @@ export default function CartPage() {
                                             ProductsInCart,
                                           )
 
-                                          // Update clothsData in memory
-                                          const cloth = clothsData.find(
+                                          // Update finalClothsData in memory
+                                          const cloth = finalClothsData.find(
                                             (cloth) => cloth.id === product.id,
                                           )
                                           cloth.size = "S"
@@ -470,9 +504,9 @@ export default function CartPage() {
                                               (item) => item.id === product.id,
                                             )
                                           clothItem.size = "S"
-                                          localStorage.setItem(
-                                            "user",
-                                            JSON.stringify(user),
+                                          await updateCartItemsInUser(
+                                            user._id,
+                                            user.addToCartItems,
                                           )
 
                                           // To update the variables present in this page
@@ -527,8 +561,8 @@ export default function CartPage() {
                                             ProductsInCart,
                                           )
 
-                                          // Update clothsData in memory
-                                          const cloth = clothsData.find(
+                                          // Update finalClothsData in memory
+                                          const cloth = finalClothsData.find(
                                             (cloth) => cloth.id === product.id,
                                           )
                                           cloth.size = "M"
@@ -539,9 +573,9 @@ export default function CartPage() {
                                               (item) => item.id === product.id,
                                             )
                                           clothItem.size = "M"
-                                          localStorage.setItem(
-                                            "user",
-                                            JSON.stringify(user),
+                                          await updateCartItemsInUser(
+                                            user._id,
+                                            user.addToCartItems,
                                           )
 
                                           // To update the variables present in this page
@@ -596,8 +630,8 @@ export default function CartPage() {
                                             ProductsInCart,
                                           )
 
-                                          // Update clothsData in memory
-                                          const cloth = clothsData.find(
+                                          // Update finalClothsData in memory
+                                          const cloth = finalClothsData.find(
                                             (cloth) => cloth.id === product.id,
                                           )
                                           cloth.size = "L"
@@ -608,9 +642,9 @@ export default function CartPage() {
                                               (item) => item.id === product.id,
                                             )
                                           clothItem.size = "L"
-                                          localStorage.setItem(
-                                            "user",
-                                            JSON.stringify(user),
+                                          await updateCartItemsInUser(
+                                            user._id,
+                                            user.addToCartItems,
                                           )
 
                                           // To update the variables present in this page
@@ -669,8 +703,8 @@ export default function CartPage() {
                                             ProductsInCart,
                                           )
 
-                                          // Update clothsData in memory
-                                          const cloth = clothsData.find(
+                                          // Update finalClothsData in memory
+                                          const cloth = finalClothsData.find(
                                             (cloth) => cloth.id === product.id,
                                           )
                                           cloth.size = "XL"
@@ -681,9 +715,9 @@ export default function CartPage() {
                                               (item) => item.id === product.id,
                                             )
                                           clothItem.size = "XL"
-                                          localStorage.setItem(
-                                            "user",
-                                            JSON.stringify(user),
+                                          await updateCartItemsInUser(
+                                            user._id,
+                                            user.addToCartItems,
                                           )
 
                                           // To update the variables present in this page
@@ -742,8 +776,8 @@ export default function CartPage() {
                                             ProductsInCart,
                                           )
 
-                                          // Update clothsData in memory
-                                          const cloth = clothsData.find(
+                                          // Update finalClothsData in memory
+                                          const cloth = finalClothsData.find(
                                             (cloth) => cloth.id === product.id,
                                           )
                                           cloth.size = "XXL"
@@ -754,9 +788,9 @@ export default function CartPage() {
                                               (item) => item.id === product.id,
                                             )
                                           clothItem.size = "XXL"
-                                          localStorage.setItem(
-                                            "user",
-                                            JSON.stringify(user),
+                                          await updateCartItemsInUser(
+                                            user._id,
+                                            user.addToCartItems,
                                           )
 
                                           // To update the variables present in this page
@@ -803,8 +837,8 @@ export default function CartPage() {
                                       e.preventDefault()
                                       e.stopPropagation()
 
-                                      // Update clothsData in memory
-                                      const item = clothsData.find(
+                                      // Update finalClothsData in memory
+                                      const item = finalClothsData.find(
                                         (Product) => Product.id === product.id,
                                       )
                                       if (item) {
@@ -814,17 +848,13 @@ export default function CartPage() {
                                       }
 
                                       // Update user in Database
-                                      const user = JSON.parse(
-                                        localStorage.getItem("user"),
-                                      )
                                       const remainingCartItems =
                                         user.addToCartItems.filter(
                                           (item) => item.id !== product.id,
                                         )
-                                      user.addToCartItems = remainingCartItems
-                                      localStorage.setItem(
-                                        "user",
-                                        JSON.stringify(user),
+                                      await updateCartItemsInUser(
+                                        user._id,
+                                        remainingCartItems,
                                       )
 
                                       // Update createOrder
@@ -891,7 +921,7 @@ export default function CartPage() {
                   </p>
                 </div>
                 <br />
-                {!isOrderConfirmed && (
+                {!isOrderConfirmed && user && ProductsInCart.length && (
                   <button
                     className="btn btn-warning w-100 my-2"
                     onClick={async (e) => {

@@ -1,12 +1,13 @@
 import Header from "../components/Header"
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Plus from "../assets/plus.png"
 import Card from "../assets/card.png"
 import Cross from "../assets/cross.png"
 import { useParams } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
+import { fetchUserById } from "../components/FetchRequests"
 
 export default function EditYourOrder() {
   const orderId = Number(useParams().orderId)
@@ -56,9 +57,9 @@ export default function EditYourOrder() {
 
   const [products, setProducts] = useState(orderToBeEdit && orderToBeEdit.item)
 
-  const address = JSON.parse(localStorage.getItem("user")).address.find(
-    (address) => address.selected,
-  )
+  const userId = localStorage.getItem("userId")
+  const [user, setUser] = useState(null)
+  const address = user && user.address.find((address) => address.selected)
 
   const totalPrice =
     paymentMethod &&
@@ -118,9 +119,16 @@ export default function EditYourOrder() {
     toast("Changes Saved Successfully😊")
   }
 
-  if (isUpdated) {
-    setUpdated(false)
-  }
+  useEffect(() => {
+    async function fetchData() {
+      const user = await fetchUserById(userId)
+      setUser(user)
+      if (isUpdated) {
+        setUpdated(false)
+      }
+    }
+    fetchData()
+  }, [isUpdated])
 
   return (
     <>
@@ -130,20 +138,27 @@ export default function EditYourOrder() {
         zIndex="auto"
         setSearch={setSearch}
         isSearchBarNeeded={false}
+        userDetails={user}
       />
-      <SearchInPage margin="ms-3" setSearch={setSearch} isSearchBarNeeded={false}/>
+      <SearchInPage
+        margin="ms-3"
+        setSearch={setSearch}
+        isSearchBarNeeded={false}
+      />
       <h1 className="text-success fw-medium my-3 container">Edit Order</h1>
       {orderToBeEdit && (
         <main className="container my-4">
           <section className="editOrderSection1 bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">
             <div>
-              <h5 className="userName">Delivering to {address.fullName}</h5>
+              <h5 className="userName">
+                Delivering to {address && address.fullName}
+              </h5>
               <p className="fw-medium userAddress">
-                {address.localInfo}, {address.area},{" "}
-                {address.city.toUpperCase()}
+                {address && address.localInfo}, {address && address.area},{" "}
+                {address && address.city.toUpperCase()}
                 {", "}
-                {address.state.toUpperCase()}, {address.pinCode},{" "}
-                {address.country}
+                {address && address.state.toUpperCase()},{" "}
+                {address && address.pinCode}, {address && address.country}
               </p>
             </div>
             <Link

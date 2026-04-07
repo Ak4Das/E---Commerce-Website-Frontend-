@@ -15,6 +15,8 @@ import {
   deleteManyItemsInCreateOrder,
   fetchUserById,
   updateCartItemsInUser,
+  fetchAllOrders,
+  saveNewOrder,
 } from "../components/FetchRequests.js"
 
 export default function PaymentMethods() {
@@ -57,9 +59,7 @@ export default function PaymentMethods() {
     user.address.length !== 0 &&
     user.address.find((address) => address.selected)
 
-  const [orders, setOrders] = useState(
-    JSON.parse(localStorage.getItem("orders")) || [],
-  )
+  const [orders, setOrders] = useState([])
 
   const [isPaymentMethodSelected, selectPaymentMethod] = useState(false)
 
@@ -150,20 +150,25 @@ export default function PaymentMethods() {
   const totalPrice = totalOrder + deliveryCharge + (isCashOnDelivery ? 10 : 0)
 
   async function placeOrder() {
+    const order = orders[orders.length - 1]
+    
     if (coupon === "HAPPYDIWALI") {
-      orders[orders.length - 1].sale = "10%"
+      order.sale = "10%"
     }
+
     if (freeDelivery) {
-      orders[orders.length - 1].freeDelivery = `₹${freeDelivery}`
+      order.freeDelivery = `₹${freeDelivery}`
     }
-    orders[orders.length - 1].totalPrice = Math.round(
+
+    order.totalPrice = Math.round(
       totalPrice - (coupon === "HAPPYDIWALI" ? totalOrder / 10 : 0),
     )
-    localStorage.setItem("orders", JSON.stringify(orders))
+
+    await saveNewOrder(order)
 
     await removeAllItemsFromCreateOrder()
 
-    const productsArray = orders[orders.length - 1].item
+    const productsArray = order.item
     productsArray.forEach(async (product) => {
       if (product.addToCart) {
         user.addToCartItems = user.addToCartItems.filter(
@@ -177,9 +182,11 @@ export default function PaymentMethods() {
         delete itemInClothsData.size
       }
     })
+
     await updateCartItems(user._id, user.addToCartItems)
-    
+
     setIsOrderPlaced(true)
+    
     toast("Order Placed Successfully🎉😊")
   }
 
@@ -234,6 +241,8 @@ export default function PaymentMethods() {
       setProducts(createOrder)
       const user = await fetchUserById(userId)
       setUser(user)
+      const orders = await fetchAllOrders()
+      setOrders(orders || [])
       if (updated) {
         setUpdated(false)
       }
@@ -291,9 +300,10 @@ export default function PaymentMethods() {
               <p
                 className="text-decoration-none fw-medium my-0 text-primary changeBtn"
                 style={{ cursor: "pointer" }}
-                onClick={() => {
+                onClick={async () => {
                   selectPaymentMethod(false)
-                  setOrders(JSON.parse(localStorage.getItem("orders")))
+                  const orders = await fetchAllOrders()
+                  setOrders(orders)
                 }}
               >
                 Change

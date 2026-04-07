@@ -241,18 +241,85 @@ async function updateCartItemsInUser(id, items) {
   }
 }
 
-async function saveNewUser (newUser) {
+async function saveNewUser(newUser) {
   try {
-    const response = await fetch(
-      "http://localhost:3000/user/saveUser",
-      {
-        method: "POST",
-        headers: {
-          "content-Type": "application/json",
-        },
-        body: JSON.stringify(newUser),
+    const response = await fetch("http://localhost:3000/user/saveUser", {
+      method: "POST",
+      headers: {
+        "content-Type": "application/json",
       },
-    )
+      body: JSON.stringify(newUser),
+    })
+    if (response.ok) {
+      const data = await response.json()
+      return data
+    } else {
+      console.log("Request Failed")
+    }
+  } catch (error) {
+    throw error
+  }
+}
+
+async function saveNewOrder(newOrder) {
+  try {
+    const response = await fetch("http://localhost:3000/order/saveOrder", {
+      method: "POST",
+      headers: {
+        "content-Type": "application/json",
+      },
+      body: JSON.stringify(newOrder),
+    })
+    if (response.ok) {
+      const data = await response.json()
+      return data
+    } else {
+      console.log("Request Failed")
+    }
+  } catch (error) {
+    throw error
+  }
+}
+
+async function fetchAllOrders() {
+  try {
+    const response = await fetch("http://localhost:3000/order/")
+    if (response.ok) {
+      const data = await response.json()
+      return data
+    } else {
+      console.log("Request Failed")
+    }
+  } catch (error) {
+    throw error
+  }
+}
+
+async function deleteOrderById(id) {
+  try {
+    const response = await fetch(`http://localhost:3000/order/delete/${id}`, {
+      method: "DELETE",
+    })
+    if (response.ok) {
+      const data = await response.json()
+      return data
+    } else {
+      console.log("Request Failed")
+    }
+  } catch (error) {
+    throw error
+  }
+}
+
+async function updateOrder(id, data) {
+  try {
+    const response = await fetch(`http://localhost:3000/order/update/${id}`, {
+      method: "POST",
+      headers: {
+        "content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
     if (response.ok) {
       const data = await response.json()
       return data
@@ -278,5 +345,9 @@ export {
   updateAddressOfUser,
   updateWishlistItemsInUser,
   updateCartItemsInUser,
-  saveNewUser
+  saveNewUser,
+  saveNewOrder,
+  fetchAllOrders,
+  deleteOrderById,
+  updateOrder,
 }

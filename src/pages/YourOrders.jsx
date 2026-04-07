@@ -7,7 +7,9 @@ import { toast } from "react-toastify"
 import { useEffect } from "react"
 import {
   fetchUserById,
-} from "../components/FetchRequests.js"
+  fetchAllOrders,
+  deleteOrderById,
+} from "../components/FetchRequests"
 
 export default function YourOrders() {
   const [search, setSearch] = useState("")
@@ -21,23 +23,18 @@ export default function YourOrders() {
   then variables present on this page will reinitialize */
   const [isUpdated, setUpdated] = useState(false)
 
-  const orders = JSON.parse(localStorage.getItem("orders"))
+  const [allOrders, setAllOrders] = useState([])
+  const orders = allOrders || []
 
   const userId = localStorage.getItem("userId")
   const [user, setUser] = useState(null)
-
-  function cancelOrder(id) {
-    const Orders = orders.filter((order) => order.id !== id)
-    localStorage.setItem("orders", JSON.stringify(Orders))
-    setUpdated(true)
-
-    toast("Order deleted successfully")
-  }
 
   useEffect(() => {
     async function fetchData() {
       const user = await fetchUserById(userId)
       setUser(user)
+      const orders = await fetchAllOrders()
+      setAllOrders(orders)
       if (isUpdated) {
         setUpdated(false)
       }
@@ -246,7 +243,13 @@ export default function YourOrders() {
                       </Link>
                       <button
                         className="btn btn-outline-danger rounded-pill"
-                        onClick={() => cancelOrder(order.id)}
+                        onClick={async () => {
+                          const result = await deleteOrderById(order.id)
+                          if (result) {
+                            setUpdated(true)
+                            toast("Order deleted successfully")
+                          }
+                        }}
                       >
                         Cancel Order
                       </button>

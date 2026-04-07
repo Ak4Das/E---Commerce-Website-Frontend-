@@ -7,7 +7,12 @@ import Cross from "../assets/cross.png"
 import { useParams } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
-import { fetchUserById } from "../components/FetchRequests"
+import {
+  fetchUserById,
+  fetchAllOrders,
+  deleteOrderById,
+  updateOrder,
+} from "../components/FetchRequests"
 
 export default function EditYourOrder() {
   const orderId = Number(useParams().orderId)
@@ -51,7 +56,9 @@ export default function EditYourOrder() {
   // deliveryCharge useState is used only to retain the new delivery charge if user delete a item
   const [deliveryCharge, setDeliveryCharge] = useState(0)
 
-  const orders = JSON.parse(localStorage.getItem("orders")) || []
+  const [allOrders, setAllOrders] = useState([])
+
+  const orders = allOrders || []
 
   const orderToBeEdit = orders.find((order) => order.id === orderId)
 
@@ -71,12 +78,7 @@ export default function EditYourOrder() {
           ? orderToBeEdit.totalPrice + 10
           : orderToBeEdit.totalPrice)
 
-  function cancelOrder(ORDERS, ORDER) {
-    const Orders = ORDERS && ORDERS.filter((order) => order.id !== ORDER.id)
-    localStorage.setItem("orders", JSON.stringify(Orders))
-  }
-
-  function save(e) {
+  async function save(e) {
     const order = {
       id: orderToBeEdit.id,
       item: products,
@@ -96,25 +98,19 @@ export default function EditYourOrder() {
         ? Math.round(totalPrice + deductPrice)
         : Math.round(orderToBeEdit.totalPrice + deductPrice),
     }
-    let OrderIndex = null
-    orders.forEach((Order, index) => {
-      if (Order.id === order.id) {
-        OrderIndex = index
-      }
-    })
-    orders[OrderIndex] = order
-    localStorage.setItem("orders", JSON.stringify(orders))
+    order && order.item.length === 0
+      ? await deleteOrderById(order.id)
+      : await updateOrder(order.id, order)
+      
     setDeductPrice(0)
-
-    const ORDERS = JSON.parse(localStorage.getItem("orders"))
-    const ORDER = ORDERS && ORDERS[OrderIndex]
-    ORDER && ORDER.item.length === 0 ? cancelOrder(ORDERS, ORDER) : 0
 
     const btn = e.target
     btn.innerHTML = "Changes Saved"
     setTimeout(() => {
       btn.innerHTML = "Save Changes"
     }, 1000)
+
+    setUpdated(true)
 
     toast("Changes Saved Successfully😊")
   }
@@ -123,6 +119,12 @@ export default function EditYourOrder() {
     async function fetchData() {
       const user = await fetchUserById(userId)
       setUser(user)
+      const orders = await fetchAllOrders()
+      setAllOrders(orders)
+      if (orders) {
+        const orderToBeEdit = orders.find((order) => order.id === orderId)
+        setProducts(orderToBeEdit && orderToBeEdit.item)
+      }
       if (isUpdated) {
         setUpdated(false)
       }
@@ -610,143 +612,219 @@ export default function EditYourOrder() {
               <h5 className="mb-3 fw-bold deliveryDate text-success">
                 Arriving {orderToBeEdit.deliveryDate}
               </h5>
-              {products.map((product) => (
-                <div
-                  key={product.id}
-                  className="card column-gap-4 my-3 cardInPaymentMethodPage"
-                >
-                  <div className="h-100 mx-auto productImageContainerDiv">
-                    <img
-                      src={product.url}
-                      alt="productImage"
-                      className="w-100 h-100"
-                    />
-                  </div>
-                  <div className="p-2 w-100">
-                    <p
-                      className="fw-medium my-0"
-                      style={{ height: "72px", overflow: "hidden" }}
-                    >
-                      {product.newArrival === true && (
-                        <span className="badge text-bg-success me-1">New</span>
-                      )}
-                      {!!Number(product.offer.replace("%", "")) && (
-                        <span className="badge text-bg-warning me-1">
-                          Diwali Offer
-                        </span>
-                      )}
-                      {product.name}
-                    </p>
-                    <div className="mt-2">
-                      <span className="fw-bold text-secondary">Price: </span>
-                      <span className="mt-2 fw-medium">
-                        ₹
-                        {Math.round(
-                          product.price -
-                            (product.price *
-                              (Number(product.offer.replace("%", ""))
-                                ? Number(product.offer.replace("%", ""))
-                                : Number(product.discount.replace("%", "")))) /
-                              100,
-                        )}
-                      </span>
-                      <span className="ms-2 fw-medium">
-                        (-
-                        {Number(product.offer.replace("%", ""))
-                          ? product.offer
-                          : product.discount}
-                        )
-                      </span>
+              {products &&
+                products.map((product) => (
+                  <div
+                    key={product.id}
+                    className="card column-gap-4 my-3 cardInPaymentMethodPage"
+                  >
+                    <div className="h-100 mx-auto productImageContainerDiv">
+                      <img
+                        src={product.url}
+                        alt="productImage"
+                        className="w-100 h-100"
+                      />
                     </div>
-                    <div className="my-3">
-                      <span className="fw-bold me-0 text-secondary sizeText me-1 me-sm-3">
-                        Size:{" "}
-                      </span>
-                      <div className="sizeBtnContainer">
-                        <button
-                          className="border border-1 me-2 mb-2"
-                          onClick={(e) => {
-                            product.size = "S"
-                            const btn = e.target
-                            btn.innerHTML = '<i class="bi bi-check2"></i>'
-                            setTimeout(() => {
-                              btn.innerHTML = "S"
-                            }, 500)
-                          }}
-                        >
-                          S
-                        </button>
-                        <button
-                          className="border border-1 me-2 mb-2"
-                          onClick={(e) => {
-                            product.size = "M"
-                            const btn = e.target
-                            btn.innerHTML = '<i class="bi bi-check2"></i>'
-                            setTimeout(() => {
-                              btn.innerHTML = "M"
-                            }, 500)
-                          }}
-                        >
-                          M
-                        </button>
-                        <button
-                          className="border border-1 me-2 mb-2"
-                          onClick={(e) => {
-                            product.size = "L"
-                            const btn = e.target
-                            btn.innerHTML = '<i class="bi bi-check2"></i>'
-                            setTimeout(() => {
-                              btn.innerHTML = "L"
-                            }, 500)
-                          }}
-                        >
-                          L
-                        </button>
-                        <button
-                          className="border border-1 me-2 mb-2"
-                          onClick={(e) => {
-                            product.size = "XL"
-                            const btn = e.target
-                            btn.innerHTML = '<i class="bi bi-check2"></i>'
-                            setTimeout(() => {
-                              btn.innerHTML = "XL"
-                            }, 500)
-                          }}
-                        >
-                          XL
-                        </button>
-                        <button
-                          className="border border-1 mb-2"
-                          onClick={(e) => {
-                            product.size = "XXL"
-                            const btn = e.target
-                            btn.innerHTML = '<i class="bi bi-check2"></i>'
-                            setTimeout(() => {
-                              btn.innerHTML = "XXL"
-                            }, 500)
-                          }}
-                        >
-                          XXL
-                        </button>
-                      </div>
-                    </div>
-                    <div className="d-flex gap-3 align-items-center btnInEditOrderPage">
-                      <div
-                        className="border border-warning w-100 my-0 border-2 d-flex align-items-center rounded-pill overflow-hidden justify-content-around deleteOrIncreaseQuantityBtn"
-                        style={{ width: "100px" }}
+                    <div className="p-2 w-100">
+                      <p
+                        className="fw-medium my-0"
+                        style={{ height: "72px", overflow: "hidden" }}
                       >
-                        <button
-                          className="border border-0 bg-white fs-5 fw-bold text-danger"
-                          style={{ marginTop: "-5px" }}
-                          onClick={(e) => {
-                            let inputElementValue = Number(
-                              e.target.nextElementSibling.value,
-                            )
-                            if (inputElementValue > 1) {
-                              e.target.nextElementSibling.value =
-                                --inputElementValue
-                              product.quantity = Number(
+                        {product.newArrival === true && (
+                          <span className="badge text-bg-success me-1">
+                            New
+                          </span>
+                        )}
+                        {!!Number(product.offer.replace("%", "")) && (
+                          <span className="badge text-bg-warning me-1">
+                            Diwali Offer
+                          </span>
+                        )}
+                        {product.name}
+                      </p>
+                      <div className="mt-2">
+                        <span className="fw-bold text-secondary">Price: </span>
+                        <span className="mt-2 fw-medium">
+                          ₹
+                          {Math.round(
+                            product.price -
+                              (product.price *
+                                (Number(product.offer.replace("%", ""))
+                                  ? Number(product.offer.replace("%", ""))
+                                  : Number(
+                                      product.discount.replace("%", ""),
+                                    ))) /
+                                100,
+                          )}
+                        </span>
+                        <span className="ms-2 fw-medium">
+                          (-
+                          {Number(product.offer.replace("%", ""))
+                            ? product.offer
+                            : product.discount}
+                          )
+                        </span>
+                      </div>
+                      <div className="my-3">
+                        <span className="fw-bold me-0 text-secondary sizeText me-1 me-sm-3">
+                          Size:{" "}
+                        </span>
+                        <div className="sizeBtnContainer">
+                          <button
+                            className="border border-1 me-2 mb-2"
+                            onClick={(e) => {
+                              product.size = "S"
+                              const btn = e.target
+                              btn.innerHTML = '<i class="bi bi-check2"></i>'
+                              setTimeout(() => {
+                                btn.innerHTML = "S"
+                              }, 500)
+                            }}
+                          >
+                            S
+                          </button>
+                          <button
+                            className="border border-1 me-2 mb-2"
+                            onClick={(e) => {
+                              product.size = "M"
+                              const btn = e.target
+                              btn.innerHTML = '<i class="bi bi-check2"></i>'
+                              setTimeout(() => {
+                                btn.innerHTML = "M"
+                              }, 500)
+                            }}
+                          >
+                            M
+                          </button>
+                          <button
+                            className="border border-1 me-2 mb-2"
+                            onClick={(e) => {
+                              product.size = "L"
+                              const btn = e.target
+                              btn.innerHTML = '<i class="bi bi-check2"></i>'
+                              setTimeout(() => {
+                                btn.innerHTML = "L"
+                              }, 500)
+                            }}
+                          >
+                            L
+                          </button>
+                          <button
+                            className="border border-1 me-2 mb-2"
+                            onClick={(e) => {
+                              product.size = "XL"
+                              const btn = e.target
+                              btn.innerHTML = '<i class="bi bi-check2"></i>'
+                              setTimeout(() => {
+                                btn.innerHTML = "XL"
+                              }, 500)
+                            }}
+                          >
+                            XL
+                          </button>
+                          <button
+                            className="border border-1 mb-2"
+                            onClick={(e) => {
+                              product.size = "XXL"
+                              const btn = e.target
+                              btn.innerHTML = '<i class="bi bi-check2"></i>'
+                              setTimeout(() => {
+                                btn.innerHTML = "XXL"
+                              }, 500)
+                            }}
+                          >
+                            XXL
+                          </button>
+                        </div>
+                      </div>
+                      <div className="d-flex gap-3 align-items-center btnInEditOrderPage">
+                        <div
+                          className="border border-warning w-100 my-0 border-2 d-flex align-items-center rounded-pill overflow-hidden justify-content-around deleteOrIncreaseQuantityBtn"
+                          style={{ width: "100px" }}
+                        >
+                          <button
+                            className="border border-0 bg-white fs-5 fw-bold text-danger"
+                            style={{ marginTop: "-5px" }}
+                            onClick={(e) => {
+                              let inputElementValue = Number(
                                 e.target.nextElementSibling.value,
+                              )
+                              if (inputElementValue > 1) {
+                                e.target.nextElementSibling.value =
+                                  --inputElementValue
+                                product.quantity = Number(
+                                  e.target.nextElementSibling.value,
+                                )
+                                const price = Math.round(
+                                  (
+                                    product.price -
+                                    (product.price *
+                                      (Number(product.offer.replace("%", ""))
+                                        ? Number(product.offer.replace("%", ""))
+                                        : Number(
+                                            product.discount.replace("%", ""),
+                                          ))) /
+                                      100
+                                  ).toFixed(1),
+                                )
+                                const discountDueToSale = orderToBeEdit.sale
+                                  ? price / 10
+                                  : 0
+                                setDeductPrice(
+                                  deductPrice - price + discountDueToSale,
+                                )
+                                // setUpdated(true)
+                              }
+                            }}
+                          >
+                            -
+                          </button>
+                          <input
+                            type="text"
+                            className="border border-0"
+                            defaultValue={product.quantity || 1}
+                            style={{ width: "30px", outline: "none" }}
+                            onChange={(e) => {
+                              const initialQuantity = product.quantity
+                              let inputElementValue = Number(e.target.value)
+                              product.quantity = inputElementValue
+                              const price = Math.round(
+                                (
+                                  product.price -
+                                  (product.price *
+                                    (Number(product.offer.replace("%", ""))
+                                      ? Number(product.offer.replace("%", ""))
+                                      : Number(
+                                          product.discount.replace("%", ""),
+                                        ))) /
+                                    100
+                                ).toFixed(1),
+                              )
+                              const discountDueToSale = orderToBeEdit.sale
+                                ? price / 10
+                                : 0
+                              const updatedQuantity = product.quantity
+                              const changeInQuantity =
+                                updatedQuantity - initialQuantity
+                              setDeductPrice(
+                                deductPrice +
+                                  price * changeInQuantity -
+                                  discountDueToSale * changeInQuantity,
+                              )
+                              // setUpdated(true)
+                            }}
+                          />
+                          <button
+                            className="border border-0 bg-white fs-5 fw-bold text-success"
+                            style={{ marginTop: "-5px" }}
+                            onClick={(e) => {
+                              let inputElementValue = Number(
+                                e.target.previousElementSibling.value,
+                              )
+                              e.target.previousElementSibling.value =
+                                ++inputElementValue
+                              product.quantity = Number(
+                                e.target.previousElementSibling.value,
                               )
                               const price = Math.round(
                                 (
@@ -763,62 +841,23 @@ export default function EditYourOrder() {
                               const discountDueToSale = orderToBeEdit.sale
                                 ? price / 10
                                 : 0
+
                               setDeductPrice(
-                                deductPrice - price + discountDueToSale,
+                                deductPrice + price - discountDueToSale,
                               )
-                              setUpdated(true)
-                            }
-                          }}
-                        >
-                          -
-                        </button>
-                        <input
-                          type="text"
-                          className="border border-0"
-                          defaultValue={product.quantity || 1}
-                          style={{ width: "30px", outline: "none" }}
-                          onChange={(e) => {
-                            const initialQuantity = product.quantity
-                            let inputElementValue = Number(e.target.value)
-                            product.quantity = inputElementValue
-                            const price = Math.round(
-                              (
-                                product.price -
-                                (product.price *
-                                  (Number(product.offer.replace("%", ""))
-                                    ? Number(product.offer.replace("%", ""))
-                                    : Number(
-                                        product.discount.replace("%", ""),
-                                      ))) /
-                                  100
-                              ).toFixed(1),
-                            )
-                            const discountDueToSale = orderToBeEdit.sale
-                              ? price / 10
-                              : 0
-                            const updatedQuantity = product.quantity
-                            const changeInQuantity =
-                              updatedQuantity - initialQuantity
-                            setDeductPrice(
-                              deductPrice +
-                                price * changeInQuantity -
-                                discountDueToSale * changeInQuantity,
-                            )
-                            setUpdated(true)
-                          }}
-                        />
+                              // setUpdated(true)
+                            }}
+                          >
+                            +
+                          </button>
+                        </div>
                         <button
-                          className="border border-0 bg-white fs-5 fw-bold text-success"
-                          style={{ marginTop: "-5px" }}
-                          onClick={(e) => {
-                            let inputElementValue = Number(
-                              e.target.previousElementSibling.value,
+                          className="btn btn-outline-danger btn-sm rounded-pill w-100"
+                          onClick={() => {
+                            const Product = products.filter(
+                              (item) => item.id !== product.id,
                             )
-                            e.target.previousElementSibling.value =
-                              ++inputElementValue
-                            product.quantity = Number(
-                              e.target.previousElementSibling.value,
-                            )
+
                             const price = Math.round(
                               (
                                 product.price -
@@ -831,91 +870,62 @@ export default function EditYourOrder() {
                                   100
                               ).toFixed(1),
                             )
-                            const discountDueToSale = orderToBeEdit.sale
-                              ? price / 10
+
+                            const newDeliveryCharge =
+                              Product.length &&
+                              Math.round(
+                                Product.reduce(
+                                  (acc, curr) =>
+                                    acc +
+                                    (curr.freeDelivery
+                                      ? 0
+                                      : curr.deliveryCharge),
+                                  0,
+                                ) / Product.length,
+                              )
+
+                            setDeliveryCharge(newDeliveryCharge)
+
+                            const deductInDeliveryCharge =
+                              orderToBeEdit.deliveryCharge - newDeliveryCharge
+
+                            const salePercent = orderToBeEdit.sale
+                              ? Number(orderToBeEdit.sale.replace("%", ""))
                               : 0
-                            console.log(discountDueToSale)
+
+                            const saleDeduction = salePercent
+                              ? Math.round(price / salePercent)
+                              : 0
+
+                            let paymentMethodChargeDeduction = 0
+                            if (
+                              orderToBeEdit.paymentMethod ===
+                                "Cash on Delivery/Pay on Delivery" &&
+                              Product.length === 0
+                            ) {
+                              paymentMethodChargeDeduction = 10
+                            }
+
                             setDeductPrice(
-                              deductPrice + price - discountDueToSale,
+                              deductPrice -
+                                price *
+                                  (product.quantity ? product.quantity : 1) -
+                                deductInDeliveryCharge +
+                                saleDeduction -
+                                paymentMethodChargeDeduction,
                             )
-                            setUpdated(true)
+
+                            setProducts(Product)
+
+                            toast("Product removed successfully")
                           }}
                         >
-                          +
+                          <i className="bi bi-trash3-fill"></i> Remove
                         </button>
                       </div>
-                      <button
-                        className="btn btn-outline-danger btn-sm rounded-pill w-100"
-                        onClick={() => {
-                          const Product = products.filter(
-                            (item) => item.id !== product.id,
-                          )
-
-                          const price = Math.round(
-                            (
-                              product.price -
-                              (product.price *
-                                (Number(product.offer.replace("%", ""))
-                                  ? Number(product.offer.replace("%", ""))
-                                  : Number(
-                                      product.discount.replace("%", ""),
-                                    ))) /
-                                100
-                            ).toFixed(1),
-                          )
-
-                          const newDeliveryCharge =
-                            Product.length &&
-                            Math.round(
-                              Product.reduce(
-                                (acc, curr) =>
-                                  acc +
-                                  (curr.freeDelivery ? 0 : curr.deliveryCharge),
-                                0,
-                              ) / Product.length,
-                            )
-
-                          setDeliveryCharge(newDeliveryCharge)
-
-                          const deductInDeliveryCharge =
-                            orderToBeEdit.deliveryCharge - newDeliveryCharge
-
-                          const salePercent = orderToBeEdit.sale
-                            ? Number(orderToBeEdit.sale.replace("%", ""))
-                            : 0
-
-                          const saleDeduction = salePercent
-                            ? Math.round(price / salePercent)
-                            : 0
-
-                          let paymentMethodChargeDeduction = 0
-                          if (
-                            orderToBeEdit.paymentMethod ===
-                              "Cash on Delivery/Pay on Delivery" &&
-                            Product.length === 0
-                          ) {
-                            paymentMethodChargeDeduction = 10
-                          }
-
-                          setDeductPrice(
-                            deductPrice -
-                              price * product.quantity -
-                              deductInDeliveryCharge +
-                              saleDeduction -
-                              paymentMethodChargeDeduction,
-                          )
-
-                          setProducts(Product)
-
-                          toast("Product removed successfully")
-                        }}
-                      >
-                        <i className="bi bi-trash3-fill"></i> Remove
-                      </button>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </section>
           <button className="btn btn-warning rounded-pill mt-4" onClick={save}>

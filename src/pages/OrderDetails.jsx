@@ -5,13 +5,19 @@ import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
-import { fetchUserById } from "../components/FetchRequests"
+import {
+  fetchUserById,
+  fetchAllOrders,
+  deleteOrderById,
+} from "../components/FetchRequests"
 
 export default function OrderDetails() {
   const [search, setSearch] = useState("")
   console.log(search)
   const id = Number(useParams().id)
-  const orders = JSON.parse(localStorage.getItem("orders"))
+
+  const [allOrders, setAllOrders] = useState([])
+  const orders = allOrders || []
 
   const userId = localStorage.getItem("userId")
   const [user, setUser] = useState(null)
@@ -39,25 +45,21 @@ export default function OrderDetails() {
   const deliveryCharge =
     order &&
     Math.round(
-      order.item.reduce((acc, curr) => acc + curr.deliveryCharge, 0) /
-        order.item.length,
+      order.item.reduce(
+        (acc, curr) => acc + (curr.freeDelivery ? 0 : curr.deliveryCharge),
+        0,
+      ) / order.item.length,
     )
 
   const cashOnDeliveryCharge =
     order && order.paymentMethod === "Cash on Delivery/Pay on Delivery" ? 10 : 0
 
-  function cancelOrder(id) {
-    const Orders = order && orders.filter((order) => order.id !== id)
-    localStorage.setItem("orders", JSON.stringify(Orders))
-    setUpdated(true)
-
-    toast("Order deleted successfully")
-  }
-
   useEffect(() => {
     async function fetchData() {
       const user = await fetchUserById(userId)
       setUser(user)
+      const orders = await fetchAllOrders()
+      setAllOrders(orders)
       if (isUpdated) {
         setUpdated(false)
       }
@@ -277,7 +279,13 @@ export default function OrderDetails() {
                   </Link>
                   <button
                     className="btn btn-outline-danger rounded-pill"
-                    onClick={() => cancelOrder(order.id)}
+                    onClick={async () => {
+                      const result = await deleteOrderById(order.id)
+                      if (result) {
+                        setUpdated(true)
+                        toast("Order deleted successfully")
+                      }
+                    }}
                   >
                     Cancel Order
                   </button>

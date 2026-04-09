@@ -1,0 +1,23 @@
+.card, .section2 {
+    background-color: #ccc;
+}
+
+.section2 {
+    height: 320px;
+}
+
+@media (min-width:1400px) {
+    .section1 {
+        width: 600px
+    }
+}
+@media (max-width:992px) {
+    .card {
+        height: 740px
+    }
+}
+@media (max-width:768px) {
+    .card {
+        margin:auto
+    }
+}

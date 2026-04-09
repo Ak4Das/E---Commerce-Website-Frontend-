@@ -13,6 +13,7 @@ import {
   updateCartItemsInUser,
   updateWishlistItemsInUser,
 } from "../components/FetchRequests.js"
+import NewArrivalShimmer from "../shimmers/NewArrival.shimmer.jsx"
 
 export default function NewArrival() {
   const [search, setSearch] = useState("")
@@ -227,137 +228,145 @@ export default function NewArrival() {
 
   return (
     <>
-      <Header
-        position="static"
-        top="auto"
-        zIndex="auto"
-        setSearch={setSearch}
-        placeHolder="Search Product"
-        userDetails={user}
-      />
-      <SearchInPage
-        margin="ms-3"
-        setSearch={setSearch}
-        placeHolder="Search Product"
-      />
-      <main className="mx-5 my-3">
-        <h2 className="my-3 text-secondary">New Arrival</h2>
-        <div className="">
-          <div className="row">
-            {finalFilteredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="col-sm-6 col-xl-4 col-xxl-3 mb-3"
-              >
-                <Link
-                  className="text-decoration-none"
-                  to={`/productDetails/${product.id}`}
-                >
-                  <div className="card productCard">
-                    <div className="ProductImageContainer">
-                      <img
-                        src={product.url}
-                        className="img-fluid listProductImage"
-                        style={{ height: "300px" }}
-                        alt="productImage"
-                      />
-                    </div>
-                    <div className="card-body d-flex flex-column justify-content-between w-100">
-                      <p id="name" className="my-0 lh-sm listProductName">
-                        <span className="badge text-bg-success me-1">New</span>
-                        {product.name.length > 61
-                          ? product.name.slice(0, 60).concat("...")
-                          : product.name}
-                      </p>
-                      <div className="d-flex align-items-end">
-                        <RatingBar rating={product.rating} />
-                        <span
-                          style={{ fontSize: "15px" }}
-                          className="ms-1 rating-listingPage"
-                        >
-                          {product.rating}
-                        </span>
-                      </div>
-                      <div>
-                        <p className="discount my-0">
-                          <b>₹</b>
-                          {(
-                            product.price -
-                            (product.price *
-                              Number(product.discount.replace("%", ""))) /
-                              100
-                          ).toFixed(1)}
-                          (-{product.discount})
-                        </p>
-                        <small
-                          id="M.R.P."
-                          className="text-decoration-line-through"
-                        >
-                          M.R.P. ₹{product.price}
-                        </small>
-                      </div>
-                      <div>
-                        <div>
-                          {!user ? (
-                            <button
-                              className="btn btn-secondary w-100 mb-1 addToCart"
-                              onClick={(e) => {
-                                e.preventDefault()
-                                e.stopPropagation()
-                                toast("Please login to your account")
-                              }}
-                            >
-                              {product.addToCart
-                                ? "Added To Cart"
-                                : "Add To cart"}
-                            </button>
-                          ) : (
-                            <button
-                              value={product.id}
-                              className="btn btn-secondary w-100 mb-1 addToCart"
-                              onClick={addToCart}
-                            >
-                              {product.addToCart
-                                ? "Added To Cart"
-                                : "Add To cart"}
-                            </button>
-                          )}
+      {!user ? (
+        <NewArrivalShimmer />
+      ) : (
+        <>
+          <Header
+            position="static"
+            top="auto"
+            zIndex="auto"
+            setSearch={setSearch}
+            placeHolder="Search Product"
+            userDetails={user}
+          />
+          <SearchInPage
+            margin="ms-3"
+            setSearch={setSearch}
+            placeHolder="Search Product"
+          />
+          <main className="mx-5 my-3">
+            <h2 className="my-3 text-secondary">New Arrival</h2>
+            <div className="">
+              <div className="row">
+                {finalFilteredProducts.map((product) => (
+                  <div
+                    key={product.id}
+                    className="col-sm-6 col-xl-4 col-xxl-3 mb-3"
+                  >
+                    <Link
+                      className="text-decoration-none"
+                      to={`/productDetails/${product.id}`}
+                    >
+                      <div className="card productCard">
+                        <div className="ProductImageContainer">
+                          <img
+                            src={product.url}
+                            className="img-fluid listProductImage"
+                            style={{ height: "300px" }}
+                            alt="productImage"
+                          />
                         </div>
-                        <div>
-                          {!user ? (
-                            <button
-                              className="btn btn-outline-secondary w-100 saveToWishlist"
-                              onClick={(e) => {
-                                e.preventDefault()
-                                e.stopPropagation()
-                                toast("Please login to your account")
-                              }}
+                        <div className="card-body d-flex flex-column justify-content-between w-100">
+                          <p id="name" className="my-0 lh-sm listProductName">
+                            <span className="badge text-bg-success me-1">
+                              New
+                            </span>
+                            {product.name.length > 61
+                              ? product.name.slice(0, 60).concat("...")
+                              : product.name}
+                          </p>
+                          <div className="d-flex align-items-end">
+                            <RatingBar rating={product.rating} />
+                            <span
+                              style={{ fontSize: "15px" }}
+                              className="ms-1 rating-listingPage"
                             >
-                              {product.addToWishList
-                                ? "Added To Wishlist"
-                                : "Save To Wishlist"}
-                            </button>
-                          ) : (
-                            <button
-                              value={product.id}
-                              className="btn btn-outline-secondary w-100 saveToWishlist"
-                              onClick={addToWishlist}
+                              {product.rating}
+                            </span>
+                          </div>
+                          <div>
+                            <p className="discount my-0">
+                              <b>₹</b>
+                              {(
+                                product.price -
+                                (product.price *
+                                  Number(product.discount.replace("%", ""))) /
+                                  100
+                              ).toFixed(1)}
+                              (-{product.discount})
+                            </p>
+                            <small
+                              id="M.R.P."
+                              className="text-decoration-line-through"
                             >
-                              {product.addToWishList
-                                ? "Added To Wishlist"
-                                : "Save To Wishlist"}
-                            </button>
-                          )}
+                              M.R.P. ₹{product.price}
+                            </small>
+                          </div>
+                          <div>
+                            <div>
+                              {!user ? (
+                                <button
+                                  className="btn btn-secondary w-100 mb-1 addToCart"
+                                  onClick={(e) => {
+                                    e.preventDefault()
+                                    e.stopPropagation()
+                                    toast("Please login to your account")
+                                  }}
+                                >
+                                  {product.addToCart
+                                    ? "Added To Cart"
+                                    : "Add To cart"}
+                                </button>
+                              ) : (
+                                <button
+                                  value={product.id}
+                                  className="btn btn-secondary w-100 mb-1 addToCart"
+                                  onClick={addToCart}
+                                >
+                                  {product.addToCart
+                                    ? "Added To Cart"
+                                    : "Add To cart"}
+                                </button>
+                              )}
+                            </div>
+                            <div>
+                              {!user ? (
+                                <button
+                                  className="btn btn-outline-secondary w-100 saveToWishlist"
+                                  onClick={(e) => {
+                                    e.preventDefault()
+                                    e.stopPropagation()
+                                    toast("Please login to your account")
+                                  }}
+                                >
+                                  {product.addToWishList
+                                    ? "Added To Wishlist"
+                                    : "Save To Wishlist"}
+                                </button>
+                              ) : (
+                                <button
+                                  value={product.id}
+                                  className="btn btn-outline-secondary w-100 saveToWishlist"
+                                  onClick={addToWishlist}
+                                >
+                                  {product.addToWishList
+                                    ? "Added To Wishlist"
+                                    : "Save To Wishlist"}
+                                </button>
+                              )}
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    </Link>
                   </div>
-                </Link>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </main>
+            </div>
+          </main>
+        </>
+      )}
     </>
   )
 }

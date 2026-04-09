@@ -1,0 +1,57 @@
+.orderDetailsCard {
+  background-color: #ccc;
+  height: 200px;
+}
+
+.productDetailsCard {
+  background-color: #ccc;
+  height: 280px;
+}
+
+.orderId {
+  width: 400px;
+  height: 30px;
+  background-color: #ccc;
+}
+
+.orderDetailsContainer {
+  max-width: 960px;
+}
+
+.main {
+    font-size: 15px;
+}
+
+@media (max-width: 992px) {
+  .orderDetailsCard {
+    height: 430px;
+  }
+}
+
+@media (max-width: 768px) {
+  .productDetailsCard {
+    height: 380px;
+  }
+  .orderId {
+    width: 300px;
+  }
+}
+
+@media (max-width: 420px) {
+  .productDetailsCard {
+    height: 540px;
+  }
+  .orderId {
+    width: 200px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 320px) {
+  .orderDetailsCard {
+    height: 450px;
+  }
+  .productDetailsCard {
+    height: 565px;
+  }
+}

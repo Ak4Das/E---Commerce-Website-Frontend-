@@ -1,0 +1,35 @@
+.card {
+  height: 300px;
+  color: #ccc;
+  background-color: #ccc;
+}
+
+.heading {
+  width: 250px;
+  height: 50px;
+  background-color: #ccc;
+}
+
+.main {
+  width: 100vw;
+}
+
+@media (max-width: 420px) {
+  .heading {
+    width: 200px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 320px) {
+  .heading {
+    width: 150px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 290px) {
+  .heading {
+    width: 130px;
+  }
+}

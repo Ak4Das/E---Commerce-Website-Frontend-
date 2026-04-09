@@ -1,0 +1,16 @@
+.card {
+  height: 350px;
+  background-color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: 450px;
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    height: 600px;
+  }
+}

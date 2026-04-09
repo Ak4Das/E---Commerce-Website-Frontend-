@@ -1,0 +1,10 @@
+.alert {
+    height: 65px;
+    background-color: #ccc;
+}
+
+.slide1 {
+    max-height: 800px;
+    height: 78.6vw;
+    background-color: #ccc;
+}

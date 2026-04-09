@@ -1,0 +1,38 @@
+.card {
+  background-color: #ccc;
+}
+
+.img {
+  background-color: #ccc;
+}
+
+.name {
+  width: 200px;
+  height: 30px;
+  background-color: #ccc;
+  margin-top: 25px;
+}
+
+.email {
+  width: 300px;
+  height: 20px;
+  background-color: #ccc;
+  margin-top: 20px;
+}
+
+.profileImage {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 400px) {
+  .card {
+    height: 275px;
+  }
+  .name {
+    width: 100px;
+  }
+  .email {
+    width: 200px;
+  }
+}

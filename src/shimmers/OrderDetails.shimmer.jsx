@@ -5,7 +5,7 @@ export default function OrderDetailsShimmer() {
   return (
     <>
       <HeaderShimmer />
-      <main className={`py-3 ${styles.main}`}>
+      <main className={`py-3 ${styles.main} container`}>
         <div
           className={`mx-auto orderDetailsContainer ${styles.orderDetailsContainer}`}
         >

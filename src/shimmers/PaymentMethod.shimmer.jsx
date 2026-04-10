@@ -5,8 +5,8 @@ export default function PaymentMethodShimmer() {
   return (
     <>
       <HeaderShimmer />
-      <main className="mt-3 mb-5 d-lg-flex gap-5 align-items-start paymentMethodMainElement">
-        <div className="paymentMethodSectionOne">
+      <main className={`mt-3 mb-5 d-lg-flex gap-5 align-items-start ${styles.paymentMethodMainElement}`}>
+        <div className={`${styles.paymentMethodSectionOne}`}>
           <section
             className={`p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection ${styles.section1}`}
           ></section>
@@ -18,7 +18,7 @@ export default function PaymentMethodShimmer() {
           </section>
         </div>
         <section
-          className={`p-3 paymentMethodSectionTwo mt-5 mt-lg-0 ${styles.section3}`}
+          className={`p-3 ${styles.paymentMethodSectionTwo} mt-5 mt-lg-0 ${styles.section3}`}
         ></section>
       </main>
     </>

@@ -3,18 +3,48 @@
 }
 
 .heading {
-    padding-block: 2vw;
+  padding-block: 2vw;
 }
 
 .happyDiwali {
-    font-size: 4vw;
-    color:#ff7440
+  font-size: 4vw;
+  color: #ff7440;
 }
 
 .diwaliDecoration5 {
-    width: 5vw;
+  width: 5vw;
 }
 
 .card {
-    background-color: #ccc;
+  background-color: #ccc;
+}
+
+@media (min-width: 250px) {
+  .diwaliSaleCard {
+    height: 150px !important;
+  }
+}
+
+@media (min-width: 300px) {
+  .diwaliSaleCard {
+    height: 150px !important;
+  }
+}
+
+@media (min-width: 420px) {
+  .diwaliSaleCard {
+    height: 200px !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .diwaliSaleCard {
+    height: 300px !important;
+  }
+}
+
+@media (min-width: 800px) {
+  .diwaliSaleCard {
+    height: 430px !important;
+  }
 }

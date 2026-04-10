@@ -26,22 +26,22 @@ export default function DiwaliSaleShimmer() {
           <div>
             <div className="row row-gap-3 row-gap-sm-4">
               <div className="col-12 col-xxl-6">
-                <div className={`diwaliSaleCard card p-1 flex-row justify-content-around ${styles.card}`}></div>
+                <div className={`${styles.diwaliSaleCard} card p-1 flex-row justify-content-around ${styles.card}`}></div>
               </div>
               <div className="col-12 col-xxl-6">
-                <div className={`diwaliSaleCard card p-1 flex-row justify-content-around ${styles.card}`}></div>
+                <div className={`${styles.diwaliSaleCard} card p-1 flex-row justify-content-around ${styles.card}`}></div>
               </div>
               <div className="col-12 col-xxl-6">
-                <div className={`diwaliSaleCard card p-1 flex-row justify-content-around ${styles.card}`}></div>
+                <div className={`${styles.diwaliSaleCard} card p-1 flex-row justify-content-around ${styles.card}`}></div>
               </div>
               <div className="col-12 col-xxl-6">
-                <div className={`diwaliSaleCard card p-1 flex-row justify-content-around ${styles.card}`}></div>
+                <div className={`${styles.diwaliSaleCard} card p-1 flex-row justify-content-around ${styles.card}`}></div>
               </div>
               <div className="col-12 col-xxl-6">
-                <div className={`diwaliSaleCard card p-1 flex-row justify-content-around ${styles.card}`}></div>
+                <div className={`${styles.diwaliSaleCard} card p-1 flex-row justify-content-around ${styles.card}`}></div>
               </div>
               <div className="col-12 col-xxl-6">
-                <div className={`diwaliSaleCard card p-1 flex-row justify-content-around ${styles.card}`}></div>
+                <div className={`${styles.diwaliSaleCard} card p-1 flex-row justify-content-around ${styles.card}`}></div>
               </div>
             </div>
           </div>

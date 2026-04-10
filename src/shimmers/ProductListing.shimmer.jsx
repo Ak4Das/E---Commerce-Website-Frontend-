@@ -1,5 +1,5 @@
 import { HeaderShimmer } from "./styled.components"
-import styles from "../style_modules/ProductListingShimmer.module.css"
+import styles from "../style_modules/shimmer_modules/ProductListingShimmer.module.css"
 
 export default function ProductListingShimmer() {
   return (

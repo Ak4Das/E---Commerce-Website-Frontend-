@@ -1,5 +1,5 @@
 import { HeaderShimmer } from "./styled.components"
-import styles from "../style_modules/WishlistShimmer.module.css"
+import styles from "../style_modules/shimmer_modules/WishlistShimmer.module.css"
 
 export default function WishlistShimmer() {
   return (

@@ -1,0 +1,93 @@
+@media (min-width: 400px) {
+  .cardInUserProfilePage {
+    flex-direction: row !important;
+    height: 164px !important;
+  }
+}
+@media (max-width: 767px) {
+  .floatingCard {
+    width: 300px !important;
+  }
+  .floatingCardUserImage {
+    width: 250px !important;
+    height: 250px !important;
+  }
+}
+@media (max-width: 400px) {
+  .cardInUserProfilePage {
+    flex-direction: column !important;
+  }
+  .crossBtnFloatingCard {
+    width: 15px !important;
+  }
+  .floatingCardBtns {
+    flex-direction: column;
+    row-gap: 5px;
+  }
+  .floatingCardBtn {
+    min-width: 100%;
+  }
+}
+@media (max-width: 350px) {
+  .floatingCard {
+    width: 250px !important;
+  }
+  .floatingCardUserImage {
+    width: 220px !important;
+    height: 220px !important;
+  }
+}
+@media (max-width: 320px) {
+  .floatingCard {
+    width: 240px !important;
+  }
+  .floatingCardUserImage {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+@media (max-width: 291px) {
+  .floatingCard {
+    width: 200px !important;
+  }
+  .floatingCardUserImage {
+    width: 170px !important;
+    height: 170px !important;
+  }
+  .floatingCardText {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .usrAccTextFloatingCard {
+    font-size: 20px;
+  }
+  .profilePicTextFloatingCard {
+    font-size: 18px;
+  }
+}
+
+.changeImage {
+  transform: translateX(30px) !important;
+  cursor: pointer !important;
+}
+
+.changeImage:hover {
+  background-color: aqua !important;
+}
+
+.floatingCardBtn {
+  width: 45%;
+  background-color: rgb(133, 214, 247) !important;
+}
+
+.floatingCard {
+  transform: translate(-50%, -10%);
+}
+
+.editImageUrl:hover {
+  color: yellow !important;
+}
+
+.removeImageUrl:hover {
+  color: red !important;
+}

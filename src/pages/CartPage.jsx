@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/CartPage.module.css"
 import Header from "../components/Header"
 import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
@@ -244,7 +245,7 @@ export default function CartPage() {
 
   return (
     <>
-      {!user ? (
+      {userId && !user ? (
         <CartPageShimmer />
       ) : (
         <>
@@ -266,8 +267,10 @@ export default function CartPage() {
           <main className="bg-body-secondary pb-3">
             <div className="container">
               <h3 className="py-4 text-center">My Cart</h3>
-              <div className="d-md-flex justify-content-between align-items-start cartContainer">
-                <section className="productsInCurt">
+              <div
+                className={`d-md-flex justify-content-between align-items-start ${styles.cartContainer}`}
+              >
+                <section className={`${styles.productsInCurt}`}>
                   {!!ProductsInCart &&
                     ProductsInCart.map((product) => {
                       return (
@@ -277,15 +280,19 @@ export default function CartPage() {
                               className="text-decoration-none"
                               to={`/productDetails/${product.id}`}
                             >
-                              <div className="card flex-lg-row gap-4 productCardInCart m-auto">
+                              <div
+                                className={`card flex-lg-row gap-4 ${styles.productCardInCart} m-auto`}
+                              >
                                 <img
                                   src={product.url}
                                   alt="productImage"
-                                  className="imageOnProductCurt"
+                                  className={`${styles.imageOnProductCurt}`}
                                 />
                                 <div className="card-body d-flex flex-column justify-content-between pt-0 pt-lg-2">
                                   <div>
-                                    <p className="lh-sm fs-5 fw-bold m-0 mb-2 productNameOnCartPage overflow-hidden">
+                                    <p
+                                      className={`lh-sm fs-5 fw-bold m-0 mb-2 ${styles.productNameOnCartPage} overflow-hidden`}
+                                    >
                                       {product.name.length > 61
                                         ? product.name
                                             .slice(0, 60)
@@ -327,10 +334,14 @@ export default function CartPage() {
                                       off
                                     </p>
                                     <div className="mb-2">
-                                      <span className="fw-bold me-2 quantityText">
+                                      <span
+                                        className={`fw-bold me-2 ${styles.quantityText}`}
+                                      >
                                         Quantity:{" "}
                                       </span>
-                                      <div className="quantityBtnContainer mb-3">
+                                      <div
+                                        className={`${styles.quantityBtnContainer} mb-3`}
+                                      >
                                         <button
                                           className="rounded-circle border border-1"
                                           style={{
@@ -475,10 +486,14 @@ export default function CartPage() {
                                       </div>
                                     </div>
                                     <div className="mb-2">
-                                      <span className="sizeText fw-bold me-1 me-xl-3">
+                                      <span
+                                        className={`${styles.sizeText} fw-bold me-1 me-xl-3`}
+                                      >
                                         Size:{" "}
                                       </span>
-                                      <div className="sizeBtnContainer">
+                                      <div
+                                        className={`${styles.sizeBtnContainer}`}
+                                      >
                                         <button
                                           className="border border-1 me-2 mb-2"
                                           style={{
@@ -928,7 +943,7 @@ export default function CartPage() {
                       )
                     })}
                 </section>
-                <section className="bg-light px-5 py-4 totalBill">
+                <section className={`bg-light px-5 py-4 ${styles.totalBill}`}>
                   <h3>Price Details</h3>
                   <hr />
                   <div>

@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/LoginForm.module.css"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { saveNewUser } from "../components/FetchRequests"
@@ -21,7 +22,7 @@ export default function LoginForm() {
   }
   return (
     <main
-      className="card mx-auto my-5 loginForm"
+      className={`card mx-auto my-5 ${styles.loginForm}`}
       style={{ width: "50%", paddingInline: "48px", paddingBlock: "24px" }}
     >
       <h2 className="text-success">Login Form</h2>

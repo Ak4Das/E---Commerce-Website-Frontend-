@@ -1,0 +1,15 @@
+@media (min-width: 992px) {
+  .orderDetailsBill {
+    width: 250px;
+  }
+}
+@media (max-width: 991px) {
+  .orderDetailsContainer {
+    width: 85%;
+  }
+}
+@media (max-width: 420px) {
+  .productYourOrder {
+    flex-direction: column;
+  }
+}

@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/EditYourOrder.module.css"
 import Header from "../components/Header"
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
@@ -155,12 +156,14 @@ export default function EditYourOrder() {
           <h1 className="text-success fw-medium my-3 container">Edit Order</h1>
           {orderToBeEdit && (
             <main className="container my-4">
-              <section className="editOrderSection1 bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start deliveryAddressSection">
+              <section
+                className={`editOrderSection1 bg-light p-3 d-flex column-gap-5 justify-content-between align-items-start ${styles.deliveryAddressSection}`}
+              >
                 <div>
-                  <h5 className="userName">
+                  <h5 className={`${styles.userName}`}>
                     Delivering to {address && address.fullName}
                   </h5>
-                  <p className="fw-medium userAddress">
+                  <p className={`fw-medium ${styles.userAddress}`}>
                     {address && address.localInfo}, {address && address.area},{" "}
                     {address && address.city.toUpperCase()}
                     {", "}
@@ -170,25 +173,28 @@ export default function EditYourOrder() {
                 </div>
                 <Link
                   to={`/userAddress/editOrder/${orderId}`}
-                  className="text-decoration-none fw-medium changeBtn"
+                  className={`text-decoration-none fw-medium ${styles.changeBtn} ${styles.cursor_pointer}`}
                 >
                   Change
                 </Link>
               </section>
-              <section className="editOrderSection2 bg-light p-3 d-flex column-gap-5 row-gap-3 justify-content-between align-items-start mt-3 paymentMethodSection">
+              <section
+                className={`bg-light p-3 d-flex column-gap-5 row-gap-3 justify-content-between align-items-start mt-3 ${styles.paymentMethodSection}`}
+              >
                 <div>
-                  <h5 className="paymentMethodHeading">
+                  <h5 className={`${styles.paymentMethodHeading}`}>
                     {paymentMethod
                       ? paymentMethod
                       : orderToBeEdit.paymentMethod}
                   </h5>
-                  <Link className="fw-medium text-decoration-none discountCard d-block lh-sm">
+                  <Link
+                    className={`fw-medium text-decoration-none ${styles.discountCard} d-block lh-sm`}
+                  >
                     Use a gift card, voucher or promo code
                   </Link>
                 </div>
                 <p
-                  className="text-decoration-none fw-medium my-0 text-primary changeBtn"
-                  style={{ cursor: "pointer" }}
+                  className={`text-decoration-none fw-medium my-0 text-primary ${styles.changeBtn} ${styles.cursor_pointer}`}
                   onClick={() => {
                     setChangePaymentMethod(true)
                   }}
@@ -197,7 +203,7 @@ export default function EditYourOrder() {
                 </p>
               </section>
               {changePaymentMethod && (
-                <section className="editOrderSection3">
+                <section>
                   <div className="mt-4">
                     <h3 className="fw-medium">Select Payment Method</h3>
                     <div className="bg-light p-3">
@@ -211,7 +217,7 @@ export default function EditYourOrder() {
                           type="radio"
                           name="payment"
                           value="Credit or debit card"
-                          className="mt-1"
+                          className={`mt-1 ${styles.cursor_pointer}`}
                           onClick={(e) => {
                             setPaymentMethod(e.target.value)
                             setIsCard(true)
@@ -219,42 +225,45 @@ export default function EditYourOrder() {
                             setIsCashOnDelivery(false)
                             setVisible(true)
                           }}
-                          style={{ cursor: "pointer" }}
                         />
                         <div>
-                          <label className="fw-medium mb-2">
+                          <label
+                            className={`fw-medium mb-2 ${styles.paymentViaCardLabel}`}
+                          >
                             Credit or debit card
                           </label>
                           <br />
-                          <div className="d-flex">
+                          <div
+                            className={`d-flex ${styles.cardImagesInPaymentMethodPage}`}
+                          >
                             <img
                               src="https://tse3.mm.bing.net/th/id/OIP.VxB3xx5PMyI8JoGlcWNkHAHaGE?pid=Api&P=0&h=180"
                               alt="master card"
-                              className="img-fluid me-2 cardImage"
+                              className={`img-fluid me-2 ${styles.cardImage}`}
                               style={{ width: "60px" }}
                             />
                             <img
                               src="https://tse2.mm.bing.net/th/id/OIP.Y6-wJg-HiIJqiI8nok881AHaFr?pid=Api&P=0&h=180"
                               alt="visa"
-                              className="img-fluid me-2 cardImage"
+                              className={`img-fluid me-2 ${styles.cardImage}`}
                               style={{ width: "60px" }}
                             />
                             <img
                               src="https://tse4.mm.bing.net/th/id/OIP.Irq5hFtZ2RWq4_WZa__XZwHaHa?pid=Api&P=0&h=180"
                               alt="rupay"
-                              className="img-fluid me-2 cardImage"
+                              className={`img-fluid me-2 ${styles.cardImage}`}
                               style={{ width: "50px" }}
                             />
                             <img
                               src="https://tse2.mm.bing.net/th/id/OIP.q5UpjKh-KMHUQUEtd09BJQHaHa?pid=Api&P=0&h=180"
                               alt="maestro"
-                              className="img-fluid me-2 maestroCard cardImage"
+                              className={`img-fluid me-2 ${styles.cardImage}`}
                               style={{ width: "50px" }}
                             />
                             <img
                               src="https://tse1.mm.bing.net/th/id/OIP.rNamf0fxtSx4i_wPGdjb2wHaHa?pid=Api&P=0&h=180"
                               alt="American Express"
-                              className="img-fluid me-2 cardImage"
+                              className={`img-fluid me-2 ${styles.cardImage}`}
                               style={{ width: "50px" }}
                             />
                           </div>
@@ -263,8 +272,7 @@ export default function EditYourOrder() {
                           >
                             <div className="d-flex align-items-start gap-3 mt-2">
                               <Link
-                                className="addCardBtn"
-                                style={{ cursor: "pointer" }}
+                                className={`${styles.addCardBtn} ${styles.cursor_pointer}`}
                               >
                                 <img
                                   src={Plus}
@@ -279,65 +287,99 @@ export default function EditYourOrder() {
                               <img
                                 src={Card}
                                 alt="cardIcon"
-                                style={{ width: "30px", cursor: "pointer" }}
-                                className="AtmCardImg"
+                                style={{ width: "30px" }}
+                                className={`${styles.AtmCardImg} ${styles.cursor_pointer}`}
                                 onClick={() =>
                                   setShowCard(showCard ? false : true)
                                 }
                               />
                               <Link
-                                className="text-decoration-none fw-medium AddCardLink"
+                                className={`text-decoration-none fw-medium ${styles.AddCardLink} ${styles.cursor_pointer}`}
                                 onClick={() =>
                                   setShowCard(showCard ? false : true)
                                 }
-                                style={{ cursor: "pointer" }}
                               >
                                 Add a new credit or debit card
+                              </Link>
+                              <Link
+                                className={`text-decoration-none fw-medium ${styles.AddCardLink2} ${styles.cursor_pointer}`}
+                                onClick={() =>
+                                  setShowCard(showCard ? false : true)
+                                }
+                              >
+                                Add a new card
                               </Link>
                             </div>
                           </div>
                           <div
                             style={{
-                              width: "700px",
                               display: `${showCard ? "" : "none"}`,
-                              boxShadow: "0px 0px 100px rgba(0, 0, 0, 0.4)",
                             }}
-                            className="card rounded position-absolute top-50 start-50 AtmCardDetailsForm"
+                            className={`card rounded position-absolute top-50 start-50 ${styles.AtmCardDetailsForm}`}
                           >
                             <div className="bg-light d-flex justify-content-between align-items-center p-3">
-                              <h5>Add a new credit or debit card</h5>
+                              <h5
+                                className={`${styles.floatingCardHeaderText}`}
+                              >
+                                Add a new credit or debit card
+                              </h5>
                               <img
                                 src={Cross}
                                 alt="crossIcon"
-                                className="img-fluid"
-                                style={{ width: "15px", cursor: "pointer" }}
+                                className={`img-fluid ${styles.floatingCardHeaderCrossBtn} ${styles.cursor_pointer}`}
+                                style={{ width: "15px" }}
                                 onClick={() =>
                                   setShowCard(showCard ? false : true)
                                 }
                               />
                             </div>
-                            <div className="bg-white p-3 d-flex justify-content-between">
-                              <div className="w-50">
+                            <div
+                              className={`bg-white p-3 d-flex justify-content-between ${styles.floatingAddCardBody}`}
+                            >
+                              <div
+                                className={`${styles.floatingAddCardForm}`}
+                                style={{ width: "50%" }}
+                              >
                                 <label htmlFor="" className="fw-medium">
                                   Card number
                                 </label>
-                                <input type="text" className="ms-2 rounded" />
-                                <br />
-                                <br />
-                                <label htmlFor="" className="fw-medium">
+                                <input
+                                  type="text"
+                                  className={`rounded ${styles.floatingAddCardBodyInput}`}
+                                  style={{ marginLeft: "8px" }}
+                                />
+                                <br
+                                  className={`${styles.floatingAddCardBodyBr}`}
+                                />
+                                <br
+                                  className={`${styles.floatingAddCardBodyBr}`}
+                                />
+                                <label
+                                  htmlFor=""
+                                  className={`fw-medium ${styles.floatingAddCardBodyInput}`}
+                                >
                                   Nickname
                                 </label>
-                                <input type="text" className="ms-2 rounded" />
-                                <br />
-                                <br />
+                                <input
+                                  type="text"
+                                  className={`rounded ${styles.floatingAddCardBodyInput}`}
+                                />
+                                <br
+                                  className={`${styles.floatingAddCardBodyBr}`}
+                                />
+                                <br
+                                  className={`${styles.floatingAddCardBodyBr}`}
+                                />
                                 <label htmlFor="" className="fw-medium">
                                   Expiry date
                                 </label>
-                                <input type="date" className="ms-2 rounded" />
+                                <input
+                                  type="date"
+                                  className={`rounded ${styles.floatingAddCardBodyInput}`}
+                                />
                               </div>
                               <div
-                                className="w-50 ps-3"
-                                style={{ borderLeft: "1px solid black" }}
+                                className={`${styles.floatingAddCardBodyText}`}
                               >
                                 <p>
                                   Please ensure that you enable your card for
@@ -347,31 +389,31 @@ export default function EditYourOrder() {
                                   <img
                                     src="https://tse3.mm.bing.net/th/id/OIP.VxB3xx5PMyI8JoGlcWNkHAHaGE?pid=Api&P=0&h=180"
                                     alt="master card"
-                                    className="img-fluid me-2 cardImage"
+                                    className={`img-fluid me-2 ${styles.cardImage}`}
                                     style={{ width: "60px" }}
                                   />
                                   <img
                                     src="https://tse2.mm.bing.net/th/id/OIP.Y6-wJg-HiIJqiI8nok881AHaFr?pid=Api&P=0&h=180"
                                     alt="visa"
-                                    className="img-fluid me-2 cardImage"
+                                    className={`img-fluid me-2 ${styles.cardImage}`}
                                     style={{ width: "60px" }}
                                   />
                                   <img
                                     src="https://tse4.mm.bing.net/th/id/OIP.Irq5hFtZ2RWq4_WZa__XZwHaHa?pid=Api&P=0&h=180"
                                     alt="rupay"
-                                    className="img-fluid me-2 cardImage"
+                                    className={`img-fluid me-2 ${styles.cardImage}`}
                                     style={{ width: "50px" }}
                                   />
                                   <img
                                     src="https://tse2.mm.bing.net/th/id/OIP.q5UpjKh-KMHUQUEtd09BJQHaHa?pid=Api&P=0&h=180"
                                     alt="maestro"
-                                    className="img-fluid me-2 maestroCard cardImage"
+                                    className={`img-fluid me-2 ${styles.cardImage}`}
                                     style={{ width: "50px" }}
                                   />
                                   <img
                                     src="https://tse1.mm.bing.net/th/id/OIP.rNamf0fxtSx4i_wPGdjb2wHaHa?pid=Api&P=0&h=180"
                                     alt="American Express"
-                                    className="img-fluid me-2 cardImage"
+                                    className={`img-fluid me-2 ${styles.cardImage}`}
                                     style={{ width: "50px" }}
                                   />
                                 </div>
@@ -380,10 +422,9 @@ export default function EditYourOrder() {
                             <div className="bg-light p-3">
                               <div className="text-end">
                                 <button
-                                  className="btn btn-white rounded-pill border border-black"
+                                  className={`btn btn-white rounded-pill border border-black ${styles.cursor_pointer}`}
                                   style={{
                                     fontSize: "12px",
-                                    cursor: "pointer",
                                   }}
                                   onClick={() =>
                                     setShowCard(showCard ? false : true)
@@ -392,10 +433,9 @@ export default function EditYourOrder() {
                                   Cancel
                                 </button>
                                 <button
-                                  className="btn btn-warning rounded-pill ms-2"
+                                  className={`btn btn-warning rounded-pill ms-2 ${styles.cursor_pointer}`}
                                   style={{
                                     fontSize: "12px",
-                                    cursor: "pointer",
                                   }}
                                 >
                                   Continue
@@ -416,6 +456,7 @@ export default function EditYourOrder() {
                           type="radio"
                           name="payment"
                           value="Net Banking"
+                          className={`${styles.cursor_pointer}`}
                           onClick={(e) => {
                             setPaymentMethod(e.target.value)
                             setIsCard(false)
@@ -423,7 +464,6 @@ export default function EditYourOrder() {
                             setIsCashOnDelivery(false)
                             setVisible(false)
                           }}
-                          style={{ cursor: "pointer" }}
                         />
                         <div>
                           <label
@@ -435,8 +475,8 @@ export default function EditYourOrder() {
                           <br />
                           <select
                             id="netBanking"
-                            className="rounded p-2"
-                            style={{ cursor: "pointer", width: "200px" }}
+                            className={`rounded p-2 ${styles.BanksFacilitateNetBanking} ${styles.cursor_pointer}`}
+                            style={{ width: "200px" }}
                           >
                             <option value="" className="fw-bold">
                               Choose an Option
@@ -602,7 +642,7 @@ export default function EditYourOrder() {
                           type="radio"
                           name="payment"
                           value="Cash on Delivery/Pay on Delivery"
-                          style={{ cursor: "pointer" }}
+                          className={`${styles.cursor_pointer}`}
                           onClick={(e) => {
                             setPaymentMethod(e.target.value)
                             setIsCard(false)
@@ -612,14 +652,14 @@ export default function EditYourOrder() {
                           }}
                         />
                         <div>
-                          <label className="fw-medium">
+                          <label className={`fw-medium ${styles.paymentViaCashOnDeliveryLabel}`}>
                             Cash on Delivery/Pay on Delivery
                           </label>
-                          <p className="my-0">Cash, UPI and Cards accepted.</p>
+                          <p className={`my-0 ${styles.paymentViaCashOnDeliveryText}`}>Cash, UPI and Cards accepted.</p>
                         </div>
                       </div>
                       <button
-                        className="btn btn-warning rounded-pill mt-4 px-4"
+                        className={`btn btn-warning rounded-pill mt-4 px-4 ${styles.useThisPaymentMethodBtn}`}
                         onClick={() => {
                           setChangePaymentMethod(false)
                         }}
@@ -630,19 +670,23 @@ export default function EditYourOrder() {
                   </div>
                 </section>
               )}
-              <section className="editOrderSection4">
+              <section>
                 <h3 className="mt-4">Products List</h3>
                 <div className="bg-light px-4 py-3 mt-3">
-                  <h5 className="mb-3 fw-bold deliveryDate text-success">
+                  <h5
+                    className={`mb-3 fw-bold ${styles.deliveryDate} text-success`}
+                  >
                     Arriving {orderToBeEdit.deliveryDate}
                   </h5>
                   {products &&
                     products.map((product) => (
                       <div
                         key={product.id}
-                        className="card column-gap-4 my-3 cardInPaymentMethodPage"
+                        className={`card column-gap-4 my-3 ${styles.cardInPaymentMethodPage}`}
                       >
-                        <div className="h-100 mx-auto productImageContainerDiv">
+                        <div
+                          className={`h-100 mx-auto ${styles.productImageContainerDiv}`}
+                        >
                           <img
                             src={product.url}
                             alt="productImage"
@@ -650,10 +694,7 @@ export default function EditYourOrder() {
                           />
                         </div>
                         <div className="p-2 w-100">
-                          <p
-                            className="fw-medium my-0"
-                            style={{ height: "72px", overflow: "hidden" }}
-                          >
+                          <p className={`fw-medium my-0 ${styles.productName}`}>
                             {product.newArrival === true && (
                               <span className="badge text-bg-success me-1">
                                 New
@@ -692,16 +733,19 @@ export default function EditYourOrder() {
                             </span>
                           </div>
                           <div className="my-3">
-                            <span className="fw-bold me-0 text-secondary sizeText me-1 me-sm-3">
+                            <span
+                              className={`fw-bold me-0 text-secondary ${styles.sizeText} me-1 me-sm-3`}
+                            >
                               Size:{" "}
                             </span>
-                            <div className="sizeBtnContainer">
+                            <div className={`${styles.sizeBtnContainer}`}>
                               <button
                                 className="border border-1 me-2 mb-2"
                                 onClick={(e) => {
                                   product.size = "S"
                                   const btn = e.target
-                                  btn.innerHTML = '<i class="bi bi-check2"></i>'
+                                  btn.innerHTML =
+                                    '<i className="bi bi-check2"></i>'
                                   setTimeout(() => {
                                     btn.innerHTML = "S"
                                   }, 500)
@@ -714,7 +758,8 @@ export default function EditYourOrder() {
                                 onClick={(e) => {
                                   product.size = "M"
                                   const btn = e.target
-                                  btn.innerHTML = '<i class="bi bi-check2"></i>'
+                                  btn.innerHTML =
+                                    '<i className="bi bi-check2"></i>'
                                   setTimeout(() => {
                                     btn.innerHTML = "M"
                                   }, 500)
@@ -727,7 +772,8 @@ export default function EditYourOrder() {
                                 onClick={(e) => {
                                   product.size = "L"
                                   const btn = e.target
-                                  btn.innerHTML = '<i class="bi bi-check2"></i>'
+                                  btn.innerHTML =
+                                    '<i className="bi bi-check2"></i>'
                                   setTimeout(() => {
                                     btn.innerHTML = "L"
                                   }, 500)
@@ -740,7 +786,8 @@ export default function EditYourOrder() {
                                 onClick={(e) => {
                                   product.size = "XL"
                                   const btn = e.target
-                                  btn.innerHTML = '<i class="bi bi-check2"></i>'
+                                  btn.innerHTML =
+                                    '<i className="bi bi-check2"></i>'
                                   setTimeout(() => {
                                     btn.innerHTML = "XL"
                                   }, 500)
@@ -753,7 +800,8 @@ export default function EditYourOrder() {
                                 onClick={(e) => {
                                   product.size = "XXL"
                                   const btn = e.target
-                                  btn.innerHTML = '<i class="bi bi-check2"></i>'
+                                  btn.innerHTML =
+                                    '<i className="bi bi-check2"></i>'
                                   setTimeout(() => {
                                     btn.innerHTML = "XXL"
                                   }, 500)
@@ -763,14 +811,14 @@ export default function EditYourOrder() {
                               </button>
                             </div>
                           </div>
-                          <div className="d-flex gap-3 align-items-center btnInEditOrderPage">
+                          <div
+                            className={`d-flex gap-3 align-items-center ${styles.btnInEditOrderPage}`}
+                          >
                             <div
-                              className="border border-warning w-100 my-0 border-2 d-flex align-items-center rounded-pill overflow-hidden justify-content-around deleteOrIncreaseQuantityBtn"
-                              style={{ width: "100px" }}
+                              className={`border border-warning w-100 my-0 border-2 d-flex align-items-center rounded-pill overflow-hidden justify-content-around ${styles.increaseDecreaseQuantityBtn}`}
                             >
                               <button
-                                className="border border-0 bg-white fs-5 fw-bold text-danger"
-                                style={{ marginTop: "-5px" }}
+                                className={`border border-0 bg-white fs-5 fw-bold text-danger ${styles.decreaseQuantityBtn}`}
                                 onClick={(e) => {
                                   let inputElementValue = Number(
                                     e.target.nextElementSibling.value,
@@ -814,9 +862,8 @@ export default function EditYourOrder() {
                               </button>
                               <input
                                 type="text"
-                                className="border border-0"
+                                className={`border border-0 ${styles.quantityInput}`}
                                 defaultValue={product.quantity || 1}
-                                style={{ width: "30px", outline: "none" }}
                                 onChange={(e) => {
                                   const initialQuantity = product.quantity
                                   let inputElementValue = Number(e.target.value)
@@ -850,8 +897,7 @@ export default function EditYourOrder() {
                                 }}
                               />
                               <button
-                                className="border border-0 bg-white fs-5 fw-bold text-success"
-                                style={{ marginTop: "-5px" }}
+                                className={`border border-0 bg-white fs-5 fw-bold text-success ${styles.increaseQuantityBtn}`}
                                 onClick={(e) => {
                                   let inputElementValue = Number(
                                     e.target.previousElementSibling.value,

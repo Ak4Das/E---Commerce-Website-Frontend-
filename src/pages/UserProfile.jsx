@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/UserProfile.module.css"
 import Header from "../components/Header"
 import CameraIcon from "../assets/camera.png"
 import crossBtn from "../assets/cross.png"
@@ -68,9 +69,13 @@ export default function UserProfile() {
     imageUrl && setImagePath("")
     setEdit(edit ? false : true)
     const enterImgUrl = document.querySelector(".enterImgUrl")
-    enterImgUrl.value = ""
+    if(enterImgUrl) {
+      enterImgUrl.value = ""
+    }
     const enterImagePath = document.querySelector(".enterImagePath")
-    enterImagePath.value = ""
+    if(enterImagePath) {
+      enterImagePath.value = ""
+    }
   }
 
   function setVisibility() {
@@ -142,7 +147,7 @@ export default function UserProfile() {
               </div>
               <div
                 style={{ width: "25px", height: "25px", top: "70px" }}
-                className="bg-white rounded-circle p-1 d-flex align-items-center justify-content-center changeImage position-absolute"
+                className={`bg-white rounded-circle p-1 d-flex align-items-center justify-content-center ${styles.changeImage} position-absolute`}
                 title="Change Profile Image"
               >
                 <img
@@ -156,7 +161,7 @@ export default function UserProfile() {
               <h6>{user && user.email}</h6>
               {visible && (
                 <div
-                  className="card px-3 py-3 bg-light position-absolute top-50 start-50 floatingCard"
+                  className={`card px-3 py-3 bg-light position-absolute top-50 start-50 ${styles.floatingCard}`}
                   style={{
                     width: "400px",
                     zIndex: 1,
@@ -164,27 +169,27 @@ export default function UserProfile() {
                   }}
                 >
                   <section className="position-relative">
-                    <h2 className="usrAccTextFloatingCard">User Account</h2>
+                    <h2 className={`${styles.usrAccTextFloatingCard}`}>User Account</h2>
                     <button className="border border-0 position-absolute end-0 top-0 bg-light">
                       <img
                         src={crossBtn}
                         alt="crossBtn"
-                        className="crossBtnFloatingCard"
+                        className={`${styles.crossBtnFloatingCard}`}
                         style={{ width: "20px" }}
                         onClick={setVisibility}
                       />
                     </button>
                   </section>
                   <section className="mt-3">
-                    <h4 className="profilePicTextFloatingCard">
+                    <h4 className={`${styles.profilePicTextFloatingCard}`}>
                       Profile picture
                     </h4>
-                    <p className="floatingCardText">
+                    <p className={`${styles.floatingCardText}`}>
                       A picture helps people recognize you and lets you know
                       when you’re signed in to your account
                     </p>
                     <div
-                      className="overflow-hidden rounded-circle mx-auto my-5 floatingCardUserImage"
+                      className={`overflow-hidden rounded-circle mx-auto my-5 ${styles.floatingCardUserImage}`}
                       style={{ width: "350px", height: "350px" }}
                     >
                       {user.profileImage ? (
@@ -217,7 +222,7 @@ export default function UserProfile() {
                       <input
                         type="text"
                         placeholder="Enter Image Url"
-                        className="form-control enterImgUrl"
+                        className="form-control"
                         onChange={(e) => {
                           setImageUrl(e.target.value)
                         }}
@@ -227,7 +232,7 @@ export default function UserProfile() {
                       </p>
                       <input
                         type="file"
-                        className="form-control mb-4 enterImagePath"
+                        className="form-control mb-4"
                         onChange={(e) => {
                           const input = e.target
                           setImagePath(input.value)
@@ -235,15 +240,15 @@ export default function UserProfile() {
                         }}
                       />
                     </div>
-                    <div className="d-flex justify-content-between align-items-center floatingCardBtns">
+                    <div className={`d-flex justify-content-between align-items-center ${styles.floatingCardBtns}`}>
                       <button
-                        className="btn floatingCardBtn border border-0 rounded-pill p-2 editImageUrl"
+                        className={`btn ${styles.floatingCardBtn} border border-0 rounded-pill p-2 ${styles.editImageUrl}`}
                         onClick={editProfileImage}
                       >
                         <i className="bi bi-pen"></i> {edit ? "Edit" : "Change"}
                       </button>
                       <button
-                        className="btn floatingCardBtn border border-0 rounded-pill p-2 removeImageUrl"
+                        className={`btn ${styles.floatingCardBtn} border border-0 rounded-pill p-2 ${styles.removeImageUrl}`}
                         onClick={removeProfileImage}
                       >
                         <i className="bi bi-trash"></i> Remove
@@ -258,7 +263,7 @@ export default function UserProfile() {
                 to="/yourOrders"
                 className="col-md-6 col-xl-4 mb-4 text-decoration-none"
               >
-                <div className="card align-items-center gap-2 cardInUserProfilePage p-2">
+                <div className={`card align-items-center gap-2 ${styles.cardInUserProfilePage} p-2`}>
                   <img
                     src={DeliveryBox}
                     alt="deliveryBox"
@@ -275,7 +280,7 @@ export default function UserProfile() {
                 to="/userAddress/user"
                 className="col-md-6 col-xl-4 mb-4 text-decoration-none"
               >
-                <div className="card align-items-center gap-3 cardInUserProfilePage p-2">
+                <div className={`card align-items-center gap-3 ${styles.cardInUserProfilePage} p-2`}>
                   <img
                     src={AddressIcon}
                     alt="addressIcon"
@@ -289,7 +294,7 @@ export default function UserProfile() {
                 </div>
               </Link>
               <div className="col-md-6 col-xl-4 mb-4">
-                <div className="card align-items-center gap-3 cardInUserProfilePage p-2">
+                <div className={`card align-items-center gap-3 ${styles.cardInUserProfilePage} p-2`}>
                   <img
                     src={Support}
                     alt="support"

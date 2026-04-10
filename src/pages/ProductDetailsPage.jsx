@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/ProductDetails.module.css"
 import Header from "../components/Header"
 import cashOnDelivery from "../assets/cash-on-delivery.png"
 import { useParams } from "react-router-dom"
@@ -346,11 +347,15 @@ export default function ProductDetailsPage() {
   }
 
   function preContentClicked() {
-    const container = document.querySelector(".compareSimilarItemsDiv")
+    const container = document.querySelector(
+      `.${styles.compareSimilarItemsDiv}`,
+    )
     container.scrollLeft -= 210
   }
   function nxtContentClicked() {
-    const container = document.querySelector(".compareSimilarItemsDiv")
+    const container = document.querySelector(
+      `.${styles.compareSimilarItemsDiv}`,
+    )
     container.scrollLeft += 280
   }
 
@@ -490,7 +495,7 @@ export default function ProductDetailsPage() {
 
   return (
     <>
-      {!user ? (
+      {userId && !user ? (
         <ProductDetailsShimmer />
       ) : (
         <>
@@ -510,18 +515,19 @@ export default function ProductDetailsPage() {
             placeHolder="Search Product"
           />
           <main className="bg-body-secondary py-3 px-4 py-sm-5 px-sm-5">
-            <div className="bg-light-subtle py-3 px-3 productDetailsContainer">
-              <section className="d-sm-flex gap-sm-4 gap-xl-5 productDetailsContainerFirstSection">
-                <div
-                  className="productDetailsImage top-0 start-0"
-                  style={{ minWidth: "200px", maxWidth: "300px" }}
-                >
+            <div
+              className={`bg-light-subtle py-3 px-3 ${styles.productDetailsContainer}`}
+            >
+              <section
+                className={`d-sm-flex gap-sm-4 gap-xl-5 ${styles.productDetailsContainerFirstSection}`}
+              >
+                <div className={`${styles.productDetailsImage} top-0 start-0`}>
                   <img
                     src={product.url}
                     alt="productImage"
-                    className="img-fluid productImage"
+                    className={`img-fluid ${styles.productImage}`}
                   />
-                  <div className="btnContainer1">
+                  <div className={`${styles.btnContainer1}`}>
                     {!user && (
                       <button
                         className="btn btn-primary w-100 my-2"
@@ -601,7 +607,9 @@ export default function ProductDetailsPage() {
                   <small className="text-primary fw-medium">
                     {product.soldBy}
                   </small>
-                  <p className="fw-bold lh-sm productDescription mb-1">
+                  <p
+                    className={`fw-bold lh-sm ${styles.productDescription} mb-1`}
+                  >
                     {product.newArrival === true && (
                       <span className="badge text-bg-success me-1">New</span>
                     )}
@@ -647,13 +655,12 @@ export default function ProductDetailsPage() {
                     off
                   </p>
                   <div>
-                    <span className="quantityText fw-bold me-2">
+                    <span className={`${styles.quantityText} fw-bold me-2`}>
                       Quantity:{" "}
                     </span>
-                    <div className="quantityBtnContainer mb-3">
+                    <div className={`${styles.quantityBtnContainer} mb-3`}>
                       <button
-                        className="rounded-circle border border-1"
-                        style={{ width: "30px", height: "30px" }}
+                        className={`rounded-circle border border-1 ${styles.decrease_count_btn}`}
                         onClick={decreaseCount}
                       >
                         {" "}
@@ -686,8 +693,7 @@ export default function ProductDetailsPage() {
                         }}
                       />
                       <button
-                        className="rounded-circle border border-1"
-                        style={{ width: "30px", height: "30px" }}
+                        className={`rounded-circle border border-1 ${styles.increase_count_btn}`}
                         onClick={increaseCount}
                       >
                         {" "}
@@ -696,8 +702,10 @@ export default function ProductDetailsPage() {
                     </div>
                   </div>
                   <div>
-                    <span className="sizeText fw-bold me-3">Size: </span>
-                    <div className="sizeBtnContainer">
+                    <span className={`${styles.sizeText} fw-bold me-3`}>
+                      Size:{" "}
+                    </span>
+                    <div className={`${styles.sizeBtnContainer}`}>
                       <button
                         className="border border-1 me-2 mb-2"
                         onClick={async (e) => {
@@ -906,23 +914,22 @@ export default function ProductDetailsPage() {
                     </div>
                   </div>
                   <hr />
-                  <div className="orderFeaturesContainerInProductDetailsPage">
+                  <div
+                    className={`${styles.orderFeaturesContainerInProductDetailsPage}`}
+                  >
                     <i
-                      className="pre-btn bi bi-chevron-left"
+                      className={`${styles.preBtn} bi bi-chevron-left`}
                       onClick={preBtnClicked}
                     ></i>
                     <i
-                      className="nxt-btn bi bi-chevron-right"
+                      className={`${styles.nxtBtn} bi bi-chevron-right`}
                       onClick={nxtBtnClicked}
                     ></i>
-                    <div className="orderFeaturesInProductDetailsPage d-flex gap-3 gap-sm-4 gap-md-5 px-sm-4">
+                    <div
+                      className={`${styles.orderFeaturesInProductDetailsPage} d-flex gap-3 gap-sm-4 gap-md-5 px-sm-4`}
+                    >
                       <div
-                        className="d-flex flex-column align-items-center gap-1 buyingFeatures returnAndExchange"
-                        style={{
-                          width: "50px",
-                          minWidth: "50px",
-                          cursor: "pointer",
-                        }}
+                        className={`d-flex flex-column align-items-center gap-1 ${styles.buyingFeatures} ${styles.returnAndExchange}`}
                         onClick={() => {
                           setReturnAndExchangePopover(
                             returnAndExchangePopover ? false : true,
@@ -946,12 +953,7 @@ export default function ProductDetailsPage() {
                         </p>
                       </div>
                       <div
-                        className="d-flex flex-column align-items-center gap-1 buyingFeatures freeDelivery"
-                        style={{
-                          width: "50px",
-                          minWidth: "50px",
-                          cursor: "pointer",
-                        }}
+                        className={`d-flex flex-column align-items-center gap-1 ${styles.buyingFeatures} ${styles.freeDelivery}`}
                         onClick={() => {
                           setFreeDeliveryPopover(
                             freeDeliveryPopover ? false : true,
@@ -974,12 +976,7 @@ export default function ProductDetailsPage() {
                         </p>
                       </div>
                       <div
-                        className="d-flex flex-column align-items-center gap-1 buyingFeatures payOnDelivery"
-                        style={{
-                          width: "50px",
-                          minWidth: "50px",
-                          cursor: "pointer",
-                        }}
+                        className={`d-flex flex-column align-items-center gap-1 ${styles.buyingFeatures} ${styles.payOnDelivery}`}
                         onClick={() => {
                           setPayOnDeliveryPopover(
                             payOnDeliveryPopover ? false : true,
@@ -1003,12 +1000,7 @@ export default function ProductDetailsPage() {
                         </p>
                       </div>
                       <div
-                        className="d-flex flex-column align-items-center gap-1 buyingFeatures secureTransaction"
-                        style={{
-                          width: "50px",
-                          minWidth: "50px",
-                          cursor: "pointer",
-                        }}
+                        className={`d-flex flex-column align-items-center gap-1 ${styles.buyingFeatures} ${styles.secureTransaction}`}
                         onClick={() => {
                           setSecureTransactionPopover(
                             secureTransactionPopover ? false : true,
@@ -1032,9 +1024,9 @@ export default function ProductDetailsPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="popoverContainer position-relative">
+                  <div className="position-relative">
                     {returnAndExchangePopover && (
-                      <div className="popover">
+                      <div className={`popover ${styles.popover}`}>
                         <div
                           className="position-absolute"
                           style={{
@@ -1116,7 +1108,7 @@ export default function ProductDetailsPage() {
                       </div>
                     )}
                     {freeDeliveryPopover && (
-                      <div className="popover">
+                      <div className={`popover ${styles.popover}`}>
                         <div
                           className="position-absolute"
                           style={{
@@ -1142,7 +1134,7 @@ export default function ProductDetailsPage() {
                       </div>
                     )}
                     {payOnDeliveryPopover && (
-                      <div className="popover">
+                      <div className={`popover ${styles.popover}`}>
                         <div
                           className="position-absolute"
                           style={{
@@ -1168,7 +1160,7 @@ export default function ProductDetailsPage() {
                       </div>
                     )}
                     {secureTransactionPopover && (
-                      <div className="popover">
+                      <div className={`popover ${styles.popover}`}>
                         <div
                           className="position-absolute"
                           style={{
@@ -1200,7 +1192,7 @@ export default function ProductDetailsPage() {
                   <div>
                     <h5>Description</h5>
                     <ul
-                      className={`mb-0 ${expand ? "" : "productDescriptionLimit"}`}
+                      className={`mb-0 ${expand ? "" : `${styles.productDescriptionLimit}`}`}
                     >
                       {product.description.map((list, index) => (
                         <li key={index}>{list}</li>
@@ -1219,7 +1211,7 @@ export default function ProductDetailsPage() {
                       )}
                     </div>
                   </div>
-                  <div className="btnContainer2">
+                  <div className={`${styles.btnContainer2}`}>
                     {!user && (
                       <button
                         className="btn btn-primary w-100 my-2"
@@ -1295,8 +1287,10 @@ export default function ProductDetailsPage() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-white checkoutSidebar ms-auto px-4 py-3 fw-medium border border-secondary">
-                  <span className="aboutProduct-sidebar-price">
+                <div
+                  className={`bg-white ${styles.checkoutSidebar} ms-auto px-4 py-3 fw-medium border border-secondary`}
+                >
+                  <span className={`${styles.aboutProduct_sidebar_price}`}>
                     <span
                       style={{ fontSize: "18px", bottom: "7px" }}
                       className="position-relative"
@@ -1315,12 +1309,14 @@ export default function ProductDetailsPage() {
                     )}
                   </span>
                   {time !== "0:0:0" && (
-                    <p className="aboutProduct-sidebar-deliveryEstimate lh-sm">
+                    <p
+                      className={`${styles.aboutProduct_sidebar_deliveryEstimate} lh-sm`}
+                    >
                       FREE delivery
                       <span className="fw-bold"> {setDeliveryDate()}</span>.
                       Order within{" "}
                       <span
-                        className="sidebar-deliveryEstimate-orderWithin"
+                        className={`${styles.sidebar_deliveryEstimate_orderWithin}`}
                         style={{ color: "green" }}
                       >
                         {time}
@@ -1349,22 +1345,28 @@ export default function ProductDetailsPage() {
                     </p>
                   )}
                   {user && user.address.length !== 0 && (
-                    <div className="d-flex align-items-start aboutProduct-sidebar-deliveryLocation">
+                    <div
+                      className={`d-flex align-items-start ${styles.aboutProduct_sidebar_deliveryLocation}`}
+                    >
                       <img
-                        className="sidebar-deliveryLocation-locationLogo"
+                        className={`${styles.sidebar_deliveryLocation_locationLogo}`}
                         src={location}
                         alt="Location icon"
                       />
-                      <p className="sidebar-deliveryLocation-locationText lh-sm">
+                      <p
+                        className={`${styles.sidebar_deliveryLocation_locationText} lh-sm`}
+                      >
                         Delivering to {user.name} - {address.city}{" "}
                         {address.pinCode}
                       </p>
                     </div>
                   )}
-                  <p className="aboutProduct-sidebar-stockStatus fw-bold fs-5">
+                  <p
+                    className={`${styles.aboutProduct_sidebar_stockStatus} fw-bold fs-5`}
+                  >
                     In stock
                   </p>
-                  <table className="aboutProduct-sidebar-table">
+                  <table className={`${styles.aboutProduct_sidebar_table}`}>
                     <tbody>
                       <tr>
                         <td>Ships from</td>
@@ -1458,11 +1460,11 @@ export default function ProductDetailsPage() {
                 </div>
               </section>
               <hr />
-              <section className="frequentlyBoughtSection">
+              <section className={`${styles.frequentlyBoughtSection}`}>
                 <h3 className="mt-2 mb-4">Frequently bought together</h3>
-                <div className="frequentlyBoughtContainer">
-                  <div className="frequently-bought-item">
-                    <div className="frequently-bought-image">
+                <div className={`${styles.frequentlyBoughtContainer}`}>
+                  <div className={`${styles.frequently_bought_item}`}>
+                    <div className={`${styles.frequently_bought_image}`}>
                       <img src={product.url} alt="Frequently bought item 1" />
                       <input type="checkbox" checked readOnly />
                     </div>
@@ -1479,7 +1481,7 @@ export default function ProductDetailsPage() {
                         ? product.name.slice(0, 70).concat("...")
                         : product.name}
                     </p>
-                    <div className="item-price">
+                    <div className={`${styles.item_price}`}>
                       <b>₹</b>
                       <span>
                         {Math.round(
@@ -1500,11 +1502,14 @@ export default function ProductDetailsPage() {
                       </span>
                     </div>
                   </div>
-                  <span className="plus-symbol" style={{ fontSize: "30px" }}>
+                  <span
+                    className={`${styles.plus_symbol}`}
+                    style={{ fontSize: "30px" }}
+                  >
                     +
                   </span>
-                  <div className="frequently-bought-item">
-                    <div className="frequently-bought-image">
+                  <div className={`${styles.frequently_bought_item}`}>
+                    <div className={`${styles.frequently_bought_image}`}>
                       <img
                         src={similarProducts[2].url}
                         alt="Frequently bought item 2"
@@ -1532,7 +1537,7 @@ export default function ProductDetailsPage() {
                         ? similarProducts[2].name.slice(0, 70).concat("...")
                         : similarProducts[2].name}
                     </Link>
-                    <div className="item-price text-black">
+                    <div className={`${styles.item_price} text-black`}>
                       <b>₹</b>
                       <span>
                         {Math.round(
@@ -1561,13 +1566,15 @@ export default function ProductDetailsPage() {
                     </div>
                   </div>
                   <span
-                    className="plus-symbol frequentlyBoughtThirdPlusSymbol"
+                    className={`${styles.plus_symbol} ${styles.frequentlyBoughtThirdPlusSymbol}`}
                     style={{ fontSize: "30px" }}
                   >
                     +
                   </span>
-                  <div className="frequently-bought-item frequentlyBoughtThirdItem">
-                    <div className="frequently-bought-image">
+                  <div
+                    className={`${styles.frequently_bought_item} ${styles.frequentlyBoughtThirdItem}`}
+                  >
+                    <div className={`${styles.frequently_bought_image}`}>
                       <img
                         src={similarProducts[3].url}
                         alt="Frequently bought item 3"
@@ -1595,7 +1602,7 @@ export default function ProductDetailsPage() {
                         ? similarProducts[3].name.slice(0, 70).concat("...")
                         : similarProducts[3].name}
                     </Link>
-                    <div className="item-price text-black">
+                    <div className={`${styles.item_price} text-black`}>
                       <b>₹</b>
                       <span>
                         {Math.round(
@@ -1623,7 +1630,7 @@ export default function ProductDetailsPage() {
                       </span>
                     </div>
                   </div>
-                  <div className="frequentlyBroughtPriceSection">
+                  <div className={`${styles.frequentlyBroughtPriceSection}`}>
                     <div className="text-center fw-medium">
                       <p className="d-inline-block fs-6 mb-0">Total Price:</p>
                       <p className="d-inline-block ms-1 mb-0">
@@ -1693,7 +1700,7 @@ export default function ProductDetailsPage() {
                       </p>
                     </div>
                     <div
-                      className="frequentlyBroughtBuyNowBtn"
+                      className={`${styles.frequentlyBroughtBuyNowBtn}`}
                       style={{ width: "250px" }}
                     >
                       {!user && (
@@ -1734,17 +1741,19 @@ export default function ProductDetailsPage() {
                   </div>
                 </div>
               </section>
-              <hr className="frequentlyBroughtSectionHr" />
-              <section className="productSpecsSection">
+              <hr className={`${styles.frequentlyBroughtSectionHr}`} />
+              <section className={`${styles.productSpecsSection}`}>
                 <h3>Product information</h3>
-                <div className="specsContainer specsContainerFirst">
+                <div
+                  className={`${styles.specsContainer} ${styles.specsContainerFirst}`}
+                >
                   <div
-                    className="Product-details mt-3 additionalInformationTable"
+                    className={`${styles.Product_details} mt-3 ${styles.additionalInformationTable}`}
                     style={{ cursor: "pointer" }}
                     onClick={() => setShowTable1(showTable1 ? false : true)}
                   >
-                    <div className="tableHeader p-2">
-                      <h4 className="additionalInformationHeader">
+                    <div className={`${styles.tableHeader} p-2`}>
+                      <h4 className={`${styles.additionalInformationHeader}`}>
                         Additional Information
                       </h4>
                       {showTable1 ? (
@@ -1753,7 +1762,9 @@ export default function ProductDetailsPage() {
                         <i className="bi bi-chevron-down"></i>
                       )}
                     </div>
-                    <table className={`${showTable1 ? "showTable" : ""}`}>
+                    <table
+                      className={`${showTable1 ? `${styles.showTable}` : ""}`}
+                    >
                       <tbody>
                         {additionalInformationKeys &&
                           additionalInformationKeys.map((key) => {
@@ -1773,19 +1784,23 @@ export default function ProductDetailsPage() {
                     </table>
                   </div>
                   <div
-                    className="Product-details mt-3 itemDetailsTable"
+                    className={`${styles.Product_details} mt-3 ${styles.itemDetailsTable}`}
                     style={{ cursor: "pointer" }}
                     onClick={() => setShowTable2(showTable2 ? false : true)}
                   >
-                    <div className="tableHeader p-2">
-                      <h4 className="itemDetailsHeader">Item Details</h4>
+                    <div className={`${styles.tableHeader} p-2`}>
+                      <h4 className={`${styles.itemDetailsHeader}`}>
+                        Item Details
+                      </h4>
                       {showTable2 ? (
                         <i className="bi bi-chevron-up"></i>
                       ) : (
                         <i className="bi bi-chevron-down"></i>
                       )}
                     </div>
-                    <table className={`${showTable2 ? "showTable" : ""}`}>
+                    <table
+                      className={`${showTable2 ? `${styles.showTable}` : ""}`}
+                    >
                       <tbody>
                         {itemDetailsKeys &&
                           itemDetailsKeys.map((key) => {
@@ -1807,21 +1822,25 @@ export default function ProductDetailsPage() {
                     </table>
                   </div>
                 </div>
-                <div className="specsContainer specsContainerSecond">
+                <div
+                  className={`${styles.specsContainer} ${styles.specsContainerSecond}`}
+                >
                   <div
-                    className="Product-details mt-3 styleTable"
+                    className={`${styles.Product_details} mt-3 ${styles.styleTable}`}
                     style={{ cursor: "pointer" }}
                     onClick={() => setShowTable3(showTable3 ? false : true)}
                   >
-                    <div className="tableHeader p-2">
-                      <h4 className="styleHeader">Style</h4>
+                    <div className={`${styles.tableHeader} p-2`}>
+                      <h4 className={`${styles.styleHeader}`}>Style</h4>
                       {showTable3 ? (
                         <i className="bi bi-chevron-up"></i>
                       ) : (
                         <i className="bi bi-chevron-down"></i>
                       )}
                     </div>
-                    <table className={`${showTable3 ? "showTable" : ""}`}>
+                    <table
+                      className={`${showTable3 ? `${styles.showTable}` : ""}`}
+                    >
                       <tbody>
                         {styleKeys &&
                           styleKeys.map((key) => {
@@ -1836,19 +1855,23 @@ export default function ProductDetailsPage() {
                     </table>
                   </div>
                   <div
-                    className="Product-details mt-3 topHighlightsTable"
+                    className={`${styles.Product_details} mt-3 ${styles.topHighlightsTable}`}
                     style={{ cursor: "pointer" }}
                     onClick={() => setShowTable4(showTable4 ? false : true)}
                   >
-                    <div className="tableHeader p-2">
-                      <h4 className="topHighlightsHeader">Top Highlights</h4>
+                    <div className={`${styles.tableHeader} p-2`}>
+                      <h4 className={`${styles.topHighlightsHeader}`}>
+                        Top Highlights
+                      </h4>
                       {showTable4 ? (
                         <i className="bi bi-chevron-up"></i>
                       ) : (
                         <i className="bi bi-chevron-down"></i>
                       )}
                     </div>
-                    <table className={`${showTable4 ? "showTable" : ""}`}>
+                    <table
+                      className={`${showTable4 ? `${styles.showTable}` : ""}`}
+                    >
                       <tbody>
                         {topHighlightsKeys &&
                           topHighlightsKeys.map((key) => {
@@ -1866,25 +1889,31 @@ export default function ProductDetailsPage() {
                   </div>
                 </div>
               </section>
-              <hr className="productSpecsSectionHr" />
-              <section className="compareSimilarItemsSection">
+              <hr className={`${styles.productSpecsSectionHr}`} />
+              <section className={`${styles.compareSimilarItemsSection}`}>
                 <h3>Compare similar items</h3>
-                <button className="pre-content" onClick={preContentClicked}>
+                <button
+                  className={`${styles.pre_content}`}
+                  onClick={preContentClicked}
+                >
                   <img src={rightArrow} alt="" />
                 </button>
-                <button className="nxt-content" onClick={nxtContentClicked}>
+                <button
+                  className={`${styles.nxt_content}`}
+                  onClick={nxtContentClicked}
+                >
                   <img src={rightArrow} alt="" />
                 </button>
-                <div className="compareSimilarItemsDiv">
-                  <table className="compareSimilarItemsTable">
+                <div className={`${styles.compareSimilarItemsDiv}`}>
+                  <table className={`${styles.compareSimilarItemsTable}`}>
                     <thead>
                       <tr>
                         <td></td>
                         <td>
-                          <div className="similarItems-item1 item">
+                          <div className={`${styles.similarItems_item1} item`}>
                             <img src={product.url} alt="" />
                             <Link
-                              className="productLink d-block"
+                              className={`${styles.productLink} d-block`}
                               style={{
                                 height: "56px",
                                 overflow: "hidden",
@@ -1922,7 +1951,7 @@ export default function ProductDetailsPage() {
                               <div className="similarItems-item1 item">
                                 <img src={product.url} alt="" />
                                 <Link
-                                  className="productLink d-block"
+                                  className={`${styles.productLink} d-block`}
                                   style={{ height: "56px", overflow: "hidden" }}
                                   to={`/productDetails/${product.id}`}
                                 >
@@ -1970,8 +1999,8 @@ export default function ProductDetailsPage() {
                       <tr>
                         <td>Price</td>
                         <td>
-                          <p className="discountedPrice my-0">
-                            <span className="discount me-2">
+                          <p className={`${styles.discountedPrice} my-0`}>
+                            <span className={`${styles.discount} me-2`}>
                               -{product.discount}
                             </span>
                             <span>
@@ -1988,7 +2017,7 @@ export default function ProductDetailsPage() {
                               )}
                             </span>
                           </p>
-                          <p className="originalPrice my-0">
+                          <p className={`${styles.originalPrice} my-0`}>
                             M.R.P: <span>{product.price}</span>
                           </p>
                         </td>
@@ -1998,8 +2027,8 @@ export default function ProductDetailsPage() {
                           )
                           return (
                             <td key={item.id}>
-                              <p className="discountedPrice my-0">
-                                <span className="discount me-2">
+                              <p className={`${styles.discountedPrice} my-0`}>
+                                <span className={`${styles.discount} me-2`}>
                                   -{product.discount}
                                 </span>
                                 <span>
@@ -2018,7 +2047,7 @@ export default function ProductDetailsPage() {
                                   )}
                                 </span>
                               </p>
-                              <p className="originalPrice my-0">
+                              <p className={`${styles.originalPrice} my-0`}>
                                 M.R.P: <span>{product.price}</span>
                               </p>
                             </td>
@@ -2181,29 +2210,31 @@ export default function ProductDetailsPage() {
                   </table>
                 </div>
               </section>
-              <hr className="compareSimilarItemsSectionHr" />
+              <hr className={`${styles.compareSimilarItemsSectionHr}`} />
               <section>
                 <h3 className="my-3">More items you may like in apparel</h3>
                 <div className="row row-gap-3">
                   {similarProducts.map((product) => (
                     <div
                       key={product.id}
-                      className="col-md-4 col-sm-6 col-xl-3 py-2 bg-body-tertiary cardContainer"
+                      className={`col-md-4 col-sm-6 col-xl-3 py-2 bg-body-tertiary ${styles.cardContainer}`}
                     >
                       <Link
                         className="text-decoration-none"
                         to={`/productDetails/${product.id}`}
                       >
-                        <div className="card border border-0 similarCards">
+                        <div
+                          className={`card border border-0 ${styles.similarCards}`}
+                        >
                           <img
                             src={product.url}
                             alt="productImage"
-                            className="img-fluid similarItemsImage"
+                            className={`img-fluid ${styles.similarItemsImage}`}
                             style={{ minHeight: "250px", maxHeight: "250px" }}
                           />
                           <div className="card-body d-flex flex-column justify-content-between align-items-center">
                             <p
-                              className="text-center m-0 lh-sm overflow-hidden listProductName lh-base"
+                              className={`text-center m-0 lh-sm overflow-hidden ${styles.listProductName} lh-base`}
                               style={{ height: "72px" }}
                             >
                               {!!Number(product.offer.replace("%", "")) && (
@@ -2260,7 +2291,7 @@ export default function ProductDetailsPage() {
                               <div>
                                 {!user ? (
                                   <button
-                                    className="btn btn-secondary w-100 mb-2 addToCart"
+                                    className={`btn btn-secondary w-100 mb-2 ${styles.addToCart}`}
                                     onClick={(e) => {
                                       e.preventDefault()
                                       e.stopPropagation()
@@ -2273,7 +2304,7 @@ export default function ProductDetailsPage() {
                                   </button>
                                 ) : (
                                   <button
-                                    className="btn btn-secondary w-100 mb-2 addToCart"
+                                    className={`btn btn-secondary w-100 mb-2 ${styles.addToCart}`}
                                     value={product.id}
                                     onClick={addToCart}
                                   >
@@ -2286,7 +2317,7 @@ export default function ProductDetailsPage() {
                               <div>
                                 {!user ? (
                                   <button
-                                    className="btn btn-outline-secondary w-100 mb-2 saveToWishlist"
+                                    className={`btn btn-outline-secondary w-100 mb-2 ${styles.saveToWishlist}`}
                                     onClick={(e) => {
                                       e.preventDefault()
                                       e.stopPropagation()
@@ -2299,7 +2330,7 @@ export default function ProductDetailsPage() {
                                   </button>
                                 ) : (
                                   <button
-                                    className="btn btn-outline-secondary w-100 mb-2 saveToWishlist"
+                                    className={`btn btn-outline-secondary w-100 mb-2 ${styles.saveToWishlist}`}
                                     value={product.id}
                                     onClick={addToWishlist}
                                   >

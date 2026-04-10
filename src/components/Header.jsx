@@ -1,3 +1,4 @@
+import styles from "../style_modules/components_modules/Header.module.css"
 import { Link, NavLink } from "react-router-dom"
 import BharatVastra from "../assets/BharatVastra.png"
 import { useState } from "react"
@@ -28,10 +29,10 @@ export default function Header({
   }, [input])
 
   function handleHamburgerMenu() {
-    const element = document.querySelector(".secondUlContainer")
-    const isNone = element.classList.contains("none")
-    const oldDisplay = isNone ? "none" : "block"
-    const newDisplay = isNone ? "block" : "none"
+    const element = document.querySelector(`.${styles.secondUlContainer}`)
+    const isNone = element.classList.contains(`${styles.none}`)
+    const oldDisplay = isNone ? `${styles.none}` : `${styles.block}`
+    const newDisplay = isNone ? `${styles.block}` : `${styles.none}`
     element.classList.remove(oldDisplay)
     element.classList.add(newDisplay)
     setClickedHamburger(clickedHamburger ? false : true)
@@ -59,14 +60,14 @@ export default function Header({
               src={BharatVastra}
               alt="BharatVastra"
               style={{ width: "70px" }}
-              className="BharatVastra"
+              className={`${styles.BharatVastra}`}
             />
-            <span className="navbarBrand fw-bold fs-5 text-secondary">
+            <span className={`${styles.navbarBrand} fw-bold fs-5 text-secondary`}>
               BharatVastra
             </span>
           </NavLink>
           {isSearchBarNeeded && (
-            <div className="input-group searchInHeader justify-content-center">
+            <div className={`input-group ${styles.searchInHeader} justify-content-center`}>
               <input
                 type="text"
                 className="border border-1 w-75 p-2"
@@ -94,7 +95,7 @@ export default function Header({
               )}
             </div>
           )}
-          <div className="hamburger" style={{ cursor: "pointer" }}>
+          <div className={`${styles.hamburger}`} style={{ cursor: "pointer" }}>
             <div
               className="d-flex align-items-center gap-1"
               onClick={handleHamburgerMenu}
@@ -139,7 +140,7 @@ export default function Header({
               )}
             </div>
           </div>
-          <div className="firstUlContainer">
+          <div className={`${styles.firstUlContainer}`}>
             <ul
               className="navbar-nav d-flex flex-row justify-content-between align-items-center"
               style={{ width: "300px" }}
@@ -153,7 +154,7 @@ export default function Header({
                   >
                     <div
                       style={{ height: "40px", fontSize: "14px" }}
-                      className="lh-sm px-1 profileBtnInHeader"
+                      className={`lh-sm px-1 ${styles.profileBtnInHeader}`}
                     >
                       <p className="my-0 fw-medium">
                         Hello, {user && user.name.split(" ")[0]}
@@ -216,7 +217,7 @@ export default function Header({
             </ul>
           </div>
           <div
-            className="secondUlContainer position-absolute none"
+            className={`${styles.secondUlContainer} position-absolute none`}
             style={{ zIndex: 3, top: "60px", right: "10px" }}
           >
             <ul
@@ -238,7 +239,7 @@ export default function Header({
                   >
                     <div
                       style={{ height: "40px", fontSize: "14px" }}
-                      className="lh-sm px-1 profileBtnInHeader"
+                      className={`lh-sm px-1 ${styles.profileBtnInHeader}`}
                     >
                       <p className="my-0 fw-medium">
                         Hello, {user && user.name.split(" ")[0]}

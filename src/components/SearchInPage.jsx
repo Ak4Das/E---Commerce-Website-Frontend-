@@ -1,3 +1,4 @@
+import styles from "../style_modules/components_modules/SearchPage.module.css"
 import { useState } from "react"
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
@@ -38,12 +39,12 @@ export default function searchInPage({
     <>
       {isSearchBarNeeded && (
         <div
-          className={`input-group searchInPage bg-light py-2 ${position}`}
+          className={`input-group ${styles.searchInPage} bg-light py-2 ${position}`}
           style={{ top: `${top}`, zIndex }}
         >
           <input
             type="text"
-            className={`border border-1 ${margin} p-2 searchInputInPage`}
+            className={`border border-1 ${margin} p-2 ${styles.searchInputInPage}`}
             style={{ outline: "none" }}
             placeholder={placeHolder}
             aria-label={placeHolder}
@@ -53,7 +54,7 @@ export default function searchInPage({
           {page && isCloth ? (
             <Link
               to={`/products/${searchProducts[0].commonCategory}`}
-              className="btn btn-warning searchBtnInPage1"
+              className={`btn btn-warning ${styles.searchBtnInPage1}`}
               style={{ zIndex: 0 }}
               id="button-addon2"
             >
@@ -61,7 +62,7 @@ export default function searchInPage({
             </Link>
           ) : (
             <button
-              className="btn btn-warning searchBtnInPage1"
+              className={`btn btn-warning ${styles.searchBtnInPage1}`}
               style={{ zIndex: 0 }}
               type="button"
               id="button-addon2"
@@ -73,7 +74,7 @@ export default function searchInPage({
           {page && isCloth ? (
             <Link
               to={`/products/${searchProducts[0].commonCategory}`}
-              className="btn btn-warning searchBtnInPage2"
+              className={`btn btn-warning ${styles.searchBtnInPage2}`}
               style={{ zIndex: 0 }}
               id="button-addon2"
             >
@@ -81,7 +82,7 @@ export default function searchInPage({
             </Link>
           ) : (
             <button
-              className="btn btn-warning searchBtnInPage2"
+              className={`btn btn-warning ${styles.searchBtnInPage2}`}
               style={{ zIndex: 0 }}
               type="button"
               id="button-addon2"

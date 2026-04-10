@@ -1,0 +1,21 @@
+@media (min-width: 400px) {
+  .searchBtnInPage2 {
+    display: none !important;
+  }
+  .searchInputInPage {
+    width: 50% !important;
+  }
+}
+@media (min-width: 768px) {
+  .searchInPage {
+    display: none !important;
+  }
+}
+@media (max-width: 400px) {
+  .searchBtnInPage1 {
+    display: none !important;
+  }
+  .searchInputInPage {
+    width: 75% !important;
+  }
+}

@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/DiwaliSale.module.css"
 import Header from "../components/Header"
 import diwaliDecoration5 from "../assets/diwaliDecoration5.png"
 import background2 from "../assets/background2.png"
@@ -38,7 +39,7 @@ export default function DiwaliSale() {
 
   return (
     <>
-      {!user ? (
+      {userId && !user ? (
         <DiwaliSaleShimmer />
       ) : (
         <>
@@ -59,7 +60,7 @@ export default function DiwaliSale() {
           />
           <main className="mx-5 my-4">
             <section
-              className="diwaliSaleSection1"
+              className={`${styles.diwaliSaleSection1}`}
               style={{
                 backgroundImage: `url(${background2})`,
                 backgroundSize: "contain",
@@ -69,88 +70,67 @@ export default function DiwaliSale() {
                 className="d-flex justify-content-center align-items-center gap-3 gap-md-5"
                 style={{ paddingBlock: "2vw" }}
               >
-                <h1 className="" style={{ fontSize: "4vw", color: "#ff7440" }}>
-                  Happy
-                </h1>
+                <h1 className={`${styles.headingText}`}>Happy</h1>
                 <img
                   src={diwaliDecoration5}
-                  className=""
                   style={{ width: "5vw" }}
                   alt="diwaliDecoration"
                 />
-                <h1 className="" style={{ fontSize: "4vw", color: "#ff7440" }}>
-                  Diwali
-                </h1>
+                <h1 className={`${styles.headingText}`}>Diwali</h1>
               </div>
               <div>
                 <div className="row row-gap-3 row-gap-sm-4">
                   <div className="col-12 col-xxl-6">
                     <div
-                      className="diwaliSaleCard card p-1 flex-row justify-content-around"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(-250deg, #f5b7d4 40%, #e595b8 30%)",
-                      }}
+                      className={`${styles.diwaliSaleCard} ${styles.sareeCard} card p-1 flex-row justify-content-around`}
                     >
                       <div className="w-25 d-flex flex-column justify-content-around">
                         <div className="">
                           <span
-                            className="DiwaliSaleProductName1 d-inline-block bg-light px-1 px-sm-2 rounded-pill"
-                            style={{
-                              fontFamily: '"Lexend Deca", sans-serif',
-                              color: "#F5B7D4",
-                            }}
+                            className={`${styles.DiwaliSaleProductName1} d-inline-block bg-light px-1 px-sm-2 rounded-pill`}
                           >
                             Saree
                           </span>
                           <img
                             src={offer2}
-                            className="diwaliSalePageOffer1 d-block img-fluid w-100"
+                            className={`${styles.diwaliSalePageOffer1} d-block img-fluid w-100`}
                             alt="offer"
                           />
                         </div>
                         <Link
                           to={`/saleProducts/Saree`}
-                          className="diwaliSaleCheckBtn btn btn-outline-primary rounded-pill"
+                          className={`${styles.diwaliSaleCheckBtn} btn btn-outline-primary rounded-pill`}
                         >
                           Check
                         </Link>
                       </div>
                       <img
                         src={saree1}
-                        className="img-fluid h-100 sareeImageInDiwaliSalePage"
+                        className={`img-fluid h-100 ${styles.sareeImageInDiwaliSalePage}`}
                         alt="saree"
                       />
                     </div>
                   </div>
                   <div className="col-12 col-xxl-6">
                     <div
-                      className="diwaliSaleCard card p-1 flex-row justify-content-around"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(-250deg, #384967 40%, #6a6561 30%)",
-                      }}
+                      className={`${styles.diwaliSaleCard} ${styles.suitPantCard} card p-1 flex-row justify-content-around`}
                     >
                       <div className="w-25 d-flex flex-column justify-content-around">
                         <div className="">
                           <span
-                            className="DiwaliSaleProductName2 d-inline-block bg-light px-1 px-sm-2 rounded-pill"
-                            style={{
-                              fontFamily: '"Lexend Deca", sans-serif',
-                              color: "#384967",
-                            }}
+                            className={`${styles.DiwaliSaleProductName2} d-inline-block bg-light px-1 px-sm-2 rounded-pill`}
                           >
                             Suit Pant
                           </span>
                           <img
                             src={offer2}
-                            className="diwaliSalePageOffer2 d-block img-fluid w-100"
+                            className={`${styles.diwaliSalePageOffer2} d-block img-fluid w-100`}
                             alt="offer"
                           />
                         </div>
                         <Link
                           to={`/saleProducts/Suit`}
-                          className="diwaliSaleCheckBtn diwaliSaleCheckBtn2 btn btn-outline-info rounded-pill"
+                          className={`${styles.diwaliSaleCheckBtn} ${styles.diwaliSaleCheckBtn2} btn btn-outline-info rounded-pill`}
                         >
                           Check
                         </Link>
@@ -164,32 +144,24 @@ export default function DiwaliSale() {
                   </div>
                   <div className="col-12 col-xxl-6">
                     <div
-                      className="diwaliSaleCard card p-1 flex-row justify-content-around"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(-250deg, #EBD0A3 40%, #FAF398 30%)",
-                      }}
+                      className={`${styles.diwaliSaleCard} ${styles.lahengaCard} card p-1 flex-row justify-content-around`}
                     >
                       <div className="w-25 d-flex flex-column justify-content-around">
                         <div className="">
                           <span
-                            className="DiwaliSaleProductName3 d-inline-block bg-light px-1 px-sm-2 rounded-pill"
-                            style={{
-                              fontFamily: '"Lexend Deca", sans-serif',
-                              color: "#EBD0A3",
-                            }}
+                            className={`${styles.DiwaliSaleProductName3} d-inline-block bg-light px-1 px-sm-2 rounded-pill`}
                           >
                             Lahenga
                           </span>
                           <img
                             src={offer2}
-                            className="diwaliSalePageOffer3 d-block img-fluid w-100"
+                            className={`${styles.diwaliSalePageOffer3} d-block img-fluid w-100`}
                             alt="offer"
                           />
                         </div>
                         <Link
                           to={`/saleProducts/Lehenga`}
-                          className="diwaliSaleCheckBtn diwaliSaleCheckBtn3 btn btn-outline-primary rounded-pill"
+                          className={`${styles.diwaliSaleCheckBtn} ${styles.diwaliSaleCheckBtn3} btn btn-outline-primary rounded-pill`}
                         >
                           Check
                         </Link>
@@ -203,32 +175,24 @@ export default function DiwaliSale() {
                   </div>
                   <div className="col-12 col-xxl-6">
                     <div
-                      className="diwaliSaleCard card p-1 flex-row justify-content-around"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(-250deg, #48484a 40%, #252324 30%)",
-                      }}
+                      className={`${styles.diwaliSaleCard} ${styles.shoesCard} card p-1 flex-row justify-content-around`}
                     >
                       <div className="w-25 d-flex flex-column justify-content-around">
                         <div className="">
                           <span
-                            className="DiwaliSaleProductName4 d-inline-block bg-light px-1 px-sm-2 rounded-pill"
-                            style={{
-                              fontFamily: '"Lexend Deca", sans-serif',
-                              color: "#48484A",
-                            }}
+                            className={`${styles.DiwaliSaleProductName4} d-inline-block bg-light px-1 px-sm-2 rounded-pill`}
                           >
                             Shoes
                           </span>
                           <img
                             src={offer2}
-                            className="diwaliSalePageOffer4 d-block img-fluid w-100"
+                            className={`${styles.diwaliSalePageOffer4} d-block img-fluid w-100`}
                             alt="offer"
                           />
                         </div>
                         <Link
                           to={`/saleProducts/Shoes`}
-                          className="diwaliSaleCheckBtn diwaliSaleCheckBtn4 btn btn-outline-info rounded-pill"
+                          className={`${styles.diwaliSaleCheckBtn} ${styles.diwaliSaleCheckBtn4} btn btn-outline-info rounded-pill`}
                         >
                           Check
                         </Link>
@@ -244,32 +208,24 @@ export default function DiwaliSale() {
                   </div>
                   <div className="col-12 col-xxl-6">
                     <div
-                      className="diwaliSaleCard card p-1 flex-row justify-content-around"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(-250deg, #f42b4e82 40%, #fda47898 30%)",
-                      }}
+                      className={`${styles.diwaliSaleCard} ${styles.panjabiCard} card p-1 flex-row justify-content-around`}
                     >
                       <div className="w-25 d-flex flex-column justify-content-around">
                         <div className="">
                           <span
-                            className="DiwaliSaleProductName5 d-inline-block bg-light px-1 px-sm-2 rounded-pill"
-                            style={{
-                              fontFamily: '"Lexend Deca", sans-serif',
-                              color: "#F992A4",
-                            }}
+                            className={`${styles.DiwaliSaleProductName5} d-inline-block bg-light px-1 px-sm-2 rounded-pill`}
                           >
                             Panjabi
                           </span>
                           <img
                             src={offer2}
-                            className="diwaliSalePageOffer5 d-block img-fluid w-100"
+                            className={`${styles.diwaliSalePageOffer5} d-block img-fluid w-100`}
                             alt="offer"
                           />
                         </div>
                         <Link
                           to={`/saleProducts/Panjabi`}
-                          className="diwaliSaleCheckBtn diwaliSaleCheckBtn5 btn btn-outline-primary rounded-pill"
+                          className={`${styles.diwaliSaleCheckBtn} ${styles.diwaliSaleCheckBtn5} btn btn-outline-primary rounded-pill`}
                         >
                           Check
                         </Link>
@@ -283,32 +239,24 @@ export default function DiwaliSale() {
                   </div>
                   <div className="col-12 col-xxl-6">
                     <div
-                      className="diwaliSaleCard card p-1 flex-row justify-content-around"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(-250deg, #252424d6 40%, #c4bfbfb5 30%)",
-                      }}
+                      className={`${styles.diwaliSaleCard} ${styles.jeansCard} card p-1 flex-row justify-content-around`}
                     >
                       <div className="w-25 d-flex flex-column justify-content-around">
                         <div className="">
                           <span
-                            className="DiwaliSaleProductName6 d-inline-block bg-light px-1 px-sm-2 rounded-pill"
-                            style={{
-                              fontFamily: '"Lexend Deca", sans-serif',
-                              color: "#484747",
-                            }}
+                            className={`${styles.DiwaliSaleProductName6} d-inline-block bg-light px-1 px-sm-2 rounded-pill`}
                           >
                             Jeans
                           </span>
                           <img
                             src={offer2}
-                            className="diwaliSalePageOffer6 d-block img-fluid w-100"
+                            className={`${styles.diwaliSalePageOffer6} d-block img-fluid w-100`}
                             alt="offer"
                           />
                         </div>
                         <Link
                           to={`/saleProducts/Jeans`}
-                          className="diwaliSaleCheckBtn diwaliSaleCheckBtn6 btn btn-outline-info rounded-pill"
+                          className={`${styles.diwaliSaleCheckBtn} ${styles.diwaliSaleCheckBtn6} btn btn-outline-info rounded-pill`}
                         >
                           Check
                         </Link>
@@ -323,12 +271,7 @@ export default function DiwaliSale() {
                 </div>
               </div>
             </section>
-            <section
-              className="mt-4 mt-md-5 py-4"
-              style={{
-                backgroundImage: "radial-gradient(#dcd350 20%, #F73A0A)",
-              }}
-            >
+            <section className={`mt-4 mt-md-5 py-4 ${styles.couponSection}`}>
               <div className="w-50 d-flex flex-column mx-auto">
                 <div className="d-flex">
                   <div>
@@ -378,12 +321,12 @@ export default function DiwaliSale() {
               </div>
               <div className="d-flex align-items-center">
                 <div
-                  className="coupon"
+                  className={`${styles.coupon}`}
                   style={{ padding: "2vw", minWidth: "140px" }}
                 >
                   <div className="">
                     <label
-                      className="form-label fw-bold text-light lh-1 couponInputLavel"
+                      className={`form-label fw-bold text-light lh-1 ${styles.couponInputLavel}`}
                       style={{ fontSize: "2vw" }}
                     >
                       Save 10%
@@ -393,21 +336,19 @@ export default function DiwaliSale() {
                     <input
                       type="text"
                       value="HAPPYDIWALI"
-                      className="form-control fw-bold couponInput"
-                      style={{ minWidth: "140px", maxWidth: "140px" }}
-                      onChange={() => {}}
+                      className={`form-control fw-bold ${styles.couponInput}`}
                     ></input>
                   </div>
                   <div className="">
                     <span
-                      className="couponValid form-text fw-bold text-light"
+                      className={`${styles.couponValid} form-text fw-bold text-light`}
                       style={{ fontSize: "1vw" }}
                     >
                       OFFER VALID TILL 30th NOVEMBER
                     </span>
                   </div>
                 </div>
-                <div className="girlHoldDiya1 w-75">
+                <div className={`${styles.girlHoldDiya1} w-75`}>
                   <img
                     src={girlHoldDiya1}
                     className="img-fluid d-block ms-auto w-25"

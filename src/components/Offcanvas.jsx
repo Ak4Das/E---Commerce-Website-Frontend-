@@ -1,3 +1,4 @@
+import styles from "../style_modules/components_modules/Offcanvas.module.css"
 import crossBtn from "../assets/close.png"
 import { useState } from "react"
 
@@ -74,13 +75,13 @@ export default function Offcanvas({
           left: "-305px",
           zIndex: 2,
         }}
-        className="bg-light-subtle px-5 py-3 d-inline-block offcanvasFilterForm"
+        className={`bg-light-subtle px-5 py-3 d-inline-block ${styles.offcanvasFilterForm}`}
       >
         {open ? (
           <img
             src={crossBtn}
             alt="close button"
-            className="logo"
+            className={`${styles.logo}`}
             style={{
               position: "relative",
               left: "265px",

@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/ProductListing.module.css"
 import { useState } from "react"
 import GetClothsData from "../components/GetClothsData"
 import Header from "../components/Header"
@@ -359,7 +360,7 @@ export default function ProductListingPage() {
 
   return (
     <>
-      {!user ? (
+      {userId && !user ? (
         <ProductListingShimmer />
       ) : (
         <>
@@ -395,23 +396,23 @@ export default function ProductListingPage() {
             />
             <div className="mx-5 my-3">
               {showHamburgerPointer && (
-                <div className="hamburgerPointer position-fixed">
+                <div className={`${styles.hamburgerPointer} position-fixed`}>
                   <div
-                    className="leftPointerDiv1 position-absolute"
+                    className={`${styles.leftPointerDiv1} position-absolute`}
                     style={{ width: "46px", height: "46px" }}
                   ></div>
                   <div
-                    className="leftPointerDiv2 position-absolute"
+                    className={`${styles.leftPointerDiv2} position-absolute`}
                     style={{ width: "50px", height: "50px" }}
                   ></div>
                   <div
-                    className="leftPointerDiv3 position-absolute"
+                    className={`${styles.leftPointerDiv3} position-absolute`}
                     style={{ width: "50px", height: "50px" }}
                   ></div>
                   <p className="my-0 ms-4">Use Filters</p>
                 </div>
               )}
-              <h4 className="listingPageHeading text-secondary">
+              <h4 className={`${styles.listingPageHeading} text-secondary`}>
                 Showing All Products
               </h4>
               <div className="row position-relative" style={{ zIndex: 1 }}>
@@ -424,11 +425,11 @@ export default function ProductListingPage() {
                       className="text-decoration-none"
                       to={`/productDetails/${product.id}`}
                     >
-                      <div className="card productCard">
-                        <div className="ProductImageContainer">
+                      <div className={`card ${styles.productCard}`}>
+                        <div className={`${styles.ProductImageContainer}`}>
                           <img
                             src={product.url}
-                            className="img-fluid listProductImage"
+                            className={`img-fluid ${styles.listProductImage}`}
                             style={{ height: "300px" }}
                             alt="productImage"
                           />
@@ -436,7 +437,7 @@ export default function ProductListingPage() {
                         <div className="card-body d-flex flex-column justify-content-between w-100">
                           <p
                             id="name"
-                            className="my-0 lh-sm listProductName lh-base"
+                            className={`my-0 lh-sm ${styles.listProductName} lh-base`}
                           >
                             {!!Number(product.offer.replace("%", "")) && (
                               <span className="badge text-bg-warning me-1">
@@ -461,7 +462,7 @@ export default function ProductListingPage() {
                             <RatingBar rating={product.rating} />
                             <span
                               style={{ fontSize: "15px" }}
-                              className="ms-1 rating-listingPage"
+                              className={`ms-1 ${styles.rating_listingPage}`}
                             >
                               {product.rating}
                             </span>
@@ -496,7 +497,7 @@ export default function ProductListingPage() {
                             <div>
                               {!user ? (
                                 <button
-                                  className="btn btn-secondary w-100 mb-1 addToCart"
+                                  className={`btn btn-secondary w-100 mb-1 ${styles.addToCart}`}
                                   onClick={(e) => {
                                     e.preventDefault()
                                     e.stopPropagation()
@@ -510,7 +511,7 @@ export default function ProductListingPage() {
                               ) : (
                                 <button
                                   value={product.id}
-                                  className="btn btn-secondary w-100 mb-1 addToCart"
+                                  className={`btn btn-secondary w-100 mb-1 ${styles.addToCart}`}
                                   onClick={addToCart}
                                 >
                                   {product.addToCart
@@ -522,7 +523,7 @@ export default function ProductListingPage() {
                             <div>
                               {!user ? (
                                 <button
-                                  className="btn btn-outline-secondary w-100 saveToWishlist"
+                                  className={`btn btn-outline-secondary w-100 ${styles.saveToWishlist}`}
                                   onClick={(e) => {
                                     e.preventDefault()
                                     e.stopPropagation()
@@ -536,7 +537,7 @@ export default function ProductListingPage() {
                               ) : (
                                 <button
                                   value={product.id}
-                                  className="btn btn-outline-secondary w-100 saveToWishlist"
+                                  className={`btn btn-outline-secondary w-100 ${styles.saveToWishlist}`}
                                   onClick={addToWishlist}
                                 >
                                   {product.addToWishList

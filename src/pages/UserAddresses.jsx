@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/UserAddresses.module.css"
 import Header from "../components/Header"
 import Plus from "../assets/plus.png"
 import { Link, useParams } from "react-router-dom"
@@ -67,7 +68,7 @@ export default function UserAddresses() {
         <div className="container mt-3">
           <h2>Your Addresses</h2>
           <div className="row row-gap-4 mt-4">
-            <div className="col-sm-6 col-lg-4 addAddressBtn1">
+            <div className={`col-sm-6 col-lg-4 ${styles.addAddressBtn1}`}>
               <Link
                 to="/addAddress"
                 className="card align-items-center justify-content-center text-decoration-none text-dark"
@@ -82,7 +83,8 @@ export default function UserAddresses() {
                 </div>
               </Link>
             </div>
-            {user && user.address.length !== 0 &&
+            {user &&
+              user.address.length !== 0 &&
               user.address.map((address) => (
                 <div
                   key={address.id}
@@ -131,14 +133,14 @@ export default function UserAddresses() {
                         <div>
                           <Link
                             to={`/editAddress/${address.id}`}
-                            className="text-decoration-none border border-0 bg-white me-1 fw-medium text-primary addressEditOrRemove"
+                            className={`text-decoration-none border border-0 bg-white me-1 fw-medium text-primary ${styles.addressEditOrRemove}`}
                             style={{ cursor: "pointer" }}
                           >
                             Edit
                           </Link>
                           <span className="fw-medium text-primary">|</span>
                           <button
-                            className="border border-0 bg-white ms-1 fw-medium text-primary addressEditOrRemove"
+                            className={`border border-0 bg-white ms-1 fw-medium text-primary ${styles.addressEditOrRemove}`}
                             style={{ cursor: "pointer" }}
                             value={address.id}
                             onClick={removeAddress}
@@ -177,7 +179,7 @@ export default function UserAddresses() {
           )}
         </div>
         <div
-          className="fs-3 position-fixed addAddressBtn2 rounded-circle bg-warning"
+          className={`fs-3 position-fixed ${styles.addAddressBtn2} rounded-circle bg-warning`}
           style={{
             right: "30px",
             top: "86%",

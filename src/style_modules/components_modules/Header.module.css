@@ -1,0 +1,80 @@
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+
+@media (min-width: 321px) {
+  .BharatVastra {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .searchInHeader {
+    width: 300px !important;
+  }
+}
+@media (min-width: 992px) {
+  .hamburger {
+    display: none;
+  }
+  .secondUlContainer {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .searchInHeader {
+    width: 400px !important;
+  }
+}
+@media (max-width: 991px) {
+  .firstUlContainer {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .searchInHeader {
+    display: none !important;
+  }
+  .firstUlContainer {
+    display: block !important;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+@media (575px<width<767px) {
+  .secondUlContainer {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  .firstUlContainer {
+    display: none !important;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+@media (max-width: 350px) {
+  .searchInHeader {
+    display: none;
+  }
+}
+@media (max-width: 320px) {
+  .navbarBrand {
+    display: none;
+  }
+}
+
+.profileBtnInHeader:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+@media (min-width: 321px) {
+  .totalOrder {
+    display: none;
+  }
+}
+@media (min-width: 420px) {
+  .shipTo {
+    display: none;
+  }
+}
+@media (max-width: 420px) {
+  .shipToCard {
+    display: none;
+  }
+  .productYourOrder {
+    flex-direction: column;
+  }
+}
+@media (max-width: 320px) {
+  .totalOrderCard {
+    display: none;
+  }
+}
+
+.userAddressFloatingCard:hover {
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+.viewOrderDetailsYourOrders:hover {
+  text-decoration: underline !important;
+}

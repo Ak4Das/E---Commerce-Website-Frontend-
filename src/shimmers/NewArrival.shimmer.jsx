@@ -1,5 +1,5 @@
 import { HeaderShimmer } from "./styled.components"
-import styles from "../style_modules/NewArrivalShimmer.module.css"
+import styles from "../style_modules/shimmer_modules/NewArrivalShimmer.module.css"
 
 export default function NewArrivalShimmer() {
   return (

@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/NewArrival.module.css"
 import Header from "../components/Header"
 import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
@@ -228,7 +229,7 @@ export default function NewArrival() {
 
   return (
     <>
-      {!user ? (
+      {userId && !user ? (
         <NewArrivalShimmer />
       ) : (
         <>
@@ -258,17 +259,20 @@ export default function NewArrival() {
                       className="text-decoration-none"
                       to={`/productDetails/${product.id}`}
                     >
-                      <div className="card productCard">
-                        <div className="ProductImageContainer">
+                      <div className={`card ${styles.productCard}`}>
+                        <div className={`${styles.ProductImageContainer}`}>
                           <img
                             src={product.url}
-                            className="img-fluid listProductImage"
+                            className={`img-fluid ${styles.listProductImage}`}
                             style={{ height: "300px" }}
                             alt="productImage"
                           />
                         </div>
                         <div className="card-body d-flex flex-column justify-content-between w-100">
-                          <p id="name" className="my-0 lh-sm listProductName">
+                          <p
+                            id="name"
+                            className={`my-0 lh-sm ${styles.listProductName}`}
+                          >
                             <span className="badge text-bg-success me-1">
                               New
                             </span>
@@ -280,13 +284,13 @@ export default function NewArrival() {
                             <RatingBar rating={product.rating} />
                             <span
                               style={{ fontSize: "15px" }}
-                              className="ms-1 rating-listingPage"
+                              className={`ms-1 ${styles.rating_listingPage}`}
                             >
                               {product.rating}
                             </span>
                           </div>
                           <div>
-                            <p className="discount my-0">
+                            <p className={`${styles.discount} my-0`}>
                               <b>₹</b>
                               {(
                                 product.price -
@@ -307,7 +311,7 @@ export default function NewArrival() {
                             <div>
                               {!user ? (
                                 <button
-                                  className="btn btn-secondary w-100 mb-1 addToCart"
+                                  className={`btn btn-secondary w-100 mb-1 ${styles.addToCart}`}
                                   onClick={(e) => {
                                     e.preventDefault()
                                     e.stopPropagation()
@@ -321,7 +325,7 @@ export default function NewArrival() {
                               ) : (
                                 <button
                                   value={product.id}
-                                  className="btn btn-secondary w-100 mb-1 addToCart"
+                                  className={`btn btn-secondary w-100 mb-1 ${styles.addToCart}`}
                                   onClick={addToCart}
                                 >
                                   {product.addToCart
@@ -333,7 +337,7 @@ export default function NewArrival() {
                             <div>
                               {!user ? (
                                 <button
-                                  className="btn btn-outline-secondary w-100 saveToWishlist"
+                                  className={`btn btn-outline-secondary w-100 ${styles.saveToWishlist}`}
                                   onClick={(e) => {
                                     e.preventDefault()
                                     e.stopPropagation()
@@ -347,7 +351,7 @@ export default function NewArrival() {
                               ) : (
                                 <button
                                   value={product.id}
-                                  className="btn btn-outline-secondary w-100 saveToWishlist"
+                                  className={`btn btn-outline-secondary w-100 ${styles.saveToWishlist}`}
                                   onClick={addToWishlist}
                                 >
                                   {product.addToWishList

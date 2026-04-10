@@ -1,5 +1,5 @@
 import { HeaderShimmer } from "./styled.components"
-import styles from "../style_modules/CartPageShimmer.module.css"
+import styles from "../style_modules/shimmer_modules/CartPageShimmer.module.css"
 
 export default function CartPageShimmer() {
   return (

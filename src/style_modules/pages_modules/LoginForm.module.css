@@ -1,0 +1,22 @@
+@media (max-width: 991px) {
+  .loginForm {
+    width: 75% !important;
+  }
+}
+@media (max-width: 499px) {
+  .loginForm {
+    width: 85% !important;
+  }
+}
+@media (max-width: 400px) {
+  .loginForm {
+    padding-inline: 24px !important;
+  }
+}
+@media (max-width: 291px) {
+  .loginForm {
+    width: 95% !important;
+    padding-inline: 12px !important;
+    padding-block: 12px !important;
+  }
+}

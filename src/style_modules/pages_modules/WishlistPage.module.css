@@ -1,0 +1,64 @@
+@media (min-width: 768px) {
+  .saveToWishlist {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 900px) {
+  .saveToWishlist {
+    font-size: 15px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .saveToWishlist {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 1300px) {
+  .saveToWishlist {
+    font-size: 15px !important;
+  }
+}
+@media (min-width: 1400px) {
+  .saveToWishlist {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 1500px) {
+  .saveToWishlist {
+    font-size: 14px !important;
+  }
+}
+@media (min-width: 1600px) {
+  .saveToWishlist {
+    font-size: 15px !important;
+  }
+}
+@media (max-width: 768px) {
+  .saveToWishlist {
+    font-size: 15px !important;
+  }
+}
+@media (max-width: 575px) {
+  .cardContainer {
+    width: 350px !important;
+    margin: auto !important;
+  }
+}
+@media (max-width: 320px) {
+  .saveToWishlist {
+    font-size: 12px !important;
+  }
+}
+@media (max-width: 291px) {
+  .saveToWishlist {
+    font-size: 10px !important;
+  }
+}
+@media (max-width: 270px) {
+  .saveToWishlist {
+    font-size: 8px !important;
+  }
+  .moveToCart {
+    font-size: 12px;
+  }
+}

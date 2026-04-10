@@ -1,0 +1,247 @@
+.AtmCardDetailsForm {
+  width: 700px;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.4);
+}
+
+.increaseDecreaseQuantityBtn {
+  width: 100px;
+}
+
+.decreaseQuantityBtn,
+.increaseQuantityBtn {
+  margin-top: -5px;
+}
+
+.quantityInput {
+  width: 30px;
+  outline: none;
+  text-align: center;
+}
+
+.cursor_pointer {
+  cursor: pointer;
+}
+
+.floatingAddCardBodyText {
+  width: 50%;
+  padding-left: 16px;
+  border-left: 1px solid black;
+}
+
+.productName {
+  height: 72px;
+  overflow: hidden;
+}
+
+.AddCardLink2 {
+  display: none;
+}
+
+.floatingAddCardBodyInput {
+  margin-left: 8px;
+}
+
+@media (min-width: 321px) {
+  .sizeBtnContainer {
+    display: inline-block !important;
+  }
+  .sizeText {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 500px) {
+  .cardInPaymentMethodPage {
+    flex-direction: row !important;
+    height: 255px !important;
+  }
+  .productImageContainerDiv {
+    width: 75%;
+  }
+}
+@media (min-width: 992px) {
+  .productImageContainerDiv {
+    width: 30%;
+  }
+  .btnInEditOrderPage {
+    width: 50%;
+  }
+}
+@media (min-width: 1400px) {
+  .btnInEditOrderPage {
+    width: 30%;
+  }
+}
+@media (max-width: 991px) {
+  .floatingAddCardBody {
+    flex-direction: column;
+  }
+  .floatingAddCardBodyText {
+    border: none !important;
+    padding-left: 0px !important;
+    margin-top: 25px;
+    width: 100% !important;
+    font-weight: 600;
+  }
+  .AtmCardDetailsForm {
+    width: 500px !important;
+  }
+  .floatingAddCardForm {
+    width: 100% !important;
+  }
+}
+@media (max-width: 767px) {
+  .AtmCardDetailsForm {
+    width: 400px !important;
+  }
+  .floatingCardHeaderText {
+    font-size: 18px;
+  }
+}
+@media (max-width: 575px) {
+  .AtmCardDetailsForm {
+    width: 350px !important;
+  }
+}
+@media (max-width: 499px) {
+  .paymentMethodHeading {
+    font-size: 16px !important;
+  }
+  .discountCard {
+    font-size: 13px !important;
+  }
+  .userName {
+    font-size: 16px !important;
+  }
+  .userAddress {
+    font-size: 13px;
+  }
+  .changeBtn {
+    font-size: 15px !important;
+  }
+  .deliveryDate {
+    font-size: 18px !important;
+  }
+  .cardInPaymentMethodPage {
+    flex-direction: column !important;
+    max-width: 300px;
+    margin-inline: auto !important;
+  }
+  .productImageContainerDiv {
+    width: 75%;
+    margin-top: 12px !important;
+  }
+}
+@media (max-width: 450px) {
+  .AddCardLink {
+    font-size: 15px !important;
+  }
+  .AtmCardImg {
+    display: none !important;
+  }
+  .addCardBtn {
+    display: none !important;
+  }
+  .cardImage {
+    width: 30px !important;
+  }
+  .AtmCardDetailsForm {
+    width: 300px !important;
+  }
+  .floatingCardHeaderCrossBtn {
+    width: 12px !important;
+  }
+  .floatingAddCardBodyInput {
+    margin-left: 0px !important;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  .floatingAddCardBodyBr {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .deliveryAddressSection {
+    flex-direction: column !important;
+  }
+  .paymentMethodSection {
+    flex-direction: column !important;
+  }
+  .changeBtn {
+    font-size: 14px !important;
+  }
+  .AtmCardDetailsForm {
+    width: 250px !important;
+  }
+}
+@media (max-width: 370px) {
+  .AddCardLink {
+    display: none;
+  }
+  .AddCardLink2 {
+    display: block !important;
+  }
+  .paymentViaCashOnDeliveryLabel {
+    font-size: 15px;
+  }
+  .paymentViaCashOnDeliveryText {
+    font-size: 15px;
+  }
+}
+@media (max-width: 350px) {
+  .paymentMethodMainElement {
+    margin-inline: 20px;
+  }
+}
+@media (max-width: 320px) {
+  .BanksFacilitateNetBanking {
+    width: 140px !important;
+    font-size: 12px !important;
+  }
+  .cardImagesInPaymentMethodPage {
+    flex-wrap: wrap !important;
+  }
+  .useThisPaymentMethodBtn {
+    font-size: 14px !important;
+  }
+  .sizeBtnContainer {
+    display: block !important;
+  }
+  .sizeText {
+    display: block !important;
+    margin-bottom: 5px !important;
+  }
+  .btnInEditOrderPage {
+    flex-direction: column !important;
+  }
+  .deliveryDate {
+    font-size: 16px !important;
+  }
+  .AtmCardDetailsForm {
+    width: 220px !important;
+  }
+  .floatingCardHeaderText {
+    font-size: 10px;
+  }
+}
+@media (max-width: 291px) {
+  .useThisPaymentMethodBtn {
+    font-size: 11px !important;
+  }
+  .deliveryDate {
+    font-size: 13.5px !important;
+  }
+  .paymentViaCardLabel {
+    font-size: 14px;
+  }
+  .paymentViaCashOnDeliveryLabel {
+    font-size: 13px;
+  }
+  .paymentViaCashOnDeliveryText {
+    font-size: 13px;
+  }
+  .floatingCardHeaderText {
+    font-size: 12px;
+  }
+}

@@ -1,5 +1,5 @@
 import { HeaderShimmer } from "./styled.components"
-import styles from "../style_modules/UserProfileShimmer.module.css"
+import styles from "../style_modules/shimmer_modules/UserProfileShimmer.module.css"
 
 export default function UserProfileShimmer() {
   return (

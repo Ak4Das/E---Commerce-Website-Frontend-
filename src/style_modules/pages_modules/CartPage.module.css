@@ -1,0 +1,130 @@
+@media (min-width: 321px) {
+  .sizeBtnContainer {
+    display: inline-block !important;
+  }
+  .sizeText {
+    display: inline-block !important;
+  }
+  .quantityBtnContainer {
+    display: inline-block !important;
+  }
+  .quantityText {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 576px) {
+  .totalBill {
+    min-width: 300px !important;
+  }
+}
+@media (min-width: 768px) {
+  .totalBill {
+    min-width: 300px !important;
+    position: sticky !important;
+    top: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .totalBill {
+    min-width: 400px !important;
+  }
+  .productsInCurt {
+    min-width: 485px !important;
+  }
+  .cartContainer {
+    gap: 50px;
+  }
+  .productCardInCart {
+    height: 370px !important;
+  }
+  .imageOnProductCurt {
+    max-width: 200px !important;
+    min-width: 200px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .totalBill {
+    min-width: 500px !important;
+  }
+  .productsInCurt {
+    min-width: 550px !important;
+  }
+  .productCardInCart {
+    height: 350px !important;
+  }
+  .imageOnProductCurt {
+    max-width: 250px !important;
+    min-width: 250px !important;
+  }
+  .productNameOnCartPage {
+    height: 50px !important;
+  }
+}
+@media (min-width: 1400px) {
+  .totalBill {
+    min-width: 600px !important;
+  }
+}
+@media (max-width: 1199px) {
+  .productNameOnCartPage {
+    height: 75px !important;
+  }
+}
+@media (max-width: 991px) {
+  .imageOnProductCurt {
+    height: 350px !important;
+  }
+  .productCardInCart {
+    width: 300px !important;
+  }
+  .cartContainer {
+    gap: 30px !important;
+  }
+}
+@media (max-width: 767px) {
+  .productCardInCart {
+    max-width: 500px !important;
+    min-width: 400px !important;
+  }
+  .imageOnProductCurt {
+    height: 400px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .productCardInCart {
+    max-width: 400px !important;
+    min-width: 300px !important;
+  }
+  .imageOnProductCurt {
+    height: 300px !important;
+  }
+}
+@media (max-width: 350px) {
+  .productCardInCart {
+    max-width: 250px !important;
+    min-width: 200px !important;
+  }
+}
+@media (max-width: 320px) {
+  .sizeBtnContainer {
+    display: block !important;
+  }
+  .sizeText {
+    display: block !important;
+    margin-bottom: 5px !important;
+  }
+  .quantityBtnContainer {
+    display: block !important;
+  }
+  .quantityText {
+    display: block !important;
+    margin-bottom: 5px !important;
+  }
+}
+@media (max-width: 291px) {
+  .productCardInCart {
+    max-width: 200px !important;
+    min-width: 200px !important;
+  }
+}

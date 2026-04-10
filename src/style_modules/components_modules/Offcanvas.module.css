@@ -1,0 +1,29 @@
+.logo {
+  width: 25px;
+}
+
+@media (min-width: 768px) {
+  .offcanvasFilterForm {
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+    top: 60px;
+  }
+  .offcanvasFilterForm::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .offcanvasFilterForm {
+    height: calc(100vh - 120px);
+    overflow-y: scroll;
+    top: 120px;
+  }
+  .offcanvasFilterForm::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+
+
+

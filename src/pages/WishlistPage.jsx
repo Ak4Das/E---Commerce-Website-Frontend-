@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/WishlistPage.module.css"
 import Header from "../components/Header"
 import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
@@ -221,7 +222,7 @@ export default function WishlistPage() {
 
   return (
     <>
-      {!user ? (
+      {userId && !user ? (
         <WishlistShimmer />
       ) : (
         <>
@@ -245,7 +246,7 @@ export default function WishlistPage() {
                 {finalWishlistProducts.map((product) => (
                   <div
                     key={product.id}
-                    className="col-sm-6 col-md-4 col-xl-3 col-xxl-2 cardContainer"
+                    className={`col-sm-6 col-md-4 col-xl-3 col-xxl-2 ${styles.cardContainer}`}
                   >
                     <Link
                       className="text-decoration-none"
@@ -296,7 +297,7 @@ export default function WishlistPage() {
                             off)
                           </p>
                           <button
-                            className="btn btn-secondary w-100 my-2"
+                            className={`btn btn-secondary w-100 my-2 ${styles.moveToCart}`}
                             value={product.id}
                             onClick={moveToCart}
                           >
@@ -305,7 +306,7 @@ export default function WishlistPage() {
                               : "Move To Cart"}
                           </button>
                           <button
-                            className="btn btn-outline-secondary w-100 saveToWishlist"
+                            className={`btn btn-outline-secondary w-100 ${styles.saveToWishlist}`}
                             value={product.id}
                             onClick={removeFromWishlist}
                           >

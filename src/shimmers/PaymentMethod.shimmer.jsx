@@ -1,5 +1,5 @@
 import { HeaderShimmer } from "./styled.components"
-import styles from "../style_modules/PaymentMethodShimmer.module.css"
+import styles from "../style_modules/shimmer_modules/PaymentMethodShimmer.module.css"
 
 export default function PaymentMethodShimmer() {
   return (

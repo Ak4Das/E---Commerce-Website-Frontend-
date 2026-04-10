@@ -1,5 +1,5 @@
 import { HeaderShimmer } from "./styled.components"
-import styles from "../style_modules/AppShimmer.module.css"
+import styles from "../style_modules/shimmer_modules/AppShimmer.module.css"
 
 export default function AppShimmer() {
   return (

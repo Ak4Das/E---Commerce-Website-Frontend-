@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/OrderDetails.module.css"
 import Header from "../components/Header"
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
@@ -90,7 +91,7 @@ export default function OrderDetails() {
           {order && (
             <main className="py-3" style={{ fontSize: "15px" }}>
               <div
-                className="mx-auto orderDetailsContainer"
+                className={`mx-auto ${styles.orderDetailsContainer}`}
                 style={{ maxWidth: "960px" }}
               >
                 <h1>Order Details</h1>
@@ -103,7 +104,7 @@ export default function OrderDetails() {
                     Order ID # {order.id}
                   </p>
                 </div>
-                <div className="card p-3 mt-3 flex-lg-row gap-3 bg-light orderDetailsCard">
+                <div className="card p-3 mt-3 flex-lg-row gap-3 bg-light">
                   <div style={{ maxWidth: "200px" }}>
                     <p className="my-0 fw-bold">Ship to</p>
                     <div
@@ -126,7 +127,7 @@ export default function OrderDetails() {
                   <div className="ms-lg-auto">
                     <p className="my-0 fw-bold">Order Summary</p>
                     <div
-                      className="orderDetailsBill"
+                      className={`${styles.orderDetailsBill}`}
                       style={{ fontSize: "14px" }}
                     >
                       <div>
@@ -204,7 +205,7 @@ export default function OrderDetails() {
                       {order.item.map((product) => (
                         <div
                           key={product.id}
-                          className="d-flex gap-3 align-items-start productYourOrder"
+                          className={`d-flex gap-3 align-items-start ${styles.productYourOrder}`}
                         >
                           <img
                             src={product.url}

@@ -1,0 +1,139 @@
+.listProductName {
+  max-height: 96px !important;
+  overflow: hidden !important;
+}
+
+@media (min-width: 576px) {
+  .listProductImage {
+    width: 100% !important;
+  }
+  .ProductImageContainer {
+    width: 100% !important;
+  }
+}
+@media (min-width: 650px) {
+  .saleProductFirstSection {
+    align-items: center !important;
+  }
+}
+@media (min-width: 768px) {
+  .saveToWishlist {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 800px) {
+  .listProductImage {
+    min-width: 50% !important;
+  }
+  .productCard {
+    flex-direction: row !important;
+  }
+}
+@media (min-width: 900px) {
+  .saveToWishlist {
+    font-size: 15px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .saveToWishlist {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 1300px) {
+  .saveToWishlist {
+    font-size: 15px !important;
+  }
+}
+@media (min-width: 1400px) {
+  .rating_listingPage {
+    display: none;
+  }
+  .saveToWishlist {
+    font-size: 12px !important;
+  }
+}
+@media (min-width: 1500px) {
+  .rating_listingPage {
+    display: initial;
+  }
+  .saveToWishlist {
+    font-size: 14px !important;
+  }
+}
+@media (min-width: 1600px) {
+  .saveToWishlist {
+    font-size: 15px !important;
+  }
+}
+@media (max-width: 800px) {
+  .productCard {
+    flex-direction: column !important;
+    height: 600px !important;
+  }
+  .saveToWishlist {
+    font-size: 16px !important;
+  }
+  .listProductImage {
+    width: 100% !important;
+  }
+}
+@media (max-width: 650px) {
+  .saleProductFirstSection {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
+@media (max-width: 575px) {
+  .productCard {
+    height: 650px !important;
+  }
+  .ProductImageContainer {
+    width: 75%;
+    margin-inline: auto;
+    margin-top: 16px;
+  }
+  .listProductImage {
+    height: 370px !important;
+  }
+}
+@media (max-width: 420px) {
+  .productCard {
+    height: 600px !important;
+  }
+  .listProductImage {
+    height: 300px !important;
+  }
+}
+@media (max-width: 320px) {
+  .ProductImageContainer {
+    width: 100%;
+    margin-inline: unset;
+    margin-top: unset;
+  }
+  .saveToWishlist {
+    font-size: 14px !important;
+  }
+  .rating_listingPage {
+    display: none !important;
+  }
+  .listProductName {
+    height: 96px !important;
+  }
+}
+@media (max-width: 291px) {
+  .saveToWishlist {
+    font-size: 10px !important;
+  }
+  .productCard {
+    height: 550px !important;
+  }
+  .addToCart {
+    font-size: 12px !important;
+  }
+  .listProductName {
+    font-size: 15px;
+  }
+  .listProductImage {
+    height: 250px !important;
+  }
+}

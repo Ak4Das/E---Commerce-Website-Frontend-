@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/YourOrders.module.css"
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import RatingBar from "../components/RatingBar"
@@ -74,18 +75,18 @@ export default function YourOrders() {
                     </div>
                     <Link
                       to={`/orderDetails/${order.id}`}
-                      className="text-decoration-none viewOrderDetailsYourOrders"
+                      className={`text-decoration-none ${styles.viewOrderDetailsYourOrders}`}
                       style={{ fontSize: "14px" }}
                     >
                       View order details
                     </Link>
                   </div>
-                  <div className="shipTo fw-medium mt-2">
+                  <div className={`${styles.shipTo} fw-medium mt-2`}>
                     <p className="my-0" style={{ fontSize: "13px" }}>
                       SHIP TO
                     </p>
                     <p
-                      className="my-0 text-primary userAddressFloatingCard"
+                      className={`my-0 text-primary ${styles.userAddressFloatingCard}`}
                       style={{ fontSize: "14px" }}
                       onClick={() => setClicked(isClicked ? false : true)}
                     >
@@ -106,7 +107,7 @@ export default function YourOrders() {
                       </div>
                     )}
                   </div>
-                  <div className="mt-2 totalOrder">
+                  <div className={`mt-2 ${styles.totalOrder}`}>
                     <p className="my-0 fw-medium" style={{ fontSize: "13px" }}>
                       TOTAL
                     </p>
@@ -130,7 +131,7 @@ export default function YourOrders() {
                           {order.orderDate}
                         </p>
                       </div>
-                      <div className="totalOrderCard">
+                      <div className={`${styles.totalOrderCard}`}>
                         <p
                           className="my-0 fw-medium"
                           style={{ fontSize: "13px" }}
@@ -144,7 +145,7 @@ export default function YourOrders() {
                           ₹{order.totalPrice}
                         </p>
                       </div>
-                      <div className="shipToCard">
+                      <div className={`${styles.shipToCard}`}>
                         <p
                           className="my-0 fw-medium"
                           style={{ fontSize: "13px" }}
@@ -152,7 +153,7 @@ export default function YourOrders() {
                           SHIP TO
                         </p>
                         <p
-                          className="my-0 text-primary fw-medium userAddressFloatingCard"
+                          className={`my-0 text-primary fw-medium ${styles.userAddressFloatingCard}`}
                           style={{ fontSize: "14px" }}
                           onClick={() => setClicked(isClicked ? false : true)}
                         >
@@ -185,7 +186,7 @@ export default function YourOrders() {
                         </div>
                         <Link
                           to={`/orderDetails/${order.id}`}
-                          className="text-decoration-none viewOrderDetailsYourOrders"
+                          className={`text-decoration-none ${styles.viewOrderDetailsYourOrders}`}
                           style={{ fontSize: "14px" }}
                         >
                           View order details
@@ -201,7 +202,7 @@ export default function YourOrders() {
                           {order.item.map((product) => (
                             <div
                               key={product.id}
-                              className="d-flex gap-3 align-items-start productYourOrder"
+                              className={`d-flex gap-3 align-items-start ${styles.productYourOrder}`}
                             >
                               <img
                                 src={product.url}

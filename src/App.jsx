@@ -1,3 +1,4 @@
+import styles from "./style_modules/pages_modules/App.module.css"
 import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
@@ -76,7 +77,7 @@ export default function App() {
         </div>
       ) : (
         <>
-          {!user ? (
+          {userId && !user ? (
             <AppShimmer />
           ) : (
             <>
@@ -98,12 +99,12 @@ export default function App() {
                 role="alert"
               >
                 <div className="d-flex flex-column flex-sm-row align-items-sm-center col-gap-4">
-                  <p className="my-0 d-inline-block fw-medium me-4 alertMessage">
+                  <p className={`my-0 d-inline-block fw-medium me-4 ${styles.alertMessage}`}>
                     <b className="fw-bold">Diwali Sale</b> is now live.
                   </p>
                   <a
                     href="#carousel"
-                    className="text-decoration-none fw-medium alertBtn"
+                    className={`text-decoration-none fw-medium ${styles.alertBtn}`}
                   >
                     Click Here
                   </a>
@@ -123,15 +124,15 @@ export default function App() {
                         key={category.id}
                         className="col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3"
                       >
-                        <div className="categoryCard">
+                        <div className={`${styles.categoryCard}`}>
                           <Link to={`/products/${category.for}`}>
                             <div className="card position-relative">
                               <img
                                 src={category.url}
                                 alt="categoryImage"
-                                className="img-fluid image"
+                                className={`img-fluid ${styles.image}`}
                               />
-                              <p className="m-0 text-center bg-light position-absolute w-100 top-50 productCategoryLabel">
+                              <p className={`m-0 text-center bg-light position-absolute w-100 top-50 ${styles.productCategoryLabel}`}>
                                 {category.name}
                               </p>
                             </div>
@@ -144,7 +145,7 @@ export default function App() {
                 <div id="carousel" className="carousel">
                   <div
                     id="carouselExampleAutoplaying"
-                    className="carousel slide"
+                    className={`carousel ${styles.slide}`}
                     data-bs-ride="carousel"
                   >
                     <div className="carousel-inner">
@@ -164,14 +165,14 @@ export default function App() {
                             style={{ width: "25vw" }}
                           >
                             <img
-                              className="d-block jhalarImage"
+                              className={`d-block ${styles.jhalarImage}`}
                               style={{ width: "25vw" }}
                               src={JHALAR}
                               alt="jhalar"
                             />
                           </div>
                           <div
-                            className="text1 text-start position-relative fw-medium"
+                            className={`${styles.text1} text-start position-relative fw-medium`}
                             style={{ maxWidth: "400px" }}
                           >
                             <p className="my-0">Hay,</p>
@@ -185,7 +186,7 @@ export default function App() {
                           </div>
                           <div id="deepak" className="d-inline-block">
                             <img
-                              className="d-block deepakImage"
+                              className={`d-block ${styles.deepakImage}`}
                               style={{ width: "28vw" }}
                               src={DEEPAK}
                               alt="deepak"
@@ -193,7 +194,7 @@ export default function App() {
                           </div>
                           <div id="deepak" className="d-inline-block">
                             <img
-                              className="d-block deepakImage"
+                              className={`d-block ${styles.deepakImage}`}
                               style={{ width: "28vw" }}
                               src={DEEPAK}
                               alt="deepak"
@@ -203,10 +204,10 @@ export default function App() {
                       </div>
                       <div className="carousel-item">
                         <div
-                          className="slide2 bg-light p-2 d-flex justify-content-between"
+                          className={`${styles.slide2} bg-light p-2 d-flex justify-content-between`}
                           style={{ height: "78.6vw", maxHeight: "800px" }}
                         >
-                          <div className="saree1 d-flex flex-column justify-content-between">
+                          <div className={`${styles.saree1} d-flex flex-column justify-content-between`}>
                             <div className="w-50">
                               <img
                                 src={diwaliDecoration2}
@@ -226,7 +227,7 @@ export default function App() {
                             className="d-flex flex-column justify-content-between align-items-center text-center"
                             style={{ width: "20vw" }}
                           >
-                            <div className="offer">
+                            <div className={`${styles.offer}`}>
                               <p className="fs-3 fw-bold my-0 text-danger">
                                 UPTO
                               </p>
@@ -237,7 +238,7 @@ export default function App() {
                               />
                             </div>
                             <div>
-                              <div className="diwaliDecoration3">
+                              <div className={`${styles.diwaliDecoration3}`}>
                                 <img
                                   src={diwaliDecoration3}
                                   style={{
@@ -249,7 +250,7 @@ export default function App() {
                                   alt="diwaliDecoration"
                                 />
                               </div>
-                              <div className="diwaliDecoration13">
+                              <div className={`${styles.diwaliDecoration13}`}>
                                 <img
                                   src={diwaliDecoration13}
                                   className="img-fluid w-50"
@@ -258,10 +259,10 @@ export default function App() {
                               </div>
                             </div>
                           </div>
-                          <div className="saree2 d-flex flex-column justify-content-between">
+                          <div className={`${styles.saree2} d-flex flex-column justify-content-between`}>
                             <div className="text-center">
-                              <div className="saree2offer">
-                                <p className="upto fw-bold my-0 text-danger">
+                              <div className={`${styles.saree2offer}`}>
+                                <p className={`${styles.upto} fw-bold my-0 text-danger`}>
                                   UPTO
                                 </p>
                                 <div>
@@ -272,7 +273,7 @@ export default function App() {
                                   />
                                 </div>
                               </div>
-                              <div className="saree2diwaliDecoration1">
+                              <div className={`${styles.saree2diwaliDecoration1}`}>
                                 <img
                                   src={diwaliDecoration1}
                                   className="img-fluid w-75"
@@ -292,10 +293,10 @@ export default function App() {
                       </div>
                       <div className="carousel-item">
                         <div
-                          className="slide3 p-2 d-flex justify-content-around"
+                          className={`${styles.slide3} p-2 d-flex justify-content-around`}
                           style={{ height: "78.6vw", maxHeight: "800px" }}
                         >
-                          <div className="diwaliOfferOnMenSuit">
+                          <div className={`${styles.diwaliOfferOnMenSuit}`}>
                             <div className="w-75">
                               <img
                                 src={diwaliDecoration7}
@@ -304,13 +305,13 @@ export default function App() {
                               />
                             </div>
                             <div className="text-light mt-5">
-                              <p className="diwaliOfferInSuitCard my-0">
+                              <p className={`${styles.diwaliOfferInSuitCard} my-0`}>
                                 Diwali Offer
                               </p>
                               <p className="my-0 d-flex align-items-start">
-                                <span className="uptoInCoat">UPTO</span>
+                                <span className={`${styles.uptoInCoat}`}>UPTO</span>
                                 <span
-                                  className="diwaliOfferOnSuit fw-bold"
+                                  className={`${styles.diwaliOfferOnSuit} fw-bold`}
                                   style={{ fontSize: "48px" }}
                                 >
                                   {" "}
@@ -319,7 +320,7 @@ export default function App() {
                               </p>
                             </div>
                           </div>
-                          <div className="menWearCoatContainer d-flex align-items-end">
+                          <div className={`${styles.menWearCoatContainer} d-flex align-items-end`}>
                             <div>
                               <img
                                 src={menWearCoat1}
@@ -346,10 +347,10 @@ export default function App() {
                       </div>
                       <div className="carousel-item">
                         <div
-                          className="slide4 p-2 d-flex justify-content-between"
+                          className={`${styles.slide4} p-2 d-flex justify-content-between`}
                           style={{ maxHeight: "800px", height: "78.6vw" }}
                         >
-                          <div className="diwaliOfferOnLahenga d-flex flex-column justify-content-between">
+                          <div className={`${styles.diwaliOfferOnLahenga} d-flex flex-column justify-content-between`}>
                             <div>
                               <img
                                 src={diwaliDecoration15}
@@ -369,14 +370,14 @@ export default function App() {
                             className="d-flex flex-column justify-content-center align-items-center text-center"
                             style={{ width: "20vw" }}
                           >
-                            <div className="offer">
+                            <div className={`${styles.offer}`}>
                               <img
                                 src={offer2}
                                 className="img-fluid w-100"
                                 alt="offer"
                               />
                             </div>
-                            <div className="diwaliDecoration3">
+                            <div className={`${styles.diwaliDecoration3}`}>
                               <img
                                 src={diwaliDecoration9}
                                 style={{ width: "10vw" }}
@@ -385,15 +386,15 @@ export default function App() {
                               />
                             </div>
                           </div>
-                          <div className="groupOfWomenWearLahenga d-flex flex-column justify-content-between">
+                          <div className={`${styles.groupOfWomenWearLahenga} d-flex flex-column justify-content-between`}>
                             <div className="w-25 ms-auto">
                               <img
                                 src={diwaliDecoration2}
-                                className="diwaliDecoration2 img-fluid w-100"
+                                className={`${styles.diwaliDecoration2} img-fluid w-100`}
                                 alt="diwaliDecoration"
                               />
                             </div>
-                            <div className="offer2">
+                            <div className={`${styles.offer2}`}>
                               <img
                                 src={offer2}
                                 className="img-fluid w-50 d-block mx-auto"
@@ -428,10 +429,10 @@ export default function App() {
                       </div>
                       <div className="carousel-item">
                         <div
-                          className="slide5 p-2 d-flex justify-content-between"
+                          className={`${styles.slide5} p-2 d-flex justify-content-between`}
                           style={{ height: "78.6vw", maxHeight: "800px" }}
                         >
-                          <div className="diwaliOfferOnShoes d-flex flex-column justify-content-between">
+                          <div className={`${styles.diwaliOfferOnShoes} d-flex flex-column justify-content-between`}>
                             <div>
                               <img
                                 src={diwaliDecoration10}
@@ -447,18 +448,18 @@ export default function App() {
                               />
                             </div>
                           </div>
-                          <div className="menWearShoe align-self-end">
+                          <div className={`${styles.menWearShoe} align-self-end`}>
                             <img
                               src={menWearShoe}
                               className="img-fluid w-100"
                               alt="menWearShoeImage"
                             />
                           </div>
-                          <div className="shoeContainerInDiwaliSaleBanner d-flex flex-column justify-content-between">
+                          <div className={`${styles.shoeContainerInDiwaliSaleBanner} d-flex flex-column justify-content-between`}>
                             <div className="text-center">
-                              <div className="d-flex justify-content-center shoeOfferInCarousel">
+                              <div className={`d-flex justify-content-center ${styles.shoeOfferInCarousel}`}>
                                 <p
-                                  className="uptoInShoe fw-bold text-warning"
+                                  className={`${styles.uptoInShoe} fw-bold text-warning`}
                                   style={{ marginBlock: "0px" }}
                                 >
                                   UPTO
@@ -471,13 +472,13 @@ export default function App() {
                                   />
                                 </div>
                                 <p
-                                  className="uptoInShoe fw-bold text-warning align-self-end"
+                                  className={`${styles.uptoInShoe} fw-bold text-warning align-self-end`}
                                   style={{ marginBlock: "0px" }}
                                 >
                                   OFF
                                 </p>
                               </div>
-                              <div className="goldenRibbonCarousel">
+                              <div className={`${styles.goldenRibbonCarousel}`}>
                                 <img
                                   src={goldenRibbon}
                                   className="img-fluid w-50"
@@ -488,7 +489,7 @@ export default function App() {
                             <div className="text-end">
                               <img
                                 src={shoe1}
-                                className="shoe1 img-fluid"
+                                className={`${styles.shoe1} img-fluid`}
                                 alt="shoe"
                               />
                             </div>
@@ -497,7 +498,7 @@ export default function App() {
                       </div>
                       <div className="carousel-item">
                         <div
-                          className="slide6 px-3 d-flex align-items-center justify-content-center"
+                          className={`${styles.slide6} px-3 d-flex align-items-center justify-content-center`}
                           style={{
                             backgroundColor: "orange",
                             height: "78.6vw",
@@ -505,7 +506,7 @@ export default function App() {
                           }}
                         >
                           <div className="w-100 d-flex flex-column align-items-center">
-                            <div className="line1">
+                            <div className={`${styles.line1}`}>
                               <img
                                 className="d-block w-100"
                                 src={LINE}
@@ -520,10 +521,10 @@ export default function App() {
                                 alt="lakshmiGaneshaImage"
                               />
                             </div>
-                            <div className="text2 text-center fw-medium">
+                            <div className={`${styles.text2} text-center fw-medium`}>
                               Wishing You a Blessed and Prosperous Deepawali
                             </div>
-                            <div className="line2">
+                            <div className={`${styles.line2}`}>
                               <img
                                 className="d-block w-100"
                                 src={LINE}
@@ -569,17 +570,17 @@ export default function App() {
                       <img
                         src="https://tse1.mm.bing.net/th/id/OIP.jngCe7THF9RyUMqBs3Lw6gHaDt?pid=Api&P=0&h=180"
                         alt="newArrivalBannerImage"
-                        className="bannerImage"
+                        className={`${styles.bannerImage}`}
                         style={{ height: "200px" }}
                       />
                       <div className="card-body py-0 px-0 px-xxl-5 d-flex flex-column justify-content-between">
                         <p className="fw-bold mt-2">New Arrival</p>
                         <div
                           style={{ minWidth: "225px" }}
-                          className="description"
+                          className={`${styles.description}`}
                         >
-                          <h3 className="newArrivalHeader">New Collection</h3>
-                          <p className="m-0 newArrivalCardTitle">
+                          <h3 className={`${styles.newArrivalHeader}`}>New Collection</h3>
+                          <p className={`m-0 ${styles.newArrivalCardTitle}`}>
                             Checkout our new collection to live your diwali with
                             style. hurry up don't miss this chance.
                           </p>
@@ -595,17 +596,17 @@ export default function App() {
                       <img
                         src="https://tse3.mm.bing.net/th/id/OIP.DZhMFCN8KQJup5G70IemgAHaDt?pid=Api&P=0&h=180"
                         alt="diwaliSaleBannerImage"
-                        className="bannerImage"
+                        className={`${styles.bannerImage}`}
                         style={{ height: "200px" }}
                       />
                       <div className="card-body py-0 px-0 px-xxl-5 d-flex flex-column justify-content-between">
                         <p className="fw-bold mt-2">Diwali Sale</p>
                         <div
                           style={{ minWidth: "225px" }}
-                          className="description"
+                          className={`${styles.description}`}
                         >
-                          <h3 className="diwaliSaleHeader">Upto 50% off</h3>
-                          <p className="m-0 diwaliSaleCardTitle">
+                          <h3 className={`${styles.diwaliSaleHeader}`}>Upto 50% off</h3>
+                          <p className={`m-0 ${styles.diwaliSaleCardTitle}`}>
                             Diwali sale is launch now, sale is live till 31st
                             November, go and make your diwali stylish.
                           </p>

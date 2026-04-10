@@ -1,3 +1,4 @@
+import styles from "../style_modules/pages_modules/SaleProducts.module.css"
 import { useEffect, useState } from "react"
 import GetClothsData from "../components/GetClothsData"
 import Header from "../components/Header"
@@ -243,7 +244,7 @@ export default function SaleProducts() {
 
   return (
     <>
-      {!user ? (
+      {userId && !user ? (
         <SaleProductsShimmer />
       ) : (
         <>
@@ -262,7 +263,9 @@ export default function SaleProducts() {
           />
           <main>
             <div className="mx-5 my-3">
-              <div className="d-flex justify-content-between saleProductFirstSection mb-3">
+              <div
+                className={`d-flex justify-content-between ${styles.saleProductFirstSection} mb-3`}
+              >
                 <h4 className="my-3 text-secondary">
                   Diwali offer on {commonCategory}
                 </h4>
@@ -292,17 +295,20 @@ export default function SaleProducts() {
                       className="text-decoration-none"
                       to={`/productDetails/${product.id}`}
                     >
-                      <div className="card productCard">
-                        <div className="ProductImageContainer">
+                      <div className={`card ${styles.productCard}`}>
+                        <div className={`${styles.ProductImageContainer}`}>
                           <img
                             src={product.url}
-                            className="img-fluid listProductImage"
+                            className={`img-fluid ${styles.listProductImage}`}
                             style={{ height: "300px" }}
                             alt="productImage"
                           />
                         </div>
                         <div className="card-body d-flex flex-column justify-content-between w-100">
-                          <p id="name" className="my-0 lh-sm listProductName">
+                          <p
+                            id="name"
+                            className={`my-0 lh-sm ${styles.listProductName}`}
+                          >
                             <span className="badge text-bg-warning me-1">
                               Diwali Offer
                             </span>
@@ -314,7 +320,7 @@ export default function SaleProducts() {
                             <RatingBar rating={product.rating} />
                             <span
                               style={{ fontSize: "15px" }}
-                              className="ms-1 rating-listingPage"
+                              className={`ms-1 ${styles.rating_listingPage}`}
                             >
                               {product.rating}
                             </span>
@@ -341,7 +347,7 @@ export default function SaleProducts() {
                             <div>
                               {!user ? (
                                 <button
-                                  className="btn btn-secondary w-100 mb-1 addToCart"
+                                  className={`btn btn-secondary w-100 mb-1 ${styles.addToCart}`}
                                   onClick={(e) => {
                                     e.preventDefault()
                                     e.stopPropagation()
@@ -355,7 +361,7 @@ export default function SaleProducts() {
                               ) : (
                                 <button
                                   value={product.id}
-                                  className="btn btn-secondary w-100 mb-1 addToCart"
+                                  className={`btn btn-secondary w-100 mb-1 ${styles.addToCart}`}
                                   onClick={addToCart}
                                 >
                                   {product.addToCart
@@ -367,7 +373,7 @@ export default function SaleProducts() {
                             <div>
                               {!user ? (
                                 <button
-                                  className="btn btn-outline-secondary w-100 saveToWishlist"
+                                  className={`btn btn-outline-secondary w-100 ${styles.saveToWishlist}`}
                                   onClick={(e) => {
                                     e.preventDefault()
                                     e.stopPropagation()
@@ -381,7 +387,7 @@ export default function SaleProducts() {
                               ) : (
                                 <button
                                   value={product.id}
-                                  className="btn btn-outline-secondary w-100 saveToWishlist"
+                                  className={`btn btn-outline-secondary w-100 ${styles.saveToWishlist}`}
                                   onClick={addToWishlist}
                                 >
                                   {product.addToWishList

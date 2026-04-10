@@ -302,7 +302,7 @@ export default function ProductDetailsPage() {
           createOrderItems.forEach((item) => (item.size = size))
           product.size = size
           await updateAllItemsInCreateOrder(
-            "http://localhost:3000/createOrder/updateItems",
+            "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
             createOrderItems,
           )
         }
@@ -317,7 +317,7 @@ export default function ProductDetailsPage() {
         )
         filteredItem.push(product)
         await updateAllItemsInCreateOrder(
-          "http://localhost:3000/createOrder/updateItems",
+          "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
           filteredItem,
         )
         setUpdated(false)
@@ -410,7 +410,7 @@ export default function ProductDetailsPage() {
   useEffect(() => {
     // set createOrder for every mount
     const arr = [product]
-    updateAllItems("http://localhost:3000/createOrder/updateItems", arr)
+    updateAllItems("https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems", arr)
     const input1 = document.querySelector(
       "#root > main > div > section.frequentlyBoughtSection > div > div:nth-child(3) > div.frequently-bought-image > input[type=checkbox]",
     )
@@ -475,7 +475,7 @@ export default function ProductDetailsPage() {
         product.quantity = 1
         createOrderItems.push(product)
         await updateAllItemsInCreateOrder(
-          "http://localhost:3000/createOrder/updateItems",
+          "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
           createOrderItems,
         )
       }
@@ -485,7 +485,7 @@ export default function ProductDetailsPage() {
           (item) => item.id !== product.id,
         )
         await updateAllItemsInCreateOrder(
-          "http://localhost:3000/createOrder/updateItems",
+          "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
           updatedItem,
         )
       }

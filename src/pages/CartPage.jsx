@@ -126,21 +126,21 @@ export default function CartPage() {
       }
       if (!pass) {
         if (url === "" && productsInCart.length) {
-          setUrl("http://localhost:3000/createOrder/updateItems")
+          setUrl("https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems")
           setData(productsInCart)
         }
       }
       if (idOfProductsInCart && idOfCreateOrderInDatabase) {
         if (idOfProductsInCart.length !== idOfCreateOrderInDatabase.length) {
           if (url === "" && productsInCart.length) {
-            setUrl("http://localhost:3000/createOrder/updateItems")
+            setUrl("https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems")
             setData(productsInCart)
           }
         }
       }
     } else {
       if (url === "" && productsInCart.length) {
-        setUrl("http://localhost:3000/createOrder/updateItems")
+        setUrl("https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems")
         setData(productsInCart)
       }
     }
@@ -186,7 +186,7 @@ export default function CartPage() {
       Product &&
         Product.length &&
         (await updateAllItemsInCreateOrder(
-          "http://localhost:3000/createOrder/updateItems",
+          "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
           createOrderInDatabase.item,
         ))
 
@@ -367,7 +367,7 @@ export default function CartPage() {
                                                   .value,
                                               )
                                               await updateAllItemsInCreateOrder(
-                                                "http://localhost:3000/createOrder/updateItems",
+                                                "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
                                                 ProductsInCart,
                                               )
 
@@ -447,7 +447,7 @@ export default function CartPage() {
                                                 .value,
                                             )
                                             await updateAllItemsInCreateOrder(
-                                              "http://localhost:3000/createOrder/updateItems",
+                                              "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
                                               ProductsInCart,
                                             )
 
@@ -514,7 +514,7 @@ export default function CartPage() {
                                             // Update createOrder in Database
                                             product.size = "S"
                                             await updateAllItemsInCreateOrder(
-                                              "http://localhost:3000/createOrder/updateItems",
+                                              "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
                                               ProductsInCart,
                                             )
 
@@ -590,7 +590,7 @@ export default function CartPage() {
                                             // Update createOrder in Database
                                             product.size = "M"
                                             await updateAllItemsInCreateOrder(
-                                              "http://localhost:3000/createOrder/updateItems",
+                                              "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
                                               ProductsInCart,
                                             )
 
@@ -666,7 +666,7 @@ export default function CartPage() {
                                             // Update createOrder in Database
                                             product.size = "L"
                                             await updateAllItemsInCreateOrder(
-                                              "http://localhost:3000/createOrder/updateItems",
+                                              "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
                                               ProductsInCart,
                                             )
 
@@ -742,7 +742,7 @@ export default function CartPage() {
                                             // Update createOrder in Database
                                             product.size = "XL"
                                             await updateAllItemsInCreateOrder(
-                                              "http://localhost:3000/createOrder/updateItems",
+                                              "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
                                               ProductsInCart,
                                             )
 
@@ -818,7 +818,7 @@ export default function CartPage() {
                                             // Update createOrder in Database
                                             product.size = "XXL"
                                             await updateAllItemsInCreateOrder(
-                                              "http://localhost:3000/createOrder/updateItems",
+                                              "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
                                               ProductsInCart,
                                             )
 
@@ -913,7 +913,7 @@ export default function CartPage() {
                                             (item) => item.id !== product.id,
                                           )
                                         await updateAllItemsInCreateOrder(
-                                          "http://localhost:3000/createOrder/updateItems",
+                                          "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
                                           remainingCreateOrderItems,
                                         )
 
@@ -980,7 +980,7 @@ export default function CartPage() {
                         e.preventDefault()
                         e.stopPropagation()
                         await updateAllItemsInCreateOrder(
-                          "http://localhost:3000/createOrder/updateItems",
+                          "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
                           createOrderInDatabase.item,
                         )
                         setConfirmOrder(true)

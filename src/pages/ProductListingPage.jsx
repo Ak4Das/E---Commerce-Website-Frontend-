@@ -119,7 +119,7 @@ export default function ProductListingPage() {
       Product &&
         Product.length &&
         (await updateAllItemsInCreateOrder(
-          "http://localhost:3000/createOrder/updateItems",
+          "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
           createOrder.item,
         ))
 
@@ -175,7 +175,7 @@ export default function ProductListingPage() {
       Product &&
         Product.length &&
         (await updateAllItemsInCreateOrder(
-          "http://localhost:3000/createOrder/updateItems",
+          "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
           createOrder.item,
         ))
 

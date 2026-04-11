@@ -1,4 +1,4 @@
-import { HeaderShimmer } from "./styled.components"
+import { HeaderShimmer } from "../components/styledComponents.js"
 import styles from "../style_modules/shimmer_modules/OrderDetailsShimmer.module.css"
 
 export default function OrderDetailsShimmer() {

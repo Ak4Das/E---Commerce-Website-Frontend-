@@ -7,7 +7,6 @@
   color: red;
 }
 
-
 @media (min-width: 576px) {
   .ProductImageContainer {
     width: 100% !important;

@@ -20,14 +20,12 @@
     height: 50px;
   }
 }
-
 @media (max-width: 320px) {
   .heading {
     width: 150px;
     height: 70px;
   }
 }
-
 @media (max-width: 290px) {
   .heading {
     width: 130px;

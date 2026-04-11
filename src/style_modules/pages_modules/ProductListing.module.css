@@ -3,6 +3,38 @@
   overflow: hidden !important;
 }
 
+.hamburgerPointer {
+  display: inline-block;
+  height: 44px;
+  font-family: sans-serif;
+  background-color: aqua;
+  padding-block: 10px;
+  padding-left: 15px;
+  padding-right: 10px;
+  left: 60px;
+  top: 65px;
+}
+
+.leftPointerDiv1 {
+  top: 0px;
+  left: -12px;
+  background-color: aqua;
+}
+
+.leftPointerDiv2 {
+  top: -35px;
+  left: -25px;
+  background-color: #ffffff;
+  transform: rotate(62deg);
+}
+
+.leftPointerDiv3 {
+  top: 32px;
+  left: -23px;
+  background-color: #ffffff;
+  transform: rotate(113deg);
+}
+
 @media (min-width: 500px) {
   .productImageContainerDiv {
     width: 75%;
@@ -86,7 +118,7 @@
     margin-bottom: 16px;
   }
   .hamburgerPointer {
-    top: 120px !important;
+    top: 120px;
   }
 }
 @media (max-width: 575px) {
@@ -142,36 +174,4 @@
   .listProductName {
     font-size: 15px;
   }
-}
-
-.hamburgerPointer {
-  display: inline-block;
-  height: 44px;
-  font-family: sans-serif;
-  background-color: aqua;
-  padding-block: 10px;
-  padding-left: 15px;
-  padding-right: 10px;
-  left: 60px;
-  top: 65px;
-}
-
-.leftPointerDiv1 {
-  top: 0px;
-  left: -12px;
-  background-color: aqua;
-}
-
-.leftPointerDiv2 {
-  top: -35px;
-  left: -25px;
-  background-color: #ffffff;
-  transform: rotate(62deg);
-}
-
-.leftPointerDiv3 {
-  top: 32px;
-  left: -23px;
-  background-color: #ffffff;
-  transform: rotate(113deg);
 }

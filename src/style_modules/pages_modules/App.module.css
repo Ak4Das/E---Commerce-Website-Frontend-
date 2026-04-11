@@ -1,3 +1,88 @@
+.slide2 {
+  background-image: linear-gradient(#f5b7d4 85%, #e595b8 20%);
+}
+
+.slide3 {
+  background-image: linear-gradient(#384967 85%, #6a6561 20%);
+}
+
+.slide4 {
+  background-image: linear-gradient(#fdb8dc 85%, #b37281 20%);
+}
+
+.diwaliDecoration2 {
+  transform: rotate(90deg);
+}
+
+.slide5 {
+  background-image:
+    linear-gradient(-250deg, #48484a 40%, #252324 30%),
+    linear-gradient(70deg, #2d2d2e 27%, #363636 20%);
+  background-size:
+    100% 85%,
+    100% 16%;
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+}
+
+.text1 {
+  width: 40vw;
+  font-size: 2.8vw;
+  font-family: "Salsa", cursive;
+  margin-left: 15vw;
+  top: -1.5vw;
+}
+
+.line1 {
+  width: 70%;
+  margin: 0vw auto 5vw;
+  padding-top: 1vw;
+  height: 1.8vw;
+}
+
+.text2 {
+  font-size: 5vw;
+  font-family: "Style Script", cursive;
+  margin-top: 3vw;
+}
+
+.line2 {
+  width: 70%;
+  margin: 2.5vw auto 0vw;
+  padding-bottom: 0.8vw;
+  height: 1.8vw;
+}
+
+.menWearCoatContainer {
+  width: 70% !important;
+}
+
+.diwaliOfferOnMenSuit {
+  width: 30% !important;
+}
+
+.groupOfWomenWearLahenga {
+  width: 70% !important;
+  max-width: 900px;
+}
+
+.diwaliOfferOnLahenga {
+  width: 30% !important;
+}
+
+.shoeContainerInDiwaliSaleBanner {
+  width: 70% !important;
+}
+
+.diwaliOfferOnShoes {
+  width: 30% !important;
+}
+
+.menWearShoe {
+  width: 30% !important;
+  max-width: 500px !important;
+}
+
 @media (min-width: 321px) {
   .alertMessage {
     font-size: 20px !important;
@@ -29,10 +114,10 @@
 @media (min-width: 992px) {
   .text1 {
     width: 40vw;
-    font-size: 28px !important;
+    font-size: 28px;
     font-family: "Salsa", cursive;
-    margin-left: 150px !important;
-    top: -15px !important;
+    margin-left: 150px;
+    top: -15px;
   }
   .jhalarImage {
     width: 250px !important;
@@ -43,19 +128,19 @@
     height: 280px !important;
   }
   .text2 {
-    font-size: 50px !important;
+    font-size: 50px;
   }
   .line1 {
-    width: 610px !important;
-    margin-bottom: 50px !important;
-    padding-top: 10px !important;
-    height: 18px !important;
+    width: 610px;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    height: 18px;
   }
   .line2 {
-    width: 610px !important;
-    height: 18px !important;
-    padding-bottom: 8px !important;
-    margin-top: 25px !important;
+    width: 610px;
+    height: 18px;
+    padding-bottom: 8px;
+    margin-top: 25px;
   }
   .saree1 {
     width: 523px !important;
@@ -76,7 +161,7 @@
     max-width: 262px !important;
   }
   .groupOfWomenWearLahenga {
-    max-width: 615px !important;
+    max-width: 615px;
   }
   .diwaliOfferOnShoes {
     max-width: 263px !important;
@@ -330,89 +415,4 @@
   .uptoInShoe {
     margin-top: 5px !important;
   }
-}
-
-.text1 {
-  width: 40vw;
-  font-size: 2.8vw;
-  font-family: "Salsa", cursive;
-  margin-left: 15vw;
-  top: -1.5vw;
-}
-
-.line1 {
-  width: 70%;
-  margin: 0vw auto 5vw;
-  padding-top: 1vw;
-  height: 1.8vw;
-}
-
-.text2 {
-  font-size: 5vw;
-  font-family: "Style Script", cursive;
-  margin-top: 3vw;
-}
-
-.line2 {
-  width: 70%;
-  margin: 2.5vw auto 0vw;
-  padding-bottom: 0.8vw;
-  height: 1.8vw;
-}
-
-.slide2 {
-  background-image: linear-gradient(#f5b7d4 85%, #e595b8 20%);
-}
-
-.slide3 {
-  background-image: linear-gradient(#384967 85%, #6a6561 20%);
-}
-
-.menWearCoatContainer {
-  width: 70% !important;
-}
-
-.diwaliOfferOnMenSuit {
-  width: 30% !important;
-}
-
-.slide4 {
-  background-image: linear-gradient(#fdb8dc 85%, #b37281 20%);
-}
-
-.groupOfWomenWearLahenga {
-  width: 70% !important;
-  max-width: 900px;
-}
-
-.diwaliOfferOnLahenga {
-  width: 30% !important;
-}
-
-.diwaliDecoration2 {
-  transform: rotate(90deg);
-}
-
-.slide5 {
-  background-image:
-    linear-gradient(-250deg, #48484a 40%, #252324 30%),
-    linear-gradient(70deg, #2d2d2e 27%, #363636 20%);
-  background-size:
-    100% 85%,
-    100% 16%;
-  background-position: top, bottom;
-  background-repeat: no-repeat;
-}
-
-.shoeContainerInDiwaliSaleBanner {
-  width: 70% !important;
-}
-
-.diwaliOfferOnShoes {
-  width: 30% !important;
-}
-
-.menWearShoe {
-  width: 30% !important;
-  max-width: 500px !important;
 }

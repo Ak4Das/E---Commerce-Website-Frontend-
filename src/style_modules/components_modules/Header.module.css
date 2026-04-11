@@ -1,8 +1,14 @@
 .none {
   display: none;
 }
+
 .block {
   display: block;
+}
+
+.profileBtnInHeader:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 @media (min-width: 321px) {
@@ -66,11 +72,6 @@
   .navbarBrand {
     display: none;
   }
-}
-
-.profileBtnInHeader:hover {
-  border: 1px solid black;
-  cursor: pointer;
 }
 
 

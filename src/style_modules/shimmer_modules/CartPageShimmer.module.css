@@ -6,6 +6,7 @@
 .totalBill {
   height: 320px;
 }
+
 @media (min-width: 576px) {
   .totalBill {
     min-width: 300px !important;

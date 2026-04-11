@@ -23,19 +23,16 @@
     height: 130px;
   }
 }
-
 @media (max-width: 768px) {
   .section1 {
     height: 150px;
   }
 }
-
 @media (max-width: 500px) {
   .productContainer {
     height: 600px;
   }
 }
-
 @media (max-width: 410px) {
   .section1 {
     height: 155px;
@@ -44,7 +41,6 @@
     height: 95px;
   }
 }
-
 @media (max-width: 400px) {
   .section1 {
     height: 160px;
@@ -53,19 +49,16 @@
     height: 115px;
   }
 }
-
 @media (max-width: 320px) {
   .section1 {
     height: 180px;
   }
 }
-
 @media (max-width: 300px) {
   .section2 {
     height: 150px;
   }
 }
-
 @media (max-width: 290px) {
   .section1 {
     height: 190px;

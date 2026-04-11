@@ -122,7 +122,7 @@ export default function App() {
                     return (
                       <div
                         key={category.id}
-                        className="col-sm-6 col-md-4 col-lg-3 col-xxl-2 mb-3"
+                        className="col-12 col-sm-6 col-md-4 col-xl-2 col-xxl-2 mb-3"
                       >
                         <div className={`${styles.categoryCard}`}>
                           <Link to={`/products/${category.for}`}>

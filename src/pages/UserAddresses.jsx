@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import SearchInPage from "../components/SearchInPage"
 import { fetchUserById, updateAddressOfUser } from "../components/FetchRequests"
+import Footer from "../components/Footer"
 
 export default function UserAddresses() {
   const param = useParams()
@@ -198,6 +199,7 @@ export default function UserAddresses() {
           </Link>
         </div>
       </main>
+      <Footer />
     </>
   )
 }

@@ -21,6 +21,7 @@ import SearchInPage from "../components/SearchInPage"
 import { useState, useEffect } from "react"
 import { fetchUserById } from "../components/FetchRequests"
 import DiwaliSaleShimmer from "../shimmers/DiwaliSale.shimmer"
+import Footer from "../components/Footer"
 
 export default function DiwaliSale() {
   const [search, setSearch] = useState("")
@@ -358,6 +359,7 @@ export default function DiwaliSale() {
               </div>
             </section>
           </main>
+          <Footer />
         </>
       )}
     </>

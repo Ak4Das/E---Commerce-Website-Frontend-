@@ -10,6 +10,7 @@ import { Link } from "react-router-dom"
 import SearchInPage from "../components/SearchInPage"
 import { fetchUserById, updateUser } from "../components/FetchRequests"
 import UserProfileShimmer from "../shimmers/UserProfile.shimmer"
+import Footer from "../components/Footer"
 
 export default function UserProfile() {
   const [search, setSearch] = useState("")
@@ -69,11 +70,11 @@ export default function UserProfile() {
     imageUrl && setImagePath("")
     setEdit(edit ? false : true)
     const enterImgUrl = document.querySelector(".enterImgUrl")
-    if(enterImgUrl) {
+    if (enterImgUrl) {
       enterImgUrl.value = ""
     }
     const enterImagePath = document.querySelector(".enterImagePath")
-    if(enterImagePath) {
+    if (enterImagePath) {
       enterImagePath.value = ""
     }
   }
@@ -169,7 +170,9 @@ export default function UserProfile() {
                   }}
                 >
                   <section className="position-relative">
-                    <h2 className={`${styles.usrAccTextFloatingCard}`}>User Account</h2>
+                    <h2 className={`${styles.usrAccTextFloatingCard}`}>
+                      User Account
+                    </h2>
                     <button className="border border-0 position-absolute end-0 top-0 bg-light">
                       <img
                         src={crossBtn}
@@ -240,7 +243,9 @@ export default function UserProfile() {
                         }}
                       />
                     </div>
-                    <div className={`d-flex justify-content-between align-items-center ${styles.floatingCardBtns}`}>
+                    <div
+                      className={`d-flex justify-content-between align-items-center ${styles.floatingCardBtns}`}
+                    >
                       <button
                         className={`btn ${styles.floatingCardBtn} border border-0 rounded-pill p-2 ${styles.editImageUrl}`}
                         onClick={editProfileImage}
@@ -263,7 +268,9 @@ export default function UserProfile() {
                 to="/yourOrders"
                 className="col-md-6 col-xl-4 mb-4 text-decoration-none"
               >
-                <div className={`card align-items-center gap-2 ${styles.cardInUserProfilePage} p-2`}>
+                <div
+                  className={`card align-items-center gap-2 ${styles.cardInUserProfilePage} p-2`}
+                >
                   <img
                     src={DeliveryBox}
                     alt="deliveryBox"
@@ -280,7 +287,9 @@ export default function UserProfile() {
                 to="/userAddress/user"
                 className="col-md-6 col-xl-4 mb-4 text-decoration-none"
               >
-                <div className={`card align-items-center gap-3 ${styles.cardInUserProfilePage} p-2`}>
+                <div
+                  className={`card align-items-center gap-3 ${styles.cardInUserProfilePage} p-2`}
+                >
                   <img
                     src={AddressIcon}
                     alt="addressIcon"
@@ -294,7 +303,9 @@ export default function UserProfile() {
                 </div>
               </Link>
               <div className="col-md-6 col-xl-4 mb-4">
-                <div className={`card align-items-center gap-3 ${styles.cardInUserProfilePage} p-2`}>
+                <div
+                  className={`card align-items-center gap-3 ${styles.cardInUserProfilePage} p-2`}
+                >
                   <img
                     src={Support}
                     alt="support"
@@ -309,6 +320,7 @@ export default function UserProfile() {
               </div>
             </div>
           </main>
+          <Footer />
         </>
       )}
     </>

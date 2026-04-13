@@ -20,6 +20,7 @@ import {
   saveNewOrder,
 } from "../components/FetchRequests.js"
 import PaymentMethodShimmer from "../shimmers/PaymentMethod.shimmer.jsx"
+import Footer from "../components/Footer.jsx"
 
 export default function PaymentMethods() {
   const { clothsData, setClothsData } = GetClothsData()
@@ -710,10 +711,7 @@ export default function PaymentMethods() {
                                 <br
                                   className={`${styles.floatingAddCardBodyBr}`}
                                 />
-                                <label
-                                  htmlFor=""
-                                  className="fw-medium"
-                                >
+                                <label htmlFor="" className="fw-medium">
                                   Nickname
                                 </label>
                                 <input
@@ -1180,6 +1178,7 @@ export default function PaymentMethods() {
               </div>
             </section>
           </main>
+          <Footer />
         </>
       )}
     </>

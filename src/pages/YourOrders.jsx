@@ -12,6 +12,7 @@ import {
   deleteOrderById,
 } from "../components/FetchRequests"
 import YourOrdersShimmer from "../shimmers/YourOrders.shimmer"
+import Footer from "../components/Footer"
 
 export default function YourOrders() {
   const [search, setSearch] = useState("")
@@ -292,6 +293,7 @@ export default function YourOrders() {
                 </div>
               ))}
           </main>
+          <Footer/>
         </>
       )}
     </>

@@ -21,6 +21,7 @@ import {
   updateWishlistItemsInUser,
 } from "../components/FetchRequests.js"
 import ProductDetailsShimmer from "../shimmers/ProductDetails.shimmer.jsx"
+import Footer from "../components/Footer.jsx"
 
 export default function ProductDetailsPage() {
   const [search, setSearch] = useState("")
@@ -410,7 +411,10 @@ export default function ProductDetailsPage() {
   useEffect(() => {
     // set createOrder for every mount
     const arr = [product]
-    updateAllItems("https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems", arr)
+    updateAllItems(
+      "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
+      arr,
+    )
     const input1 = document.querySelector(
       "#root > main > div > section.frequentlyBoughtSection > div > div:nth-child(3) > div.frequently-bought-image > input[type=checkbox]",
     )
@@ -2350,6 +2354,7 @@ export default function ProductDetailsPage() {
               </section>
             </div>
           </main>
+          <Footer />
         </>
       )}
     </>

@@ -19,6 +19,7 @@ import {
   updateWishlistItemsInUser,
 } from "../components/FetchRequests.js"
 import ProductListingShimmer from "../shimmers/ProductListing.shimmer.jsx"
+import Footer from "../components/Footer.jsx"
 
 export default function ProductListingPage() {
   const [search, setSearch] = useState("")
@@ -555,6 +556,7 @@ export default function ProductListingPage() {
               </div>
             </div>
           </main>
+          <Footer />
         </>
       )}
     </>

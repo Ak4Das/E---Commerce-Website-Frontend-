@@ -15,6 +15,7 @@ import {
   updateWishlistItemsInUser,
 } from "../components/FetchRequests.js"
 import NewArrivalShimmer from "../shimmers/NewArrival.shimmer.jsx"
+import Footer from "../components/Footer.jsx"
 
 export default function NewArrival() {
   const [search, setSearch] = useState("")
@@ -369,6 +370,7 @@ export default function NewArrival() {
               </div>
             </div>
           </main>
+          <Footer />
         </>
       )}
     </>

@@ -41,6 +41,7 @@ import { useEffect } from "react"
 import category from "./components/Category"
 import { fetchUserById } from "./components/FetchRequests.js"
 import AppShimmer from "./shimmers/App.shimmer.jsx"
+import Footer from "./components/Footer.jsx"
 
 export default function App() {
   const [search, setSearch] = useState("")
@@ -616,6 +617,7 @@ export default function App() {
                   </Link>
                 </div>
               </main>
+              <Footer/>
             </>
           )}
         </>

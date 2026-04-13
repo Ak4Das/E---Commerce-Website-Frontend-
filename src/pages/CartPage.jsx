@@ -14,6 +14,7 @@ import {
   updateCartItemsInUser,
 } from "../components/FetchRequests.js"
 import CartPageShimmer from "../shimmers/CartPage.shimmer.jsx"
+import Footer from "../components/Footer.jsx"
 
 export default function CartPage() {
   const [search, setSearch] = useState("")
@@ -126,21 +127,27 @@ export default function CartPage() {
       }
       if (!pass) {
         if (url === "" && productsInCart.length) {
-          setUrl("https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems")
+          setUrl(
+            "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
+          )
           setData(productsInCart)
         }
       }
       if (idOfProductsInCart && idOfCreateOrderInDatabase) {
         if (idOfProductsInCart.length !== idOfCreateOrderInDatabase.length) {
           if (url === "" && productsInCart.length) {
-            setUrl("https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems")
+            setUrl(
+              "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
+            )
             setData(productsInCart)
           }
         }
       }
     } else {
       if (url === "" && productsInCart.length) {
-        setUrl("https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems")
+        setUrl(
+          "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
+        )
         setData(productsInCart)
       }
     }
@@ -1046,6 +1053,7 @@ export default function CartPage() {
               </div>
             </div>
           </main>
+          <Footer />
         </>
       )}
     </>

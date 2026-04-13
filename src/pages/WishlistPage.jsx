@@ -14,6 +14,7 @@ import {
   updateWishlistItemsInUser,
 } from "../components/FetchRequests.js"
 import WishlistShimmer from "../shimmers/Wishlist.shimmer.jsx"
+import Footer from "../components/Footer.jsx"
 
 export default function WishlistPage() {
   const { clothsData, setClothsData } = GetClothsData()
@@ -320,6 +321,7 @@ export default function WishlistPage() {
               </div>
             </div>
           </main>
+          <Footer/>
         </>
       )}
     </>

@@ -1,7 +1,7 @@
 import { HeaderShimmer } from "../components/styledComponents.js"
 import styles from "../style_modules/shimmer_modules/DiwaliSaleShimmer.module.css"
-import background2 from "../assets/background2.png"
-import diwaliDecoration5 from "../assets/diwaliDecoration5.png"
+import background2 from "../assets/images/background2.png"
+import diwaliDecoration5 from "../assets/images/diwaliDecoration5.png"
 
 export default function DiwaliSaleShimmer() {
   return (

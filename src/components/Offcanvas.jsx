@@ -1,5 +1,5 @@
 import styles from "../style_modules/components_modules/Offcanvas.module.css"
-import crossBtn from "../assets/close.png"
+import crossBtn from "../assets/images/close.png"
 import { useState } from "react"
 
 export default function Offcanvas({

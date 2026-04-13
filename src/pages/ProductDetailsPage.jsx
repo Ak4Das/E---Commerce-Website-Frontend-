@@ -1,16 +1,16 @@
 import styles from "../style_modules/pages_modules/ProductDetails.module.css"
 import Header from "../components/Header"
-import cashOnDelivery from "../assets/cash-on-delivery.png"
+import cashOnDelivery from "../assets/images/cash-on-delivery.png"
 import { useParams } from "react-router-dom"
 import GetClothsData from "../components/GetClothsData"
 import { Link } from "react-router-dom"
 import RatingBar from "../components/RatingBar"
 import { useState } from "react"
-import location from "../assets/location.png"
+import location from "../assets/images/location.png"
 import { useEffect } from "react"
 import SearchInPage from "../components/SearchInPage"
 import { toast } from "react-toastify"
-import rightArrow from "../assets/right-arrow.png"
+import rightArrow from "../assets/images/right-arrow.png"
 import {
   fetchAllCloths,
   updateClothById,

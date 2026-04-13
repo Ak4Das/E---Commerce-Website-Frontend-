@@ -1,6 +1,6 @@
 import styles from "../style_modules/pages_modules/UserAddresses.module.css"
 import Header from "../components/Header"
-import Plus from "../assets/plus.png"
+import Plus from "../assets/images/plus.png"
 import { Link, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import SearchInPage from "../components/SearchInPage"

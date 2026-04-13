@@ -1,6 +1,6 @@
 import styles from "../style_modules/components_modules/Header.module.css"
 import { Link, NavLink } from "react-router-dom"
-import BharatVastra from "../assets/BharatVastra.png"
+import BharatVastra from "../assets/images/BharatVastra.png"
 import { useState } from "react"
 import { useEffect } from "react"
 import GetClothsData from "./GetClothsData"

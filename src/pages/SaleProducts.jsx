@@ -252,7 +252,7 @@ export default function SaleProducts() {
           <Header
             position="sticky"
             top={0}
-            zIndex={1}
+            zIndex={6}
             setSearch={setSearch}
             placeHolder="Search by product Material"
             userDetails={user}

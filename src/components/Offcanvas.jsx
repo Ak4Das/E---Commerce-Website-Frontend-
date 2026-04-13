@@ -57,11 +57,7 @@ export default function Offcanvas({
     setProductCategory([])
     setAge([])
   }
-  function handleClick(e) {
-    const element = e.target
-    const parentElement = element.parentElement
-    parentElement.style.left =
-      parentElement.style.left === "-305px" ? "" : "-305px"
+  function handleClick() {
     setOpen(open ? false : true)
     setShowHamburgerPointer(false)
   }
@@ -69,37 +65,21 @@ export default function Offcanvas({
     <form>
       <div
         style={{
-          maxWidth: "30vw",
-          minWidth: "350px",
-          position: "fixed",
-          left: "-305px",
-          zIndex: open ? 6 : 2,
+          zIndex: open ? 7 : 2,
         }}
-        className={`bg-light-subtle px-5 py-3 d-inline-block ${styles.offcanvasFilterForm}`}
+        className={`bg-light-subtle px-5 py-3 d-inline-block ${open ? styles.left_neutral : styles.left_negative} ${styles.offcanvasFilterForm}`}
       >
         {open ? (
           <img
             src={crossBtn}
             alt="close button"
-            className={`${styles.logo}`}
-            style={{
-              position: "relative",
-              left: "265px",
-              top: "-5px",
-              cursor: "pointer",
-            }}
+            className={`${styles.logo} ${styles.button}`}
             onClick={handleClick}
             title="filter"
           />
         ) : (
           <button
-            style={{
-              position: "relative",
-              left: "265px",
-              top: "-5px",
-              cursor: "pointer",
-            }}
-            className="rounded bi bi-list"
+            className={`rounded bi bi-list ${styles.button}`}
             type="button"
             onClick={handleClick}
             title="filter"

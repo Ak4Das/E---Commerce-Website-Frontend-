@@ -1,4 +1,4 @@
-@media (min-width: 400px) {
+@media (min-width: 551px) {
   .searchBtnInPage2 {
     display: none !important;
   }
@@ -11,10 +11,15 @@
     display: none !important;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 550px) {
   .searchBtnInPage1 {
     display: none !important;
   }
+  .searchInputInPage {
+    width: 65% !important;
+  }
+}
+@media (max-width: 400px) {
   .searchInputInPage {
     width: 75% !important;
   }

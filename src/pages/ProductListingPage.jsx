@@ -368,7 +368,7 @@ export default function ProductListingPage() {
           <Header
             position="sticky"
             top={0}
-            zIndex={3}
+            zIndex={7}
             setSearch={setSearch}
             placeHolder="Search Product"
             userDetails={user}
@@ -379,7 +379,7 @@ export default function ProductListingPage() {
             placeHolder="Search Product"
             position="position-fixed"
             top="62px"
-            zIndex={2}
+            zIndex={6}
           />
           <main>
             <Offcanvas

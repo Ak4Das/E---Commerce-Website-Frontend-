@@ -1,3 +1,7 @@
+.secondUlContainer {
+  display: none;
+}
+
 .none {
   display: none;
 }
@@ -73,9 +77,3 @@
     display: none;
   }
 }
-
-
-
-
-
-

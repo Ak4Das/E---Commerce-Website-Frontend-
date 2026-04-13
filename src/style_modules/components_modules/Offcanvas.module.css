@@ -2,6 +2,27 @@
   width: 25px;
 }
 
+.offcanvasFilterForm {
+  position: fixed;
+  min-width: 350px;
+  max-width: 30vw;
+}
+
+.button {
+  position: relative;
+  left: 265px;
+  top: -5px;
+  cursor: pointer;
+}
+
+.left_negative {
+  left: -305px;
+}
+
+.left_neutral {
+  left: 0px;
+}
+
 @media (min-width: 768px) {
   .offcanvasFilterForm {
     height: calc(100vh - 60px);
@@ -22,8 +43,14 @@
     display: none;
   }
 }
-
-
-
-
-
+@media (max-width: 400px) {
+  .offcanvasFilterForm {
+    min-width: 260px;
+  }
+  .button {
+    left: 180px;
+  }
+  .left_negative {
+    left: -225px;
+  }
+}

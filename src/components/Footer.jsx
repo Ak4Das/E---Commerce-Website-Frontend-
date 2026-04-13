@@ -13,12 +13,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <button className="btn">
-              <Link to="/" className="text-light text-decoration-none">
-                {" "}
-                Get Started{" "}
-              </Link>
-            </button>
+            <Link to="/" className="btn text-light text-decoration-none">
+              {" "}
+              Get Started{" "}
+            </Link>
           </div>
         </div>
       </section>

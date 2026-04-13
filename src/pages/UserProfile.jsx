@@ -165,7 +165,7 @@ export default function UserProfile() {
                   className={`card px-3 py-3 bg-light position-absolute top-50 start-50 ${styles.floatingCard}`}
                   style={{
                     width: "400px",
-                    zIndex: 1,
+                    zIndex: 6,
                     boxShadow: "0px 0px 100px rgba(0, 0, 0, 0.4)",
                   }}
                 >

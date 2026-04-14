@@ -14,28 +14,8 @@ async function fetchAllCloths() {
 
 async function setAllCloths() {
   try {
-    const response = await fetch("https://e-commerce-website-backend-pi.vercel.app/seedCloths", {
+    const response = await fetch("https://e-commerce-website-backend-pi.vercel.app/cloth/seedCloths", {
       method: "PUT",
-    })
-    if (response.ok) {
-      const data = await response.json()
-      return data
-    } else {
-      console.log("Request Failed")
-    }
-  } catch (error) {
-    throw error
-  }
-}
-
-async function updateAllCloths(clothsData) {
-  try {
-    const response = await fetch("https://e-commerce-website-backend-pi.vercel.app/cloth/updateCloths", {
-      method: "POST",
-      headers: {
-        "content-Type": "application/json",
-      },
-      body: JSON.stringify(clothsData),
     })
     if (response.ok) {
       const data = await response.json()
@@ -51,7 +31,7 @@ async function updateAllCloths(clothsData) {
 async function updateClothById(id, clothData) {
   try {
     const response = await fetch(`https://e-commerce-website-backend-pi.vercel.app/cloth/update/${id}`, {
-      method: "POST",
+      method: "PATCH",
       headers: {
         "content-Type": "application/json",
       },
@@ -334,7 +314,6 @@ async function updateOrder(id, data) {
 export {
   fetchAllCloths,
   setAllCloths,
-  updateAllCloths,
   updateClothById,
   fetchCreateOrder,
   updateAllItemsInCreateOrder,

@@ -52,6 +52,9 @@ export default function AddAddressForm() {
       }
     }
     fetch()
+    // return () => {
+    //   localStorage.setItem("havePass", true)
+    // }
   }, [isUpdated])
 
   return (

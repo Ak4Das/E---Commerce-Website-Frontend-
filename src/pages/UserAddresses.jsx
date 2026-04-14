@@ -48,6 +48,9 @@ export default function UserAddresses() {
       }
     }
     fetch()
+    // return () => {
+    //   localStorage.setItem("havePass", true)
+    // }
   }, [isUpdated])
 
   return (

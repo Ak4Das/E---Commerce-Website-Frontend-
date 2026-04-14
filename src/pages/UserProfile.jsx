@@ -93,6 +93,9 @@ export default function UserProfile() {
       }
     }
     fetch()
+    // return () => {
+    //   localStorage.setItem("havePass", true)
+    // }
   }, [isUpdated])
 
   return (

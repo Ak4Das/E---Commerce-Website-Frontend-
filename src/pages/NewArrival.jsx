@@ -226,6 +226,9 @@ export default function NewArrival() {
       }
     }
     fetchData()
+    // return () => {
+    //   localStorage.setItem("havePass", true)
+    // }
   }, [isUpdate])
 
   return (

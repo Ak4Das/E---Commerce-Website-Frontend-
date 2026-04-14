@@ -65,7 +65,7 @@ async function fetchCreateOrder() {
 async function updateAllItemsInCreateOrder(url, itemsData) {
   try {
     const response = await fetch(url, {
-      method: "POST",
+      method: "PUT",
       headers: {
         "content-Type": "application/json",
       },

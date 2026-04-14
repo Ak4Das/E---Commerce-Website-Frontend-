@@ -65,6 +65,9 @@ export default function App() {
       setUser(user)
     }
     fetchData()
+    // return () => {
+    //   localStorage.setItem("havePass", true)
+    // }
   }, [])
 
   return (

@@ -325,6 +325,9 @@ export default function ProductDetailsPage() {
       }
     }
     fetchData()
+    // return () => {
+    //   localStorage.setItem("havePass", true)
+    // }
   }, [isUpdated])
 
   // Slide content btn logic

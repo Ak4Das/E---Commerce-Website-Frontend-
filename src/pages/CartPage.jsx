@@ -94,6 +94,8 @@ export default function CartPage() {
   const [url, setUrl] = useState("")
   const [data, setData] = useState([])
   useEffect(() => {
+    // const havePass = localStorage.getItem("havePass")
+    // console.log(havePass)
     if (url !== "") {
       async function updateItems() {
         await updateAllItemsInCreateOrder(url, data)
@@ -101,6 +103,10 @@ export default function CartPage() {
       }
       updateItems()
     }
+    // localStorage.setItem("havePass", true)
+    // return () => {
+    //   localStorage.setItem("havePass", false)
+    // }
   }, [url])
 
   const idOfCreateOrderInDatabase =

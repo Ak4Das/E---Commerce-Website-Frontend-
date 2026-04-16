@@ -96,8 +96,7 @@ export default function CartPage() {
   const [data, setData] = useState([])
   useEffect(() => {
     const controller = new AbortController()
-    const havePass = localStorage.getItem("havePass")
-    if (havePass && url !== "") {
+    if (url !== "") {
       async function updateItems() {
         await updateAllItemsInCreateOrder(url, data, controller.signal)
         setUpdated(true)
@@ -106,7 +105,6 @@ export default function CartPage() {
     }
     return () => {
       controller.abort()
-      localStorage.setItem("havePass", havePass ? false : true)
     }
   }, [url])
 

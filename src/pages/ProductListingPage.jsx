@@ -357,9 +357,6 @@ export default function ProductListingPage() {
       }
     }
     fetchData()
-    return () => {
-      localStorage.setItem("havePass", false)
-    }
   }, [isUpdate])
 
   return (

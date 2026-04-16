@@ -133,9 +133,6 @@ export default function EditYourOrder() {
       }
     }
     fetchData()
-    return () => {
-      localStorage.setItem("havePass", false)
-    }
   }, [isUpdated])
 
   return (

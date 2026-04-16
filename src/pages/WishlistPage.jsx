@@ -219,9 +219,6 @@ export default function WishlistPage() {
       }
     }
     fetchData()
-    return () => {
-      localStorage.setItem("havePass", false)
-    }
   }, [isUpdated])
 
   return (

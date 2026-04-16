@@ -43,9 +43,6 @@ export default function YourOrders() {
       }
     }
     fetchData()
-    return () => {
-      localStorage.setItem("havePass", false)
-    }
   }, [isUpdated])
 
   return (

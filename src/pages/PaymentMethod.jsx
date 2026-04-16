@@ -251,9 +251,6 @@ export default function PaymentMethods() {
       }
     }
     fetchData()
-    return () => {
-      localStorage.setItem("havePass", false)
-    }
   }, [updated])
 
   return (

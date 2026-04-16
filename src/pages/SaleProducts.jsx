@@ -241,9 +241,9 @@ export default function SaleProducts() {
       }
     }
     fetchData()
-    // return () => {
-    //   localStorage.setItem("havePass", true)
-    // }
+    return () => {
+      localStorage.setItem("havePass", false)
+    }
   }, [isUpdate])
 
   return (

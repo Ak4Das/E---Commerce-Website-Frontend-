@@ -52,7 +52,10 @@ export default function ProductDetailsPage() {
   const userId = localStorage.getItem("userId")
   const [user, setUser] = useState(null)
 
+  const [blockFetchRequest, setBlockFetchRequest] = useState(true)
+
   const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
+  console.log(CreateOrderInDatabase)
   const uniqueCreateOrderInDatabase =
     CreateOrderInDatabase &&
     CreateOrderInDatabase.reduce((acc, item) => {
@@ -68,9 +71,9 @@ export default function ProductDetailsPage() {
     }, [])
   const createOrderInDatabase = { item: uniqueCreateOrderInDatabase }
 
-  async function updateAllItems(url, data) {
+  async function updateAllItems(url, data, signal) {
     try {
-      await updateAllItemsInCreateOrder(url, data)
+      await updateAllItemsInCreateOrder(url, data, signal)
       setUpdated(true)
     } catch (error) {
       throw error
@@ -317,10 +320,11 @@ export default function ProductDetailsPage() {
           (item) => item.id !== product.id,
         )
         filteredItem.push(product)
-        await updateAllItemsInCreateOrder(
-          "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
-          filteredItem,
-        )
+        !blockFetchRequest &&
+          (await updateAllItemsInCreateOrder(
+            "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
+            filteredItem,
+          ))
         setUpdated(false)
       }
     }
@@ -414,10 +418,43 @@ export default function ProductDetailsPage() {
   useEffect(() => {
     // set createOrder for every mount
     const arr = [product]
-    updateAllItems(
-      "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
-      arr,
-    )
+    const controller = new AbortController()
+    const havePass = JSON.parse(localStorage.getItem("havePass"))
+    havePass &&
+      updateAllItems(
+        "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
+        arr,
+        controller.signal,
+      )
+
+    return () => {
+      controller.abort()
+      localStorage.setItem("havePass", havePass ? false : true)
+    }
+  }, [])
+
+  useEffect(() => {
+    // set createOrder for every mount
+    const arr = [product]
+
+    const havePass = JSON.parse(localStorage.getItem("havePass"))
+
+    havePass &&
+      !blockFetchRequest &&
+      updateAllItems(
+        "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
+        arr,
+      )
+
+    havePass === null &&
+      !blockFetchRequest &&
+      updateAllItems(
+        "https://e-commerce-website-backend-pi.vercel.app/createOrder/updateItems",
+        arr,
+      )
+
+    havePass && setBlockFetchRequest(false)
+
     const input1 = document.querySelector(
       "#root > main > div > section.frequentlyBoughtSection > div > div:nth-child(3) > div.frequently-bought-image > input[type=checkbox]",
     )

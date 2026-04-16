@@ -43,9 +43,9 @@ export default function YourOrders() {
       }
     }
     fetchData()
-    // return () => {
-    //   localStorage.setItem("havePass", true)
-    // }
+    return () => {
+      localStorage.setItem("havePass", false)
+    }
   }, [isUpdated])
 
   return (
@@ -296,7 +296,7 @@ export default function YourOrders() {
                 </div>
               ))}
           </main>
-          <Footer/>
+          <Footer />
         </>
       )}
     </>

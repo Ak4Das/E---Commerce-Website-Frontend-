@@ -36,9 +36,9 @@ export default function DiwaliSale() {
       setUser(user)
     }
     fetchData()
-    // return () => {
-    //   localStorage.setItem("havePass", true)
-    // }
+    return () => {
+      localStorage.setItem("havePass", false)
+    }
   }, [])
 
   return (

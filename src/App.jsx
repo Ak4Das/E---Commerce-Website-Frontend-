@@ -65,9 +65,9 @@ export default function App() {
       setUser(user)
     }
     fetchData()
-    // return () => {
-    //   localStorage.setItem("havePass", true)
-    // }
+    return () => {
+      localStorage.setItem("havePass", false)
+    }
   }, [])
 
   return (
@@ -103,7 +103,9 @@ export default function App() {
                 role="alert"
               >
                 <div className="d-flex flex-column flex-sm-row align-items-sm-center col-gap-4">
-                  <p className={`my-0 d-inline-block fw-medium me-4 ${styles.alertMessage}`}>
+                  <p
+                    className={`my-0 d-inline-block fw-medium me-4 ${styles.alertMessage}`}
+                  >
                     <b className="fw-bold">Diwali Sale</b> is now live.
                   </p>
                   <a
@@ -136,7 +138,9 @@ export default function App() {
                                 alt="categoryImage"
                                 className={`img-fluid ${styles.image}`}
                               />
-                              <p className={`m-0 text-center bg-light position-absolute w-100 top-50 ${styles.productCategoryLabel}`}>
+                              <p
+                                className={`m-0 text-center bg-light position-absolute w-100 top-50 ${styles.productCategoryLabel}`}
+                              >
                                 {category.name}
                               </p>
                             </div>
@@ -211,7 +215,9 @@ export default function App() {
                           className={`${styles.slide2} bg-light p-2 d-flex justify-content-between`}
                           style={{ height: "78.6vw", maxHeight: "800px" }}
                         >
-                          <div className={`${styles.saree1} d-flex flex-column justify-content-between`}>
+                          <div
+                            className={`${styles.saree1} d-flex flex-column justify-content-between`}
+                          >
                             <div className="w-50">
                               <img
                                 src={diwaliDecoration2}
@@ -263,10 +269,14 @@ export default function App() {
                               </div>
                             </div>
                           </div>
-                          <div className={`${styles.saree2} d-flex flex-column justify-content-between`}>
+                          <div
+                            className={`${styles.saree2} d-flex flex-column justify-content-between`}
+                          >
                             <div className="text-center">
                               <div className={`${styles.saree2offer}`}>
-                                <p className={`${styles.upto} fw-bold my-0 text-danger`}>
+                                <p
+                                  className={`${styles.upto} fw-bold my-0 text-danger`}
+                                >
                                   UPTO
                                 </p>
                                 <div>
@@ -277,7 +287,9 @@ export default function App() {
                                   />
                                 </div>
                               </div>
-                              <div className={`${styles.saree2diwaliDecoration1}`}>
+                              <div
+                                className={`${styles.saree2diwaliDecoration1}`}
+                              >
                                 <img
                                   src={diwaliDecoration1}
                                   className="img-fluid w-75"
@@ -309,11 +321,15 @@ export default function App() {
                               />
                             </div>
                             <div className="text-light mt-5">
-                              <p className={`${styles.diwaliOfferInSuitCard} my-0`}>
+                              <p
+                                className={`${styles.diwaliOfferInSuitCard} my-0`}
+                              >
                                 Diwali Offer
                               </p>
                               <p className="my-0 d-flex align-items-start">
-                                <span className={`${styles.uptoInCoat}`}>UPTO</span>
+                                <span className={`${styles.uptoInCoat}`}>
+                                  UPTO
+                                </span>
                                 <span
                                   className={`${styles.diwaliOfferOnSuit} fw-bold`}
                                   style={{ fontSize: "48px" }}
@@ -324,7 +340,9 @@ export default function App() {
                               </p>
                             </div>
                           </div>
-                          <div className={`${styles.menWearCoatContainer} d-flex align-items-end`}>
+                          <div
+                            className={`${styles.menWearCoatContainer} d-flex align-items-end`}
+                          >
                             <div>
                               <img
                                 src={menWearCoat1}
@@ -354,7 +372,9 @@ export default function App() {
                           className={`${styles.slide4} p-2 d-flex justify-content-between`}
                           style={{ maxHeight: "800px", height: "78.6vw" }}
                         >
-                          <div className={`${styles.diwaliOfferOnLahenga} d-flex flex-column justify-content-between`}>
+                          <div
+                            className={`${styles.diwaliOfferOnLahenga} d-flex flex-column justify-content-between`}
+                          >
                             <div>
                               <img
                                 src={diwaliDecoration15}
@@ -390,7 +410,9 @@ export default function App() {
                               />
                             </div>
                           </div>
-                          <div className={`${styles.groupOfWomenWearLahenga} d-flex flex-column justify-content-between`}>
+                          <div
+                            className={`${styles.groupOfWomenWearLahenga} d-flex flex-column justify-content-between`}
+                          >
                             <div className="w-25 ms-auto">
                               <img
                                 src={diwaliDecoration2}
@@ -436,7 +458,9 @@ export default function App() {
                           className={`${styles.slide5} p-2 d-flex justify-content-between`}
                           style={{ height: "78.6vw", maxHeight: "800px" }}
                         >
-                          <div className={`${styles.diwaliOfferOnShoes} d-flex flex-column justify-content-between`}>
+                          <div
+                            className={`${styles.diwaliOfferOnShoes} d-flex flex-column justify-content-between`}
+                          >
                             <div>
                               <img
                                 src={diwaliDecoration10}
@@ -452,16 +476,22 @@ export default function App() {
                               />
                             </div>
                           </div>
-                          <div className={`${styles.menWearShoe} align-self-end`}>
+                          <div
+                            className={`${styles.menWearShoe} align-self-end`}
+                          >
                             <img
                               src={menWearShoe}
                               className="img-fluid w-100"
                               alt="menWearShoeImage"
                             />
                           </div>
-                          <div className={`${styles.shoeContainerInDiwaliSaleBanner} d-flex flex-column justify-content-between`}>
+                          <div
+                            className={`${styles.shoeContainerInDiwaliSaleBanner} d-flex flex-column justify-content-between`}
+                          >
                             <div className="text-center">
-                              <div className={`d-flex justify-content-center ${styles.shoeOfferInCarousel}`}>
+                              <div
+                                className={`d-flex justify-content-center ${styles.shoeOfferInCarousel}`}
+                              >
                                 <p
                                   className={`${styles.uptoInShoe} fw-bold text-warning`}
                                   style={{ marginBlock: "0px" }}
@@ -525,7 +555,9 @@ export default function App() {
                                 alt="lakshmiGaneshaImage"
                               />
                             </div>
-                            <div className={`${styles.text2} text-center fw-medium`}>
+                            <div
+                              className={`${styles.text2} text-center fw-medium`}
+                            >
                               Wishing You a Blessed and Prosperous Deepawali
                             </div>
                             <div className={`${styles.line2}`}>
@@ -583,7 +615,9 @@ export default function App() {
                           style={{ minWidth: "225px" }}
                           className={`${styles.description}`}
                         >
-                          <h3 className={`${styles.newArrivalHeader}`}>New Collection</h3>
+                          <h3 className={`${styles.newArrivalHeader}`}>
+                            New Collection
+                          </h3>
                           <p className={`m-0 ${styles.newArrivalCardTitle}`}>
                             Checkout our new collection to live your diwali with
                             style. hurry up don't miss this chance.
@@ -609,7 +643,9 @@ export default function App() {
                           style={{ minWidth: "225px" }}
                           className={`${styles.description}`}
                         >
-                          <h3 className={`${styles.diwaliSaleHeader}`}>Upto 50% off</h3>
+                          <h3 className={`${styles.diwaliSaleHeader}`}>
+                            Upto 50% off
+                          </h3>
                           <p className={`m-0 ${styles.diwaliSaleCardTitle}`}>
                             Diwali sale is launch now, sale is live till 31st
                             November, go and make your diwali stylish.
@@ -620,7 +656,7 @@ export default function App() {
                   </Link>
                 </div>
               </main>
-              <Footer/>
+              <Footer />
             </>
           )}
         </>

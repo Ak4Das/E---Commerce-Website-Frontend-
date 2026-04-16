@@ -1,6 +1,8 @@
 async function fetchAllCloths() {
   try {
-    const response = await fetch("https://e-commerce-website-backend-pi.vercel.app/cloth/")
+    const response = await fetch(
+      "https://e-commerce-website-backend-pi.vercel.app/cloth/",
+    )
     if (response.ok) {
       const data = await response.json()
       return data
@@ -14,9 +16,12 @@ async function fetchAllCloths() {
 
 async function setAllCloths() {
   try {
-    const response = await fetch("https://e-commerce-website-backend-pi.vercel.app/cloth/seedCloths", {
-      method: "PUT",
-    })
+    const response = await fetch(
+      "https://e-commerce-website-backend-pi.vercel.app/cloth/seedCloths",
+      {
+        method: "PUT",
+      },
+    )
     if (response.ok) {
       const data = await response.json()
       return data
@@ -30,13 +35,16 @@ async function setAllCloths() {
 
 async function updateClothById(id, clothData) {
   try {
-    const response = await fetch(`https://e-commerce-website-backend-pi.vercel.app/cloth/update/${id}`, {
-      method: "PATCH",
-      headers: {
-        "content-Type": "application/json",
+    const response = await fetch(
+      `https://e-commerce-website-backend-pi.vercel.app/cloth/update/${id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "content-Type": "application/json",
+        },
+        body: JSON.stringify(clothData),
       },
-      body: JSON.stringify(clothData),
-    })
+    )
     if (response.ok) {
       const data = await response.json()
       return data
@@ -50,7 +58,9 @@ async function updateClothById(id, clothData) {
 
 async function fetchCreateOrder() {
   try {
-    const response = await fetch("https://e-commerce-website-backend-pi.vercel.app/createOrder/")
+    const response = await fetch(
+      "https://e-commerce-website-backend-pi.vercel.app/createOrder/",
+    )
     if (response.ok) {
       const data = await response.json()
       return data
@@ -62,15 +72,17 @@ async function fetchCreateOrder() {
   }
 }
 
-async function updateAllItemsInCreateOrder(url, itemsData) {
+async function updateAllItemsInCreateOrder(url, itemsData, signal) {
   try {
     const response = await fetch(url, {
       method: "PUT",
       headers: {
-        "content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify(itemsData),
+      signal: signal,
     })
+
     if (response.ok) {
       const data = await response.json()
       return data
@@ -78,7 +90,11 @@ async function updateAllItemsInCreateOrder(url, itemsData) {
       console.log("Request Failed")
     }
   } catch (error) {
-    throw error
+    if (error.name === "AbortError") {
+      console.log("Request Aborted")
+    } else {
+      throw error
+    }
   }
 }
 
@@ -103,7 +119,9 @@ async function deleteManyItemsInCreateOrder() {
 
 async function fetchAllUsers() {
   try {
-    const response = await fetch("https://e-commerce-website-backend-pi.vercel.app/user/")
+    const response = await fetch(
+      "https://e-commerce-website-backend-pi.vercel.app/user/",
+    )
     if (response.ok) {
       const data = await response.json()
       return data
@@ -117,7 +135,9 @@ async function fetchAllUsers() {
 
 async function fetchUserById(id) {
   try {
-    const response = await fetch(`https://e-commerce-website-backend-pi.vercel.app/user/${id}`)
+    const response = await fetch(
+      `https://e-commerce-website-backend-pi.vercel.app/user/${id}`,
+    )
     if (response.ok) {
       const data = await response.json()
       return data
@@ -223,13 +243,16 @@ async function updateCartItemsInUser(id, items) {
 
 async function saveNewUser(newUser) {
   try {
-    const response = await fetch("https://e-commerce-website-backend-pi.vercel.app/user/saveUser", {
-      method: "POST",
-      headers: {
-        "content-Type": "application/json",
+    const response = await fetch(
+      "https://e-commerce-website-backend-pi.vercel.app/user/saveUser",
+      {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
       },
-      body: JSON.stringify(newUser),
-    })
+    )
     if (response.ok) {
       const data = await response.json()
       return data
@@ -243,13 +266,16 @@ async function saveNewUser(newUser) {
 
 async function saveNewOrder(newOrder) {
   try {
-    const response = await fetch("https://e-commerce-website-backend-pi.vercel.app/order/saveOrder", {
-      method: "POST",
-      headers: {
-        "content-Type": "application/json",
+    const response = await fetch(
+      "https://e-commerce-website-backend-pi.vercel.app/order/saveOrder",
+      {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+        body: JSON.stringify(newOrder),
       },
-      body: JSON.stringify(newOrder),
-    })
+    )
     if (response.ok) {
       const data = await response.json()
       return data
@@ -263,7 +289,9 @@ async function saveNewOrder(newOrder) {
 
 async function fetchAllOrders() {
   try {
-    const response = await fetch("https://e-commerce-website-backend-pi.vercel.app/order/")
+    const response = await fetch(
+      "https://e-commerce-website-backend-pi.vercel.app/order/",
+    )
     if (response.ok) {
       const data = await response.json()
       return data
@@ -277,9 +305,12 @@ async function fetchAllOrders() {
 
 async function deleteOrderById(id) {
   try {
-    const response = await fetch(`https://e-commerce-website-backend-pi.vercel.app/order/delete/${id}`, {
-      method: "DELETE",
-    })
+    const response = await fetch(
+      `https://e-commerce-website-backend-pi.vercel.app/order/delete/${id}`,
+      {
+        method: "DELETE",
+      },
+    )
     if (response.ok) {
       const data = await response.json()
       return data
@@ -293,13 +324,16 @@ async function deleteOrderById(id) {
 
 async function updateOrder(id, data) {
   try {
-    const response = await fetch(`https://e-commerce-website-backend-pi.vercel.app/order/update/${id}`, {
-      method: "POST",
-      headers: {
-        "content-Type": "application/json",
+    const response = await fetch(
+      `https://e-commerce-website-backend-pi.vercel.app/order/update/${id}`,
+      {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       },
-      body: JSON.stringify(data),
-    })
+    )
     if (response.ok) {
       const data = await response.json()
       return data

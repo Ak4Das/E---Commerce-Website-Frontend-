@@ -62,12 +62,16 @@ export default function Header({
               style={{ width: "70px" }}
               className={`${styles.BharatVastra}`}
             />
-            <span className={`${styles.navbarBrand} fw-bold fs-5 text-secondary`}>
+            <span
+              className={`${styles.navbarBrand} fw-bold fs-5 text-secondary`}
+            >
               BharatVastra
             </span>
           </NavLink>
           {isSearchBarNeeded && (
-            <div className={`input-group ${styles.searchInHeader} justify-content-center`}>
+            <div
+              className={`input-group ${styles.searchInHeader} justify-content-center`}
+            >
               <input
                 type="text"
                 className="border border-1 w-75 p-2"

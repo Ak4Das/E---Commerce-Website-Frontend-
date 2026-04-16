@@ -76,6 +76,7 @@ export default function CartPage() {
   const idOfProductsInCart = productsInCart.map((product) => product.id)
 
   const [CreateOrderInDatabase, setCreateOrderInDatabase] = useState(null)
+  console.log(CreateOrderInDatabase)
   const uniqueCreateOrderInDatabase =
     CreateOrderInDatabase &&
     CreateOrderInDatabase.reduce((acc, item) => {
@@ -94,19 +95,19 @@ export default function CartPage() {
   const [url, setUrl] = useState("")
   const [data, setData] = useState([])
   useEffect(() => {
-    // const havePass = localStorage.getItem("havePass")
-    // console.log(havePass)
-    if (url !== "") {
+    const controller = new AbortController()
+    const havePass = localStorage.getItem("havePass")
+    if (havePass && url !== "") {
       async function updateItems() {
-        await updateAllItemsInCreateOrder(url, data)
+        await updateAllItemsInCreateOrder(url, data, controller.signal)
         setUpdated(true)
       }
       updateItems()
     }
-    // localStorage.setItem("havePass", true)
-    // return () => {
-    //   localStorage.setItem("havePass", false)
-    // }
+    return () => {
+      controller.abort()
+      localStorage.setItem("havePass", havePass ? false : true)
+    }
   }, [url])
 
   const idOfCreateOrderInDatabase =

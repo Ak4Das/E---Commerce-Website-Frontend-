@@ -219,9 +219,9 @@ export default function WishlistPage() {
       }
     }
     fetchData()
-    // return () => {
-    //   localStorage.setItem("havePass", true)
-    // }
+    return () => {
+      localStorage.setItem("havePass", false)
+    }
   }, [isUpdated])
 
   return (
@@ -324,7 +324,7 @@ export default function WishlistPage() {
               </div>
             </div>
           </main>
-          <Footer/>
+          <Footer />
         </>
       )}
     </>

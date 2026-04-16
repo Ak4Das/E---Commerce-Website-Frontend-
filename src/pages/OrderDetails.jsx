@@ -68,9 +68,9 @@ export default function OrderDetails() {
       }
     }
     fetchData()
-    // return () => {
-    //   localStorage.setItem("havePass", true)
-    // }
+    return () => {
+      localStorage.setItem("havePass", false)
+    }
   }, [isUpdated])
 
   return (
